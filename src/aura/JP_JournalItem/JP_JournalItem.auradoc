@@ -1,0 +1,17 @@
+<!--
+ - Created by lauren.lezberg on 10/16/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>JP_JournalItem</code> component displays an individual journal with available purchase options (online, print). Each item is selectable through a dropdown. If only one option
+            is available, the dropdown is disabled. In order to select the item for purchase, the '+' button is clicked and the item is highlighted and marked for purchase. Each item marked for purchase
+            will be added as a sales order line when saved through the <code>JP_JournalSelections</code> component. Once an item is clicked, the button turns to an 'X' which then can be used to remove an
+            item selection. The item will no longer be highlighted and will no longer be marked as selected.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The <code>JP_JournalItem</code> component is not available for Join Process use. It is meant to be a child component to display a selectable individual journal from a list of journals.</p>
+    </aura:description>
+</aura:documentation>

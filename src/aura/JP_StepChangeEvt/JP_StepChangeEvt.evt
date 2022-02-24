@@ -1,0 +1,8 @@
+<!--
+ - Created by lauren.lezberg on 3/7/2019.
+ -->
+
+<aura:event type="APPLICATION" description="JP_StepChangeEvt is used to notify current step to save all selections and fire JP_NavigateEvt">
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="cmpName" type="String"/>
+</aura:event>

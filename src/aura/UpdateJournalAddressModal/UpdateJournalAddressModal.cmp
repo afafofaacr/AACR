@@ -1,0 +1,167 @@
+<!--
+ - Created by lauren.lezberg on 1/18/2019.
+ -->
+
+<aura:component description="UpdateJournalAddressModal" controller="UpdateJournalAddressModalController">
+    <aura:attribute name="contactId" type="Id" description="The current contact record for the journal address" />
+    <aura:attribute name="jAddress" type="Object" description="journal address"/>
+    <aura:attribute name="countryList" type="List" description="List of countries"/>
+
+
+    <aura:attribute name="isOpen" type="Boolean" default="false" description="The journal address modal is open."/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="The component is loading/processing."/>
+<!--    <aura:attribute name="hasJournalAddr" type="Boolean" default="false" description="The contact record has a journal address."/>-->
+<!--    <aura:attribute name="journalAddress" type="Object" description="The journal address object that stores the data"/>-->
+<!--    <aura:attribute name="selectedAddressType" type="String" description="Selected address for shipping"/>-->
+
+<!--    <aura:attribute name="record" type="Object"/>-->
+<!--    <aura:attribute name="simpleRecord" type="Object"/>-->
+    <aura:attribute name="recordError" type="String"/>
+
+    <aura:handler name="newAddress" event="c:NewKnownAddressEvt" action="{!c.handleContactChange}"/>
+    <aura:handler name="change" value="{!v.contactId}" action="{!c.handleContactChange}"/>
+<!--    <aura:method name="copyPrimaryAddress" action="{!c.copyPrimaryToJournal}" description="Copy primary address into journal address"/>-->
+<!--    <aura:method name="saveJournalAddress" action="{!c.save}" description="Save journal address"/>-->
+    <aura:method name="refreshAddress" action="{!c.updateAddress}"/>
+
+    <aura:if isTrue="{!not(v.isLoading)}">
+    <div class="slds-form-element__legend slds-form-element__label slds-m-bottom_small" style="display:contents;"><abbr class="slds-required">*</abbr>Journal Shipping Address</div>
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="slds-text-color_error slds-text-heading_medium slds-m-left_small">{!v.recordError}</div>
+    </aura:if>
+    <!-- USER HAS JOURNAL ADDRESS -->
+    <aura:if isTrue="{!v.jAddress.Id!=null}">
+        <div class="slds-grid slds-gutters slds-m-around_small">
+            <div>
+                {!v.jAddress.OrderApi__Street__c + ', ' +   v.jAddress.OrderApi__City__c + ', ' + v.jAddress.OrderApi__Province__c + ', ' + v.jAddress.OrderApi__Country__c + ', ' + v.jAddress.OrderApi__Postal_Code__c}
+            </div>
+            <div class=" slds-m-left_medium slds-align_absolute-center">
+                <lightning:button variant="base" label="Edit" value="{!v.jAddress.Id}" onclick="{!c.editAddress}"/>
+            </div>
+        </div>
+<!--        <div class="slds-m-left_small">-->
+<!--        <lightning:formattedAddress-->
+<!--                street="{!{!v.jAddress.OrderApi__Street__c}}"-->
+<!--                city="{!v.jAddress.OrderApi__City__c}"-->
+<!--                country="{!v.jAddress.OrderApi__Country__c}"-->
+<!--                province="{!v.jAddress.OrderApi__Province__c}"-->
+<!--                postalCode="{!v.jAddress.OrderApi__Postal_Code__c}"-->
+<!--                class="slds-text-heading_small"/>-->
+<!--        <lightning:button label="Update Address" variant="brand" onclick="{!c.editAddress}" class="slds-m-top_small"/>-->
+<!--        </div>-->
+        <!-- USER DOESN'T HAVE JOURNAL ADDRESS -->
+        <aura:set attribute="else">
+            <div class="slds-grid slds-gutters slds-m-around_small">
+<!--                <div class="slds-col slds-size_1-of-2">-->
+<!--                    <lightning:input aura:id="primaryAddress" type="radio" label="Use Primary Address" name="primaryAddress" onchange="{!c.saveAddress}" />-->
+<!--                    <div class="slds-m-left_x-large">-->
+<!--                        <lightning:formattedAddress-->
+<!--                                street="{!v.jAddress.OrderApi__Street__c}"-->
+<!--                                city="{!v.jAddress.OrderApi__City__c}"-->
+<!--                                country="{!v.jAddress.OrderApi__Country__c}"-->
+<!--                                province="{!v.jAddress.OrderApi__Province__c}"-->
+<!--                                postalCode="{!v.jAddress.OrderApi__Postal_Code__c}"-->
+<!--                                class="slds-text-heading_small"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="slds-col slds-size_1-of-2">-->
+                    <lightning:button variant="brand" iconName="utility:add" label="Add Journal Address" onclick="{!c.addAddress}"/>
+<!--                </div>-->
+            </div>
+        </aura:set>
+    </aura:if>
+    </aura:if>
+
+    <c:NewAddressModal aura:id="newModal" isOpen="{!v.isOpen}" countryList="{!v.countryList}" contactId="{!v.contactId}"/>
+
+
+
+    <!-- OLD COMPONENT -->
+<!--    <aura:if isTrue="{!v.contactId!=null}">-->
+<!--        <force:recordData aura:id="recordLoader"-->
+<!--                          layoutType="FULL"-->
+<!--                          recordId="{!v.contactId}"-->
+<!--                          targetFields="{!v.simpleRecord}"-->
+<!--                          targetError="{!v.recordError}"-->
+<!--                          mode="EDIT"-->
+<!--                          fields ="Preferred_Address__c, OtherStreet, OtherCountry, OtherStateCode, OtherCity, OtherPostalCode,MailingStreet, MailingCountry, MailingStateCode, MailingPostalCode, MailingCity, Journal_Street__c,Journal_Country__c,Journal_State_Province__c,Journal_City__c,Journal_Zip_Postal_Code__c, Is_Journal_Addr_Same_As_Preferred_Addr__c"-->
+<!--                          recordUpdated="{!c.handleUpdate}"/>-->
+
+<!--        <div class="slds-form-element__legend slds-form-element__label slds-m-bottom_small" style="display:contents;"><abbr class="slds-required">*</abbr>Journal Shipping Address</div>-->
+<!--        <aura:if isTrue="{!not(empty(v.recordError))}">-->
+<!--            <div class="slds-text-color_error slds-text-heading_medium slds-m-left_small">{!v.recordError}</div>-->
+<!--        </aura:if>-->
+<!--        <div class="slds-grid slds-gutters slds-m-top_small">-->
+<!--            <div class="{!v.hasJournalAddr?'slds-hide':'slds-col slds-size_1-of-2'}">-->
+<!--                <lightning:input aura:id="primaryAddress" type="radio" label="Primary Address" name="primaryAddress" value="primary" onchange="{!c.addressTypeChange}" />-->
+<!--                <div class="slds-m-left_x-large">-->
+<!--                    <aura:if isTrue="{!v.simpleRecord.Preferred_Address__c=='Business'}">-->
+<!--                        <lightning:formattedAddress-->
+<!--                                street="{!v.simpleRecord.MailingStreet}"-->
+<!--                                city="{!v.simpleRecord.MailingCity}"-->
+<!--                                country="{!v.simpleRecord.MailingCountry}"-->
+<!--                                province="{!v.simpleRecord.MailingStateCode}"-->
+<!--                                postalCode="{!v.simpleRecord.MailingPostalCode}"-->
+<!--                                class="slds-text-heading_small"/>-->
+<!--                        <aura:set attribute="else">-->
+<!--                            <lightning:formattedAddress-->
+<!--                                    street="{!v.simpleRecord.OtherStreet}"-->
+<!--                                    city="{!v.simpleRecord.OtherCity}"-->
+<!--                                    country="{!v.simpleRecord.OtherCountry}"-->
+<!--                                    province="{!v.simpleRecord.OtherStateCode}"-->
+<!--                                    postalCode="{!v.simpleRecord.OtherPostalCode}"-->
+<!--                                    class="slds-text-heading_small"/>-->
+<!--                        </aura:set>-->
+<!--                    </aura:if>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="slds-col slds-size_1-of-2">-->
+<!--                <lightning:input aura:id="otherAddress" type="radio" label="Other Address" name="otherAddress" value="other" onchange="{!c.addressTypeChange}" class="{!v.hasJournalAddr?'slds-hide':'slds-show'}"/>-->
+<!--                <div class="slds-m-left_x-large">-->
+<!--                <lightning:formattedAddress-->
+<!--                        street="{!v.simpleRecord.Journal_Street__c}"-->
+<!--                        city="{!v.simpleRecord.Journal_City__c}"-->
+<!--                        country="{!v.simpleRecord.Journal_Country__c}"-->
+<!--                        province="{!v.simpleRecord.Journal_State_Province__c}"-->
+<!--                        postalCode="{!v.simpleRecord.Journal_Zip_Postal_Code__c}"-->
+<!--                        class="slds-text-heading_small"/>-->
+<!--                <aura:if isTrue="{!and(v.simpleRecord.Journal_Street__c!=null, v.simpleRecord.Journal_City__c!=null, v.simpleRecord.Journal_Country__c!=null)}">-->
+<!--                    <lightning:button label="Update Address" variant="brand" onclick="{!c.updateJournalAddress}" class="slds-m-top_small"/>-->
+<!--                </aura:if>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        <div class="{!v.isOpen ? 'slds-show': 'slds-hide'}" style="height: 640px;">-->
+<!--            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+<!--                <div class="slds-modal__container">-->
+<!--                    <header class="slds-modal__header">-->
+<!--                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Update Journal Address</h2>-->
+<!--                    </header>-->
+<!--                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">-->
+<!--                        <aura:if isTrue="{!not(v.isLoading)}">-->
+<!--                        <div class="slds-p-horizontal&#45;&#45;small">-->
+<!--                            <lightning:input aura:id="addressField" label="Street" value="{!v.journalAddress.street}" required="true"/>-->
+<!--                            <lightning:input aura:id="addressField" label="City" value="{!v.journalAddress.city}" required="true"/>-->
+<!--                            <lightning:input aura:id="addressField" label="State" value="{!v.journalAddress.state}" />-->
+<!--                            <lightning:input aura:id="addressField" label="Country" value="{!v.journalAddress.country}" required="true"/>-->
+<!--                            <lightning:input label="Postal Code" value="{!v.journalAddress.zip}"/>-->
+<!--                        </div>-->
+<!--                            <aura:set attribute="else">-->
+<!--                               <c:AACRSpinner/>-->
+<!--                            </aura:set>-->
+<!--                        </aura:if>-->
+<!--                    </div>-->
+<!--                    <footer class="slds-modal__footer">-->
+<!--                        <div class="slds-align_absolute-center">-->
+<!--                            <lightning:button label="Cancel" variant="brand" onclick="{!c.cancelModal}" class="slds-p-around_medium"/>-->
+<!--                            <lightning:button label="Save" variant="neutral" onclick="{!c.saveAndClose}" disabled="{!v.isLoading}" class="slds-p-around_medium"/>-->
+<!--                        </div>-->
+<!--                    </footer>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--            <div class="slds-backdrop slds-backdrop_open"></div>-->
+<!--        </div>-->
+<!--    </aura:if>-->
+</aura:component>

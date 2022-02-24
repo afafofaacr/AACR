@@ -1,0 +1,22 @@
+<!--
+ - Created by afaf.awad on 3/1/2021.
+ -->
+
+<aura:component description="EC_ApproveOrderButtom" controller="EC_ReviewEmailController"
+                implements="force:hasRecordId,force:lightningQuickAction,lightning:isUrlAddressable,flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="processing" type="Boolean" description="action is processing" default="false"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card title="Approve/Reject Order" iconName="standard:approval">
+
+        <aura:set attribute="actions">
+            <lightning:button variant="brand" onclick="{!c.goToApproveOrder}"
+                              label="{!v.processing?'Processing...': 'Approve'}" disabled="{!v.processing}"/>
+
+        </aura:set>
+    </lightning:card>
+</aura:component>

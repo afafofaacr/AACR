@@ -1,0 +1,65 @@
+/**
+ * Created by afaf.awad on 2/19/2021.
+ */
+
+.THIS .slds-text-heading_small{
+    font-size: 1.5rem;
+}
+
+.THIS .scheduleLegend{
+    border: none;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.THIS .timeButtons {
+    width : 95%;
+    padding : .4rem;
+    margin-top : .4rem;
+    margin-bottom: .4rem;
+    font-size: 2.25rem;
+}
+
+.THIS .timeSlotInstructions{
+    position: relative;
+    top: 40%;
+    margin:auto;
+}
+
+.THIS .legendAvailable{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+    min-width: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    margin: auto;
+    background-color: rgb(75, 202, 129);
+}
+
+
+.THIS .legendBlocked{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+    min-width: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    margin: auto;
+    background-color:lightgrey;
+}
+
+
+.THIS .legendBooked{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+    min-width: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    margin: auto;
+    background-color:rgb(194, 57, 52);
+}

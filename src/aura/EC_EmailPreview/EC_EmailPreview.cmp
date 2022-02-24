@@ -1,0 +1,26 @@
+<!--
+ - Created by afaf.awad on 2/15/2021.
+ -->
+
+<aura:component description="EC_EmailPreview" controller="EC_EmailPreviewController">
+    <aura:attribute name="emailId" type="String" description="Id of exhibitor email"/>
+    <aura:attribute name="templateBody" type="String" description="body of email template"/>
+
+    <aura:method name="refreshPreview" action="{!c.getTemplatePreview}" description="refreshes email preview with new data"/>
+
+    <lightning:recordEditForm aura:id="emailPreview" recordId="{!v.emailId}" objectApiName="EC_Email__c">
+        <div class="slds-grid slds-text-heading_medium">
+            <strong style="font-size: 1.5rem">Subject: </strong>
+            <lightning:outputField fieldName="Subject__c" variant="label-hidden"/>
+        </div>
+    </lightning:recordEditForm>
+    <div class="slds-box slds-grow" style="min-height: 360px">
+        <aura:if isTrue="{!empty(v.templateBody)}">
+            <h1 class="slds-text-heading_large slds-align_absolute-center emptyEmail"> Type something in email body to see a preview of your email.</h1>
+            <aura:set attribute="else">
+        <aura:unescapedHtml value="{!v.templateBody}"/>
+            </aura:set>
+        </aura:if>
+    </div>
+
+</aura:component>

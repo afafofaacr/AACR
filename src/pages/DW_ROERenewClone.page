@@ -1,0 +1,91 @@
+<apex:page sidebar="false" standardController="Contact" showHeader="false">
+    
+    <script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+    <script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>
+    <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+        <span class="slds-assistive-text">Loading</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+    </div>
+    
+    <script type="text/javascript">
+    sforce.connection.sessionId='{!GETSESSIONID()}';
+    console.log('connection',sforce.connection.sessionId);
+    //sforce.connection.sessionId = '{!$Api.Session_ID}'; 
+    var contactId = '{! Contact.Id}';
+    console.log('contactId'+contactId);
+    var individualMemSubscription = "SELECT Id, OrderApi__Contact__c, OrderApi__Is_Active__c, OrderApi__Account__c, OrderApi__Business_Group__c,OrderApi__Item_Class__c, OrderApi__Entity__c,OrderApi__Subscription_Plan__c FROM OrderApi__Subscription__c WHERE OrderApi__Item_Class__r.Name = 'Individual Memberships' AND OrderApi__Contact__c = '"+contactId+"'";
+    
+    var result = sforce.connection.query(individualMemSubscription);
+    console.log("result", result);  
+    var individualMemSubs = result.getArray("records");    
+    console.log(individualMemSubs);               
+    
+    var subscriptionList = "SELECT Id, OrderApi__Contact__c, OrderApi__Account__c, OrderApi__Item_Class__c, OrderApi__Business_Group__c,OrderApi__Item__c, OrderApi__Entity__c, OrderApi__Is_Active__c, OrderApi__Subscription_Plan__c, OrderApi__Enable_Auto_Renew__c FROM OrderApi__Subscription__c WHERE OrderApi__Contact__c ='"+contactId+"'";
+    var subscriptionResult = sforce.connection.query(subscriptionList);
+    var subscriptionList = subscriptionResult.getArray("records"); 
+    console.log(subscriptionList);
+    
+    var salesOrder = new sforce.SObject("OrderApi__Sales_Order__c");
+    console.log( 'newSalesOrder: ', newSalesOrder ); 
+    var newSalesOrder;
+    
+    if(individualMemSubs.length > 0){
+        
+        if(individualMemSubs[0].OrderApi__Is_Active__c === false){
+            alert('Cannot renew with inactive Subscription Plan');
+        }
+        else{
+            salesOrder.OrderApi__Contact__c = individualMemSubs[0].OrderApi__Contact__c;
+            salesOrder.OrderApi__Account__c = individualMemSubs[0].OrderApi__Account__c;
+            salesOrder.OrderApi__Business_Group__c = individualMemSubs[0].OrderApi__Business_Group__c;
+            salesOrder.OrderApi__Entity__c = individualMemSubs[0].OrderApi__Entity__c;
+            newSalesOrder = sforce.connection.create([salesOrder]);
+            console.log('newSalesOrder',newSalesOrder);
+            
+            if(newSalesOrder.length > 0 && subscriptionList.length > 0){
+                var salesOrderLIList = [];
+                var salesOrderLI;
+                
+                for(var index=0; index<subscriptionList.length;index++ ){
+                    
+                    salesOrderLI = new sforce.SObject("OrderApi__Sales_Order_Line__c");
+                    var subscription = subscriptionList[index];
+                    
+                    salesOrderLI.OrderApi__Sales_Order__c = newSalesOrder[0].Id;
+                    salesOrderLI.OrderApi__Is_Renewal__c = "true";
+                    salesOrderLI.OrderApi__Item__c = subscription.OrderApi__Item__c;
+                    salesOrderLI.OrderApi__Item_Class__c = subscription.OrderApi__Item_Class__c;
+                    salesOrderLI.OrderApi__Subscription__c = subscription.Id;
+                    salesOrderLI.OrderApi__Business_Group__c = subscription.OrderApi__Business_Group__c;
+                    salesOrderLI.OrderApi__Entity__c = subscription.OrderApi__Entity__c;
+                    salesOrderLI.OrderApi__Enable_Auto_Renew__c = subscription.OrderApi__Enable_Auto_Renew__c;
+                    
+                    if(individualMemSubs.length){
+                        salesOrderLI.OrderApi__Subscription_Plan__c = individualMemSubs[0].OrderApi__Subscription_Plan__c;
+                    }
+                    salesOrderLIList.push(salesOrderLI);
+                }
+                if(salesOrderLIList.length > 0){
+                    var newSalesOrderLIList = sforce.connection.create([salesOrderLIList]);
+                    console.log('newSalesOrderLIList',newSalesOrderLIList);
+                }else{
+                    alert('Exception Occured while creating Sales Order LI')
+                }
+            }
+            else{
+                alert('Sales order not Created / No subscriptions for Contact');
+            }
+                
+        }
+        console.log('newSalesOrder[0].Id',newSalesOrder[0].Id);
+        //window.top.location='/'+newSalesOrder[0].Id;
+        //window.location = "{!$Site.Prefix}/" + newSalesOrder[0].Id
+    }else{
+        alert('Subscription do not have Individual Membership type');
+    }
+    
+    
+    </script>
+    
+</apex:page>

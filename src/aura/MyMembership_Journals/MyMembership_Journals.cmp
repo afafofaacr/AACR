@@ -1,0 +1,73 @@
+<!--
+ - Created by lauren.lezberg on 4/21/2021.
+ -->
+
+<aura:component description="MyMembership_Journals" controller="MyMembershipController">
+    <aura:attribute name="contactId" type="Id" description="Current contact Id"/>
+    <aura:attribute name="journals" type="List" description="list of journal subscriptions"/>
+    <aura:attribute name="isLoading" type="Boolean" description="something on component is loading/processing"/>
+    <aura:attribute name="openAddrModal" type="Boolean" description="Open journal address modal" default="false"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <c:AACRSpinner loadingText="Loading Journals..."/>
+        <aura:set attribute="else">
+
+            <lightning:card
+                    class="{!not(empty(v.journals))?'slds-p-around_medium smallCard':'slds-p-around_medium'}">
+                <aura:set attribute="title">
+                    <div class="slds-align_absolute-center ">
+                        <div class="slds-text-heading_large">Journals</div>
+                    </div>
+                </aura:set>
+                <aura:if isTrue="{!not(empty(v.journals))}">
+                    <table class="slds-table slds-m-top_large slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout slds-table_striped">
+                        <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="slds-size_2-of-3" scope="col">
+                                <div class="slds-truncate " title="Journal Name">Journal Name</div>
+                            </th>
+                            <th class="slds-size_1-of-3" scope="col">
+                                <div class="slds-truncate " title="Format">Format</div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <aura:iteration items="{!v.journals}" var="journal">
+                            <tr class="slds-hint-parent">
+                                <td data-label="Journal Name" class="slds-size_2-of-3">
+                                    <div class="slds-truncate ">{!journal.OrderApi__Item__r.Portal_Label__c}</div>
+                                </td>
+                                <td data-label="Format" class="slds-size_1-of-3">
+                                    <div class="slds-truncate">{!journal.OrderApi__Item__r.Association_Journals_Type__c}</div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+                    </table>
+                    <aura:renderIf isTrue="{!v.openAddrModal}">
+                        <c:UpdateJournalAddressModal aura:id="journalAddress" isOpen="{!v.openAddrModal}"/>
+                        <aura:set attribute="else">
+                            <div class="slds-align_absolute-center">
+                                <lightning:button label="Update Journal Address"
+                                                  onclick="{!c.openJournalAddrModal}"
+                                                  variant="brand"/>
+                            </div>
+                        </aura:set>
+                    </aura:renderIf>
+                    <aura:set attribute="else">
+                        <div class=" slds-m-bottom_large"
+                             style="width:70%; display:flex; margin:0 auto; align-items:center;">
+                            <lightning:icon iconName="utility:info_alt" size="medium"/>
+                            <div class="slds-text-heading_medium ">You have no active journal
+                                subscriptions.
+                            </div>
+                        </div>
+                    </aura:set>
+                </aura:if>
+            </lightning:card>
+        </aura:set>
+    </aura:if>
+</aura:component>

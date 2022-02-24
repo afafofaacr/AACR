@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Subscriptions track the activation, expiration, and renewal dates for all Customer Subscriptions.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fieldSets>
+        <fullName>CPBase__MembershipDetails</fullName>
+        <description>Used in Portal Membership History Component</description>
+        <displayedFields>
+            <field>OrderApi__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Item__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Current_Term_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Current_Term_End_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Days_To_Lapse__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>MembershipDetails</label>
+    </fieldSets>
+    <fields>
+        <fullName>CPBase__Hide_In_Portal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the related subscription will not be visible in the portal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the related subscription will not be visible in the portal.</inlineHelpText>
+        <label>Hide In Portal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CPBase__Subscription_Management_Page_Override__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter the page name to be directed upon clicking the Manage button for the subscription&apos;s tile in the member portal&apos;s profile page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the page name to be directed upon clicking the Manage button for the subscription&apos;s tile in the member portal&apos;s profile page.</inlineHelpText>
+        <label>Subscription Management Page Override</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Left__c</fullName>
+        <externalId>false</externalId>
+        <formula>OrderApi__Grace_Period_End_Date__c - TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Left</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delinquency__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OrderApi__Is_Expired__c, CEILING(-OrderApi__Days_To_Lapse__c / 365), 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Delinquency</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Join_Date__c</fullName>
+        <defaultValue>DATE(1900,1,01)</defaultValue>
+        <description>Used to pull month and date of 1/1 into Process Builder.</description>
+        <externalId>false</externalId>
+        <label>Join Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Conditionally Required ** Link to the subscribing Account. Required if the Subscription &quot;Subscribing Entity&quot; is &quot;Account&quot;. Defaults to the same Account assigned to the Sales Order Line that created the Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Conditionally Required ** Link to the subscribing Account. Required if the Subscription &quot;Subscribing Entity&quot; is &quot;Account&quot;. Defaults to the same Account assigned to the Sales Order Line that created the Subscription.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Activated_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The date the Subscription was activated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The date the Subscription was activated.</inlineHelpText>
+        <label>Activated Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Active_Assignments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The count of related Assignments where &quot;Is Active&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The count of related Assignments where &quot;Is Active&quot; is checked.</inlineHelpText>
+        <label>Active Assignments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assignment_Badge_Types_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SYSTEM</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Item__r.OrderApi__Assignment_Badge_Types_CSV__c</formula>
+        <inlineHelpText>SYSTEM</inlineHelpText>
+        <label>SYSTEM</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assignments_Allowed__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Max number of assignments allowed according to related. Rolling up from related Subscription Line&apos;s &quot;Assignments Allowed&quot; filed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Max number of assignments allowed according to related. Rolling up from related Subscription Line&apos;s &quot;Assignments Allowed&quot; filed.</inlineHelpText>
+        <label>Assignments Allowed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Billing_City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Billing City or Contact&apos;s Mailing City, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Billing City or Contact&apos;s Mailing City, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Billing City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Billing_Contact__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account or Contact, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account or Contact, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Billing Contact</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Billing_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Billing Country or Contact&apos;s Mailing Country, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Billing Country or Contact&apos;s Mailing Country, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Billing Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Billing_Postal_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Billing Postal Code or Contact&apos;s Mailing Postal Code, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Billing Postal Code or Contact&apos;s Mailing Postal Code, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Billing Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Billing_State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Billing State or Contact&apos;s Mailing State, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Billing State or Contact&apos;s Mailing State, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Billing State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Billing_Street__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Conditional** Billing Street derives from the Contact Mailing Street or the Account Billing Street when Calculate Billing Details is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Conditional** Billing Street derives from the Contact Mailing Street or the Account Billing Street when Calculate Billing Details is checked.</inlineHelpText>
+        <label>Billing Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to related Business Group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to related Business Group.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Calculate_Billing_Details__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the system will calculate billing details automatically. If entity is &quot;Contact&quot; the mailing address of the contact is used, otherwise the account&apos;s billing address is used. The contact on the order will populate the billing contact field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the system will calculate billing details automatically. If entity is &quot;Contact&quot; the mailing address of the contact is used, otherwise the account&apos;s billing address is used. The contact on the order will populate the billing contact field.</inlineHelpText>
+        <label>Calculate Billing Details</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Calculate_Shipping_Details__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked the system will calculate shipping details automatically. If entity is &quot;Contact&quot; the mailing address of the contact is used, otherwise the account&apos;s shipping address is used. The contact on the subscription will populate the shipping contact field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the system will calculate billing details automatically. If entity is &quot;Contact&quot; the mailing address of the contact is used, otherwise the account&apos;s billing address is used. The contact on the order will populate the billing contact field.</inlineHelpText>
+        <label>Calculate Shipping Details</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Cancelled_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Defaults to the value of today&apos;s date when the Subscription &quot;Is Cancelled&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Defaults to the value of today&apos;s date when the Subscription &quot;Is Cancelled&quot; is checked.</inlineHelpText>
+        <label>Cancelled Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Cancelled_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Select the most appropriate reason for cancelling the Subscription. Required when a Subscription &quot;Status&quot; equals &quot;Cancelled&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Select the most appropriate reason for cancelling the Subscription. Required when a Subscription &quot;Status&quot; equals &quot;Cancelled&quot;.</inlineHelpText>
+        <label>Cancelled Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Price</fullName>
+                    <default>false</default>
+                    <label>Price</label>
+                </value>
+                <value>
+                    <fullName>Usage</fullName>
+                    <default>false</default>
+                    <label>Usage</label>
+                </value>
+                <value>
+                    <fullName>Value</fullName>
+                    <default>false</default>
+                    <label>Value</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Transfer</fullName>
+                    <default>false</default>
+                    <label>Transfer</label>
+                </value>
+                <value>
+                    <fullName>Customer Request</fullName>
+                    <default>false</default>
+                    <label>Customer Request</label>
+                </value>
+                <value>
+                    <fullName>Deceased</fullName>
+                    <default>false</default>
+                    <label>Deceased</label>
+                </value>
+                <value>
+                    <fullName>Resigned</fullName>
+                    <default>false</default>
+                    <label>Resigned</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Conditionally Required ** Link to the subscribing Contact. Required if the Subscription &quot;Subscribing Entity&quot; is &quot;Contact&quot;. Defaults to the same Contact assigned to the Sales Order Line that created the Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Conditionally Required ** Link to the subscribing Contact. Required if the Subscription &quot;Subscribing Entity&quot; is &quot;Contact&quot;. Defaults to the same Contact assigned to the Sales Order Line that created the Subscription.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Current_Term_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The end date (Expiration Date) for the current subscription term.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The end date (Expiration Date) for the current subscription term.</inlineHelpText>
+        <label>Current Term End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Current_Term_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The start date for the current subscription term.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The start date for the current subscription term.</inlineHelpText>
+        <label>Current Term Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Customer_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the subscribing entity record -- either the related Account or Contact.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(OrderApi__Entity__c,&quot;Account&quot;),HYPERLINK(&quot;/&quot; &amp; OrderApi__Account__r.Id, OrderApi__Account__r.Name), HYPERLINK(&quot;/&quot; &amp; OrderApi__Contact__r.Id, OrderApi__Contact__r.FirstName &amp; &quot; &quot; &amp; OrderApi__Contact__r.LastName))</formula>
+        <inlineHelpText>** System Calculated ** Link to the subscribing entity record -- either the related Account or Contact.</inlineHelpText>
+        <label>Customer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Days_To_Lapse__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The number of days until the Subscription will expire.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The number of days until the Subscription will expire.</inlineHelpText>
+        <label>Days to Lapse</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional Subscription description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional Subscription description</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_Auto_Renew__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the subscription will automatically attempt to renew itself by charging the related Payment Method. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the subscription will automatically attempt to renew itself by charging the related Payment Method. Defaults unchecked.</inlineHelpText>
+        <label>Enable Auto Renew</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Entity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Select &quot;Account&quot; if the primary subscriber is the linked Account, otherwise select &quot;Contact&quot;. Defaults to the value of the same field on the Sales Order Line that created the Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Select &quot;Account&quot; if the primary subscriber is the linked Account, otherwise select &quot;Contact&quot;. Defaults to the value of the same field on the Sales Order Line that created the Subscription.</inlineHelpText>
+        <label>Entity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                    <label>Contact</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Expired_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The date the Subscription expires. Automatically calculated from rules defined on the related Subscription Plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The date the Subscription expires. Automatically calculated from rules defined on the related Subscription Plan.</inlineHelpText>
+        <label>Expired Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Grace_Period_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This date is calculated by the Paid Through Date plus the number of days defined on the Subscription Plan&apos;s Grace Period field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This date is calculated by the Paid Through Date plus the number of days defined on the Subscription Plan&apos;s Grace Period field.</inlineHelpText>
+        <label>Grace Period End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__In_Grace_Period__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>OrderApi__Current_Term_End_Date__c &lt; TODAY()&amp;&amp; OrderApi__Grace_Period_End_Date__c &gt;= TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>In Grace Period</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the Subscription is considered &quot;Active&quot;. Defaults checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the Subscription is considered &quot;Active&quot;. Defaults checked.</inlineHelpText>
+        <label>Is Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Cancelled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the system will inactivate all related Subscribers and unassign any related benefits.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the system will inactivate all related Subscribers and unassign any related benefits.</inlineHelpText>
+        <label>Is Cancelled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Expired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked when the Subscription has expired.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked when the Subscription has expired.</inlineHelpText>
+        <label>Is Expired</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Pending__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the Subscription is considered &quot;Pending&quot;. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the Subscription is considered &quot;Pending&quot;. Defaults unchecked.</inlineHelpText>
+        <label>Is Pending</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Suspended__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if the Subscription is suspended. Subscriptions can be suspended to prevent automatic payment via Payment Method on file or to revoke benefits (Badges, etc...) granted by the Subscription Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if the Subscription is suspended. Subscriptions can be suspended to prevent automatic payment via Payment Method on file or to revoke benefits (Badges, etc...) granted by the Subscription Item.</inlineHelpText>
+        <label>Is Suspended</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Upgraded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>RESERVED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>RESERVED</inlineHelpText>
+        <label>RESERVED</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to related Item Class.</inlineHelpText>
+        <label>Item Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Link to the primary &quot;Subscription&quot; Item</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Link to the primary &quot;Subscription&quot; Item</inlineHelpText>
+        <label>Item (Primary)</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Last_Amendment_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The date the Subscription was amended.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The date the Subscription was amended.</inlineHelpText>
+        <label>Last Amendment Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Last_Renewed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The date the Subscription was last renewed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The date the Subscription was last renewed.</inlineHelpText>
+        <label>Last Renewed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Last_System_Run__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** SYSTEM FIELD DO NOT UPDATE **</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** SYSTEM FIELD DO NOT UPDATE **</inlineHelpText>
+        <label>Last System Run</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Line_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Count of related Subscription Lines.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Count of related Subscription Lines.</inlineHelpText>
+        <label>Line Count</label>
+        <summaryForeignKey>OrderApi__Subscription_Line__c.OrderApi__Subscription__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Maximum_Number_of_Assignments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The maximum number of &quot;Assignments&quot; aka &quot;Subscribers&quot; allowed for &quot;Assignment&quot; against the Subscription is derived from the related &quot;Subscription&quot; Item &quot;Maximum Number of Assignments&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The maximum number of &quot;Assignments&quot; aka &quot;Subscribers&quot; allowed for &quot;Assignment&quot; against the Subscription is derived from the related &quot;Subscription&quot; Item &quot;Maximum Number of Assignments&quot; field.</inlineHelpText>
+        <label>zDEPRACATED</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Next_Scheduled_Renewal_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The date the next renewal is scheduled to be processed for the Subscription, defaults to the Current Term End Date. Valid only for Subscriptions where Auto Renew is enabled and a valid payment method is linked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The date the next renewal is scheduled to be processed for the Subscription, defaults to the Current Term End Date. Valid only for Subscriptions where Auto Renew is enabled and a valid payment method is linked.</inlineHelpText>
+        <label>Next Scheduled Renewal Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Paid_Through_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the last active date of the subscription including all subscription renewals.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the last active date of the subscription including all subscription renewals.</inlineHelpText>
+        <label>Paid Through Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Method__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to the related Payment Method on file for the subscribing customer - used for automatic payment charges. Required if the parent Subscription Plan &quot;Require Payment Method&quot; field is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to the related Payment Method on file for the subscribing customer - used for automatic payment charges. Required if the parent Subscription Plan &quot;Require Payment Method&quot; field is checked.</inlineHelpText>
+        <label>Payment Method</label>
+        <referenceTo>OrderApi__Payment_Method__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Renewals__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Rollup Summary field, counts number of Renewals.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Rollup Summary field, counts number of Renewals.</inlineHelpText>
+        <label>Terms</label>
+        <summaryForeignKey>OrderApi__Renewal__c.OrderApi__Subscription__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sales_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The source Sales Order Line that created the Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The source Sales Order Line that created the Subscription.</inlineHelpText>
+        <label>Sales Order Line (Source)</label>
+        <referenceTo>OrderApi__Sales_Order_Line__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Shipping City or Contact&apos;s Mailing City, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Shipping City or Contact&apos;s Mailing City, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Shipping City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Contact__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account or Contact, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account or Contact, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Shipping Contact</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Shipping Country or Contact&apos;s Mailing Country, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Shipping Country or Contact&apos;s Mailing Country, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Shipping Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Postal_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Shipping Postal Code or Contact&apos;s Mailing Postal Code, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Shipping Postal Code or Contact&apos;s Mailing Postal Code, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Shipping Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be updated with the Account&apos;s Shipping State or Contact&apos;s Mailing State, based on &quot;Entity&quot; if not defined on record entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be updated with the Account&apos;s Shipping State or Contact&apos;s Mailing State, based on &quot;Entity&quot; if not defined on record entry.</inlineHelpText>
+        <label>Shipping State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Street__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Conditional** Shipping Street derives from the Contact Mailing Street or the Account Shipping Street when Calculate Shipping Details is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Conditional** Shipping Street derives from the Contact Mailing Street or the Account Shipping Street when Calculate Shipping Details is checked.</inlineHelpText>
+        <label>Shipping Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required ** The status of the Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required ** The status of the Subscription.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <label>Expired</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Suspended</fullName>
+                    <default>false</default>
+                    <label>Suspended</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription_Dues_Total__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The sum of the &quot;Total&quot; field for all related Subscription Lines.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The sum of the &quot;Total&quot; field for all related Subscription Lines.</inlineHelpText>
+        <label>Subscription Dues Total</label>
+        <summarizedField>OrderApi__Subscription_Line__c.OrderApi__Total__c</summarizedField>
+        <summaryForeignKey>OrderApi__Subscription_Line__c.OrderApi__Subscription__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Subscription Plan</label>
+        <referenceTo>OrderApi__Subscription_Plan__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Suspended_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the Subscription was suspended.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the Subscription was suspended.</inlineHelpText>
+        <label>Suspended Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Suspended_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required System Calculated Override ** Select the most appropriate reason for suspending the Subscription. Required when a Subscription status is &quot;Suspended&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required System Calculated Override ** Select the most appropriate reason for suspending the Subscription. Required when a Subscription status is &quot;Suspended&quot;.</inlineHelpText>
+        <label>Suspended Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer Past Due</fullName>
+                    <default>false</default>
+                    <label>Customer Past Due</label>
+                </value>
+                <value>
+                    <fullName>Payment Method Declined</fullName>
+                    <default>false</default>
+                    <label>Payment Method Declined</label>
+                </value>
+                <value>
+                    <fullName>Payment Method Expired</fullName>
+                    <default>false</default>
+                    <label>Payment Method Expired</label>
+                </value>
+                <value>
+                    <fullName>Payment Method Inactive</fullName>
+                    <default>false</default>
+                    <label>Payment Method Inactive</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__System_Refresh__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Refresh Subscription fields with updated data as well as update related Invoices and Scheduled Payments (if applicable) related to the Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Refresh Subscription fields with updated data as well as update related Invoices and Scheduled Payments (if applicable) related to the Subscription.</inlineHelpText>
+        <label>Refresh</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Upgraded_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The date the Subscription was upgraded to another &quot;Subscription&quot; Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The date the Subscription was upgraded to another &quot;Subscription&quot; Item.</inlineHelpText>
+        <label>Upgraded Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Upgraded_Subscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Defines the related upgraded subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Defines the related upgraded subscription.</inlineHelpText>
+        <label>Upgraded Subscription</label>
+        <referenceTo>OrderApi__Subscription__c</referenceTo>
+        <relationshipLabel>Subscriptions</relationshipLabel>
+        <relationshipName>Subscriptions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Valid_Payment_Method__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Valid if the linked Payment Method is valid -- determined by Payment Method expiration and the result (Success or Decline) of the last E-Payment related to the Payment Method. Defaults unchecked if no Payment Method linked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid if the linked Payment Method is valid -- determined by Payment Method expiration and the result (Success or Decline) of the last E-Payment related to the Payment Method. Defaults unchecked if no Payment Method linked.</inlineHelpText>
+        <label>Valid Payment Method</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Subscription</label>
+    <listViews>
+        <fullName>Journal_Subs</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OrderApi__Item__c</field>
+            <operation>contains</operation>
+            <value>journal</value>
+        </filters>
+        <label>Journal Subs</label>
+        <sharedTo>
+            <role>Information_Technology</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OrderApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>OrderApi__Customer_Link__c</columns>
+        <columns>OrderApi__Status__c</columns>
+        <columns>OrderApi__Subscription_Plan__c</columns>
+        <columns>OrderApi__Item__c</columns>
+        <columns>OrderApi__Item_Class__c</columns>
+        <columns>OrderApi__Subscription_Dues_Total__c</columns>
+        <columns>OrderApi__Activated_Date__c</columns>
+        <columns>OrderApi__Last_Renewed_Date__c</columns>
+        <columns>OrderApi__Current_Term_Start_Date__c</columns>
+        <columns>OrderApi__Current_Term_End_Date__c</columns>
+        <columns>OrderApi__Is_Active__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OrderApi__Item__c</field>
+            <operation>contains</operation>
+            <value>affiliate</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>1/10/2018 12:00 AM</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Subscription ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Subscriptions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>OrderApi__Customer_Link__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Item__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Subscription_Plan__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Subscription_Dues_Total__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Current_Term_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Current_Term_End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Days_To_Lapse__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Renewals__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Customer_Link__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Item__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Subscription_Plan__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Days_To_Lapse__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Customer_Link__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Item__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Subscription_Plan__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Days_To_Lapse__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>OrderApi__Customer_Link__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Item__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Subscription_Plan__c</searchFilterFields>
+        <searchResultsAdditionalFields>OrderApi__Customer_Link__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Item__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Subscription_Plan__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Enable_Auto_Renew__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Days_To_Lapse__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Renewals__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>OrderApi__Amend_Subscription</fullName>
+        <availability>online</availability>
+        <description>This button creates the necessary sales order and sales order lines required to amend your subscription.  The button also redirects you to a page to make the necessary amendments to the subscription.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Amend Subscription</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot; )}
+
+var connection = sforce.connection;
+
+var newOrder= new sforce.SObject(&quot;{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Sales_Order__c&quot;);
+newOrder.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Contact__c = &quot;{!OrderApi__Subscription__c.OrderApi__ContactId__c}&quot;;
+newOrder.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Account__c = &quot;{!OrderApi__Subscription__c.OrderApi__AccountId__c}&quot;;
+newOrder.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Entity__c = &quot;{!OrderApi__Subscription__c.OrderApi__Entity__c}&quot;;
+result = sforce.connection.create([newOrder]);
+
+var newLine= new sforce.SObject(&quot;{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Sales_Order_Line__c&quot;);
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Sales_Order__c = result[0].id;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Is_Renewal__c = &quot;false&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Is_Amendment__c = &quot;true&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Price_Override__c = &quot;true&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Sale_Price__c = &quot;0&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Item__c = &quot;{!OrderApi__Subscription__c.OrderApi__ItemId__c}&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Subscription__c = &quot;{!OrderApi__Subscription__c.Id}&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Entity__c = &quot;{!OrderApi__Subscription__c.OrderApi__Entity__c}&quot;;
+result2 = sforce.connection.create([newLine]);
+
+window.location = &quot;{!$Site.Prefix}/&quot; + result[0].id;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>OrderApi__Renew</fullName>
+        <availability>online</availability>
+        <description>Creates a Sales Order, Sales Order Lines automatically and redirects page to Sales Order.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Renew</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot; )}
+
+var connection = sforce.connection;
+var myquery = &quot;SELECT Id, {!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Is_Active__c FROM {!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Subscription_Plan__c WHERE Id = &apos;{!OrderApi__Subscription__c.OrderApi__Subscription_PlanId__c}&apos;&quot;;
+result = sforce.connection.query(myquery);
+records = result.getArray(&quot;records&quot;);
+if (records[0] &amp;&amp; records[0].{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Is_Active__c === &apos;false&apos;) {
+    alert(&apos;Cannot renew with inactive Subscription Plan&apos;);
+}
+else {
+var newOrder= new sforce.SObject(&quot;{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Sales_Order__c&quot;);
+newOrder.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Contact__c = &quot;{!OrderApi__Subscription__c.OrderApi__ContactId__c}&quot;;
+newOrder.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Account__c = &quot;{!OrderApi__Subscription__c.OrderApi__AccountId__c}&quot;;
+newOrder.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Business_Group__c = &quot;{!OrderApi__Subscription__c.OrderApi__Business_GroupId__c}&quot;;
+newOrder.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Entity__c = &quot;{!OrderApi__Subscription__c.OrderApi__Entity__c}&quot;;
+result = sforce.connection.create([newOrder]);
+
+var newLine= new sforce.SObject(&quot;{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Sales_Order_Line__c&quot;);
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Sales_Order__c = result[0].id;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Is_Renewal__c = &quot;true&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Item__c = &quot;{!OrderApi__Subscription__c.OrderApi__ItemId__c}&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Subscription__c = &quot;{!OrderApi__Subscription__c.Id}&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Business_Group__c = &quot;{!OrderApi__Subscription__c.OrderApi__Business_GroupId__c}&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Item_Class__c = &quot;{!OrderApi__Subscription__c.OrderApi__Item_ClassId__c}&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Entity__c = &quot;{!OrderApi__Subscription__c.OrderApi__Entity__c}&quot;;
+newLine.{!$Setup.OrderApi__App_Config__c.OrderApi__Namespace_Prefix__c}Enable_Auto_Renew__c = &quot;{!OrderApi__Subscription__c.OrderApi__Enable_Auto_Renew__c}&quot;;
+result2 = sforce.connection.create([newLine]);
+
+window.location = &quot;{!$Site.Prefix}/&quot; + result[0].id;
+        }</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ROE_Renew</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>ROE Renew</masterLabel>
+        <openType>newWindow</openType>
+        <page>DW_ROERenew</page>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <width>500</width>
+    </webLinks>
+</CustomObject>

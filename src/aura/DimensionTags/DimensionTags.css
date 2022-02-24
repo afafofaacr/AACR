@@ -1,0 +1,20 @@
+/**
+ * Created by afaf.awad on 5/26/2021.
+ */
+
+/*.THIS div.slds-card__header.slds-grid{*/
+/*    !*background-color: #02A2E6;*!*/
+/*    margin: 5px 9px 0 9px;*/
+/*    !*padding-bottom: 8px;*!*/
+/*    border-radius: .25rem ;*/
+/*}*/
+
+.THIS .slds-accordion{
+    background-color: #f3f2f2;
+    margin: 0 .5rem 0 .5rem;
+    /*position: unset;*/
+}
+
+.THIS div.slds-no-flex{
+    max-height: 3rem;
+}

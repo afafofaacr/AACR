@@ -1,0 +1,22 @@
+<!--
+ - Created by lauren.lezberg on 6/10/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>JP_FileUpload</code> component is a custom file upload component that works with LightningOut.
+            The component takes a single file where the type is included in the <code>acceptedFileTypes</code> list.
+            Once the file is processed and all information is validated, it uploads the file to salesforce and associates it to the specified <code>recordId</code>.
+        </p>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>Once the file is uploaded, it disables the file input component so no more files can be uploaded. The uploaded file name appears next to the upload input.</p>
+        <p>
+            The file can be removed by clicking the close button to the right of the file name after upload.
+            Removing a file, deletes the file from Salesforce, clears the <code>FileList</code> attribute and re-enables the upload component.
+        </p>
+    </aura:description>
+    <aura:example name="JP_FileUpload" ref="c:JP_FileUpload" label="JP_FileUpload">
+        Example for JP_FileUpload
+    </aura:example>
+</aura:documentation>

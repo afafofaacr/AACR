@@ -1,0 +1,1969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Items store all products, services and funds an organization uses to generate revenue.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AC_Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>AC Event</label>
+        <referenceTo>BR_Event__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Association_Journals_Type__c</fullName>
+        <description>Classify association journals in Online only or Print. Originally created in UATF by Fonteva and recreated by JR.</description>
+        <externalId>false</externalId>
+        <label>Association Journals Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Online Only</fullName>
+                    <default>false</default>
+                    <label>Online Only</label>
+                </value>
+                <value>
+                    <fullName>Print &amp; Online</fullName>
+                    <default>false</default>
+                    <label>Print &amp; Online</label>
+                </value>
+                <value>
+                    <fullName>Both</fullName>
+                    <default>false</default>
+                    <label>Both</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Default_Selected_In_Join__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Default Selected In Join</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Eligible_Nominator_Membership__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Eligible Nominator Membership</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Event.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Schedule_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to Schedule Item (Circular Reference) do not manually update.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to Schedule Item (Circular Reference) do not manually update.</inlineHelpText>
+        <label>Schedule Item</label>
+        <referenceTo>EventApi__Schedule_Item__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sponsor_Package__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the sponsor package that reflects the configurations of this Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to the sponsor package that reflects the configurations of this Item.</inlineHelpText>
+        <label>Sponsor Package</label>
+        <referenceTo>EventApi__Sponsor_Package__c</referenceTo>
+        <relationshipLabel>DO NOT DISPLAY</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to Ticket Type (Circular Reference) do not manually update.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to Ticket Type (Circular Reference) do not manually update.</inlineHelpText>
+        <label>Ticket Type</label>
+        <referenceTo>EventApi__Ticket_Type__c</referenceTo>
+        <relationshipLabel>DO NOT DISPLAY</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Fon_Association_Journal_Type__c</fullName>
+        <description>Classify association journals in Online only or Print</description>
+        <externalId>false</externalId>
+        <label>Association Journals Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Online Only</fullName>
+                    <default>false</default>
+                    <label>Online Only</label>
+                </value>
+                <value>
+                    <fullName>Print &amp; Online</fullName>
+                    <default>false</default>
+                    <label>Print &amp; Online</label>
+                </value>
+                <value>
+                    <fullName>Both</fullName>
+                    <default>false</default>
+                    <label>Both</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fon_Display_Name_On_Renewal__c</fullName>
+        <description>Journals name need to display on renewal VF page</description>
+        <externalId>false</externalId>
+        <label>Display Name On Renewal</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Future_Income_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>GL account for purchases made in the current year that apply to next year</description>
+        <externalId>false</externalId>
+        <label>Future Income Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Future Income Account)</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Hide_In_Join__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hide In Join</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>International_Shipping_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>International Shipping Item</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>$Source.OrderApi__Item_Class__c</field>
+                <operation>equals</operation>
+                <value>a111I0000022dBxQAI</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Shipping Items</relationshipLabel>
+        <relationshipName>Shipping_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_Active_Membership_Type__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Active Membership Type?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Complimentary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Defines complimentary items to apply split revenue</description>
+        <externalId>false</externalId>
+        <label>Is Complimentary</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Optional_Item__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines if the item will display during the JP and Dues renewal as an optional item to purchase.</inlineHelpText>
+        <label>Is Optional Item</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Journal_Location_URL__c</fullName>
+        <description>Open access journal URL</description>
+        <externalId>false</externalId>
+        <label>Journal Location URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Managed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is item type managed or unmanaged</description>
+        <externalId>false</externalId>
+        <label>Managed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__AR_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Identifies the GL Account used for A/R transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the GL Account used for A/R transactions.</inlineHelpText>
+        <label>A/R Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (A/R Account)</relationshipLabel>
+        <relationshipName>Items_AR_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Adjustment_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The debit account to use when posting invoice adjustments to invoices that have already posted to A/R.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The debit account to use when posting invoice adjustments to invoices that have already posted to A/R.</inlineHelpText>
+        <label>Adjustment Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Sales Adjustment Accounts)</relationshipLabel>
+        <relationshipName>Items2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assign_to_Item__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Derived from parent Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Derived from parent Item Class.</inlineHelpText>
+        <label>Assign to Item</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assignment_Badge_Types_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SYSTEM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SYSTEM</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assignment_SObject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The API name of the custom object to create when a &quot;Assignable&quot; Item is purchased. Automatically calculated from the &quot;Assignment SObject&quot; field on the parent Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The API name of the custom object to create when a &quot;Assignable&quot; Item is purchased. Automatically calculated from the &quot;Assignment SObject&quot; field on the parent Item Class.</inlineHelpText>
+        <label>Assignment SObject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assignments_Display_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The label to display in the wizard for the step related to assigning people to a subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The label to display in the wizard for the step related to assigning people to a subscription.</inlineHelpText>
+        <label>Assignments Display Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Items can be related to Business Groups to separate business lines and/or legal entities on transactional (sales) and financial reports.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Items can be related to Business Groups to separate business lines and/or legal entities on transactional (sales) and financial reports.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The cost per unit for the item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The cost per unit for the item.</inlineHelpText>
+        <label>Item Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Defer_Revenue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the deferred revenue recognition rules will be considered when posting transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the deferred revenue recognition rules will be considered when posting transactions.</inlineHelpText>
+        <label>Defer Revenue</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Deferred_Revenue_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deferred Revenue Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Deferred Revenue Account)</relationshipLabel>
+        <relationshipName>Items1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Deferred_Revenue_Term__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deferred Revenue Term (In Months)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Product description.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product description.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Disable_Price_Rules__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the system will not create Price Rules for the Item and will not attempt to auto-calculate the price for the Item when it is added to a Sales Order, Invoice, or Receipt. Default unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the system will not create Price Rules for the Item and will not attempt to auto-calculate the price for the Item when it is added to a Sales Order, Invoice, or Receipt. Default unchecked.</inlineHelpText>
+        <label>Disable Price Rules</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Disable_Scheduling__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Disables scheduling when you buy this item</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disables scheduling when you buy this item</inlineHelpText>
+        <label>Disable Scheduling</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Discount_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account to debit when discounting a sale related to the Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account to debit when discounting a sale related to the Item.</inlineHelpText>
+        <label>Discount Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Discount Account)</relationshipLabel>
+        <relationshipName>Discount_Account_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Display_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The name of the Item as you would like it to display when published to customers. Defaults to the same value of the &quot;Item Name&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The name of the Item as you would like it to display when published to customers. Defaults to the same value of the &quot;Item Name&quot; field.</inlineHelpText>
+        <label>Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Download_File_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Reference to the file location related to this downloadable item</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Reference to the file location related to this downloadable item</inlineHelpText>
+        <label>Download File Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Download_File_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Defines to the file name of related to this downloadable item</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Defines to the file name of related to this downloadable item</inlineHelpText>
+        <label>Download File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Download_File_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Reference to the file type, related to this downloadable item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Reference to the file type, related to this downloadable item.</inlineHelpText>
+        <label>Download File Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>avi</fullName>
+                    <default>false</default>
+                    <label>avi</label>
+                </value>
+                <value>
+                    <fullName>bmp</fullName>
+                    <default>false</default>
+                    <label>bmp</label>
+                </value>
+                <value>
+                    <fullName>csv</fullName>
+                    <default>false</default>
+                    <label>csv</label>
+                </value>
+                <value>
+                    <fullName>doc</fullName>
+                    <default>false</default>
+                    <label>doc</label>
+                </value>
+                <value>
+                    <fullName>docx</fullName>
+                    <default>false</default>
+                    <label>docx</label>
+                </value>
+                <value>
+                    <fullName>flv</fullName>
+                    <default>false</default>
+                    <label>flv</label>
+                </value>
+                <value>
+                    <fullName>gif</fullName>
+                    <default>false</default>
+                    <label>gif</label>
+                </value>
+                <value>
+                    <fullName>jpg</fullName>
+                    <default>false</default>
+                    <label>jpg</label>
+                </value>
+                <value>
+                    <fullName>log</fullName>
+                    <default>false</default>
+                    <label>log</label>
+                </value>
+                <value>
+                    <fullName>mp4</fullName>
+                    <default>false</default>
+                    <label>mp4</label>
+                </value>
+                <value>
+                    <fullName>mpg</fullName>
+                    <default>false</default>
+                    <label>mpg</label>
+                </value>
+                <value>
+                    <fullName>pdf</fullName>
+                    <default>false</default>
+                    <label>pdf</label>
+                </value>
+                <value>
+                    <fullName>png</fullName>
+                    <default>false</default>
+                    <label>png</label>
+                </value>
+                <value>
+                    <fullName>psd</fullName>
+                    <default>false</default>
+                    <label>psd</label>
+                </value>
+                <value>
+                    <fullName>swf</fullName>
+                    <default>false</default>
+                    <label>swf</label>
+                </value>
+                <value>
+                    <fullName>tar</fullName>
+                    <default>false</default>
+                    <label>tar</label>
+                </value>
+                <value>
+                    <fullName>thm</fullName>
+                    <default>false</default>
+                    <label>thm</label>
+                </value>
+                <value>
+                    <fullName>tif</fullName>
+                    <default>false</default>
+                    <label>tif</label>
+                </value>
+                <value>
+                    <fullName>txt</fullName>
+                    <default>false</default>
+                    <label>txt</label>
+                </value>
+                <value>
+                    <fullName>wmv</fullName>
+                    <default>false</default>
+                    <label>wmv</label>
+                </value>
+                <value>
+                    <fullName>xl</fullName>
+                    <default>false</default>
+                    <label>xl</label>
+                </value>
+                <value>
+                    <fullName>xls</fullName>
+                    <default>false</default>
+                    <label>xls</label>
+                </value>
+                <value>
+                    <fullName>xlsx</fullName>
+                    <default>false</default>
+                    <label>xlsx</label>
+                </value>
+                <value>
+                    <fullName>xml</fullName>
+                    <default>false</default>
+                    <label>xml</label>
+                </value>
+                <value>
+                    <fullName>zip</fullName>
+                    <default>false</default>
+                    <label>zip</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__EAN__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An EAN (European Article Number) is a unique 13-digit Global Trade Item Number for identifying non-book products in Europe.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An EAN (European Article Number) is a bar code symbology consisting of a unique 13-digit Global Trade Item Number for identifying non-book products in Europe.</inlineHelpText>
+        <label>EAN</label>
+        <length>13</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Item will only be made available to purchase when the purchasing Contact or Account meets the criteria set in the &quot;Access Permissions&quot; related list. Unchecked by default.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Item will only be made available to purchase when the purchasing Contact or Account meets the criteria set in the &quot;Access Permissions&quot; related list. Unchecked by default.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** When checked, the Item can be assigned to Contacts indicating benefit or ownership over goods and services. Automatically calculated based on the parent Item Class &quot;Type&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** When checked, the Item can be assigned to Contacts indicating benefit or ownership over goods and services. Automatically calculated based on the parent Item Class &quot;Type&quot;.</inlineHelpText>
+        <label>Enable Assignments</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_Shipping__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables the shipping for related item</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Once this checkbox is checked, system will look for the apporiate shipping rate to apply.</inlineHelpText>
+        <label>Enable Shipping</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Features_List__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter a list of features for display. Each feature should be separated by a line break</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a list of features for display. Each feature should be separated by a line break</inlineHelpText>
+        <label>Features List</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Flex_Day_of_the_Month__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Flex Day of the Month</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related item interview form.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related item interview form.</inlineHelpText>
+        <label>Interview Form</label>
+        <referenceTo>PagesApi__Form__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__ISBN__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An ISBN (International Standard Book Number) is a unique 10 or 13-digit Global Trade Item Number used to identify books and publications.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An ISBN (International Standard Book Number) is a unique 10 or 13-digit Global Trade Item Number used to identify books and publications.</inlineHelpText>
+        <label>ISBN</label>
+        <length>13</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Image_Path__c</fullName>
+        <defaultValue>&quot;https://package-assets.s3.amazonaws.com/master/emerald/img/placeholders/item.png&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>URL path of the image you want to display for this item</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL path of the image you want to display for this item</inlineHelpText>
+        <label>Image URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Income_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The credit account to use when posting revenue in a A/R transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The credit account to use when posting revenue in a A/R transaction.</inlineHelpText>
+        <label>Income Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Income Account)</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Interview_Form_Display_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The label to display in the wizard for the step related to completing the interview form questions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The label to display in the wizard for the step related to completing the interview form questions.</inlineHelpText>
+        <label>Interview Form Display Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice_Payment_Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</inlineHelpText>
+        <label>Payment Priority</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Item is considered available for sale and will be made available for selection against Invoice, Sales Order, Receipt, and EPayment Lines. Defaults checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Item is considered available for sale and will be made available for selection against Invoice, Sales Order, Receipt, and EPayment Lines. Defaults checked.</inlineHelpText>
+        <label>Is Active</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Contribution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable contribution (donation) related controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable contribution (donation) related controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Contribution</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Default_Shipping_Rate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checkbox to make this the Default Shipping Rate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the checkbox to make this the Default Shipping Rate. This default is used when there is no other applicable rate for an item that requires shipping.</inlineHelpText>
+        <label>Is Default Shipping Rate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Default_Tax_Rate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Select this checkbox when using the same tax rate for items regardless of the purchaser&apos;s locale.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this checkbox when using the same tax rate for items regardless of the purchaser&apos;s locale.</inlineHelpText>
+        <label>Is Default Tax Rate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Downloadable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable downloadable specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable downloadable specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Downloadable</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable event specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable event specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Event</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Inventoried__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable Inventoried specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable Inventoried specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Inventoried</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Publication__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable publication specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable publication specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Publication</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable service specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable service specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Service</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Shipping_Rate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checkbox to create a Shipping Rate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the checkbox to create a Shipping Rate.</inlineHelpText>
+        <label>Is Shipping Rate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Subscription__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable Subscription specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable Subscription specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Subscription</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Tax_Deductible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Check if the item is a tax deductible donation. The cost per unit will drive the tax deductible amount on the sales order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if the item is a tax deductible donation. The cost per unit will drive the tax deductible amount on the sales order.</inlineHelpText>
+        <label>Is Tax Deductible</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Tax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Identifies the Item to be used as a taxes rate to be applied to taxable items.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the Item to be used as a taxes rate to be applied to taxable items.</inlineHelpText>
+        <label>Is Tax</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Taxable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable tax specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable tax specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Taxable</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to related Item Class</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to related Item Class</inlineHelpText>
+        <label>Item Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Weight_UOM__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** The UOM (Unit of Measure) used to calculate the value of the &quot;Item Weight&quot; field. Required when &quot;Requires Shipping&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** The UOM (Unit of Measure) used to calculate the value of the &quot;Item Weight&quot; field. Required when &quot;Requires Shipping&quot; is checked.</inlineHelpText>
+        <label>Item Weight UOM</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Gram</fullName>
+                    <default>false</default>
+                    <label>Gram</label>
+                </value>
+                <value>
+                    <fullName>Kilogram</fullName>
+                    <default>false</default>
+                    <label>Kilogram</label>
+                </value>
+                <value>
+                    <fullName>Milligram</fullName>
+                    <default>false</default>
+                    <label>Milligram</label>
+                </value>
+                <value>
+                    <fullName>Ounce</fullName>
+                    <default>false</default>
+                    <label>Ounce</label>
+                </value>
+                <value>
+                    <fullName>Pound</fullName>
+                    <default>false</default>
+                    <label>Pound</label>
+                </value>
+                <value>
+                    <fullName>License</fullName>
+                    <default>false</default>
+                    <label>License</label>
+                </value>
+                <value>
+                    <fullName>Subscriber</fullName>
+                    <default>false</default>
+                    <label>Subscriber</label>
+                </value>
+                <value>
+                    <fullName>Member</fullName>
+                    <default>false</default>
+                    <label>Member</label>
+                </value>
+                <value>
+                    <fullName>Ticket</fullName>
+                    <default>false</default>
+                    <label>Ticket</label>
+                </value>
+                <value>
+                    <fullName>Seat</fullName>
+                    <default>false</default>
+                    <label>Seat</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** The weight of one Item unit. Required if &quot;Requires Shipping&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** The weight of one Item unit. Required if &quot;Requires Shipping&quot; is checked.</inlineHelpText>
+        <label>Item Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Line_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The description for the item as it should appear on related receipts and invoices. This field is limited to 255 characters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The description for the item as it should appear on related receipts and invoices. This field is limited to 255 characters.</inlineHelpText>
+        <label>Line Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Maximum_Number_of_Assignments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** If &quot;Restrict Number of Assignments&quot; is checked, a maximum number of assignments must be defined.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** If &quot;Restrict Number of Assignments&quot; is checked, a maximum number of assignments must be defined.</inlineHelpText>
+        <label>Maximum Number of Assignments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Maximum_Number_of_Downloads__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** The value of this field will be used to restrict the number of times a customer can access a downloadable file via the API. Valid for &quot;Is Downloadable&quot; Items. Required when &quot;Restrict Number of Downloads&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** The value of this field will be used to restrict the number of times a customer can access a downloadable file via the API. Valid for &quot;Is Downloadable&quot; Items. Required when &quot;Restrict Number of Downloads&quot; is checked.</inlineHelpText>
+        <label>Maximum Number of Downloads</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Maximum_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Set the high end of the range of item values this shipping rate applies to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set the high end of the range of item values this shipping rate applies to.</inlineHelpText>
+        <label>Maximum Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Maximum_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the high end of the range of item weights this shipping rate applies to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set the high end of the range of item weights this Shipping Rate applies to.</inlineHelpText>
+        <label>Maximum Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Minimum_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Set the low end of the range of item values this shipping rate applies to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set the low end of the range of item values this shipping rate applies to.</inlineHelpText>
+        <label>Minimum Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Minimum_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the low end of the range of item weights this shipping rate applies to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set the low end of the range of item weights this Shipping Rate applies to.</inlineHelpText>
+        <label>Minimum Weight</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Not_For_Individual_Sale__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Item will be restricted to only being included in sales as part of a Package Item. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Item will be restricted to only being included in sales as part of a Package Item. Defaults unchecked.</inlineHelpText>
+        <label>Not For Individual Sale</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Package_Items__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field aggregates the total number of package items.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field aggregates the total number of package items.</inlineHelpText>
+        <label>Package Items</label>
+        <summaryForeignKey>OrderApi__Package_Item__c.OrderApi__Package__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The default price for the item will be used to automatically create the default price rule which can only be edited by updating the price of the item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The default price for the item will be used to automatically create the default price rule which can only be edited by updating the price of the item.</inlineHelpText>
+        <label>Item Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Refund_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account to debit when refunding/crediting customers who have purchased this Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account to debit when refunding/crediting customers who have purchased this Item.</inlineHelpText>
+        <label>Refund/Credit Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Refund_Account)</relationshipLabel>
+        <relationshipName>Refund_Account_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Require_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, a user will be unable to complete a sale for an Item until all assignments available have been entered. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, a user will be unable to complete a sale for an Item until all assignments available have been entered. Defaults unchecked.</inlineHelpText>
+        <label>Require Assignments</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Require_PreAuthorized_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** Used with extended applications ** By checking this field, purchasing this item will required pre-authorization before being charged by a subsequent action.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Used with extended applications ** By checking this field, purchasing this item will required pre-authorization before being charged by a subsequent action.</inlineHelpText>
+        <label>Require PreAuthorized Payment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Require_Shipping__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable delivery specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable delivery specific controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Require Shipping</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Required_Package_Items__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field aggregates the total number of required package items needed to fulfill a sales order with this item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field aggregates the total number of required package items needed to fulfill a sales order with this item.</inlineHelpText>
+        <label>Required Package Items</label>
+        <summaryFilterItems>
+            <field>OrderApi__Package_Item__c.OrderApi__Is_Required__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>OrderApi__Package_Item__c.OrderApi__Minimum_Quantity__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>OrderApi__Package_Item__c.OrderApi__Package__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Restrict_Number_of_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the system will limit the number of assignments allowed based on the value of the &quot;Maximum Number of Assignments&quot; field. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the system will limit the number of assignments allowed based on the value of the &quot;Maximum Number of Assignments&quot; field. Defaults unchecked.</inlineHelpText>
+        <label>Restrict Number of Assignments</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Restrict_Number_of_Downloads__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the customer will have access restricted if the downloadable file has been accessed more than the allowed amount defined in the &quot;Maximum Number of Downloads&quot; field. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the customer will have access restricted if the downloadable file has been accessed more than the allowed amount defined in the &quot;Maximum Number of Downloads&quot; field. Defaults unchecked.</inlineHelpText>
+        <label>Restrict Number of Downloads</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Revenue_Recognition_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Revenue_Recognition_Rule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Rule</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Over Time</fullName>
+                    <default>false</default>
+                    <label>Over Time</label>
+                </value>
+                <value>
+                    <fullName>Specific Date</fullName>
+                    <default>false</default>
+                    <label>Specific Date</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Revenue_Recognition_Term_Rule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Term Rule</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Partial Credit</fullName>
+                    <default>false</default>
+                    <label>No Partial Credit</label>
+                </value>
+                <value>
+                    <fullName>Flex Day</fullName>
+                    <default>false</default>
+                    <label>Flex Day</label>
+                </value>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__SKU__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A SKU (Stock Keeping Unit) is a unique Item identifier that references attributes associated with the Item and that distinguish it from all other Items primarily used for inventory control and management.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A SKU (Stock Keeping Unit) is a unique Item identifier that references attributes associated with the Item and that distinguish it from all other Items primarily used for inventory control and management.</inlineHelpText>
+        <label>SKU</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Method__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to select a Delivery Method associated with this rate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Delivery Method associated with this rate.</inlineHelpText>
+        <label>Delivery Method</label>
+        <referenceTo>OrderApi__Shipping_Method__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Region__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to select the Shipping Region associated with this rate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Shipping Region associated with this rate.</inlineHelpText>
+        <label>Shipping Region</label>
+        <referenceTo>OrderApi__Shipping_Region__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription_Plan_Display_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The label to display in the wizard for the step related to selecting a subscription plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The label to display in the wizard for the step related to selecting a subscription plan.</inlineHelpText>
+        <label>Subscription Plan Display Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Tax_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Populate this field for an item that needs to apply a tax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate this field for an item that needs to apply a tax.</inlineHelpText>
+        <label>Tax Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Tax Items</relationshipLabel>
+        <relationshipName>Tax_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Tax_Locale__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Links the Item to the tax locale.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Links the Item to the tax locale.</inlineHelpText>
+        <label>Tax Locale</label>
+        <referenceTo>OrderApi__Tax_Locale__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Tax_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The rate to be used to calculate the tax amount assigned to taxable items.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The rate to be used to calculate the tax amount assigned to taxable items.</inlineHelpText>
+        <label>Tax Percent</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__UPC__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A UPC (Universal Product Code) is a 13 digit catalog number uniquely assigned to an Item required to generate UPC barcodes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A UPC (Universal Product Code) is a 13 digit catalog number uniquely assigned to an Item required to generate UPC barcodes.</inlineHelpText>
+        <label>UPC</label>
+        <length>12</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Portal_Label__c</fullName>
+        <description>Used to display the public label name of a Journal in Portal.</description>
+        <externalId>false</externalId>
+        <label>Portal Label</label>
+        <length>150</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Item_Class_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Item Class Name</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Item_Class__r.Name</formula>
+        <inlineHelpText>**System Calculated** Item Class Name</inlineHelpText>
+        <label>SYSTEM</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Show_In_Portal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Display Item as selectable in portal</description>
+        <externalId>false</externalId>
+        <label>Show In Portal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Item</label>
+    <listViews>
+        <fullName>Buy_up_Journal_View</fullName>
+        <columns>OrderApi__Item_Class__c</columns>
+        <columns>NAME</columns>
+        <columns>OrderApi__Price__c</columns>
+        <columns>OrderApi__Is_Active__c</columns>
+        <columns>OrderApi__Is_Subscription__c</columns>
+        <columns>OrderApi__Is_Taxable__c</columns>
+        <columns>OrderApi__Income_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OrderApi__Item_Class__c</field>
+            <operation>equals</operation>
+            <value>Journal Subscriptions</value>
+        </filters>
+        <label>Buy-up Journal View</label>
+    </listViews>
+    <listViews>
+        <fullName>Complimentary_Journal_View</fullName>
+        <columns>OrderApi__Item_Class__c</columns>
+        <columns>NAME</columns>
+        <columns>OrderApi__Price__c</columns>
+        <columns>OrderApi__Is_Active__c</columns>
+        <columns>OrderApi__Is_Subscription__c</columns>
+        <columns>OrderApi__Is_Taxable__c</columns>
+        <columns>OrderApi__Income_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OrderApi__Item_Class__c</field>
+            <operation>contains</operation>
+            <value>Complimentary</value>
+        </filters>
+        <label>Complimentary Journal View</label>
+    </listViews>
+    <listViews>
+        <fullName>Event_Ticket_View</fullName>
+        <columns>EventApi__Event__c</columns>
+        <columns>NAME</columns>
+        <columns>EventApi__Ticket_Type__c</columns>
+        <columns>OrderApi__Price__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OrderApi__Item_Class__c</field>
+            <operation>contains</operation>
+            <value>Ticket Class</value>
+        </filters>
+        <label>Event Ticket View</label>
+    </listViews>
+    <listViews>
+        <fullName>Membership_View</fullName>
+        <columns>OrderApi__Item_Class__c</columns>
+        <columns>NAME</columns>
+        <columns>OrderApi__Price__c</columns>
+        <columns>OrderApi__Is_Active__c</columns>
+        <columns>OrderApi__Is_Subscription__c</columns>
+        <columns>OrderApi__Is_Taxable__c</columns>
+        <columns>OrderApi__Income_Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OrderApi__Item_Class__c</field>
+            <operation>contains</operation>
+            <value>membership</value>
+        </filters>
+        <filters>
+            <field>OrderApi__Item_Class__c</field>
+            <operation>notContain</operation>
+            <value>legacy</value>
+        </filters>
+        <label>Membership View</label>
+        <sharedTo>
+            <role>Information_Technology</role>
+            <role>Membership_Department</role>
+            <role>System_Administrator</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>OrderApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>OrderApi__Item_Class__c</columns>
+        <columns>OrderApi__Business_Group__c</columns>
+        <columns>OrderApi__Income_Account__c</columns>
+        <columns>OrderApi__Cost__c</columns>
+        <columns>OrderApi__Price__c</columns>
+        <columns>OrderApi__Is_Active__c</columns>
+        <columns>Is_Complimentary__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Working_Groups_View</fullName>
+        <columns>OrderApi__Item_Class__c</columns>
+        <columns>NAME</columns>
+        <columns>OrderApi__Is_Active__c</columns>
+        <columns>OrderApi__Is_Subscription__c</columns>
+        <columns>OrderApi__Is_Taxable__c</columns>
+        <columns>OrderApi__Price__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OrderApi__Item_Class__c</field>
+            <operation>contains</operation>
+            <value>Working Groups</value>
+        </filters>
+        <label>Working Groups View</label>
+        <sharedTo>
+            <role>Information_Technology</role>
+            <role>System_Administrator</role>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Item Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Items</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>OrderApi__SKU__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Item_Class__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Business_Group__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Income_Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Cost__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Is_Active__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__SKU__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Item_Class__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Business_Group__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Income_Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Cost__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Is_Active__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>OrderApi__SKU__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Item_Class__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Business_Group__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Price__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Is_Active__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__SKU__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Item_Class__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Business_Group__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Income_Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Cost__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Is_Active__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>OrderApi__SKU__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Item_Class__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Business_Group__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Price__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Is_Active__c</searchFilterFields>
+        <searchResultsAdditionalFields>OrderApi__SKU__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Item_Class__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Business_Group__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Income_Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Cost__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Is_Active__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

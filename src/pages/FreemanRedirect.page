@@ -1,0 +1,24 @@
+<!--
+ - Created by lauren.lezberg on 4/22/2020.
+ -->
+
+<apex:page id="FreemanRedirect" controller="FreemanRedirectController" showHeader="false" sideBar="false" docType="html-5.0" applyHtmlTag="false" applyBodyTag="false">
+    <c:pageStyle />
+    <apex:includeLightning />
+    <apex:slds />
+
+    <div id="loadingRedirect"/>
+
+
+    <script>
+
+        $Lightning.use("c:FreemanIntegration", function() {
+            $Lightning.createComponent("c:FreemanRedirect",
+                {},
+                "loadingRedirect",
+                function(cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

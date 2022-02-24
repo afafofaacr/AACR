@@ -1,0 +1,110 @@
+<!--
+ - Created by lauren.lezberg on 1/15/2019.
+ -->
+
+<aura:component description="JP_ScientificInterest" controller="JP_ScientificInterestsController">
+    <!--PUBLIC ATTRIBUTES-->
+    <aura:attribute name="stepId" type="String" />
+    <aura:attribute name="contactRecord" type="Object" description="current contact record"/>
+    <aura:attribute name="nextStepURL" type="String" description="next join step url"/>
+    <aura:attribute name="previousStepURL" type="String" description="previous join step url"/>
+    <aura:attribute name="cancelURL" type="String" description="cancel join process url"/>
+    <aura:attribute name="isLoading" type="Boolean" description="comp is loading" default="false"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="majorFocusOptions" access="private" type="List" default="[]"/>
+    <aura:attribute name="organSiteOptions" access="private" type="List" default="[]"/>
+    <aura:attribute name="specificResearchOptions" access="private" type="List" default="[]"/>
+    <aura:attribute name="addResearchOptions" access="private" type="List" default="[]"/>
+    <aura:attribute name="primaryResearchOptions" access="private" type="List" default="[]" description="primary research area"/>
+
+    <aura:attribute name="majorFocusValues" access="private" type="List" default="[]"/>
+    <aura:attribute name="organSiteValues" access="private" type="List" default="[]"/>
+    <aura:attribute name="specificResearchValues" access="private" type="List" default="[]"/>
+    <aura:attribute name="addResearchValues" access="private" type="List" default="[]"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-m-bottom_large">
+            <c:AACRSpinner/>
+        </div>
+        <aura:set attribute="else">
+
+            <div class="slds-m-around_medium">
+                <div class="slds-form_horizontal">
+<!--                <div class="slds-col slds-m-right_medium slds-size&#45;&#45;1-of-2">-->
+
+                    <lightning:combobox id="primaryResearch"
+                                        name="primaryResearch"
+                                        label="Research Area of Expertise"
+                                        value="{!v.contactRecord.Primary_Research_Area_of_Expertise__c}"
+                                        placeholder=" "
+                                        options="{!v.primaryResearchOptions}"
+                                        onchange="{! c.handleChange }"
+                                        class="slds-m-bottom_large"/>
+
+                    <lightning:input id="otherResearch"
+                                     aura:id = "otherResearch"
+                                     label="If Other, Please Specify"
+                                     value="{!v.contactRecord.Other_Research_Areas__c}"
+                                     class="slds-m-bottom_large"
+                                     required="{!v.contactRecord.Primary_Research_Area_of_Expertise__c == 'Other (please specify) | other'}"
+                                     messageWhenValueMissing="Complete this field."/>
+
+                    <lightning:combobox name="majorFocus"
+                                        aura:id="majorFocus"
+                                        label="Major Focus"
+                                        required="true"
+                                        placeholder=" "
+                                        options="{!v.majorFocusOptions}"
+                                        value="{!v.contactRecord.Major_Focus__c}"
+                                        onchange="{! c.handleChange }"
+                                        messageWhenValueMissing="Complete this field."/>
+
+
+                    <c:AACRMultiSelect aura:id="specificResearch" isRequired="false" label="Specific Research Areas" available="{!v.specificResearchOptions}" selected="{!v.specificResearchValues}"/>
+                    <div aura:id="specificResearchError" class="slds-form-element__help slds-required"></div>
+
+<!--                    <lightning:dualListbox name="specificResearch"-->
+<!--                                           label= "Specific Research Areas"-->
+<!--                                           sourceLabel="Available Items"-->
+<!--                                           selectedLabel="Selected Items"-->
+<!--                                           options="{!v.specificResearchOptions}"-->
+<!--                                           value="{!v.specificResearchValues}"-->
+<!--                                           disableReordering = "true"/>-->
+
+<!--                </div>-->
+<!--                <div class="slds-col slds-size&#45;&#45;1-of-2">-->
+
+                    <c:AACRMultiSelect aura:id="organSites" isRequired="false" label="Organ Site" available="{!v.organSiteOptions}" selected="{!v.organSiteValues}"/>
+                    <div aura:id="organSiteError" class="slds-form-element__help slds-required"></div>
+<!--                    <lightning:dualListbox name="organSite"-->
+<!--                                           label= "Organ Site"-->
+<!--                                           sourceLabel="Available Items"-->
+<!--                                           selectedLabel="Selected Items"-->
+<!--                                           options="{!v.organSiteOptions}"-->
+<!--                                           value="{!v.organSiteValues}"-->
+<!--                                           disableReordering = "true"/>-->
+
+                    <c:AACRMultiSelect aura:id="addResearch" isRequired="false" label="Additional Research Areas" available="{!v.addResearchOptions}" selected="{!v.addResearchValues}"/>
+                    <div aura:id="addResearchError" class="slds-form-element__help slds-required"></div>
+<!--                    <lightning:dualListbox name="additionalResearch"-->
+<!--                                           label= "Additional Research Areas"-->
+<!--                                           sourceLabel="Available Items"-->
+<!--                                           selectedLabel="Selected Items"-->
+<!--                                           options="{!v.addResearchOptions}"-->
+<!--                                           value="{!v.addResearchValues}"-->
+<!--                                           disableReordering = "true"/>-->
+<!--                </div>-->
+                </div>
+            </div>
+        </aura:set>
+    </aura:if>
+
+
+</aura:component>

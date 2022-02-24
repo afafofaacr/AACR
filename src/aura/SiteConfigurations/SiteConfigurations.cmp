@@ -1,0 +1,43 @@
+<!--
+ - Created by lauren.lezberg on 9/6/2019.
+ -->
+
+<aura:component description="SiteConfigurations" controller="AACRAdminController">
+    <aura:attribute name="settings" type="List" description="List of settings available for the community"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+
+    <aura:iteration items="{!v.settings}" var="setting">
+        <lightning:layout verticalAlign="center" >
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="slds-box"
+                     style="{!setting.Is_Active__c ? 'background-color:#eef7ee' : 'background-color: #EEC4C6'}">
+                    <div class="slds-text-heading_medium boxLabel slds-m-bottom_small">{!setting.Label}</div>
+                    <div class="slds-grid slds-gutters ">
+                        <div class="slds-col">
+                            <lightning:textarea label="User Message To Display"
+                                                value="{!setting.Maintenance_Message__c}" maxlength="255"/>
+                        </div>
+                        <div class="slds-col slds-align_absolute-center">
+                            <lightning:input label="Page API Name" value="{!setting.Page_API_Name__c}"/>
+                        </div>
+                        <div class="slds-col slds-align_absolute-center">
+                            <lightning:button variant="brand" label="Update" value="{!setting}"
+                                              onclick="{!c.updateSetting}" class="slds-m-right_medium"/>
+                            <aura:if isTrue="{!setting.Is_Active__c}">
+                                <lightning:button variant="brand" label="Deactivate" value="{!setting}"
+                                                  onclick="{!c.deactivateSetting}"/>
+                                <aura:set attribute="else">
+                                    <lightning:button variant="brand" label="Activate" value="{!setting}"
+                                                      onclick="{!c.activateSetting}"/>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </aura:iteration>
+</aura:component>

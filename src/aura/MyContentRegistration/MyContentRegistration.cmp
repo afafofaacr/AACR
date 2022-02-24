@@ -1,0 +1,46 @@
+<!--
+ - Created by lauren.lezberg on 4/23/2020.
+ -->
+
+<aura:component description="MyContentRegistration" controller="MyContentController">
+    <aura:attribute name="registrations" type="List" description="list of available events"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!not(empty(v.registrations))}">
+        <div class="slds-text-heading_large">Open For Registration:</div>
+        <aura:iteration items="{!v.registrations}" var="reg">
+            <div class="customBorder">
+                <div class="slds-grid slds-grid_vertical-align-center slds-wrap">
+                    <div class="slds-small-size--5-of-12 slds-large-size--5-of-12 slds-p-around_small">
+                        <img src="{!reg.imgURL}" style="zoom:2"/>
+                    </div>
+                    <div class="slds-small-size--7-of-12 slds-large-size--7-of-12 slds-p-around_small">
+                        <div class="slds-text-heading_medium" style="font-weight: bold;">{!reg.eventName}</div>
+                        <div class="slds-text-heading_medium" style="font-weight: bold;">{!reg.dateString}</div>
+                        <div class="slds-text-heading_medium">{!reg.description}</div>
+                        <div class="slds-align_absolute-center">
+                            <lightning:button label="Register &amp; Attend" variant="brand" onclick="{!c.registerAndRedirect}" value="{!reg.eventId}"/>
+                        </div>
+                    </div>
+                </div>
+            <!--<lightning:layout verticalAlign="center" class="x-large">-->
+                <!--<lightning:layoutItem size="5" padding="around-small">-->
+                    <!--<img src="{!reg.imgURL}" style="zoom:2"/>-->
+                <!--</lightning:layoutItem>-->
+                <!--<lightning:layoutItem size="7" padding="around-small">-->
+                    <!--<div class="slds-text-heading_medium" style="font-weight: bold;">{!reg.eventName}</div>-->
+                    <!--<div class="slds-text-heading_medium" style="font-weight: bold;">{!reg.dateString}</div>-->
+                    <!--<div class="slds-text-heading_medium">{!reg.description}</div>-->
+                    <!--<div class="slds-align_absolute-center">-->
+                    <!--<lightning:button label="Register &amp; Attend" variant="brand" onclick="{!c.registerAndRedirect}" value="{!reg.eventId}"/>-->
+                    <!--</div>-->
+                <!--</lightning:layoutItem>-->
+            <!--</lightning:layout>-->
+            </div>
+            <br/>
+        </aura:iteration>
+    </aura:if>
+
+
+</aura:component>

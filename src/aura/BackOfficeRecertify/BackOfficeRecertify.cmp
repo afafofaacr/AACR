@@ -1,0 +1,20 @@
+<!--
+ - Created by lauren.lezberg on 5/12/2021.
+ -->
+
+<aura:component description="BackOfficeRecertify" controller="BackOfficeRecertifyController">
+    <aura:attribute name="recordId" type="String" description="contact record id"/>
+    <aura:attribute name="processing" type="Boolean" description="action is processing"/>
+    <aura:attribute name="showButton" type="Boolean" default="false" description="show component for current user?"/>
+    <aura:attribute name="joinId" type="String" description="Id of join process "/>
+
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:if isTrue="{!v.showButton}">
+        <lightning:button variant="brand"  iconName="standard:record" onclick="{!c.createRecertSalesOrder}" label="{!v.processing?'Processing...': 'Recertify'}" disabled="{!v.processing}"/>
+    </aura:if>
+</aura:component>

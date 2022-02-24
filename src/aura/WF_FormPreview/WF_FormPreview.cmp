@@ -1,0 +1,30 @@
+<!--
+ - Created by afaf.awad on 10/29/2021.
+ -->
+
+<aura:component description="WF_FormPreview" controller="WF_FormPreviewController"
+                implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId">
+
+    <aura:attribute name="recordId" type="String" description="SF Id of Survey Object"/>
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="formFields" type="List" description="List of Fields dragged into layout."/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+<!--    <div class="slds-card slds-p-around_medium" style="margin:auto">-->
+        <div class="slds-box" style="margin:auto; width:500px; background-color: white">
+            <aura:iteration items="{!v.formFields}" var="f" indexVar="i">
+                    <lightning:layout>
+                        <lightning:layoutItem flexibility="auto">
+                            <div class="slds-p-bottom_small">
+                            <c:WF_FormPreviewFields field="{!f}"/>
+                            </div>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+            </aura:iteration>
+
+<!--        </div>-->
+    </div>
+
+</aura:component>

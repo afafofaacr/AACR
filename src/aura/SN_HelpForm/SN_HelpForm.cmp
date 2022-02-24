@@ -1,0 +1,228 @@
+<!--
+ - Created by lauren.lezberg on 9/3/2019.
+ -->
+
+<aura:component description="SN_HelpForm" controller="SN_HelpFormController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="incidentTypes" type="List" description="List of issue types"/>
+    <aura:attribute name="contact" type="sObject" description="Current contact"/>
+    <aura:attribute name="FileList" type="Object" description="List of uploaded files"/>
+    <aura:attribute name="fileAttach" type="Object" description="attached file"/>
+    <aura:attribute name="fileName" type="String" description="Name of file that was uploaded"/>
+    <aura:attribute name="fileId" type="String" description="Uploaded file Id"/>
+    <aura:attribute name="ITHelpLink" type="String" description="IT help page link"/>
+    <aura:attribute name="issueDescription" type="String" description="issue description"/>
+    <aura:attribute name="uploading" type="Boolean" description="File is in the process uploading"/>
+
+
+    <aura:attribute name="processing" type="Boolean" default="false" description="Help Form is processing"/>
+    <aura:attribute name="errorMsg" type="String" description="Error message when file upload fails" />
+    <aura:attribute name="requestSent" type="Boolean" description="Confirmation that request has sent." default="false"/>
+
+    <aura:attribute name="selectedIssue" type="String" description="Selected issue type from list of types"/>
+    <aura:attribute name="selectedMethod" type="String" default="email" description="Selected preferred contact method"/>
+    <aura:attribute name="accountId" type="String" description="The contact's accountId or selected account Id"/>
+
+    <aura:attribute name="newLog" type="Object"/>
+    <aura:attribute name="newLogError" type="String"/>
+    <aura:attribute name="simpleNewLog" type="Object"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="acceptedFileTypes" type="String" access="private" default="application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-word.document.macroEnabled.12,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.template,application/vnd.ms-word.template.macroEnabled.12,application/pdf,text/html, application/rtf, text/plain, application/xml, text/xml, application/vnd.oasis.opendocument.text, image/bmp, image/jpeg, image/gif, image/tiff, image/png, application/vnd.ms-xpsdocument, application/oxps, message/rfc822, image/bmp, image/heif"/>
+    <aura:attribute name="contactMethods" type="List" access="private" default="[
+    {'label': 'Email', 'value': 'email'},
+    {'label': 'Phone', 'value': 'phone'}
+    ]" description="List of preferred contact methods"/>
+    <aura:attribute name="maintenanceMessage" type="String" access="private" description="maintenance"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!not(empty(v.maintenanceMessage))}">
+        <div class="slds-align_absolute-center slds-m-top_medium">
+        <div class="slds-size_1-of-2 slds-box slds-theme_error slds-theme_alert-texture slds-m-around_medium slds-p-around_medium" >
+            <div class="slds-align_absolute-center">
+                <div class="slds-text-heading_large slds-m-left_small slds-text-color_inverse"> {!v.maintenanceMessage} </div>
+            </div>
+        </div>
+        </div>
+    <aura:set attribute="else">
+
+    <aura:if isTrue="{!v.requestSent}">
+        <div class="slds-align_absolute-center slds-m-top_large">
+            <div class="slds-box helpFormBox slds-size_2-of-3">
+                <div class="slds-align_absolute-center slds-m-bottom_large">
+                    <img src="https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg" class="img-responsive slds-m-right_small" height="60" width="430"/>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <div class="slds-text-heading_large">
+                        Thank you! Your request has been sent to the AACR. A support analyst will contact you within one business day.</div>
+                </div>
+                <div class="slds-align_absolute-center slds-m-top_small">
+                    <lightning:button label="Submit Another Request" variant="brand" onclick="{!c.resetForm}"/>
+                    <lightning:button label="Go To Profile" variant="brand" onclick="{!c.goToProfile}"/>
+                </div>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!v.processing}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner loadingText="Processing..."/>
+                </div>
+                <aura:set attribute="else">
+
+
+            <force:recordData aura:id="LogRecordCreator"
+                              layoutType="FULL"
+                              targetRecord="{!v.newLog}"
+                              targetFields="{!v.simpleNewLog}"
+                              fields="Issue_Description__c, URL__c, Incident_Type__c, Incident_Id__c, Contact_Name__c, Contact_Email__c, Contact_Phone__c, Contact__c, Affiliation__c, Contact_Method__c"
+                              targetError="{!v.newLogError}"/>
+
+
+                <div class="slds-align_absolute-center slds-m-bottom_small">
+                    <div class="slds-text-heading_large">myAACR Help Form</div>
+                </div>
+
+            <div class="slds-align_absolute-center slds-m-bottom_large">
+                <div class="slds-text-heading_medium">
+                    Before submitting this form please refer to our <a href="{!v.ITHelpLink}">IT help page</a> for additional information.
+                </div>
+            </div>
+
+                <aura:if isTrue="{!not(empty(v.newLogError))}">
+                    <div class="recordError">
+                        <ui:message title="Error" severity="error" closable="true">
+                            {!v.newLogError}
+                        </ui:message>
+                    </div>
+                </aura:if>
+
+
+                <div class="slds-align_absolute-center">
+                    <div class="slds-size_1-of-2 slds-p-around_small">
+                        <lightning:card title="Contact Information" iconName="action:new_contact" class="slds-p-around_large">
+                            <div class="slds-grid slds-gutters ">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:input aura:id="name" label="Full Name" value="{!not(empty(v.contact))?v.contact.Name:''}" disabled="{!not(empty(v.contact))}" required="{!empty(v.contact)}" />
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:input aura:id="email" label="Email" value="{!not(empty(v.contact))?v.contact.OrderApi__Preferred_Email__c:''}" required="{!empty(v.contact)}"/>
+                                </div>
+                            </div>
+
+
+
+                            <aura:if isTrue="{!empty(v.contact)}">
+                                <label style="display:inline-flex;" class="slds-form-element__label slds-no-flex slds-m-top_small">Affiliation</label>
+                                <c:CustomLookup aura:id="accountLookup" objectAPIName="Account" IconName="standard:account" allowNewRecord="false" filterString="((NOT Name LIKE '%Household%') AND (NOT Name LIKE '%AACR%') AND RecordType.Name = 'Active Account')"/>
+                                <aura:set attribute="else">
+                                    <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <lightning:input aura:id="affiliation" label="Affiliation" disabled="true" value="{!v.contact.Account.Name}"/>
+                                    </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning:input aura:id="aacrID" label="AACR ID" disabled="true" value="{!v.contact.AACR_ID__c}"/>
+                                        </div>
+                                    </div>
+
+                                </aura:set>
+                            </aura:if>
+                            <!--<lightning:input label="Affiliation" value="{!not(empty(v.contact))?v.contact.Account.Name:''}" disabled="{!not(empty(v.contact))}"/>-->
+
+                            <div class="">
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-2">
+                            <div class="slds-m-top_medium">
+                                <label class="slds-text-heading_small">How should we contact you?</label>
+                                <lightning:radioGroup name="radioButtonGroup"
+                                                      options="{! v.contactMethods }"
+                                                      value="{! v.selectedMethod }"
+                                                      type="button"/>
+                                <aura:renderIf isTrue="{!v.selectedMethod == 'phone'}">
+                                    <lightning:input aura:id="phone" required="{!v.selectedMethod == 'phone'}" label="Phone number" class="slds-m-top_medium" value="{!not(empty(v.contact))?v.contact.OrderApi__Preferred_Phone__c : ''}"/>
+                                </aura:renderIf>
+                            </div>
+                                </div>
+                                <div class="slds-col slds-align_absolute-center">
+                                    <div class="slds-text-heading_medium">
+                                        We will try our best to contact you within one business day. Our <a href="{!v.ITHelpLink}">IT help page</a> may help with your issue.
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </lightning:card>
+                        <lightning:card title="Please describe the issue or request" class="slds-p-around_large" iconName="action:info">
+                            <aura:set attribute="actions">
+                                <div class="slds-text-heading_medium">
+                                    Our <a href="{!v.ITHelpLink}">IT help page</a> may have information regarding your issue.
+                                </div>
+                            </aura:set>
+                            <lightning:layout >
+                                <lightning:layoutItem size="6" padding="around-small">
+                                    <!--<lightning:inputField aura:id="issueType" fieldName="Issue_Type__c" />-->
+                                    <lightning:select aura:id="incidentTypes" label="Issue Type" required="true" messageWhenValueMissing="Complete this field." >
+                                        <option text="--Select--" value=""/>
+                                        <aura:iteration items="{!v.incidentTypes}" var="type">
+                                            <option text="{!type.Type__c}" value="{!type.Id}"/>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </lightning:layoutItem >
+                                <lightning:layoutItem size="3" padding="around-small">
+                                    <lightning:input aura:id="fileInput" name="file2" label="Attach a file or screenshot" type="file" files="{!v.FileList}" onchange="{! c.handleUpload }" disabled="{!not(empty(v.fileName))}" accept="{!v.acceptedFileTypes}" multiple="false" />
+                                    <aura:if isTrue="{!v.uploading}">
+                                        <div class="slds-text-heading_medium slds-has-error">Uploading...</div>
+                                    </aura:if>
+                                    <div class="slds-text-heading_medium slds-text-color_error">{!v.errorMsg}</div>
+                                </lightning:layoutItem >
+                                <lightning:layoutItem size="3" padding="around-small">
+                                    <aura:if isTrue="{!not(empty(v.FileList))}">
+                                        <lightning:layout>
+                                            <lightning:layoutItem padding="around-small" size="11">
+                                                <div class="slds-text-heading_medium slds-m-top_large slds-m-left_medium slds-m-right_small"
+                                                     style="word-wrap:break-word; color:#4e6593; font-weight:700;">{!v.fileName}</div>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem padding="around-small" size="1">
+                                                <div class="slds-m-top_large">
+                                                <lightning:button variant="base" iconName="utility:close"
+                                                                  class="slds-m-top_large slds-required slds-border_left slds-border_right slds-border_top slds-border_bottom"
+                                                                  onclick="{!c.removeFileAttachment}"/>
+                                                </div>
+                                            </lightning:layoutItem>
+                                        </lightning:layout>
+<!--                                        <div class="slds-grid" style="align-items: center;">-->
+<!--                                            <div class="slds-col">-->
+<!--                                            <div class="slds-text-heading_medium slds-m-top_large slds-m-left_medium slds-m-right_small"-->
+<!--                                                 style="color:#4e6593; font-weight:700;">{!v.fileName}</div>-->
+<!--                                            </div>-->
+<!--                                            <div class="slds-col">-->
+<!--                                            <lightning:button variant="base" iconName="utility:close"-->
+<!--                                                              class="slds-m-top_large slds-required slds-border_left slds-border_right slds-border_top slds-border_bottom"-->
+<!--                                                              onclick="{!c.removeFileAttachment}"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+                                    </aura:if>
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                            <div class="slds-m-around_small">
+                                <lightning:textarea value="{!v.simpleNewLog.Issue_Description__c}" label="Description"/>
+                                <!--<lightning:inputField aura:id="issueDescription" fieldName="Issue_Description__c" />-->
+                            </div>
+                            <div class="slds-m-top_small">
+                                <div class="slds-align_absolute-center">
+                                    <lightning:button variant="brand" disabled="{!or(v.processing, v.uploading)}" label="{!v.processing?'Processing...':'Submit to the AACR'}" onclick="{!c.saveErrorLog}"/>
+                                </div>
+                            </div>
+                        </lightning:card>
+                    </div>
+                </div>
+
+
+            <!--</lightning:recordEditForm>-->
+        </aura:set>
+
+    </aura:if>
+        </aura:set>
+    </aura:if>
+
+    </aura:set>
+    </aura:if>
+</aura:component>

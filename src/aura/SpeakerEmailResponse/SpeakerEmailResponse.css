@@ -1,0 +1,70 @@
+/**
+ * Created by lauren.lezberg on 3/31/2020.
+ */
+
+
+.THIS .btn{
+    background:token(aacrGreen);
+    color:white;
+    padding-top: 12px;
+    padding-left: 10px;
+    padding-bottom: 12px;
+    padding-right: 10px;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+
+.THIS svg.slds-button__icon.slds-button__icon_left{
+    height:1rem;
+    width:1rem;
+}
+
+.THIS .slds-icon.slds-icon_small{
+    width: 3rem;
+    height: 3rem;
+}
+
+.THIS .primaryCheckbox{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.THIS .slds-modal_medium .slds-modal__container{
+    margin: 0 auto;
+    width: 50%;
+    max-width: 50rem;
+    min-width: 40rem;
+    padding: 0rem;
+}
+
+/*.THIS button.slds-button.slds-button{*/
+    /*color:white;*/
+    /*background-color: token(aacrGreen);*/
+    /*border-color:token(aacrGreen);*/
+    /*padding:inherit;*/
+    /*font-size:1rem;*/
+    /*padding-left: 1rem;*/
+    /*padding-right: 1rem;*/
+    /*padding-top: 0.25rem;*/
+    /*padding-bottom: 0.25rem;*/
+/*}*/
+/*.THIS .slds-button_brand:active{*/
+    /*color:white;*/
+    /*bbackground-color: token(aacrGreen);*/
+    /*border-color:token(aacrGreen);*/
+/*}*/
+
+/*.THIS .slds-button_brand:hover{*/
+    /*color:white;*/
+    /*background-color: token(aacrGreen);*/
+    /*border-color:token(aacrGreen);*/
+/*}*/
+
+.THIS .slds-form-element .slds-checkbox [type=checkbox]+.slds-checkbox__label .slds-checkbox_faux{
+    height:1.5rem;
+    width:1.5rem;
+    font-size: 1.25rem;
+}

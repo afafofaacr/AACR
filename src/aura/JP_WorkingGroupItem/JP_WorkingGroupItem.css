@@ -1,0 +1,51 @@
+/**
+ * Created by lauren.lezberg on 1/23/2019.
+ */
+.THIS .slds-text-title_medium{
+    font-size:18px;
+    font-weight:500;
+}
+
+.THIS.selected{
+    background-color: token(aacrGreenL1);
+    border-color:token(aacrGreen);
+}
+
+.THIS .slds-button[disabled]{
+    background-color: rgb(201, 199, 197);
+    border-color: rgb(201, 199, 197);
+    color: rgb(255, 255, 255);
+}
+
+.THIS .slds-button.slds-button_destructive{
+    background-color: token(AACRRed);
+    color:white;
+    border-color: token(AACRRed);
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+/*.THIS .slds-button{*/
+/*    border-color: token(AACRBlue);*/
+/*    background-color: token(AACRBlue);*/
+/*}*/
+
+/*.THIS .slds-button .slds-button_brand{*/
+/*    border-color: token(AACRBlue);*/
+/*    background-color: token(AACRBlue);*/
+/*}*/
+
+/*.THIS .slds-button_icon-brand{*/
+/*    border-color: token(AACRBlue);*/
+/*    background-color: token(AACRBlue);*/
+/*}*/
+
+/*.THIS .slds-button_icon-brand:hover {*/
+/*    border-color: token(AACRBlue);*/
+/*    background-color: token(AACRBlue);*/
+/*}*/
+
+/*.THIS .slds-button_icon-brand:focus{*/
+/*    border-color: token(AACRBlue);*/
+/*    background-color: token(AACRBlue);*/
+/*}*/

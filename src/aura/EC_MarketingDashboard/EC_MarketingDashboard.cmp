@@ -1,0 +1,169 @@
+<!--
+ - Created by afaf.awad on 3/1/2021.
+ -->
+
+<aura:component description="EC_MarketingDashboard" controller="EC_MarketingDashboardController"
+                implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable">
+
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="isLoading" type="Boolean" description="is data processing"/>
+    <aura:attribute name="openNew" type="Boolean" description="open new event wizard" default="false"/>
+    <aura:attribute name="mvalue" type="String"/>
+    <aura:attribute name="yvalue" type="Integer"/>
+    <aura:attribute name="schedule" type="Time_Slot__c[]" description="List of submitted orders"/>
+    <!--    <aura:attribute name="monthEvents" type="List" description="list of events for a specific month"/>-->
+    <aura:attribute name="months" type="List" default="[
+    {'label': 'Jan', 'value': '1'},
+    {'label': 'Feb', 'value': '2'},
+    {'label': 'Mar', 'value': '3'},
+    {'label': 'Apr', 'value': '4'},
+    {'label': 'May', 'value': '5'},
+    {'label': 'Jun', 'value': '6'},
+    {'label': 'Jul', 'value': '7'},
+    {'label': 'Aug', 'value': '8'},
+    {'label': 'Sep', 'value': '9'},
+    {'label': 'Oct', 'value': '10'},
+    {'label': 'Nov', 'value': '11'},
+    {'label': 'Dec', 'value': '12'}
+    ]"/>
+    <aura:attribute name="years" type="List" default="[]"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- HEADER -->
+    <div class="slds-page-header slds-m-bottom_medium">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="standard:list_email" size="medium"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate"
+                                                  title="Exhibitor Connect Dashboard">Exhibitor Connect Dashboard</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <p class="slds-page-header__name-meta">Manage Exhibitor Orders and Schedules</p>
+                            </div>
+                            <!--                            <div class="slds-float_right">-->
+                            <!--                                <lightning:button label="New Event" iconName="utility:add" onclick="{!c.goToNew}"/>-->
+                            <!--                                <aura:if isTrue="{!v.openNew}">-->
+                            <!--                                    <c:EventNew_Override/>-->
+                            <!--                                </aura:if>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /HEADER -->
+    <div style="margin-top: 10px">
+        <div class="slds-grid slds-gutters">
+            <!-- ORDER TABLE -->
+            <div class="slds-col slds-size_1-of-2">
+                <lightning:listView aura:id="submittedList"
+                                    objectApiName="EC_Order__c"
+                                    listName="Submitted_Orders"
+                                    rows="10"
+                                    showSearchBar="true"
+                                    showActionBar="false"
+                                    enableInlineEdit="true"
+                                    showRowLevelActions="false"
+                />
+                <br/>
+                <lightning:listView aura:id="approvedList"
+                                    objectApiName="EC_Order__c"
+                                    listName="Approved_Orders"
+                                    rows="10"
+                                    showSearchBar="true"
+                                    showActionBar="false"
+                                    enableInlineEdit="true"
+                                    showRowLevelActions="false"
+                />
+                <br/>
+            </div>
+            <!-- END ORDER TABLE -->
+            <!-- SCHEDULE -->
+            <div class="slds-col slds-size_1-of-2 ">
+                <lightning:card title="Calendar Filter " class="slds-p-around_medium">
+                    <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
+                        <div class="slds-col" style="overflow:auto;">
+                            <lightning:radioGroup name="radioButtonGroup"
+                                                  class="slds-size_7-of-8"
+                                                  options="{! v.months }"
+                                                  label="Months:"
+                                                  value="{! v.mvalue }"
+                                                  onchange="{!c.changeMonth}"
+                                                  type="button"/>
+                        </div>
+                        <div class="slds-col">
+                            <lightning:select label="Year:" onchange="{!c.changeYear}">
+                                <aura:iteration items="{!v.years}" var="y">
+                                    <option value="{!y.value}" selected="{!y.value == v.yvalue}">{!y.label}</option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                    </div>
+
+                </lightning:card>
+                <aura:if isTrue="{!v.isLoading}">
+                    <lightning:spinner alternativeText="Loading" size="medium"/>
+                </aura:if>
+                <aura:if isTrue="{!not(empty(v.schedule))}">
+                    <lightning:card title="Schedule" iconName="standard:timeslot" class="slds-scrollable">
+                        <aura:iteration var="t" items="{!v.schedule}">
+                            <lightning:tile label="{!t.EC_Order__r.Company__r.Name}"
+                                            href="{!'/' + t.EC_Order__r.Company__r.Id}"
+                                            class="slds-m-around_medium slds-box slds-text-title_bold">
+                                <lightning:layout horizontalAlign="spread">
+                                    <lightning:layoutItem size="2.4" padding="horizontal-medium">
+                                        <div class="header-column">
+                                            <p class="field-title slds-text-title_bold" title="orderNum">Order Num.</p>
+                                            <p><lightning:formattedUrl value="{!'/' + t.EC_Order__r.Id}" label="{!t.EC_Order__r.Name}" target="_blank" /></p>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="2.4" padding="horizontal-medium">
+                                        <div class="header-column">
+                                            <p class="field-title slds-text-title_bold" title="sendDate">Delivery Date</p>
+                                            <p>{!t.Delivery_Date__c}</p>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="2.4" padding="horizontal-medium">
+                                        <div class="header-column">
+                                            <p class="field-title slds-text-title_bold" title="sendTime">Delivery Time</p>
+                                            <p>{!t.Start_Time__c}</p>
+
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="2.4" padding="horizontal-medium">
+                                        <div class="header-column">
+                                            <p class="field-title slds-text-title_bold" title="emailCount">Email Count</p>
+                                            <p>{!t.EC_Order__r.Amount_Targeted__c}</p>
+                                        </div>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="2.4" padding="horizontal-medium">
+                                        <div class="header-column slds-text-title_bold">
+                                            <p class="field-title" title="status">Status</p>
+                                            <p>{!t.Status__c}</p>
+                                        </div>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+                            </lightning:tile>
+                        </aura:iteration>
+
+                    </lightning:card>
+                </aura:if>
+            </div>
+            <!-- END SCHEDULE -->
+        </div>
+    </div>
+
+</aura:component>

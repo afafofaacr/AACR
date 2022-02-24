@@ -1,0 +1,34 @@
+<!--
+ - Created by lauren.lezberg on 10/16/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: ApproveAndResignController</p>
+        <p>
+            The <code>MembershipApprovalAndResignation</code> component displays the buttons for approval and resignation of contact records. The buttons are displayed based on contact fields as
+            well as the current users permissions.
+        </p>
+        <p>
+            In order to view the 'Approve' button the following criteria must be met:
+            <ul>
+                <li>The contact must have a membership subscription.</li>
+                <li>The contact must have an application status of 'Pending Approval'.</li>
+                <li>The current user must have the Membership_Approve custom permission.</li>
+            </ul>
+        </p>
+        <p>
+            In order to view the 'Resign' button, the following criteria must be met:
+            <ul>
+                <li>The contact must have a membership subscription.</li>
+                <li>The contact must have a record type of either 'Member' or 'Prior Member'.</li>
+                <li>The contact membership status cannot be 'Suspended (Resigned)'.</li>
+                <li>The current user must have the Membership_Resign custom permission.</li>
+            </ul>
+        </p>
+    </aura:description>
+    <!--<aura:example name="MembershipApprovalAndResignation" ref="c:MembershipApprovalAndResignation"-->
+                  <!--label="MembershipApprovalAndResignation">-->
+        <!--Example for MembershipApprovalAndResignation-->
+    <!--</aura:example>-->
+</aura:documentation>

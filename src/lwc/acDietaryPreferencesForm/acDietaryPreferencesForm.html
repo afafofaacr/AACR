@@ -1,0 +1,40 @@
+<!--
+ - Created by mitfity on 25.07.2019.
+ -->
+
+<!-- AC Purchase Ticket Form -->
+<template>
+    <div class="slds-is-relative">
+        <template if:true={isLoading}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+
+        <div class="slds-form">
+            <lightning-record-edit-form record-id={participationId}
+                                        object-api-name="BR_Participation__c"
+                                        onsuccess={handleSuccess}
+                                        onerror={handleError}>
+                <lightning-input-field key={salesOrderId} field-name="Fon_Sales_Order__c" class="slds-hide" value={salesOrderId}>
+                </lightning-input-field>
+                <lightning-input-field key={eventId} field-name="BR_Event__c" class="slds-hide" value={eventId}>
+                </lightning-input-field>
+                <lightning-input-field key={userId} field-name="User__c" class="slds-hide" value={userId}>
+                </lightning-input-field>
+                <lightning-input-field key={contactId} field-name="Contact__c" class="slds-hide" value={contactId}>
+                </lightning-input-field>
+                <template for:each={fields} for:item="field">
+                    <lightning-input-field key={field.apiName} field-name={field.apiName}>
+                    </lightning-input-field>
+                </template>
+            </lightning-record-edit-form>
+        </div>
+
+        <template if:true={noFormRequired}>
+            <div class="slds-text-heading_large">No form to fill out for this ticket. Click Next to continue.</div>
+        </template>
+
+        <template if:true={error}>
+            <c-ac-error-panel errors={error}></c-ac-error-panel>
+        </template>
+    </div>
+</template>

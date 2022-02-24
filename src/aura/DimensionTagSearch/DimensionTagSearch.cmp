@@ -1,0 +1,72 @@
+<!--
+ - Created by afaf.awad on 5/27/2021.
+ -->
+
+<aura:component description="DimensionTagSearch" controller="DimensionTagController" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:hasSObjectName" access="global">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="sobjecttype" type="string" default="" required="true" description="API Name of object for display records" access="public"/>
+    <aura:attribute name="IconName" type="string" default="" description="Name of icon to display for records" access="public"/>
+    <aura:attribute name="selectedId" type="String" description="Id of selected record for initial load" access="public"/>
+    <aura:attribute name="allowNewRecord" type="Boolean" default="true" description="Can new record be created from inside lookup" access="public"/>
+    <aura:attribute name="SearchKeyWord" type="string" description="Search word string to use to filter records" access="public"/>
+    <aura:attribute name="Message" type="String" default="" description="Message to display for any error conditions" access="public"/>
+    <aura:attribute name="parent" type="Aura.Component" required="true"/>
+    <aura:attribute name="recordId" type="Id" default="" description="record Id of page"/>
+    <aura:attribute name="newTag" type="Boolean" default="false" description="is search onblur?"/>
+    <aura:attribute name="showResultsList" type="Boolean" description="Displays or hides results on search" default="true"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="selection" type="sObject" default="{}" description="Used to store selected sObject Record" access="private"/>
+    <aura:attribute name="listOfSearchRecords" type="List" description="Used to store the list of search records which are returned based on the SearchKeyWord attribute" access="private"/>
+
+    <!--EVENT HANDLERS-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="oSelectedRecordEvent" event="c:SelectedObjectRecordEvt" action="{!c.handleComponentEvent}"/>
+    <aura:registerEvent name="createNewRecordFromLookup" type="c:CreateNewRecordFromLookup"/>
+    <aura:registerEvent name="callDimTagEvent" type="c:DimTagEvent"/>
+
+        <!--SEARCH BAR-->
+    <div onmouseleave="{!c.onblur}" aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close">
+        <lightning:input aura:id="lookupField" label="Tag Filter" variant="label-hidden" type="search" onfocus="{!c.onfocus}"
+                         onchange="{!c.keyPressController}" value="{!v.SearchKeyWord}" placeholder="Search..."/>
+        <div class="slds-text-heading_small">{!v.Message}</div>
+
+        <!--LOOKUP RESULT LIST-->
+        <aura:if isTrue="{!v.showResultsList}">
+    <div style="background-color: white;">
+            <ul aura:id="resultsBox" class="slds-listbox overflow-menu" style="overflow: visible !important;">
+                    <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                        <c:CustomLookupResult oRecord="{!singleRec}" IconName="{!v.IconName}"/>
+                    </aura:iteration>
+                <aura:if isTrue="{!v.newTag}">
+                        <li class="slds-listbox__item">
+                            <lightning:button label="Create New Tag" variant="base" onclick="{!c.openModal}" class="slds-text-heading_small slds-p-around_small" iconName="utility:add"/>
+
+                        </li>
+                </aura:if>
+            </ul>
+    </div>
+        </aura:if>
+    </div>
+
+            <!-- CREATE NEW RECORD FORM -->
+    <c:DimensionTagModal aura:id="DimTagModal" tagName="{!v.SearchKeyWord}" objectName="{!v.sobjecttype}" recordId="{!v.recordId}"/>
+
+
+<!--            <aura:if isTrue="{!and(v.showNewRecordModal, v.allowNewRecord)}">-->
+<!--                <lightning:buttonIcon iconName="utility:close" class="slds-float_right slds-m-right_small" onclick="{!c.closeNewRecordModal}"/>-->
+<!--                <label style="font-weight: bold;" class="slds-text-heading_medium slds-align_absolute-center">{!'Create New ' + v.objectAPIName}</label>-->
+<!--                <div class="slds-m-around_medium" onkeyup="{!c.enterPressed}">-->
+<!--                    <lightning:input aura:id="newAccountName" label="{!v.objectAPIName + 'Name'}" class="slds-text-heading_medium" placeholder="Enter new account name here."/>-->
+<!--                    <div class="slds-align_absolute-center slds-m-top_small">-->
+<!--                        <lightning:button label="Save" variant="brand" class=" slds-m-left_medium slds-text-heading_medium slds-p-around_small" onclick="{!c.handleSaveRecord}"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </aura:if>-->
+
+<!--            <aura:if isTrue="{!and(v.allowNewRecord, not(v.showNewRecordModal))}">-->
+<!--                <div class="slds-align_absolute-center slds-m-top_small">-->
+<!--                    <lightning:button label="{!'Create New ' + v.objectAPIName}" variant="brand" class="slds-text-heading_medium slds-p-around_small" iconName="utility:add" onclick="{!c.showNewRecordModal}"/>-->
+<!--                </div>-->
+<!--            </aura:if>-->
+</aura:component>

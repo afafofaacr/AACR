@@ -1,0 +1,45 @@
+<!--
+ - Created by lauren.lezberg on 11/12/2019.
+ -->
+
+<aura:component description="EventOptions">
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="recordId" type="String"/>
+
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <lightning:recordEditForm
+            aura:id="editForm"
+            recordId="{!v.recordId}"
+            onsubmit="{!c.handleSubmit}"
+            onsuccess="{!c.handleSuccess}"
+            objectApiName="BR_Event__c">
+
+        <lightning:fileUpload  name="fileUploader"
+                               label= "Main Image"
+                               recordId="{!v.recordId}"
+                               onuploadfinished="{! c.handleUploadFinished }"/>
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col ">
+                <lightning:inputField fieldName="Draft__c"/>
+                <lightning:inputField fieldName="Hide_attendees__c"/>
+            </div>
+            <div class="slds-col ">
+                <lightning:inputField fieldName="Publicly_available__c"/>
+                <lightning:inputField fieldName="Ticket_Not_Required__c"/>
+            </div>
+            <div class="slds-col ">
+                <lightning:inputField fieldName="Enable_registration_for_guests__c"/>
+                <lightning:inputField fieldName="Ignore_Segment_Priority__c"/>
+            </div>
+            <div class="slds-col ">
+                <lightning:inputField fieldName="Unlisted_Event__c"/>
+                <lightning:inputField fieldName="Send_reminders__c"/>
+                <lightning:inputField fieldName="Reminder_Hours__c"/>
+            </div>
+        </div>
+    </lightning:recordEditForm>
+</aura:component>

@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tracks the various types of Tickets available for a Event.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>EventApi__AR_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Identifies the GL Account used for A/R transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the GL Account used for A/R transactions.</inlineHelpText>
+        <label>A/R Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Ticket Types (A/R Account)</relationshipLabel>
+        <relationshipName>TicketTypes_AR_Accounts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Adjustment_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The debit account to use when posting invoice adjustments to invoices that have already posted to A/R.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The debit account to use when posting invoice adjustments to invoices that have already posted to A/R.</inlineHelpText>
+        <label>Adjustment Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Ticket Types (Adjustment Account)</relationshipLabel>
+        <relationshipName>Adjustment_Account_Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The cost of the Ticket Type will be used to calculate the Tax-deductible donation amount that displays to on the Attendees receipt if &quot;Is Tax Deductible&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The cost of the Ticket Type will be used to calculate the Tax-deductible donation amount that displays to on the Attendees receipt if &quot;Is Tax Deductible&quot; is checked.</inlineHelpText>
+        <label>Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Defer_Revenue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the deferred revenue recognition rules will be considered when posting transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the deferred revenue recognition rules will be considered when posting transactions.</inlineHelpText>
+        <label>Defer Revenue</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Deferred_Revenue_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deferred Revenue Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Deferred Revenue Account)</relationshipLabel>
+        <relationshipName>ItemsDRA</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Deferred_Revenue_Term__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deferred Revenue Term (In Months)</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displays with the ticket type on the registration page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays with the ticket type on the registration page.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Discount_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account to debit when discounting a sale related to the Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account to debit when discounting a sale related to the Item.</inlineHelpText>
+        <label>RESERVED</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Ticket Types (Discount Account)</relationshipLabel>
+        <relationshipName>Discount_Account_Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Display_Available_Inventory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, if a ticket quantity is specified, the number of tickets remaining will be shown next to the ticket type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, if a ticket quantity is specified, the number of tickets remaining will be shown next to the ticket type.</inlineHelpText>
+        <label>Display Available Inventory</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Early_Bird_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Requires &quot;Enable Early Bird Price&quot; to be checked. Specifies the date that early bird pricing ends.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires &quot;Enable Early Bird Price&quot; to be checked. Specifies the date that early bird pricing ends.</inlineHelpText>
+        <label>Early Bird End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Early_Bird_Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Requires &quot;Enable Early Bird Price&quot; to be checked. Specifies the date that early bird pricing ends.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires &quot;Enable Early Bird Price&quot; to be checked. Specifies the date that early bird pricing ends..</inlineHelpText>
+        <label>Early Bird Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Assignments__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** When checked, the Item can be assigned to Contacts indicating benefit or ownership over goods and services. Automatically calculated based on the parent Item Class &quot;Type&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** When checked, the Item can be assigned to Contacts indicating benefit or ownership over goods and services. Automatically calculated based on the parent Item Class &quot;Type&quot;.</inlineHelpText>
+        <label>SYSTEM (ALWAYS TRUE FOR TICKET TYPE)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Early_Bird_Price__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Ticket Type will be sold for the amount defined in the &quot;Early Bird Price&quot; field until the date defined in the &quot;Early Bird End Date&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Ticket Type will be sold for the amount defined in the &quot;Early Bird Price&quot; field until the date defined in the &quot;Early Bird End Date&quot;.</inlineHelpText>
+        <label>Enable Early Bird Price</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Onsite_Price__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the ticket type can be sold for a different price, defined in the &quot;On-Site Price&quot; field, on the day of the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the ticket type can be sold for a different price, defined in the &quot;On-Site Price&quot; field, on the day of the event.</inlineHelpText>
+        <label>Enable On-site Price</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Refund_Request__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, an attendee can request a refund and the attendee record will be updated to indicate he/she has cancelled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, an attendee can request a refund and the attendee record will be updated to indicate he/she has cancelled.</inlineHelpText>
+        <label>Enable Refund Request</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Waitlist__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, attendees will have the option to be added to a waitlist for this ticket type when it is sold out.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, attendees will have the option to be added to a waitlist for this ticket type when it is sold out.</inlineHelpText>
+        <label>Enable Waitlist</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related event category. When linked, this ticket type will be included automatically in new events created within the same category.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related event category. When linked, this ticket type will be included automatically in new events created within the same category.</inlineHelpText>
+        <label>Event Category</label>
+        <referenceTo>EventApi__Event_Category__c</referenceTo>
+        <relationshipLabel>Ticket Types (Template)</relationshipLabel>
+        <relationshipName>Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Event.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Ticket Types</relationshipLabel>
+        <relationshipName>Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Flex_Day_of_the_Month__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Flex Day of the Month</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to a form created in the &quot;Form Builder&quot; app. Customers will see the form when they select the ticket type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to a form created in the &quot;Form Builder&quot; app. Customers will see the form when they select the ticket type.</inlineHelpText>
+        <label>Ticket Type Form</label>
+        <referenceTo>PagesApi__Form__c</referenceTo>
+        <relationshipLabel>Ticket Types</relationshipLabel>
+        <relationshipName>Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Group_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of this field will be matched to the related item&apos;s &quot;Item Weight UOM&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value of this field will be matched to the related item&apos;s &quot;Item Weight UOM&quot; field.</inlineHelpText>
+        <label>Group Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Image_Path__c</fullName>
+        <defaultValue>&quot;https://package-assets.s3.amazonaws.com/master/emerald/img/placeholders/item.png&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Image displays in the shopping cart and checkout page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Image displays in the shopping cart and checkout page.</inlineHelpText>
+        <label>Image URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Income_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The credit account to use when posting revenue in a A/R transaction or from a cash sale receipt.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The credit account to use when posting revenue in a A/R transaction or from a cash sale receipt.</inlineHelpText>
+        <label>Income Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Ticket Types</relationshipLabel>
+        <relationshipName>Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Interview_Form_Display_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text heading for the ticket type form.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text heading for the ticket type form.</inlineHelpText>
+        <label>Form Display Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Inventory_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The current inventory status. Default is &quot;In-stock&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The current inventory status. Default is &quot;In-stock&quot;.</inlineHelpText>
+        <label>RESERVED</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In-stock</fullName>
+                    <default>true</default>
+                    <label>In-stock</label>
+                </value>
+                <value>
+                    <fullName>Sold Out</fullName>
+                    <default>false</default>
+                    <label>Sold Out</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Invoice_Payment_Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</inlineHelpText>
+        <label>Payment Priority</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, ticket is available for sale but must still be published to be visible on the registration page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, ticket is available for sale but must still be published to be visible on the registration page.</inlineHelpText>
+        <label>Is Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Contribution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable contribution (donation) related controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable contribution (donation) related controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Contribution</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Group_Ticket_Type__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the ability to assign multiple attendees to a single ticket will be enabled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the ability to assign multiple attendees to a single ticket will be enabled.</inlineHelpText>
+        <label>Is Group Ticket Type</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, ticket is visible and available for purchase on the registration page to contacts with access permissions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, ticket is visible and available for purchase on the registration page to contacts with access permissions.</inlineHelpText>
+        <label>Is Published</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Tax_Deductible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Ticket Type is considered as a Tax Deductible contribution and the Cost of the Ticket Type will be used when deriving the &quot;Tax Deductible Donation Amount&quot; on Attendee&apos;s Receipts. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Ticket Type is considered as a Tax Deductible contribution and the Cost of the Ticket Type will be used when deriving the &quot;Tax Deductible Donation Amount&quot; on Attendee&apos;s Receipts. Defaults unchecked.</inlineHelpText>
+        <label>Is Tax Deductible</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Taxable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable tax specific controls and features for this ticket.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable tax specific controls and features for this ticket.</inlineHelpText>
+        <label>Is Taxable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>SYSTEM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SYSTEM</inlineHelpText>
+        <label>SYSTEM</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Ticket Types</relationshipLabel>
+        <relationshipName>Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Item_Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The cost per unit for the item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The cost per unit for the item.</inlineHelpText>
+        <label>Item Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>SYSTEM</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SYSTEM</inlineHelpText>
+        <label>SYSTEM</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>SYSTEM</relationshipLabel>
+        <relationshipName>Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Line_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The description for the item as it should appear on related receipts and invoices. This field is limited to 255 characters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The description for the item as it should appear on related receipts and invoices. This field is limited to 255 characters.</inlineHelpText>
+        <label>RESERVED</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Manage_Agenda_by_Ticket_Type__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field will allow staff users to manage scheduled items by ticket type. The settings from the session will be overridden with the settings defined on the Ticket Type Scheduled Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field will allow staff users to manage scheduled items by ticket type. The settings from the session will be overridden with the settings defined on the Ticket Type Scheduled Item.</inlineHelpText>
+        <label>Manage Agenda by Ticket Type</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Maximum_Number_of_Assignments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Conditionally Required** Defines the maximum number of attendees allowed per group. Field is required when &quot;Is Group Ticket Type&quot; field is set to true.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** If &quot;Restrict Number of Assignments&quot; is checked, a maximum number of assignments must be defined.</inlineHelpText>
+        <label>Maximum Attendees Allowed Per Group</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Maximum_Sales_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Requires &quot;Restrict Maximum Sales Quantity&quot; to be checked. Specifies the maximum quantity of tickets that can be purchased in a single order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires &quot;Restrict Maximum Sales Quantity&quot; to be checked. Specifies the maximum quantity of tickets that can be purchased in a single order.</inlineHelpText>
+        <label>Maximum Sales Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Min_Sales_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies the minimum quantity of tickets that can be purchased in a single order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifies the minimum quantity of tickets that can be purchased in a single order.</inlineHelpText>
+        <label>Minimum Sales Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Minimum_Sales_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The minimum quantity allowed per sale. Required and restricted when &quot;Require a Minimum Sales Quantity&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The minimum quantity allowed per sale. Required and restricted when &quot;Require a Minimum Sales Quantity&quot;</inlineHelpText>
+        <label>SYSTEM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Onsite_Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Requires &quot;Enable On-Site Price&quot; to be checked. Specifies the ticket price on the day of the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires &quot;Enable On-Site Price&quot; to be checked. Specifies the ticket price on the day of the event.</inlineHelpText>
+        <label>On-site Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The standard or list price of the ticket.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The standard or list price of the ticket.</inlineHelpText>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Available__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Maximum number of this ticket type that can be sold for the event. Required if &quot;Enable Waitlist&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of this ticket type that can be sold for the event. Required if &quot;Enable Waitlist&quot; is checked.</inlineHelpText>
+        <label>Ticket Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Remaining__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ticket type quantity minus the tickets sold.</description>
+        <externalId>false</externalId>
+        <formula>IF(EventApi__Quantity_Available__c &gt; EventApi__Quantity_Sold__c, EventApi__Quantity_Available__c - EventApi__Quantity_Sold__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The ticket type quantity minus the tickets sold.</inlineHelpText>
+        <label>Tickets Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Sold__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The number of tickets of this type sold.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of tickets of this type sold.</inlineHelpText>
+        <label>Tickets Sold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Refund_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account to debit when refunding/crediting customers who have purchased this Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account to debit when refunding/crediting customers who have purchased this Item.</inlineHelpText>
+        <label>Refund Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Ticket Types (Refund Account)</relationshipLabel>
+        <relationshipName>Refund_Account_Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Refund_Request_Policy__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter rich text to display to the attendee when they request refunds from the Manage My Registration page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter rich text to display to the attendee when they request refunds from the Manage My Registration page.</inlineHelpText>
+        <label>Refund Request Policy</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Require_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, a user will be unable to complete a sale for an Item until all assignments available have been entered. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, a user will be unable to complete a sale for an Item until all assignments available have been entered. Defaults unchecked.</inlineHelpText>
+        <label>RESERVED</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Require_Minimum_Quantity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Restrict customers to a maximum quantity required per sale. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Restrict customers to a minimum quantity required per sale. Defaults unchecked.</inlineHelpText>
+        <label>Require Minimum Sales Quantity</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Restrict_Maximum_Sales_Quantity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, restricts customers to a maximum quantity of tickets per order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, restricts customers to a maximum quantity of tickets per order.</inlineHelpText>
+        <label>Restrict Maximum Sales Quantity</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Restrict_Number_of_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the system will limit the number of assignments allowed based on the value of the &quot;Maximum Number of Assignments&quot; field. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the system will limit the number of assignments allowed based on the value of the &quot;Maximum Number of Assignments&quot; field. Defaults unchecked.</inlineHelpText>
+        <label>SYSTEM (ALWAYS TRUE FOR TICKET TYPE)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Revenue_Recognition_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Revenue_Recognition_Rule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Rule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Over Time</fullName>
+                    <default>false</default>
+                    <label>Over Time</label>
+                </value>
+                <value>
+                    <fullName>Specific Date</fullName>
+                    <default>false</default>
+                    <label>Specific Date</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Revenue_Recognition_Term_Rule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Term Rule</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Partial Credit</fullName>
+                    <default>false</default>
+                    <label>No Partial Credit</label>
+                </value>
+                <value>
+                    <fullName>Flex Day</fullName>
+                    <default>false</default>
+                    <label>Flex Day</label>
+                </value>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__SKU__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A SKU (Stock Keeping Unit) is a unique Item identifier that references attributes associated with the Item and that distinguish it from all other Items primarily used for inventory control and management.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A SKU (Stock Keeping Unit) is a unique Item identifier that references attributes associated with the Item and that distinguish it from all other Items primarily used for inventory control and management.</inlineHelpText>
+        <label>RESERVED</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Tax_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Populate this field for an item that needs to apply a tax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate this field for an item that needs to apply a tax.</inlineHelpText>
+        <label>Tax Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Tax Tickets</relationshipLabel>
+        <relationshipName>Tax_Tickets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Block__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Ticket Block used for inventory tracking purposes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Ticket Block used for inventory tracking purposes.</inlineHelpText>
+        <label>Ticket Block</label>
+        <referenceTo>EventApi__Ticket_Block__c</referenceTo>
+        <relationshipLabel>Ticket Types</relationshipLabel>
+        <relationshipName>Ticket_Types</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Information__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich text to display to the attendee of any relevant event and ticket information.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rich text to display to the attendee of any relevant event and ticket information.</inlineHelpText>
+        <label>Ticket Information</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__UOM__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** Pick the unit of measure to display on registration pages.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Pick the unit of measure to display on registration pages.</inlineHelpText>
+        <label>RESERVED</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Registration</fullName>
+                    <color>#0B6FCE</color>
+                    <default>true</default>
+                    <label>Registration</label>
+                </value>
+                <value>
+                    <fullName>Ticket</fullName>
+                    <color>#78C953</color>
+                    <default>false</default>
+                    <label>Ticket</label>
+                </value>
+                <value>
+                    <fullName>Seat</fullName>
+                    <color>#E27001</color>
+                    <default>false</default>
+                    <label>Seat</label>
+                </value>
+                <value>
+                    <fullName>Table</fullName>
+                    <color>#A845DC</color>
+                    <default>false</default>
+                    <label>Table</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <color>#F3D904</color>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Event_Display_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Event Display Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Event Display Name</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Event_Duration_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Event Duration Text</description>
+        <externalId>false</externalId>
+        <formula>EventApi__Event__r.ROEApi__Event_Duration_Text__c</formula>
+        <inlineHelpText>**System Calculated** Event Duration Text</inlineHelpText>
+        <label>SYSTEM</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Event_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Event Display Name</description>
+        <externalId>false</externalId>
+        <formula>EventApi__Event__r.EventApi__Display_Name__c</formula>
+        <inlineHelpText>**System Calculated** Event Display Name</inlineHelpText>
+        <label>SYSTEM</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Ticket Type</label>
+    <listViews>
+        <fullName>EventApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>EventApi__UOM__c</columns>
+        <columns>EventApi__Price__c</columns>
+        <columns>EventApi__Enable_Early_Bird_Price__c</columns>
+        <columns>EventApi__Early_Bird_Price__c</columns>
+        <columns>EventApi__Early_Bird_End_Date__c</columns>
+        <columns>EventApi__Enable_Onsite_Price__c</columns>
+        <columns>EventApi__Onsite_Price__c</columns>
+        <columns>EventApi__Display_Available_Inventory__c</columns>
+        <columns>EventApi__Quantity_Remaining__c</columns>
+        <columns>EventApi__Quantity_Available__c</columns>
+        <columns>EventApi__Quantity_Sold__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Item Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Ticket Types</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventApi__Event__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Available__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Sold__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Remaining__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Form__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Income_Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Is_Active__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Is_Published__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Available__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Sold__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Remaining__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Form__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Event__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Available__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Sold__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Remaining__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Form__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EventApi__Event__c</searchFilterFields>
+        <searchFilterFields>EventApi__Event_Category__c</searchFilterFields>
+        <searchFilterFields>EventApi__Is_Active__c</searchFilterFields>
+        <searchFilterFields>EventApi__Is_Published__c</searchFilterFields>
+        <searchResultsAdditionalFields>EventApi__Event__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Available__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Sold__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Remaining__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Form__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Is_Active__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Is_Published__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

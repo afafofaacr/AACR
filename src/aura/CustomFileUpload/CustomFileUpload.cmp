@@ -1,0 +1,35 @@
+<!--
+ - Created by lauren.lezberg on 11/12/2019.
+ -->
+
+<aura:component description="CustomFileUpload" controller="CustomFileUploadController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="recordId" type="String" description="Record to attach file to"/>
+    <aura:attribute name="FileList" type="Object" description="List of uploaded files"/>
+    <aura:attribute name="fileName" type="String" description="Name of file that was uploaded"/>
+    <aura:attribute name="required" type="Boolean" description="File upload required" default="false"/>
+    <aura:attribute name="inputLabel" type="String" description="Label for file input" default="File Upload"/>
+    <aura:attribute name="uploading" type="Boolean" description="File is in the process uploading"/>
+    <aura:attribute name="errorMsg" type="String" description="Error message when file upload fails" />
+    <aura:attribute name="fileCategory" type="String" description="file category" />
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="acceptedFileTypes" type="String" access="private" default="application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-word.document.macroEnabled.12,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.template,application/vnd.ms-word.template.macroEnabled.12,application/pdf,text/html, application/rtf, text/plain, application/xml, text/xml, application/vnd.oasis.opendocument.text, image/bmp, image/jpeg, image/gif, image/tiff, image/png, application/vnd.ms-xpsdocument, application/oxps, message/rfc822, image/bmp, image/heif"/>
+
+    <!-- METHODS -->
+    <aura:method name="uploadFileToRecord" action="{!c.uploadFile}" description="Uploads file to salesforce"/>
+
+    <div class="slds-grid">
+        <div>
+            <lightning:input aura:id="fileInput"  name="file2" label="{!v.inputLabel}" required="{!v.required}" onchange="{! c.handleUploadFinished }" type="file" files="{!v.FileList}" disabled="{!not(empty(v.fileName))}" accept="{!v.acceptedFileTypes}" multiple="false"/>
+            <aura:if isTrue="{!v.uploading}"><div class="slds-text-heading_medium slds-has-error">Uploading...</div></aura:if>
+            <aura:if isTrue="{!not(empty(v.errorMsg))}"><div class="slds-text-heading_medium slds-has-error">{!v.errorMsg}</div></aura:if>
+        </div>
+        <aura:if isTrue="{!not(empty(v.fileName))}">
+            <div class="slds-grid" style="align-items: center;">
+                <div class="slds-text-heading_medium slds-m-top_large slds-m-left_medium slds-m-right_small" style="color:#4e6593; font-weight:700;">{!v.fileName}</div>
+                <lightning:button variant="base" iconName="utility:close" class="slds-text-heading_large slds-m-top_large slds-required slds-border_left slds-border_right slds-border_top slds-border_bottom" onclick="{!c.removeFileAttachment}"/>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

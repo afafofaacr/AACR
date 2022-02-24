@@ -1,0 +1,7 @@
+<!--
+ - Created by lauren.lezberg on 1/24/2020.
+ -->
+
+<aura:event type="APPLICATION" description="EventScheduleUpdate">
+    <aura:attribute name="type" type="String" description="type of schedule update"/>
+</aura:event>

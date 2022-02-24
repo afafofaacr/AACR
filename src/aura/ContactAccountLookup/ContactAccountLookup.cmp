@@ -1,0 +1,43 @@
+<!--
+ - Created by lauren.lezberg on 2/26/2019.
+ -->
+
+<aura:component description="ContactAccountLookup">
+    <ltng:require scripts="{!$Resource.jQueryJs}" afterScriptsLoaded="{!c.scriptsLoad}"/>
+    <aura:attribute name="contactId" type="String" description="current contact id"/>
+    <aura:attribute name="accountId" type="String" description="current contact accountId"/>
+    <aura:attribute name="selectedRecord" type="Object" default="{}" description="stores selected account record"/>
+    <aura:attribute name="affiliatedWithSelf" type="Boolean" description="is affiliated with household account"/>
+
+
+    <aura:attribute name="affiliationOptions" type="List" default="[
+    {'label': 'Affiliated', 'value': 'affiliated'},
+    {'label': 'No Affiliation', 'value': 'none'}
+    ]"/>
+    <aura:attribute name="affiliation" type="String" default="none"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.affiliatedWithSelf}" action="{!c.changeAffiliation}"/>
+
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <aura:if isTrue="{!v.accountId==null}">
+            <lightning:radioGroup aura:id="radioButtonGroup"
+                                  name="radioButtonGroup"
+                                  options="{!v.affiliationOptions}"
+                                  value="{!v.affiliation}"
+                                  type="button"
+                                  class="{!v.affiliation!='affiliated'?'slds-m-bottom_medium':''}"
+                                  onchange="{!c.toggleAffiliation}"/>
+            </aura:if>
+
+        </div>
+    </div>
+    <aura:if isTrue="{!v.affiliation=='affiliated'}">
+        <div class="slds-form_horizontal slds-m-top_medium">
+            <c:CompanyLookup aura:id="companyLookup" contactId="{!v.contactId}" selectedRecord="{!v.selectedRecord}" />
+        </div>
+    </aura:if>
+</aura:component>

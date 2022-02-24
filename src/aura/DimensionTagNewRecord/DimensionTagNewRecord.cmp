@@ -1,0 +1,30 @@
+<!--
+ - Created by afaf.awad on 6/7/2021.
+ -->
+
+<aura:component description="DimensionTagNewRecord">
+
+    <aura:attribute name="DimTag" type="Object" description="Object of the selected Dim Tag"/>
+    <aura:attribute name="parent" type="Aura.Component" required="true"/>
+
+    <aura:registerEvent name="callDimTagEvent" type="c:DimTagEvent"/>
+
+    <div class="slds-box slds-m-around_x-small">
+        <div class="slds-align_absolute-center">
+            <div class="slds-text-heading_small">Add New Records</div>
+        </div>
+        <lightning:recordEditForm objectApiName="{!v.DimTag.Object__c + '_Dimension_Tag__c'}"
+        onsuccess="{!c.onSuccess}">
+            <lightning:messages />
+            <lightning:inputField aura:id="objectLookup" fieldName="Object_Lookup__c"/>
+            <lightning:inputField fieldName="Tag__c" value="{!v.DimTag.DeveloperName}" class="slds-hide"/>
+            <lightning:inputField fieldName="Dim_Tag_Id__c" value="{!v.DimTag.Id}" class="slds-hide"/>
+
+            <div class="slds-align_absolute-center">
+                <lightning:button label="Add" title="Add New Record" variant="brand" type="submit"/>
+                <lightning:button label="Cancel" title="Cancel" variant="brand" onclick="{!c.cancel}"/>
+            </div>
+        </lightning:recordEditForm>
+    </div>
+
+</aura:component>

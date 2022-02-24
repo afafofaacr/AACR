@@ -1,0 +1,36 @@
+<!--
+ - Created by afaf.awad on 12/2/2019.
+ -->
+
+<aura:component description="BackOfficeFormGroup" controller="BackOfficeFormController">
+
+    <aura:attribute name="formGroup" type="PagesApi__Field_Group__c" description="Field Group Object"/>
+    <aura:attribute name="formFields" type="List" description="Form Fields passed form BackOfficeForm cmp"/>
+    <aura:attribute name="formId" type="String" description="Id of the selected form"/>
+    <aura:attribute name="fieldsList" type="List" description="Form Field(s) matched to formGroup" />
+    <aura:attribute name="fieldResponses" type="List" description="List of Field Responses passed from parent (if any exists)" />
+    <aura:attribute name="formResponseId" type="String" description="Form Response Id created from parent" />
+
+    <aura:attribute name="salesOrderId" type="String" description="Sales Order Id from OrderEntryForm"/>
+    <aura:attribute name="contactId" type="String" description="Contact linked to Sales Order"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card>
+        <aura:set attribute="title">
+            <div class="slds-text-heading_large slds-text-title_bold">
+                {!v.formGroup.Name}
+            </div>
+        </aura:set>
+        <p class="slds-p-horizontal_small">{!v.formGroup.PagesApi__Instructions__c}</p>
+        <aura:iteration var="field" items="{!v.fieldsList}">
+            <div class="row slds-card__body--inner">
+                <c:BackOfficeFormFields aura:id="formField" formGroupId="{!v.formGroup.Id}"
+                                        salesOrderId="{!v.salesOrderId}" contactId="{!v.contactId}"
+                                        responseList="{!v.fieldResponses}" fieldsList="{!field}"
+                                        formResponseId="{!v.formResponseId}"/>
+
+            </div>
+        </aura:iteration>
+    </lightning:card>
+</aura:component>

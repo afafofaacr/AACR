@@ -1,0 +1,53 @@
+<!--
+ - Created by afaf.awad on 6/4/2021.
+ -->
+
+<aura:component description="DimensionTagTable" controller="DimensionTagTableController" implements="flexipage:availableForAllPageTypes">
+
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="dimTagData" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="isLoading" type="Boolean" default="true"/>
+    <aura:attribute name="searchString" type="String" default="" description="search string from user"/>
+    <aura:attribute name="tagLevel" type="String" description="Public, Private, or System"/>
+    <aura:attribute name="objectFilters" type="List" description="Account,Contact,Lead, and/or Opportunity"/>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.searchString}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.objectFilters}" action="{!c.doInit}"/>
+    <aura:handler name="callDimTagEvent" event="c:DimTagEvent" action="{!c.doInit}"/>
+
+    <lightning:card title="{!v.tagLevel + 'Tags'}">
+        <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+            <div class="slds-align_absolute-center">
+                <lightning:spinner size="medium" alternativeText="Waiting for data"/>
+            </div>
+        </div>
+        <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+
+    <!--            <lightning:datatable-->
+    <!--                    columns="{! v.columns }"-->
+    <!--                    data="{! v.dimTagData }"-->
+    <!--                    keyField="Id"-->
+    <!--                    showRowNumberColumn="true"-->
+    <!--                    enableInfiniteLoading="true"-->
+    <!--                    loadMoreOffset="20"-->
+    <!--                    onloadmore="{!c.loadMoreData}"-->
+    <!--            />-->
+
+
+    <lightning:datatable keyField="Id"
+                         data="{!v.dimTagData}"
+                         columns="{!v.columns}"
+                         hideCheckboxColumn="true"
+                         onrowaction="{!c.goToSubTab}"
+                         defaultSortDirection="{!v.defaultSortDirection}"
+                         sortedDirection="{!v.sortDirection}"
+                         sortedBy="{!v.sortedBy}"
+                         onsort="{!c.handleSort}"/>
+        </div>
+    </lightning:card>
+</aura:component>

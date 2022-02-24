@@ -1,0 +1,14 @@
+<aura:component controller="CopyContactToClipboardCtrl"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name = "CopiedContactData" type = "String" />
+    <aura:attribute name = "copying" type ="Boolean" default="false" />
+
+
+    <TEXTAREA aura:id="holdtext" style="width: 0px; height: 0px; opacity: 0;">{!v.recordId}</TEXTAREA>
+
+    <lightning:button variant="brand" label="{!v.copying?'Copying...': 'Quick Copy'}" disabled="{!v.copying}"
+                      iconName="utility:copy_to_clipboard" iconPosition="left" onclick="{!c.copyContact }" />
+
+</aura:component>

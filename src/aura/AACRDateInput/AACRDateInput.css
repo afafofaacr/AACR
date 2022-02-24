@@ -1,0 +1,12 @@
+/**
+ * Created by lauren.lezberg on 1/8/2021.
+ */
+
+.THIS label.slds-form-element__label.slds-no-flex{
+    font-size:1.25rem;
+}
+
+.THIS input.slds-input::placeholder{
+    color:darkgray;
+    font-size:1.25rem;
+}

@@ -1,0 +1,27 @@
+<!--
+ - Created by lauren.lezberg on 10/15/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: ItemQuickAddController</p>
+        <p>
+            The <code>ItemQuickAdd</code> component behaves similarly to the <code>CustomLookup</code> component except that it only displays OrderApi__Item__c records. These items are
+            meant to be added as sales order lines for any back office processing.
+            Results are displayed and updated as the user types. They are displayed using the <code>ItemQuickAddResults</code> component.
+        </p>
+        <p>
+            It is important to note that there is an extra filter criteria added by default to the filter string. If the item class is an event class, the event end date must be either today or in the future.
+            This is to make sure when looking for event tickets, only available tickets appear to user because dates could not be specified in the query string.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The component does not associate the selected record with a particular sales order, it simply searches a list of items based off of the <code>filterString</code> attribute.</p>
+        <p>The <code>filterString</code> attribute must be in the form of a query string with filter conditions for the particular object type.</p>
+        <p>The component handles the <code>c:SelectedObjectRecordEvt</code> event when an item is selected from the list of results.</p>
+        <p>The component exposes a global method (clear) that clears the selected result from the input, essentially resetting the component.</p>
+    </aura:description>
+    <aura:example name="ItemQuickAdd" ref="c:ItemQuickAdd" label="ItemQuickAdd">
+        Example for ItemQuickAdd
+    </aura:example>
+</aura:documentation>

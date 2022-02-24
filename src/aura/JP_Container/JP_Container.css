@@ -1,0 +1,84 @@
+/**
+ * Created by lauren.lezberg on 9/15/2020.
+ */
+
+.THIS .slds-button{
+    display:block;
+}
+
+.THIS lightning-input-field{
+    font-size:1.65rem;
+}
+
+.THIS .slds-form-element__help{
+    font-size:1.25rem;
+}
+
+.THIS input{
+    font-size:1.65rem;
+}
+
+.THIS .slds-media.slds-listbox__option.slds-media_center.slds-media_small.slds-listbox__option_plain{
+    font-size:1.5rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size:1.25rem;
+    font-weight:300;
+}
+
+.THIS.toast {
+    max-width: 50%;
+    height: 50px;
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: token(aacrGreen);
+    color: #fff;
+    display:flex;
+    text-align: center;
+    border-radius: 2px;
+    position: fixed;
+    opacity:0.80;
+    z-index: 10000;
+    left: 0;right:0;
+    top:10px;
+    font-size: 17px;
+    white-space: nowrap;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+.THIS.errorToast {
+    max-width: 50%;
+    height: 50px;
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: token(AACRRed);
+    color: #fff;
+    display:flex;
+    text-align: center;
+    border-radius: 2px;
+    position: fixed;
+    opacity:0.80;
+    z-index: 10000;
+    left: 0;right:0;
+    top:10px;
+    font-size: 17px;
+    white-space: nowrap;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+.THIS.slds-button_icon{
+    height:1.5rem;
+    width:1.5rem;
+}
+
+.THIS .desc{
+    color: #fff;
+    margin:auto;
+    padding: 16px;
+
+    overflow: hidden;
+    white-space: nowrap;
+}

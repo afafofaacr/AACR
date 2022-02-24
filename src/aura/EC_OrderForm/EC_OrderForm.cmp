@@ -1,0 +1,161 @@
+<!--
+ - Created by afaf.awad on 2/8/2021.
+ -->
+
+<aura:component description="EC_OrderForm" controller="EC_OrderFormController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="orderId" type="String" description="SF Id of Exhibitor Order"/>
+    <aura:attribute name="exOrder" type="EC_Order__c" description="Exhibitor Order Object" />
+    <aura:attribute name="partCount" type="Integer" default="0" description="Total count of participants based on user selections"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="Processing count update."/>
+
+<!--    FILTER TABLE ATTRIBUTES-->
+    <aura:attribute name="countryCol" type="List" default="[{label: 'Countries', fieldName: 'option', type: 'String'}]"/>
+    <aura:attribute name="countryData" type="Object"/>
+    <aura:attribute name="countrySelected" type="List" description="List of countries selected from countries table"/>
+    <aura:attribute name="attendeeTypeCol" type="List" default="[{label: 'Attendee Types', fieldName: 'option', type: 'String'}]"/>
+    <aura:attribute name="attendeeTypeData" type="Object"/>
+    <aura:attribute name="attendeeSelected" type="List" description="List of attendee types selected from attendee types table"/>
+    <aura:attribute name="institutionTypeCol" type="List" default="[{label: 'Institution Types', fieldName: 'option', type: 'String'}]"/>
+    <aura:attribute name="institutionTypeData" type="Object"/>
+    <aura:attribute name="institutionSelected" type="List" description="List of institution types selected from institution types table"/>
+    <aura:attribute name="degreeCol" type="List" default="[{label: 'Degrees', fieldName: 'option', type: 'String'}]"/>
+    <aura:attribute name="degreeData" type="Object"/>
+    <aura:attribute name="degreeSelected" type="List" description="List of degrees selected from degrees table"/>
+    <aura:attribute name="organCol" type="List" default="[{label: 'Organs', fieldName: 'option', type: 'String'}]"/>
+    <aura:attribute name="organData" type="Object"/>
+    <aura:attribute name="organSelected" type="List" description="List of organs selected from organs table"/>
+    <aura:attribute name="researchCol" type="List" default="[{label: 'Research Areas of Expertise', fieldName: 'option', type: 'String'}]"/>
+    <aura:attribute name="researchData" type="Object"/>
+    <aura:attribute name="researchSelected" type="List" description="List of research areas selected from Research Areas of Expertise table"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:registerEvent name="EC_AudienceEvent" type="c:EC_AudienceEvent"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+
+    <div style="padding-bottom: 35px">
+    <lightning:recordEditForm aura:id="orderForm"
+                              recordId="{!v.orderId}"
+                              onload="{!c.handleOnLoad}"
+                              objectApiName="EC_Order__c">
+
+        <lightning:messages />
+        <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+            <div class="slds-align_absolute-center">
+                <c:AACRSpinner/>
+            </div>
+        </div>
+        <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-1">
+                <lightning:outputField fieldName="Name"/>
+                <lightning:inputField aura:id="orderName" fieldName="Order_Name__c" required="true"/>
+            </div>
+
+        </div>
+                <div class="slds-border_bottom bold slds-m-top_large slds-clearfix" style="font-size: 20px">Filter Targets
+<!--                <div class="slds-float_right">-->
+<!--                    <c:EC_TargetAudience aura:id="targetAudience"/>-->
+<!--&lt;!&ndash;                    Estimated Audience: {!v.partCount}&ndash;&gt;-->
+<!--                </div>-->
+
+                <div class="slds-float_right" >
+                    <lightning:button label="{!v.processing == true ? 'Updating...' : 'Update'}" variant="brand" class="updateButton" onclick="{!c.updateAudience}"
+                                        disabled="{!v.processing}"/>
+                </div>
+                </div>
+        <br/>
+                <div class="slds-grid slds-gutters slds-m-top_large">
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="tableStylingTop">
+                            <lightning:datatable
+                                    aura:id="countryTable"
+                                    columns="{!v.countryCol}"
+                                    data="{! v.countryData }"
+                                    keyField="option"
+                                    class="filterTable"
+                                    onrowselection="{!c.addSelection}"
+                                    selectedRows="{!v.countrySelected}"/>
+                        </div>
+                        <br/>
+                        <div class="tableStyling">
+                            <lightning:datatable
+                                    aura:id="degreeTable"
+                                    columns="{!v.degreeCol}"
+                                    data="{!v.degreeData }"
+                                    keyField="option"
+                                    class="filterTable"
+                                    onrowselection="{!c.addSelection}"
+                                    selectedRows="{!v.degreeSelected}"
+                                    />
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="tableStyling slds-m-top_x-large">
+                            <lightning:datatable
+                                    aura:id="organTable"
+                                    columns="{!v.organCol}"
+                                    data="{!v.organData }"
+                                    keyField="option"
+                                    class="filterTable"
+                                    onrowselection="{!c.addSelection}"
+                                    selectedRows="{!v.organSelected}"
+                            />
+
+                        </div>
+                    </div>
+
+
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="tableStylingTop">
+                            <lightning:datatable
+                                    aura:id="attendeeTable"
+                                    columns="{!v.attendeeTypeCol}"
+                                    data="{! v.attendeeTypeData }"
+                                    keyField="option"
+                                    class="filterTable"
+                                    onrowselection="{!c.addSelection}"
+                                    selectedRows="{!v.attendeeSelected}"
+                            />
+                        </div>
+                        <br/>
+                        <div class="tableStyling">
+                            <lightning:datatable
+                                    aura:id="institutionTable"
+                                    columns="{!v.institutionTypeCol}"
+                                    data="{!v.institutionTypeData}"
+                                    keyField="option"
+                                    class="filterTable"
+                                    onrowselection="{!c.addSelection}"
+                                    selectedRows="{!v.institutionSelected}"
+                            />
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="tableStyling slds-m-top_x-large">
+                            <lightning:datatable
+                                    aura:id="researchTable"
+                                    columns="{!v.researchCol}"
+                                    data="{! v.researchData }"
+                                    keyField="option"
+                                    class="filterTable"
+                                    onrowselection="{!c.addSelection}"
+                                    selectedRows="{!v.researchSelected}"
+                            />
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </lightning:recordEditForm>
+
+    </div>
+</aura:component>

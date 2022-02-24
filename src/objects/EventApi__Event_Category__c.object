@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Event Categories store the default presets and calendar display options unique to a group of Events.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>EventApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Link to related Business Group. Derived from User Preferences if not defined on record creation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Link to related Business Group. Derived from User Preferences if not defined on record creation.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Event Categories</relationshipLabel>
+        <relationshipName>Event_Categories</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Calendar_Reminder_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Replaces Event: Description. When the customer clicks an &quot;Add to Calendar&quot; link on the event, this text is the body of the calendar item. By default, the Event Name, Start Time, End Time, and Venue information are included.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Replaces Event: Description. When the customer clicks an &quot;Add to Calendar&quot; link on the event, this text is the body of the calendar item. By default, the Event Name, Start Time, End Time, and Venue information are included.</inlineHelpText>
+        <label>Calendar Reminder Text</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Capacity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Maximum number of tickets that can be sold for the event. Required if &quot;Enable Waitlist&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of tickets that can be sold for the event. Required if &quot;Enable Waitlist&quot; is checked.</inlineHelpText>
+        <label>Capacity / Ticket Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional description to display on pages that publish a calendar of Events related to the Event Category.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional description to display on pages that publish a calendar of Events related to the Event Category.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Email_Notification_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Replaces Event: Description. When attendees are registered by proxy, they receive an email notification about the event. This text is the body of that email. By default, the Event Name, Start Time, End Time, and Venue information are included.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Replaces Event: Description. When attendees are registered by proxy, they receive an email notification about the event. This text is the body of that email. By default, the Event Name, Start Time, End Time, and Venue information are included.</inlineHelpText>
+        <label>Email Notification Text</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Registration_Groups__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, allows one person to register multiple attendees at the same time and pay for them together.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, allows one person to register multiple attendees at the same time and pay for them together.</inlineHelpText>
+        <label>Enable Registration Groups</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Schedule_Items__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, enables schedule items for event Registration Styles that support them.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, enables schedule items for event Registration Styles that support them.</inlineHelpText>
+        <label>Enable Schedule Items</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Sponsors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, enables sponsor package sales for event Registration Styles that support it.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, enables sponsor package sales for event Registration Styles that support it.</inlineHelpText>
+        <label>Enable Sponsor Sales</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Waitlist__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, attendees will have the option to be added to a waitlist once tickets are sold out.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, attendees will have the option to be added to a waitlist once tickets are sold out.</inlineHelpText>
+        <label>Enable Waitlisting</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Media_Asset_Collection__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link between the Event Category and the Media Asset Collection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link between the Event Category and the Media Asset Collection.</inlineHelpText>
+        <label>Media Asset Collection</label>
+        <referenceTo>PagesApi__Media_Asset_Collection__c</referenceTo>
+        <relationshipLabel>Media Collection</relationshipLabel>
+        <relationshipName>Media_Asset_Collections</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text appears above ticket type selection on event registration page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text appears above ticket type selection on event registration page.</inlineHelpText>
+        <label>Registration Instructions</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines which page layouts are used to display the event, as well as the settings available for ticketing and/or registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines which page layouts are used to display the event, as well as the settings available for ticketing and/or registration.</inlineHelpText>
+        <label>Registration Style</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conference</fullName>
+                    <default>true</default>
+                    <label>Conference</label>
+                </value>
+                <value>
+                    <fullName>Simple</fullName>
+                    <default>false</default>
+                    <label>Simple</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Event Category</label>
+    <listViews>
+        <fullName>EventApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>EventApi__Business_Group__c</columns>
+        <columns>EventApi__Registration_Style__c</columns>
+        <columns>EventApi__Capacity__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Event Category Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Event Categories</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventApi__Capacity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Registration_Style__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Business_Group__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Capacity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Registration_Style__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Business_Group__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EventApi__Business_Group__c</searchFilterFields>
+        <searchFilterFields>EventApi__Registration_Style__c</searchFilterFields>
+        <searchResultsAdditionalFields>EventApi__Capacity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Registration_Style__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Business_Group__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

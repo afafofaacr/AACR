@@ -1,0 +1,153 @@
+/**
+ * Created by lauren.lezberg on 2/19/2020.
+ */
+
+.THIS .iziToast-capsule{
+    text-align:center;
+}
+
+.THIS ul.slds-tabs--default__nav{
+    font-size: 2rem;
+}
+
+.THIS span.hidden{
+    display:none;
+    line-height: 0px;
+}
+
+.THIS img.hidden{
+    display:none;
+    line-height:0px;
+}
+
+.THIS div.hidden{
+    display:none;
+    line-height: 0px;
+}
+.THIS .slds-text-heading_medium{
+    font-size:2rem;
+    font-weight:500;
+}
+
+.THIS.slds-form-element__help{
+    font-size:1rem;
+}
+
+.THIS .slds-form-element__label{
+    color: token(BlueD1);
+    font-weight: 700;
+    font-size: 14px;
+    font-family:Proxima-Nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin-right: .75rem;
+    margin-bottom: .25rem;
+}
+
+
+/*.THIS div[data-name='knownAddresses']{*/
+/*display:none;*/
+/*}*/
+
+.THIS iframe{
+    margin-left: 8px;
+    margin-top: 5px;
+    width: 98%;
+    /*height:70px;*/
+}
+
+.THIS strong{
+    /*display:none;*/
+    font-weight: 400;
+}
+
+.THIS div.slds-col.slds-grid{
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.THIS div.slds-col.slds-size--1-of-1.slds-m-bottom--medium{
+    background: #50B848;
+    color: white;
+    padding: .75rem;
+}
+
+.THIS strong.slds-m-right_xx-small{
+    background: transparent;
+    color: black;
+    font-size:0.8125rem;
+}
+
+.THIS ul.slds-tabs--default__nav.fonteva-slds-payment-nav.slds-show_medium{
+    display:none;
+}
+
+.THIS  li.slds-tabs_default__item.slds-is-active{
+    border-color: token(AACRBlue);
+    font-size: 1.25rem;
+    margin-top: 8px;
+}
+
+.THIS li.slds-tabs_default__item{
+    font-size: 1.25rem;
+    margin-top: 8px;
+}
+
+.THIS .slds-page-header{
+    display:none;
+}
+
+.THIS .slds-text-heading--small{
+    font-size:1.5rem;
+}
+
+
+.THIS .slds-form-element.slds-m-bottom--small.hide-loading-span.FrameworkInputFields{
+    display:none;
+}
+
+.THIS .slds-button__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-weight:700;
+    fill: token(AACRBlue);
+}
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+    font-size:1.5rem;
+    padding-top: 1rem;
+    padding-bottom: .75rem;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0rem;
+}
+
+.THIS .slds-button--brand{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+    font-size:1.5rem;
+    padding-top: 1rem;
+    padding-bottom: .75rem;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0rem;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    color:white;
+    background-color:token(aacrGreen);
+    border-color: token(aacrGreen);
+    font-size:1.5rem;
+    padding-top:1rem;
+    padding-bottom: 0.75rem;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    color: #4e6593;
+    background-color: transparent;
+    border-color: #4e6593;
+}

@@ -1,0 +1,223 @@
+<!--
+ - Created by afaf.awad on 6/5/2020.
+ -->
+
+<aura:component description="MassRegistration" implements="lightning:isUrlAddressable" controller="MassRegistrationController">
+
+    <aura:attribute name="eventId" type="String" description="eventId"/>
+    <aura:attribute name="processing" type="Boolean" description="action is processing" default="false"/>
+    
+    <!--    PREVIEW PAGE-->
+    <aura:attribute name="showFile" type="Boolean" default="true" description="Show or Hide file upload"/>
+    <aura:attribute name="showPreview" type="Boolean" default="false" description="Show of Hide Preview page"/>
+    <aura:attribute name="TableContent" type="String" description="Preview table"/>
+    <aura:attribute name="TargetFileName" type="String" description="Name of the file"/>
+    <aura:attribute name="tableheaders" type="List" description="Headers of user's file"/>
+    <aura:attribute name="fileContentData" type="String" description="Data of user's file; preview data. It will only show first 10 rows."/>
+<!--    <aura:attribute name="filename" type="String"/>-->
+    <aura:attribute name="FileList" type="Object" description="Uploaded file"/>
+    <aura:attribute name="aacrField" type="String" description="aacrId picklist choice"/>
+    <aura:attribute name="emailField" type="String" description="Email picklist choice"/>
+
+<!--    VALIDATION-->
+    <aura:attribute name="showValidation" type="Boolean" default="false" description="Show of Hide Validation page."/>
+    <aura:attribute name="contactColumns" type="List" description="List of columns for contacts table"/>
+    <aura:attribute name="dupContacts" type="Contact[]" description="List of duplicate Contacts"/>
+    <aura:attribute name="mismatchedContacts" type="Contact[]" description="List of Contacts that do not have matching AACRIds and Contacts from file."/>
+    <aura:attribute name="attendeeColumns" type="List" description="List of columns for attendee table"/>
+    <aura:attribute name="attendees" type="EventApi__Attendee__c[]" description="List of existing Attendees"/>
+    <!--    <aura:attribute name="dupsSelected" type="List" description="List of contacts selected from list of duplicates"/>-->
+    <aura:attribute name="selectedRows" type="List" description="List of contacts selected from duplicates table"/>
+    <aura:attribute name="missingContacts" type="List" description="List of contacts' emails that don't exist"/>
+    <aura:attribute name="aacrIdList" type="List" description="List of aacrIDs to create records"/>
+    <aura:attribute name="downloadExceptions" type="Boolean" description="Download exceptions file?" default="true"/>
+
+<!--    CONFIRM-->
+    <aura:attribute name="showConfirm" type="Boolean" default="false" description="Show or Hide Confirm page."/>
+    <aura:attribute name="confirmList" type="Contact[]" description="List of Contacts to create new records"/>
+
+<!--    HANDLERS    -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <lightning:navigation aura:id="navLink"/>
+    <aura:registerEvent name="errorCmp" type="c:ComponentError"/>
+
+    <div class="slds-card">
+    <aura:if isTrue="{!v.showFile}">
+
+        <!--        FILE UPLOADER-->
+        <br/>
+        <div class="slds-text-heading_large slds-align--absolute-center">Upload File</div>
+        <br/>
+        <div class="slds-box">
+        <div class="slds-text-heading_small slds-align--absolute-center"><b>Upload, or Drag and Drop, your CSV file.</b></div>
+        <div class="slds-m-around--large slds-align--absolute-center" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
+            <div>
+                <lightning:input aura:id="fileInput" name="file2" label="Upload File" type="file" files="{!v.FileList}"
+                                 onchange="{!c.onDrop }" accept=".csv" required="true" messageWhenValueMissing="File is Required"/>
+                <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                    <div class="slds-text-heading_medium slds-has-error">{!v.errorMsg}</div>
+                </aura:if>
+            </div>
+        </div>
+        </div>
+    </aura:if>
+    <!--        PREVIEW-->
+    <aura:if isTrue="{!v.showPreview}">
+        <br/>
+        <div class="slds-text-heading_large slds-align--absolute-center">Preview</div>
+        <br/>
+        <div class="slds-box">
+            <div class="slds-text-heading_small"><b>This is a preview of your uploaded file. </b>
+                <ui:outputRichText class="uiOutputRichText slds-m-around--large" value="{!v.TargetFileName}"/>
+            </div>
+
+            <div class="slds-box slds-scrollable--x">
+                <ui:outputRichText class="uiOutputRichText slds-m--around-large" value="{!v.TableContent}"/>
+            </div>
+            <div class="slds-p-around--large slds-align--absolute-center">
+                <lightning:button label="Remove File" variant="brand" onclick="{!c.removeFile}"/>
+            </div>
+        </div>
+        <br/>
+        <!--MAPPING PICKIST            -->
+        <div class="slds-box">
+            <div class="slds-text-heading_small"><b>Select the column that matches each field:</b></div>
+            <br/>
+            <lightning:layout horizontalAlign="center">
+                <lightning:layoutItem size="5">
+                    <div class="slds-form_horizontal" >
+                        <lightning:combobox aura:id="fieldToMap" placeholder="--Select a column from your file--" label="AACR ID" options="{!v.tableheaders}" required="true"
+                                            value="{!v.aacrField}" onchange="{!c.clearError}"/>
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="5" >
+                    <div class="slds-form_horizontal">
+                        <lightning:combobox aura:id="fieldToMap" placeholder="--Select a column from your file--" label="Email" options="{!v.tableheaders}" required="true"
+                                            value="{!v.emailField}"  onchange="{!c.clearError}"/>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+        <c:ErrorMessage />
+    </aura:if>
+        <aura:if isTrue="{!or(v.showFile, v.showPreview)}">
+            <div class="slds-p-around--large slds-align--absolute-center">
+                <lightning:button label="Cancel" variant="brand" onclick="{!c.cancel}"/>
+                <lightning:button label="{!v.processing?'Processing...': 'Next'}" variant="brand" onclick="{!c.processFileContent}"/>
+            </div>
+        </aura:if>
+    <!--    DUPLICATE CONTACTS TABLE-->
+    <aura:if isTrue="{!v.showValidation}">
+        <br/>
+        <div class="slds-text-heading_large slds-align--absolute-center" >Validation</div>
+        <br/>
+        <c:ErrorMessage />
+        <aura:if isTrue="{!not(empty(v.dupContacts))}">
+<!--            <div class="{!not(empty(v.dupContacts))? '': 'slds-hide'}">-->
+            <div class="slds-box" style="margin:auto;">
+                <div class="slds-text-heading_small"><b>Some of your contacts have duplicates. Please select the right contact in which you would like to create an Attendee for this Event.</b></div>
+                <br/>
+                <div style="max-height: 300px; overflow: auto;">
+                <lightning:datatable data="{!v.dupContacts}"
+                                     columns="{!v.contactColumns}"
+                                     keyField="Id"
+                                     aura:id="dupsTable"
+                                     hideCheckboxColumn="false"
+                                     onrowselection="{!c.addSelection}"
+                                     selectedRows="{!v.selectedRows}"/>
+            </div>
+            </div>
+<!--            </div>-->
+        </aura:if>
+
+        <aura:if isTrue="{!not(empty(v.mismatchedContacts))}">
+            <br/>
+            <br/>
+            <!--            <div class="{!not(empty(v.dupContacts))? '': 'slds-hide'}">-->
+            <div class="slds-box" style="margin:auto;">
+                <div class="slds-text-heading_small"><b>These Contacts returned have emails with AACRIDs that did not match your file. Cannot create an Attendee record for these Contacts.</b></div>
+                <br/>
+                <div style="max-height: 300px; overflow: auto;">
+                    <lightning:datatable data="{!v.mismatchedContacts}"
+                                         columns="{!v.contactColumns}"
+                                         keyField="Id"
+                                         aura:id="mismatchedTable"
+                                         hideCheckboxColumn="true"/>
+                </div>
+            </div>
+            <!--            </div>-->
+        </aura:if>
+
+    <aura:if isTrue="{!not(empty(v.attendees))}">
+        <br/>
+        <br/>
+        <!--            <div class="{!not(empty(v.dupContacts))? '': 'slds-hide'}">-->
+        <div class="slds-box" style="margin:auto;">
+            <div class="slds-text-heading_small"><b>These Contacts already have an attendee record for this event. An attendee record will not be created for them.</b></div>
+            <br/>
+            <div style="max-height: 300px; overflow: auto;">
+            <lightning:datatable data="{!v.attendees}"
+                                 columns="{!v.attendeeColumns}"
+                                 keyField="Id"
+                                 aura:id="attendeeTable"
+                                 hideCheckboxColumn="true"/>
+            </div>
+        </div>
+<!--        </div>-->
+    </aura:if>
+
+        <!--        EMAILS THAT DO NOT EXIST-->
+        <aura:if isTrue="{!not(empty(v.missingContacts))}">
+            <br/>
+            <br/>
+            <div class="slds-box" style="margin:auto;">
+                <div class="slds-text-heading_small slds-text"><b>These emails do not exist. Attendees cannot be created for these contacts.</b> </div>
+                <br/>
+                <ul class="slds-list_dotted">
+                    <aura:iteration var="c" items="{!v.missingContacts}" indexVar="idx">
+                        <li>{!c}</li>
+                    </aura:iteration>
+                </ul>
+            </div>
+            <div style="margin:auto;width:1350px; font-weight: bolder">
+            <lightning:input aura:id="downloadCheckbox" label="Download Exceptions" type="checkbox" checked="{!v.downloadExceptions}"/>
+            </div>
+        </aura:if>
+
+        <div class="slds-p-around--large slds-align--absolute-center">
+            <lightning:button label="Cancel" variant="brand" onclick="{!c.cancel}"/>
+            <lightning:button label="Back" variant="brand" onclick="{!c.goBack}"/>
+            <lightning:button label="{!v.processing?'Processing...': 'Next'}" variant="brand" onclick="{!c.getAllRecords}"/>
+        </div>
+    </aura:if>
+
+    <!--    TABLE OF ALL CONTACTS TO INSERT-->
+
+    <aura:if isTrue="{!v.showConfirm}">
+        <br/>
+        <div class="slds-text-heading_large slds-align--absolute-center" >Attendees to Create</div>
+        <br/>
+        <div class="slds-box" style="margin:auto;">
+            <div class="slds-text-heading_small"><b>Confirm List of Attendees to Create</b></div>
+            <br/>
+            <div style="max-height: 400px; overflow: auto;">
+            <lightning:datatable data="{!v.confirmList}"
+                                 columns="{!v.contactColumns}"
+                                 keyField="id"
+                                 aura:id="confirmTable"
+                                 hideCheckboxColumn="true"
+            />
+            </div>
+
+        </div>
+        <div class="slds-p-around--large slds-align--absolute-center">
+            <lightning:button label="Cancel" variant="brand" onclick="{!c.cancel}"/>
+            <lightning:button label="Back" variant="brand" onclick="{!c.goBack}"/>
+            <lightning:button label="{!v.processing?'Processing...': 'Finish'}" variant="brand" onclick="{!c.createRecords}"/>
+        </div>
+    </aura:if>
+    </div>
+</aura:component>

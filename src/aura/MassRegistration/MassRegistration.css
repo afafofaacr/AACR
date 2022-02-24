@@ -1,0 +1,12 @@
+/**
+ * Created by afaf.awad on 6/5/2020.
+ */
+
+.THIS .slds-form_horizontal .slds-form-element .slds-form-element__control{
+    padding: initial;
+}
+
+.THIS .slds-box{
+    margin:auto;
+    width:1350px;
+}

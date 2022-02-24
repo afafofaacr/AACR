@@ -1,0 +1,23 @@
+<!--
+ - Created by lauren.lezberg on 3/18/2020.
+ -->
+
+<aura:component description="BackOfficeTicketPurchase" controller="BackOfficeTicketPurchaseController">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="recordId" type="String" description="Contact record id"/>
+    <aura:attribute name="processing" type="Boolean" description="An action is processing"/>
+    <aura:attribute name="hasAccess" type="Boolean" description="Can current user see button" default="false"/>
+    <aura:attribute name="disabledAccess" type="Boolean" description="No user record or inactive user" default="false"/>
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- NAVIGATION -->
+    <lightning:navigation aura:id="navService"/>
+
+    
+    <aura:if isTrue="{!v.hasAccess}">
+        <lightning:button variant="brand" title="{!v.disabledAccess?'You cannot sell a ticket to a Contact without an active User record present.':'Live Event Ticketing'}"  iconName="standard:event" onclick="{!c.goToBackOfficeTicketing}" label="{!v.processing?'Processing...': 'Live Event Ticketing'}" disabled="{!or(v.disabledAccess, v.processing)}"/>
+    </aura:if>
+</aura:component>

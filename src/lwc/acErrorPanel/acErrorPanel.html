@@ -1,0 +1,27 @@
+<!--
+ - Created by mitfity on 24.07.2019.
+ -->
+
+<!-- AC Error Panel -->
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-icon icon-name="utility:error"></lightning-icon>
+        <div class="slds-p-around_small">
+            <p>{friendlyMessage}</p>
+            <template if:true={errorMessages.length}>
+                <div class="slds-p-vertical_x-small">
+                    <lightning-input
+                            label="Show Details"
+                            type="checkbox"
+                            onchange={onCheckboxChange}>
+                    </lightning-input>
+                </div>
+                <template if:true={viewDetails}>
+                    <template for:each={errorMessages} for:item="message">
+                        <p key={message}>{message}</p>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

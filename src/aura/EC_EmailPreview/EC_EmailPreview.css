@@ -1,0 +1,48 @@
+/**
+ * Created by afaf.awad on 2/16/2021.
+ */
+
+.THIS .slds-form-element__static{
+    font-size: 1.5rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size: 1.5rem;
+}
+
+.THIS label{
+    margin-bottom:0px;
+    padding: 0.70rem;
+    font-size: 1.5rem;
+    color: rgb(107,109,112);
+}
+
+.THIS .verifyButton{
+    font-size: 2rem;
+    padding: .7rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.THIS .slds-input[readonly]{
+    font-size: 15px;
+}
+
+.THIS .slds-input{
+    font-size: 15px;
+}
+
+.THIS .navButtons{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+    padding: 8px;
+}
+
+.THIS .emptyEmail{
+    position: absolute;
+    top: 35%;
+    left: 52.5%;
+}

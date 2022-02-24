@@ -1,0 +1,16 @@
+<!--
+ - Created by lauren.lezberg on 4/28/2021.
+ -->
+
+<aura:component description="MentorTraineeRegistrationFields" controller="EventRegisterController">
+    <aura:attribute name="salesOrderId" type="String" description="salesOrderId"/>
+    <aura:attribute name="participantId" type="String" description="participant id"/>
+
+    <aura:handler name="change" value="{!v.salesOrderId}" action="{!c.getParticipantId}"/>
+
+    <aura:if isTrue="{!v.participantId!=null}">
+        <lightning:recordEditForm aura:id="pForm" objectApiName="BR_Participation__c" recordId="{!v.participantId}" >
+            <lightning:inputField fieldName="Workshop_Groups__c"/>
+        </lightning:recordEditForm>
+    </aura:if>
+</aura:component>

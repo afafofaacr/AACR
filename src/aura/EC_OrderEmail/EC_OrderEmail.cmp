@@ -1,0 +1,84 @@
+<!--
+ - Created by afaf.awad on 2/15/2021.
+ -->
+
+<aura:component description="EC_OrderEmail" controller="EC_OrderEmailController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="emailId" type="String" description="SF Id of Exhibitor Email"/>
+    <aura:attribute name="exOrder" type="EC_Email__c" description="Exhibitor Order Object" />
+    <aura:attribute name="partCount" type="Integer" default="0" description="Total count of participants based on user selections"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="processUpdate" type="Boolean" default="false" description="process updating preview"/>
+    <aura:attribute name="processSend" type="Boolean" default="false" description="process sending test email"/>
+    <aura:attribute name="updatePreview" type="Boolean" default="false" description="Save record from update preview button?"/>
+    <aura:attribute name="emailBody" type="String" description="Body of email"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:registerEvent name="showToast" type="force:showToast" />
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+    <div style="padding-bottom: 35px">
+        <lightning:recordEditForm aura:id="emailForm"
+                                  recordId="{!v.emailId}"
+                                  onload="{!c.handleOnLoad}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  onerror="{!c.handleError}"
+                                  objectApiName="EC_Email__c"
+                                    class="slds-grow">
+
+            <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner/>
+                </div>
+            </div>
+            <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:inputField aura:id="emailName" fieldName="Template_Name__c" required="true"/>
+<!--                        <lightning:inputField aura:id="actionName" fieldName="Call_to_Action__c" required="true"/>-->
+<!--                        <lightning:inputField aura:id="actionLink" fieldName="Action_Link__c" required="true"/>-->
+                        <lightning:inputField aura:id="emailSubject" fieldName="Subject__c" required="true"/>
+
+<!--                        <lightning:inputRichText aura:id="bodyInput" label="Email Body" labelVisible="true"-->
+<!--                                                 class="inputEmailRichText slds-scrollable" required="true"-->
+<!--                                                 formats="['font', 'size', 'bold', 'italic', 'underline', 'strike',-->
+<!--                                                        'list', 'indent', 'align', 'link', 'image', 'clean', 'table',-->
+<!--                                                        'header', 'color', 'background']">-->
+<!--                            <lightning:insertImageButton/>-->
+<!--                        </lightning:inputRichText>-->
+                        <lightning:inputField aura:id="bodyField" fieldName="Template_Body__c" required="true"
+                                              variant="label-stacked" class="templateBody"/>
+                        <div class="slds-align_absolute-center slds-m-top_medium">
+                            <lightning:button label="{!v.processUpdate? 'Updating...' : 'Update Preview'}"
+                                              class="updateButton slds-m-around_small" variant="brand"
+                                              onclick="{!c.updatePreview}" disabled="{!v.processUpdate}"/>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <div class="slds-m-bottom_medium">
+                        <c:EC_EmailPreview aura:id="emailPreview" emailId="{!v.emailId}"/>
+                        </div>
+                        <div aura:id="toastMsg" class="toast slds-notify slds-notify_toast slds-theme_success slds-hide">
+
+                            <div class="desc">Your email has been sent</div>
+                            <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeMessage}" class="slds-float_right slds-m-top_x-small slds-m-right_medium" variant="bare-inverse"/>
+                        </div>
+                        <lightning:inputField aura:id="emailTest" fieldName="Send_Test_To__c" class="slds-m-top_large"/>
+                        <lightning:messages aura:id="errorMsg" class="errorMessage"/>
+                        <div class="slds-align_absolute-center">
+                            <lightning:button label="{!v.processSend? 'Sending...' :'Send Test Email'}" class="updateButton slds-m-around_small" variant="brand" onclick="{!c.handleTestEmail}" disabled="{!v.processSend}"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </lightning:recordEditForm>
+    </div>
+</aura:component>

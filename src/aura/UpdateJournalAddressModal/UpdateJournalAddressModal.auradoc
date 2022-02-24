@@ -1,0 +1,31 @@
+<!--
+ - Created by lauren.lezberg on 10/17/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>UpdateJournalAddressModal</code> component allows for user to input their journal address in a modal window. The component
+            allows for user to select their primary address or enter another address. If the user selects their primary address, the primary address
+            will be copied into the journal address fields on the contact record. If the user selects other, the address entered will be saved to the
+            journal address fields on the contact.
+        </p>
+        <p>
+            When the journal address modal is open, it displays an input form for journal address fields on the contact. When the modal is closed, there
+            are two things a user might see. If the contact already has a journal address, there will be a button to update the journal address. If the
+            contact does not have a journal address already, there will be the option to choose between primary and other.
+        </p>
+        <br/>
+        <div style="font-size:1.5rem;">Usage Considerations: </div>
+        <p>The component exposes 2 methods for use:
+            <ul>
+                <li>copyPrimaryAddress - the preferred address is copied into the journal address fields.</li>
+                <li>saveJournalAddress - the journal address fields on the contact record are updated.</li>
+            </ul>
+        </p>
+        <p>If the user already has a journal address, the address will be pre-populated.</p>
+    </aura:description>
+    <aura:example name="UpdateJournalAddressModal" ref="c:UpdateJournalAddressModal" label="UpdateJournalAddressModal">
+        Example for UpdateJournalAddressModal
+    </aura:example>
+</aura:documentation>

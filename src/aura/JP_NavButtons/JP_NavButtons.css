@@ -1,0 +1,10 @@
+/**
+ * Created by lauren.lezberg on 3/8/2019.
+ */
+.THIS .slds-button.slds-button_neutral{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100px; 
+}

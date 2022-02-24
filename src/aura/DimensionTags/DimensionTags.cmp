@@ -1,0 +1,98 @@
+<!--
+ - Created by afaf.awad on 5/25/2021.
+ -->
+
+<aura:component description="DimensionTags" controller="DimensionTagController"
+                implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:hasSObjectName">
+
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}" description="object component sits on."/>
+    <aura:attribute name="systemTags" type="List" description="List of system tags for record"/>
+    <aura:attribute name="publicTags" type="List" description="List of public tags for record"/>
+    <aura:attribute name="privateTags" type="List" description="List of private tags for record"/>
+    <aura:attribute name="activeSections" type="List" default="['public','private']" />
+    <aura:attribute name="activeSectionsMessage" type="String" default="" />
+    <aura:attribute name="allSelected" type="boolean" default="true" description="is All button selected?"/>
+    <aura:attribute name="hideFlagSelected" type="boolean" default="false" description="is Hide Flags button selected?"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="callDimTagEvent" event="c:DimTagEvent" action="{!c.doInit}"/>
+
+<!--    <div class="slds-box" style="background-color: white">-->
+<!--        <div class="slds-grid slds-wrap" style="margin: 0px 7px 0px 7px">-->
+<!--            <div class="slds-col slds-size_1-of-4">-->
+<!--                <div class="slds-text-heading_small slds-clearfix" style="overflow: visible !important; max-height: 2.4rem; z-index: 5;-->
+<!--    position: relative;">-->
+<!--                    <b>{!v.sobjecttype + ' Tags'} </b>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="slds-col slds-size_1-of-4 slds-align_absolute-center">-->
+<!--                <lightning:buttonIcon iconName="utility:open" size="large" variant="bare"-->
+<!--                                      alternativeText="Launch Tag Manager" title="Launch Tag Manager"-->
+<!--                                      onclick="{!c.launchTagManager}"/>-->
+<!--                <lightning:buttonIcon name="hideFlagsFilter" iconName="utility:lower_flag" alternativeText="Hide Flags"-->
+<!--                                 variant="{!v.hideFlagSelected ? 'brand' : 'bare'}" size="large"-->
+<!--                                  onclick="{!c.hideFlags}"/>-->
+<!--                <lightning:buttonIcon name="allTags" iconName="utility:all" alternativeText="All Tags" size="large"-->
+<!--                                  variant="{!v.allSelected ? 'brand' : 'bare'}" onclick="{!c.doInit}"/>-->
+<!--            </div>-->
+<!--&lt;!&ndash;            <div class="slds-col slds-size_2-of-5">&ndash;&gt;-->
+<!--&lt;!&ndash;                <lightning:button name="hideFlagsFilter" label="Hide flags" iconName="utility:lower_flag"&ndash;&gt;-->
+<!--&lt;!&ndash;                                  iconPosition="left" variant="{!v.hideFlagSelected ? 'brand' : 'neutral'}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                  onclick="{!c.hideFlags}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <lightning:button name="allTags" label="All" iconName="utility:all" iconPosition="left"&ndash;&gt;-->
+<!--&lt;!&ndash;                                  variant="{!v.allSelected ? 'brand' : 'neutral'}" onclick="{!c.doInit}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="slds-col slds-size_2-of-4">-->
+<!--                <div class="slds-float_right">-->
+<!--                    <c:DimensionTagSearch parent="{!this}" sobjecttype="{!v.sobjecttype}" recordId="{!v.recordId}"/>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    <div class="slds-box" style="background-color: white">
+        <div class="slds-text-heading_small slds-clearfix"
+             style="overflow: visible !important; max-height: 2.4rem; z-index: 5; margin: 0px 5px 0px 5px; position: relative;">
+            <b>{!v.sobjecttype + ' Tags'} </b>
+            <div class="slds-float_right" style="display: inline-block;">
+                <c:DimensionTagSearch parent="{!this}" sobjecttype="{!v.sobjecttype}" recordId="{!v.recordId}"/>
+            </div>
+                <div class="slds-float_right" style="display: inline-block;padding-right: .5rem">
+                    <lightning:buttonIcon iconName="utility:open" size="large" variant="bare"
+                                          alternativeText="Launch Tag Manager" title="Launch Tag Manager"
+                                          onclick="{!c.launchTagManager}"/>
+                    <lightning:buttonIcon name="hideFlagsFilter" iconName="utility:lower_flag"
+                                          alternativeText="Hide Flags"
+                                          variant="{!v.hideFlagSelected ? 'brand' : 'bare'}" size="large"
+                                          onclick="{!c.hideFlags}"/>
+                    <lightning:buttonIcon name="allTags" iconName="utility:all" alternativeText="All Tags" size="large"
+                                          variant="{!v.allSelected ? 'brand' : 'bare'}" onclick="{!c.doInit}"/>
+                    <!--            <lightning:buttonIcon iconName="utility:open" size="large" variant="bare" alternativeText="Launch Tag Manager" title="Launch Tag Manager" onclick="{!c.launchTagManager}"/>-->
+                    <!--            <lightning:button name="hideFlagsFilter" label="Hide flags" iconName="utility:lower_flag" iconPosition="left" variant="{!v.hideFlagSelected ? 'brand' : 'neutral'}" onclick="{!c.hideFlags}" />-->
+                    <!--            <lightning:button name="allTags" label="All" iconName="utility:all" iconPosition="left" variant="{!v.allSelected ? 'brand' : 'neutral'}" onclick="{!c.doInit}" />-->
+                </div>
+
+
+        </div>
+        <div class="slds-m-top_small">
+            <lightning:accordion
+                    allowMultipleSectionsOpen="true"
+                    onsectiontoggle="{! c.handleSectionToggle }"
+                    activeSectionName="{! v.activeSections }">
+                <lightning:accordionSection name="private" label="Private">
+                    <c:DimensionTagLevel tagLevel="Private" items="{!v.privateTags}"
+                                         recordId="{!v.recordId}" sobjecttype="{!v.sobjecttype}"/>
+                </lightning:accordionSection>
+                <lightning:accordionSection name="public" label="Public">
+                    <c:DimensionTagLevel tagLevel="Public" items="{!v.publicTags}"
+                                         recordId="{!v.recordId}" sobjecttype="{!v.sobjecttype}"/>
+                </lightning:accordionSection>
+                <lightning:accordionSection name="system" label="System">
+                    <c:DimensionTagLevel tagLevel="System" items="{!v.systemTags}"
+                                         recordId="{!v.recordId}" sobjecttype="{!v.sobjecttype}"/>
+                </lightning:accordionSection>
+            </lightning:accordion>
+        </div>
+    </div>
+</aura:component>

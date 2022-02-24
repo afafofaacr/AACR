@@ -1,0 +1,69 @@
+<template>
+
+    <lightning-card class="slds-card">
+
+        <c-csi-spinner class="form-spinner"></c-csi-spinner>
+        <div class="slds-align_absolute-center">
+            <div class="slds-grid">
+
+
+                <lightning-input type="text" placeholder="Offer Code" value={code}
+                                 onchange={handleInputChange} disabled={appliedMessage}></lightning-input>
+
+                <lightning-button if:false={appliedMessage} label="Apply" variant="brand" class="offerButton"
+                                  onclick={handleConfirmClick}></lightning-button>
+
+                <lightning-button if:true={appliedMessage} disabled={appliedMessage} label={appliedMessage}
+                                  class="offerButton"
+                                  variant="success"></lightning-button>
+
+            </div>
+        </div>
+
+        <div class="slds-align_absolute-center">
+            <div if:true={error} class="slds-text-color_error slds-text-heading_small">
+                {error}
+            </div>
+        </div>
+        <br/>
+        <!--                <div if:true={successMessage} class="slds-text-color_success slds-text-body_regular">-->
+        <!--                    {successMessage}-->
+        <!--                </div>-->
+
+
+        <!-- <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                style="background: #50B848; color: white; font-size:2rem;">
+            Order Total
+            <div class="slds-float_right">
+                <ui:outputCurrency value="{!v.fullTotal}"/>
+            </div>
+        </div>
+        <div class="slds-card slds-theme_default slds-p-around_small">
+            <div class="slds-m-right_x-large slds-m-left_x-large">
+                <div class="slds-m-bottom_x-small">
+                    <label for="subTotal" class="slds-text-heading_small bold"> Shopping Cart:</label>
+                    <div id="subTotal" class="slds-float_right" style="display:inline">
+                        <ui:outputCurrency value="{!v.subTotal}" class="slds-text-heading_small "/>
+                    </div>
+                </div>
+                <div>
+                    <label for="tax" class="slds-text-heading_small bold"> Tax:</label>
+                    <div id="tax" class="slds-float_right" style="display:inline">
+                        <ui:outputCurrency value="{!v.taxTotal}" class="slds-text-heading_small "/>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div class="slds-box slds-theme_default slds-align_absolute-center slds-size_1-of-4 lightBackground bold">
+                <label for="total" class="slds-text-heading_small bold"> Total:</label>
+                <div id="total" style="display:inline">
+                    <ui:outputCurrency value="{!v.fullTotal}" class="slds-text-heading_small bold"/>
+                </div>
+            </div>
+
+        </div> -->
+
+
+    </lightning-card>
+</template>

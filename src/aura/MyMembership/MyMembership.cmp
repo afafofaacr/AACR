@@ -1,0 +1,298 @@
+<!--
+ - Created by lauren.lezberg on 2/14/2019.
+ -->
+
+<aura:component description="MyMembership" controller="MemberProfileController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="contactId" type="Id" description="Current contact Id"/>
+    <aura:attribute name="membershipSub" type="Object" description="Individual Membership"/>
+
+    <aura:attribute name="errorMsg" type="String" description="Error message"/>
+    <aura:attribute name="membershipType" type="String" description="Name of membership item"/>
+    <aura:attribute name="joinURL" type="String" description="Join url to continue application"/>
+    <aura:attribute name="isLoading" type="Boolean" description="something on component is loading/processing"/>
+    <aura:attribute name="memberCount" type="String" description="number of AACR members"/>
+
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="noAccess" access="private" type="Boolean" description="No access to my membership/errors"
+                    default="false"/>
+    <aura:attribute name="pendingApproval" access="private" type="Boolean" description="Application pending approval"
+                    default="false"/>
+    <aura:attribute name="incompleteApplication" access="private" type="Boolean"
+                    description="Incomplete membership application" default="false"/>
+    <aura:attribute name="showMembership" access="private" type="Boolean"
+                    description="Approved/Current or prior member that can view my membership with no errors"
+                    default="false"/>
+    <aura:attribute name="showApply" access="private" type="Boolean" description="Nonmember with no application"
+                    default="false"/>
+    <aura:attribute name="showUpcomingMembership" access="private" type="Boolean"
+                    description="Membership hasnt been activated yet" default="false"/>
+    <aura:attribute name="awaitingPayment" type="Boolean" description="is membership awaiting payment" default="false"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <!-- ERROR MESSAGE -->
+    <aura:if isTrue="{!not(empty(v.errorMsg))}">
+        <div class="demo-only slds-m-around_small" style="height: 4rem; margin-bottom: 2rem;">
+            <div class="slds-notify_container slds-is-relative" style="display:contents;">
+                <div class="slds-notify slds-notify_toast slds-theme_error" role="status"
+                     style="background: #c23934; color:white;">
+                    <h2 class="slds-text-heading_small "
+                        style="color:white;font-size: 20px;padding: 10px;text-align: center;">
+                        {!v.errorMsg + ' Please email membership@aacr.org for support.'}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+    </aura:if>
+
+    <force:recordData aura:id="recordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.contactId}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      mode="VIEW"
+                      recordUpdated="{!c.handleRecordUpdate}"
+                      fields="Member_Type__c, Expected_Completion_Date__c, Initial_Join_Date__c, Paid_thru_date__c, Application_Status__c, RecordType.Name, Membership_Status__c"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+            <c:AACRSpinner/>
+        </div>
+        <aura:set attribute="else">
+            <div class="{!v.awaitingPayment || v.pendingApproval || v.showApply || v.incompleteApplication || v.noAccess?'slds-show':'slds-hide'}">
+                <div class="slds-box">
+                    <!-- NEW APPLICANTS -->
+                    <div class="slds-align_absolute-center">
+                        <div class="{!v.showApply?'slds-text-heading_medium':'slds-hide'}">
+                            By becoming a member you will join more than {!v.memberCount} investigators from around the world who
+                            depend
+                            on the AACR's programs and activities for the exchange of timely scientific information.
+                            Furthermore, you will have the opportunity to take advantage of the many benefits of
+                            membership,
+                            including substantially reduced fees for meeting registrations and journal subscriptions,
+                            as well as excellent opportunities to foster important relationships and collaborations with
+                            cancer
+                            scientists internationally.
+                        </div>
+                    </div>
+                    <div class="{!v.showApply?'slds-align_absolute-center slds-m-top_small':'slds-hide'}">
+                        <lightning:button label="{!v.isLoading?'Processing...':'Become a Member'}" variant="brand"
+                                          onclick="{!c.goToApply}"/>
+                    </div>
+
+                    <!-- INCOMPLETE APPLICATION -->
+                    <div class="{!v.incompleteApplication?'slds-show':'slds-hide'}">
+                        <div class="slds-m-bottom_large" style="text-align:center;">
+                            <div class="slds-text-heading_medium slds-m-bottom_medium" style="display:inline-flex;">
+                                You have an incomplete
+                                <div style="font-weight:500; margin-left:5px; margin-right:5px;">{!v.membershipType}</div>
+                                application in the system.
+                            </div>
+                            <div class="slds-text-heading_medium">If you would like to change your membership type,
+                                select
+                                'Cancel Application &amp; Start Over', otherwise select 'Continue with Application'.
+                            </div>
+                        </div>
+                        <div class="slds-align_absolute-center">
+                            <lightning:button
+                                    label="{!v.isLoading?'Processing...':'Cancel Application &amp; Start Over'}"
+                                    variant="neutral" onclick="{!c.cancelOpenApplication}"/>
+                            <lightning:button label="{!v.isLoading?'Processing...':'Continue Application'}"
+                                              variant="brand"
+                                              onclick="{!c.continueWithApplication}"/>
+                        </div>
+                    </div>
+
+                    <!-- AWAITING PAYMENT -->
+                    <div class="{!v.awaitingPayment?'slds-show':'slds-hide'}">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-text-heading_medium">
+                                Your membership has been approved and is awaiting payment.
+                                <br/><br/>
+                                <lightning:button label="Pay Invoice" variant="brand" onclick="{!c.payInvoice}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PENDING APPROVAL -->
+                    <div class="{!v.pendingApproval?'slds-show':'slds-hide'}">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-text-heading_medium">Your application has been submitted and is awaiting
+                                approval.
+                                Please check back soon or contact membership at membership@aacr.org.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="{!v.noAccess?'slds-show' : 'slds-hide'}">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-text-heading_medium">
+                                <lightning:icon iconName="utility:error" size="medium"/>
+                                Your account requires assistance from our Membership Staff. Please email
+                                membership@aacr.org for
+                                support.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UPCOMING MEMBERSHIP -->
+            <aura:renderIf isTrue="{!v.showUpcomingMembership}">
+                <lightning:card class="slds-p-around_medium slds-m-around_medium">
+                    <aura:set attribute="title">
+                        <div class="slds-align_absolute-center slds-m-bottom_large">
+                            <img src="{!v.membershipSub.OrderApi__Item__r.OrderApi__Image_Path__c}"
+                                 class="img-responsive slds-m-right_small" style="height:75px; width:75px;"/>
+                            <div class="slds-text-heading_large">{!v.membershipSub.OrderApi__Item__r.Name}</div>
+                        </div>
+                    </aura:set>
+                    <div class="slds-align_absolute-center slds-m-bottom_medium">
+                        <div class="slds-text-heading_medium slds-text-align_center">
+                            In order to receive full member benefits, your membership must be active. If you would like
+                            to
+                            activate your membership now, please contact the membership department at
+                            membership@aacr.org.
+                        </div>
+                    </div>
+                    <div class="slds-align_absolute-center">
+                        <div class="slds-m-bottom_large  slds-float_right">
+                            <div class="slds-text-heading_medium " style="display:flex;">
+                                <div style="font-weight:700">Your membership will activate on:</div>
+                                <ui:outputDate format="MM/dd/yyyy" class="slds-m-left_small"
+                                               value="{!v.membershipSub.OrderApi__Current_Term_Start_Date__c}"/>
+                            </div>
+                        </div>
+                    </div>
+                </lightning:card>
+            </aura:renderIf>
+
+            <!-- VALID MEMBERSHIP -->
+            <aura:renderIf isTrue="{!and(v.showMembership, not(v.awaitingPayment))}">
+                <lightning:card class="slds-p-around_medium slds-m-around_medium">
+<!--                    <aura:if isTrue="{!not(v.membershipSub.OrderApi__Item__r.Managed__c)}">-->
+                        <div class="slds-align_absolute-center slds-m-bottom_large">
+                            <img src="{!v.membershipSub.OrderApi__Item__r.OrderApi__Image_Path__c}"
+                                 class="img-responsive slds-m-right_small" style="height:75px; width:75px;"/>
+                            <div class="slds-text-heading_large">{!v.membershipSub.OrderApi__Item__r.Name}</div>
+                        </div>
+                        <div class="slds-m-bottom_large slds-align_absolute-center">
+                            <div class="slds-text-heading_medium slds-p-around_medium"
+                                 style="display:flex;">
+                                <div style="font-weight:700">Member Since:</div>
+                                <ui:outputDate format="MM/dd/yyyy" class="slds-m-left_small"
+                                               value="{!v.simpleRecord.Initial_Join_Date__c}"/>
+                            </div>
+                        </div>
+                        <aura:if isTrue="{!and(v.membershipSub.OrderApi__Item__r.Managed__c, v.membershipSub.OrderApi__Subscription_Plan__r.Name!='Lifetime')}">
+                            <div class="alignCenterGrid">
+                                <div class="slds-float_right">
+                                    <div class="slds-text-heading_medium" style="display:flex;">
+                                        <div style="font-weight:700">Expiration Date:</div>
+                                        <ui:outputDate format="MM/dd/yyyy" class="slds-m-left_small"
+                                                       value="{!v.simpleRecord.Paid_thru_date__c}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.membershipSub.OrderApi__Item__r.Name=='Associate Membership'}">
+                            <div class="alignCenterGrid">
+                                <div class="slds-float_right">
+                                    <div class="slds-text-heading_medium" style="display:flex;">
+                                        <div style="font-weight:700">Expiration Date:</div>
+                                        <ui:outputDate format="MM/dd/yyyy" class="slds-m-left_small"
+                                                       value="{!v.membershipSub.OrderApi__Grace_Period_End_Date__c}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.membershipSub.OrderApi__Item__r.Name=='Student Membership'}">
+                            <div class="alignCenterGrid">
+                                <div class="slds-float_right">
+                                    <div class="slds-text-heading_medium" style="display:flex;">
+                                        <div style="font-weight:700">Expiration Date:</div>
+                                        <ui:outputDate format="MM/dd/yyyy" class="slds-m-left_small"
+                                                       value="{!v.simpleRecord.Expected_Completion_Date__c}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:if>
+<!--                        <aura:set attribute="else">-->
+<!--&lt;!&ndash;                            <div class="slds-grid slds-gutters ">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="slds-col slds-border_right">&ndash;&gt;-->
+
+<!--                                    <div class="alignCenterGrid slds-m-bottom_large">-->
+<!--                                        <img src="{!v.membershipSub.OrderApi__Item__r.OrderApi__Image_Path__c}"-->
+<!--                                             class="img-responsive slds-m-right_small"-->
+<!--                                             style="height:75px; width:75px;"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="alignCenterGrid slds-m-bottom_large">-->
+<!--                                        <div class="slds-text-heading_large">{!v.membershipSub.OrderApi__Item__r.Name}</div>-->
+<!--                                    </div>-->
+
+<!--                                    <br/>-->
+
+<!--                                    <div class="alignCenterGrid">-->
+<!--                                        <div class="slds-m-bottom_large slds-m-top_large slds-float_right">-->
+<!--                                            <div class="slds-text-heading_medium " style="display:flex;">-->
+<!--                                                <div style="font-weight:700">Member Since:</div>-->
+<!--                                                <ui:outputDate format="MM/dd/yyyy" class="slds-m-left_small"-->
+<!--                                                               value="{!v.simpleRecord.Initial_Join_Date__c}"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+
+
+<!--                                </div>-->
+<!--                                <div class="slds-col slds-align_absolute-center">-->
+<!--                                    <div class="alignCenterGrid">-->
+<!--                                        <div class="{!v.membershipSub.Days_Left__c>=0?'slds-box slds-align_absolute-center active':'slds-box slds-align_absolute-center expired'}">-->
+<!--                                            <ui:outputNumber class="slds-text-heading_medium"-->
+<!--                                                             value="{!abs(v.membershipSub.Days_Left__c)}"/>-->
+<!--                                            <br/>-->
+<!--                                            <div class="slds-text-heading_medium">{!v.membershipSub.Days_Left__c>=0?'Days Left':'Days Lapsed'}</div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </aura:set>-->
+<!--                    </aura:if>-->
+                </lightning:card>
+
+<!--                <div class="slds-p-around_medium">-->
+<!--                    <lightning:card class="slds-p-around_medium">-->
+                    <div class="slds-grid slds-gutters slds-m-bottom_medium slds-p-around_medium">
+                        <div class="slds-col slds-size_1-of-2">
+                            <c:MyMembershipToolbar aura:id="tools"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <c:MyMembershipBenefits aura:id="benefits"/>
+                        </div>
+                    </div>
+<!--                    </lightning:card>-->
+<!--                </div>-->
+
+
+
+                <div class="slds-grid slds-gutters slds-m-bottom_medium slds-p-around_medium">
+                    <div class="slds-col slds-size_1-of-2">
+                        <c:MyMembership_Journals contactId="{!v.contactId}" isLoading="{!v.isLoading}"/>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-2">
+                        <c:MyMembership_WorkingGroups contactId="{!v.contactId}" isLoading="{!v.isLoading}"/>
+                    </div>
+                </div>
+            </aura:renderIf>
+        </aura:set>
+    </aura:if>
+</aura:component>

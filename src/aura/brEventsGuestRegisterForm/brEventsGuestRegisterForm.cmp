@@ -1,0 +1,40 @@
+<aura:component description="brEventsGuestRegisterForm" controller="brEventsGuestRegisterFormCtrl">
+    <aura:attribute name="inputsData" type="Object" default="{}" description="Object of settings for current item"/>
+    <aura:attribute name="isModalOpen" type="Boolean" default="false"/>
+    <aura:attribute name="isRegistered" type="Boolean" default="false"/>
+    <aura:attribute name="eventId" type="String"/>
+    <aura:attribute name="isErrors" type="Boolean" default="false"/>
+
+    <aura:handler name="registerEvent" event="c:BrRegisterEvent" action="{!c.registerForEvent}" />
+
+    <div>
+        <aura:if isTrue="{!v.isModalOpen}">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="{!v.isModalOpen ? 'slds-modal slds-fade-in-open' : 'slds-modal'}">
+
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon class="slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                              iconName="utility:close" variant="bare" onclick="{!c.hideModal}"
+                                              alternativeText="Close" size="large"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$Label.c.lbl_register_for_event}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium slds-text-align_left" id="modal-content-id-1">
+                        {!v.body}
+                        <aura:if isTrue="{!v.isErrors}">
+                            <div class="slds-text-color_error slds-p-vertical_small">{!$Label.c.msg_form_validation_error}</div>
+                        </aura:if>
+                        <c:BrRecaptcha disabled="{!v.disabled}" />
+                    </div>
+                </div>
+            </section>
+            <div class="{!v.isModalOpen ? 'slds-backdrop slds-backdrop_open' : 'slds-backdrop'}"></div>
+        </aura:if>
+
+        <aura:if isTrue="{!not(v.isRegistered)}">
+            <lightning:button class="slds-button slds-button_brand slds-p-horizontal_xx-large slds-p-vertical_xx-small"
+                              label="{!$Label.c.lbl_register_for_event}"
+                              onclick="{!c.showModal}" />
+        </aura:if>
+    </div>
+</aura:component>

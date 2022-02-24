@@ -1,0 +1,41 @@
+<!--
+ - Created by lauren.lezberg on 2/1/2021.
+ -->
+
+<aura:component description="LiveTicketTransfer" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:attribute name="modalOpen" type="Boolean" description="is transfer modal open?"/>
+
+    <lightning:card title="Transfer Ticket" iconName="standard:product_transfer">
+        <aura:set attribute="actions">
+            <div class="slds-align_absolute-center">
+                <lightning:button label="Transfer" onclick="{!c.openModal}" variant="brand"/>
+            </div>
+        </aura:set>
+    </lightning:card>
+
+    <aura:if isTrue="{!v.modalOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate"><b>Transfer</b></h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    
+                    <div class="slds-align_absolute-center">
+                        <c:CustomLookup objectAPIName="Contact" allowNewRecord="false" IconName="standard:contact" label="Select Contact:"/>
+                    </div>
+
+                    <div class="slds-m-top_medium slds-grid slds-align_absolute-center">
+                        <lightning:button label="Process" onclick="{!c.closeModal}"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

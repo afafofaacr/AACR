@@ -1,0 +1,51 @@
+<!--
+ - Created by lauren.lezberg on 4/14/2021.
+ -->
+
+<apex:page id="AACRPayment" showHeader="false" sideBar="false">
+    <apex:includeLightning />
+    <apex:slds />
+
+    <style>
+        .header {
+            font-size: 30px;
+            font-weight:500;
+        }
+    </style>
+
+    <c:pageStyle />
+
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Payment
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="slds-scope">
+                <div class="slds-align_absolute-center slds-m-around_medium">
+                <div style="width:1170px;">
+                    <div class="header slds-border_bottom slds-m-top_medium">Payment</div>
+                    <br/>
+                    <div id="checkout"/>
+                </div>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:JP_CheckoutCart",
+                {},
+                "checkout",
+                function (cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

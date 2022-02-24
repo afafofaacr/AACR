@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Types of membership join/renewal processes</description>
+    <fields>
+        <fullName>Campaign_Code__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Campaign Code</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_URL__c</fullName>
+        <description>URL to redirect to on cancel. If none is specified, cancel will redirect with window.history.back();</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Cancel URL</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Event</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Renewal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If process is for initial join or renewing of membership</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Renewal</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Item__c</fullName>
+        <description>List of items that can be processed for a particular join process</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Item</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Redirect_URL__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Redirect URL</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Join Process</label>
+    <listViews>
+        <fullName>Detail</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Is_Renewal__c</columns>
+        <columns>Item__c</columns>
+        <columns>Campaign_Code__c</columns>
+        <columns>Cancel_URL__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Detail</label>
+    </listViews>
+    <pluralLabel>Join Processes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

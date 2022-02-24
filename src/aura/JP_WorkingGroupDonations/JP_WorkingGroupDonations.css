@@ -1,0 +1,38 @@
+/**
+ * Created by lauren.lezberg on 8/27/2019.
+ */
+.THIS .customRadio .slds-form-element__control .slds-radio{ 
+    display : inline-block !important;
+    padding:1rem;
+    font-size: 1.5rem;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size:1.5rem;
+}
+
+.THIS .slds-text-heading_small{
+    font-size:1.2rem;
+}
+
+.THIS .slds-radio .slds-form-element__label{
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+.THIS .slds-radio .slds-radio_faux{
+    height:2rem;
+    width:2rem;
+}
+
+.THIS .slds-radio [type=radio]:checked+.slds-radio__label .slds-radio_faux::after{
+    height:1rem;
+    width:1rem;
+    background:token(AACRBlue);
+}
+
+.THIS.slds-box{
+    /*background-color: token(aacrGreenL1);*/
+    border-color:token(aacrGreen);
+}

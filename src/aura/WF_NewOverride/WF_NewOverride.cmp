@@ -1,0 +1,11 @@
+<!--
+ - Created by afaf.awad on 9/27/2021.
+ -->
+
+<aura:component description="WF_NewOverride" controller="WF_EditOverrideController" implements="force:lightningQuickAction,lightning:isUrlAddressable,force:appHostable,lightning:actionOverride,force:hasRecordId,force:hasSObjectName">
+
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+</aura:component>

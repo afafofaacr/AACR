@@ -1,0 +1,66 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="contactRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      fields="RecordType.Name"
+                      targetFields="{!v.contactRecord}"
+                      targetError="{!v.recordLoadError}"/>
+
+	<div class="slds-box" style="background:white;">
+        <h2 class="slds-text-heading_small slds-m-bottom_small">AACR Quick Actions</h2>
+        <ul class="slds-p-around_small flex-container wrap" style="list-style: none;">
+        	<li class="flex-item">
+                <c:CopyContactToClipboard recordId="{!v.recordId}" />
+            </li>
+            <aura:if isTrue="{!not(v.contactRecord.RecordType.Name=='Deceased')}">
+                <li class="flex-item">
+                    <c:MembershipApprovalAndResignation recordId="{!v.recordId}"/>
+                </li>
+                <li class="flex-item">
+                    <c:MakeDeceased recordId="{!v.recordId}"/>
+                </li>
+<!--                <li class="flex-item">-->
+<!--                    <c:GetTickets recordId="{!v.recordId}"/>-->
+<!--                </li>-->
+                <li class="flex-item">
+                    <c:BackOfficeTicketPurchase recordId="{!v.recordId}"/>
+                </li>
+<!--                <li class="flex-item">-->
+<!--                    <c:PresenterProfile recordId="{!v.recordId}"/>-->
+<!--                </li>-->
+                <li class="flex-item">
+                    <c:ROERenew recordId="{!v.recordId}"/>
+                </li>
+                <li class="flex-item">
+                    <c:BackOfficeRecertify recordId="{!v.recordId}"/>
+                </li>
+                <li class="flex-item">
+                    <c:NewApplication recordId="{!v.recordId}"/>
+                </li>
+                <li class="flex-item">
+                    <c:TransferMember recordId="{!v.recordId}"/>
+                </li>
+                <li class="flex-item">
+                    <c:ModifyMembership recordId="{!v.recordId}"/>
+                </li>
+                <li class="flex-item">
+                    <c:ReinstateMember recordId="{!v.recordId}"/> 
+                </li>
+                <li class="flex-item">
+                    <c:LifetimeConverterButton recordId="{!v.recordId}"/>
+                </li>
+                <li class="flex-item">
+                    <c:ManageAddresses recordId="{!v.recordId}"/>
+                </li>
+<!--                <li class="flex-item">-->
+<!--                    <c:AdvocateAppReview recordId="{!v.recordId}"/>-->
+<!--                </li>-->
+                <li class="flex-item">
+                    <c:OverrideEventSegment recordId="{!v.recordId}"/>
+                </li>
+            </aura:if>
+        </ul>
+    </div>
+</aura:component>

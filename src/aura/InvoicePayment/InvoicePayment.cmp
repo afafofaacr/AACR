@@ -1,0 +1,47 @@
+<!--
+ - Created by lauren.lezberg on 7/7/2021.
+ -->
+
+<aura:component description="InvoicePayment" controller="InvoicePaymentController" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" >
+    <aura:attribute name="invoiceRecord" type="Object"/>
+    <aura:attribute name="paid" type="Boolean" description="invoice has been paid"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <aura:if isTrue="{!v.paid}">
+        <div class="slds-box slds-theme_error slds-theme_alert-texture">
+            <div class="slds-text-heading_medium">Invoice has already been paid.</div>
+        </div>
+    </aura:if>
+
+    <aura:if isTrue="{!not(empty(v.invoiceRecord))}">
+    <div class="slds-text-heading_medium slds-text-align_center" style="font-weight: bold;">{!'Invoice ' + v.invoiceRecord.Name}</div>
+    <br/>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3 slds-text-heading_medium">
+            <div class="slds-form-element__label">Total:</div>
+            <ui:outputCurrency value="{!v.invoiceRecord.OrderApi__Total__c}"/>
+        </div>
+        <div class="slds-col slds-size_1-of-3 slds-text-heading_medium">
+            <div class="slds-form-element__label">Amount Paid:</div>
+            <ui:outputCurrency value="{!v.invoiceRecord.OrderApi__Amount_Paid__c}"/>
+        </div>
+        <div class="slds-col slds-size_1-of-3 slds-text-heading_medium">
+            <div class="slds-form-element__label">Balance Due:</div>
+            <ui:outputCurrency value="{!v.invoiceRecord.OrderApi__Balance_Due__c}"/>
+        </div>
+    </div>
+
+    <br/>
+    <lightning:tabset>
+        <lightning:tab label="Credit Card">
+            <c:PaymentBillingAddress aura:id="ba" contactId="{!v.invoiceRecord.OrderApi__Contact__c}"/>
+            <iframe id="iframe" src="{!'/apex/StripeCheckout?salesOrder=' + v.invoiceRecord.OrderApi__Sales_Order__c}" height="500" width="550" frameBorder="0"/>
+        </lightning:tab>
+        <lightning:tab label="Offline">
+            <c:OfflinePayment salesOrderId="{!v.invoiceRecord.OrderApi__Sales_Order__c}"/>
+        </lightning:tab>
+    </lightning:tabset>
+    </aura:if>
+</aura:component>

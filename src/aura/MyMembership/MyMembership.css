@@ -1,0 +1,107 @@
+/**
+ * Created by lauren.lezberg on 2/14/2019.
+ */
+.THIS .slds-text-heading_large{ 
+    font-size:3.5rem;
+    font-weight:600;
+    align-self:center;
+    text-align:center;
+}
+
+.THIS .alignCenterGrid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.THIS .slimBox{
+    border: 1px solid token(aacrGreen);
+    padding: 1rem;
+}
+
+
+.THIS.slds-card{
+    background: token(aacrGreenL1);
+}
+.THIS .slds-card{
+    background: token(aacrGreenL1);
+}
+
+.THIS .slds-form-element__label{
+    font-size:1.5rem;
+}
+
+.THIS .slds-box{
+    border: 4px solid #50B848;
+    background: #edf8ed;
+}
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    width:15rem;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.THIS th{
+    font-size:1.5rem;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size:1.75rem;
+    /*font-weight:500;*/
+}
+
+.THIS .colorBoxBorder{
+    border-color:token(aacrGreen);
+}
+
+.THIS .smallCard {
+    min-height:21rem;
+}
+
+.THIS .warningText {
+    color: token(RedD1);
+}
+
+.THIS .active{
+    background: token(aacrGreen);
+    color:white;
+    display:block;
+    font-weight: 600;
+    font-size:2rem;
+    padding: 1rem 5rem 1rem 5rem;
+}
+
+.THIS .expired{
+    background: token(AACRRed);
+    border-color: token(AACRRed);
+    color:white;
+    display:block;
+    font-weight: 600;
+    font-size:2rem;
+    padding: 1rem 5rem 1rem 5rem;
+}
+
+.THIS .slds-box{
+    text-align:center;
+
+}
+
+.THIS .slds-truncate {
+    white-space:initial;
+    overflow:unset;
+    text-overflow: initial;
+}

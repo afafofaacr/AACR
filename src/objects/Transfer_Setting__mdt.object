@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Transfer_Options__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Transfer Options</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <label>Transfer Setting</label>
+    <listViews>
+        <fullName>Detail</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Transfer_Options__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Detail</label>
+    </listViews>
+    <pluralLabel>Transfer Settings</pluralLabel>
+    <visibility>Protected</visibility>
+</CustomObject>

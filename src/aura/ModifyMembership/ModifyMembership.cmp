@@ -1,0 +1,20 @@
+<!--
+ - Created by lauren.lezberg on 1/30/2020.
+ -->
+
+<aura:component description="ModifyMembership" controller="ModifyMembershipController" >
+    <aura:attribute name="recordId" type="String" description="Contact record id"/>
+    <aura:attribute name="processing" type="Boolean" description="An action is processing" default="false"/>
+    <aura:attribute name="showButton" type="Boolean" description="Is contact eligible for modify membership and does current user have permission to see the button" default="false"/>
+
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:if isTrue="{!v.showButton}">
+        <lightning:button variant="brand"  iconName="utility:edit" onclick="{!c.goToModifyMembership}" label="{!v.processing?'Processing...': 'Modify Membership'}" disabled="{!v.processing}"/>
+    </aura:if>
+
+</aura:component>

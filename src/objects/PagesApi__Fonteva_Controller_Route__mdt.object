@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Lightning community routes by record id&apos;s.</description>
+    <fields>
+        <fullName>PagesApi__Apex_Class__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Apex class to get record information based on route</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Apex class to get record information based on route</inlineHelpText>
+        <label>Apex Class</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Component__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lightning Component name without the namespace to show based on SObject route.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Lightning Component name without the namespace to show based on SObject route.</inlineHelpText>
+        <label>Component</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this record will become enabled as a route.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>When checked, this record will become enabled as a route.</inlineHelpText>
+        <label>Is Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__SObject_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SObject name to base the route on</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>SObject name to base the route on</inlineHelpText>
+        <label>SObject Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Fonteva Controller Route</label>
+    <pluralLabel>Fonteva Controller Routes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

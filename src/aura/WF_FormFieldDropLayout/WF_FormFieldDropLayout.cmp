@@ -1,0 +1,71 @@
+<!--
+ - Created by afaf.awad on 10/6/2021.
+ -->
+
+<aura:component description="WF_FormFieldDropLayout" controller="WF_FormFieldDropLayoutController">
+
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="dropFields" type="List" description="List of Fields dragged into layout."/>
+    <aura:attribute name="fieldOptions" type="List" description="List of fields to choose from"/>
+    <aura:attribute name="dragCategory" type="String" description="Category from which drag item is pulling from"/>
+    <aura:attribute name="sectionTitle" type="String" description="Title of section"/>
+    <aura:attribute name="sectionCategory" type="String" description="Title of div to distinguish section that field is being dropped into."/>
+    <aura:attribute name="fieldDialogModal" type="Aura.Component[]" description="Display edit modal"/>
+    <aura:attribute name="isDraggable" type="Boolean" default="true" description="Prevent fields that should not move from being draggable"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="wfEvent" type="c:WF_AppEvent"/>
+    <aura:handler event="c:WF_AppEvent" action="{!c.handleModalEvent}"/>
+
+        <div class="slds-box slds-p-around_small dropContainer" style="background-color: white" ondragover="{!and(v.sectionCategory == v.dragCategory, v.isDraggable) ? c.dragOver : ''}" ondrop="{!c.allowDrop}" id="dropContainer" title="{!v.sectionCategory}">
+            <h1 class="slds-align_absolute-center slds-text-title_bold">{!v.sectionTitle}</h1>
+<!--            <div class="slds-drop-zone__container slds-m-around_medium" tabindex="-1">-->
+                <aura:iteration items="{!v.dropFields}" var="f" indexVar="i">
+                            <div aura:id="dragSort" class="slds-box slds-box_xx-small slds-m-around_small" draggable="{!f.DragNotAllowed__c ? false : true}" ondragstart="{!c.startDragSort}" id="{!f.dragId}" title="{!f.DragNotAllowed__c}">
+                                <lightning:layout horizontalAlign="spread">
+                                    <lightning:layoutItem size="1" flexibility="auto" class="slds-align_absolute-center">
+                                        <aura:if isTrue="{!not(f.isLocked__c)}">
+                                            <lightning:buttonIcon class="slds-float_right" iconName="utility:delete" alternativeText="Delete" title="Delete"
+                                                                  variant="bare" iconClass="dark" onclick="{!c.removeField}" value="{!f}"/>
+                                        </aura:if>
+                                        <aura:if isTrue="{!not(f.API_Name__c == 'FooterCaptcha')}">
+                                            <lightning:buttonIcon class="slds-float_right" iconName="utility:edit" alternativeText="Edit" title="Edit" variant="bare" iconClass="dark" onclick="{!c.editField}" value="{!f}"/>
+                                        </aura:if>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem size="11" flexibility="auto">
+                                        <c:WF_FormFields field="{!f}"/>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+                            </div>
+                        </aura:iteration>
+<!--            </div>-->
+        </div>
+
+
+
+<!--    <div class="slds-drop-zone slds-drop-zone_drag" ondragover="{!c.dragOver}" ondrop="{!c.allowDrop}" id="dropContainer" title="{!v.sectionCategory}">-->
+<!--        <h1>{!v.sectionTitle}</h1>-->
+<!--        <br/>-->
+<!--        <aura:iteration items="{!v.dropFields}" var="f" indexVar="i">-->
+<!--            <div aura:id="dragSort" class="slds-box slds-box_xx-small slds-m-around_small" draggable="true" ondragstart="{!c.startDragSort}" id="{!f.dragId}" title="{!f.Label}">-->
+<!--                <lightning:layout horizontalAlign="spread">-->
+<!--                    <lightning:layoutItem size="1" flexibility="auto" class="slds-align_absolute-center">-->
+<!--                        <aura:if isTrue="{!not(f.isLocked__c)}">-->
+<!--                            <lightning:buttonIcon class="slds-float_right" iconName="utility:delete" alternativeText="Delete" title="Delete"-->
+<!--                                                  variant="bare" iconClass="dark" onclick="{!c.removeField}" value="{!f}"/>-->
+<!--                        </aura:if>-->
+<!--                        <aura:if isTrue="{!not(f.API_Name__c == 'Footer_Captcha__c')}">-->
+<!--                            <lightning:buttonIcon class="slds-float_right" iconName="utility:edit" alternativeText="Edit" title="Edit" variant="bare" iconClass="dark" onclick="{!c.editField}" value="{!f}"/>-->
+<!--                        </aura:if>-->
+<!--                    </lightning:layoutItem>-->
+<!--                    <lightning:layoutItem size="11" flexibility="auto">-->
+<!--                        <c:WF_FormFields field="{!f}"/>-->
+<!--                    </lightning:layoutItem>-->
+<!--                </lightning:layout>-->
+<!--            </div>-->
+<!--        </aura:iteration>-->
+<!--    </div>-->
+
+    <div>{!v.fieldDialogModal}</div>
+
+</aura:component>

@@ -1,0 +1,404 @@
+<!--
+ - Created by lauren.lezberg on 11/12/2019.
+ -->
+
+<aura:component description="EventOptions" controller="JP_EventOptionsController">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="nextStepId" type="String" description="next step id, used for order of saving operations"/>
+    <aura:attribute name="nextCmpName" type="STring" description="next cmp name, used for order of saving operations"/>
+    <aura:attribute name="showCustomURL" type="Boolean" description="show registration custom url "/>
+    <aura:attribute name="showVirtualSettings" type="Boolean" description="show virtual settings " default="false"/>
+    <aura:attribute name="showFields" type="Boolean" description="show registration fieldset fields" default="false"/>
+    <aura:attribute name="fSetFields" type="List" description="field set fields" default="[]"/>
+    <aura:attribute name="eventId" type="String"/>
+    <aura:attribute name="mainFileId" type="String"/>
+    <aura:attribute name="listFileId" type="String"/>
+    <aura:attribute name="userInfo" type="Object"/>
+    <!--<aura:attribute name="selectedForm" type="String"/>-->
+    <aura:attribute name="initialRecordLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="processing" type="Boolean" description="component is processing" default="true"/>
+    <aura:attribute name="pubValue" type="String" default="Draft"/>
+    <aura:attribute name="publishOptions" type="List" default="[
+    {'label': 'Draft', 'value': 'Draft'},
+    {'label': 'Published', 'value': 'Published'}
+    ]"/>
+    <aura:attribute name="accessValue" type="String" default="Public"/>
+    <aura:attribute name="accessOptions" type="List" default="[
+    {'label': 'Public', 'value': 'Public'},
+    {'label': 'Private', 'value': 'Private'}
+    ]"/>
+
+    <aura:attribute name="landingPageOn" type="Boolean" description="Is Display Landing Page On?"/>
+    <aura:attribute name="confirmPageOn" type="Boolean" description="Is Display Confirmation Page On?"/>
+    <aura:attribute name="confirmEmailOn" type="Boolean" description="Is Display Confirmation Email On?"/>
+    <aura:attribute name="reminderEmailOn" type="Boolean" description="Is Display Reminder Email On?"/>
+    <aura:attribute name="sponsorOptions" type="List" default="[
+    {'label': 'On', 'value': 'true'},
+    {'label': 'Off', 'value': 'false'}
+    ]"/>
+    <aura:attribute name="sponsorViewOptions" type="List" default="[
+    {'label': 'Horizontal', 'value': 'true'},
+    {'label': 'Vertical', 'value': 'false'}
+    ]"/>
+    <aura:attribute name="sponsorLogoOptions" type="List" default="[
+    {'label': 'Yes', 'value': 'true'},
+    {'label': 'No', 'value': 'false'}
+    ]"/>
+
+    <!--<aura:attribute name="reminderValue" type="String" default="Off"/>-->
+    <!--<aura:attribute name="eventRecord" type="Object"/>-->
+    <!--<aura:attribute name="recordLoadError" type="String"/>-->
+    <!--<aura:attribute name="reminderOptions" type="List" default="[-->
+    <!--{'label': 'Off', 'value': 'Off'},-->
+    <!--{'label': 'On', 'value': 'On'}-->
+    <!--]"/>-->
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <aura:if isTrue="{!v.eventId!=null}">
+        <lightning:recordEditForm
+                aura:id="editForm"
+                recordId="{!v.eventId}"
+                onload="{!c.handleLoad}"
+                onerror="{!c.handleError}"
+                onsuccess="{!c.handleSuccess}"
+                objectApiName="BR_Event__c">
+
+            <lightning:messages/>
+
+            <aura:if isTrue="{!v.processing}">
+                <lightning:spinner alternativeText="Loading" size="medium"/>
+                <aura:set attribute="else">
+                    <!-- HIDDEN FIELDS USED FOR SUBMIT OVERRIDE -->
+
+                    <div class="slds-hide">
+                        <lightning:inputField aura:id="parent" fieldName="Parent_Event__c"/>
+                        <lightning:inputField aura:id="regFieldset" fieldName="Registration_Form_Fieldset__c"/>
+                        <lightning:inputField aura:id="virtualVenue" fieldName="Virtual_Venue__c"/>
+                        <lightning:inputField aura:id="formFieldset" fieldName="Event_Preferences_Form_Fieldset__c"
+                                              class="slds-hide"/>
+                        <!--<lightning:inputField aura:id="reminders" fieldName="Send_reminders__c" class="slds-hide"/>-->
+                        <!--<lightning:inputField aura:id="reminderHrs" fieldName="Reminder_Hours__c" class="slds-hide"/>-->
+                        <lightning:inputField aura:id="draft" fieldName="Draft__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="availability" fieldName="Publicly_available__c"
+                                              class="slds-hide"/>
+                        <lightning:inputField aura:id="unlisted" fieldName="Unlisted_Event__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="mainImg" fieldName="Main_Image_Filename__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="lstImg" fieldName="List_Image_Filename__c" class="slds-hide"/>
+
+                        <lightning:inputField aura:id="confirmEmailField" fieldName="Display_on_Confirmation_Email__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="confirmPageField" fieldName="Display_on_Confirmation_Page__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="landingPageField" fieldName="Display_on_Landing_Page__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="reminderEmailField" fieldName="Display_on_Reminder_Email__c" class="slds-hide"/>
+
+                        <lightning:inputField aura:id="confirmEmailLogoField" fieldName="Show_Confirmation_Email_Logos__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="confirmPageLogoField" fieldName="Show_Confirmation_Page_Logos__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="landingPageLogoField" fieldName="Show_Landing_Page_Logos__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="reminderEmailLogoField" fieldName="Show_Reminder_Email_Logos__c" class="slds-hide"/>
+
+                        <lightning:inputField aura:id="landingPageViewField" fieldName="View_Landing_Page_Horizontally__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="confirmPageViewField" fieldName="View_Confirmation_Page_Horizontally__c" class="slds-hide"/>
+                    </div>
+                    <div class="slds-grid slds-gutters slds-m-around_medium">
+                        <div class="slds-col slds-size_2-of-6">
+                            <!--                        VIRTUAL DETAILS                       -->
+
+                            <div class="{!v.showVirtualSettings?'':'slds-hide'}">
+                                <div class="slds-text-heading_medium">Virtual Settings</div>
+                                <div class="slds-box slds-p-around_small slds-m-bottom_medium">
+                                    <c:VirtualEventDetails aura:id="virtualDetails" editable="true"
+                                                           recordId="{!v.eventId}" requireId="{!v.pubValue=='Published'}"/>
+                                </div>
+                            </div>
+                            <!--                        GRAPHICS                       -->
+
+                            <div class="slds-text-heading_medium">Event Graphics</div>
+                            <div class="slds-box ">
+                                <div style="display:inline-grid;">
+                                    <lightning:fileUpload aura:id="mainUpload"
+                                                          label="Main Image (1094 x 400px)"
+                                                          multiple="false"
+                                                          disabled="false"
+                                                          recordId="{!v.eventId}"
+                                                          onuploadfinished="{! c.handleMainUploadFinished}"/>
+                                    <lightning:fileCard fileId="{!v.mainFileId}"/>
+                                    <br/>
+                                    <lightning:fileUpload aura:id="lstUpload"
+                                                          label="List Image (228 x 164px)"
+                                                          disabled="false"
+                                                          multiple="false"
+                                                          recordId="{!v.eventId}"
+                                                          onuploadfinished="{! c.handleListUploadFinished }"/>
+                                    <lightning:fileCard fileId="{!v.listFileId}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_4-of-6">
+                            <!--                        PORTAL SETTINGS                      -->
+
+                            <div class="slds-text-heading_medium ">Portal Settings</div>
+                            <div class="slds-box slds-p-around_small slds-m-bottom_medium">
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col ">
+                                        <lightning:radioGroup name="publish"
+                                                              label="Visibility"
+                                                              options="{! v.publishOptions }"
+                                                              value="{! v.pubValue }"
+                                                              onchange="{!c.handlePublishChange}"
+                                                              type="button"/>
+                                    </div>
+                                    <div class="slds-col ">
+                                        <lightning:radioGroup aura:id="access" name="access"
+                                                              label="Accessibility"
+                                                              options="{! v.accessOptions }"
+                                                              value="{! v.accessValue }"
+                                                              onchange="{!c.handleAccessChange}"
+                                                              type="button"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                        SPONSOR SETTINGS                      -->
+                            <div class="slds-text-heading_medium ">Sponsor Settings</div>
+                            <div class="slds-box slds-p-around_small slds-m-bottom_medium">
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col ">
+                                        <lightning:radioGroup aura:id="landingPage"
+                                                              name="landingPage"
+                                                              label="Display on Landing Page"
+                                                              options="{! v.sponsorOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        <div class="{!v.landingPageOn ? 'slds-show' : 'slds-hide'}">
+                                        <lightning:radioGroup aura:id="landingPageView"
+                                                              name="landingPageView"
+                                                              label="Landing Page View"
+                                                              options="{! v.sponsorViewOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        <lightning:radioGroup aura:id="landingPageLogo"
+                                                              name="landingPageLogo"
+                                                              label="Show Logos"
+                                                              options="{! v.sponsorLogoOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <lightning:radioGroup aura:id="confirmEmail" name="confirmEmail"
+                                                              label="Display on Confirmation Email"
+                                                              options="{! v.sponsorOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        <div class="{!v.confirmEmailOn ? 'slds-show' : 'slds-hide'}">
+                                        <lightning:radioGroup aura:id="confirmEmailLogo"
+                                                              name="ConfirmEmailLogo"
+                                                              label="Show Logos"
+                                                              options="{! v.sponsorLogoOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col ">
+                                        <lightning:radioGroup aura:id="confirmPage"
+                                                              name="confirmPage"
+                                                              label="Display on Confirmation Page"
+                                                              options="{! v.sponsorOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        <div class="{!v.confirmPageOn ? 'slds-show' : 'slds-hide'}">
+                                            <lightning:radioGroup aura:id="confirmPageView"
+                                                                  name="confirmPageView"
+                                                                  label="Confirmation Page View"
+                                                                  options="{! v.sponsorViewOptions }"
+                                                                  onchange="{!c.handleSponsorChange}"
+                                                                  type="button"/>
+                                            <lightning:radioGroup aura:id="confirmPageLogo"
+                                                                  name="ConfirmPageLogo"
+                                                                  label="Show Logos"
+                                                                  options="{! v.sponsorLogoOptions }"
+                                                                  onchange="{!c.handleSponsorChange}"
+                                                                  type="button"/>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <lightning:radioGroup aura:id="reminderEmail" name="reminderEmail"
+                                                              label="Display on Reminder(s) Email"
+                                                              options="{! v.sponsorOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        <div class="{!v.reminderEmailOn ? 'slds-show' : 'slds-hide'}">
+                                        <lightning:radioGroup aura:id="reminderEmailLogo"
+                                                              name="reminderEmailLogo"
+                                                              label="Show Logos"
+                                                              options="{! v.sponsorLogoOptions }"
+                                                              onchange="{!c.handleSponsorChange}"
+                                                              type="button"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--                        REMINDERS                       -->
+
+                            <!--<div class="slds-text-heading_medium slds-m-top_medium">Reminder Settings</div>-->
+                            <!--<div class="slds-box slds-p-around_small">-->
+                            <!--<div class="slds-grid slds-gutters ">-->
+                            <!--<div class="slds-col ">-->
+                            <!--<lightning:radioGroup name="reminders"-->
+                            <!--options="{! v.reminderOptions }"-->
+                            <!--onchange="{! c.handleReminderChange }"-->
+                            <!--value="{! v.reminderValue }"-->
+                            <!--type="button"/>-->
+                            <!--</div>-->
+                            <!--<aura:if isTrue="{!v.reminderValue=='On'}">-->
+                            <!--<div class="slds-col ">-->
+                            <!--<lightning:input aura:id="firstReminder" type="number"-->
+                            <!--label="First Reminder (Hrs)" placeholder="0" value="0"/>-->
+                            <!--</div>-->
+                            <!--<div class="slds-col ">-->
+                            <!--<lightning:input aura:id="secondReminder" type="number"-->
+                            <!--label="Second Reminder (Hrs)" placeholder="0" value="0"/>-->
+                            <!--</div>-->
+                            <!--<div class="slds-col ">-->
+                            <!--<lightning:input aura:id="thirdReminder" type="number"-->
+                            <!--label="Third Reminder (Hrs)" placeholder="0" value="0"/>-->
+                            <!--</div>-->
+                            <!--</aura:if>-->
+
+                            <!--</div>-->
+                            <!--<aura:if isTrue="{!v.reminderValue=='On'}">-->
+                            <!--<lightning:inputField aura:id="reminderMsg1"  fieldName="Reminder_Message1__c" />-->
+                            <!--<lightning:inputField aura:id="reminderMsg2"  fieldName="Reminder_Message2__c" />-->
+                            <!--<lightning:inputField aura:id="reminderMsg3"  fieldName="Reminder_Message3__c" />-->
+                            <!--</aura:if>-->
+                            <!--</div>-->
+
+                            <!--                        REMINDERS                       -->
+
+
+                            <!--                        REGISTRATION INFO                       -->
+
+                            <div class="slds-text-heading_medium">Registration Information</div>
+                            <div class="slds-box slds-m-bottom_medium">
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-m-right_none slds-m-left_none slds-size_3-of-4">
+                                        <lightning:inputField aura:id="regForm" fieldName="Registration_Form__c"
+                                                              required="true" onchange="{!c.regFormSelect}"/>
+                                        <aura:if isTrue="{!v.showCustomURL}">
+                                        <div class="slds-grid slds-m-bottom_small slds-m-left_x-small">
+                                            <label class="slds-form-element__label">Pre-verify myAACR Info</label>
+                                            <lightning:inputField aura:id="preVerify" fieldName="Pre_verify_myAACR_Info__c" variant="label-hidden"/>                                        </div>
+                                        </aura:if>
+                                    </div>
+                                    <div class="slds-col slds-m-right_none slds-m-left_none slds-m-top_large slds-size_1-of-4">
+                                        <lightning:button label="View Fields" onclick="{!c.getFields}"/>
+                                    </div>
+                                </div>
+                                <lightning:inputField aura:id="fieldsetName" fieldName="Registration_Form_Fieldset__c"
+                                                      class="slds-hide"/>
+                                    <lightning:inputField aura:id="customURL" fieldName="Custom_Registration_URL__c"/>
+
+
+
+
+                                <div class="slds-grid">
+                                    <div class="slds-grid slds-m-bottom_small slds-m-left_x-small">
+                                        <label class="slds-form-element__label">Include Advocate Fields?</label>
+                                        <lightning:inputField aura:id="advocate" fieldName="Advocate__c" variant="label-hidden"/>
+                                    </div>
+                                    <div class="slds-grid slds-m-bottom_small slds-m-left_x-small">
+                                        <label class="slds-form-element__label">Include Mentor/Trainee Fields?</label>
+                                        <lightning:inputField aura:id="mentor" fieldName="Show_Workshop_Fields__c" variant="label-hidden"/>
+                                    </div>
+                                    <div class="slds-grid slds-m-bottom_small slds-m-left_x-small">
+                                        <label class="slds-form-element__label">Include Pre/Post Doc Fields?</label>
+                                        <lightning:inputField aura:id="mentor" fieldName="Show_Pre_Post_Doc__c" variant="label-hidden"/>
+                                    </div>
+                                </div>
+                                <div class="slds-grid">
+
+                                    <div class="slds-grid slds-m-bottom_small slds-m-left_x-small">
+                                        <label class="slds-form-element__label">Include Joint ID?</label>
+                                        <lightning:inputField aura:id="joint" fieldName="Show_Joint_Fields__c" variant="label-hidden"/>
+                                    </div>
+                                </div>
+                                <div aura:id="confirmMessageBox" class="slds-box slds-m-bottom_medium">
+                                    <lightning:inputField aura:id="confirmMessage"
+                                                          fieldName="Registration_Confirmation_Message__c"
+                                                          variant="label-hidden" required="true"/>
+                                </div>
+
+                            </div>
+
+                            <!--                        TICKET PURCHASE CONFIRMATION MESSAGE                       -->
+
+                            <div class="slds-text-title_caps">Ticket Purchase Confirmation Message</div>
+                            <div class="slds-box slds-m-bottom_medium">
+                                <lightning:inputField fieldName="Ticket_Purchase_Confirmation_Message__c" variant="label-hidden"/>
+                            </div>
+
+                            <!--                        ADDITIONAL SETTINGS                       -->
+
+                            <div class="slds-text-heading_medium slds-m-top_medium">Additional Settings</div>
+                            <div class="slds-box slds-p-around_small">
+                                <div class="slds-grid slds-gutters ">
+                                    <div class="slds-col slds-p-around_medium ">
+                                        <lightning:inputField fieldName="CME_Survey_Link__c"/>
+                                        <lightning:inputField fieldName="Max_CME_Credits__c"/>
+                                        <lightning:inputField fieldName="JP_Institution__c"/>
+                                        <lightning:inputField fieldName="Limit_of_attendees__c"/>
+                                        <lightning:inputFIeld fieldName="Budgeted_Attendance__c"/>
+                                    </div>
+                                    <div class="slds-col slds-p-around_medium">
+                                        <lightning:inputField fieldName="Ignore_Segment_Priority__c"/>
+                                        <lightning:inputField fieldName="Hide_attendees__c"/>
+                                        <lightning:inputField fieldName="Featured__c"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </lightning:recordEditForm>
+    </aura:if>
+
+    <!--                        REGISTRATION FORM FIELDS                       -->
+
+    <aura:if isTrue="{!v.showFields}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Registration Form
+                        Fields</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <aura:if isTrue="{!empty(v.fSetFields)}">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-text-heading_medium slds-text-align_center">
+                                There are no fields in this fieldset. If you have chosen custom, please enter a URL.
+                            </div>
+                        </div>
+                    </aura:if>
+                    <aura:iteration items="{!v.fSetFields}" var="field">
+                        <div class="slds-text-heading_medium">{!field}</div>
+                    </aura:iteration>
+                </div>
+                <footer class="slds-modal__footer">
+                    <div class="slds-align_absolute-center">
+                        <lightning:button label="OK" variant="brand" onclick="{!c.closeModal}"
+                                          class="slds-p-around_medium"/>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+</aura:component>

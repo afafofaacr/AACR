@@ -1,0 +1,84 @@
+<apex:page controller="DW_ECRMController" docType="html-5.0"
+    showHeader="false"
+    standardStylesheets="false"
+    applyBodyTag="false"
+    applyHtmlTag="false">
+
+    <c:pageStyle />
+    
+    <!-- Spinner design -->
+    <div class="bgBlack" style="display: none;">
+        <div class="spinnerBg">
+            <div class="loader"></div>                    
+        </div>
+    </div>
+
+    <!-- Progress bar component -->
+    <c:DW_ProgressBar />
+
+    <apex:includeScript value="{!$Resource.jQueryJs}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}" loadOnReady="true" /> 
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/chosen.jquery.js')}" loadOnReady="true" /> 
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/commonFunctions.js')}" loadOnReady="true" />  
+    <apex:includeScript value="{!$Resource.DW_WorkingGroupsJs}" loadOnReady="true" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/jquery.toast.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/chosen.css')}" />
+    
+    <apex:composition template="CPBase__template">
+
+        <apex:define name="pageTitle">
+            Constituency and Working Groups
+        </apex:define>
+        
+        <apex:define name="pageMain">
+            <div class="container m-t-30">
+                <div class="inner-wrapper">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Constituency and Working Groups</h1>
+                            <hr class="m-b-15" />
+                        </div>                        
+                    </div>
+                    <p>
+                        {!$Label.DW_Working_Groups_Page_Description}
+                    </p>
+                    
+                    <div id="workingGroups_wrap"></div>                                        
+                    
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+
+    <!--underscore template for displaying journals -->
+    <script type="text/template" id="workingGroups_template">
+        <ul class="twoCol">
+            <%       
+                _.each( workingGroups,function( workingGroup, key, list ) {
+					var checkedAttr = ( ( workingGroup.defaultSelectedInJoin && isJoinProcess ) || 
+                                        ( workingGroup.name == 'Women in Cancer Research (WICR)' && 
+                                         currentContactsGender == 'Female' ) ) ? 'checked="true"' : '';
+            %>
+                <li style="<%= ( workingGroup.hideInJoin && isJoinProcess ) ? 'display: none;' : '' %>">
+                    <label class="labelStyle">
+                        <input type="checkbox" class="checkStyle wg-check" data-id="<%= workingGroup.Id %>"
+                            data-price="<%= workingGroup.price %>" <%= checkedAttr %> />
+                        <%= workingGroup.name %> - $<%= workingGroup.price %>
+                    </label>
+                </li>
+            <%       
+
+            } ); %>
+        </ul>
+
+        <div class="btnDiv">
+            <button class="btn btn-default cancel-step">Cancel</button>
+            <% if( !isModifyPage ) { %>
+                <button class="btn btn-default btn-primary prev-step">Previous Step</button>
+            <% } %>
+            <button class="btn btn-default btn-primary next-step navigate">Next Step</button>
+            <button class="btn btn-default btn-primary next-step saveAndClose">Save & Close</button>
+        </div>
+    </script>
+</apex:page>

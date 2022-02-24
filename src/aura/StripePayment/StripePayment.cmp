@@ -1,0 +1,54 @@
+<!--
+ - Created by lauren.lezberg on 11/12/2020.
+ -->
+
+<aura:component description="StripePayment" controller="StripePaymentController">
+    <aura:attribute name="salesOrderId" type="String" description="id of sales order"/>
+    <aura:attribute name="errorMsg" type="String" description="error message"/>
+    <aura:attribute name="success" type="Boolean" description="payment processed"/>
+
+    <aura:attribute name="cardInfo" type="Object" description="card info" access="private" default=""/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+<!--    <div class="slds-align_absolute-center">-->
+        <div class="slds-size_1-of-3 slds-p-around_medium">
+            <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                <div class="slds-box slds-theme_error slds-theme_alert-texture">
+                    {!v.errorMsg}
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.success}">
+                <div class="slds-box slds-theme_success slds-theme_alert-texture">
+                    Success processing payment!
+                </div>
+            </aura:if>
+
+            <div class="slds-text-title_bold slds-text-title_caps">Payment Info:</div>
+            <lightning:input aura:id="name" label="Card Holder Name" value="{!v.cardInfo.name}" />
+            <lightning:input aura:id="num" label="Card Number" value="{!v.cardInfo.num}"/>
+            <lightning:input aura:id="cvc" label="CVV" value="{!v.cardInfo.cvc}"/>
+            <lightning:input aura:id="exp_month" type="number" maxlength="2" label="Exp Month" value="{!v.cardInfo.exp_month}"/>
+            <lightning:input aura:id="exp_year" label="Exp Year" type="number" maxlength="4" value="{!v.cardInfo.exp_year}"/>
+
+
+            <br/>
+            <div class="slds-text-title_bold slds-text-title_caps">Address:</div>
+            <lightning:input aura:id="street1" label="Street 1" value="{!v.cardInfo.address_line1}"/>
+            <lightning:input aura:id="street2" label="Street 2" value="{!v.cardInfo.address_line2}"/>
+            <lightning:input aura:id="city" label="City" value="{!v.cardInfo.address_city}"/>
+            <lightning:input aura:id="state" label="State" value="{!v.cardInfo.address_state}"/>
+            <lightning:input aura:id="country" label="Country" value="{!v.cardInfo.address_country}"/>
+            <lightning:input aura:id="zip" label="Zip" value="{!v.cardInfo.address_zip}"/>
+
+            <br/>
+            <div class="slds-align_absolute-center">
+                <lightning:button label="Process Payment" variant="brand" onclick="{!c.payNow}"/>
+            </div>
+        </div>
+
+<!--    </div>-->
+
+
+</aura:component>

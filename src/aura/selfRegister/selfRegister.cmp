@@ -1,0 +1,108 @@
+<!-- add implements="forceCommunity:availableForAllPageTypes" to surface the component in community builder -->
+<aura:component controller="LightningSelfRegisterController" implements="lightning:availableForFlowScreens" access="GLOBAL">
+    <aura:attribute name="accountId" type="String" required="false" description="accountId for creating the user. If not specified, it will create a PersonAccount if possible for B2C scenario. Or otherwise if it's in a community, the community's self-registration accountId will be used."/>
+    <aura:attribute name="regConfirmUrl" type="String" required="true"/>
+    <aura:attribute name="startUrl" type="String" required="false" description="The url you go to after a successful login" />
+    <aura:attribute name="showError" type="Boolean" required="true" description="" default="false" access="private"/>
+    <aura:attribute name="errorMessage" type="String" required="false" description="" access="private"/>
+    <aura:attribute name="firstnameLabel" type="String" required="false" default="First Name"/>
+    <aura:attribute name="lastnameLabel" type="String" required="false" default="Last Name"/>
+    <aura:attribute name="emailLabel" type="String" required="false" default="Email"/>
+    <aura:attribute name="passwordLabel" type="String" required="false" default="Create Password"/>
+    <aura:attribute name="confirmPasswordLabel" type="String" required="false" default="Confirm Password"/>    
+    <aura:attribute name="submitButtonLabel" type="String" required="false" default="Sign Up"/>
+    <aura:attribute name="includePasswordField" type="Boolean" required="false" default="false" description="Whether to include password"/>    
+    <aura:attribute name="extraFieldsFieldSet" type="String" required="false" description="A field set name whose fields are desired for user registration"/>
+    <aura:attribute name="extraFields" type="list" required="false" description="A field set name whose fields are desired for user registration"/>
+    <aura:attribute name="processing" type="Boolean" description="Processing new account"/>
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+    
+    <aura:registerevent name="sitePropagatedStartUrl" type="c:setStartUrl"/>
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+    <aura:dependency resource="c:setStartUrl" type="EVENT"/>
+    <aura:dependency resource="siteforce:registerQueryEventMap" type="EVENT"/>
+    <aura:handler event="c:setStartUrl" action="{!c.setStartUrl}"/> 
+    
+    <div>
+        <div class="slds-text-heading_large">Create myAACR Account</div>
+        <div class="slds-align_absolute-center">
+            <div class="slds-text-body_regular">
+                myAACR is designed to facilitate your communication with the Association by making it easy to interact with us when and where it is convenient for you.
+                Once logged on, you can: manage contact and profile information, pay for dues and subscriptions, view and register for events, submit an abstract and apply for an award.
+                Please use recommended Chrome or Firefox browser.
+            </div>
+        </div>
+        <br/>
+        <div class="slds-text-body_regular slds-m-bottom_medium">
+            If you need further assistance, please contact us by submitting a <a href="/myAACRHelp" style="color:blue; text-decoration: underline;">help form</a> request.
+        </div>
+
+        <div class="slds-text-body_regular">
+            Passwords must be at least 8 characters, of which 1 uppercase, 1 lowercase &amp; 1 numeric digit are required.
+        </div>
+
+        <aura:renderIf isTrue="{!v.showError}">
+            <div class="slds-theme_error slds-p-around_small slds-m-top_medium slds-m-bottom_medium slds-theme_alert-texture" style="color:white;">
+                <!--<div class="slds-align_absolute-center">-->
+                    <aura:unescapedHtml value="{!v.errorMessage}" />
+                <!--</div>-->
+            </div>
+        </aura:renderIf>
+
+<!--        <div class="slds-form_horizontal">-->
+            <lightning:input aura:id="firstname" label="First Name" value="" required="true" class="slds-input_medium" />
+            <lightning:input aura:id="lastname" label="Last Name" value="" required="true" class="slds-input_medium" />
+
+
+            <c:CompanyLookup aura:id="companyLookup" isRequired="false"/>
+
+<!--            <label class="slds-form-element__label">Affiliation</label>-->
+<!--            <c:CustomLookup objectAPIName="Account" IconName="standard:account" selectedId="{!v.accountId}" allowNewRecord="true" filterString="(NOT Name LIKE '%Household%') AND (NOT Name LIKE '%AACR%')"/>-->
+
+            <lightning:input aura:id="email" type="email" label="Email" value="" required="true" onblur="{!c.handleEmailChange}" class="slds-input_medium" />
+            <aura:renderIf isTrue="{!v.includePasswordField}">
+                <lightning:input aura:id="password" type="password" label="Password" required="true" messageWhenBadInput="TEST"  />
+            </aura:renderIf>
+
+<!--        </div>-->
+
+            <!--<div id="sfdc_username_container" class="sfdc">-->
+                <!--<span id="sfdc_user" class="login-icon" data-icon="a"></span>-->
+                <!--<ui:inputText value="" aura:id="firstname" placeholder="{!v.firstnameLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>-->
+            <!--</div>-->
+
+            <!--<div id="sfdc_nickname_container" class="sfdc">-->
+                <!--<span id="sfdc_user" class="login-icon" data-icon="a"></span>-->
+                <!--<ui:inputText value="" aura:id="lastname" placeholder="{!v.lastnameLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>-->
+            <!--</div>-->
+
+            <!--<div id="sfdc_email_container" class="sfdc">-->
+                <!--<span id="sfdc_user" class="login-icon" data-icon="k"></span>-->
+                <!--<ui:inputText value="" aura:id="email" placeholder="{!v.emailLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc"/>-->
+            <!--</div>-->
+            <!---->
+            <!--<aura:iteration aura:id="extraFields" items="{!v.extraFields}" var="curField" indexVar="index">-->
+                <!--<div id="sfdc_extrafield_container" class="sfdc">-->
+                    <!--<span id="sfdc_user" class="login-icon" data-icon="a"></span>-->
+                    <!--<ui:inputText value="{!curField.value}" aura:id="{!curField.fieldPath}" placeholder="{!curField.label}" keyup="{!c.onKeyUp}" class="input sfdc_extrafieldinput sfdc"/>-->
+                <!--</div>-->
+            <!--</aura:iteration>-->
+
+            <!--<aura:renderIf isTrue="{!v.includePasswordField}">-->
+                <!--<div id="sfdc_password_container" class="sfdc">-->
+                    <!--<span id="sfdc_lock" class="login-icon sfdc" data-icon="c"></span>-->
+                    <!--<ui:inputSecret value="" aura:id="password" placeholder="{!v.passwordLabel}" keyup="{!c.onKeyUp}" class="input sfdc_passwordinput sfdc"/>-->
+                <!--</div>-->
+    <!---->
+                <!--<div id="sfdc_confirm_password_container" class="sfdc">-->
+                    <!--<span id="sfdc_lock" class="login-icon sfdc" data-icon="c"></span>-->
+                    <!--<ui:inputSecret value="" aura:id="confirmPassword" placeholder="{!v.confirmPasswordLabel}" keyup="{!c.onKeyUp}" class="input sfdc_passwordinput sfdc"/>-->
+                <!--</div>-->
+            <!--</aura:renderIf>-->
+
+            <div class="sfdc">
+                <lightning:button aura:id="submitButton" label="{!v.processing?'Processing...':v.submitButtonLabel}" onclick="{!c.handleSelfRegister}" class="sfdc_button" disabled="{!v.processing}"/>
+                <!--<ui:button aura:id="submitButton" label="{!v.submitButtonLabel}" press="{!c.handleSelfRegister}" class="sfdc_button"/>-->
+            </div>
+    </div>
+</aura:component>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Tabs for Event Builder.</description>
+    <fields>
+        <fullName>EventApi__Display_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the order the tile is to be displayed in the builder.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Defines the order the tile is to be displayed in the builder.</inlineHelpText>
+        <label>Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Icon__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value populated in this field defines the image to be displayed for the tab&apos;s icon.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The value populated in this field defines the image to be displayed for the tab&apos;s icon.</inlineHelpText>
+        <label>Icon</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field enables this tab to be viewed in the event builder.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Checking this field enables this tab to be viewed in the event builder.</inlineHelpText>
+        <label>Is Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Lightning_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the lightning component to be used for this event builder tab.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Defines the lightning component to be used for this event builder tab.</inlineHelpText>
+        <label>Lightning Component</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This defines the type of registration used that will display this tab.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>This defines the type of registration used that will display this tab.</inlineHelpText>
+        <label>Registration Style</label>
+        <referenceTo>EventApi__Event_Registration_Style__mdt</referenceTo>
+        <relationshipLabel>Event Builder Tabs</relationshipLabel>
+        <relationshipName>Event_Builder_Tabs</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Builder Tab</label>
+    <pluralLabel>Event Builder Tabs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

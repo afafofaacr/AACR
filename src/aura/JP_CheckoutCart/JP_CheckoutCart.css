@@ -1,0 +1,172 @@
+/**
+ * Created by lauren.lezberg on 2/21/2019.
+ */
+
+
+/*.THIS div[data-name='spreedly-payment-form']{*/
+/*    font-size:1.5rem;*/
+/*}*/
+
+/*.THIS .slds-tabs_default__nav{*/
+/*    display:none;*/
+/*}*/
+
+/*.THIS  li.slds-tabs_default__item.slds-is-active{*/
+/*    border-color: token(AACRBlue);*/
+/*    font-size: 2rem;*/
+/*    margin-top: 8px;*/
+/*}*/
+
+/*.THIS li[title='Offline']{*/
+/*    display:none;*/
+/*}*/
+
+.THIS .slds-form-element{
+    position:static;
+}
+
+.THIS {
+    font-size: 1.5rem;
+}
+
+.THIS span.headerLabel{
+    font-size:1.5rem;
+}
+
+.THIS iframe{
+    /*margin-left: 9px;*/
+    width: 100%;
+    /*margin-top: 20px*/
+}
+
+/*.THIS div.modal-content{*/
+/*    min-width: 800px;*/
+/*    width:100%;*/
+/*}*/
+
+/*.THIS div.slds-modal__footer{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.THIS .slds-checkbox [type=checkbox]{*/
+/*    height:2rem !important;*/
+/*    width:2rem !important;*/
+/*}*/
+
+.THIS strong.slds-m-right_xx-small{
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+/*.THIS div[data-name="know-addresses-text"]{*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.THIS .slds-form-element .slds-checkbox [type=checkbox]+.slds-checkbox--faux{*/
+/*    height:2rem !important;*/
+/*    width:2rem !important;*/
+/*}*/
+
+.THIS .slds-checkbox .slds-checkbox_faux{
+    height:2rem !important;
+    width:2rem !important;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size:2rem;
+}
+
+/*.THIS div.slds-modal__header{*/
+/*    font-size:2rem;*/
+/*    font-weight:500;*/
+/*}*/
+
+/*.THIS button.fonteva-slds-button.slds-button.slds-button--neutral.FrameworkButton{*/
+/*    padding:1rem;*/
+/*}*/
+
+.THIS .slds-text-heading_small{
+    font-size:1.5rem;
+    font-weight:500;
+    margin-top: 5px;
+}
+
+/*.THIS .slds-text-title_medium{*/
+/*    font-size:2rem;*/
+/*}*/
+
+.THIS .slds-text-title_small{
+    font-size:1.5rem;
+}
+
+.THIS .lightBackground{
+    background: token(aacrGreenL1);
+}
+
+.THIS .bold{
+    font-weight:700;
+}
+
+.THIS .slds-button__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-weight:700;
+    fill: token(AACRBlue);
+}
+
+.THIS .slds-form-element__label:empty{
+    display:none;
+}
+
+.THIS .offerButton > button.slds-button.slds-button_brand{
+    padding:9px;
+}
+
+.THIS .offerButton > button.slds-button.slds-button_success{
+    padding:9px;
+}
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+    font-size:1.5rem;
+    padding:5px;
+    border-radius: 0.25rem;
+}
+
+/*.THIS .slds-button--brand{*/
+/*    background-color: token(AACRBlue);*/
+/*    border-color: token(AACRBlue);*/
+/*    color: white;*/
+/*    font-size:1.5rem;*/
+/*    padding:5px;*/
+/*    border-radius:0.25rem;*/
+/*}*/
+
+.THIS .slds-button.slds-button_neutral{
+    /*color:token(AACRBlue);*/
+    /*background-color:white;*/
+    /*border-color: token(AACRBlue);*/
+    font-size:1.35rem;
+    padding-right:1rem;
+    padding-left: 1rem;
+    padding-top:0.25rem;
+    padding-bottom:0.25rem;
+    line-height: 1.875;
+    border-radius:0.25rem;
+
+}
+
+/*.THIS .cancelBtn{*/
+/*    top:187px;*/
+/*    left:32%;*/
+/*}*/
+
+.THIS .slds-button.slds-button_neutral{
+    color: #4e6593;
+    background-color: transparent;
+    border-color: #4e6593;
+}

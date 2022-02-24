@@ -1,0 +1,70 @@
+<!--
+ - Created by lauren.lezberg on 3/19/2020.
+ -->
+
+<apex:page id="LiveEventsList" showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+            controller="BrEventsController">
+
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <style>
+
+        div.iziToast-capsule{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        div.slds-box.cont-box{
+            font-size:1.5rem;
+        }
+
+        button.slds-button.slds-button_neutral{
+            padding:7px;
+            font-size:1.5rem;
+        }
+
+        @media only screen and (max-width: 767px), (max-device-width: 991px) and (min-device-width: 767px)
+        table, tbody, td, th, thead, tr {
+            display: inline-block;
+        }
+    </style>
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Events
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+
+            <div id="eventList"/>
+
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+
+        $Lightning.use("c:LiveEvents", function() {
+            $Lightning.createComponent("c:BrEvents",
+                {
+                    zoneId : '{!zoneId}'
+                },
+                "eventList",
+                function(cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

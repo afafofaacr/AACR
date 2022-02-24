@@ -1,0 +1,79 @@
+/**
+ * Created by lauren.lezberg on 9/9/2020.
+ */
+
+.THIS {
+    font-size:15px;
+}
+
+.THIS ul.slds-lookup__menu{
+    position: relative;
+}
+
+.THIS .slds-p-around_medium{
+    padding: 3rem 1rem 3rem 1rem;
+}
+
+.THIS h2.slds-modal__title.slds-hyphenate{
+    font-size:15px;
+    font-weight: 500;
+}
+
+.THIS label.slds-form-element__label{
+    font-size:15px;
+    font-weight:400;
+
+}
+
+.THIS span.slds-form-element__label{
+    display:contents;
+    padding-right:5px;
+}
+
+
+/*.THIS [lightning-input_input-host]{*/
+/*    !*display:block;*!*/
+/*    display:flex !important;*/
+/*}*/
+
+/*.THIS [lightning-input_input].slds-form-element_stacked{*/
+/*    display:block;*/
+/*}*/
+
+.THIS .slds-form-element__icon {
+    display: none;
+}
+
+.THIS .slds-checkbox .slds-checkbox_faux{
+    height:1rem;
+    width:1rem;
+}
+
+.THIS div.slds-modal__container{
+    width:80%;
+    max-width:60rem;
+}
+
+.THIS [lightning-input_input].slds-form-element__control{
+    display:contents;
+}
+
+.THIS .slds-form-element_stacked{
+    display:block;
+}
+
+.THIS button.slds-button.slds-button_neutral{
+    border-color: token(aacrGreen);
+    color: token(aacrGreen);
+    background:transparent;
+    font-size: 15px;
+    padding:0px 8px;
+}
+
+
+.THIS button.slds-button.slds-button_brand{
+    border-color: token(aacrGreen);
+    color: white;
+    background:token(aacrGreen);
+    font-size: 15px;
+}

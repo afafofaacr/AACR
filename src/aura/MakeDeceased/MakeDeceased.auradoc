@@ -1,0 +1,25 @@
+<!--
+ - Created by lauren.lezberg on 12/18/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>MakeDeceased</code> component transitions a contact record to a deceased record type. The component appears as part of the <code>RecordUtilities</code> component.
+            The component appears to users if they have the 'Mark_As_Deceased' custom permission and the contact record type is not already 'Deceased'.
+        </p>
+        <p>
+            The component does a number of things to facilitate the change to 'Deceased'.
+            First, the contact record is flipped to 'Deceased' and the membership status is changed to 'Deceased'.
+            Second, all the current subscriptions are cancelled.
+            Third, if a note is provided when the contact is flipped, the note is attached to the contact record.
+        </p>
+        <h2>Usage considerations:</h2>
+        <p>
+            Once the deceased flip has occurred, all other record utilities will be hidden from the layout except for 'Quick Copy'.
+        </p>
+    </aura:description>
+    <aura:example name="MakeDeceased" ref="c:MakeDeceased" label="MakeDeceased">
+        Example for MakeDeceased
+    </aura:example>
+</aura:documentation>

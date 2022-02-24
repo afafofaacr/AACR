@@ -1,0 +1,49 @@
+<!--
+ - Created by afaf.awad on 9/2/2020.
+ -->
+
+<aura:component description="ContactFellowBadgeAccess" controller="ContactFellowAccessController" implements="force:hasRecordId,flexipage:availableForAllPageTypes">
+    <aura:attribute name="badge" type="Object" description="Badge object"/>
+    <aura:attribute name="radioOptions" type="List" description="options for badge activation/deactivation" default="[
+                                                                                                            {'label': 'Enabled', 'value': 'enable'},
+                                                                                                            {'label': 'Disabled', 'value': 'revoke'}
+                                                                                                            ]"/>
+    <aura:attribute name="radioValue" type="String" description="selected radio value for radio group" default="enable"/>
+    <aura:attribute name="errorMsg" type="String" description="Error message if badge creation/activation/deactivation fails" />
+    <aura:attribute name="canEdit" type="Boolean" description="User access to enable/disable/create Fellow badges" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card title="AACR Fellow Access">
+        <aura:set attribute="title">
+            <div class="slds-grid">
+                <aura:if isTrue="{!not(empty(v.badge))}">
+                    <div style="height:35px; width:30px; display:flex;">
+                        <aura:unescapedHtml aura:id="badgeImage" value="{!v.badge.Badge_Image__c}" />
+                    </div>
+                </aura:if>
+                <div class="slds-text-heading_medium slds-m-left_small" style="font-weight:600; margin-top:5px;">AACR Fellow</div>
+            </div>
+        </aura:set>
+        <aura:set attribute="actions">
+            <aura:if isTrue="{!not(empty(v.badge))}">
+                <lightning:radioGroup name="FellowRadioButtonGroup"
+                                      onchange="{!c.toggleFellowAccess}"
+                                      options="{! v.radioOptions }"
+                                      disabled="{!not(v.canEdit)}"
+                                      value="{! v.radioValue }"
+                                      type="button"/>
+                <aura:set attribute="else">
+                    <div class="slds-align_absolute-center">
+                        <lightning:button label="Create Fellow Badge" onclick="{!c.enableFellow}" variant="brand" disabled="{!not(v.canEdit)}"/>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+        <aura:if isTrue="{!not(empty(v.errorMsg))}">
+            <div class="slds-align_absolute-center">
+                <div class="slds-text-align_center slds-text-heading_small slds-text-color_error">{!v.errorMsg}</div>
+            </div>
+        </aura:if>
+    </lightning:card>
+</aura:component>

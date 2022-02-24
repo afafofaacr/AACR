@@ -1,0 +1,12 @@
+/**
+ * Created by lauren.lezberg on 2/28/2019.
+ */
+.THIS .slds-button__icon_left{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0rem
+}
+
+.THIS .customError{
+    border: 1px solid rgb(194,57,52);
+}

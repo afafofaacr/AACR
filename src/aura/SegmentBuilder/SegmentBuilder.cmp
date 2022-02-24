@@ -1,0 +1,121 @@
+<!--
+ - Created by lauren.lezberg on 4/1/2020.
+ -->
+
+<aura:component description="SegmentBuilder" controller="SegmentBuilderController" implements="force:hasRecordId">
+
+    <!--PUBLIC ATTRIBUTES-->
+    <aura:attribute name="loadingPreview" type="Boolean" description="Records are loading for preview" default="false"/>
+    <aura:attribute name="previewOpen" type="Boolean" description="is preview modal open" default="false"/>
+    <aura:attribute name="columns" type="List" description="List of column names for preview results"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="previewResults" type="List" description="list of preview results from query"
+                    access="private"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-4">
+            <div class="slds-box slds-m-around_medium">
+                <lightning:card title="Instructions:" iconName="utility:info" class="slds-p-around_x-small">
+                    <div class="slds-text-heading_small">
+                        <ol class="slds-m-left_medium numberedList">
+                            <li>Enter segment details.</li>
+                            <li>Double click on a field below to add it to the segment criteria.</li>
+                            <li>Enter a value for the field.</li>
+                            <li>When you are satisfied with your segment, click 'Save'.</li>
+                        </ol>
+                        <br/>
+                        <div class="slds-text-heading_small">**You can preview your segment at anytime by clicking
+                            'Preview Segment'.
+                        </div>
+                    </div>
+                </lightning:card>
+            </div>
+        </div>
+        <div class="slds-col slds-size_3-of-4">
+            <div class="slds-box slds-m-around_medium">
+                <lightning:card title="Segment Details" iconName="standard:record">
+                    <lightning:recordEditForm aura:id="recordForm" objectApiName="AC_User_Segment__c"
+                                              onsuccess="{!c.handleSuccess}">
+                        <lightning:inputField aura:id="queryString" fieldName="Query__c" class="slds-hide"/>
+                        <lightning:inputField aura:id="field" fieldName="Name"/>
+                        <lightning:inputField aura:id="field" fieldName="Description__c"/>
+                        <lightning:inputField aura:id="field" fieldName="Active__c"/>
+                    </lightning:recordEditForm>
+                </lightning:card>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="slds-grid">
+
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-box slds-m-around_medium">
+                <c:ObjectFieldSelector aura:id="conFields" objectName="contact" segmentId="{!v.recordId}"/>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-box slds-m-around_medium">
+                <c:ObjectFieldSelector aura:id="accFields" objectName="account" segmentId="{!v.recordId}"/>
+            </div>
+        </div>
+
+    </div>
+
+    <lightning:card class="slds-m-top_small">
+        <div class="slds-align_absolute-center">
+            <lightning:button label="Preview Segment" variant="neutral" onclick="{!c.runPreviewQuery}"/>
+            <lightning:button label="Save" variant="brand" onclick="{!c.getFieldValuePairs}"/>
+        </div>
+    </lightning:card>
+
+
+    <aura:if isTrue="{!v.previewOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Segment Preview</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-text-heading_small">The following list is a preview of the first 200 users that fit
+                        the segment criteria.
+                    </div>
+                    <aura:if isTrue="{!and(not(v.loadingPreview), v.previewResults.length==0)}">
+                        <div class="slds-box slds-m-top_small slds-theme--alert-texture slds-theme_warning">
+                            <div class="slds-align_absolute-center">
+                                <div class="slds-text-heading_medium slds-text-color_inverse">No records found.</div>
+                            </div>
+                        </div>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.loadingPreview}">
+                        <div class="slds-align_absolute-center">
+                            <c:AACRSpinner loadingText="Loading records..."/>
+                        </div>
+                    </aura:if>
+
+                    <div class="slds-align_absolute-center">
+                        <lightning:datatable data="{! v.previewResults }"
+                                             columns="{! v.columns }"
+                                             keyField="id"
+                                             hideCheckboxColumn="true"/>
+                    </div>
+
+                    <div class="slds-m-top_medium slds-grid slds-align_absolute-center">
+                        <lightning:button label="OK" onclick="{!c.closeModal}"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

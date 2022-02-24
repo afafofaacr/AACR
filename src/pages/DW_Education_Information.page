@@ -1,0 +1,251 @@
+<!--
+    DW_Educational_Information.vfp - v1.0
+    Description: Step Page of Become Member Wizard to gather Educational Information  
+    CreatedDate: 09/27/2018
+-->
+<apex:page controller="DW_EducationInformationController" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">    
+    <!-- Page Required CSS -->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />    
+    <c:pageStyle />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/ngToast.min.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/angular-confirm.min.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/bootstrap-datetimepicker.min.css')}" />    
+    
+    <!-- Page Required JS Libs. -->
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery-1.11.3.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-animate-sanitize-ngtable-ngtoast.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/moment.min.js')}" />    
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-confirm.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/lodash.min.js')}" /> 
+
+    <!-- 2 added for progress bar component -->
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/commonFunctions.js')}" loadOnReady="true" />
+
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/bootstrap.min.js')}" />    
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/bootstrap-datetimepicker.min.js')}" />
+    
+    <!-- Page Record Id - Here its Step Id -->
+    <vf-record-id style="display: none;visibility: hidden;" id="QueryParams.StepId">{!$CurrentPage.parameters.id}</vf-record-id>
+    
+    <!-- Page Controller - A tiny Angular App -->        
+    <apex:includeScript value="{!$Resource.DW_EducationInfoAppJs}" />
+
+    <!-- VF component for displaying progress bar -->
+    <c:DW_ProgressBar />
+
+    <apex:composition template="CPBase__template">        
+        <!-- PAGE TITLE -->        
+        <apex:define name="pageTitle">
+            Educational Information
+        </apex:define>
+        
+        <!-- PAGE CUSTOM CSS -->
+        <apex:define name="pageStyles">
+            <style type="text/css">               
+                [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none!important; }
+			</style>   
+        </apex:define>
+        
+        <!-- NAVIGATION BAR - RIGHT BLOCK -->
+        <apex:define name="supernavRight"></apex:define>
+        
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="container m-t-30">
+                <div class="inner-wrapper">
+                    <apex:pageMessages />
+            
+                    <Framework:messages />
+                    
+                    <!-- MAIN APP CONTAINER - ANGULAR APP -->
+                    <div class="main-app-container" ng-app="DWEducationInfoApp" ng-controller="DWEducationController as vm" ng-init="vm.doInit()">
+                        <!-- NG-TOAST MESSAGE CONTAINER -->
+                        <toast class="ng-toast--center"></toast>
+                        
+                        <!-- PAGE LOADER - COMMON FOR ALL (SPANS WHOLE PAGE) -->
+                        <div class="bgBlack" ng-show="vm.page.loader">
+                            <div class="spinnerBg">
+                                <div class="loader"></div>                    
+                            </div>
+                        </div>                        
+                        
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1>Education Information</h1>
+                                <hr class="m-b-15" />
+                            </div>                        
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button class="btn btn-default" ng-click="vm.addNewEducation()">Add Entry</button>
+                            </div>
+                        </div>
+                        
+                        <!-- NEW-EDIT EDUCATION MODAL -->
+                        <div class="row" id="educationNewEditView">
+                            <div class="col-sm-12">
+                                <div ng-cloak="true" class="education-edit-wrap multi_modal p-h-15" ng-if="vm.showEducationWrap" style="background: rgba(0, 0, 0, 0.098);" aria-expanded="true">
+                                    <div class="p-v-15">
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label class="required-false">
+                                                    Academic Degree
+                                                </label>                                         
+                                                <select name="AcademicDegreeMap" 
+                                                        class="form-control picklist block picklist--width"
+                                                        ng-model="vm.education.Degree__c"
+                                                        ng-options="key as value for (key , value) in vm.academicDegreeMap">
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label class="required-false">
+                                                    Academic Status <span class="redaster">*</span>
+                                                </label>                                         
+                                                <select name="AcademicStatusMap" 
+                                                        class="form-control picklist block picklist--width"
+                                                        ng-model="vm.education.Current_Education_Status__c"
+                                                        ng-options="key as value for (key , value) in vm.educationStatusMap">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label class="required-false required">
+                                                    Institution Name <span class="redaster">*</span>
+                                                </label>
+                                                <input type="text" class="form-control text block" maxlength="255" data-field-name="Institution Name" ng-model="vm.education.Name" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label class="required-false">
+                                                    Degree Completion Year
+                                                </label>
+                                                <input type="text" class="form-control text block" maxlength="4" data-field-name="Degree Completion Year" ng-model="vm.education.Degree_Completion_Year__c" integer-only="true" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-3">
+                                                <label class="required-false required">
+                                                    Date of expected Graduation  <span class="redaster">*</span>
+                                                </label>
+                                                <dw-month-year-picker date="vm.education.Date_of_Expected_Graduation__c"></dw-month-year-picker>
+                                            </div>
+                                        </div>                                       
+                                        
+                                        <div class="row">
+                                            <div class="col-md-12 text-center m-b-15">
+                                                <a href="#" class="btn btn-default" ng-click="vm.hideEducationModal()">Cancel</a>
+                                                <a href="#" class="btn btn-primary save-multiple-form-entry" ng-click="vm.saveEducationEntry()">Save Entry</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- EDUCATION ENTRY TABLE -->
+                        <div class="row noSpace" id="educationRecordList">
+                            <div class="col-sm-12 m-t-15">
+                                <div class="table-responsive no-border">
+                                    <table class="table table-default edu-table">
+                                        <tr ng-repeat="education in vm.educations">
+                                            <td class="col-sm-8">
+                                                <div class="row m-b-10">
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <strong>Academic Degree</strong>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-9">
+                                                        {{education.Degree__c}}
+                                                    </div>
+                                                </div>
+                                                <div class="row m-b-10">
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <strong>Academic Status</strong>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-9">
+                                                        {{education.Current_Education_Status__c}}
+                                                    </div>
+                                                </div>
+                                                <div class="row m-b-10">
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <strong>Institution Name</strong>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-9">
+                                                        {{education.Name}}
+                                                    </div>
+                                                </div>
+                                                <div class="row m-b-10">
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <strong>Degree Completion Year</strong>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-9">
+                                                        {{education.Degree_Completion_Year__c}}
+                                                    </div>
+                                                </div>
+                                                <div class="row m-b-10">
+                                                    <div class="col-sm-12 col-md-3">
+                                                        <strong>Date of expected Graduation</strong>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-9">
+                                                        {{education.Date_of_Expected_Graduation__c | date : "MMM - yyyy" }}
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            
+                                            <td class="col-sm-4 text-right btnCell">
+                                                <a href="#" class="btn btn-default btn-icon edit-multiple-entry" ng-click="vm.editEducationEntry($event, education)">
+                                                    <i class="btr bt-pencil"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-default btn-icon delete-multiple-entry" ng-click="vm.removeEducationEntry($event, education)">
+                                                    <i class="btr bt-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>    
+                        </div>
+                        
+                        <!-- NAVIGATION ACTION GROUP -->
+                        <div class="btnDiv">
+                            <button class="btn btn-default" ng-click="vm.canelCurrentStep($event)">Cancel</button>
+                            <button class="btn btn-default" ng-click="vm.goToPreviousStep($event)">Previous Step</button>
+                            <button class="btn btn-mini btn-primary ladda-button" ng-click="vm.updateData($event)">Next</button>
+                        </div>
+                        
+                        <!-- COMPONENT DIRECTIVE TEMPLATE - dw-monthyearpicker -->
+                        <script type="text/ng-template" id="/directive/dw-monthyearpicker.html">
+                            <div class="dw-month-year-picker">
+                                <div class="row">
+                                    <div class="month-wrap col-sm-6">
+                                        <select class="form-control picklist block picklist--width"
+                                                ng-model="month"
+                                                ng-options="month.Name for month in monthMap"
+                                                ng-change="updateDate()">
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="year-wrap col-sm-6">
+                                        <select name="AcademicDegreeMap" 
+                                                class="form-control picklist block picklist--width"
+                                                ng-model="year"
+                                                ng-options="year.Name for year in yearMap"
+                                                ng-change="updateDate()">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </script>
+                        
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+        
+    </apex:composition>    
+</apex:page>

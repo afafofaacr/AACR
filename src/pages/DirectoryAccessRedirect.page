@@ -1,0 +1,62 @@
+<!--
+ - Created by lauren.lezberg on 5/7/2019.
+ -->
+
+<apex:page id="DirectoryAccessRedirect" controller="DirectoryAccessRedirectController" action="{!checkDirectoryAccess}"  docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <style>
+        .custom-box{
+            padding: 1rem;
+            border-radius: .25rem;
+            border: 1px solid rgb(217, 219, 221);
+            margin: 1rem;
+        }
+
+        .heading-large{
+            font-weight:300;
+            font-size: 2rem;
+            line-height: 1.25;
+        }
+
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align:center;
+        }
+
+        .margin-top_medium{
+            margin-top:2rem;
+        }
+
+    </style>
+
+
+    <div class="margin-top_medium">
+        <div class="center custom-box">
+            <div class="slds-align_absolute-center slds-m-bottom_large">
+                <img src="https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg" class="img-responsive slds-m-right_small" height="60" width="430"/>
+            </div>
+            <apex:outputPanel rendered="{!nonMember}">
+                <div class="heading-large">
+                    The Member Directory is a member-only benefit. Please apply for membership or email the Membership Department at membership@aacr.org.
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!priorMember}">
+                <div class="heading-large">
+                    The Member Directory is a member-only benefit for those in good standing. Please either renew your membership dues on the My Membership page of myAACR, or email the Membership Department at membership@aacr.org.
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!member}">
+                <div class="heading-large">
+                    Your account requires assistance from our Membership Staff. Please email membership@aacr.org for support.
+                </div>
+            </apex:outputPanel>
+        </div>
+    </div>
+
+</apex:page>

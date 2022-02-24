@@ -1,0 +1,35 @@
+<!--
+ - Created by lauren.lezberg on 1/8/2021.
+ -->
+
+<aura:component description="AACRDateInput">
+    <aura:attribute name="isRequired" type="Boolean" default="false" description="is select list required"/>
+    <aura:attribute name="label" type="String" description="date input label"/>
+    <aura:attribute name="dateInput" type="Date" description="date"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:handler name="change" value="{!v.dateInput}" action="{!c.handleDateChange}"/>
+
+    <div class="slds-form-element" >
+        <label class="slds-form-element__label">
+            <aura:if isTrue="{!v.isRequired}">
+                <abbr class="slds-required">*</abbr>
+            </aura:if>
+            {!v.label}
+        </label>
+        <div class="slds-form-element__control" >
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                <lightning:input aura:id="mon" type="number" label="Month" placeholder="MM" maxlength="2" max="12"/>
+                </div>
+                <div class="slds-col">
+                <lightning:input aura:id="day" type="number" label="Day" placeholder="DD" maxlength="2"/>
+                </div>
+                <div class="slds-col">
+                <lightning:input aura:id="year" label="Year" placeholder="YYYY" maxlength="4" pattern="\d{4}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

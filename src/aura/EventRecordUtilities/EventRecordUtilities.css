@@ -1,0 +1,33 @@
+/**
+ * Created by lauren.lezberg on 4/15/2020.
+ */
+.THIS .flex-container{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    /*border: 1px solid silver;*/
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.THIS .flex-item {
+    padding: 5px;
+}
+
+.THIS .wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.THIS li{
+    /*margin-left: 5px;*/
+}
+
+.THIS li:empty{
+    display:none;
+}

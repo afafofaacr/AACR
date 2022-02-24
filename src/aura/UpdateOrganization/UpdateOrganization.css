@@ -1,0 +1,82 @@
+/**
+ * Created by afaf.awad on 1/13/2021.
+ */
+
+.THIS .slds-text-heading_small{
+    margin: auto;
+    font-size: x-large;
+}
+
+.THIS .slds-size_1-of-3 {
+    display: none !important;
+}
+
+.THIS .slds-form-element__control{
+    padding: 0px !important;
+}
+
+.THIS .slds-form-element__label {
+    display: none !important;
+}
+
+
+.THIS .leftPaddingClass {
+    padding-left: 2rem;
+}
+
+.THIS .pillSize{
+    width:100%;
+}
+
+.THIS div.slds-pill.pillSize{
+    padding:5px;
+}
+
+.THIS .slds-listbox__option-text{
+    font-size: 1.5rem;
+}
+
+
+.THIS  button.sfdc_button {
+    color: white;
+    background:token(aacrGreen);
+    border-color: token(aacrGreen);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    height: 3.5rem;
+    width: 100px;
+}
+
+.THIS  button.sfdc_button_red {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    height: 3.5rem;
+    width: 100px;
+}
+
+.THIS  button.sfdc_button:hover {
+    background: token(aacrGreen);
+    border-color:token(aacrGreen);
+    color:white;
+    cursor:pointer;
+}
+
+/*.THIS .slds-form-element__label{*/
+/*    font-size: medium;*/
+/*}*/
+
+.THIS svg.slds-icon.slds-icon-text-default.slds-icon_small {
+    width: 1.5rem;
+    height: 1.5rem;
+
+}
+
+/*.THIS.slds-pill__icon_container span{*/
+/*    position: relative !important;*/
+/*}*/
+
+.THIS.slds-lookup.slds-is-open .slds-lookup__menu{
+    position: inherit;
+}

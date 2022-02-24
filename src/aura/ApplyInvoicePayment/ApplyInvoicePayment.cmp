@@ -1,0 +1,85 @@
+<!--
+ - Created by afaf.awad on 1/13/2021.
+ -->
+
+<aura:component description="ApplyInvoicePayment" controller="InvoicePaymentController" implements="force:lightningQuickAction,lightning:isUrlAddressable,force:appHostable,lightning:actionOverride,force:hasRecordId,force:hasSObjectName">
+
+    <aura:attribute name="invoiceList" type="List"/>
+    <aura:attribute name="joinId" type="String" description="The current process id"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:attribute name="currentStepId" type="String" description="Current join step id"/>
+    <aura:attribute name="joinSteps" type="List" description="List of join process steps"/>
+    <aura:attribute name="isInitialStep" type="Boolean" default="true"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-card">
+        <div class="slds-m-left_small slds-m-right_small">
+            <c:JP_ProgressBar currentStepId="{!v.currentStepId}" joinSteps="{!v.joinSteps}" joinId="{!v.joinId}" />
+        </div>
+
+        <!-- DYNAMIC COMPONENT -->
+        <div class="slds-m-around_small" style="margin:auto; width:1140px;">
+        <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                     style="background: #50B848; color: white; font-size:2rem;">
+                    {!'Invoice #' + v.invoiceList[0].OrderApi__Invoice__r.Name}
+                </div>
+                    <lightning:card title="">
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                            <thead>
+                            <tr class="slds-text-title--caps">
+                                <th scope="col" class="slds-size_1-of-12">
+                                    <div class="slds-truncate" title="Invoice Line Id">Invoice Line ID</div>
+                                </th>
+                                <th scope="col" class="slds-size_6-of-12">
+                                    <div class="slds-truncate" title="Item">Item</div>
+                                </th>
+                                <th scope="col" class="slds-size_1-of-12">
+                                    <div class="slds-truncate" title="Balance Due">Balance Due</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <aura:iteration items="{!v.invoiceList}" var="il">
+                                <tr>
+                                    <th scope="row" data-label="Invoice Line Id">
+                                        <div class="slds-truncate" title="{!il.Name}">{!il.Name}</div>
+                                    </th>
+                                    <td data-label="Item">
+                                        <div class="slds-truncate" title="{!il.OrderApi__Item__r.Name}">{!il.OrderApi__Item__r.Name}</div>
+                                    </td>
+                                    <td data-label="Balance Due">
+                                        <div class="slds-truncate" title="{!il.OrderApi__Sale_Price__c}"><ui:outputCurrency value="{!il.OrderApi__Sale_Price__c}"/></div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                            </tbody>
+                        </table>
+                    </lightning:card>
+        </div>
+            <div class="slds-col slds-size_1-of-2">
+            <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                 style="background: #50B848; color: white; font-size:2rem;">
+                Payment
+            </div>
+            <lightning:card title="" class="slds-align_absolute-center">
+                <c:PaymentBillingAddress aura:id="ba" contactId="{!v.salesOrder.OrderApi__Contact__c}"/>
+                <iframe id="iframe" src="{!'/apex/StripeCheckout?id=' + v.joinId +'&amp;salesOrder=' +  v.invoiceList[0].OrderApi__Invoice__r.OrderApi__Sales_Order__c}" height="400" frameBorder="0"/>
+            </lightning:card>
+        </div>
+        </div>
+
+        </div>
+
+<!--        <div class="slds-m-around_small">-->
+<!--        <div class="slds-align_absolute-center slds-m-top_large">-->
+<!--                    <lightning:button label="Cancel" title="Cancel" onclick="{! c.cancelPayment }" class="slds-p-top_medium slds-p-bottom_medium" />-->
+<!--                </div>-->
+<!--        </div>-->
+    </div>
+
+</aura:component>

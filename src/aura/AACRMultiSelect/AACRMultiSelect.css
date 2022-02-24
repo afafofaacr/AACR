@@ -1,0 +1,49 @@
+/**
+ * Created by lauren.lezberg on 1/6/2021.
+ */
+
+.THIS .availableOption:hover{
+    background-color:token(AACRBlue);
+    color:white;
+    padding:2px;
+}
+
+.THIS .slds-has-error.slds-form-element__help{
+    font-size:15px;
+    color:rgb(234, 0, 30);
+}
+
+.THIS div.slds-box{
+    padding:0.75rem;
+}
+
+.THIS .hasError{
+    border:1px solid rgb(234, 0, 30) !important;
+}
+
+.THIS .customScroll{
+    overflow-y: scroll;
+    max-height:150px;
+}
+
+.THIS span.slds-pill{
+    background-color:token(AACRBlue);
+    border-radius: 0.25rem;
+}
+
+.THIS span.slds-pill:hover{
+    background-color:token(AACRBlue);
+    border-radius: 0.25rem;
+}
+
+.THIS .slds-pill__label{
+    padding-left:8px;
+    padding-right:8px;
+    color:white;
+}
+
+.THIS button.slds-button.slds-button_icon.slds-pill__remove.slds-button_icon-bare{
+    color:white;
+    height:1.5rem;
+    width:1.5rem;
+}

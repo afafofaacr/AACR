@@ -1,0 +1,95 @@
+/**
+ * Created by afaf.awad on 2/16/2021.
+ */
+
+.THIS .slds-form-element__help{
+    font-size: 1rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size: 1.5rem;
+}
+
+.THIS .updateButton{
+    font-size: 1.5rem;
+    width: 25%;
+    padding: .8rem;
+}
+
+/*Long Text Editor*/
+.THIS .slds-textarea{
+    height: 37rem;
+}
+/*Rich text editor styles*/
+/*.THIS .slds-rich-text-editor {*/
+/*    font-size: 1.5rem;*/
+/*}*/
+
+/*.THIS .slds-button-group-list li .slds-button{*/
+/*    padding: 1.25rem;*/
+/*    display: flex;*/
+/*}*/
+
+/*.THIS svg.slds-button__icon{*/
+/*    width:1.5rem;*/
+/*    height:1.5rem;*/
+/*}*/
+
+/*.THIS button.slds-button.slds-color-picker__summary-button.slds-button_icon.slds-button_icon-more{*/
+/*    height: 2.7rem;*/
+/*}*/
+
+/*.THIS .lighting-formatted-rich-text{*/
+/*    height:100%;*/
+/*}*/
+
+/*.THIS .slds-rich-text-area__content{*/
+/*    max-height: 100%;*/
+/*}*/
+
+/*Notifier for sending test email*/
+.THIS .slds-text-heading_small{
+    font-size: 1rem;
+}
+
+.THIS .slds-notify_container{
+    margin-left: 13%;
+}
+
+.THIS .toast {
+    padding: 0rem;
+    position: relative;
+    max-width: 50%;
+    height: 50px;
+    /*!*margin-left: -125px;*!*/
+    margin: auto;
+    /*background-color: token(aacrGreen);*/
+    /*color: #fff;*/
+    display:flex;
+    text-align: center;
+    /*border-radius: 2px;*/
+    /*position: fixed;*/
+    /*opacity:0.80;*/
+    /*z-index: 10000;*/
+    /*left: 0;right:0;*/
+    /*top:10px;*/
+    /*font-size: 17px;*/
+    /*white-space: nowrap;*/
+    /*-webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;*/
+    /*animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;*/
+}
+
+/*.THIS .slds-button_icon{*/
+/*    height:1.5rem;*/
+/*    width:1.5rem;*/
+
+/*}*/
+
+.THIS .desc{
+    color: #fff;
+    margin:auto;
+    padding: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,19 @@
+<!--
+ - Created by lauren.lezberg on 10/15/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: GetTicketsController</p>
+        <p>
+            The <code>GetTickets</code> component is simply a button that redirects to the event ticketing join process using <code>lightning:navigation</code>.
+            It controls access based on a custom permission and is used in the <code>RecordUtilities</code> component on the contact layout.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>On click, the button creates an empty open sales order which is appended to the url on redirect.</p>
+    </aura:description>
+    <aura:example name="GetTickets" ref="c:GetTickets" label="GetTickets">
+        Example for GetTickets
+    </aura:example>
+</aura:documentation>

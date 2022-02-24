@@ -1,0 +1,31 @@
+<apex:component >
+    <apex:attribute name="nominatorNumber" description="This is the value for the component."
+                    type="Integer" required="true"/>
+    <div name="verifyNominatorBlock" class="verifyNominatorBlock">
+        <div class="grid">
+            <div class="col">
+                <label>
+                    <span class="redaster">*</span>
+                Member #</label>
+                <input type="text" class="memberNo{!nominatorNumber}" name="memberNo{!nominatorNumber}" id="memberNo{!nominatorNumber}"/>
+            </div>
+            <div class="col orCol">
+                Or
+            </div>
+            <div class="col">
+                <label>Email</label>
+                <input type="text" class="email{!nominatorNumber}" name="email{!nominatorNumber}" id="email{!nominatorNumber}"/>
+            </div>
+        </div>
+        
+        <div class="form-group grid">
+            <div class="col sml">
+                <button class="btnStyle verify-nominator" type="button" data-id="{!nominatorNumber}">Verify Nominators</button>
+            </div>
+            <div class="col">
+                <b>Status:</b> <output name="status" id="status{!nominatorNumber}" readonly="true" class="inputStyle status"/>
+            </div>
+        </div>
+    </div>
+
+</apex:component>

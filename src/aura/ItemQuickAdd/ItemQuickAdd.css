@@ -1,0 +1,29 @@
+/**
+ * Created by lauren.lezberg on 10/7/2019.
+ */
+.THIS .leftPaddingClass {
+    padding-left: 2rem;
+}
+
+.THIS .pillSize{
+    width:100%;
+    padding:6px;
+}
+
+.THIS .slds-pill__icon_container~.slds-pill__action{
+    padding-left: calc(1.75rem + 0.25rem + 2px);
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+
+
+
+.THIS .slds-pill_link .slds-pill__remove{
+    /*right:0.5rem;*/
+    top: 45%;
+}
+
+.THIS .slds-pill__label{
+    margin-left: 2rem;
+    position: absolute;
+}

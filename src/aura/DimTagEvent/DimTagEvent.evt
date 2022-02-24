@@ -1,0 +1,9 @@
+<!--
+ - Created by afaf.awad on 6/8/2021.
+ -->
+
+<aura:event type="COMPONENT" description="DimTagEvent">
+
+    <aura:attribute name="action" type="String" description="What action to perform from event"/>
+
+</aura:event>

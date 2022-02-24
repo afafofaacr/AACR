@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Speaker records associated with each session</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Assistant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assistant</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Session Speakers (Assistant)</relationshipLabel>
+        <relationshipName>Assistants</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DiscloserId__c</fullName>
+        <externalId>true</externalId>
+        <label>Discloser ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>BR_Event__c</referenceTo>
+        <relationshipLabel>Session Speakers</relationshipLabel>
+        <relationshipName>Session_Speakers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Presentation_Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Presentation Order</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Presentation_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Presentation Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Time</type>
+    </fields>
+    <fields>
+        <fullName>Reply_Date__c</fullName>
+        <description>Date speaker replied to invitation</description>
+        <externalId>false</externalId>
+        <label>Reply Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Roles__c</fullName>
+        <description>Speaker roles for a particular session</description>
+        <externalId>false</externalId>
+        <label>Roles</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Chair</fullName>
+                    <default>false</default>
+                    <label>Chair</label>
+                </value>
+                <value>
+                    <fullName>Cochair</fullName>
+                    <default>false</default>
+                    <label>Cochair</label>
+                </value>
+                <value>
+                    <fullName>Program Committee Member</fullName>
+                    <default>false</default>
+                    <label>Program Committee Member</label>
+                </value>
+                <value>
+                    <fullName>Scientific Committee Member</fullName>
+                    <default>false</default>
+                    <label>Scientific Committee Member</label>
+                </value>
+                <value>
+                    <fullName>Organizing Committee Member</fullName>
+                    <default>false</default>
+                    <label>Organizing Committee Member</label>
+                </value>
+                <value>
+                    <fullName>Executive Committee Member</fullName>
+                    <default>false</default>
+                    <label>Executive Committee Member</label>
+                </value>
+                <value>
+                    <fullName>Program Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Program Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Program Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Program Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Scientific Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Scientific Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Scientific Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Scientific Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Keynote Speaker</fullName>
+                    <default>false</default>
+                    <label>Keynote Speaker</label>
+                </value>
+                <value>
+                    <fullName>Speaker</fullName>
+                    <default>false</default>
+                    <label>Speaker</label>
+                </value>
+                <value>
+                    <fullName>Session Chair</fullName>
+                    <default>false</default>
+                    <label>Session Chair</label>
+                </value>
+                <value>
+                    <fullName>Discussant</fullName>
+                    <default>false</default>
+                    <label>Discussant</label>
+                </value>
+                <value>
+                    <fullName>Moderator</fullName>
+                    <default>false</default>
+                    <label>Moderator</label>
+                </value>
+                <value>
+                    <fullName>Panelist</fullName>
+                    <default>false</default>
+                    <label>Panelist</label>
+                </value>
+                <value>
+                    <fullName>Proffered Presenter</fullName>
+                    <default>false</default>
+                    <label>Proffered Presenter</label>
+                </value>
+                <value>
+                    <fullName>Director</fullName>
+                    <default>false</default>
+                    <label>Director</label>
+                </value>
+                <value>
+                    <fullName>Codirector</fullName>
+                    <default>false</default>
+                    <label>Codirector</label>
+                </value>
+                <value>
+                    <fullName>Faculty</fullName>
+                    <default>false</default>
+                    <label>Faculty</label>
+                </value>
+                <value>
+                    <fullName>Lab Director</fullName>
+                    <default>false</default>
+                    <label>Lab Director</label>
+                </value>
+                <value>
+                    <fullName>Lab Assistant</fullName>
+                    <default>false</default>
+                    <label>Lab Assistant</label>
+                </value>
+                <value>
+                    <fullName>Lecturer</fullName>
+                    <default>false</default>
+                    <label>Lecturer</label>
+                </value>
+                <value>
+                    <fullName>Observer</fullName>
+                    <default>false</default>
+                    <label>Observer</label>
+                </value>
+                <value>
+                    <fullName>Short-talk Presenter</fullName>
+                    <default>false</default>
+                    <label>Short-talk Presenter</label>
+                </value>
+                <value>
+                    <fullName>Organizing Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Organizing Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Organizing Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Organizing Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Executive Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Executive Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Executive Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Executive Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Abstract Review Committee Member</fullName>
+                    <default>false</default>
+                    <label>Abstract Review Committee Member</label>
+                </value>
+                <value>
+                    <fullName>Abstract Review Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Abstract Review Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Abstract Review Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Abstract Review Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Education Committee Member</fullName>
+                    <default>false</default>
+                    <label>Education Committee Member</label>
+                </value>
+                <value>
+                    <fullName>Education Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Education Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Education Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Education Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Scientific Advisory Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Scientific Advisory Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Scientific Advisory Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Scientific Advisory Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Scientific Advisory Committee Member</fullName>
+                    <default>false</default>
+                    <label>Scientific Advisory Committee Member</label>
+                </value>
+                <value>
+                    <fullName>Member</fullName>
+                    <default>false</default>
+                    <label>Member</label>
+                </value>
+                <value>
+                    <fullName>Session Cochair</fullName>
+                    <default>false</default>
+                    <label>Session Cochair</label>
+                </value>
+                <value>
+                    <fullName>Subcommittee Member</fullName>
+                    <default>false</default>
+                    <label>Subcommittee Member</label>
+                </value>
+                <value>
+                    <fullName>Subcommittee Chair</fullName>
+                    <default>false</default>
+                    <label>Subcommittee Chair</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Session__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Session</label>
+        <referenceTo>AACR_Session__c</referenceTo>
+        <relationshipLabel>Session Speakers</relationshipLabel>
+        <relationshipName>Session_Speakers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Speaker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Speaker</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Session Speakers</relationshipLabel>
+        <relationshipName>Session_Speakers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <defaultValue>&quot;--None--&quot;</defaultValue>
+        <description>Status of speakers invitation</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invited</fullName>
+                    <default>false</default>
+                    <label>Invited</label>
+                </value>
+                <value>
+                    <fullName>Tentative</fullName>
+                    <default>false</default>
+                    <label>Tentative</label>
+                </value>
+                <value>
+                    <fullName>Negotiating</fullName>
+                    <default>false</default>
+                    <label>Negotiating</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <label>Declined</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Suggested</fullName>
+                    <default>false</default>
+                    <label>Suggested</label>
+                </value>
+                <value>
+                    <fullName>Considering</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Considering</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Use_for_Invite__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Use for Invite</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cc_assistant__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>cc assistant</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Session Speaker</label>
+    <nameField>
+        <label>Presentation Title</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Session Speakers</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Chair_Person</fullName>
+        <active>true</active>
+        <description>Chair person at event</description>
+        <label>Chair Person</label>
+        <picklistValues>
+            <picklist>Roles__c</picklist>
+            <values>
+                <fullName>Abstract Review Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Abstract Review Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizing Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizing Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Advisory Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Advisory Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subcommittee Chair</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negotiating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tentative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Session_Speaker</fullName>
+        <active>true</active>
+        <description>Speaker at session</description>
+        <label>Session Speaker</label>
+        <picklistValues>
+            <picklist>Roles__c</picklist>
+            <values>
+                <fullName>Abstract Review Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Abstract Review Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Abstract Review Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Codirector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discussant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Faculty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keynote Speaker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lab Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lecturer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Observer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizing Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizing Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizing Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Panelist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proffered Presenter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Program Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Advisory Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Advisory Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Advisory Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Committee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Committee Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Session Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Session Cochair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Short-talk Presenter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speaker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subcommittee Chair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subcommittee Member</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negotiating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suggested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tentative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>End_Time_Validation</fullName>
+        <active>false</active>
+        <description>Presentation time must start before the end of the session</description>
+        <errorConditionFormula>Presentation_Time__c &gt;=  Session__r.End_Time__c</errorConditionFormula>
+        <errorMessage>Presentation Time must be within the session.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Start_Time_Validation</fullName>
+        <active>false</active>
+        <description>Start time must be after session start time</description>
+        <errorConditionFormula>Presentation_Time__c &lt;  Session__r.Start_Time__c</errorConditionFormula>
+        <errorMessage>Presentation Time must be within the session.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,103 @@
+/**
+ * Created by lauren.lezberg on 2/26/2019.
+ */
+
+.THIS .slds-text-heading_medium {
+    font-size:1.5rem;
+}
+
+.THIS label.slds-form-element__label {
+    /*display: none;*/
+}
+
+.THIS .slds-pill__label{
+    font-size:1.5rem;
+    margin-left: 1rem;
+    position: absolute;
+}
+
+
+.THIS .slds-radio_button [type=radio]:checked+.slds-radio_button__label{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+    font-size:1.5rem;
+    display:block;
+}
+
+.THIS .slds-radio_button [type=radio]:checked+.slds-radio_button__label:hover{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+    font-size:1.5rem;
+    display:block;
+}
+
+.THIS .slds-radio_button [type=radio]+.slds-radio_button__label{
+    display:block;
+}
+
+.THIS .slds-radio_button:last-child>.slds-radio_button__label{
+    color: token(AACRBlue);
+    display: block;
+}
+
+.THIS label{
+    margin-bottom:0px;
+    padding: 0.70rem;
+    font-size: 1.5rem;
+    color: rgb(107,109,112);
+}
+
+.THIS .slds-input__icon-group{
+    margin-top: -.75rem;
+}
+
+.THIS .slds-input__icon-group_right .slds-input__icon_right{
+    right: 1.5rem;
+}
+
+.THIS .slds-input::placeholder{
+     font-size:1.5rem;
+ }
+
+.THIS .slds-pill_link .slds-pill__icon_container{
+    margin-top:2px;
+    display: table;
+    left: 0.5rem;
+}
+
+.THIS .slds-combobox__input-entity-icon .slds-icon{
+    display:contents;
+}
+
+.THIS .slds-input-has-icon .slds-input__icon{
+    top:40%;
+    margin-right:10px;
+}
+
+.THIS .slds-input-has-icon{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+
+/*.THIS [class*=slds-input-has-icon_left] .slds-combobox__input.slds-combobox__input-value{*/
+/*    padding-left:2.75rem;*/
+/*}*/
+
+
+.THIS .slds-pill_link .slds-pill__remove{
+    right:0.5rem;
+    top: 45%;
+}
+
+.THIS .slds-pill__remove svg{
+    width:1.25rem;
+    height:1.25rem;
+}
+
+.THIS svg.slds-icon{
+    height:2rem !important;
+    width:2rem !important;
+}

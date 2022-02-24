@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Subscription Lines allow more than one Item to be assigned to a Subscription.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__Activated_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The date the Subscription Line was activated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The date the Subscription Line was activated.</inlineHelpText>
+        <label>Activated Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Active_Assignments__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Number of Active Assignments. Valid and restricted to Items where &quot;Enable Assignments&quot; is checked. Defaults 0 if no Assignments found.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Number of Active Assignments. Valid and restricted to Items where &quot;Enable Assignments&quot; is checked. Defaults 0 if no Assignments found.</inlineHelpText>
+        <label>Active Assignments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assignments_Allowed__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** If the Item &quot;Enable Assignments&quot; and &quot;Restrict Number of Assignments&quot; fields are checked, the Item &quot;Maximum Number of Assignments&quot; x the Line &quot;Quantity&quot; is set. Otherwise no value is set.</description>
+        <externalId>false</externalId>
+        <formula>IF (  OrderApi__Item__r.OrderApi__Enable_Assignments__c &amp;&amp;  OrderApi__Item__r.OrderApi__Restrict_Number_of_Assignments__c ,   OrderApi__Item__r.OrderApi__Maximum_Number_of_Assignments__c *  OrderApi__Quantity__c  , IF ( NOT(OrderApi__Item__r.OrderApi__Restrict_Number_of_Assignments__c) &amp;&amp; OrderApi__Item__r.OrderApi__Enable_Assignments__c, null , null ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>** System Calculated ** If the Item &quot;Enable Assignments&quot; and &quot;Restrict Number of Assignments&quot; fields are checked, the Item &quot;Maximum Number of Assignments&quot; x the Line &quot;Quantity&quot; is set. Otherwise no value is set.</inlineHelpText>
+        <label>Assignments Allowed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Assignments_Available__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** If the Item &quot;Restricts Number of Assignments&quot; then Assignments Allowed - Active Assignments is set. Otherwise the value is null.</description>
+        <externalId>false</externalId>
+        <formula>IF (
+OrderApi__Item__r.OrderApi__Enable_Assignments__c &amp;&amp;  OrderApi__Item__r.OrderApi__Restrict_Number_of_Assignments__c , OrderApi__Assignments_Allowed__c - OrderApi__Active_Assignments__c , null )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>** System Calculated ** If the Item &quot;Restricts Number of Assignments&quot; then Assignments Allowed - Active Assignments is set. Otherwise the value is null.</inlineHelpText>
+        <label>Assignments Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Invoice Line record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Invoice Line record.</inlineHelpText>
+        <label>Invoice Line</label>
+        <referenceTo>OrderApi__Invoice_Line__c</referenceTo>
+        <relationshipLabel>Subscription Lines</relationshipLabel>
+        <relationshipName>Subscription_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoiced_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Automatically populated when Invoice generated for related Subscription Line Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Automatically populated when Invoice generated for related Subscription Line Item.</inlineHelpText>
+        <label>Invoiced Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Amendment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the related Subscription Line is considered as a &quot;Subscription Amendment&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the line will only amendment subscription lines change active subscription.</inlineHelpText>
+        <label>Is Amendment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Invoiced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Automatically checked when Invoice generated for related Subscription Line Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Automatically checked when Invoice generated for related Subscription Line Item.</inlineHelpText>
+        <label>Is Invoiced</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated / Override ** Link to the related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated / Override ** Link to the related Item Class.</inlineHelpText>
+        <label>Item Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Subscription Lines</relationshipLabel>
+        <relationshipName>Subscription_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to the related &quot;Subscription&quot; Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to the related &quot;Subscription&quot; Item.</inlineHelpText>
+        <label>Item</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipName>Subscription_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Line_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional line description will be added to if blank, the value of this field will match the value of the related item&apos;s &quot;Line Description&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional line description will be added to if blank, the value of this field will match the value of the related item&apos;s &quot;Line Description&quot; field.</inlineHelpText>
+        <label>Line Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__List_Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The value of the related Item&apos;s &quot;Price&quot; (Default)</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Item__r.OrderApi__Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>** System Calculated ** The value of the related Item&apos;s &quot;Price&quot; (Default)</inlineHelpText>
+        <label>List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Price_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the &quot;Price Rule&quot; will no longer drive the &quot;Sale Price&quot; and the system will allow manually entry into the &quot;Sale Price&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the &quot;Price Rule&quot; will no longer drive the &quot;Sale Price&quot; and the system will allow manually entry into the &quot;Sale Price&quot; field.</inlineHelpText>
+        <label>Price Override</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Price_Rule__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required System Calculated Override ** Link to the Price Rule that sets the &quot;Sale Price&quot; for the Subscription Line - automatically calculated from the linked Item&apos;s &quot;Price Rules&quot; if &quot;Price Override&quot; is unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required System Calculated Override ** Link to the Price Rule that sets the &quot;Sale Price&quot; for the Subscription Line - automatically calculated from the linked Item&apos;s &quot;Price Rules&quot; if &quot;Price Override&quot; is unchecked.</inlineHelpText>
+        <label>Price Rule</label>
+        <referenceTo>OrderApi__Price_Rule__c</referenceTo>
+        <relationshipName>Subscription_Line</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** The number of Items for the Subscription Line. Defaults to 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The number of Items for the Subscription Line. Defaults to 1.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Receipt_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Receipt Line record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Receipt Line record.</inlineHelpText>
+        <label>Receipt Line</label>
+        <referenceTo>OrderApi__Receipt_Line__c</referenceTo>
+        <relationshipLabel>Subscription Lines</relationshipLabel>
+        <relationshipName>Subscription_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sale_Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The price per unit for the Subscription Line &quot;Item&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The price per unit for the Subscription Line &quot;Item&quot;.</inlineHelpText>
+        <label>Sale Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sales_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Sales Order Line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Sales Order Line</inlineHelpText>
+        <label>Sales Order Line</label>
+        <referenceTo>OrderApi__Sales_Order_Line__c</referenceTo>
+        <relationshipLabel>Subscription Lines</relationshipLabel>
+        <relationshipName>Subscription_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to parent Subscription Line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to parent Subscription Line.</inlineHelpText>
+        <label>Parent Subscription Line</label>
+        <referenceTo>OrderApi__Subscription_Line__c</referenceTo>
+        <relationshipLabel>Subscription Lines</relationshipLabel>
+        <relationshipName>Subscription_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to the related Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to the related Subscription.</inlineHelpText>
+        <label>Subscription</label>
+        <referenceTo>OrderApi__Subscription__c</referenceTo>
+        <relationshipName>Subscription_Lines</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subtotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Quantity * Sale Price</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(OrderApi__Item__c)) &amp;&amp; NOT(ISBLANK(OrderApi__Sale_Price__c)) &amp;&amp; NOT(ISBLANK(OrderApi__Quantity__c)), OrderApi__Sale_Price__c * OrderApi__Quantity__c, OrderApi__Total__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>** System Calculated ** Quantity * Sale Price</inlineHelpText>
+        <label>Subtotal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Total__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Defaults to the &quot;Subtotal&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Defaults to the &quot;Subtotal&quot;.</inlineHelpText>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Subscription Line</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Subscription Line ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Subscription Lines</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Item__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Quantity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__List_Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Price_Rule__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Sale_Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Subtotal__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Total__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Item__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Quantity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__List_Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Price_Rule__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Sale_Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Subtotal__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Total__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>OrderApi__Item__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Price_Rule__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Quantity__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Sale_Price__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

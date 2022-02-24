@@ -1,0 +1,59 @@
+/**
+ * Created by lauren.lezberg on 7/1/2021.
+ */
+
+.THIS {
+    font-size: 1.5rem;
+}
+
+.THIS .slds-form-element__help{
+    font-size:1.25rem;
+}
+
+.THIS button.slds-button.slds-button_brand{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size:1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: .75rem;
+}
+
+.THIS .slds-form-element_horizontal:not(.slds-is-editing){
+    display:grid;
+}
+
+.THIS .slds-dropdown-trigger_click.slds-is-open .slds-dropdown{
+    font-size:1.5rem;
+}
+
+.THIS .slds-form-element__icon{
+    display:none;
+}
+
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox_faux:after{
+    height:0.4rem;
+    width:0.8rem;
+}
+
+.THIS .slds-checkbox .slds-checkbox_faux{
+    height:2rem;
+    width:2rem;
+}
+
+.THIS .slds-checkbox_standalone [type=checkbox]{
+    height:2rem;
+    width:2rem;
+}
+
+
+.THIS .slds-form-element_horizontal .slds-form-element__label{
+    position:absolute;
+    font-size:1.25rem;
+    font-weight: 500;
+}
+
+.THIS .slds-input{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}

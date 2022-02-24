@@ -1,0 +1,35 @@
+<!--
+ - Created by lauren.lezberg on 4/3/2020.
+ -->
+
+<aura:component description="EventRegContentButtons" controller="MyContentController">
+    <aura:attribute name="eventId" type="String" description="id of event"/>
+    <aura:attribute name="contactId" type="String" description="id of contact"/>
+    <aura:attribute name="attendeeId" type="String" description="id of attendee"/>
+    <aura:attribute name="computerCheckLink" type="String" description="link to computer pre-check"/>
+    <aura:attribute name="viewLink" type="String" description="link to go to virtual event"/>
+    <aura:attribute name="eventIsActive" type="Boolean" description="is event active" default="false"/>
+    <aura:attribute name="checkIsActive" type="Boolean" description="is event active" default="false"/>
+    <aura:attribute name="registrationOpen" type="Boolean" description="is registration open" default="true"/>
+    <aura:attribute name="isCME" type="Boolean" description="is event CME eligible" default="false"/>
+    <aura:attribute name="cmeLink" type="String" description="Link to go to CME survey"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+
+    <div class="slds-align_absolute-center slds-m-top_small">
+
+        <aura:if isTrue="{!v.isCME}">
+            <lightning:button label="CME Credit" variant="brand" onclick="{!c.redirect}" value="{!v.cmeLink}"/>
+        </aura:if>
+        <aura:if isTrue="{!and(not(v.checkIsActive))}">
+        <lightning:button label="Letter of Participation" variant="brand" onclick="{!c.downloadPDF}"/>
+            <aura:set attribute="else">
+                <lightning:button label="Browser Requirements" variant="brand" disabled="{!not(v.checkIsActive)}" onclick="{!c.redirect}" value="{!v.computerCheckLink}"/>
+            </aura:set>
+        </aura:if>
+            <lightning:button label="Attend" variant="brand" disabled="{!not(v.eventIsActive)}" onclick="{!c.goToEvent}" value="{!v.viewLink}"/>
+
+    </div>
+</aura:component>

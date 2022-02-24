@@ -1,0 +1,17 @@
+<!--
+ - Created by lauren.lezberg on 7/23/2019.
+ -->
+
+<aura:component description="DirectoryLaunch" controller="DirectoryController">
+    <aura:attribute name="directoryURL" type="String" description="url of directory"/>
+    <aura:attribute name="showLaunchButton" type="String" description="url of directory" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.showLaunchButton}">
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Member Directory" onclick="{!c.openDirectory}"/>
+        </div>
+    </aura:if>
+
+</aura:component>

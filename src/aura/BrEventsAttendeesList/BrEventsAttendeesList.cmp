@@ -1,0 +1,21 @@
+<aura:component description="BrEventsAttendeesList">
+    <aura:attribute name="items" type="BR_Participation__c[]"/>
+    <aura:attribute name="isCommunity" type="Boolean"/>
+
+    <aura:iteration items="{!v.items}" var="part">
+        <div class="slds-media slds-p-around--medium media-panel">
+            <div class="slds-media__figure image--round">
+                <a href="{!v.isCommunity ? 'profile/' + part.User__r.Id : '/one/one.app?#/sObject/'+ part.User__r.Id + '/view'}">
+                    <img src="{!part.User__r.SmallPhotoUrl}" class="slds-avatar--large" alt="{!part.User__r.Name}" />
+                </a>
+            </div>
+            <div class="slds-media__body">
+                <p class="media__text">
+                    <a href="{!v.isCommunity ? 'profile/' + part.User__r.Id : '/one/one.app?#/sObject/'+ part.User__r.Id + '/view'}">
+                        {!part.User__r.Name}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </aura:iteration>
+</aura:component>

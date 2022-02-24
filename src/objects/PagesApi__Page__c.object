@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores the configurations for custom pages created in Fonteva&apos;s Publisher (PagesApi).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked access to the Page is controlled by the related user-defined Access Permissions. Defaults unchecked - essentially enabling all public and authenticated Users access to the Page and related content.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked access to the Page is controlled by the related user-defined Access Permissions. Defaults unchecked - essentially enabling all public and authenticated Users access to the Page and related content.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Auth_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the Page will require a User to be authenticated either through the Customer Portal, Partner Portal, or Community. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the Page will require a User to be authenticated either through the Customer Portal, Partner Portal, or Community. Defaults unchecked.</inlineHelpText>
+        <label>Auth Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Enable_SEF_URLs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked URLs will be re-written into a user friendly format based on the configurations of the Site and Page &quot;Slug&quot; fields. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked URLs will be re-written into a user friendly format based on the configurations of the Site and Page &quot;Slug&quot; fields. Defaults unchecked.</inlineHelpText>
+        <label>Enable SEF URLs</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related form.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related form.</inlineHelpText>
+        <label>Form</label>
+        <referenceTo>PagesApi__Form__c</referenceTo>
+        <relationshipLabel>Forms</relationshipLabel>
+        <relationshipName>Forms</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Page is made available either online or in the backend staff interface.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Page is made available either online or in the backend staff interface.</inlineHelpText>
+        <label>Is Published</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Standard__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** SYSTEM **</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** SYSTEM **</inlineHelpText>
+        <label>Is Standard</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Menu__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related page menu configuration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related page menu configuration.</inlineHelpText>
+        <label>Menu</label>
+        <referenceTo>PagesApi__Menu__c</referenceTo>
+        <relationshipLabel>Pages</relationshipLabel>
+        <relationshipName>Pages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__No_Archive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Google, Yahoo, and Bing will be instructed to not archive the page/cache the Page. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, Google, Yahoo, and Bing will be instructed to not archive the page/cache the Page. Defaults unchecked.</inlineHelpText>
+        <label>No Archive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__No_Follow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Google, Yahoo, and Bing will be instructed to not follow and index any links on the Page. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, Google, Yahoo, and Bing will be instructed to not follow and index any links on the Page. Defaults unchecked.</inlineHelpText>
+        <label>No Follow</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__No_Index__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Google, Yahoo, and Bing will be instructed to not include the Page in Search Engine Results. Defaults checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, Google, Yahoo, and Bing will be instructed to not include the Page in Search Engine Results. Defaults checked.</inlineHelpText>
+        <label>No Index</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Page_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Auto incrementing number used as an External ID for the Page.</description>
+        <displayFormat>{00}</displayFormat>
+        <externalId>true</externalId>
+        <inlineHelpText>Auto incrementing number used as an External ID for the Page.</inlineHelpText>
+        <label>Page ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Page_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The URL for the page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The URL for the page.</inlineHelpText>
+        <label>Page URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__SEF_Slug__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Search Engine Friendly (SEF) &quot;Slug&quot; to use when re-writing URLs to improve usability and SEO.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Search Engine Friendly (SEF) &quot;Slug&quot; to use when re-writing URLs to improve usability and SEO.</inlineHelpText>
+        <label>SEF Slug</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Site_Template_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The template key used for the parent site.</description>
+        <externalId>false</externalId>
+        <formula>PagesApi__Site__r.PagesApi__Site_Template_Key__c</formula>
+        <inlineHelpText>** System Calculated ** The template key used for the parent site.</inlineHelpText>
+        <label>SYSTEM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to the Site where the Page will be published.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to the Site where the Page will be published.</inlineHelpText>
+        <label>Site</label>
+        <referenceTo>PagesApi__Site__c</referenceTo>
+        <relationshipLabel>Pages</relationshipLabel>
+        <relationshipName>Pages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Theme__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to the theme to use for the Page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to the theme to use for the Page.</inlineHelpText>
+        <label>Theme</label>
+        <referenceTo>PagesApi__Theme__c</referenceTo>
+        <relationshipLabel>Pages</relationshipLabel>
+        <relationshipName>Pages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Title_Tag__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** HTML Title tag.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** HTML Title tag.</inlineHelpText>
+        <label>Title Tag</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Visualforce_Page__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The API name (with namespace) of the visualforce page referenced by this page configuration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name (with namespace) of the visualforce page referenced by this page configuration.</inlineHelpText>
+        <label>Visualforce Page</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Visualforce_Template__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** The Visualforce Page to use as the Template for the Page. Defaults to the value of the &quot;Default Visualforce Template&quot; configured for the related Site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The Visualforce Page to use as the Template for the Page. Defaults to the value of the &quot;Default Visualforce Template&quot; configured for the related Site.</inlineHelpText>
+        <label>Visualforce Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Page</label>
+    <nameField>
+        <label>Page Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Pages</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>PagesApi__Title_Tag__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Is_Published__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>PagesApi__Title_Tag__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Is_Published__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Title_Tag__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Is_Published__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>PagesApi__Is_Published__c</searchFilterFields>
+        <searchResultsAdditionalFields>PagesApi__Title_Tag__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Is_Published__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>PagesApi__Preview</fullName>
+        <availability>online</availability>
+        <description>Preview your custom page as it would appear to customers on your site.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Preview</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR(&quot;/apex/custom_page&quot;,&quot;&quot;,[page=PagesApi__Page__c.Id,site=PagesApi__Page__c.PagesApi__SiteId__c])}</url>
+    </webLinks>
+</CustomObject>

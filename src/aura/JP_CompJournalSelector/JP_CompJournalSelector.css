@@ -1,0 +1,50 @@
+/**
+ * Created by lauren.lezberg on 1/17/2019.
+ */
+
+/*Comp Journal Dropdown */
+.THIS .slds-dropdown-trigger_click .slds-dropdown{ 
+    position: relative;
+}
+
+.THIS .slds-dropdown-trigger_click.slds-is-open .slds-dropdown{
+    display:block;
+}
+
+.THIS .slds-listbox__option_plain{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.THIS .slds-combobox__form-element{
+    font-size: 1.5rem;
+}
+
+.THIS ::placeholder {
+    color: token(AACRBlue);
+    font-size: 1.5rem;
+}
+
+.THIS [role=combobox] input[readonly]{
+    font-style: italic;
+}
+
+
+/*Radio button group (Online, Online & Print, Decline)*/
+.THIS  .slds-radio_button [type=radio]:checked+.slds-radio_button__label{
+    background-color: token(aacrGreen);
+}
+
+.THIS .slds-radio_faux{
+    font-size:12px;
+}
+
+.THIS .slds-radio_button__label{
+    margin-bottom:0px;
+    padding:10px;
+    color: token(AACRBlue);
+}
+
+.THIS .slds-button .slds-radio_button{
+    padding:5px;
+}

@@ -1,0 +1,60 @@
+<!--
+ - Created by lauren.lezberg on 8/23/2019.
+ -->
+
+<aura:component description="BackOfficeOrder" controller="BackOfficeOrderController" >
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="salesOrderId" type="String" description="ID of sales order being processed" />
+    <aura:attribute name="selectedId" type="String" description="Id of item selected from search bar"/>
+    <aura:attribute name="salesOrderLines" type="List" description="Sales order lines associated with the sales order"/>
+    <aura:attribute name="subPlanId" type="String" description="Subscription plan Id"/>
+
+    <!--    <aura:attribute name="subscriptionPlans" type="List" description="List of available subscription plans (Only displayed if renewals are open and sales order is not a renewal)"/>-->
+
+    <aura:attribute name="renewalsOpen" type="Boolean" description="Are upcoming renewals open"/>
+    <aura:attribute name="isRenewal" type="Boolean" description="If sales order is a renewal"/>
+
+    <aura:attribute name="termOptions" type="List" description="List of term available options"/>
+    <aura:attribute name="termValue" type="String" description="Selected term value" default=""/>
+
+    <aura:attribute name="errorMsg" type="String" description="Error message" default=""/>
+
+    <aura:attribute name="processing" type="Boolean" description="Used to determine if information is currently being processed on page" default="false"/>
+    <aura:attribute name="isLoading" type="Boolean" description="Used to determine if the page is loading" default="true" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler name="change" value="{!v.subPlanId}" action="{!c.handleSubPlanChange}"/>
+
+
+    <aura:if isTrue="{!not(v.isLoading)}">
+    <aura:if isTrue="{!not(empty(v.errorMsg))}">
+        <div class="slds-box slds-theme_error slds-theme_alert-texture">
+            <div class="slds-text-heading_medium">{!v.errorMsg}</div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!and(v.renewalsOpen,v.termOptions.length>1)}">
+        <lightning:radioGroup name="radioButtonGroup"
+                              label="{!if(v.isRenewal, 'Renew Through:', 'Membership Terms')}"
+                              options="{! v.termOptions }"
+                              value="{! v.termValue }"
+                              onchange="{!c.termChange}"
+                              type="button"
+                              disabled="{!v.processing}"/>
+
+<!--        <aura:if isTrue="{!and(empty(v.termValue), not(v.isRenewal))}">-->
+<!--            <div class="slds-text-heading_x-small slds-text-color_inverse-weak">***You must select a term for the membership application before adding any items.</div>-->
+<!--        </aura:if>-->
+    </aura:if>
+
+
+<!--    <aura:if isTrue="{!or(not(empty(v.termValue)), or(not(v.renewalsOpen), v.isRenewal ))}">-->
+
+<!--    <aura:if isTrue="{!or(not(v.renewalsOpen), v.isRenewal )}">-->
+<!--    subscriptionPlans="{!v.subscriptionPlans}"-->
+
+        <c:OrderEntryForm aura:id="orderEntry" isRenew="{!v.isRenewal}" subPlanId="{!v.subPlanId}" renewalsOpen="{!v.renewalsOpen}" isLoading="{!v.isLoading}" filterString="OrderApi__Is_Active__c = true AND Name != 'Blood Cancer Discovery - Online' AND OrderApi__Item_Class__r.OrderApi__Is_Event__c = false" selectedTerm="{!v.termValue}" salesOrderId="{!v.salesOrderId}" salesOrderLines="{!v.salesOrderLines}" processing="{!v.processing}"/>
+<!--    </aura:if>-->
+    </aura:if>
+</aura:component>

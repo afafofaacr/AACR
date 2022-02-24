@@ -1,0 +1,25 @@
+/**
+ * Created by lauren.lezberg on 4/14/2020.
+ */
+
+lightning-button.slds-button{
+    /*background-color: #50B848;*/
+    /*border-color: #50B848;*/
+}
+
+
+
+button.slds-button.slds-button_success{
+    background-color: #50B848;
+    border-color: #50B848;
+}
+
+.slds-button_neutral{
+    color: #50B848;
+    border-color: #50B848;
+}
+
+.slds-button_success{
+    background-color: #50B848;
+    border-color: #50B848;
+}

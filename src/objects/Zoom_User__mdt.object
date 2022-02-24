@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>zoom users and corresponding ids</description>
+    <fields>
+        <fullName>Meeting_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Meeting User</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Webinar User</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>userId__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>userId</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Zoom User</label>
+    <pluralLabel>Zoom Users</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

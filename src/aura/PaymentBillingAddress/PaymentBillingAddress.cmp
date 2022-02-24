@@ -1,0 +1,39 @@
+<!--
+ - Created by lauren.lezberg on 12/14/2020.
+ -->
+
+<aura:component description="PaymentBillingAddress" controller="PaymentBillingAddressController">
+    <aura:attribute name="billingAddress" type="Object" description="contact known address with type billing"/>
+    <aura:attribute name="contactId" type="String" description="contact id "/>
+
+    <aura:attribute name="countryList" type="List" description="List of countries"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.contactId}" action="{!c.doInit}"/>
+    <aura:handler name="newAddress" event="c:NewKnownAddressEvt" action="{!c.doInit}"/>
+
+
+    <div class="slds-p-left_large slds-p-right_large slds-p-top_large">
+    <label class="slds-text-title_medium slds-text-title_bold slds-m-top_medium">
+        <span class="headerLabel">Billing Address</span>
+    </label>
+    <aura:if isTrue="{!not(empty(v.billingAddress))}">
+        <div class="slds-grid slds-gutters slds-m-top_small">
+            <div class=" slds-m-left-xx-small slds-align_absolute-center">
+                {!v.billingAddress.OrderApi__Street__c + ', ' +   v.billingAddress.OrderApi__City__c + ', ' + v.billingAddress.OrderApi__Province__c + ', ' + v.billingAddress.OrderApi__Country__c + ', ' + v.billingAddress.OrderApi__Postal_Code__c}
+            </div>
+            <div class=" slds-m-left_medium slds-align_absolute-center">
+                <lightning:button variant="base" label="Edit" value="{!v.billingAddress.Id}" onclick="{!c.editAddress}"/>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-p-around_small">
+                <lightning:button iconName="utility:add" label="New Address" variant="brand" onclick="{!c.openModal}"/>
+            </div>
+        </aura:set>
+    </aura:if>
+    </div>
+
+    <!-- NEW BILLING ADDRESS -->
+    <c:NewAddressModal aura:id="newModal" countryList="{!v.countryList}" contactId="{!v.contactId}"/>
+</aura:component>

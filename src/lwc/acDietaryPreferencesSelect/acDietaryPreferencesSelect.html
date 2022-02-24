@@ -1,0 +1,29 @@
+<!--
+ - Created by mitfity on 28.08.2019.
+ -->
+
+<!-- Ac Dietary Preferences Select -->
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner></lightning-spinner>
+    </template>
+
+    <template if:true={error}>
+        <c-ac-error-panel errors={error} friendly-message="An error has occurred while processing data.">
+        </c-ac-error-panel>
+    </template>
+
+    <div class="slds-form slds-form_compound slds-p-around_small">
+        <div class="slds-grid">
+            <div class="slds-size_1-of-1 slds-large-size_6-of-12">
+                <lightning-combobox name="fieldSetName" label="Field Set Name" options={fieldSetOptions}
+                                    value={selectedFieldSet} onchange={onChange}>
+                </lightning-combobox>
+                <div class="slds-m-top_medium">
+                    <lightning-button class="slds-float_right" label="Save" variant="brand" onclick={onSaveClick}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

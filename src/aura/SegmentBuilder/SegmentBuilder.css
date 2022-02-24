@@ -1,0 +1,14 @@
+/**
+ * Created by lauren.lezberg on 4/17/2020.
+ */
+.THIS .numberedList{
+    list-style: decimal;
+}
+
+.THIS .slds-card__header{
+    padding:0px;
+}
+
+.THIS select{
+    width:90%;
+}

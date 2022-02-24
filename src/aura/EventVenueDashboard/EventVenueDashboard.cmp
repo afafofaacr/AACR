@@ -1,0 +1,134 @@
+<!--
+ - Created by afaf.awad on 5/17/2021.
+ -->
+
+<aura:component description="EventVenueDashboard" controller="EventVenueDashboardController"
+                implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable">
+
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="isLoading" type="Boolean" description="is data processing"/>
+    <aura:attribute name="openNew" type="Boolean" description="open new event wizard" default="false"/>
+    <aura:attribute name="mvalue" type="String"/>
+    <aura:attribute name="yvalue" type="Integer"/>
+    <aura:attribute name="venues" type="Venue__c[]" description="List of available venues"/>
+    <aura:attribute name="venueMap" type="Map" description="Map of venues with the list of matching events"/>
+    <aura:attribute name="months" type="List" default="[
+    {'label': 'Jan', 'value': '1'},
+    {'label': 'Feb', 'value': '2'},
+    {'label': 'Mar', 'value': '3'},
+    {'label': 'Apr', 'value': '4'},
+    {'label': 'May', 'value': '5'},
+    {'label': 'Jun', 'value': '6'},
+    {'label': 'Jul', 'value': '7'},
+    {'label': 'Aug', 'value': '8'},
+    {'label': 'Sep', 'value': '9'},
+    {'label': 'Oct', 'value': '10'},
+    {'label': 'Nov', 'value': '11'},
+    {'label': 'Dec', 'value': '12'}
+    ]"/>
+    <aura:attribute name="years" type="List" default="[]"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- HEADER -->
+    <div class="slds-page-header slds-m-bottom_medium">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="standard:screen" size="medium"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate"
+                                                  title="Venue Dashboard">Virtual Venue Usage</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <p class="slds-page-header__name-meta">Review usage of virtual venues for LIVE! Events</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /HEADER -->
+
+    <!-- VENUE SCHEDULE -->
+    <div class="slds-grid slds-gutters">
+    <div class="slds-col slds-size_1-of-2 ">
+        <lightning:card title="Calendar Filter " class="slds-p-around_medium">
+            <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
+                <div class="slds-col" style="overflow:auto;">
+                    <lightning:radioGroup name="radioButtonGroup"
+                                          class="slds-size_7-of-8"
+                                          options="{! v.months }"
+                                          label="Months:"
+                                          value="{! v.mvalue }"
+                                          onchange="{!c.changeMonth}"
+                                          type="button"/>
+                </div>
+                <div class="slds-col">
+                    <lightning:select label="Year:" onchange="{!c.changeYear}">
+                        <aura:iteration items="{!v.years}" var="y">
+                            <option value="{!y.value}" selected="{!y.value == v.yvalue}">{!y.label}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+            </div>
+
+        </lightning:card>
+        <aura:if isTrue="{!v.isLoading}">
+            <lightning:spinner alternativeText="Loading" size="medium"/>
+        </aura:if>
+        <aura:if isTrue="{!not(empty(v.venueMap))}">
+            <aura:iteration var="ven" items="{!v.venueMap}">
+            <lightning:card title="{!ven.venue}" iconName="standard:portal_roles" class="slds-scrollable">
+                <aura:if isTrue="{!not(empty(ven.list))}">
+                <aura:iteration var="evt" items="{!ven.list}">
+                    <lightning:tile label="{!evt.Name}"
+                                    href="{!'/' + evt.eventId}"
+                                    class="slds-m-around_medium slds-box slds-text-title_bold">
+                        <lightning:layout horizontalAlign="spread">
+                            <lightning:layoutItem padding="horizontal-medium">
+                                <div class="header-column">
+                                    <h2>{!evt.dateString}</h2>
+                                </div>
+                            </lightning:layoutItem>
+
+                        <lightning:layoutItem padding="horizontal-medium">
+                            <lightning:button onclick="{!c.toggleExhibit}" label="{!evt.exhibitOpen?'Close Exhibit':'Open Exhibit'}" variant="brand" value="{!evt.detailsId}" disabled="{!evt.detailsId == null}"/>
+                        </lightning:layoutItem>
+                        </lightning:layout>
+                    </lightning:tile>
+                </aura:iteration>
+                    <aura:set attribute="else">
+                        <div class="slds-align_absolute-center" style="font-size:1.2rem ">
+                        <h1>There are no events for this venue.</h1>
+                        </div>
+                    </aura:set>
+        </aura:if>
+            </lightning:card>
+            </aura:iteration>
+        </aura:if>
+    </div>
+    <!-- END VENUE SCHEDULE -->
+        <div class="slds-col slds-size_1-of-2 ">
+            <lightning:listView aura:id="virtualEvents"
+                                objectApiName="BR_Event__c"
+                                listName="Events_with_Virtual_Venue"
+                                rows="10"
+                                showSearchBar="true"
+                                showActionBar="false"
+                                enableInlineEdit="false"
+                                showRowLevelActions="false"
+            />
+        </div>
+    </div>
+</aura:component>

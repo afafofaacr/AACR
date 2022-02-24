@@ -1,0 +1,132 @@
+<!--
+ - Created by lauren.lezberg on 4/1/2020.
+ -->
+
+<aura:component description="ObjectFieldSelector" controller="ObjectFieldSelectorController">
+    <aura:attribute name="segmentId" type="String" description="id of user segment"/>
+    <aura:attribute name="objectName" type="String" description="sobject api name"/>
+    <aura:attribute name="fieldList" type="List" description="list of field options"/>
+    <aura:attribute name="selectedField" type="List" description="selected field"/>
+    <aura:attribute name="selectedList" type="List" description="list of selected fields"/>
+
+    <aura:method name="refresh" action="{!c.doInit}"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--<aura:handler name="change" value="{!v.segmentId}" action="{!c.doInit}"/>-->
+
+
+    <lightning:card title="{!v.objectName + ' Fields:'}" iconName="{!'standard:' + v.objectName}">
+
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-3">
+            <select size="10" class="slds-box slds-m-around_small ">
+                <aura:iteration items="{!v.fieldList}" var="fOption">
+                    <option aura:id="{!fOption.fieldName}" ondblclick="{!c.addField}" onclick="{!c.selectField}" title="{!fOption.fieldLabel}" text="{!fOption.fieldLabel}" value="{!fOption.fieldName}" class="slds-truncate slds-p-around_small"/>
+                </aura:iteration>
+            </select>
+        </div>
+        <!--<div class="slds-col slds-size_1-of-8">-->
+            <!--<div class="slds-align_absolute-center centerContainer">-->
+                <!--<div class="buttonContainer">-->
+                    <!--<lightning:button label="Add" variant="brand" iconName="utility:forward" iconPosition="right" onclick="{!c.addField}"/>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="slds-col slds-size_2-of-3" >
+            <table class="slds-table slds-table_cell-buffer">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Field">Field</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Operator">Operator</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Value">Value</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Actions"></div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <aura:iteration items="{!v.selectedList}" var="fvp">
+                <tr class="slds-hint-parent">
+                    <td data-label="label">
+                        <div class="slds-truncate" title="{!fvp.fieldLabel}">
+                            <lightning:input value="{!fvp.fieldLabel}" disabled="true"/>
+                        </div>
+                    </td>
+                    <td data-label="operator">
+                        <div class="slds-truncate" title="operator">
+                            <lightning:select value="{!fvp.operator}">
+                                <option value="" label="--None--"/>
+                                <option value="=" label="Equals"/>
+                                <option value="!=" label="Not Equal To"/>
+                                <option value="&gt;=" label="Greater Than or Equal To"/>
+                                <option value="&lt;=" label="Less Than or Equal To"/>
+                                <option value="&lt;" label="Less Than"/>
+                                <option value="&gt;" label="Greater Than"/>
+                            </lightning:select>
+                        </div>
+                    </td>
+                    <td data-label="value">
+                        <div class="slds-truncate" title="{!fvp.fieldValue}">
+                            <aura:if isTrue="{!fvp.fieldType=='boolean'}">
+                                <lightning:select value="{!fvp.fieldValue}">
+                                    <option value="" label="--None--"/>
+                                    <option value="true" label="True"/>
+                                    <option value="false" label="False"/>
+                                </lightning:select>
+                                <aura:set attribute="else">
+                                    <lightning:input type="{!fvp.fieldType}" value="{!fvp.fieldValue}"/>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </td>
+                    <td data-label="actions">
+                        <div class="slds-truncate" title="actions">
+                            <div class="slds-m-top_large">
+                                <div class="slds-align_absolute-center">
+                                    <lightning:buttonIcon iconName="utility:close" variant="bare" onclick="{!c.removeField}" value="{!fvp.fieldName}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </aura:iteration>
+                </tbody>
+            </table>
+
+
+            <!--<aura:iteration items="{!v.selectedList}" var="fvp">-->
+                <!--<div class="slds-grid slds-gutters">-->
+                    <!--<div class="slds-col slds-size_1-of-3">-->
+                        <!--<lightning:input value="{!fvp.label}" label="Field" disabled="true"/>-->
+                    <!--</div>-->
+                    <!--<div class="slds-col slds-size_1-of-4">-->
+                        <!---->
+                    <!--</div>-->
+                    <!--<div class="slds-col slds-align_absolute-center">-->
+                        <!--<lightning:input type="{!fvp.type}" value="{!fvp.value}" label="Value"/>-->
+                    <!--</div>-->
+                    <!--<div class="slds-col slds-size_1-of-6">-->
+                        <!--<div class="slds-m-top_large">-->
+                        <!--<div class="slds-align_absolute-center">-->
+                            <!--<lightning:buttonIcon iconName="utility:close" variant="bare" onclick="{!c.removeField}" value="{!fvp.fieldName}"/>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</aura:iteration>-->
+
+        </div>
+    </div>
+
+        <!--<div class="slds-align_absolute-center">-->
+            <!--<lightning:button label="Check Values" variant="brand" onclick="{!c.getFieldValuePairs}"/>-->
+        <!--</div>-->
+    </lightning:card>
+</aura:component>

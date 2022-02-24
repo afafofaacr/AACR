@@ -1,0 +1,1869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This is the primary object for enhanced directories.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>DRCTS__Additional_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Any additional fields to be displayed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Any additional fields to be displayed</inlineHelpText>
+        <label>Additional Fields</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Badges_Filter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the badges that are allowed to view the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the badges that are allowed to view the directory.</inlineHelpText>
+        <label>Badges Filter</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Banner_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the image path for the banner image to be displayed in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the image path for the banner image to be displayed in the directory.</inlineHelpText>
+        <label>Banner Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Body_Background_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The color for the overall background.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The color for the overall background.</inlineHelpText>
+        <label>Body Background Color</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Column_Headers__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains field names (CSV) to be displayed as column headers for the table view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains field names (CSV) to be displayed as column headers for the table view.</inlineHelpText>
+        <label>Column Headers</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Component_Header__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name is displayed as header of the related list.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name is displayed as header of the related list.</inlineHelpText>
+        <label>Component Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Component_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** REQUIRED ** API name of a Lightning component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** REQUIRED ** API name of a Lightning component.</inlineHelpText>
+        <label>Component Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Contact_Me_Button_Label__c</fullName>
+        <defaultValue>&quot;Send Email&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field defines the button label for the contact me functionality.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field defines the button label for the contact me functionality.</inlineHelpText>
+        <label>Contact Me Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Contact_Me_Email_Template__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the email template to be used for all email&apos;s sent using the contact me functionality</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the email template to be used for all email&apos;s sent using the contact me functionality</inlineHelpText>
+        <label>Contact Me Email Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Contact_Me_From_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the sender&apos;s email address field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the sender&apos;s email address field.</inlineHelpText>
+        <label>Contact Me From: Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Contact_Me_From_Org_Wide_Email_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the org-wide email address to be used as the sender&apos;s email address for all emails.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the org-wide email address to be used as the sender&apos;s email address for all emails.</inlineHelpText>
+        <label>Contact Me From: Org-Wide Email Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Contact_Me_To_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the recipient&apos;s email address field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the recipient&apos;s email address field.</inlineHelpText>
+        <label>Contact Me To: Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Custom_CSS__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom CSS is inserted before the closing html head (&amp;quot;&amp;lt;/head&amp;gt;&amp;quot;) tag into pages using this Theme.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom CSS is inserted before the closing html head (&amp;quot;&amp;lt;/head&amp;gt;&amp;quot;) tag into pages using this Theme.</inlineHelpText>
+        <label>Custom CSS</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Custom_HTML_Config__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** SYSTEM ** (LABEL = SYSTEM, API NAME = DRCTS__Custom_HTML_Config__c)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** SYSTEM ** (LABEL = SYSTEM, API NAME = DRCTS__Custom_HTML_Config__c)</inlineHelpText>
+        <label>System</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Default_Sort_Field_Order__c</fullName>
+        <defaultValue>&apos;ASC&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used to identify whether is ASC or DESC order for the default sort field. DEFAULTS ASC</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to identify whether is ASC or DESC order for the default sort field. DEFAULTS ASC</inlineHelpText>
+        <label>Default Sort Field Order</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Default_Sort_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to sort records based on this field whenever someone lands on this directory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to sort records based on this field whenever someone lands on this directory</inlineHelpText>
+        <label>Default Sort Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Default_View__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the default view of the directory search results.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the default view of the directory search results.</inlineHelpText>
+        <label>Default View</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Table</fullName>
+                    <default>false</default>
+                    <label>Table</label>
+                </value>
+                <value>
+                    <fullName>Enhanced List</fullName>
+                    <default>false</default>
+                    <label>Enhanced List</label>
+                </value>
+                <value>
+                    <fullName>Geo</fullName>
+                    <default>false</default>
+                    <label>Geo</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the directory.  This is an internal field and does not display in front end.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describes the directory.  This is an internal field and does not display in front end.</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Action_Button_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the action button on Detail view</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the action button on Detail view</inlineHelpText>
+        <label>Action Button Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Action_Button_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field defines what is displayed for the button label on Detail view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field defines what is displayed for the button label on Detail view.</inlineHelpText>
+        <label>Action Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Enable_Action_Button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>By selecting this field you will enable an action button on the record&apos;s row in Detail View.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By selecting this field you will enable an action button on the record&apos;s row in Detail List View.</inlineHelpText>
+        <label>Enable Action Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Enable_Image__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the each result will display an image in the detail view.</description>
+        <externalId>false</externalId>
+        <label>Enable Image</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Image_field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the image field to be displayed in the detail view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the image field to be displayed in the detail view.</inlineHelpText>
+        <label>Image field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Latitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Corresponding Latitude field from the primary object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Corresponding Latitude field from the primary object</inlineHelpText>
+        <label>Latitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Longitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Corresponding Latitude field from the primary object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Corresponding Latitude field from the primary object</inlineHelpText>
+        <label>Longitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Placeholder_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL of the image to be used when the result has no value in the image field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL of the image to be used when the result has no value in the image field.</inlineHelpText>
+        <label>Placeholder Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Detail_Subtitle_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field value appears on the detail view underneath name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The field value appears on the detail view underneath name.</inlineHelpText>
+        <label>Detail Subtitle Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Directory_Style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Generated Styles for Directories.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Generated Styles for Directories.</inlineHelpText>
+        <label>System</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Disable_Detail_View__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this will enable the on-click capability on all the views and will be redirected to detail page ** Defaults checked **</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this will enable the on-click capability on all the views and will be redirected to detail page ** Defaults checked **</inlineHelpText>
+        <label>Enable Detail View</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Disable_Filter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables the filter functionality</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the filter functionality</inlineHelpText>
+        <label>Enable Filter</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Disable_Search__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables the search functionality</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the search functionality</inlineHelpText>
+        <label>Enable Search</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Disable_Sort__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables the sort functionality</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the sort functionality</inlineHelpText>
+        <label>Enable Sort</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Display_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field will display at the title of the directory across the banner.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will display at the title of the directory across the banner.</inlineHelpText>
+        <label>Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the directory will only be accessible by authenticated individuals that meet the criteria.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the directory will only be accessible by authenticated individuals that meet the criteria.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Contact_Me__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field enables authenticated users to direct email the search result.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field enables authenticated users to direct email the search result.</inlineHelpText>
+        <label>Enable Contact Me</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Contact_Preferences__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When Enabled, this will have the ability for the user to show/hide profile fields when they are Authenticated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When Enabled, this will have the ability for the user to show/hide profile fields when they are Authenticated.</inlineHelpText>
+        <label>Enable Contact Preferences</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Detail_Map__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, a map will display on the detail page with the location of the selected record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, a map will display on the detail page with the location of the selected record.</inlineHelpText>
+        <label>Enable Detail Map</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Enhanced_List_Display__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the directory will have an option to view the results in the enhanced list format.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the directory will have an option to view the results in the enhanced list format.</inlineHelpText>
+        <label>Enable Enhanced List Display</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Geo_Location_Display__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the directory will have an option to view the results with a map.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the directory will have an option to view the results with a map.</inlineHelpText>
+        <label>Enable Geo-Location Display</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_List_Print__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field will display the ability to print lists from the search view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field will display the ability to print lists from the search view.</inlineHelpText>
+        <label>Enable List Print</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Listing_Profile_Edit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables the user to edit their own listing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the user to edit their own listing.</inlineHelpText>
+        <label>Enable Listing Profile Edit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Table_Display__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the directory will have an option to view the results in a tabular format.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the directory will have an option to view the results in a tabular format.</inlineHelpText>
+        <label>Enable Table Display</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Tile_Flip__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, tile will now flip on hover in the frontend.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, tile will now flip on hover in the frontend.</inlineHelpText>
+        <label>Enable Tile Flip</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enable_Tile_List_Display__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this will enable the tile list display.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, this will enable the tile list display.</inlineHelpText>
+        <label>Enable Tile List Display</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Action_Button_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the field&apos;s api name that contains the action URL on Enhanced List view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the field&apos;s api name that contains the action URL on Enhanced List view.</inlineHelpText>
+        <label>Action Button Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Action_Button_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the label value to be presented for the action button.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the label value to be presented for the action button.</inlineHelpText>
+        <label>Action Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Display_Results__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value entered in this field is the number of results returned for each page on the Enhanced List view</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value entered in this field is the number of results returned for each page on the Enhanced List view</inlineHelpText>
+        <label>Display Results</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Enable_Action_Button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>By selecting this field you will enable an action button on the record&apos;s row in Enhanced List View.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By selecting this field you will enable an action button on the record&apos;s row in Enhanced List View.</inlineHelpText>
+        <label>Enable Action Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Enable_Image__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the each result will display an image in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the each result will display an image in the enhanced list view.</inlineHelpText>
+        <label>Enable Image</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Image_field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the image field to be displayed in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the image field to be displayed in the enhanced list view.</inlineHelpText>
+        <label>Image field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Field_1_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 3 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Field_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the Field 1 position in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the Field 1 position in the enhanced list view.</inlineHelpText>
+        <label>Position 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Field_2_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 4 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Field_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the Field 2 position in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the Field 2 position in the enhanced list view.</inlineHelpText>
+        <label>Position 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Name_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 1 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the fields used for the name position in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the fields used for the name position in the enhanced list view.</inlineHelpText>
+        <label>Position 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Subtitle_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 2 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Left_Column_Subtitle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the fields used for the title position in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the fields used for the title position in the enhanced list view.</inlineHelpText>
+        <label>Position 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Enhanced_List_Placeholder_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL of the image to be used when the result has no value in the image field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL of the image to be used when the result has no value in the image field.</inlineHelpText>
+        <label>Placeholder Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Filter_Condition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the filter condition used to filter the full list of possible results in directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the filter condition used to filter the full list of possible results in directory.</inlineHelpText>
+        <label>Filter Condition</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Filter_Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the criteria used to filter the full list of possible results in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the criteria used to filter the full list of possible results in the directory.</inlineHelpText>
+        <label>Filter Criteria</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Filter_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field holds the values for the fields that are used as filters in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field holds the values for the fields that are used as filters in the directory.</inlineHelpText>
+        <label>Filter Fields</label>
+        <length>80000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Action_Button_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the action button on Geo view</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the action button on Geo view</inlineHelpText>
+        <label>Action Button Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Action_Button_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field defines what is displayed for the button label on Geo view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field defines what is displayed for the button label on Geo view.</inlineHelpText>
+        <label>Action Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Display_Results__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value entered in this field is the number of results returned for each page on the Geo view</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value entered in this field is the number of results returned for each page on the Geo view</inlineHelpText>
+        <label>Display Results</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Enable_Action_Button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>By selecting this field you will enable an action button on the record&apos;s row in Geo View</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By selecting this field you will enable an action button on the record&apos;s row in Geo View</inlineHelpText>
+        <label>Enable Action Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Enable_Image__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the each result will display an image in the geo-location view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the each result will display an image in the geo-location view.</inlineHelpText>
+        <label>Enable Image</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Image_field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the image field to be displayed in the Geo view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the image field to be displayed in the Geo view.</inlineHelpText>
+        <label>Image field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Latitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Corresponding Latitude field from the primary object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Corresponding Latitude field from the primary object</inlineHelpText>
+        <label>Latitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Field_1_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 3 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Field_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the left column position 1 in the geo-location view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the left column position 1 in the geo-location view.</inlineHelpText>
+        <label>Position 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Field_2_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 4 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Field_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the left column position 2 in the geo-location view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the left column position 2 in the geo-location view.</inlineHelpText>
+        <label>Position 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Name_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 1 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the name position in the geo-location view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the name position in the geo-location view.</inlineHelpText>
+        <label>Position 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Subtitle_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 2 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Left_Column_Subtitle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the title position in the geo-location view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the title position in the geo-location view.</inlineHelpText>
+        <label>Position 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Longitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Corresponding Longitude field for the primary object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Corresponding Longitude field for the primary object</inlineHelpText>
+        <label>Longitude</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Geo_Placeholder_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL of the image to be used when the result has no value in the image field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL of the image to be used when the result has no value in the image field.</inlineHelpText>
+        <label>Placeholder Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Heading_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Color of all heading text.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of all heading text.</inlineHelpText>
+        <label>Heading Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Hero_Text_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Color used for the directory banner text.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color used for the directory banner text.</inlineHelpText>
+        <label>Search Bar Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Is_Parent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>To identify the Parent Directories. When checked, this will be considered for Primary object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To identify the Parent Directories. When checked, this will be considered for Primary object</inlineHelpText>
+        <label>Is Parent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Link_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Color of all text links.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of all text links.</inlineHelpText>
+        <label>Link Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Link_Highlight_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Highlight color of all text links.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Highlight of all text links.</inlineHelpText>
+        <label>Link Highlight Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Logo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the image path for the logo to be displayed in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the image path for the logo to be displayed in the directory.</inlineHelpText>
+        <label>Logo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Name_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the name position in the detail view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the name position in the detail view.</inlineHelpText>
+        <label>Name Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__NavBar_Background_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Background color of the detail navigation bar.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Background color of the detail navigation bar.</inlineHelpText>
+        <label>NavBar Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__NavBar_Text_Color_Highlight__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text highlight color of the directories filter bar and detail navigation bar.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text highlight color of the directories filter bar and detail navigation bar.</inlineHelpText>
+        <label>NavBar Highlight Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__NavBar_Text_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text color of the directories filter bar and detail navigation bar.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text color of the directories filter bar and detail navigation bar.</inlineHelpText>
+        <label>NavBar Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Navigation_Button_Background_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Background color of the navigation buttons.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Background color of the navigation buttons.</inlineHelpText>
+        <label>Navigation Button Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Define the API name of the object to be displayed in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Define the API name of the object to be displayed in the directory.</inlineHelpText>
+        <label>Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field defines the order in which related lists are presented on the detail page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field defines the order in which related lists are presented on the detail page.</inlineHelpText>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Parent_Directory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Linked to the parent directory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Linked to the parent directory</inlineHelpText>
+        <label>Parent Directory</label>
+        <referenceTo>DRCTS__Directories__c</referenceTo>
+        <relationshipLabel>Directories</relationshipLabel>
+        <relationshipName>Directories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Primary_Button_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Background color of all primary buttons.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Background color of all primary buttons.</inlineHelpText>
+        <label>Primary Button Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Primary_Button_Text_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text color of all primary buttons.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text color of all primary buttons.</inlineHelpText>
+        <label>Primary Button Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Profile_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api names of the fields used for the detail view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api names of the fields used for the detail view.</inlineHelpText>
+        <label>Profile Fields</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Radius_Values__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the numerical values (CSV) to be presented as options to refine my search.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the numerical values (CSV) to be presented as options to refine my search.</inlineHelpText>
+        <label>Radius Values</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Record_Text_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Color of return record text. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of return record text. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Record Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Related_List_Filter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the filter for the related lists.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the filter for the related lists.</inlineHelpText>
+        <label>Related List Filter</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Relationship_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System calculated ** This field contains the relationship name of the related lists.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System calculated ** This field contains the relationship name of the related lists.</inlineHelpText>
+        <label>Relationship Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Restrict_Access_to_Authenticated_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the directory will be visible to only authenticated users navigating to the directory URL.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the directory will be visible to only authenticated users navigating to the directory URL.</inlineHelpText>
+        <label>Restrict Access to Authenticated User</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Right_Column_Field_1_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 5 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Right_Column_Field_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the right column position 1 in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the right column position 1 in the enhanced list view.</inlineHelpText>
+        <label>Position 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Right_Column_Field_2_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position 6 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Right_Column_Field_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the right column position 2 in the enhanced list view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the right column position 2 in the enhanced list view.</inlineHelpText>
+        <label>Position 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Search_Bar_Background_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Background color of the search bar.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Background color of the search bar.</inlineHelpText>
+        <label>Search Bar Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Search_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains text field names (CSV) available for searches.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains text field names (CSV) available for searches.</inlineHelpText>
+        <label>Search Fields</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Show_Field_Labels__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, it will show the field labels for all the fields the user drags and drops for the additional fields component in the detail view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, it will show the field labels for all the fields the user drags and drops for the additional fields component in the detail view.</inlineHelpText>
+        <label>Show Field Labels</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Sort_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api names (CSV) of the fields used to sort the results in the geo-location and enhanced list views.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api names (CSV) of the fields used to sort the results in the geo-location and enhanced list views.</inlineHelpText>
+        <label>Sort Fields</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Table_Display_Results__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value entered in this field is the number of results returned for each page on the table view</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value entered in this field is the number of results returned for each page on the table view</inlineHelpText>
+        <label>Display Results</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Text_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Color of return record text</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of return record text</inlineHelpText>
+        <label>Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Action_Button_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Select the appropriate action button field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the appropriate action button field.</inlineHelpText>
+        <label>Action Button Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Action_Button_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter the text to display on the action button. Limited to 10 characters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the text to display on the action button. Limited to 10 characters.</inlineHelpText>
+        <label>Action Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Enable_Action_Button__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this will enable the action button on the front end.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, this will enable the action button on the front end.</inlineHelpText>
+        <label>Enable Action Button</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Image_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the image field to be displayed in the Tile List view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the image field to be displayed in the Tile List view.</inlineHelpText>
+        <label>Image Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_List_Display_Results__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value entered in this field is the number of results returned for each page on the Tile List view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value entered in this field is the number of results returned for each page on the Tile List view.</inlineHelpText>
+        <label>Display Results</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Placeholder_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Browse for files or paste in a URL.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Browse for files or paste in a URL.</inlineHelpText>
+        <label>Placeholder Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_1_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position Field 1 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the position 1 in the Tile List view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the position 1 in the Tile List view.</inlineHelpText>
+        <label>Position Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_2_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position Field 2 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the position 2 in the Tile List view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the position 2 in the Tile List view.</inlineHelpText>
+        <label>Position Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_3_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position Field 3 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the position 3 in the Tile List view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the position 3 in the Tile List view.</inlineHelpText>
+        <label>Position Field 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_4_Label__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field displays the field label to users in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field displays the field label to users in the directory.</inlineHelpText>
+        <label>Position Field 4 Label</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Tile_Position_Field_4__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field contains the api name of the field used for the position 4 in the Tile List view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the api name of the field used for the position 4 in the Tile List view.</inlineHelpText>
+        <label>Position Field 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Directory_URL__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;https://myaacr.aacr.org/s/searchdirectory?id=&apos; +  Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Directory URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Directories</label>
+    <listViews>
+        <fullName>DRCTS__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>DRCTS__Parent_Directories</fullName>
+        <columns>NAME</columns>
+        <columns>DRCTS__Object__c</columns>
+        <columns>DRCTS__Description__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DRCTS__Is_Parent__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Parent Directories</label>
+    </listViews>
+    <nameField>
+        <label>Enhanced Directory Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Directories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

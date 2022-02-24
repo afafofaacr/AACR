@@ -1,0 +1,340 @@
+<!--
+ - Created by afaf.awad on 10/8/2020.
+ -->
+
+<apex:page id="AddToCalendar" controller="AddToCalendarController"
+           showHeader="false"
+           action="{!getEvent}"
+           standardStylesheets="false"
+           docType="html-5.0"
+           applyHtmlTag="false"
+           applyBodyTag="false">
+    <apex:slds />
+
+    <style>
+        .addeventatc {
+            z-index: unset;
+        }
+
+        a#addeventatc1-home {
+            display: none;
+        }
+
+        em.copyx {
+            display: none;
+        }
+
+        .addeventatc_dropdown .copyx {
+            display: none;
+        }
+
+        div#addeventatc1.addeventatc {
+            border: 1px solid black;
+            z-index: unset;
+        }
+
+        div#addeventatc2.addeventatc {
+            border: 1px solid black;
+            z-index: unset;
+        }
+
+        .plain-box {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        .center {
+            margin: auto;
+            width: 100%;
+        }
+
+        .box {
+            color: white;
+            background-color: #50B848;
+            width: 300px;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            padding: 10px;
+        }
+
+        <!--
+        body#main.pageFormatInternal.pg-loaded {
+        --> <!-- background-image: url({!backgroundImg}) --> <!-- /*background-image: url('https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegBkgd_1920x1080_2003059_2.jpg');*/
+        --> <!--
+        }
+
+        -->
+
+        .login-brand {
+            margin: 5px auto;
+            max-height: 160px;
+        }
+
+        .col-md-4 {
+            width: 35%;
+        }
+
+        .alignCenter {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .account_modal_wrapper {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .account_modal {
+            text-align: center;
+            max-width: 500px;
+            margin: 62px auto 10px;
+            box-shadow: 1px 2px 2px #616161;
+            border: 1px solid #616161;
+            border-radius: 6px;
+            bottom: unset !important;
+        }
+
+        .account_modal .modal-body {
+            padding: 25px !important;
+        }
+
+        .form-group {
+            width: 100% !important;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 11px;
+        }
+
+        .form-group label {
+            width: 30%;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        .account_modal .modal-footer button {
+            font-size: 14px !important;
+        }
+
+        .form-group div {
+            text-align: left;
+            width: 50%;
+        }
+
+        .form-group div input {
+            width: 100%;
+        }
+
+        .erroInputStyle {
+            border: 1px solid red;
+        }
+
+        .error_text {
+            display: inherit;
+            float: left;
+            margin-top: 5px;
+            color: red;
+        }
+
+        .password-infoicon {
+            cursor: pointer;
+            position: absolute;
+            right: -23px;
+            top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: 3px 7px;
+            line-height: 11px;
+            font-weight: bold;
+            color: #0a5c96;
+        }
+
+        .password-info {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            top: -98px;
+            width: 100%;
+            padding: 10px;
+            font-size: 12px;
+            text-align: left;
+            min-width: 274px;
+            right: -41px;
+        }
+
+        span.password-info:after {
+            content: '';
+            border-top: 12px solid #ccc;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            left: 87%;
+            top: 100%;
+        }
+
+    </style>
+
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
+
+    </head>
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Add to Calendar
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+
+            <div class="container" style="padding-top: 20px">
+
+                <div class="row">
+
+                    <div class="slds-align_absolute-center" style="width: 50%; margin: auto;">
+                        <div class="well">
+
+                            <apex:form id="form" styleClass="form-signin" acceptcharset="utf-8">
+                                <table cellpadding="0" cellspacing="0" width="100%"
+                                       style="background-color: transparent; min-width: 100%; "
+                                       class="stylingblock-content-wrapper">
+
+                                    <tr>
+                                        <td style="padding: 10px 0px 2px;"
+                                            class="stylingblock-content-wrapper camarker-inner">
+                                            <h1 style="color:#50B848;font-family:Arial, helvetica, sans-serif;font-size:28px;font-style:normal;font-weight:normal;line-height:24px;text-align: center">
+                                                You Are Registered</h1>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; "
+                                       class="stylingblock-content-wrapper">
+                                    <tr>
+                                        <td class="stylingblock-content-wrapper camarker-inner">
+                                            <p>Thank you for registering for the <a href="{!eventUrl}" target="_blank"> {!event.Name}</a>.
+                                                The event will take place on {!longStartDate} through {!longEndDate}.
+                                            </p>
+                                            <br/>
+                                            <div class="center">
+                                                <apex:outputPanel rendered="{!event.Name != 'AACR Annual Meeting 2021'}">
+                                                <div style="width: 50%; margin-left:33%;">
+                                                    <div title="Add to Calendar" class="addeventatc">
+                                                        Add to Calendar
+                                                        <span class="start">{!StartDate}</span>
+                                                        <span class="end">{!EndDate}</span>
+                                                        <span class="timezone">America/New_York</span>
+                                                        <span class="alarm_reminder">60</span>
+                                                        <span class="title">{!event.Name}</span>
+                                                        <span class="description">
+                                                            <p>Click the link below to reach the event page:
+                                                            <br/>
+                                                                {!eventUrl}
+                                                            </p>
+                                                            <p>
+                                                            Click the link below to see the program for the event:
+                                                            <br/>
+                                                                {!event.Draft_Program__c}
+                                                            </p>
+                                                            </span>
+                                                        <span class="location"><a
+                                                                    href="{!location}">{!location}</a></span>
+                                                    </div>
+                                                    </div>
+                                                </apex:outputPanel>
+<!--                                            *******************  AM21 A2C BUTTONS ********************************************************************-->
+                                                <apex:outputPanel rendered="{!event.Name == 'AACR Annual Meeting 2021'}">
+<!--                                                    <div style="display: flex">-->
+                                                        <div class="row" style="display: flex;  width: 75%; margin: auto">
+                                                    <apex:outputLabel value="April 10-15 (Week 1)" style="font-size: 16px; padding-right: 20px; padding-top: 10px;"/>
+                                                <div title="Add to Calendar" class="addeventatc">
+                                                    Add to Calendar
+                                                    <span class="start">{!StartDate}</span>
+                                                    <span class="end">{!EndDate}</span>
+                                                    <span class="timezone">America/New_York</span>
+                                                    <span class="alarm_reminder">60</span>
+                                                    <span class="title">{!event.Name}</span>
+                                                    <span class="description">
+                                                             <apex:outputText value="{!event.Description__c}" escape="false"/>
+                                                            <p>Click the link below to reach the event page:
+                                                            <br/>
+                                                                {!eventUrl}
+                                                            </p>
+                                                            <p>
+                                                            Click the link below to see the program for the event:
+                                                            <br/>
+                                                                {!event.Draft_Program__c}
+                                                            </p>
+                                                            </span>
+                                                    <span class="location"><a
+                                                                href="{!location}">{!location}</a></span>
+                                                </div>
+                                                        </div>
+                                            <br/>
+                                            <br/>
+                                                        <div class="row" style="display: flex; width: 75%; margin: auto">
+                                                    <apex:outputLabel value="May 17-21 (Week 2)" style="font-size: 16px; padding-right: 25px; padding-top: 10px;"/>
+                                                    <div title="Add to Calendar" class="addeventatc">
+                                                        Add to Calendar
+                                                        <span class="start">{!StartDateAM21}</span>
+                                                        <span class="end">{!EndDateAM21}</span>
+                                                        <span class="timezone">America/New_York</span>
+                                                        <span class="alarm_reminder">60</span>
+                                                        <span class="title">{!event.Name}</span>
+                                                        <span class="description">
+                                                             <apex:outputText value="{!event.Description__c}" escape="false"/>
+                                                            <p>Click the link below to reach the event page:
+                                                            <br/>
+                                                                {!eventUrl}
+                                                            </p>
+                                                            <p>
+                                                            Click the link below to see the program for the event:
+                                                            <br/>
+                                                                {!event.Draft_Program__c}
+                                                            </p>
+
+                                                            </span>
+                                                        <span class="location"><a
+                                                                    href="{!location}">{!location}</a></span>
+                                                    </div>
+                                                        </div>
+<!--                                                </div>-->
+                                                </apex:outputPanel>
+ <!--                                            *******************************************************************************-->
+                                            </div>
+                                            <br/>
+                                            <p>
+                                                <apex:outputText value="{!event.Registration_Confirmation_Message__c}"
+                                                                 escape="false"/>
+                                            </p>
+
+                                            <!--VIRTUAL MEETINGS ONLY -->
+                                            <apex:outputPanel rendered="{!event.Virtual_Venue__c != null}">
+                                                <br/>
+                                                <b>Virtual Meeting Information:</b><br/>
+                                                <apex:outputText value="{!event.Virtual_Venue__r.Virtual_Instructions__c}"
+                                                        escape="false"/>
+                                            </apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </apex:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>

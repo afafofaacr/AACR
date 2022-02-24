@@ -1,0 +1,35 @@
+<!--
+ - Created by lauren.lezberg on 4/17/2020.
+ -->
+
+<aura:component description="SegmentManager" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable">
+
+    <lightning:tabset>
+        <lightning:tab label="Segment Manager">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-m-around_small">
+                        <lightning:listView aura:id="listViewSegments"
+                                            objectApiName="AC_User_Segment__c"
+                                            listName="Active"
+                                            showRowLevelActions="true"
+                                            rows="10"/>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-m-around_small">
+                        <lightning:listView aura:id="listViewSegments"
+                                            objectApiName="AC_User_Segment__c"
+                                            listName="Inactive"
+                                            showRowLevelActions="true"
+                                            rows="10"/>
+                    </div>
+                </div>
+            </div>
+        </lightning:tab>
+        <lightning:tab label="Segment Builder">
+            <c:SegmentBuilder />
+        </lightning:tab>
+
+    </lightning:tabset>
+</aura:component>

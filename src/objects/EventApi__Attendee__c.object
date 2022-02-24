@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Attendee_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Attendee_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Attendees track individuals registered for conference style or other &quot;registration&quot; style Events.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Contact_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>EventApi__Contact__r.MailingStreet &amp; BR() &amp;
+EventApi__Contact__r.MailingCity &amp; IF(EventApi__Contact__r.MailingState != &quot;&quot; ,&quot;, &quot; &amp; EventApi__Contact__r.MailingState, &quot;&quot;) &amp; &quot; &quot; &amp; EventApi__Contact__r.MailingPostalCode &amp; BR() &amp;
+EventApi__Contact__r.MailingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Salutation__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(EventApi__Contact__r.Salutation)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Salutation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>EventApi__Contact__r.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Additional notes field to be leveraged by AACR staff as needed.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Link to the Account that the Attendee Contact is associated with.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Link to the Account that the Attendee Contact is associated with.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Event Registrations</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Assignment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related assignment that the attendee was created from</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related assignment that the attendee was created from</inlineHelpText>
+        <label>Assignment</label>
+        <referenceTo>OrderApi__Assignment__c</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Contact_Created_by_System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field will be automatically checked when the contact is created while registering for an event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be automatically checked when the contact is created while registering for an event.</inlineHelpText>
+        <label>Contact Created by System</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to the related Contact. Required only if &quot;Require Contact Link for Attendees&quot; is checked on the parent Event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to the related Contact. Required only if &quot;Require Contact Link for Attendees&quot; is checked on the parent Event.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Events</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter the email to use for communications sent to the Attendee related to the Event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the email to use for communications sent to the Attendee related to the Event.</inlineHelpText>
+        <label>Email</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** Master-detail link to event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Master-detail link to event.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>EventApi__First_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the first name of the attendee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the first name of the attendee</inlineHelpText>
+        <label>First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Full_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The full name of the attendee as it should display on Event badges. Derives automatically from the First and Last Name fields on the linked Contact record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The full name of the attendee as it should display on Event badges. Derives automatically from the First and Last Name fields on the linked Contact record.</inlineHelpText>
+        <label>Full Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Invitation_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The state of the related attendee&apos;s invitation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The state of the related attendee&apos;s invitation.</inlineHelpText>
+        <label>Invitation Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Sent</fullName>
+                    <default>true</default>
+                    <label>Not Sent</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <label>Declined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Checked_In__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Attendee is considered to be/was in attendance for the Event. Default unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Attendee is considered to be/was in attendance for the Event. Default unchecked.</inlineHelpText>
+        <label>Checked In</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Invitation_Accepted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the attendee has registered for the related Invitation Only event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the attendee has registered for the related Invitation Only event.</inlineHelpText>
+        <label>Is Invitation Accepted</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Invitation_Declined__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the attendee has declined the invitation to the related Invitation Only event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the attendee has declined the invitation to the related Invitation Only event.</inlineHelpText>
+        <label>Is Invitation Declined</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Invitation_Not_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the related attendee has not been sent an invitation to the related Invitation Only event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the related attendee has not been sent an invitation to the related Invitation Only event.</inlineHelpText>
+        <label>Is Invitation Not Sent</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Invitation_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the attendee was sent an invitation to the related Invitation Only event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the attendee was sent an invitation to the related Invitation Only event.</inlineHelpText>
+        <label>Is Invitation Sent</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Registered__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Attendee status will be updated to &apos;Registered&apos;. Default unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Attendee status will be updated to &apos;Registered&apos;. Default unchecked.</inlineHelpText>
+        <label>Registered</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Last_Invitation_Email_Sent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The most recent date an event invitation was sent to the related attendee. This date is displayed within the related attendee row in the Event Builder&apos;s Invitation Only tab.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The most recent date an event invitation was sent to the related attendee. This date is displayed within the related attendee row in the Event Builder&apos;s Invitation Only tab.</inlineHelpText>
+        <label>Last Invitation Email Sent</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Last_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the last name of the attendee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the last name of the attendee</inlineHelpText>
+        <label>Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Max_Guests_Allowed__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The maximum number of guests the related attendee is allowed to additionally register.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The maximum number of guests the related attendee is allowed to additionally register.</inlineHelpText>
+        <label>Max Guests Allowed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Preferred_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email for the attendee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email for the attendee</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Refund_Requested__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, indicates that the related attendee has requested for a ticket refund.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, indicates that the related attendee has requested for a ticket refund.</inlineHelpText>
+        <label>Refund Requested</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The date the Attendee registered for the Event. Defaults to the value of the &quot;Transaction Date&quot; if not defined on entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The date the Attendee registered for the Event. Defaults to the value of the &quot;Transaction Date&quot; if not defined on entry.</inlineHelpText>
+        <label>Registration Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Registration Group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Registration Group.</inlineHelpText>
+        <label>Registration Group</label>
+        <referenceTo>EventApi__Registration_Group__c</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Site_Url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL endpoint to be used for email registrants.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL endpoint to be used for email registrants.</inlineHelpText>
+        <label>Register Site Url</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Total__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Total registration sales derived from the total of all child registration items.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Total registration sales derived from the total of all child registration items.</inlineHelpText>
+        <label>Registration Total</label>
+        <summarizedField>EventApi__Registration_Item__c.EventApi__Total__c</summarizedField>
+        <summaryForeignKey>EventApi__Registration_Item__c.EventApi__Attendee__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sales_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Link to the Sales Order Line item that created the Registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Link to the Sales Order Line item that created the Registration.</inlineHelpText>
+        <label>Sales Order Line (Source)</label>
+        <referenceTo>OrderApi__Sales_Order_Line__c</referenceTo>
+        <relationshipLabel>Event Registrations</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sales_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Link to the Sales Order that created the registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Link to the Sales Order that created the registration.</inlineHelpText>
+        <label>Sales Order (Source)</label>
+        <referenceTo>OrderApi__Sales_Order__c</referenceTo>
+        <relationshipLabel>Event Registrations</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Seat__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Linked to the related seat.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Linked to the related seat.</inlineHelpText>
+        <label>Seat</label>
+        <referenceTo>EventApi__Seat__c</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Send_Invitation_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, triggers an email to be sent the related attendee from an Invitation Only Event Email Workflow.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, triggers an email to be sent the related attendee from an Invitation Only Event Email Workflow.</inlineHelpText>
+        <label>Send Invitation Email</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Send_Notification__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Send email notifications for event registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Send email notifications for event registation.</inlineHelpText>
+        <label>Send Notification</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** The current status of the Attendee Registration. Defaults to &quot;Registered&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The current status of the Attendee Registration. Defaults to &quot;Registered&quot;.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Registered</fullName>
+                    <default>false</default>
+                    <label>Registered</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Invited</fullName>
+                    <default>true</default>
+                    <label>Invited</label>
+                </value>
+                <value>
+                    <fullName>No Show</fullName>
+                    <default>false</default>
+                    <label>No Show</label>
+                </value>
+                <value>
+                    <fullName>Registered-DataLoad</fullName>
+                    <default>false</default>
+                    <label>Registered-DataLoad</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to Ticket Type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to Ticket Type.</inlineHelpText>
+        <label>Ticket Type</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.EventApi__Event__c</field>
+                <operation>equals</operation>
+                <valueField>EventApi__Ticket_Type__c.EventApi__Event__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EventApi__Ticket_Type__c</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Generate_Participation_Letter__c</fullName>
+        <description>##Conga created button:00b1I000000f0Sg</description>
+        <externalId>false</externalId>
+        <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;templateid=a2b1I0000007rSA&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;sc0=1&quot; + 
+&quot;&amp;sc1=Attachments&quot; + 
+&quot;&amp;ac0=1&quot; + 
+&quot;&amp;ofn=Certificate of Participation&quot; + 
+&quot;&amp;qmode=Attachments&quot;</formula>
+        <label>Generate Participation Letter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registration_Number__c</fullName>
+        <externalId>true</externalId>
+        <label>Registration Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Attendee</label>
+    <listViews>
+        <fullName>EventApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>EventApi__Contact__c</columns>
+        <columns>EventApi__Account__c</columns>
+        <columns>EventApi__Full_Name__c</columns>
+        <columns>EventApi__Event__c</columns>
+        <columns>EventApi__Status__c</columns>
+        <columns>EventApi__Ticket_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Attendee ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Attendees</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventApi__Full_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Ticket_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Event__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Registration_Group__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Full_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Ticket_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Registration_Group__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Full_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Ticket_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Event__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Registration_Group__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>EventApi__Full_Name__c</searchFilterFields>
+        <searchFilterFields>EventApi__Status__c</searchFilterFields>
+        <searchFilterFields>EventApi__Ticket_Type__c</searchFilterFields>
+        <searchFilterFields>EventApi__Contact__c</searchFilterFields>
+        <searchFilterFields>EventApi__Event__c</searchFilterFields>
+        <searchFilterFields>EventApi__Registration_Group__c</searchFilterFields>
+        <searchResultsAdditionalFields>EventApi__Full_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Ticket_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Event__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Registration_Group__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Conga_Composer_Generate_Participation_Letter</fullName>
+        <availability>online</availability>
+        <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://aacr--apxtconga4.na73.visual.force.com/a2Z1I000001TTUvUAO
+27-Apr-2020 09:22:00 AM</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Generate Participation Letter</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!EventApi__Attendee__c.Id}
+
+&amp;TemplateId=a2b1I0000007rSA
+
+&amp;DefaultPDF=1
+&amp;SC0=1
+&amp;SC1=Attachments
+&amp;AC0=1
+&amp;OFN=Certificate+of+Participation</url>
+        <width>900</width>
+    </webLinks>
+    <webLinks>
+        <fullName>EventApi__View_Ticket_Detail</fullName>
+        <availability>online</availability>
+        <description>View Event Ticket</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Ticket</masterLabel>
+        <openType>newWindow</openType>
+        <position>topLeft</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/EventApi__attendee_ticket?id={!EventApi__Attendee__c.Id}</url>
+        <width>920</width>
+    </webLinks>
+</CustomObject>

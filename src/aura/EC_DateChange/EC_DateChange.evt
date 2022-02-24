@@ -1,0 +1,9 @@
+<!--
+ - Created by afaf.awad on 3/16/2021.
+ -->
+
+<aura:event type="APPLICATION" description="Dispatched when the date is changed in the DatePicker component">
+        <aura:attribute name="date" type="String" description="string value of the selected date" access="global" />
+        <aura:attribute name="scheduleId" type="String" description="schedule Id that corresponds to the date picked" access="global" />
+
+</aura:event>

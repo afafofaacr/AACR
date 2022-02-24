@@ -1,0 +1,56 @@
+<!--
+ - Created by afaf.awad on 3/2/2021.
+ -->
+
+<aura:component description="EC_ApproveOrder" controller="EC_ReviewEmailController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="emailId" type="String" description="Id of Exhibitor Email"/>
+    <aura:attribute name="orderId" type="String" description="Id of Exhibitor Order"/>
+    <aura:attribute name="decision" type="String" description="Approve or Reject the order."/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="Buttons processing"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <lightning:navigation aura:id="navLink"/>
+
+    <div style="padding-bottom: 35px">
+        <lightning:recordEditForm aura:id="emailForm"
+                                  recordId="{!v.emailId}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  objectApiName="EC_Email__c">
+
+            <lightning:messages />
+            <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner/>
+                </div>
+            </div>
+            <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning:inputField fieldName="Comments__c"/>
+                    </div>
+                </div>
+
+                <div class="slds-align_absolute-center slds-m-top_large">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning:button label="Cancel" title="Cancel" onclick="{! c.cancelOrder }" disabled="{!v.processing}" class="navButtons slds-p-top_small slds-p-bottom_small" />
+                        </div>
+                        <div class="slds-col">
+                            <lightning:button label="Previous" title="Previous" onclick="{! c.goPrevious }" disabled="{!v.processing}" class="navButtons slds-p-around_small"/>
+                        </div>
+                        <div class="slds-col">
+                            <lightning:button aura:id="Reject" label="Reject" title="Reject" onclick="{! c.approveReject }" disabled="{!v.processing}" class="navButtons slds-p-around_small"/>
+                        </div>
+                        <div class="slds-col">
+                            <lightning:button aura:id="Approve" label="Approve" title="Approve" onclick="{! c.approveReject }" disabled="{!v.processing}" class="navButtons slds-p-around_small"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </lightning:recordEditForm>
+    </div>
+</aura:component>

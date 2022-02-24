@@ -1,0 +1,54 @@
+<!--
+ - Created by afaf.awad on 11/20/2019.
+ -->
+
+<aura:component description="BackOfficeForm" controller="BackOfficeFormController">
+
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="salesOrderId" type="String" description="Sales Order Id from OrderEntryForm"/>
+    <aura:attribute name="ticketTypeId" type="String" description="Id of the ticket type selected from OrederEntryForm"/>
+    <aura:attribute name="contactId" type="String" description="Contact Id order will be linked to"/>
+
+    <aura:attribute name="form" type="PagesApi__Form__c" description="Form Object"/>
+    <aura:attribute name="formGroups" type="List" description="Form Group Object"/>
+    <aura:attribute name="formFields" type="List" description="[Form] Field Object"/>
+    <aura:attribute name="fieldResponses" type="List" description="Field Response Object" />
+    <aura:attribute name="formResponse" type="PagesApi__Form_Response__c" description="Form Response Object" />
+
+    <aura:attribute name="isLoading" type="Boolean" description="Used to determine if component is loading" default="true"/>
+    <aura:attribute name="formExists" type="Boolean" description="Used to determine if there is a form to fill out with selected ticket type" default="true"/>
+    <aura:attribute name="validationCheck" type="List" description="List of fields that have been validated" />
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:ValidateEvt" action="{!c.handleValidate}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+            <div class="slds-is-relative" style="margin:0 auto;">
+                <c:AACRSpinner loadingText="Loading..."/>
+            </div>
+            <aura:set attribute="else">
+                <aura:if isTrue="{!v.formExists}">
+                    <div class="slds-box--border">
+                        <h1 class="slds-text-heading_large slds-text-align--center slds-text-title_bold">
+                            <br/>{!v.form.Name}<br/>
+                        </h1>
+                        <aura:iteration items="{!v.formGroups}" var="formGroup">
+                            <c:BackOfficeFormGroup aura:id="formGroup" formId="{!v.form.Id}" salesOrderId="{!v.salesOrderId}" contactId="{!v.contactId}" fieldResponses="{!v.fieldResponses}"
+                                                formGroup="{!formGroup}" formFields="{!v.formFields}" formResponseId="{!v.formResponse.Id}" />
+                        </aura:iteration>
+                    </div>
+                    <aura:set attribute="else">
+                        <lightning:card title="" class="slds-text-heading_large slds-align--absolute-center">
+                            No form to fill out for this ticket. Click Next to continue.
+                            <div class="slds-hide">
+                                <c:BackOfficeFormFields formGroupId="" salesOrderId="{!v.salesOrderId}" contactId="{!v.contactId}" fieldResponse="{!v.fieldResponses}"/>
+                            </div>
+                        </lightning:card>
+                    </aura:set>
+                </aura:if>
+            </aura:set>
+        </aura:if>
+
+</aura:component>

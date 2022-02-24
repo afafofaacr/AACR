@@ -1,0 +1,44 @@
+<!--
+ - Created by afaf.awad on 5/26/2021.
+ -->
+
+<aura:component description="DimensionTagLevel" controller="DimensionTagController" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:hasSObjectName">
+
+    <aura:attribute name="sobjecttype" type="String" description="object component is currently on"/>
+    <aura:attribute name="tagLevel" type="String" default="Public" description="Visibility level of tag"/>
+    <aura:attribute name="items" type="List" description="List of pills for tagLevel"/>
+    <aura:attribute name="recordId" type="Id" default="" description="record Id of page"/>
+<!--    <aura:attribute name="parent" type="Aura.Component" required="true"/>-->
+
+    <aura:registerEvent name="callDimTagEvent" type="c:DimTagEvent"/>
+    <lightning:workspaceAPI aura:id="workspace" />
+
+
+<!--    <div class="slds-box" >-->
+<!--        <div class="header slds-p-bottom_x-small slds-text-heading_small"><u><b>{!v.tagLevel}</b></u></div>-->
+        <aura:iteration items="{!v.items}" var="i">
+            <aura:if isTrue="{!i.convertedTag == null}">
+        <lightning:pill label="{!i.label}" title="{!i.alternativeText}" onremove="{!c.handleRemove}" name="{!i.name}" onclick="{!c.goToReport}">
+            <aura:set attribute="media">
+                <lightning:icon iconName="{!i.deleteRequest? 'utility:lower_flag' :i.iconName}"  alternativeText="{!i.deleteRequest? 'Requested to remove tag.' : v.sobjecttype}"  />
+            </aura:set>
+        </lightning:pill>
+                <aura:set attribute="else">
+                    <lightning:pill label="{!i.convertedTag.label}" title="{!i.convertedTag.alternativeText}" name="{!i.convertedTag.name}" onclick="{!c.goToReport}">
+                        <aura:set attribute="media">
+                            <lightning:icon iconName="standard:lead"  alternativeText="{!v.sobjecttype}"  />
+                        </aura:set>
+                    </lightning:pill>
+                    <lightning:icon iconName="utility:crossfilter" alternativeText="Converted" title="Converted" class="convertedIcon" size="small" />
+                    <lightning:pill label="{!i.label}" title="{!i.alternativeText}" onremove="{!c.handleRemove}" name="{!i.name}" onclick="{!c.goToReport}">
+                        <aura:set attribute="media">
+                            <lightning:icon iconName="{!i.deleteRequest? 'utility:lower_flag' :i.iconName}"  alternativeText="{!i.deleteRequest? 'Requested to remove tag.' : v.sobjecttype}"  />
+                        </aura:set>
+                    </lightning:pill>
+
+                </aura:set>
+            </aura:if>
+        </aura:iteration>
+<!--    </div>-->
+
+</aura:component>

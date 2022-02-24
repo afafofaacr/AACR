@@ -1,0 +1,182 @@
+<!--
+ - Created by lauren.lezberg on 2/14/2019.
+ -->
+
+<apex:page id="MemberProfile" showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           applyHtmlTag="false"
+           applyBodyTag="false" controller="MemberProfileController">
+
+    <c:pageStyle />
+    <apex:slds />
+    <apex:includeLightning />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-animate-sanitize-ngtable-ngtoast.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-toastr.tpls.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" />
+    <apex:includeScript value="{!$Resource.DW_SubscriptionsAppJs}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/angular-toastr.css')}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
+
+    <style>
+
+        /*[lightning-input_input-host] {*/
+        /*    display:flex !important;*/
+        /*}*/
+
+
+        .slds-form-element__label{
+            font-size:1.25rem !important;
+        }
+
+
+        .slds-checkbox .slds-checkbox_faux{
+            height:2rem !important;
+            width:2rem !important;
+        }
+
+        lightning-helptext{
+            display:none;
+        }
+
+        .header {
+            font-size: 30px;
+            font-weight:500;
+        }
+
+        .infoMessage {
+            font-size: 14px;
+        }
+
+        th{
+            font-size:1.25rem;
+        }
+
+        div.iziToast-capsule{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        button.slds-button.slds-button_icon.slds-button_icon-bare{
+            zoom:1.5;
+        }
+
+
+        div.slds-form_stacked{
+            font-size:1.5rem;
+        }
+
+        div.em-cover{
+            display:none !important;
+        }
+
+
+        li#topbar-donatebutton a {
+            background-color: #ffffff;
+            color: #4ab242 !important;
+        }
+    </style>
+
+    <head>
+        <!-- Start Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NVPP7GK');</script>
+        <!-- End Google Tag Manager -->
+    </head>
+
+    <div id="banner"/>
+    <apex:composition template="CPBase__profile" >
+        <apex:define name="customProfilePageLinks" >
+            <li id="em-renew-tab">
+                <a data-toggle="tab" href="#em-renew">
+                    My Membership
+                </a>
+            </li>
+<!--            <li id="em-content-tab">-->
+<!--                <a data-toggle="tab" href="#em-content">-->
+<!--                    My Content-->
+<!--                </a>-->
+<!--            </li>-->
+            <li id="em-address-tab">
+                <a data-toggle="tab" href="#em-address">
+                    My Addresses
+                </a>
+            </li>
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <apex:define name="navbarOverride">
+            <apex:outputPanel rendered="{!NOT(ecAccess)}">
+                <OrderApi:navlist name="AACR: SITE NAV"
+                                  ulStyleClass="nav navbar-nav navbar-right open" contactId="{!con.Id}"/>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!ecAccess}">
+                <OrderApi:navlist name="EC WITH PROFILE: SITE NAV"
+                                  ulStyleClass="nav navbar-nav navbar-right open" contactId="{!con.Id}"/>
+            </apex:outputPanel>
+
+        </apex:define>
+        <apex:define name="customProfilePage">
+            <div role="tabpanel" class="tab-pane" id="em-renew">
+                <div id="myMembership"/>
+            </div>
+<!--            <div role="tabpanel" class="tab-pane" id="em-content">-->
+<!--                <div id="myContent"/>-->
+<!--            </div>-->
+            <div role="tabpanel" class="tab-pane" id="em-address">
+                <div id="myAddresses"/>
+            </div>
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+        //#em-profile
+        // $("#em-renew").addClass("active in");
+        // $("#em-renew-tab").addClass("active");
+        // $("#em-profile-tab").removeClass("active");
+
+        $("#em-profile").addClass("active in");
+        $("#em-profile-tab").addClass("active");
+
+        $("#em-addresses-tab").children("a").text("My Addresses");
+        $("#em-addresses").children("h3").text("My Addresses");
+
+
+        $Lightning.use("OrderApi:PaymentMethodsApp", function() {
+            $Lightning.createComponent("c:MyMembership",
+                {memberCount : '{!$Setup.Member_Count__c.Count__c}'},
+                "myMembership",
+                function (cmp) {
+
+                });
+            $Lightning.createComponent("c:MyAddresses",
+                {
+                    contactId : '{!contactId}'
+                },
+                "myAddresses",
+                function (cmp) {
+
+                });
+            // $Lightning.createComponent("c:MyContent",
+            //     {},
+            //     "myContent",
+            //     function (cmp) {
+            //
+            //     });
+            $Lightning.createComponent("c:myAACRBanner",
+                {},
+                "banner",
+                function (cmp) {
+
+                });
+
+        });
+    </script>
+</apex:page>

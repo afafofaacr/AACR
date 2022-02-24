@@ -1,0 +1,20 @@
+/**
+ * Created by lauren.lezberg on 8/23/2019.
+ */
+.THIS .slds-form-element__label{
+    font-size: 1rem;
+}
+
+.THIS .slds-text-title_bold{ 
+    font-size:1.5rem;
+}
+
+.THIS .bold{
+    font-weight:600;
+}
+
+.THIS .slds-button_icon-brand[disabled]{
+    background-color: #CCCCCC;
+    border-color: #CCCCCC;
+    color: darkgrey;
+}

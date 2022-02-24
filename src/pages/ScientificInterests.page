@@ -1,0 +1,67 @@
+<!--
+ - Created by afaf.awad on 1/29/2020.
+ -->
+
+<apex:page id="ScientificInterests" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" >
+
+        <apex:includeLightning />
+        <apex:slds />
+
+        <c:pageStyle />
+
+        <apex:composition template="CPBase__template">
+            <!-- PAGE TITLE -->
+            <apex:define name="pageTitle">
+                Scientific Interests
+            </apex:define>
+            <apex:define name="supernavRight">
+                {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+            </apex:define>
+            <!-- PAGE -->
+            <apex:define name="pageMain">
+
+                <div style="margin-left:50px; margin-right:50px; margin-top:15px;">
+<!--                    <div class="col-sm-12">-->
+<!--                        <h1>Scientific Interests</h1>-->
+<!--                        <hr class="m-b-15" />-->
+<!--                    </div>-->
+                    <div id="scientificInterests"/>
+
+                    <div id="SaveButton"/>
+                </div>
+
+            </apex:define>
+        </apex:composition>
+
+        <script>
+
+            $Lightning.use("c:aacrLtng", function() {
+                $Lightning.createComponent("c:UpdateScientificInterest",
+                    {},
+                    "scientificInterests",
+                    function(cmp) {
+
+                    });
+            });
+
+            // $Lightning.use("c:aacrLtng", function() {
+            //     $Lightning.createComponent("c:JP_ScientificInterest",
+            //         {stepId : "m0W1I000000Cay2"},
+            //         "scientificInterests",
+            //         function(cmp) {
+            //         });
+            // });
+
+
+            <!--$Lightning.use("c:aacrLtng", function() {-->
+            <!--    $Lightning.createComponent("c:SaveButton",-->
+            <!--        {},"SaveButton",-->
+            //         function(cmp) {
+            //         }
+            //     );
+            // });
+
+
+        </script>
+
+</apex:page>

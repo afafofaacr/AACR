@@ -1,0 +1,7 @@
+<!--
+ - Created by afaf.awad on 7/14/2021.
+ -->
+
+<aura:event type="COMPONENT" description="EventSponsorshipEvent">
+    <aura:attribute name="batchId" type="Id"/>
+</aura:event>

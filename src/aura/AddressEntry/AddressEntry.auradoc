@@ -1,0 +1,22 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: AddressEntryController</p>
+        <p>The <code>c:AddressEntry</code> component displays a form for a user to enter an address and stores it in a public accessible attribute.</p>
+        <p>The form is composed of <code>lightning:input</code> and <code>lightning:select</code> tags.</p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The form must be passed an address initially and initial lists for state and country.</p>
+        <p>The street address field is broken down into 3 individual entry lines.</p>
+        <p>The available countries are pulled from the salesforce standard country picklist.</p>
+        <p>The state picklist is only available if a user has selected either the United States or Canada as a country option.</p>
+        <p>Set the <code>isPreferred</code> attribute to true to make the first street input, country and state required fields.</p>
+        <p>The component performs no save action and is meant to be used a child component. In order to access the full address, use the <code>address</code> attribute.</p>
+    </aura:description>
+    <aura:example name="AddressEntry" ref="c:AddressEntry" label="AddressEntry">
+        Basic Address Entry Example
+    </aura:example>
+</aura:documentation>

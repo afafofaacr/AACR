@@ -1,0 +1,22 @@
+<!--
+ - Created by afaf.awad on 10/15/2021.
+ -->
+
+<aura:event type="APPLICATION" description="WF_AppEvent">
+    <!--        ELEMENT DRAGGING-->
+    <aura:attribute name="fieldName" type="String" description="field being dragged"/>
+    <aura:attribute name="fieldCategory" type="String" description="Category of field being dragged"/>
+
+    <!--        REMOVE ELEMENT FROM LAYOUT-->
+    <aura:attribute name="removeField" type="Object" description="field being removed from layout"/>
+
+    <!--        REMOVE SELECTED ELEMENT FROM LIST OF OPTIONS-->
+    <aura:attribute name="fieldElement" type="Object" description="field element from field options that needs to be removed from array"/>
+    <!--        Also using fieldCategory to pass list name element will be removed from -->
+
+    <!--        CLOSE MODAL AND SEND NEW SURVEY QUESTION RECORD-->
+    <aura:attribute name="field" type="Object" description="field to update in layout after editing in modal."/>
+
+    <!--        HANDLE SPECIFIC ACTION IF CALLED-->
+    <aura:attribute name="action" type="String" description="Handle specific action if called. Action Values: submit, validate"/>
+</aura:event>

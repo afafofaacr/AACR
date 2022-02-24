@@ -1,0 +1,59 @@
+<!--
+ - Created by lauren.lezberg on 7/1/2021.
+ -->
+
+<aura:component description="CommunicationPreferences" implements="force:hasRecordId">
+    <aura:attribute name="isMinor" type="Boolean" description="Is contact a minor"/>
+    <aura:attribute name="preferredPhone" type="String" description="preferred phone type"/>
+    <aura:attribute name="preferredEmail" type="String" description="preferred email type"/>
+    <aura:attribute name="isLoading" type="Boolean" description="is component loading"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center">
+            <c:AACRSpinner loadingText="Loading..."/>
+        </div>
+    </aura:if>
+
+    <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+    <lightning:recordEditForm aura:id="editForm" objectApiName="Contact" recordId="{!v.recordId}" onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleSuccess}" onerror="{!c.handleError}" onload="{!c.handleLoad}" >
+        <lightning:messages />
+        <!-- HIDDEN FIELDS -->
+        <div class="slds-hide">
+            <lightning:inputField fieldName="Birthdate"/>
+        </div>
+        <div class="slds-border_bottom slds-m-bottom_small slds-text-heading_large">
+            <div>Phone Preferences</div>
+        </div>
+        <lightning:inputField aura:id="phoneType" fieldName="OrderApi__Preferred_Phone_Type__c" onchange="{!c.handlePhoneTypeChange}" required="true"/>
+        <lightning:inputField fieldName="OrderApi__Work_Phone__c" required="{!v.preferredPhone == 'Work'}"/>
+        <lightning:inputField fieldName="OrderApi__Work_Do_Not_Call__c"/>
+        <lightning:inputField fieldName="MobilePhone" required="{!v.preferredPhone == 'Mobile'}"/>
+        <lightning:inputField fieldName="OrderApi__Mobile_Do_Not_Call__c" />
+        <lightning:inputField fieldName="HomePhone" required="{!v.preferredPhone == 'Home'}"/>
+        <lightning:inputField fieldName="OrderApi__Home_Do_Not_Call__c"/>
+
+        <div class="slds-border_bottom slds-m-top_large slds-m-bottom_small slds-text-heading_large">
+            <div>Email Preferences</div>
+        </div>
+        <lightning:inputField aura:id="emailType" fieldName="OrderApi__Preferred_Email_Type__c" onchange="{!c.handleEmailTypeChange}" required="true"/>
+        <lightning:inputField fieldName="OrderApi__Work_Email__c" required="{!v.preferredEmail == 'Work'}"/>
+        <lightning:inputField fieldName="OrderApi__Personal_Email__c" required="{!v.preferredEmail == 'Personal'}"/>
+
+        <div class="slds-border_bottom slds-m-top_large slds-m-bottom_small slds-text-heading_large">
+            <div>Contact Preferences</div>
+        </div>
+        <lightning:inputField fieldName="Do_Not_Email__c"/>
+        <lightning:inputField fieldName="Do_Not_Mail__c"/>
+
+        <div class="slds-border_bottom slds-m-top_large slds-m-bottom_small slds-text-heading_large">
+            <div>Privacy Preferences</div>
+        </div>
+        <lightning:inputField fieldName="Do_Not_Display_in_Directory__c" disabled="{!v.isMinor}"/>
+
+
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Save" type="submit"/>
+        </div>
+    </lightning:recordEditForm>
+    </div>
+</aura:component>

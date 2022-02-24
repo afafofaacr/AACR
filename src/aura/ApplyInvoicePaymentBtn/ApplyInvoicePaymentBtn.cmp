@@ -1,0 +1,14 @@
+<!--
+ - Created by afaf.awad on 1/13/2021.
+ -->
+
+<aura:component description="ApplyInvoicePaymentBtn" controller="InvoicePaymentController" implements="force:lightningQuickAction,lightning:isUrlAddressable,force:appHostable,lightning:actionOverride,force:hasRecordId,force:hasSObjectName">
+
+    <aura:attribute name="salesOrderId" type="String"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    
+</aura:component>

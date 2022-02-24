@@ -1,0 +1,27 @@
+<!--
+ - Created by mitfity on 03.09.2019.
+ -->
+
+<!-- Br Event Preview Actions -->
+<template>
+    <div class="slds-p-vertical_small slds-text-align_right slds-is-relative">
+        <template if:true={isLoading}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+
+        <template if:true={error}>
+            <c-ac-error-panel errors={error} friendly-message="An error has occurred while processing data.">
+            </c-ac-error-panel>
+        </template>
+
+        <template if:true={dataLoaded}>
+            <template if:true={event.item.Draft__c}>
+                <lightning-button label={labels.btnPublish} variant="brand" onclick={onPublishClick}></lightning-button>
+            </template>
+
+            <template if:false={event.item.Draft__c}>
+                <lightning-button label={labels.btnDraft} variant="success" onclick={onDraftClick}></lightning-button>
+            </template>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,39 @@
+<!--
+ - Created by lauren.lezberg on 12/5/2018.
+ -->
+
+<aura:component description="MembershipCategories" controller="MembershipCategoriesController">
+
+    <aura:attribute name="joins" type="List" description="List of join processes" />
+    <aura:attribute name="isLoading" type="Boolean" description="processing"/>
+    <aura:attribute name="errorMsg" type="String" description="Error message"/>
+
+    <aura:attribute name="items" type="List" description="List of membership items"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-p-around_large">
+        <div class="slds-text-heading_large slds-border_bottom">Membership Categories</div>
+
+        <aura:iteration items="{!v.items}" var="item">
+            <div class="slds-m-left_large slds-m-bottom_large slds-m-top_large">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-8">
+                        <img src="{!item.OrderApi__Image_Path__c}" class="img-responsive slds-m-right_small"/>
+                    </div>
+                    <div class="slds-col" style="align-self:center;">
+                        <div class="slds-text-heading_large slds-m-bottom_small"> {!item.Portal_Label__c} </div>
+                        <div class="slds-text-body_regular slds-m-bottom_small">{!item.OrderApi__Description__c}</div>
+
+                    </div>
+                    <div class="slds-col slds-size_1-of-8" style="align-self:center;">
+                        <lightning:button label="{!v.isLoading?'Processing...': 'Apply'}" disabled="{!v.isLoading}" title="Apply" onclick="{!c.goToJoinProcess}" aura:id="active" value="{!item.Id}"/>
+                    </div>
+                </div>
+
+            </div>
+            <br/>
+        </aura:iteration>
+    </div>
+
+</aura:component>

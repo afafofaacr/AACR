@@ -1,0 +1,70 @@
+<!--
+ - Created by lauren.lezberg on 9/9/2019.
+ -->
+
+<aura:component description="ServiceNowSettings" controller="AACRAdminController">
+    <aura:attribute name="incidentTypes" type="List" description="Service Now Incident Types "/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <lightning:accordion aura:id="accordion" activeSectionName="B">
+    <aura:iteration items="{!v.incidentTypes}" var="itype">
+        <lightning:accordionSection name="{!itype.Label}" label="{!itype.Label}">
+            <div class="slds-grid slds-gutters ">
+                <div class="slds-col">
+                    <lightning:input label="Label" value="{!itype.Type__c}" name="{!itype.Type__c}"/>
+                </div>
+                <div class="slds-col">
+                    <lightning:input label="Email" value="{!itype.Email_Recipient__c}"  />
+                </div>
+                <div class="slds-col slds-align_absolute-center">
+                    <lightning:input type="checkbox" label="Is Active?" checked="{!itype.Is_Active__c}"/>
+                </div>
+                <div class="slds-col slds-align_absolute-center">
+                    <lightning:button variant="brand" label="Update" value="{!itype}"
+                                      onclick="{!c.updateType}" class="slds-m-right_medium"/>
+                    <!--<aura:if isTrue="{!itype.Is_Active__c}">-->
+                    <!--<lightning:button variant="brand" label="Deactivate" value="{!itype}"-->
+                    <!--onclick="{!c.deactivateSetting}"/>-->
+                    <!--<aura:set attribute="else">-->
+                    <!--<lightning:button variant="brand" label="Activate" value="{!itype}"-->
+                    <!--onclick="{!c.activateSetting}"/>-->
+                    <!--</aura:set>-->
+                    <!--</aura:if>-->
+                </div>
+            </div>
+        </lightning:accordionSection>
+        <!--<lightning:layout >-->
+            <!--<lightning:layoutItem flexibility="auto" padding="around-small">-->
+                <!--<div class="slds-box">-->
+                    <!--&lt;!&ndash;<div class="slds-text-heading_medium boxLabel slds-m-bottom_small">{!itype.Label}</div>&ndash;&gt;-->
+                    <!--<div class="slds-grid slds-gutters ">-->
+                        <!--<div class="slds-col">-->
+                            <!--<lightning:input label="Label" value="{!itype.Type__c}" name="{!itype.Type__c}"/>-->
+                        <!--</div>-->
+                        <!--<div class="slds-col">-->
+                            <!--<lightning:input label="Email" value="{!itype.Email_Recipient__c}"  />-->
+                        <!--</div>-->
+                        <!--<div class="slds-col slds-align_absolute-center">-->
+                            <!--<lightning:input type="checkbox" label="Is Active?" checked="{!itype.Is_Active__c}"/>-->
+                        <!--</div>-->
+                        <!--<div class="slds-col slds-align_absolute-center">-->
+                            <!--<lightning:button variant="brand" label="Update" value="{!itype}"-->
+                                              <!--onclick="{!c.updateType}" class="slds-m-right_medium"/>-->
+                            <!--&lt;!&ndash;<aura:if isTrue="{!itype.Is_Active__c}">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<lightning:button variant="brand" label="Deactivate" value="{!itype}"&ndash;&gt;-->
+                                                  <!--&lt;!&ndash;onclick="{!c.deactivateSetting}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<aura:set attribute="else">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<lightning:button variant="brand" label="Activate" value="{!itype}"&ndash;&gt;-->
+                                                      <!--&lt;!&ndash;onclick="{!c.activateSetting}"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</aura:set>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</aura:if>&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</lightning:layoutItem>-->
+        <!--</lightning:layout>-->
+    </aura:iteration>
+    </lightning:accordion>
+</aura:component>

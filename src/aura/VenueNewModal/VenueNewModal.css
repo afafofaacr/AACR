@@ -1,0 +1,14 @@
+/**
+ * Created by lauren.lezberg on 3/12/2020.
+ */
+.THIS .slds-form-element_stacked:not(.slds-form-element_readonly){
+    margin-bottom:0px;
+}
+
+.THIS .forceStyle.desktop.slds-form.slds-form-element__label{
+    font-weight:400;
+}
+
+.THIS span{
+    font-weight:400;
+}

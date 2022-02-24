@@ -1,0 +1,37 @@
+<!--
+ - Created by lauren.lezberg on 9/3/2019.
+ -->
+
+<apex:page id="myAACRHelp" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <apex:includeLightning />
+    <apex:slds />
+ 
+    <c:pageStyle />
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Help
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div id="helpComponent"/>
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+
+        $Lightning.use("c:aacrCommunity", function() {
+            $Lightning.createComponent("c:SN_HelpForm",
+                {},
+                "helpComponent",
+                function(cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

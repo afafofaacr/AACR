@@ -1,0 +1,17 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>JP_Confirmation</code> component displays a confirmation message on completion of registering for a myAACR account.
+        </p>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The component is non customizable and displays a simple message.</p>
+        <p>The component displays a 'Return to Profile' button that will redirect the user to the Member Profile page.</p>
+    </aura:description>
+    <aura:example name="JP_Confirmation" ref="c:JP_Confirmation" label="JP_Confirmation">
+        Example for JP_Confirmation
+    </aura:example>
+</aura:documentation>

@@ -1,0 +1,193 @@
+<!--
+ - Created by afaf.awad on 1/5/2021.
+ -->
+
+<apex:page id="AACRCustomReceipt" showHeader="false" applyBodyTag="false" docType="html-5.0"
+                controller="CustomReceiptController" action="{!getReceiptInfo}" renderAs="advanced_pdf">
+<!--    renderAs="advanced_pdf"-->
+    <head>
+        <style type="text/css">
+            /*body {*/
+            /*    width: 800px;*/
+            /*    margin: 40px auto;*/
+            /*    padding: 0px;*/
+            /*    font-family: "Arial Narrow";*/
+            /*    font-size: 14px;*/
+            /*}*/
+
+            /*h2 {*/
+            /*    text-align: center;*/
+            /*    font-size: 16px;*/
+            /*    padding: 0px;*/
+            /*    margin: 20px 0px;*/
+            /*}*/
+
+            /*p {*/
+            /*    padding: 0px;*/
+            /*    margin: 15px 0px;*/
+            /*}*/
+
+            /*letterBody {*/
+            /*    font-family:"Arial Narrow" !important;*/
+            /*    font-size:14px;*/
+            /*}*/
+        </style>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    </head>
+    <body style="width: 700px;
+                margin: 40px auto;
+                padding: 0px;
+                font-family: 'Verdana';
+                font-size: 16px;">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+            <td style="text-align: left; font-size: 12px;">
+                <b>American Association for Cancer Research</b><br/>
+                615 Chestnut Street | 17th Floor<br/>
+                Philadelphia, PA 19106-4404<br/>
+                <br/>
+                215-440-9300 | 215-440-9313 Fax<br/>
+                <a herf="www.AACR.org" >www.AACR.org</a>
+            </td>
+
+            <td style="text-align: right">
+                <apex:image url="{!$Resource.Receipt_AACRLogo}" width="325" height="65"/>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+
+    <table style="padding: 15px; margin-bottom: 10px;" width="50%" bgcolor="#eeeeee">
+        <tbody><tr>
+            <td width="100%" align="center">
+                <span style="font-weight: 200; font-size: 1.125em;">AACR Customer Details</span>
+            </td>
+        </tr>
+        <tr>
+            <td height="10px"></td>
+        </tr>
+        <tr>
+            <td style="padding: 0;" width="100%">
+                <table width="100%">
+                    <tbody><tr>
+                        <td style="padding: 0;">
+                            Date
+                        </td>
+                        <td style="padding-left: 5px;" >
+                            <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                                <apex:param value="{!receiptLines[0].OrderApi__Receipt__r.OrderApi__Date__c}" />
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;">
+                            Receipt Number
+                        </td>
+                        <td style="padding-left: 5px;">
+                            {!receiptLines[0].OrderApi__Receipt__r.Name}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;">
+                            Payment Method
+                        </td>
+                        <td style="padding-left: 5px;">
+                            {!receiptLines[0].OrderApi__Receipt__r.OrderApi__Payment_Method_Description__c}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;">
+                            Customer
+                        </td>
+                        <td style="padding-left: 5px;">
+                            {!participant.Contact__r.FirstName} {!participant.Contact__r.LastName}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table cellpadding="2px" cellspacing="2px" border="0" width="100%">
+        <thead>
+        <tr>
+            <th align="center" bgcolor="#eeeeee"
+                style="-webkit-print-color-adjust: exact; font-weight: 400; text-transform: uppercase; text-align: center;">Quantity
+            </th>
+            <th align="center" bgcolor="#eeeeee"
+                style="-webkit-print-color-adjust: exact; font-weight: 400; text-transform: uppercase; text-align: center;">Line Description
+            </th>
+            <th align="center" bgcolor="#eeeeee"
+                style="-webkit-print-color-adjust: exact; font-weight: 400; text-transform: uppercase; text-align: center;">Sale Price
+            </th>
+            <th align="center" bgcolor="#eeeeee"
+                style="-webkit-print-color-adjust: exact; font-weight: 400; text-transform: uppercase; text-align: center;">Total
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="center" height="40px">
+                1
+            </td>
+            <td align="center" height="40px">
+                {!userSegment.AC_User_Segment__r.Name}
+            </td>
+            <td align="center" height="40px">
+<!--                {!userSegment.Price__c}-->
+            </td>
+            <td align="center" height="40px">
+<!--                {!userSegment.Price__c}-->
+            </td>
+        </tr>
+        <apex:repeat value="{!receiptLines}" var="r">
+            <tr>
+                <td align="center" height="40px">
+                    {!r.OrderApi__Quantity__c}
+                </td>
+                <td align="center" height="40px">
+                    {!r.OrderApi__Line_Description__c}
+                </td>
+                <td align="center" height="40px">
+                    {!r.OrderApi__Sale_Price__c}
+                </td>
+                <td align="center" height="40px">
+                    {!r.OrderApi__Total__c}
+                </td>
+            </tr>
+        </apex:repeat>
+        <tr>
+            <td align="center" height="40px">
+            </td>
+            <td align="center" height="40px">
+            </td>
+            <td align="center" height="40px">
+                Subtotal:
+            </td>
+            <td align="center" height="40px">
+                {!receiptLines[0].OrderApi__Receipt__r.OrderApi__Total__c}
+            </td>
+        </tr>
+        <tr>
+            <td align="center" height="40px">
+            </td>
+            <td align="center" height="40px">
+            </td>
+            <td align="center" height="40px">
+                Total:
+            </td>
+            <td align="center" height="40px">
+                {!receiptLines[0].OrderApi__Receipt__r.OrderApi__Total__c}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </body>
+</apex:page>

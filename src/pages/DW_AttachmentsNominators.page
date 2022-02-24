@@ -1,0 +1,170 @@
+<apex:page docType="html-5.0"
+           showHeader="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           controller="DW_JPMembershipControllerClone">
+    <c:pageStyle />
+    <!-- Increasing remoting timeout -->
+    <script type="text/javascript">
+    Visualforce.remoting.timeout = 120000; // Set timeout at page level
+    </script>
+    
+   
+    <!-- Progress bar component -->
+    <c:DW_ProgressBar />
+    
+    <apex:includeScript value="{!$Resource.jQueryJs}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-toastr.tpls.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/commonFunctions.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-confirm.min.js')}" />    
+    <apex:includeScript value="{!$Resource.DW_JPMembershipAppClone}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/jquery.toast.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/angular-confirm.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/angular-toastr.css')}" />
+    <apex:composition template="CPBase__template">
+        <apex:define name="pageTitle">
+            Nominations and Materials
+        </apex:define>
+        <apex:define name="pageStyles">
+            <style type="text/css">
+                
+            </style>    
+        </apex:define>  
+        
+        <apex:slds />
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!usr.FirstName} {!usr.LastName}! 
+        </apex:define>
+        
+        <apex:define name="pageMain">
+            <apex:pageMessages ></apex:pageMessages>
+            <Framework:messages />
+            <div ng-app="nominationsApp" ng-controller="nominationsController" ng-init="getPageMetaData()">
+                 <!-- Spinner design -->
+                <div class="bgBlack" ng-show="pageData.showLoader">
+                    <div class="spinnerBg">
+                        <div class="loader"></div>                    
+                    </div>
+                </div>
+                    <div class="container m-t-30">
+                        <div class="well col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h1> Join &gt; Nominations &amp; Materials</h1>
+                                    <hr class="m-b-15" />
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-horizontal borderBox" role="form">
+                                        <div class="legendalign">
+                                            <legend>{!$Label.DW_Submissions_Heading}</legend>
+                                        </div>
+                                        <div class="divmargin">
+                                            {!$Label.DW_Submissions_Description}
+                                        </div>
+                                        <div>
+                                            <div class="grid space-btm nomination-attachments" ng-repeat="attachment in pageData.attachments">
+                                                <span class="redaster">*</span>
+                                                <input type="file" onchange="angular.element(this).scope().uploadFile( this )" data-idx="{{$index}}" 
+                                                       style="display: inline-block;" class="attachFile" ng-disabled="attachment.id != ''" />
+                                                <span class="new-file" ng-show="attachment.id == '' && attachment.body != ''">
+                                                    {{ attachment.name }}
+                                                </span>
+                                                <div class="old-attachment" ng-show="attachment.id != ''">
+                                                    <span class="fileName">{{ attachment.name }}</span>
+                                                    <button class="btn-delete" type="button" 
+                                                            ng-click="deleteAttachment( attachment.id, $index )">+</button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>  
+                                </div>    
+                            </div> 
+                                <div class="row">
+                                    <div class="col-sm-12"> 
+                                        <div class="borderBox">
+                                            <div class="legendalign nominationPage">
+                                                <legend style="color: #F2A01D;" class="legendcus">{!$Label.Fon_JPNominations}</legend> 
+                                                <b class="subTxt">{!$Label.DW_JPNominationsDescription}</b>
+                                                <br />
+                                                <!-- If membership type is student then hide verify section and display different control -->
+                                                <div name="verifyNominatorBlock" class="verifyNominatorBlock" ng-repeat="nominator in pageData.nominators" ng-hide="pageData.isStudentMembership">
+                                                    <div class="grid">
+                                                        <div class="col">
+                                                            <label>
+                                                                <span class="redaster">*</span>
+                                                                Member #
+                                                            </label>
+                                                            <input type="text" name="memberNo" ng-model="nominator.memberNo" ng-required="nominator.email == ''" />
+                                                        </div>
+                                                        <div class="col orCol">
+                                                            Or
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>Email</label>
+                                                            <input type="text" name="email" ng-model="nominator.email" ng-required="nominator.memberNo == ''" />
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group grid">
+                                                        <div class="col sml">
+                                                            <button class="btnStyle verify-nominator" type="button" ng-click="verifyNominator( nominator, $index )">Verify Nominators</button>
+                                                        </div>
+                                                        <div class="col">
+                                                            <b>Status:</b> <input name="status" readonly="true" class="inputStyle status" ng-model="nominator.status"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--If student membership display seperate control -->
+                                                <div ng-show="pageData.isStudentMembership" class="student-memberblock">
+                                                    <div class="grid">
+                                                        <div class="col">
+                                                            <label>
+                                                                <span class="redaster">*</span>
+                                                                Nominator Type
+                                                            </label>
+                                                            <select name="nomtype" 
+                                                            class="form-control picklist block"
+                                                            ng-model="pageData.studentNominator.type"
+                                                            ng-options="key as value for (key , value) in pageData.meta.nominatorTypeMap">
+                                                </select>
+                                                        </div>
+                                                        <div class="col">
+                                                            <label>
+                                                                <span class="redaster">*</span>
+                                                                Nominator Name
+                                                            </label>
+                                                            <input type="text" name="nomname" ng-model="pageData.studentNominator.name" required="true" maxlength="255" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid">
+                                                        <div class="col">
+                                                            <label>
+                                                                <span class="redaster">*</span>
+                                                                Nominator Title
+                                                            </label>
+                                                            <input type="text" name="nomtitle" ng-model="pageData.studentNominator.title" required="true" maxlength="255" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div align="center" draggable="false" style="white-space: nowrap;" class="step-btnDiv" >
+                                    <button class="btn btn-mini m-r-5 btn-neutral ladda-button nextStep btn-wrap" ng-click="cancelStep();" type="button">Cancel</button>&nbsp;
+                                    <button class="btn btn-mini m-r-5 btn-neutral ladda-button nextStep btn-wrap" ng-click="previousStep();" type="button">Previous Step</button>&nbsp;
+                                    <button class="btnStyle" ng-click="nextStep();" type="button" id="nextStepBttn">Next Step</button>
+                                </div> 
+                        </div>
+                    </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>

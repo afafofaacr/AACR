@@ -1,0 +1,28 @@
+<!--
+ - Created by afaf.awad on 3/25/2021.
+ -->
+
+<aura:component description="EC_OptOut" controller="EC_OptOutController">
+
+    <aura:attribute name="eventId" type="String" description="Event Id to opt out of emails"/>
+    <aura:attribute name="isOptOut" type="Boolean" description="opt out successful?"/>
+    <aura:attribute name="showError" type="String" default="" description="error message"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div style="margin:auto; width:75%;padding-top: 9rem">
+        <aura:if isTrue="{!v.isOptOut}">
+            <div style="display: grid">
+                  <p style="margin: auto;font-size: 3.5rem;"> You've been opt out of AACR Events emails.</p>
+            </div>
+            <aura:set attribute="else">
+        <div class="slds-border_bottom bold slds-m-top_large slds-clearfix" style="font-size: 20px">Opt Out of AACR Events Communications</div>
+                <c:ErrorMessage errorMsg="{!v.showError}"/>
+<!--                <div class="errorMessage"><p>{!v.showError}</p></div>-->
+        <lightning:input aura:id="emailInput" label="Email" type="email" class="slds-m-around_medium"/>
+        <lightning:button label="Opt Out" title="Opt Out" onclick="{!c.optOutEmails}" class="optButton slds-p-top_medium"/>
+            </aura:set>
+        </aura:if>
+    </div>
+
+
+</aura:component>

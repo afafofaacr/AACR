@@ -1,0 +1,2913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Event_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Primary configuration object for all events.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Calendar_Invite_Msg__c</fullName>
+        <externalId>false</externalId>
+        <label>Calendar Invite Msg</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Agenda_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text appears at the top of the &quot;Agenda&quot; page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text appears at the top of the &quot;Agenda&quot; page.</inlineHelpText>
+        <label>Agenda HTML</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Agenda_Instructions_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The text that appears at the top of the &quot;Agenda&quot; page during registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The text that appears at the top of the &quot;Agenda&quot; page during registration.</inlineHelpText>
+        <label>Agenda Instructions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Attendee_Selection_Instructions_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The text that at the top of the &quot;Attendee Selection&quot; page during registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The text that appears at the top of the &quot;Attendee Selection&quot; page during registration.</inlineHelpText>
+        <label>Attendee Selection Instructions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Attendees__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The current number of registered attendees for your event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The current number of registered attendees for your event.</inlineHelpText>
+        <label>Number of Registered Attendees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Auto_Sellout_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, system will update Sold Out field automatically when number of registered attendees have reached to event capacity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, system will update Sold Out field automatically when number of registered attendees have reached to event capacity.</inlineHelpText>
+        <label>Auto Sellout Event</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Body_Background_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The overall background of the related event. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall background of the related event. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Body Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Link to related Business Group. Derived from User Preferences if not defined on record creation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Link to related Business Group. Derived from User Preferences if not defined on record creation.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Events</relationshipLabel>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Calendar_Reminder_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Replaces Event: Description. When the customer clicks an &quot;Add to Calendar&quot; link on the event, this text is the body of the calendar item. By default, the Event Name, Start Time, End Time, and Venue information are included.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Replaces Event: Description. When the customer clicks an &quot;Add to Calendar&quot; link on the event, this text is the body of the calendar item. By default, the Event Name, Start Time, End Time, and Venue information are included.</inlineHelpText>
+        <label>Calendar Reminder Text</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Capacity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Maximum number of tickets that can be sold for the event. Required if &quot;Enable Waitlisting&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of tickets that can be sold for the event. Required if &quot;Enable Waitlisting&quot; is checked.</inlineHelpText>
+        <label>Ticket Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Community_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Community group that this event is linked to. The event will display on the group detail page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Community group that this event is linked to. The event will display on the group detail page.</inlineHelpText>
+        <label>Community Group</label>
+        <referenceTo>PagesApi__Community_Group__c</referenceTo>
+        <relationshipLabel>Events</relationshipLabel>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Contact_Search_Result_Fields_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Result fields will be displayed when contact searching for attendees.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Result fields will be displayed when contact searching for attendees.</inlineHelpText>
+        <label>Contact Search Result Fields CSV</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Create_Contacts_for_Attendees__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables contact creation for that event. If &quot;Enable Account Search&quot; is not checked, contacts created will be added to the primary registrant&apos;s account or into an individual person account depending on if the &quot;Enable Individual Accounts&quot; setting is active.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables contact creation for that event. If &quot;Enable Account Search&quot; is not checked, contacts created will be added to the primary registrant&apos;s account or into an individual person account depending on if the &quot;Enable Individual Accounts&quot; setting is active.</inlineHelpText>
+        <label>Create Contacts for Attendees</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Custom_CSS__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom CSS is inserted before the closing html head (&quot;&lt;/head&gt;&quot;) tag into pages using this Theme.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom CSS is inserted before the closing html head (&quot;&lt;/head&gt;&quot;) tag into pages using this Theme.</inlineHelpText>
+        <label>Custom CSS</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional event description.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional event description.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Disable_Attendee_Assignment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>By checking this field, the user will bypass the need to insert attendee names. This means all attendee records will have the name of the purchaser.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By checking this field, the user will bypass the need to insert attendee names. This means all attendee records will have the name of the purchaser.</inlineHelpText>
+        <label>Disable Attendee Assignment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Display_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Event name as you would like it to appear on registration pages, calendar reminders, and emails.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event name as you would like it to appear on registration pages, calendar reminders, and emails.</inlineHelpText>
+        <label>Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__ETicket_Label_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The color of the text for the mobile e-ticket. This color will be used for the headings in each section of the e-ticket. Required format is #000000.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The color of the text for the mobile e-ticket. This color will be used for the headings in each section of the e-ticket. Required format is #000000.</inlineHelpText>
+        <label>ETicket Label Color</label>
+        <length>7</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__ETicket_Value_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The color of the value fields for the mobile e-ticket. This color will be used for the values in each section of the e-ticket. Required format is #000000.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The color of the value fields for the mobile e-ticket. This color will be used for the values in each section of the e-ticket. Required format is #000000.</inlineHelpText>
+        <label>ETicket Value Color</label>
+        <length>7</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Email_Notification_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Replaces Event: Description. When attendees are registered by proxy, they receive an email notification about the event. This text is the body of that email. By default, the Event Name, Start Time, End Time, and Venue information are included.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Replaces Event: Description. When attendees are registered by proxy, they receive an email notification about the event. This text is the body of that email. By default, the Event Name, Start Time, End Time, and Venue information are included.</inlineHelpText>
+        <label>Email Notification Text</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Assigned_Seating__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, assigned seating is enabled on the related event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, assigned seating is enabled on the related event.</inlineHelpText>
+        <label>Enable Assigned Seating</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Contact_Restriction__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, a contact cannot have more than one attendee under the event. This will restrict the contact to one registrant for the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, a contact cannot have more than one attendee under the event. This will restrict the contact to one registrant for the event.</inlineHelpText>
+        <label>Enable Contact Restriction</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Contact_Search__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, enables the primary registrant to search for contacts in the system. When unchecked, the primary registrant is not allowed to search for any contacts. The default behavior is to search within the primary registrant&apos;s account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, enables the primary registrant to search for contacts in the system. When unchecked, the primary registrant is not allowed to search for any contacts. The default behavior is to search within the primary registrant&apos;s account.</inlineHelpText>
+        <label>Enable Contact Search</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Event_Display_Name_Date_Time__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When unchecked, the Display name and event date and time will not display over the banner image. Defaults checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When unchecked, the Display name and event date and time will not display over the banner image. Defaults checked.</inlineHelpText>
+        <label>Enable Event Display Name and Date/Time</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_QR_Event_Pass__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field will show a QR code on the event pass.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field will show a QR code on the event pass.</inlineHelpText>
+        <label>Enable QR for Event Pass</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Registration_Groups__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, allows one person to register multiple attendees at the same time and pay for them together.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, allows one person to register multiple attendees at the same time and pay for them together.</inlineHelpText>
+        <label>Enable Registration Groups</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Registration_Updates__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Allow attendees to update their registration from a portal. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Allow attendees to update their registration from a portal. Defaults unchecked.</inlineHelpText>
+        <label>Enable Registration Updates</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Schedule_Items__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, enables schedule items for event Registration Styles that support them.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, enables schedule items for event Registration Styles that support them.</inlineHelpText>
+        <label>Enable Schedule Items</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Sponsors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, enables sponsor package sales for event Registration Styles that support it.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, enables sponsor package sales for event Registration Styles that support it.</inlineHelpText>
+        <label>Enable Sponsor Sales</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Waitlist__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, attendees will have the option to be added to a waitlist once tickets are sold out.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, attendees will have the option to be added to a waitlist once tickets are sold out.</inlineHelpText>
+        <label>Enable Waitlist</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__End_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** The event end date and time (mm/dd/yyyy hh:mm:ss).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The event end date and time (mm/dd/yyyy hh:mm:ss).</inlineHelpText>
+        <label>End Date/Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__End_Date__c</fullName>
+        <defaultValue>today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Required** The event end date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The event end date.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__End_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** The event end time (HH:MM).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The event end time (HH:MM).</inlineHelpText>
+        <label>End Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The event category is a template for creating events that use the same information. Defined fields on the event category will pass down to the event and can be customized as needed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The event category is a template for creating events that use the same information. Defined fields on the event category will pass down to the event and can be customized as needed.</inlineHelpText>
+        <label>Event Category</label>
+        <referenceTo>EventApi__Event_Category__c</referenceTo>
+        <relationshipLabel>Events</relationshipLabel>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Key__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>This field is used as a unique identifier for events. The value in this field will also be used to concatenate item class names to be easily identified in lookup searches.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used as a unique identifier for events. The value in this field will also be used to concatenate item class names to be easily identified in lookup searches.</inlineHelpText>
+        <label>Event Key</label>
+        <length>16</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Pass_Image_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL for the image to display on the printable event pass.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL for the image to display on the printable event pass.</inlineHelpText>
+        <label>Event Pass Image URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to the Survey Form built using Fonteva&apos;s Publisher. Required and restricted to Events where &quot;Enable Surveys&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to the Survey Form built using Fonteva&apos;s Publisher. Required and restricted to Events where &quot;Enable Surveys&quot; is checked.</inlineHelpText>
+        <label>Registration Interview</label>
+        <referenceTo>PagesApi__Form__c</referenceTo>
+        <relationshipLabel>Events</relationshipLabel>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Group_Manager_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The text that appears at the top of the &quot;Group Registration&quot; page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text appears at the top of the &quot;Group Registration&quot; page.</inlineHelpText>
+        <label>Group Manager HTML</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Guest_Email_Optional__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, guest attendees will not need an email to register.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, guest attendees will not need an email to register.</inlineHelpText>
+        <label>Guest Email Optional</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Guest_Registrant_FieldSet_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom fieldset defined on the Assignment Object that is used to collect information during guest checkout. Use the API name of the fieldset and ensure that fields on the Assignment object mirror the fields on the Attendee object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom fieldset defined on the Assignment Object that is used to collect information during guest checkout. Use the API name of the fieldset and ensure that fields on the Assignment object mirror the fields on the Attendee object.</inlineHelpText>
+        <label>Guest Registrant Field Sets (CSV)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Heading_Color__c</fullName>
+        <defaultValue>&quot;#333333&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Color of all heading text in the related event. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of all heading text in the related event. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Heading Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Hero_Button_Background_Color__c</fullName>
+        <defaultValue>&quot;#00AAFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Background color of the related event&apos;s banner button. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Background color of the related event&apos;s banner button. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Hero Button Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Hero_Button_Text_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Text color of the related event&apos;s banner button. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text color of the related event&apos;s banner button. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Hero Button Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Hero_Text_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Color used for the related event&apos;s banner text. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color used for the related event&apos;s banner text. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Hero Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Image_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Image displays on the event overview and registration pages.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Image displays on the event overview and registration pages.</inlineHelpText>
+        <label>Image URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Individual_Pages__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked all status pages can be configured individually.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked all status pages can be configured individually.</inlineHelpText>
+        <label>Individual Pages</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Invitation_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the related event&apos;s attendees can only be registered by invitation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the related event&apos;s attendees can only be registered by invitation.</inlineHelpText>
+        <label>Invitation Only</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Event is available for Sale and for publishing too registration pages. Defaults checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Event is available for Sale and for publishing the registration pages. Defaults checked.</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Closed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the event will be closed and no longer available for sale through the api and/or any community that has access to the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the event will be closed and no longer available for sale through the api and/or any community that has access to the event.</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Event and related details will be exposed on all supported APIs. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Event and related details will be exposed on all supported APIs. Defaults unchecked.</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Lightning_Event_Style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Generated Styles for Lightning Events.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Generated Styles for Lightning Events.</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Link_Color__c</fullName>
+        <defaultValue>&quot;#FF9900&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Color of all text links in the related event. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of all text links in the related event. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Link Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Location_And_Date_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value defined in this field will display in the upper right hand side of the navbar overriding the city, state, and date/time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value defined in this field will display in the upper right hand side of the navbar overriding the city, state, and date/time.</inlineHelpText>
+        <label>Location and Date Text</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Logo_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The image defined in this field appears in the lefthand side of the navbar in the microsite.
+            Recommended size 90px by 90px. (Image will be cropped to these dimensions)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The image defined in this field appears in the lefthand side of the navbar in the microsite.
+            Recommended size 90px by 90px. (Image will be cropped to these dimensions)</inlineHelpText>
+        <label>Logo Image URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Navbar_Background_Color__c</fullName>
+        <defaultValue>&quot;#999999&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Background color of the related event&apos;s navigation. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Background color of the related event&apos;s navigation. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Navbar Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Navbar_Text_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Color of the related event&apos;s navigation text. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of the related event&apos;s navigation text. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Navbar Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Overview_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the event. Used on the event main page, in calendar reminders, and in emails.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of the event. Used on the event main page, in calendar reminders, and in emails.</inlineHelpText>
+        <label>Overview HTML</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Primary_Button_Background_Color__c</fullName>
+        <defaultValue>&quot;#00AAFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Background color of all primary buttons in the related event. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Background color of all primary buttons in the related event. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Primary Button Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Primary_Button_Text_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Text color of all primary buttons in the related event. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text color of all primary buttons in the related event. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Primary Button Background Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Process_Bar_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Color of all text in the related event&apos;s registration process bar. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of all text in the related event&apos;s registration process bar. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Process Bar Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Process_Bar_Foreground_Color__c</fullName>
+        <defaultValue>&quot;#666666&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Foreground color of the related event&apos;s registration process bar. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Foreground color of the related event&apos;s registration process bar. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Process Bar Foreground Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Remaining__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The capacity / ticket quantity on the event minus the tickets sold.</description>
+        <externalId>false</externalId>
+        <formula>EventApi__Capacity__c - EventApi__Quantity_Sold__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The capacity / ticket quantity on the event minus the tickets sold.</inlineHelpText>
+        <label>Tickets Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Sold__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The sum of all sold tickets of any type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The sum of all sold tickets of any type.</inlineHelpText>
+        <label>Tickets Sold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text appears near ticket type selection on event registration page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text appears near ticket type selection on event registration page.</inlineHelpText>
+        <label>Registration Instructions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines which page layouts are used to display the event, as well as the settings available for ticketing and/or registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines which page layouts are used to display the event, as well as the settings available for ticketing and/or registration.</inlineHelpText>
+        <label>Registration Style</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Simple</fullName>
+                    <default>true</default>
+                    <label>Simple</label>
+                </value>
+                <value>
+                    <fullName>Conference</fullName>
+                    <default>false</default>
+                    <label>Conference</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Timer__c</fullName>
+        <defaultValue>15</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The time allowed for purchasing an event registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time allowed for purchasing an event registration.</inlineHelpText>
+        <label>Registration Timer</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the webpage generated for the Event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to the webpage generated for the Event.</inlineHelpText>
+        <label>Registration URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Schedule_Item_Display_Name__c</fullName>
+        <defaultValue>$Label.eventapi__session_shopping_cart_instructions</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The text in this field will be used to guide buyers through the shopping cart when selecting sessions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The text in this field will be used to guide buyers through the shopping cart when selecting sessions.</inlineHelpText>
+        <label>Schedule Item(s) Display Name</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Schedule_Item_Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is a system field. Update at your own risk.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is a system field. Update at your own risk.</inlineHelpText>
+        <label>SYSTEM</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Events (Schedule Item Item Class)</relationshipLabel>
+        <relationshipName>Events2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Search_All_Contacts__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>By selecting this field, any contact authenticated or unauthenticated will be able to search all contacts in the system. (Privacy settings considered)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By selecting this field, any contact authenticated or unauthenticated will be able to search all contacts in the system. (Privacy settings considered)</inlineHelpText>
+        <label>Search All Contacts</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Session_Shopping_Cart_Instructions__c</fullName>
+        <defaultValue>$Label.eventapi__session_shopping_cart_instructions</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The text in this field will be used to guide buyers through the shopping cart when selecting sessions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The text in this field will be used to guide buyers through the shopping cart when selecting sessions.</inlineHelpText>
+        <label>Session Shopping Cart Instructions</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Session_Shopping_Cart_Label__c</fullName>
+        <defaultValue>$Label.eventapi__session_shopping_cart_label</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The text in this field will display in the shopping cart side bar navigation once the ticket type has been selected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The text in this field will display in the shopping cart side bar navigation once the ticket type has been selected.</inlineHelpText>
+        <label>Session Shopping Cart Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sold_Out__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Identifies if number of registered attendee records are reached to event capacity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies if number of registered attendee records are reached to event capacity.</inlineHelpText>
+        <label>Sold Out</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Speakers_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text appears at the top of the &quot;Speakers&quot; page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text appears at the top of the &quot;Speakers&quot; page.</inlineHelpText>
+        <label>Speakers HTML</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sponsor_Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is a system field. Update at your own risk.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is a system field. Update at your own risk.</inlineHelpText>
+        <label>SYSTEM</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Events (Sponsor Item Class)</relationshipLabel>
+        <relationshipName>Events3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sponsors_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text appears at the top of the &quot;Sponsors&quot; page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text appears at the top of the &quot;Sponsors&quot; page.</inlineHelpText>
+        <label>Sponsors HTML</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Start_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** The event start date and time (mm/dd/yyyy hh:mm:ss).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The event start date and time (mm/dd/yyyy hh:mm:ss).</inlineHelpText>
+        <label>Start Date/Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Start_Date__c</fullName>
+        <defaultValue>today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Required** The event start date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The event start date.</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** The event start time (HH:MM).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The event start time (HH:MM).</inlineHelpText>
+        <label>Start Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of the event. Must be &quot;active&quot; to be visible in the Portal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the event. Must be &quot;active&quot; to be visible in the Portal.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Planned</fullName>
+                    <color>#0B6FCE</color>
+                    <default>true</default>
+                    <label>Planned</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <color>#78C953</color>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <color>#E27001</color>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Text_Color__c</fullName>
+        <defaultValue>&quot;#333333&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Color of all text in the related event. Valid hexadecimal notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Color of all text in the related event. Valid hexadecimal notation required.</inlineHelpText>
+        <label>Text Color</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Thumbnail_Image_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Secondary image for the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Secondary image for the event.</inlineHelpText>
+        <label>Thumbnail Image URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Sales_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date ticket sales or registration begins for the event. Defaults to the &quot;Active&quot; date if left blank.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date ticket sales or registration begins for the event. Defaults to the &quot;Active&quot; date if left blank.</inlineHelpText>
+        <label>Ticket Sales Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type_Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is a system field. Update at your own risk.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is a system field. Update at your own risk.</inlineHelpText>
+        <label>SYSTEM</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Events (Ticket Type Item Class)</relationshipLabel>
+        <relationshipName>Events1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type_Sort_Field__c</fullName>
+        <defaultValue>&quot;NAME&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Use with Ticket Type Sort Order. Specifies the field that is used to organize tickets on the registration page. Use &quot;EventApi__Price__c&quot; for price and &quot;Name&quot; for name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use with Ticket Type Sort Order. Specifies the field that is used to organize tickets on the registration page. Use &quot;EventApi__Price__c&quot; for price and &quot;Name&quot; for name.</inlineHelpText>
+        <label>Ticket Type Sort Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type_Sort_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Use with Ticket Type Sort Field. Specifies whether tickets are shown in ascending or descending order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use with Ticket Type Sort Field. Specifies whether tickets are shown in ascending or descending order.</inlineHelpText>
+        <label>Ticket Type Sort Order</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ascending</fullName>
+                    <default>true</default>
+                    <label>Ascending</label>
+                </value>
+                <value>
+                    <fullName>Descending</fullName>
+                    <default>false</default>
+                    <label>Descending</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Time_Zone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time zone of the event location.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time zone of the event location.</inlineHelpText>
+        <label>Time Zone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>(GMT+13:00) Pacific/Enderbury</fullName>
+                    <default>false</default>
+                    <label>(GMT+13:00) Pacific/Enderbury</label>
+                </value>
+                <value>
+                    <fullName>(GMT+13:00) Pacific/Tongatapu</fullName>
+                    <default>false</default>
+                    <label>(GMT+13:00) Pacific/Tongatapu</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:45) Pacific/Chatham</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:45) Pacific/Chatham</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:00) Asia/Kamchatka</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:00) Asia/Kamchatka</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:00) Pacific/Auckland</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:00) Pacific/Auckland</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:00) Pacific/Fiji</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:00) Pacific/Fiji</label>
+                </value>
+                <value>
+                    <fullName>(GMT+11:30) Pacific/Norfolk</fullName>
+                    <default>false</default>
+                    <label>(GMT+11:30) Pacific/Norfolk</label>
+                </value>
+                <value>
+                    <fullName>(GMT+11:00) Pacific/Guadalcanal</fullName>
+                    <default>false</default>
+                    <label>(GMT+11:00) Pacific/Guadalcanal</label>
+                </value>
+                <value>
+                    <fullName>(GMT+10:30) Australia/Lord_Howe</fullName>
+                    <default>false</default>
+                    <label>(GMT+10:30) Australia/Lord_Howe</label>
+                </value>
+                <value>
+                    <fullName>(GMT+10:00) Australia/Brisbane</fullName>
+                    <default>false</default>
+                    <label>(GMT+10:00) Australia/Brisbane</label>
+                </value>
+                <value>
+                    <fullName>(GMT+10:00) Australia/Sydney</fullName>
+                    <default>false</default>
+                    <label>(GMT+10:00) Australia/Sydney</label>
+                </value>
+                <value>
+                    <fullName>(GMT+09:30) Australia/Adelaide</fullName>
+                    <default>false</default>
+                    <label>(GMT+09:30) Australia/Adelaide</label>
+                </value>
+                <value>
+                    <fullName>(GMT+09:30) Australia/Darwin</fullName>
+                    <default>false</default>
+                    <label>(GMT+09:30) Australia/Darwin</label>
+                </value>
+                <value>
+                    <fullName>(GMT+09:00) Asia/Seoul</fullName>
+                    <default>false</default>
+                    <label>(GMT+09:00) Asia/Seoul</label>
+                </value>
+                <value>
+                    <fullName>(GMT+09:00) Asia/Tokyo</fullName>
+                    <default>false</default>
+                    <label>(GMT+09:00) Asia/Tokyo</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Asia/Hong_Kong</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Asia/Hong_Kong</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Asia/Kuala_Lumpur</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Asia/Kuala_Lumpur</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Asia/Manila</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Asia/Manila</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Asia/Shanghai</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Asia/Shanghai</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Asia/Singapore</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Asia/Singapore</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Asia/Taipei</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Asia/Taipei</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Australia/Perth</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Australia/Perth</label>
+                </value>
+                <value>
+                    <fullName>(GMT+07:00) Asia/Bangkok</fullName>
+                    <default>false</default>
+                    <label>(GMT+07:00) Asia/Bangkok</label>
+                </value>
+                <value>
+                    <fullName>(GMT+07:00) Asia/Ho_Chi_Minh</fullName>
+                    <default>false</default>
+                    <label>(GMT+07:00) Asia/Ho_Chi_Minh</label>
+                </value>
+                <value>
+                    <fullName>(GMT+07:00) Asia/Jakarta</fullName>
+                    <default>false</default>
+                    <label>(GMT+07:00) Asia/Jakarta</label>
+                </value>
+                <value>
+                    <fullName>(GMT+06:30) Asia/Rangoon</fullName>
+                    <default>false</default>
+                    <label>(GMT+06:30) Asia/Rangoon</label>
+                </value>
+                <value>
+                    <fullName>(GMT+06:00) Asia/Dhaka</fullName>
+                    <default>false</default>
+                    <label>(GMT+06:00) Asia/Dhaka</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:45) Asia/Kathmandu</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:45) Asia/Kathmandu</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:30) Asia/Colombo</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:30) Asia/Colombo</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:30) Asia/Kolkata</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:30) Asia/Kolkata</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:00) Asia/Baku</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:00) Asia/Baku</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:00) Asia/Karachi</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:00) Asia/Karachi</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:00) Asia/Tashkent</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:00) Asia/Tashkent</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:00) Asia/Yekaterinburg</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:00) Asia/Yekaterinburg</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:30) Asia/Kabul</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:30) Asia/Kabul</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:30) Asia/Tehran</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:30) Asia/Tehran</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Asia/Dubai</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Asia/Dubai</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Asia/Tbilisi</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Asia/Tbilisi</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Asia/Yerevan</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Asia/Yerevan</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Africa/Nairobi</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Africa/Nairobi</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Asia/Baghdad</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Asia/Baghdad</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Asia/Beirut</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Asia/Beirut</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Asia/Jerusalem</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Asia/Jerusalem</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Asia/Kuwait</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Asia/Kuwait</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Asia/Riyadh</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Asia/Riyadh</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Europe/Athens</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Europe/Athens</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Europe/Bucharest</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Europe/Bucharest</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Europe/Helsinki</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Europe/Helsinki</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Europe/Istanbul</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Europe/Istanbul</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Europe/Minsk</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Europe/Minsk</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Europe/Moscow</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Europe/Moscow</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Africa/Cairo</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Africa/Cairo</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Africa/Johannesburg</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Africa/Johannesburg</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Europe/Amsterdam</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Europe/Amsterdam</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Europe/Berlin</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Europe/Berlin</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Europe/Brussels</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Europe/Brussels</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Europe/Paris</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Europe/Paris</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Europe/Prague</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Europe/Prague</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Europe/Rome</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Europe/Rome</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) Africa/Algiers</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) Africa/Algiers</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) Europe/Dublin</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) Europe/Dublin</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) Europe/Lisbon</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) Europe/Lisbon</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) Europe/London</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) Europe/London</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) Africa/Casablanca</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) Africa/Casablanca</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) America/Scoresbysund</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) America/Scoresbysund</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) Atlantic/Azores</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) Atlantic/Azores</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) GMT</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) GMT</label>
+                </value>
+                <value>
+                    <fullName>(GMT-01:00) Atlantic/Cape_Verde</fullName>
+                    <default>false</default>
+                    <label>(GMT-01:00) Atlantic/Cape_Verde</label>
+                </value>
+                <value>
+                    <fullName>(GMT-02:00) Atlantic/South_Georgia</fullName>
+                    <default>false</default>
+                    <label>(GMT-02:00) Atlantic/South_Georgia</label>
+                </value>
+                <value>
+                    <fullName>(GMT-02:30) America/St_Johns</fullName>
+                    <default>false</default>
+                    <label>(GMT-02:30) America/St_Johns</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) America/Argentina/Buenos_Aires</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) America/Argentina/Buenos_Aires</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) America/Halifax</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) America/Halifax</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) America/Santiago</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) America/Santiago</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) America/Sao_Paulo</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) America/Sao_Paulo</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) Atlantic/Bermuda</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) Atlantic/Bermuda</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:00) America/Indiana/Indianapolis</fullName>
+                    <default>false</default>
+                    <label>(GMT-04:00) America/Indiana/Indianapolis</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:00) America/New_York</fullName>
+                    <default>true</default>
+                    <label>(GMT-04:00) America/New_York</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:00) America/Puerto_Rico</fullName>
+                    <default>false</default>
+                    <label>(GMT-04:00) America/Puerto_Rico</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:30) America/Caracas</fullName>
+                    <default>false</default>
+                    <label>(GMT-04:30) America/Caracas</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) America/Bogota</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) America/Bogota</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) America/Chicago</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) America/Chicago</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) America/Lima</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) America/Lima</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) America/Mexico_City</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) America/Mexico_City</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) America/Panama</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) America/Panama</label>
+                </value>
+                <value>
+                    <fullName>(GMT-06:00) America/Denver</fullName>
+                    <default>false</default>
+                    <label>(GMT-06:00) America/Denver</label>
+                </value>
+                <value>
+                    <fullName>(GMT-06:00) America/El_Salvador</fullName>
+                    <default>false</default>
+                    <label>(GMT-06:00) America/El_Salvador</label>
+                </value>
+                <value>
+                    <fullName>(GMT-06:00) America/Mazatlan</fullName>
+                    <default>false</default>
+                    <label>(GMT-06:00) America/Mazatlan</label>
+                </value>
+                <value>
+                    <fullName>(GMT-07:00) America/Los_Angeles</fullName>
+                    <default>false</default>
+                    <label>(GMT-07:00) America/Los_Angeles</label>
+                </value>
+                <value>
+                    <fullName>(GMT-07:00) America/Phoenix</fullName>
+                    <default>false</default>
+                    <label>(GMT-07:00) America/Phoenix</label>
+                </value>
+                <value>
+                    <fullName>(GMT-07:00) America/Tijuana</fullName>
+                    <default>false</default>
+                    <label>(GMT-07:00) America/Tijuana</label>
+                </value>
+                <value>
+                    <fullName>(GMT-08:00) America/Anchorage</fullName>
+                    <default>false</default>
+                    <label>(GMT-08:00) America/Anchorage</label>
+                </value>
+                <value>
+                    <fullName>(GMT-08:00) Pacific/Pitcairn</fullName>
+                    <default>false</default>
+                    <label>(GMT-08:00) Pacific/Pitcairn</label>
+                </value>
+                <value>
+                    <fullName>(GMT-09:00) America/Adak</fullName>
+                    <default>false</default>
+                    <label>(GMT-09:00) America/Adak</label>
+                </value>
+                <value>
+                    <fullName>(GMT-09:00) Pacific/Gambier</fullName>
+                    <default>false</default>
+                    <label>(GMT-09:00) Pacific/Gambier</label>
+                </value>
+                <value>
+                    <fullName>(GMT-09:30) Pacific/Marquesas</fullName>
+                    <default>false</default>
+                    <label>(GMT-09:30) Pacific/Marquesas</label>
+                </value>
+                <value>
+                    <fullName>(GMT-10:00) Pacific/Honolulu</fullName>
+                    <default>false</default>
+                    <label>(GMT-10:00) Pacific/Honolulu</label>
+                </value>
+                <value>
+                    <fullName>(GMT-11:00) Pacific/Niue</fullName>
+                    <default>false</default>
+                    <label>(GMT-11:00) Pacific/Niue</label>
+                </value>
+                <value>
+                    <fullName>(GMT-11:00) Pacific/Pago_Pago</fullName>
+                    <default>false</default>
+                    <label>(GMT-11:00) Pacific/Pago_Pago</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Topic__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Recommended ** Provide users the ability to search for Events by Topic by selecting the most appropriate Topic from the given list. Derives from the parent Event Category if undefined.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Recommended ** Provide users the ability to search for Events by Topic by selecting the most appropriate Topic from the given list. Derives from the parent Event Category if undefined.</inlineHelpText>
+        <label>Topic</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Academia</fullName>
+                    <default>false</default>
+                    <label>Academia</label>
+                </value>
+                <value>
+                    <fullName>Accounting</fullName>
+                    <default>false</default>
+                    <label>Accounting</label>
+                </value>
+                <value>
+                    <fullName>Aerospace</fullName>
+                    <default>false</default>
+                    <label>Aerospace</label>
+                </value>
+                <value>
+                    <fullName>Agriculture</fullName>
+                    <default>false</default>
+                    <label>Agriculture</label>
+                </value>
+                <value>
+                    <fullName>Airlines</fullName>
+                    <default>false</default>
+                    <label>Airlines</label>
+                </value>
+                <value>
+                    <fullName>Alternative Medicine</fullName>
+                    <default>false</default>
+                    <label>Alternative Medicine</label>
+                </value>
+                <value>
+                    <fullName>Apparel &amp; Fashion</fullName>
+                    <default>false</default>
+                    <label>Apparel &amp; Fashion</label>
+                </value>
+                <value>
+                    <fullName>Architecture &amp; Planning</fullName>
+                    <default>false</default>
+                    <label>Architecture &amp; Planning</label>
+                </value>
+                <value>
+                    <fullName>Arts &amp; Crafts</fullName>
+                    <default>false</default>
+                    <label>Arts &amp; Crafts</label>
+                </value>
+                <value>
+                    <fullName>Automotive</fullName>
+                    <default>false</default>
+                    <label>Automotive</label>
+                </value>
+                <value>
+                    <fullName>Banking</fullName>
+                    <default>false</default>
+                    <label>Banking</label>
+                </value>
+                <value>
+                    <fullName>Biotechnology</fullName>
+                    <default>false</default>
+                    <label>Biotechnology</label>
+                </value>
+                <value>
+                    <fullName>Broadcast Media</fullName>
+                    <default>false</default>
+                    <label>Broadcast Media</label>
+                </value>
+                <value>
+                    <fullName>Building Materials</fullName>
+                    <default>false</default>
+                    <label>Building Materials</label>
+                </value>
+                <value>
+                    <fullName>Business Supplies &amp; Equipment</fullName>
+                    <default>false</default>
+                    <label>Business Supplies &amp; Equipment</label>
+                </value>
+                <value>
+                    <fullName>Chemicals</fullName>
+                    <default>false</default>
+                    <label>Chemicals</label>
+                </value>
+                <value>
+                    <fullName>Civic &amp; Social Organizations</fullName>
+                    <default>false</default>
+                    <label>Civic &amp; Social Organizations</label>
+                </value>
+                <value>
+                    <fullName>Civil Engineering</fullName>
+                    <default>false</default>
+                    <label>Civil Engineering</label>
+                </value>
+                <value>
+                    <fullName>Civil Service</fullName>
+                    <default>false</default>
+                    <label>Civil Service</label>
+                </value>
+                <value>
+                    <fullName>Composites</fullName>
+                    <default>false</default>
+                    <label>Composites</label>
+                </value>
+                <value>
+                    <fullName>Computer &amp; Network Security</fullName>
+                    <default>false</default>
+                    <label>Computer &amp; Network Security</label>
+                </value>
+                <value>
+                    <fullName>Computer Games</fullName>
+                    <default>false</default>
+                    <label>Computer Games</label>
+                </value>
+                <value>
+                    <fullName>Computer Hardware</fullName>
+                    <default>false</default>
+                    <label>Computer Hardware</label>
+                </value>
+                <value>
+                    <fullName>Computer Networking</fullName>
+                    <default>false</default>
+                    <label>Computer Networking</label>
+                </value>
+                <value>
+                    <fullName>Computer Software</fullName>
+                    <default>false</default>
+                    <label>Computer Software</label>
+                </value>
+                <value>
+                    <fullName>Construction</fullName>
+                    <default>false</default>
+                    <label>Construction</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>Consumer Electronics</fullName>
+                    <default>false</default>
+                    <label>Consumer Electronics</label>
+                </value>
+                <value>
+                    <fullName>Consumer Goods</fullName>
+                    <default>false</default>
+                    <label>Consumer Goods</label>
+                </value>
+                <value>
+                    <fullName>Consumer Services</fullName>
+                    <default>false</default>
+                    <label>Consumer Services</label>
+                </value>
+                <value>
+                    <fullName>Cosmetics</fullName>
+                    <default>false</default>
+                    <label>Cosmetics</label>
+                </value>
+                <value>
+                    <fullName>Daycare</fullName>
+                    <default>false</default>
+                    <label>Daycare</label>
+                </value>
+                <value>
+                    <fullName>Defense/Military</fullName>
+                    <default>false</default>
+                    <label>Defense/Military</label>
+                </value>
+                <value>
+                    <fullName>Design</fullName>
+                    <default>false</default>
+                    <label>Design</label>
+                </value>
+                <value>
+                    <fullName>Education</fullName>
+                    <default>false</default>
+                    <label>Education</label>
+                </value>
+                <value>
+                    <fullName>E-learning</fullName>
+                    <default>false</default>
+                    <label>E-learning</label>
+                </value>
+                <value>
+                    <fullName>Electrical Engineering</fullName>
+                    <default>false</default>
+                    <label>Electrical Engineering</label>
+                </value>
+                <value>
+                    <fullName>Energy</fullName>
+                    <default>false</default>
+                    <label>Energy</label>
+                </value>
+                <value>
+                    <fullName>Entertainment</fullName>
+                    <default>false</default>
+                    <label>Entertainment</label>
+                </value>
+                <value>
+                    <fullName>Environmental Services</fullName>
+                    <default>false</default>
+                    <label>Environmental Services</label>
+                </value>
+                <value>
+                    <fullName>Events Services</fullName>
+                    <default>false</default>
+                    <label>Events Services</label>
+                </value>
+                <value>
+                    <fullName>Facilities Services</fullName>
+                    <default>false</default>
+                    <label>Facilities Services</label>
+                </value>
+                <value>
+                    <fullName>Facility Management</fullName>
+                    <default>false</default>
+                    <label>Facility Management</label>
+                </value>
+                <value>
+                    <fullName>Financial Services</fullName>
+                    <default>false</default>
+                    <label>Financial Services</label>
+                </value>
+                <value>
+                    <fullName>Fishery</fullName>
+                    <default>false</default>
+                    <label>Fishery</label>
+                </value>
+                <value>
+                    <fullName>Food</fullName>
+                    <default>false</default>
+                    <label>Food</label>
+                </value>
+                <value>
+                    <fullName>Fundraising</fullName>
+                    <default>false</default>
+                    <label>Fundraising</label>
+                </value>
+                <value>
+                    <fullName>Furniture</fullName>
+                    <default>false</default>
+                    <label>Furniture</label>
+                </value>
+                <value>
+                    <fullName>Gardening/Landscaping</fullName>
+                    <default>false</default>
+                    <label>Gardening/Landscaping</label>
+                </value>
+                <value>
+                    <fullName>Geology</fullName>
+                    <default>false</default>
+                    <label>Geology</label>
+                </value>
+                <value>
+                    <fullName>Glass &amp; Ceramics</fullName>
+                    <default>false</default>
+                    <label>Glass &amp; Ceramics</label>
+                </value>
+                <value>
+                    <fullName>Graphic Design</fullName>
+                    <default>false</default>
+                    <label>Graphic Design</label>
+                </value>
+                <value>
+                    <fullName>Health &amp; Fitness</fullName>
+                    <default>false</default>
+                    <label>Health &amp; Fitness</label>
+                </value>
+                <value>
+                    <fullName>Hospitality</fullName>
+                    <default>false</default>
+                    <label>Hospitality</label>
+                </value>
+                <value>
+                    <fullName>Human resources</fullName>
+                    <default>false</default>
+                    <label>Human resources</label>
+                </value>
+                <value>
+                    <fullName>Import &amp; Export</fullName>
+                    <default>false</default>
+                    <label>Import &amp; Export</label>
+                </value>
+                <value>
+                    <fullName>Industrial Automation</fullName>
+                    <default>false</default>
+                    <label>Industrial Automation</label>
+                </value>
+                <value>
+                    <fullName>Information Services</fullName>
+                    <default>false</default>
+                    <label>Information Services</label>
+                </value>
+                <value>
+                    <fullName>Information Technology &amp; Services</fullName>
+                    <default>false</default>
+                    <label>Information Technology &amp; Services</label>
+                </value>
+                <value>
+                    <fullName>Insurance</fullName>
+                    <default>false</default>
+                    <label>Insurance</label>
+                </value>
+                <value>
+                    <fullName>International Affairs</fullName>
+                    <default>false</default>
+                    <label>International Affairs</label>
+                </value>
+                <value>
+                    <fullName>International Trade &amp; Development</fullName>
+                    <default>false</default>
+                    <label>International Trade &amp; Development</label>
+                </value>
+                <value>
+                    <fullName>Internet</fullName>
+                    <default>false</default>
+                    <label>Internet</label>
+                </value>
+                <value>
+                    <fullName>Investment Banking</fullName>
+                    <default>false</default>
+                    <label>Investment Banking</label>
+                </value>
+                <value>
+                    <fullName>Journalism</fullName>
+                    <default>false</default>
+                    <label>Journalism</label>
+                </value>
+                <value>
+                    <fullName>Legal Services</fullName>
+                    <default>false</default>
+                    <label>Legal Services</label>
+                </value>
+                <value>
+                    <fullName>Leisure, Travel &amp; Tourism</fullName>
+                    <default>false</default>
+                    <label>Leisure, Travel &amp; Tourism</label>
+                </value>
+                <value>
+                    <fullName>Libraries</fullName>
+                    <default>false</default>
+                    <label>Libraries</label>
+                </value>
+                <value>
+                    <fullName>Logistics &amp; Supply Chain</fullName>
+                    <default>false</default>
+                    <label>Logistics &amp; Supply Chain</label>
+                </value>
+                <value>
+                    <fullName>Luxury Goods &amp;amp; Jewelry</fullName>
+                    <default>false</default>
+                    <label>Luxury Goods &amp;amp; Jewelry</label>
+                </value>
+                <value>
+                    <fullName>Machinery</fullName>
+                    <default>false</default>
+                    <label>Machinery</label>
+                </value>
+                <value>
+                    <fullName>Management Consulting</fullName>
+                    <default>false</default>
+                    <label>Management Consulting</label>
+                </value>
+                <value>
+                    <fullName>Maritime</fullName>
+                    <default>false</default>
+                    <label>Maritime</label>
+                </value>
+                <value>
+                    <fullName>Marketing &amp; Advertising</fullName>
+                    <default>false</default>
+                    <label>Marketing &amp; Advertising</label>
+                </value>
+                <value>
+                    <fullName>Market Research</fullName>
+                    <default>false</default>
+                    <label>Market Research</label>
+                </value>
+                <value>
+                    <fullName>Mechanical/Industrial Engineering</fullName>
+                    <default>false</default>
+                    <label>Mechanical/Industrial Engineering</label>
+                </value>
+                <value>
+                    <fullName>Media Production</fullName>
+                    <default>false</default>
+                    <label>Media Production</label>
+                </value>
+                <value>
+                    <fullName>Medical Devices</fullName>
+                    <default>false</default>
+                    <label>Medical Devices</label>
+                </value>
+                <value>
+                    <fullName>Medical Services</fullName>
+                    <default>false</default>
+                    <label>Medical Services</label>
+                </value>
+                <value>
+                    <fullName>Medicinal Products</fullName>
+                    <default>false</default>
+                    <label>Medicinal Products</label>
+                </value>
+                <value>
+                    <fullName>Metal/Metalworking</fullName>
+                    <default>false</default>
+                    <label>Metal/Metalworking</label>
+                </value>
+                <value>
+                    <fullName>Metrology/Control Engineering</fullName>
+                    <default>false</default>
+                    <label>Metrology/Control Engineering</label>
+                </value>
+                <value>
+                    <fullName>Mining &amp; Metals</fullName>
+                    <default>false</default>
+                    <label>Mining &amp; Metals</label>
+                </value>
+                <value>
+                    <fullName>Motion Pictures</fullName>
+                    <default>false</default>
+                    <label>Motion Pictures</label>
+                </value>
+                <value>
+                    <fullName>Museums &amp; Cultural Institutions</fullName>
+                    <default>false</default>
+                    <label>Museums &amp; Cultural Institutions</label>
+                </value>
+                <value>
+                    <fullName>Music</fullName>
+                    <default>false</default>
+                    <label>Music</label>
+                </value>
+                <value>
+                    <fullName>Nanotechnology</fullName>
+                    <default>false</default>
+                    <label>Nanotechnology</label>
+                </value>
+                <value>
+                    <fullName>Non-Profit Organization</fullName>
+                    <default>false</default>
+                    <label>Non-Profit Organization</label>
+                </value>
+                <value>
+                    <fullName>Nursing &amp; Personal Care</fullName>
+                    <default>false</default>
+                    <label>Nursing &amp; Personal Care</label>
+                </value>
+                <value>
+                    <fullName>Oil &amp; Energy</fullName>
+                    <default>false</default>
+                    <label>Oil &amp; Energy</label>
+                </value>
+                <value>
+                    <fullName>Online Media</fullName>
+                    <default>false</default>
+                    <label>Online Media</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>Outsourcing/Offshoring</fullName>
+                    <default>false</default>
+                    <label>Outsourcing/Offshoring</label>
+                </value>
+                <value>
+                    <fullName>Packaging &amp; Containers</fullName>
+                    <default>false</default>
+                    <label>Packaging &amp; Containers</label>
+                </value>
+                <value>
+                    <fullName>Paper &amp; Forest Products</fullName>
+                    <default>false</default>
+                    <label>Paper &amp; Forest Products</label>
+                </value>
+                <value>
+                    <fullName>Pharmaceuticals</fullName>
+                    <default>false</default>
+                    <label>Pharmaceuticals</label>
+                </value>
+                <value>
+                    <fullName>Photography</fullName>
+                    <default>false</default>
+                    <label>Photography</label>
+                </value>
+                <value>
+                    <fullName>Plastics</fullName>
+                    <default>false</default>
+                    <label>Plastics</label>
+                </value>
+                <value>
+                    <fullName>Politics</fullName>
+                    <default>false</default>
+                    <label>Politics</label>
+                </value>
+                <value>
+                    <fullName>Printing</fullName>
+                    <default>false</default>
+                    <label>Printing</label>
+                </value>
+                <value>
+                    <fullName>Print Media</fullName>
+                    <default>false</default>
+                    <label>Print Media</label>
+                </value>
+                <value>
+                    <fullName>Process Management</fullName>
+                    <default>false</default>
+                    <label>Process Management</label>
+                </value>
+                <value>
+                    <fullName>Professional Training &amp; Coaching</fullName>
+                    <default>false</default>
+                    <label>Professional Training &amp; Coaching</label>
+                </value>
+                <value>
+                    <fullName>Psychology/Psychotherapy</fullName>
+                    <default>false</default>
+                    <label>Psychology/Psychotherapy</label>
+                </value>
+                <value>
+                    <fullName>Public Health</fullName>
+                    <default>false</default>
+                    <label>Public Health</label>
+                </value>
+                <value>
+                    <fullName>Public Relations &amp; Communications</fullName>
+                    <default>false</default>
+                    <label>Public Relations &amp; Communications</label>
+                </value>
+                <value>
+                    <fullName>Publishing</fullName>
+                    <default>false</default>
+                    <label>Publishing</label>
+                </value>
+                <value>
+                    <fullName>Railroad</fullName>
+                    <default>false</default>
+                    <label>Railroad</label>
+                </value>
+                <value>
+                    <fullName>Real Estate</fullName>
+                    <default>false</default>
+                    <label>Real Estate</label>
+                </value>
+                <value>
+                    <fullName>Recreational Facilities &amp; Services</fullName>
+                    <default>false</default>
+                    <label>Recreational Facilities &amp; Services</label>
+                </value>
+                <value>
+                    <fullName>Recycling &amp; Waste Management</fullName>
+                    <default>false</default>
+                    <label>Recycling &amp; Waste Management</label>
+                </value>
+                <value>
+                    <fullName>Renewables &amp; Environment</fullName>
+                    <default>false</default>
+                    <label>Renewables &amp; Environment</label>
+                </value>
+                <value>
+                    <fullName>Research</fullName>
+                    <default>false</default>
+                    <label>Research</label>
+                </value>
+                <value>
+                    <fullName>Restaurants &amp; Food Service</fullName>
+                    <default>false</default>
+                    <label>Restaurants &amp; Food Service</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
+                </value>
+                <value>
+                    <fullName>Security &amp; Investigations</fullName>
+                    <default>false</default>
+                    <label>Security &amp; Investigations</label>
+                </value>
+                <value>
+                    <fullName>Semiconductors</fullName>
+                    <default>false</default>
+                    <label>Semiconductors</label>
+                </value>
+                <value>
+                    <fullName>Shipbuilding</fullName>
+                    <default>false</default>
+                    <label>Shipbuilding</label>
+                </value>
+                <value>
+                    <fullName>Sports</fullName>
+                    <default>false</default>
+                    <label>Sports</label>
+                </value>
+                <value>
+                    <fullName>Staffing &amp; Recruiting</fullName>
+                    <default>false</default>
+                    <label>Staffing &amp; Recruiting</label>
+                </value>
+                <value>
+                    <fullName>Tax accountancy/Auditing</fullName>
+                    <default>false</default>
+                    <label>Tax accountancy/Auditing</label>
+                </value>
+                <value>
+                    <fullName>Telecommunication</fullName>
+                    <default>false</default>
+                    <label>Telecommunication</label>
+                </value>
+                <value>
+                    <fullName>Textiles</fullName>
+                    <default>false</default>
+                    <label>Textiles</label>
+                </value>
+                <value>
+                    <fullName>Theater/Stage/Cinema</fullName>
+                    <default>false</default>
+                    <label>Theater/Stage/Cinema</label>
+                </value>
+                <value>
+                    <fullName>Timber</fullName>
+                    <default>false</default>
+                    <label>Timber</label>
+                </value>
+                <value>
+                    <fullName>Traffic Engineering</fullName>
+                    <default>false</default>
+                    <label>Traffic Engineering</label>
+                </value>
+                <value>
+                    <fullName>Translation &amp; Localization</fullName>
+                    <default>false</default>
+                    <label>Translation &amp; Localization</label>
+                </value>
+                <value>
+                    <fullName>Transport</fullName>
+                    <default>false</default>
+                    <label>Transport</label>
+                </value>
+                <value>
+                    <fullName>Venture Capital &amp; Private Equity</fullName>
+                    <default>false</default>
+                    <label>Venture Capital &amp; Private Equity</label>
+                </value>
+                <value>
+                    <fullName>Veterinary</fullName>
+                    <default>false</default>
+                    <label>Veterinary</label>
+                </value>
+                <value>
+                    <fullName>Welfare &amp; Community Health</fullName>
+                    <default>false</default>
+                    <label>Welfare &amp; Community Health</label>
+                </value>
+                <value>
+                    <fullName>Wholesale</fullName>
+                    <default>false</default>
+                    <label>Wholesale</label>
+                </value>
+                <value>
+                    <fullName>Wine &amp; Spirits</fullName>
+                    <default>false</default>
+                    <label>Wine &amp; Spirits</label>
+                </value>
+                <value>
+                    <fullName>Writing &amp; Editing</fullName>
+                    <default>false</default>
+                    <label>Writing &amp; Editing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Venue_HTML__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text appears at the top of the &quot;Venues&quot; page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text appears at the top of the &quot;Venues&quot; page.</inlineHelpText>
+        <label>Venue HTML</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Waitlist_Entries__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of people currently waitlisted for the event. Does not include people waitlisted for individual ticket types.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of people currently waitlisted for the event. Does not include people waitlisted for individual ticket types.</inlineHelpText>
+        <label>RESERVED</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_URL__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;https://uat-aacr.cs195.force.com/eventapi__router?event=&quot; &amp; Id</formula>
+        <label>Event URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Eligible_Mass_Registration__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Allows for mass registration of event tickets but should only be used for free events. That will expose the mass registration feature on the event.</inlineHelpText>
+        <label>Is Eligible Mass Registration</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Virtual__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Identifies this event as a virtual meeting.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies this event as a virtual meeting.</inlineHelpText>
+        <label>Is Virtual</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>JP_Institution__c</fullName>
+        <externalId>false</externalId>
+        <label>Joint Providership Institution</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Joint_Providership__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Joint Providership</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Letter_of_Participation__c</fullName>
+        <externalId>false</externalId>
+        <label>Letter of Participation</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Max_CME_Credits__c</fullName>
+        <externalId>false</externalId>
+        <label>Max CME Credits</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Message__c</fullName>
+        <description>Will be used to mail merge information on registration confirmation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to mail merge information on registration confirmation.</inlineHelpText>
+        <label>Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Active_Ticket_Type_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total number of active ticket types</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of active ticket types.</inlineHelpText>
+        <label>SYSTEM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Event_Duration_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated** Event Duration Calculated based on start and end date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated** Event Duration Calculated based on start and end date</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event</label>
+    <listViews>
+        <fullName>EventApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>EventApi__Status__c</columns>
+        <columns>EventApi__Registration_Style__c</columns>
+        <columns>EventApi__Capacity__c</columns>
+        <columns>EventApi__Start_Date_Time__c</columns>
+        <columns>EventApi__End_Date_Time__c</columns>
+        <columns>EventApi__Ticket_Sales_Start_Date__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Non_AACR_CME_Events</fullName>
+        <columns>NAME</columns>
+        <columns>EventApi__Status__c</columns>
+        <columns>EventApi__End_Date__c</columns>
+        <columns>EventApi__Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>EventApi__Event_Category__c</field>
+            <operation>equals</operation>
+            <value>Non-AACR Events</value>
+        </filters>
+        <label>Non-AACR CME Events</label>
+    </listViews>
+    <nameField>
+        <label>Event Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Events</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventApi__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Registration_Style__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Start_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__End_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Capacity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Sold__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Remaining__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Registration_Style__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Start_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__End_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__End_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Capacity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Sold__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Remaining__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Registration_Style__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Start_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Start_Time__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__End_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__End_Time__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Capacity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Sold__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Remaining__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EventApi__Event_Category__c</searchFilterFields>
+        <searchFilterFields>EventApi__Status__c</searchFilterFields>
+        <searchFilterFields>EventApi__Registration_Style__c</searchFilterFields>
+        <searchFilterFields>EventApi__Start_Date__c</searchFilterFields>
+        <searchFilterFields>EventApi__End_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>EventApi__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Registration_Style__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Start_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__End_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Capacity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Sold__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Remaining__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Joint_Providership</fullName>
+        <active>true</active>
+        <description>JP Institution is required when the Joint Providership is checked</description>
+        <errorConditionFormula>AND( Joint_Providership__c=TRUE, ISBLANK( JP_Institution__c ))</errorConditionFormula>
+        <errorDisplayField>JP_Institution__c</errorDisplayField>
+        <errorMessage>The Joint Providership Institution name is required.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

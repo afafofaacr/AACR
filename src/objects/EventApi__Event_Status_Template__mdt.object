@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Templates for Lightning Event Statuses.</description>
+    <fields>
+        <fullName>EventApi__Closed_Status_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The text entered in this field will appear in bold in place of the register button when the registration is closed.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>The text entered in this field will appear in bold in place of the register button when the registration is closed.</inlineHelpText>
+        <label>DEPRECATED</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Editable_Closed_Status_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The text entered in this field will appear in bold in place of the register button when the registration is closed.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The text entered in this field will appear in bold in place of the register button when the registration is closed.</inlineHelpText>
+        <label>Closed Status Text</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Transition_for_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, enables an automatic transition to this status based on its Status Transition Criteria.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>When checked, enables an automatic transition to this status based on its Status Transition Criteria.</inlineHelpText>
+        <label>Enable Transition for Status</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Registration_Style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** Linked to related event registration style.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>**Required** Linked to related event registration style.</inlineHelpText>
+        <label>Event Registration Style</label>
+        <referenceTo>EventApi__Event_Registration_Style__mdt</referenceTo>
+        <relationshipLabel>Event Status Templates</relationshipLabel>
+        <relationshipName>Event_Status_Templates</relationshipName>
+        <required>true</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Enabled_Editable__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this record will be enabled as a template.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>When checked, this record will be enabled as a template.</inlineHelpText>
+        <label>Is Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this record will become enabled as a template.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>When checked, this record will become enabled as a template.</inlineHelpText>
+        <label>DEPRECATED</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Event_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When the status is set as the current event status, the value of this field will be mapped to the Is Active field on the event.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>When the status is set as the current event status, the value of this field will be mapped to the Is Active field on the event.</inlineHelpText>
+        <label>Is Event Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Event_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When a status is set as the current event status, the value of this field will be mapped to the Is Published field on the event.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>When a status is set as the current event status, the value of this field will be mapped to the Is Published field on the event.</inlineHelpText>
+        <label>Is Event Published</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** REQUIRED ** Defines the timeline for an event&apos;s statuses, automatic event transitions will only occur in ascending order.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>** REQUIRED ** Defines the timeline for an event&apos;s statuses, automatic event transitions will only occur in ascending order.</inlineHelpText>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Status_Transition_Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** CONDITIONALLY REQUIRED ** SOQL query WHERE clause for automating the transition to this status on the Event. A value for this field is required when the Enable Transition for Status checkbox is checked.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>** CONDITIONALLY REQUIRED ** SOQL query WHERE clause for automating the transition to this status on the Event. A value for this field is required when the Enable Transition for Status checkbox is checked.</inlineHelpText>
+        <label>Status Transition Criteria</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <label>Event Status Template</label>
+    <pluralLabel>Event Status Templates</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

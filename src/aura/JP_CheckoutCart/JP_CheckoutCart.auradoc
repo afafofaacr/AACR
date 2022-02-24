@@ -1,0 +1,45 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation> 
+    <aura:description>
+        <p>Controller: JP_CheckoutController</p>
+        <p>
+            The <code>JP_CheckoutCart</code> component displays all items in a specific sales order and allows a user to pay that sales order.
+            The component is meant to be used in the portal and is dependent on a sales order being present in the url. The component prohibits users from removing
+            items that are not supposed to be removed (rules detailed below).
+        </p>
+        <p>
+            The component has 3 sections:
+            <ul>
+                <li>The first section displays the total amount due</li>
+                <li>The second section displays a list of all items in the sales order.</li>
+                <li>The third section is an out-of-the-box component from Fonteva called <code>OrderApi:PayNow</code></li>
+            </ul>
+        </p>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>
+            If the total payment is more than $0, the 'Process Payment' button leverages the <code>OrderApi:PayNow</code> components <code>processTokenPayment()</code> method to pay for the order and redirect to the confirmation receipt display.
+        </p>
+        <p>
+            If the total payment is $0, the 'Process Order' closes and posts the sales order which in turn creates a receipt and a transaction. The user is redirected to the confirmation receipt display upon success.
+        </p>
+        <p>
+            Membership items and Dues items cannot be removed from the cart.
+        </p>
+        <p>
+            The Blood Cancer Discovery Journal cannot be removed from the cart.
+        </p>
+        <p>
+            If a COMP Journal is deleted from the cart, the sales order is edited to reflect this change and a Decline Journal is added in its place.
+            Decline journals and tax items do not display in the cart. Tax items are displayed in section 1 under the 'Tax' output.
+        </p>
+        <p>
+            If an order is canceled, the associated sales order is deleted and the stored last accessed step is deleted. The user will be redirected to the portal profile page.
+        </p>
+
+
+    </aura:description>
+
+</aura:documentation>

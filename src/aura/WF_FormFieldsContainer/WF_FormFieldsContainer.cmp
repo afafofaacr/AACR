@@ -1,0 +1,76 @@
+<!--
+ - Created by afaf.awad on 10/12/2021.
+ -->
+
+<aura:component description="WF_FormFieldsContainer" controller="WF_FormFieldsContainerController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="recordId" type="Id" default="" description="SF Id of Survey Object"/>
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="dragCategory" type="String" description="Category from which drag item is pulling from"/>
+
+
+    <!--        FIELD OPTION LISTS-->
+    <aura:attribute name="PerInfoFields" type="List" />
+    <aura:attribute name="SciIntFields" type="List"/>
+    <aura:attribute name="CustomFields" type="List"/>
+    <aura:attribute name="HeaderFields" type="List"/>
+    <aura:attribute name="FooterFields" type="List"/>
+    <aura:attribute name="allBodyFields" type="List"/>
+
+    <!--        FIELDS DROPPED INTO LAYOUT-->
+    <aura:attribute name="headerDropFields" type="List" description="List of Fields dragged into Header."/>
+    <aura:attribute name="bodyDropFields" type="List" description="List of Fields dragged into body of form."/>
+    <aura:attribute name="footerDropFields" type="List" description="List of Fields dragged into Footer."/>
+
+    <!--        HANDLERS-->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler event="c:WF_AppEvent" action="{!c.handleDragDropEvent}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+<!--    LAYOUT PREVIEW-->
+    <lightning:layout aura:id="container">
+        <lightning:layoutItem size="8" padding="around-small" flexibility="grow">
+            <div class="slds-box slds-scrollable LayoutContainer">
+                <h1 class="slds-text-title_bold">Form Preview</h1>
+                <c:WF_FormFieldDropLayout survey="{!v.survey}" dropFields="{!v.headerDropFields}" fieldOptions="{!v.HeaderFields}" dragCategory="{!v.dragCategory}" sectionTitle="Header" sectionCategory="Header"/>
+                <div class="slds-m-top_small slds-m-bottom_small">
+                <c:WF_FormFieldDropLayout survey="{!v.survey}" dropFields="{!v.bodyDropFields}" fieldOptions="{!v.allBodyFields}" dragCategory="{!v.dragCategory}" sectionTitle="Body" sectionCategory="Body"/>
+                </div>
+                <c:WF_FormFieldDropLayout survey="{!v.survey}" dropFields="{!v.footerDropFields}" fieldOptions="{!v.FooterFields}" dragCategory="{!v.dragCategory}" sectionTitle="Footer" sectionCategory="Footer"/>
+            </div>
+        </lightning:layoutItem>
+
+        <!--        ************************************************************* TABS AND FIELDS ******************************************************************-->
+
+<!--        FIELD OPTIONS-->
+        <lightning:layoutItem size="4" padding="around-small" flexibility="grow">
+            <div class="slds-box slds-p-around_small LayoutContainer" style="border-color: black">
+                <lightning:tabset selectedTabId="bodyTab" variant="scoped"  >
+                    <lightning:tab label="Header" id="headerTab">
+                        <c:WF_FormFieldOptions fieldOptions="{!v.HeaderFields}" optionsTitle="Header Options"/>
+                    </lightning:tab>
+                    <lightning:tab label="Body" id="bodyTab">
+                        <div class="slds-box" style="background-color: lightgrey">
+                            <c:WF_FormFieldOptions fieldOptions="{!v.PerInfoFields}" optionsTitle="Personal Information"/>
+                            <div class="slds-m-top_small">
+                            <c:WF_FormFieldOptions fieldOptions="{!v.SciIntFields}" optionsTitle="Scientific Interest"/>
+                            </div>
+                        </div>
+                        <div class="slds-box slds-m-top_small" style="background-color: lightgrey">
+                            <c:WF_FormFieldOptions fieldOptions="{!v.CustomFields}" optionsTitle="Custom Fields"/>
+                        </div>
+                    </lightning:tab>
+                    <lightning:tab label="Footer" id="footerTab">
+                        <c:WF_FormFieldOptions fieldOptions="{!v.FooterFields}" optionsTitle="Footer Options"/>
+                    </lightning:tab>
+                </lightning:tabset>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

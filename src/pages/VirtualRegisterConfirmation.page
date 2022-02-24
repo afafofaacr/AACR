@@ -1,0 +1,341 @@
+<!--
+ - Created by lauren.lezberg on 5/15/2020.
+ -->
+
+<apex:page id="VirtualRegisterConfirmation"
+           showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           controller="VirtualRegisterConfirmationController"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           action="{!checkIsActive}">
+
+    <apex:slds />
+    <apex:includeLightning />
+
+    <style>
+
+        .txtLink{
+            text-decoration: underline;
+            color: #0070d2;
+        }
+
+        div#addeventatc1.addeventatc{
+            border:1px solid black;
+        }
+
+        .addeventatc_dropdown .copyx{
+            display:none;
+        }
+
+        .plain-box {
+            border: 1px solid white;
+            padding:10px;
+        }
+
+        .center {
+            margin: auto;
+            width: 310px;
+        }
+
+        .box{
+            color:white;
+            background-color: #50B848;
+            width: 300px;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            padding:10px;
+        }
+
+        .link{
+            width: 170px;
+            text-align: center;
+            border:1px solid black;
+            display: inline-block;
+            position: relative;
+            z-index: 99998;
+            font-family: "Open Sans",Roboto,"Helvetica Neue",Helvetica,Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;
+            color: #000!important;
+            font-weight: 600;
+            line-height: 100%;
+            background: #fff;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 13px 12px 12px 13px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            cursor: pointer;
+            -webkit-font-smoothing: antialiased!important;
+            outline-color: rgba(0,78,255,0.5);
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            box-shadow: 0 0 0 0.5px rgba(50,50,93,.17), 0 2px 5px 0 rgba(50,50,93,.1), 0 1px 1.5px 0 rgba(0,0,0,.07), 0 1px 2px 0 rgba(0,0,0,.08), 0 0 0 0 transparent!important;
+        }
+
+        body#main.pageFormatInternal.pg-loaded{
+            background-image: url({!backgroundImg});
+            background-position: center center;
+            background-size: cover;
+            /*background-image: url('https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegBkgd_1920x1080_2003059_2.jpg');*/
+        }
+
+        .login-brand{
+            margin:5px auto;
+            max-height:160px;
+        }
+
+        .center-text{
+            text-align:center;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            margin-top:15px;
+        }
+
+        .profile-btn {
+            background-color: #ffffff;
+            color: #50b848;
+            border: 0;
+            padding: 5px;
+            display: block;
+            outline: 0;
+            border-radius: 4px;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 350ms ease-in-out;
+            box-shadow: 3px 1px 7px rgba(0,0,0,0.25);
+            width: 94%;
+            margin: 20px auto;
+            border: 2px solid #50b848;
+        }
+        .profile-btn:hover {
+            box-shadow:0px 0px 7px rgba($black,0.5);
+            background-color: #50b848;
+            color: #ffffff;
+            border-color:#50b848;
+        }
+
+        .register-btn {
+            background-color: #ffffff;
+            color: #02A2E6;
+            border: 0;
+            padding: 5px;
+            display: block;
+            outline: 0;
+            border-radius: 4px;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 350ms ease-in-out;
+            box-shadow: 3px 1px 7px rgba(0,0,0,0.25);
+            width: 94%;
+            margin: 20px auto;
+            border: 2px solid #02A2E6;
+        }
+        .register-btn:hover {
+            background-color: #02A2E6;
+            box-shadow:0px 0px 7px rgba($black,0.5);
+            color: #ffffff;
+            border-color:#02A2E6;
+        }
+
+        .donate-btn {
+            background-color: #50b848;
+            color: #ffffff;
+            border: 0;
+            padding: 5px;
+            display: block;
+            outline: 0;
+            border-radius: 4px;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 350ms ease-in-out;
+            box-shadow: 3px 1px 7px rgba(0,0,0,0.25);
+            width: 94%;
+            margin: 20px auto;
+            border: 2px solid #50b848;
+        }
+        .donate-btn:hover {
+            box-shadow:0px 0px 7px rgba($black,0.5);
+            background-color: #ffffff;
+            color: #50b848;
+        }
+
+        .col-sm-12{
+            display:flex;
+        }
+
+        @media (min-width: 992px)
+            .col-md-4 {
+                width: 35%;
+            }
+
+
+
+            .account_modal_wrapper{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,0.5);}
+            .account_modal{text-align:center; max-width:500px;margin:62px auto 10px;box-shadow:1px 2px 2px #616161;border:1px solid #616161;border-radius:6px;bottom: unset !important;}
+            .account_modal .modal-body{padding:25px !important;}
+            .form-group{width:100% !important;display: flex;justify-content: center; margin: 0 auto 11px;}
+            .form-group label{width: 30%; text-align: right; margin-right: 20px;}
+            .account_modal .modal-footer button{font-size:14px !important;}
+            .form-group div{text-align:left;width:50%;}
+            .form-group div input{width:100%;}
+            .erroInputStyle { border: 1px solid red;}
+            .error_text{display: inherit;float: left;margin-top: 5px;color: red;}
+            .password-infoicon{cursor:pointer;position: absolute; right: -23px; top: 4px; border: 1px solid #ccc; border-radius: 50%; padding: 3px 7px; line-height: 11px; font-weight: bold; color: #0a5c96;}
+            .password-info{position: absolute; background: #fff; border: 1px solid #ccc; top: -98px; width: 100%; padding: 10px; font-size: 12px; text-align: left; min-width: 274px; right: -41px;}
+            span.password-info:after { content: ''; border-top: 12px solid #ccc; border-left: 8px solid transparent; border-right: 8px solid transparent; position: absolute; left: 87%; top: 100%; }
+
+    </style>
+
+
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
+
+    </head>
+
+
+    <apex:composition template="CPBase__template_skeleton" >
+
+        <apex:define name="pageTitle">Registration Confirmation</apex:define>
+
+        <apex:define name="pageStyles">
+            <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CPBase__emerald_1_0,'css/pages/login.min.css')}"/>
+            <link rel="stylesheet" href="https://aacr-april-virtual-event-vitlvinjjg-webappbucket-1hxvvpowvptzm.s3.amazonaws.com/style-chatbot-min.css"/>
+        </apex:define>
+
+
+        <apex:define name="pageMain">
+
+            <a href="/FreemanRedirect?id={!eventId}" target="_blank" id="mtngRedirect" style="display:none;"></a>
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+
+                        <!--<div class="well login-form">-->
+                        <div class="well">
+
+                            <div class="login-brand">
+                                <Framework:img src="{!headerImg}"/>
+                                <!--<Framework:img src="https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegPg_LogoTag_700x410_2003059_2.jpg" width="auto"/>-->
+                            </div>
+
+                            <Framework:messages />
+
+                            <apex:form id="form" forceSSL="true" styleClass="form-signin" acceptcharset="utf-8">
+
+                                <div class="slds-text-heading_medium text-center">
+                                    {!confirmationTxt}
+                                </div>
+                                <br/>
+                                <div class="text-center">
+                                    You will be receiving a confirmation email within the next 30 minutes
+                                </div>
+
+                                <br/>
+
+                                <br/>
+
+                                <div class="center">
+                                    <div style="margin-left:22%">
+                                        <a href="{!viewLink + '?regId=' + contactId}" class="link" target="_blank" >Virtual Meeting Platform</a>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <!--<div class="center">-->
+                                    <!--<a href="{!viewLink + '?regId=' + contactId}" class="link" target="_blank" >Click here to be redirected to the meeting now.</a>-->
+                                <!--</div>-->
+                                <!--<br/><br/>-->
+                                <div class="center">
+                                    <!--<div class="box">-->
+                                    <!--<strong>Save the date: </strong>-->
+                                    <!--<br/><br/>-->
+                                    <div style="margin-left:22%">
+                                        <div title="Add to Calendar" class="addeventatc">
+                                            Add to Calendar
+                                            <span class="start">{!event.EventApi__Start_Date_Time__c}</span>
+                                            <span class="end">{!event.EventApi__End_Date_Time__c}</span>
+                                            <span class="timezone">America/New_York</span>
+                                            <span class="title">{!event.EventApi__Display_Name__c}</span>
+                                            <span class="description"><apex:outputText value="{!event.Calendar_Invite_Msg__c}" escape="false"/></span>
+                                            <span class="location"><a href="{!viewLink}"/></span>
+                                        </div>
+                                    </div>
+                                    <!--</div>-->
+                                </div>
+                                <br/>
+                                <br/>
+                                <div class="center">
+                                    <div style="text-align:center;">
+                                        <a href="/MemberProfile" target="_blank" class="txtLink">Return to MyAACR</a>
+                                    </div>
+                                </div>
+
+                            </apex:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- START FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE AND CTA BUTTON -->
+            <div class="fluent-chat-app-embed">
+
+                <!-- FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE -->
+                <a href="#" class="fluent-preview-close w-inline-block"><img id="fluent-preview-close-img" src="https://s3.amazonaws.com/freeman-chatbot-assets/close.svg" width="18" alt=""/></a>
+                <div class="fluent-preview-chat">
+                    <div class="fluent-preview-icon"></div>
+                    <div class="fluent-preview-headline">Have a question about AACR Virtual Annual Meeting?</div>
+                    <div>Ask our virtual assistant chatbot.</div>
+                </div>
+                <!-- FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE -->
+
+                <!-- START FLUENT BY FREEMAN CHAT ICON -->
+                <div class="fluent-open-button"></div>
+                <!-- END FLUENT BY FREEMAN CHAT ICON -->
+
+            </div>
+            <!-- END FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE AND CTA BUTTON -->
+
+            <div class="iframe-cont-freeman hide-freeman">
+                <div class="fluent-chat">
+                    <div class="fluent-chat-app-main-container embed">
+                        <div class="fluent-app-background">
+                            <div class="fluent-background-header">
+                                <div class="fluent-profile-header">
+                                    <div class="fluent-profile-name"></div>
+                                </div>
+                            </div>
+                            <div class="chat-wrap">
+                                <iframe class="" id="theiFrame" style="position:absolute; height: 442px; width: 320px; margin-right: auto; margin-left: auto;  border-top-left-radius: 12px; border-top-right-radius: 12px; border: 0;" src="https://aacr-april-virtual-event-vitlvinjjg-webappbucket-1hxvvpowvptzm.s3.us-east-1.amazonaws.com/index.html" width="100%" height="100%"></iframe>
+                            </div>
+                            <div class="fluent-background-footer">
+                                <div class="fluent-sponsor-area">
+                                    <a href="https://www.freeman.com/solutions/by-expertise/digital/fluent?utm_source=FOL&utm_medium=chatbot&utm_campaign=chatbot_footer" target="_blank" class="fluent-sponsor-link w-inline-block"><img src="https://s3.amazonaws.com/freeman-chatbot-assets/fluent-icon-new.svg" width="32" alt="Fluent by Freeman" class="fluent-sponsor-icon-bottom"/><div class="fluent-sponsor-text"><strong>Learn how Chatbot helps your <br/>
+                                                virtual and live experience!</strong></div></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a data-w-id="5fce1ac3-01f6-3202-39d4-bbb1744369ac" href="#" class="fluent-close-button w-inline-block"><img src="https://s3.amazonaws.com/freeman-chatbot-assets/cancel.svg" alt="" class="fluent-close-image"/></a>
+                </div>
+            </div>
+            <script type="text/javascript" src="https://aacr-april-virtual-event-vitlvinjjg-webappbucket-1hxvvpowvptzm.s3.amazonaws.com/app-min.js"></script>
+        </apex:define>
+    </apex:composition>
+
+</apex:page>

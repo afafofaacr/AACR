@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>APXT_BPM__Conductor_Environment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ONLY USED BY CONGA SUPPORT
+
+* Recommended to remove from page layout when not in use *</description>
+        <externalId>false</externalId>
+        <label>Conductor Environment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>prod-</fullName>
+                    <default>true</default>
+                    <label>prod-</label>
+                </value>
+                <value>
+                    <fullName>staging-</fullName>
+                    <default>false</default>
+                    <label>staging-</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Consolidated_PDF_Output_File__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Combine PDFs into a single file when scheduling a consolidated Conductor routine and delivering to a Content Workspace.</inlineHelpText>
+        <label>Consolidated PDF Output File</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Content_Workspace_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of a Content Library where files from a scheduled Conductor process will be stored when the output mode is set to download.</inlineHelpText>
+        <label>Content Workspace ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Has_Query_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(  ISBLANK( APXT_BPM__Query_Id__c ) , 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Query ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Has_Record_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(  ISBLANK( APXT_BPM__Record_Id__c ) , 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Record ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Has_Report_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(  ISBLANK( APXT_BPM__Report_Id__c ) , 0, 1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Report ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Next_Run_Date_Display__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>APXT_BPM__Next_Run_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automatically populated by the Conductor schedule.</inlineHelpText>
+        <label>Next Run Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Next_Run_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Determined by &quot;Schedule&quot; button.  Do not edit this field manually.</inlineHelpText>
+        <label>Next Run Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Query_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of a Conga Query record that returns the list of Master Object record IDs. Optionally, the query may include other fields.</inlineHelpText>
+        <label>Query ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Record_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>An individual Salesforce record ID to use as a Master Object ID.</inlineHelpText>
+        <label>Record ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Report_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of a Salesforce Report that contains the list of Master Object IDs. Optionally, the report may include other columns.</inlineHelpText>
+        <label>Report ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Schedule_Description_Display__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>APXT_BPM__Schedule_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Automatically populated by the Conductor schedule.</inlineHelpText>
+        <label>Schedule Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Schedule_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Determined by &quot;Schedule&quot; button.  Do not edit this field manually.</inlineHelpText>
+        <label>Schedule Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Title__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__URL_Field_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the formula field that contains the converted Conga Composer button / link URL.</inlineHelpText>
+        <label>URL Field Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>APXT_BPM__Version__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to upgrade from prior versions of Conga Conductor.
+
+* Recommended to remove from page layout when not in use *</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>C8</fullName>
+                    <default>true</default>
+                    <label>C8</label>
+                </value>
+                <value>
+                    <fullName>C7</fullName>
+                    <default>false</default>
+                    <label>C7</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Conga Conductor</label>
+    <listViews>
+        <fullName>APXT_BPM__All</fullName>
+        <columns>NAME</columns>
+        <columns>APXT_BPM__Title__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Conductor-{0000}</displayFormat>
+        <label>Conductor Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Conga Conductors</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>APXT_BPM__Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>APXT_BPM__Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>APXT_BPM__Either_Report_or_Query_Id_must_be_suppli</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(  ISBLANK(APXT_BPM__Report_Id__c ), ISBLANK( APXT_BPM__Query_Id__c ), ISBLANK( APXT_BPM__Record_Id__c ))</errorConditionFormula>
+        <errorDisplayField>APXT_BPM__Report_Id__c</errorDisplayField>
+        <errorMessage>You must supply one of the following: a Report Id, a Query Id or a Record Id.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>APXT_BPM__Not_Both_a_Report_Id_and_a_Query_Id</fullName>
+        <active>true</active>
+        <errorConditionFormula>( APXT_BPM__Has_Query_Id__c +  APXT_BPM__Has_Record_Id__c +  APXT_BPM__Has_Report_Id__c ) &gt; 1</errorConditionFormula>
+        <errorDisplayField>APXT_BPM__Report_Id__c</errorDisplayField>
+        <errorMessage>You must supply *only one* of the following:  a Report Id, a Query Id or a Record Id.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>APXT_BPM__Query_Id_Length</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  APXT_BPM__Query_Id__c != &quot;&quot; ,
+
+OR( LEN(  APXT_BPM__Query_Id__c  ) &gt; 18 ,
+LEFT(  APXT_BPM__Query_Id__c , 1) != &quot;a&quot; ))</errorConditionFormula>
+        <errorDisplayField>APXT_BPM__Query_Id__c</errorDisplayField>
+        <errorMessage>The Query Id must be a 15- or 18-character Salesforce ID from a Conga Query</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>APXT_BPM__Record_Id_Length</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( APXT_BPM__Record_Id__c != &quot;&quot; ,
+
+LEN( APXT_BPM__Record_Id__c ) &gt; 18)</errorConditionFormula>
+        <errorDisplayField>APXT_BPM__Record_Id__c</errorDisplayField>
+        <errorMessage>The Record Id must be a 15- or 18-character Salesforce ID</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>APXT_BPM__Report_Id_Length</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  APXT_BPM__Report_Id__c != &quot;&quot; ,
+
+OR( LEN(  APXT_BPM__Report_Id__c  ) &gt; 18 ,
+LEFT(  APXT_BPM__Report_Id__c , 3) != &quot;00O&quot; ))</errorConditionFormula>
+        <errorDisplayField>APXT_BPM__Report_Id__c</errorDisplayField>
+        <errorMessage>The Report Id must be a 15- or 18-character Salesforce ID from a Report</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>APXT_BPM__URL_Field_Name_Required</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISBLANK( APXT_BPM__URL_Field_Name__c )</errorConditionFormula>
+        <errorDisplayField>APXT_BPM__URL_Field_Name__c</errorDisplayField>
+        <errorMessage>You must supply the API Name of the field that contains the Composer URL</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>APXT_BPM__Workspace_Id_Length</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  APXT_BPM__Content_Workspace_Id__c  != &quot;&quot; ,
+
+OR( LEN( APXT_BPM__Content_Workspace_Id__c ) &gt; 18 ,
+LEFT( APXT_BPM__Content_Workspace_Id__c , 3) != &quot;058&quot; ))</errorConditionFormula>
+        <errorDisplayField>APXT_BPM__Content_Workspace_Id__c</errorDisplayField>
+        <errorMessage>The Workspace Id must be a 15- or 18-character Salesforce ID from a Content Worksapce.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>APXT_BPM__Formula_Builder</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>650</height>
+        <linkType>url</linkType>
+        <masterLabel>Formula Builder</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/APXT_BPM__FormulaBuilderPage?mysid={!$Api.Session_ID}&amp;myserverurl={!$Api.Partner_Server_URL_290}&amp;myconductorid={!APXT_BPM__Conductor__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Launch</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Launch</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXT_BPM__Conductor_Launch?mysid={!$Api.Session_ID}&amp;myserverurl={!$Api.Partner_Server_URL_290}&amp;myconductorid={!APXT_BPM__Conductor__c.Id}</url>
+        <width>700</width>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Launch_C7</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>450</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Launch C7</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://{!SUBSTITUTE(TEXT(APXT_BPM__Conductor__c.APXT_BPM__Conductor_Environment__c), &quot;prod-&quot;, &quot;&quot;)}conductor.appextremes.com/apps/Conga/Conductor/Launch.aspx?
+Id={!APXT_BPM__Conductor__c.Id}
+&amp;SessionId={!$Api.Session_ID}
+&amp;ServerUrl={!$Api.Partner_Server_URL_290}
+&amp;ReportId={!APXT_BPM__Conductor__c.APXT_BPM__Report_Id__c}
+&amp;QueryId={!APXT_BPM__Conductor__c.APXT_BPM__Query_Id__c}
+&amp;RecordId={!APXT_BPM__Conductor__c.APXT_BPM__Record_Id__c}
+&amp;UrlFieldName={!APXT_BPM__Conductor__c.APXT_BPM__URL_Field_Name__c}</url>
+        <width>700</width>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Launch_C8</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Launch C8</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://{!SUBSTITUTE(TEXT(APXT_BPM__Conductor__c.APXT_BPM__Conductor_Environment__c), &quot;prod-&quot;, &quot;&quot;)}conductor.congamerge.com/conductor8/index.html?
+Id={!APXT_BPM__Conductor__c.Id}
+&amp;ReportId={!APXT_BPM__Conductor__c.APXT_BPM__Report_Id__c}
+&amp;QueryId={!APXT_BPM__Conductor__c.APXT_BPM__Query_Id__c}
+&amp;RecordId={!APXT_BPM__Conductor__c.APXT_BPM__Record_Id__c}
+&amp;UrlFieldName={!APXT_BPM__Conductor__c.APXT_BPM__URL_Field_Name__c}
+&amp;serverUrl={!API.Partner_Server_URL_330}</url>
+        <width>700</width>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Launch_Dev</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>450</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Launch</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://conductor.congamerge.com
+?SessionId={!$Api.Session_ID}
+&amp;ServerUrl={!$Api.Partner_Server_URL_290}
+&amp;Id={!APXT_BPM__Conductor__c.Id}
+&amp;ReportId={!APXT_BPM__Conductor__c.APXT_BPM__Report_Id__c}
+&amp;QueryId={!APXT_BPM__Conductor__c.APXT_BPM__Query_Id__c}
+&amp;RecordId={!APXT_BPM__Conductor__c.APXT_BPM__Record_Id__c}
+&amp;UrlFieldName={!APXT_BPM__Conductor__c.APXT_BPM__URL_Field_Name__c}</url>
+        <width>700</width>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Sample_List_View_Button</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Sample List View Button</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>// STEP 1: CHANGE THE NEXT LINE TO THE TYPE OF RECORDS YOU&apos;RE ACCESSING ON THE VIEW
+var idArray = {!GETRECORDIDS( $ObjectType.Opportunity )};
+
+// STEP 2: CHANGE THE NEXT LINE TO THE API NAME OF THE FIELD THAT CONTAINS THE CONGA COMPOSER URL
+var urlFieldName=&quot;ComposerFormula_URL__c&quot;;
+
+
+// DO NOT MODIFY ANYTHING BELOW THIS POINT ********************
+
+// YOU MAY PASS UP TO 50 IDS
+
+var CongaURL = &quot;https://conductor.congamerge.com&quot; +
+&quot;?MOID=&quot; + idArray +
+&quot;&amp;UrlFieldName=&quot;+urlFieldName;
+
+window.open( CongaURL, &quot;Conga&quot;, &quot;width=700,height=450,menubar=0&quot; );</url>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Schedule</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>630</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Schedule</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXT_BPM__Conductor_Schedule?mysid={!$Api.Session_ID}&amp;myserverurl={!$Api.Partner_Server_URL_290}&amp;myconductorid={!APXT_BPM__Conductor__c.Id}</url>
+        <width>800</width>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Schedule_C7</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule C7</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://{!SUBSTITUTE(TEXT(APXT_BPM__Conductor__c.APXT_BPM__Conductor_Environment__c), &quot;prod-&quot;, &quot;&quot;)}conductor.appextremes.com/apps/Conga/Conductor/Schedule.aspx?
+Id={!APXT_BPM__Conductor__c.Id}
+&amp;SessionId={!$Api.Session_ID}
+&amp;ServerUrl={!$Api.Partner_Server_URL_290}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__Schedule_C8</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>650</height>
+        <linkType>url</linkType>
+        <masterLabel>Schedule C8</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://{!SUBSTITUTE(TEXT(APXT_BPM__Conductor__c.APXT_BPM__Conductor_Environment__c), &quot;prod-&quot;, &quot;&quot;)}conductor.congamerge.com/conductor8/index.html?uiscreen=schedule
+&amp;Id={!APXT_BPM__Conductor__c.Id}
+&amp;SessionId={!$Api.Session_ID}
+&amp;ServerUrl={!$Api.Partner_Server_URL_290}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__View_Conga_Conductor_Dashboard</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>View Dashboard</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/APXT_BPM__ConductorDashboardButtonPage?mysid={!$Api.Session_ID}&amp;myserverurl={!$Api.Partner_Server_URL_290}&amp;myconductorid={!APXT_BPM__Conductor__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__View_Query</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Query</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if( &quot;{!APXT_BPM__Conductor__c.APXT_BPM__Query_Id__c}&quot; == &quot;&quot; )
+alert(&quot;Please paste a Query Id.&quot;);
+else
+window.open( &quot;/&quot; + &quot;{!APXT_BPM__Conductor__c.APXT_BPM__Query_Id__c}&quot; );</url>
+    </webLinks>
+    <webLinks>
+        <fullName>APXT_BPM__View_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Report</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if( &quot;{!APXT_BPM__Conductor__c.APXT_BPM__Report_Id__c}&quot; == &quot;&quot; )
+    alert(&quot;Please paste a Report Id.&quot;);
+else
+    window.open( &quot;/&quot; + &quot;{!APXT_BPM__Conductor__c.APXT_BPM__Report_Id__c}&quot; );</url>
+    </webLinks>
+</CustomObject>

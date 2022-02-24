@@ -1,0 +1,28 @@
+<!--
+ - Created by lauren.lezberg on 10/14/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_CheckoutController</p>
+        <p>
+            The <code>BackOfficeCheckout</code> component is a clone of <code>JP_Checkout</code> but with the addition of an extra payment tab for processing checks. It also has a section to add
+            a discount code to the order.
+        </p>
+        <p>
+            The <code>BackOfficeCheckout</code> component will have a 'Credit Card' tab as well as an 'Offline' tab. The credit card works just as it does in
+            <code>JP_Checkout</code>. The 'Offline' tab contains a button that says 'Process Offline Payment'. Once clicked, the screen will re-render with the same payment screen that was
+            previously used in Fonteva's Rapid Order Entry process. The component displayed is called <code>OrderApi:SalesOrders</code> The user will again select the 'Offline' tab from within
+            the <code>OrderApi:SalesOrders</code> component and process the order as normal.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>This component is available for join process use and is currently being used in the BackOfficeOrder and BackOfficeTicketing processes.</p>
+        <p>If the order total is zero dollars, neither the credit card form or check processing button appear. Only a 'Process Order' button will appear
+            which simply closes and posts the sales order. This will create a receipt and an associated transaction.</p>
+        <p>The membership item will always appear first in the cart and will not be removable.</p>
+        <p>The Blood Cancer Discovery Journal will not be removable from the cart.</p>
+        <p>If a COMP journal is removed from the cart, a declined journal will be added in its place to the sales order but will not be displayed in the cart.</p>
+        <p>Tax items will not be reflected in the cart but the tax total will be shown above across from the 'Tax Total' label.</p>
+    </aura:description>
+</aura:documentation>

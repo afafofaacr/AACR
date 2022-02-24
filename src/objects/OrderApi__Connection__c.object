@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Connections allow you to relate one Contact or Account to other Contacts and Accounts in the database.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Account related to the Connection. (Required if Contact is not populated)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account related to the Connection. (Required if Contact is not populated)</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships (Account)</relationshipLabel>
+        <relationshipName>Connections</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The Category of the related Connection Type.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(OrderApi__Connection_Type__r.OrderApi__Category__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** The Category of the related Connection Type.</inlineHelpText>
+        <label>Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Connected_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Connected Account of the Connection. (Required if Connected Contact not populated)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Connected Account of the Connection. (Required if Connected Contact not populated)</inlineHelpText>
+        <label>Connected Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships (Connected Account)</relationshipLabel>
+        <relationshipName>Connections2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Connected_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Connected Contact of the Connection. (Required if Connected Account not populated)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Connected Contact of the Connection. (Required if Connected Account not populated)</inlineHelpText>
+        <label>Connected Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Relationships (Connected Contact)</relationshipLabel>
+        <relationshipName>Connections</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Connected_To__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Link to either the Connected Contact or the Connected Account for the Connection.</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(OrderApi__Connected_Contact__c)),HYPERLINK(&quot;/&quot; &amp; OrderApi__Connected_Contact__c, OrderApi__Connected_Contact__r.FirstName &amp; &quot; &quot; &amp; OrderApi__Connected_Contact__r.LastName, &quot;_tab&quot;),HYPERLINK(&quot;/&quot; &amp; OrderApi__Connected_Account__c, OrderApi__Connected_Account__r.Name, &quot;_tab&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** Link to either the Connected Contact or the Connected Account for the Connection.</inlineHelpText>
+        <label>Connected To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Connection_Type2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**Required** Connection Type for the Connected Entity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Connection Type for the Connected Entity.</inlineHelpText>
+        <label>Connection Type</label>
+        <referenceTo>OrderApi__Connection_Type__c</referenceTo>
+        <relationshipLabel>Relationships (Connection Type)</relationshipLabel>
+        <relationshipName>Connections1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Connection_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**Required** Connection Type for the Primary Entity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Connection Type for the Primary Entity.</inlineHelpText>
+        <label>Connection Type</label>
+        <referenceTo>OrderApi__Connection_Type__c</referenceTo>
+        <relationshipLabel>Relationships (Connection Type)</relationshipLabel>
+        <relationshipName>Connections</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Contact related to the Connection. (Required if Account is not populated)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Contact related to the Connection. (Required if Account is not populated)</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Relationships (Contact)</relationshipLabel>
+        <relationshipName>Connections1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional information/notes about the Connection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional information/notes about the Connection.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the Connection was terminated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the Connection was terminated.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** The date the Connection was established.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The date the Connection was established.</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__System_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Field** Do not manually update/override. Automatically checked when the Connection was created by a trigger as the result of a new Connection inserted into the database.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Field** Do not manually update/override. Automatically checked when the Connection was created by a trigger as the result of a new Connection inserted into the database.</inlineHelpText>
+        <label>System Created</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Termination_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reason for terminating the connection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reason for terminating the connection.</inlineHelpText>
+        <label>Termination Reason</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Connection</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Connections ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Connections</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>OrderApi__Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Connected_Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Connected_Contact__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Category__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Connected_Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Connected_Contact__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>OrderApi__Account__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Category__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Connected_Account__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Connected_Contact__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Connected_To__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Connection_Type2__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Contact__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

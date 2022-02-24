@@ -1,0 +1,15 @@
+<!--
+ - Created by lauren.lezberg on 10/15/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>ItemQuickAddResults</code> component displays results from user input from the <code>ItemQuickAdd</code> component. It registers the <code>c:SelectedObjectRecordEvt</code>
+            event when a user selects a value from the list of results. This event signals the the <code>ItemQuickAdd</code> component that an item has been selected.
+        </p>
+    </aura:description>
+    <aura:example name="ItemQuickAddResults" ref="c:ItemQuickAddResults" label="ItemQuickAddResults">
+        Example for ItemQuickAddResults
+    </aura:example>
+</aura:documentation>

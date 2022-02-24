@@ -1,0 +1,22 @@
+/**
+ * Created by afaf.awad on 5/27/2021.
+ */
+
+.THIS .slds-listbox__option-text.slds-listbox__option-text_entity.slds-text-heading_medium{
+    font-size: .9rem;
+}
+
+/*.THIS ul.slds-listbox.slds-box_border.cDimensionTagSearch{*/
+/*    background-color: white;*/
+/*    position: absolute;*/
+/*    width: 13.4rem;*/
+/*    overflow: visible;*/
+/*}*/
+
+.THIS .slds-icon.slds-icon_small.resultIcon.slds-icon-standard-account.slds-icon_container{
+    margin: 3px 0 3px 3px;
+}
+
+.THIS .slds-listbox__option-text{
+    margin-top: 3px
+}

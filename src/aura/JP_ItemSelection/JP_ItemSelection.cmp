@@ -1,0 +1,195 @@
+<!--
+ - Created by lauren.lezberg on 1/8/2019.
+ -->
+
+<aura:component description="JP_ItemSelection" controller="JP_ProductFlowController">
+    <aura:attribute name="stepId" type="String" description="The step id of the Join_Step__mdt record associated with the current component"/>
+    <aura:attribute name="pageInfoMessage" type="String" description="Configurable message about page" />
+    <aura:attribute name="lines" type="List" description="List of sales order lines" default="[]"/>
+
+    <aura:attribute name="isRenew" type="Boolean" description="is a renewal join process"/>
+    <aura:attribute name="renewalsOpen" type="Boolean" description="renewals are open for the next year"/>
+    <aura:attribute name="currentYear" type="Integer" description="current year"/>
+    <aura:attribute name="nextYear" type="Integer" description="next year"/>
+
+    <aura:attribute name="bothYears" type="Boolean" description="membership is for both years" default="false"/>
+    <aura:attribute name="nextYearOnly" type="Boolean" description="membership is for next year only" default="false"/>
+    <aura:attribute name="thisYearOnly" type="Boolean" description="membership is for this year only" default="false"/>
+
+    <aura:attribute name="isLoading" type="Boolean" description="Component is loading data" default="true" />
+    <aura:attribute name="changingTerm" type="Boolean" description="processing term change request" default="false" />
+    <aura:attribute name="total" type="Decimal" description="total for all item prices"/>
+    <aura:attribute name="singlePrice" type="Decimal" description="1 yr item price"/>
+    <aura:attribute name="doublePrice" type="Decimal" description="2 yr item price"/>
+
+    <aura:attribute name="msg" type="String" description="any user messaging"/>
+    <aura:attribute name="isEmeritus" type="Boolean" description="is emeritus membership"/>
+    <aura:attribute name="hasVoluntaryDues" type="Boolean" description="has voluntary assessment selected"/>
+    <aura:attribute name="voluntaryAssessment" type="Object" description="emeritus voluntary assessment item"/>
+
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+            <c:AACRSpinner />
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-box slds-m-bottom_medium slds-p-around_medium" >
+                <aura:if isTrue="{!empty(v.lines)}">
+                    <div class="slds-box slds-theme_alert-texture slds-theme_error">
+                        <div class="slds-text-heading_medium">An error has occurred.</div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!not(empty(v.msg))}">
+                    <div class="slds-box slds-theme_alert-texture slds-theme--info">
+                        <div class="slds-text-heading_medium slds-text-align_center">{!v.msg}</div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!or(not(v.renewalsOpen),(and(v.renewalsOpen,v.total==0.0, not(v.isRenew ))), and(v.renewalsOpen, v.isRenew))}"> <!--renewals ARE NOT open OR its a regular renewal, process as usual -->
+                    <aura:iteration items="{!v.lines}" var="line">
+                        <aura:if isTrue="{!line.OrderApi__Item__r.Name!='Emeritus Voluntary Assessment'}">
+                        <lightning:card class="selected">
+                            <aura:set attribute="title">
+                                <div style="display:flex;" >
+                                    <img src="{!line.OrderApi__Item__r.OrderApi__Image_Path__c}" class="img-responsive slds-m-right_small"/>
+                                    <div class="slds-m-left_medium" style="align-self:center;">
+                                        <div style="font-size:30px; font-weight:600" class="slds-m-top_small">{!line.OrderApi__Item__r.Name}</div>
+                                        <div style="font-size:20px; font-weight:500 ">{!line.OrderApi__Item__r.OrderApi__Line_Description__c}</div>
+                                        <div style="font-size:20px; font-weight:500 ">{!line.OrderApi__Subscription_Plan__r.Name}</div>
+                                    </div>
+                                </div>
+                            </aura:set>
+                            <aura:set attribute="actions">
+                                <div style="font-size:30px; color: #56be4e;" class="slds-m-around_medium"><ui:outputCurrency value="{!line.OrderApi__Sale_Price__c}"/></div>
+                            </aura:set>
+                        </lightning:card>
+                        </aura:if>
+                    </aura:iteration>
+                    <aura:set attribute="else"> <!--renewals ARE open, add options -->
+                            <aura:if isTrue="{!and(v.total!=0.0, not(v.isRenew))}">
+                                <div style="display:flex;" class="slds-m-around_small" >
+                                    <img src="{!v.lines[0].OrderApi__Item__r.OrderApi__Image_Path__c}" class="img-responsive slds-m-right_small"/>
+                                    <div class="slds-m-left_medium" style="align-self:center;">
+                                        <div style="font-size:30px; font-weight:600" class="slds-m-top_small">{!v.lines[0].OrderApi__Item__r.Name}</div>
+                                    </div>
+                                </div>
+
+                                <aura:if isTrue="{!v.changingTerm}">
+                                    <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+                                        <c:AACRSpinner />
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <!-- This Year Only -->
+                                        <lightning:card aura:id="thisYear" class="{!v.thisYearOnly?'selected':''}">
+                                            <aura:set attribute="title">
+                                                <div style="display:flex;" >
+                                                    <div class="slds-m-left_medium" style="align-self:center;">
+                                                        <div style="font-size:20px; font-weight:500 ">{!v.currentYear + ' Membership'}</div>
+                                                        <div style="font-size:20px; color: #56be4e;"><ui:outputCurrency value="{!v.singlePrice}"/></div>
+
+                                                        <!--                                                        <div style="font-size:20px; color: #56be4e;"><ui:outputCurrency value="{!v.bothYears?v.lines[0].OrderApi__Sale_Price__c/2 : v.lines[0].OrderApi__Sale_Price__c}"/></div>-->
+                                                    </div>
+                                                </div>
+                                            </aura:set>
+                                            <aura:set attribute="actions">
+                                                <div class="slds-align_absolute-center">
+                                                    <lightning:buttonIcon aura:id="addThisYear" onclick="{!c.changeTerm}" value="thisYear" iconName="utility:add" size="large" variant="brand" alternativeText="Add to cart" disabled="{!v.thisYearOnly}" />
+                                                </div>
+                                            </aura:set>
+
+                                        </lightning:card>
+
+                                        <!-- Next year only -->
+                                        <lightning:card aura:id="nextYear" class="{!v.nextYearOnly?'selected':''}">
+                                            <aura:set attribute="title">
+                                                <div style="display:flex;" >
+                                                    <div class="slds-m-left_medium" style="align-self:center;">
+                                                        <div style="font-size:20px; font-weight:500 ">{!v.nextYear + ' Membership'}</div>
+                                                        <div style="font-size:20px; color: #56be4e;"><ui:outputCurrency value="{!v.singlePrice}"/></div>
+
+                                                        <!--                                                        <div style="font-size:20px; color: #56be4e;"><ui:outputCurrency value="{!v.bothYears?v.lines[0].OrderApi__Sale_Price__c/2 : v.lines[0].OrderApi__Sale_Price__c}"/></div>-->
+                                                    </div>
+                                                </div>
+                                            </aura:set>
+                                            <aura:set attribute="actions">
+                                                <div style="display:flex;" >
+                                                    <div class="slds-align_absolute-center">
+                                                        <lightning:buttonIcon aura:id="addNextYear" onclick="{!c.changeTerm}" value="nextYear" iconName="utility:add" size="large" variant="brand" alternativeText="Add to cart" disabled="{!v.nextYearOnly}" />
+                                                    </div>
+                                                </div>
+                                            </aura:set>
+                                        </lightning:card>
+
+                                        <!-- This year and Next year -->
+                                        <lightning:card aura:id="bothYears" class="{!v.bothYears?'selected':''}">
+                                            <aura:set attribute="title">
+                                                <div style="display:flex;" >
+                                                    <div class="slds-m-left_medium" style="align-self:center;">
+                                                        <div style="font-size:20px; font-weight:500 ">{!v.currentYear + ' - ' + v.nextYear + ' Membership'}</div>
+                                                        <div style="font-size:20px; color: #56be4e;"><ui:outputCurrency value="{!v.doublePrice}"/></div>
+
+                                                        <!--                                                        <div style="font-size:20px; color: #56be4e;"><ui:outputCurrency value="{!v.bothYears?v.lines[0].OrderApi__Sale_Price__c : v.lines[0].OrderApi__Sale_Price__c * 2}"/></div>-->
+                                                    </div>
+                                                </div>
+                                            </aura:set>
+                                            <aura:set attribute="actions">
+                                                <div style="display:flex;" >
+                                                    <div class="slds-align_absolute-center">
+                                                        <lightning:buttonIcon aura:id="addBothYears" onclick="{!c.changeTerm}" value="bothYears" iconName="utility:add" size="large" variant="brand" alternativeText="Add to cart" disabled="{!v.bothYears}" />
+                                                    </div>
+                                                </div>
+                                            </aura:set>
+                                        </lightning:card>
+                                    </aura:set>
+                                </aura:if>
+                        </aura:if>
+                    </aura:set>
+                </aura:if>
+
+                <aura:if isTrue="{!v.isEmeritus}">
+                    <lightning:card aura:id='voluntaryAssessment' class="{!v.hasVoluntaryDues?'selected':''}">
+                        <aura:set attribute="title">
+                            <div style="display:flex;" >
+                                <div class="slds-m-left_medium" style="align-self:center;">
+                                    <div style="font-size:30px; font-weight:600" class="slds-m-top_small">{!v.voluntaryAssessment.Name}</div>
+                                    <div style="font-size:20px; font-weight:500 ">{!v.voluntaryAssessment.OrderApi__Line_Description__c}</div>
+                                    <div style="font-size:20px; color: #56be4e;"><ui:outputCurrency value="{!v.voluntaryAssessment.OrderApi__Price__c}"/></div>
+                                </div>
+                            </div>
+                        </aura:set>
+                        <aura:set attribute="actions">
+                            <aura:if isTrue="{!v.hasVoluntaryDues}">
+                                <lightning:buttonIcon iconName="utility:close" size="large" variant="brand" alternativeText="Remove from cart" onclick="{!c.removeVoluntaryDues}" />
+                                <aura:set attribute="else">
+                                    <lightning:buttonIcon iconName="utility:add" size="large" variant="brand" alternativeText="Add to cart" onclick="{!c.addVoluntaryDues}" />
+                                </aura:set>
+                            </aura:if>
+                        </aura:set>
+                    </lightning:card>
+                </aura:if>
+
+
+
+                <!--<aura:if isTrue="{!and(v.renewalsOpen,not(v.nextYearAdded))}">-->
+                    <!--<lightning:card class="slds-p-around_medium">-->
+                        <!--<div class="slds-text-heading_medium slds-align_absolute-center">This membership will expire December 31, {!v.currentYear}. Would you like to pay for {!v.currentYear + 1} also?</div>-->
+                        <!--<div class="slds-align_absolute-center slds-m-top_medium">-->
+                            <!--<lightning:button label="{!'Add ' + v.nextYear + ' Dues'}" variant="brand" class="slds-text-heading_medium slds-p-around_small" onclick="{!c.addNextYearsDues}" />-->
+                        <!--</div>-->
+                    <!--</lightning:card>-->
+                <!--</aura:if>-->
+                <!--<aura:if isTrue="{!and(v.renewalsOpen,v.nextYearAdded)}">-->
+                    <!--<lightning:card class="slds-p-around_medium">-->
+                        <!--<div class="slds-align_absolute-center slds-m-top_medium">-->
+                            <!--<lightning:button label="{!'Remove ' + v.nextYear + ' Dues'}" variant="brand" class="slds-text-heading_medium slds-p-around_small" onclick="{!c.removeNextYearsDues}" />-->
+                        <!--</div>-->
+                    <!--</lightning:card>-->
+                <!--</aura:if>-->
+            </div>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

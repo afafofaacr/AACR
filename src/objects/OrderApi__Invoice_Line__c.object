@@ -1,0 +1,1245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Invoice Lines hold the detail for a Invoice.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>CPBase__InvoiceItems</fullName>
+        <description>Used in Invoices</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Item__r.OrderApi__Display_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Item__r.OrderApi__Line_Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Quantity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Sale_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Total__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>InvoiceItems</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>OrderApi__Invoice_Line_Fieldset</fullName>
+        <availableFields>
+            <field>OrderApi__Activation_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Adjustment_Reason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Auto_Calculate_Activation_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Business_Group__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Calculate_Shipping_Details__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Credit_Memo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Deferred_Revenue_Adjustment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__End_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__GL_Account__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Invoice__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>IsDeleted</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Is_Adjustment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Is_Posted__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Is_Renewal__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Is_Shipping_Rate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Is_Tax__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Item_Class__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Item__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Line_Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Parent_Sales_Order_Line__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Posted_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Price_Override__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Price_Rule__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Sales_Order_Line__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Shipping_City__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Shipping_Contact__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Shipping_Country__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Shipping_Postal_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Shipping_State__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Shipping_Street__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Subscription_Plan__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Subscription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Subtotal__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>SystemModstamp</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Tax_Override__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OrderApi__Tax_Percent__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>A custom fieldset containing the default fields for an invoice&apos;s details.</description>
+        <displayedFields>
+            <field>OrderApi__Quantity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Appeal_Line_Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__List_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Sale_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OrderApi__Total__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Invoice Line Fieldset</label>
+    </fieldSets>
+    <fields>
+        <fullName>Appeal_Line_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>OrderApi__Sales_Order_Line__r.OrderApi__Sales_Order__r.Opportunity__r.c4g_Appeal_Code__r.c4g_Description__c</formula>
+        <label>Line Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__AR_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Identifies the GL Account used for A/R transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the GL Account used for A/R transactions.</inlineHelpText>
+        <label>A/R Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>InvoiceLines</relationshipLabel>
+        <relationshipName>InvoiceLines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Activation_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override Conditionally Required ** The date the Subscription will be activated is calculated based on conditions set on the related Subscription Plan and can be manually over-ridden if &quot;Auto Calculate Activation Date&quot; is unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override Conditionally Required ** The date the Subscription will be activated is calculated based on conditions set on the related Subscription Plan and can be manually over-ridden if &quot;Auto Calculate Activation Date&quot; is unchecked.</inlineHelpText>
+        <label>Activation Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Adjustment_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Select the reason for the adjustment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the reason for the adjustment.</inlineHelpText>
+        <label>Adjustment Reason</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incorrect Pricing Applied</fullName>
+                    <default>false</default>
+                    <label>Incorrect Pricing Applied</label>
+                </value>
+                <value>
+                    <fullName>Manager Override</fullName>
+                    <default>false</default>
+                    <label>Manager Override</label>
+                </value>
+                <value>
+                    <fullName>Customer Loyalty Discount</fullName>
+                    <default>false</default>
+                    <label>Customer Loyalty Discount</label>
+                </value>
+                <value>
+                    <fullName>Misc. Adjustments</fullName>
+                    <default>false</default>
+                    <label>Misc. Adjustments</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Adjustments__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Sum of all adjustments, both positive and negative, applied to this invoice line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all adjustments, both positive and negative, applied to this invoice line.</inlineHelpText>
+        <label>Adjustments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Amount_Paid__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Sum of all payments applied to this invoice line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all payments applied to this invoice line.</inlineHelpText>
+        <label>Amount Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Amount_Refunded__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Sum of all refunds applied to this invoice line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all refunds applied to this invoice line.</inlineHelpText>
+        <label>Amount Refunded</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Auto_Calculate_Activation_Date__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Valid if the Sales Order Line is related to a &quot;Subscription&quot; Item. When checked, the system will automatically calculate the &quot;Activation Date&quot; based on conditions set on the selected &quot;Subscription Plan&quot;. Defaults checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Valid if the Sales Order Line is related to a &quot;Subscription&quot; Item. When checked, the system will automatically calculate the &quot;Activation Date&quot; based on conditions set on the selected &quot;Subscription Plan&quot;. Defaults checked.</inlineHelpText>
+        <label>Auto Calculate Activation Date</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Balance_Due__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field identifies the remaining balance unpaid for this invoice line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field identifies the remaining balance unpaid for this invoice line.</inlineHelpText>
+        <label>Balance Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Default value is mapped from the parent invoice. The Business Group controls what items are available to associate with the invoice line. If no value exists, all active items will be allowed to be associated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Default value is mapped from the parent invoice. The Business Group controls what items are available to associate with the invoice line. If no value exists, all active items will be allowed to be associated.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Calculate_Shipping_Details__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Default checked. Copies the shipping information from the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default checked. Copies the shipping information from the invoice.</inlineHelpText>
+        <label>Calculate Shipping Details</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is populated to show the related contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is populated to show the related contact.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Invoice Lines</relationshipLabel>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Credit_Memo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Link to the Credit Memo record, when an overpayment is made.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Link to the Credit Memo record, when an overpayment is made.</inlineHelpText>
+        <label>Credit Memo</label>
+        <referenceTo>OrderApi__Credit_Memo__c</referenceTo>
+        <relationshipLabel>Invoice Lines</relationshipLabel>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Credits_Applied__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Sum of all payments received using credits on the account for the Invoice Line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Sum of all payments received using credits on the account received for the Invoice Line.</inlineHelpText>
+        <label>Credits Applied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Deferred_Revenue_Adjustment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Creates Deferred Revenue adjustments when checked for Adjustments.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Creates Deferred Revenue adjustments when checked for Adjustments.</inlineHelpText>
+        <label>Deferred Revenue Adjustment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override Conditionally Required ** The date the Subscription will be ended is calculated based on conditions set on the related Subscription Plan and Activation Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override Conditionally Required ** The date the Subscription will be ended is calculated based on conditions set on the related Subscription Plan and Activation Date.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Required/Override** Link to the related GL Account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Required/Override** Link to the related GL Account.</inlineHelpText>
+        <label>GL Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Populated for adjustments, this field relates the invoice line to a parent invoice line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Populated for adjustments, this field relates the invoice line to a parent invoice line.</inlineHelpText>
+        <label>Parent Invoice Line</label>
+        <referenceTo>OrderApi__Invoice_Line__c</referenceTo>
+        <relationshipLabel>Invoice Lines</relationshipLabel>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** All Invoice Lines require a linked Invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** All Invoice Lines require a linked Invoice.</inlineHelpText>
+        <label>Invoice</label>
+        <referenceTo>OrderApi__Invoice__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Adjustment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the system will not the consider the line in inventory calculations. Adjustment lines are the only type of lines that can be added to invoices w/o payments that have posted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the system will not the consider the line in inventory calculations. Adjustment lines are the only type of lines that can be added to invoices w/o payments that have posted.</inlineHelpText>
+        <label>Is Adjustment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Child_Line__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field was created as a system field to assist in the calculation of adjustments on the Invoice object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field was created as a system field to assist in the calculation of adjustments on the Invoice object.</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Posted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Only use for Invoice Line Adjustments related to Posted Invoices** When checked, the adjustment line is posted and a Transaction is created in the system.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Only use for Invoice Line Adjustments related to Posted Invoices** When checked, the adjustment line is posted and a Transaction is created in the system.</inlineHelpText>
+        <label>Is Posted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Renewal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, related Invoice Line is considered as &quot;Subscription Renewal&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, related Invoice Line is considered as &quot;Subscription Renewal&quot;.</inlineHelpText>
+        <label>Is Renewal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Shipping_Rate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the Invoice Line that is being used for shipping.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the checkbox to have this Invoice Line represent shipping.</inlineHelpText>
+        <label>Is Shipping Rate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Tax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the Invoice Line that is being used for tax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the Invoice Line that is being used for tax.</inlineHelpText>
+        <label>Is Tax</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated / Override ** Link to the related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated / Override ** Link to the related Item Class.</inlineHelpText>
+        <label>Item Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Invoice Lines</relationshipLabel>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the item related to the record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the item related to the record.</inlineHelpText>
+        <label>Item</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Line_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional line description will be added to invoices, receipts, and detailed customer statements. If blank, the value of this field will match the value of the related item&apos;s &quot;Receipt Description&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional line description will be added to invoices, receipts, and detailed customer statements. If blank, the value of this field will match the value of the related item&apos;s &quot;Receipt Description&quot; field.</inlineHelpText>
+        <label>Line Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__List_Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The standard price for the item selected on the invoice line.</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Item__r.OrderApi__Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** The standard price for the item selected on the invoice line.</inlineHelpText>
+        <label>List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Parent_Sales_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Link to the related Parent Sales Order Line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Link to the related Parent Sales Order Line.</inlineHelpText>
+        <label>Parent Sales Order Line</label>
+        <referenceTo>OrderApi__Sales_Order_Line__c</referenceTo>
+        <relationshipName>Child_Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</inlineHelpText>
+        <label>Payment Priority</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Posted_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Valid for adjustments only. Default is blank, populates with the current date&apos;s value when a line is flagged as &quot;Is Adjustment&quot; and &quot;Is Posted&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Valid for adjustments only. Default is blank, populates with the current date&apos;s value when a line is flagged as &quot;Is Adjustment&quot; and &quot;Is Posted&quot;.</inlineHelpText>
+        <label>Posted Date (Adjustment)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Price_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Overrides the calculation of price based on the most appropriate price for the purchasing customer. Default is unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Overrides the calculation of price based on the most appropriate price for the purchasing customer. Default is unchecked.</inlineHelpText>
+        <label>Price Override</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Price_Rule__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The price rule related to the invoice line. When added or changed, the unit price will reflect the price defined on the price rule.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The price rule related to the invoice line. When added or changed, the unit price will reflect the price defined on the price rule.</inlineHelpText>
+        <label>Price Rule</label>
+        <referenceTo>OrderApi__Price_Rule__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The quantity of Items to include on the Invoice Detail. Required if the Item does not have &quot;Disable Price Rules&quot; checked. Default 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The quantity of Items to include on the Invoice Detail. Required if the Item does not have &quot;Disable Price Rules&quot; checked. Default 1.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sale_Price__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** The price per-unit for the item sold on the invoice line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** The price per-unit for the item sold on the invoice line.</inlineHelpText>
+        <label>Sale Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sales_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Link to the related Sales Order Line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Link to the related Sales Order Line.</inlineHelpText>
+        <label>Sales Order Line</label>
+        <referenceTo>OrderApi__Sales_Order_Line__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional shipping city for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping City&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional shipping city for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping City&quot; field.</inlineHelpText>
+        <label>Shipping City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Contact__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional shipping contact for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping Contact&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional shipping contact for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping Contact&quot; field.</inlineHelpText>
+        <label>Shipping Contact</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional shipping country for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping Country&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional shipping country for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping Country&quot; field.</inlineHelpText>
+        <label>Shipping Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Postal_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional shipping postal code for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping Postal Code&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional shipping postal code for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping Postal Code&quot; field.</inlineHelpText>
+        <label>Shipping Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional shipping state for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping State&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional shipping state for the item&apos;s ordered on the invoice line. If left blank, the value of this field will be updated with the value of the parent invoice&apos;s &quot;Shipping State&quot; field.</inlineHelpText>
+        <label>Shipping State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Shipping_Street__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Conditional** Shipping Street derives from the Contact Mailing Street or the Account Shipping Street when Calculate Shipping Details is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Conditional** Shipping Street derives from the Contact Mailing Street or the Account Shipping Street when Calculate Shipping Details is checked.</inlineHelpText>
+        <label>Shipping Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to the related plan that controls Activation and Expiration dates related to any Subscription Item. Required when the Invoice Line is linked to a Item that is the child of a &quot;Subscription&quot; Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to the related plan that controls Activation and Expiration dates related to any Subscription Item. Required when the Invoice Line is linked to a Item that is the child of a &quot;Subscription&quot; Item Class.</inlineHelpText>
+        <label>Subscription Plan</label>
+        <referenceTo>OrderApi__Subscription_Plan__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Subscription that is being upgraded or renewed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Subscription that is being upgraded or renewed.</inlineHelpText>
+        <label>Subscription (Upgrade/Renew)</label>
+        <referenceTo>OrderApi__Subscription__c</referenceTo>
+        <relationshipName>Invoice_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subtotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Sale Price * Quantity</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Sale_Price__c * OrderApi__Quantity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** Sale Price * Quantity</inlineHelpText>
+        <label>Subtotal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Tax_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field is used to override any tax calculations by the system.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to override any tax calculations by the system.</inlineHelpText>
+        <label>Tax Override</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Tax_Percent__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Combined with the Parent Invoice Line&apos;s Sales Price, this field is used to calculate the tax amount for the related item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Combined with the Parent Invoice Line&apos;s Sales Price, this field is used to calculate the tax amount for the related item.</inlineHelpText>
+        <label>Tax Percent</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Total__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Quantity * Sale Price</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Quantity * Sale Price</inlineHelpText>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Invoice Line</label>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>Invoice Line ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Invoice Lines</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Invoice__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Item_Class__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Item__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Quantity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Sale_Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Subtotal__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Total__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>OrderApi__Invoice__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Is_Adjustment__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Business_Group__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Item__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Item_Class__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Invoice__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Item_Class__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Item__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Quantity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Sale_Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Subtotal__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Total__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>OrderApi__Business_Group__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Invoice__c</searchFilterFields>
+        <searchFilterFields>OrderApi__GL_Account__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Item__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Item_Class__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>OrderApi__Create_Adjustments</fullName>
+        <availability>online</availability>
+        <description>Combined with action checkboxes, this button quickly creates adjustment lines for a posted invoice.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Create Adjustments</masterLabel>
+        <openType>replace</openType>
+        <page>OrderApi__create_invoice_adjustments</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

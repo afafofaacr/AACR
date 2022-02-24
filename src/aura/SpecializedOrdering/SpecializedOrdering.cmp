@@ -1,0 +1,208 @@
+<!--
+ - Created by lauren.lezberg on 2/2/2021.
+ -->
+
+<aura:component description="SpecializedOrdering" controller="SpecializedOrderingController"
+                implements="force:appHostable">
+    <aura:attribute name="accountId" type="String" description="Id of selected account"/>
+    <aura:attribute name="salesOrderId" type="String" description="ID of sales order being processed"/>
+    <aura:attribute name="selectedItems" type="List" description="list of selected items"/>
+    <aura:attribute name="invoices" type="List" description="list of created invoices"/>
+    <aura:attribute name="total" type="Decimal" description="total of order" default="0.00"/>
+    <aura:attribute name="showPayment" type="Boolean" default="false" description="show payment form"/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="is cmp processing"/>
+
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Payment', 'value': 'payment'},
+    {'label': 'Invoice', 'value': 'invoice'}
+    ]"/>
+    <aura:attribute name="value" type="String" default="payment"/>
+
+    <aura:attribute name="availableObjects" type="List" default="[]"/>
+    <aura:attribute name="objectOptions" type="List" default="[]"/>
+    <aura:attribute name="objAPIName" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card title="Specialized Order Entry" iconName="standard:orders" class="slds-p-around_large">
+        <div class="slds-m-around_medium">
+            <div class="slds-grid slds-gutters">
+                <div class="{!v.showPayment?'slds-col slds-size_2-of-3':'slds-col'}">
+                    <lightning:radioGroup aura:id="typeSelect"
+                                          label="Type"
+                                          options="{! v.options }"
+                                          value="{! v.value }"
+                                          onchange="{!c.handleTypeToggle}"
+                                          type="button"/>
+<!--                    <div class="slds-grid">-->
+<!--                        <abbr class="slds-required">*</abbr>-->
+                    <c:CustomLookup aura:id="accountLookup" objectAPIName="Account" allowNewRecord="false"
+                                    IconName="standard:account" label="Account" isRequired="true"
+                                    selectedId="{!v.accountId}"/>
+<!--                    </div>-->
+                    <aura:if isTrue="{!v.value=='invoice'}">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:input aura:id="email" type="email" label="Customer Email" required="{!v.value=='invoice'}"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:input aura:id="dueDate" type="date" label="Due Date" required="{!v.value=='invoice'}"/>
+                            </div>
+                        </div>
+                    </aura:if>
+
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-2">
+                    <lightning:combobox aura:id="fieldName" label="Linked Object" placeholder="Select Object" options="{! v.objectOptions }" onchange="{! c.handleChange }"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <aura:if isTrue="{!not(empty(v.objAPIName))}">
+                    <c:CustomLookup aura:id="recordLookup" objectAPIName="{!v.objAPIName}" allowNewRecord="false"
+                                    label="Record" IconName="standard:record"/>
+                    </aura:if>
+                        </div>
+                    </div>
+
+
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-2">
+                            <c:ItemQuickAdd aura:id="itemLookup"
+                                            filterString="OrderApi__Is_Active__c = true AND OrderApi__Item_Class__r.Name='Specialized Items'"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <div class="slds-align_bottom" style="margin-top:1.55rem;">
+                                <lightning:button label="{!v.processing?'Processing...': 'Add to Order'}"
+                                                  variant="brand"
+                                                  onclick="{!c.addItemToSalesOrder}" disabled="{!v.processing}"/>
+                            </div>
+                        </div>
+                        <!--            <div class="slds-col">-->
+                        <!--                <div class="slds-float_right slds-text-heading_medium" style="margin-top:3rem;">-->
+                        <!--                    Total:-->
+                        <!--                    <ui:outputCurrency value="{!v.total}"-->
+                        <!--                                       class="bold slds-text-heading_medium slds-m-left_small slds-m-right_small"/>-->
+                        <!--                </div>-->
+                        <!--            </div>-->
+                    </div>
+
+
+                    <aura:if isTrue="{!not(empty(v.selectedItems))}">
+                            <div class="slds-clearfix">
+                                <div class="slds-float_left">
+                                    <div class="slds-text-title_bold slds-m-top_large">Order:</div>
+                                </div>
+                            <div class="slds-float_right slds-text-heading_medium slds-align_bottom" style="margin-top:1rem;">
+                                Total:
+                                <ui:outputCurrency value="{!v.total}"
+                                                   class="bold slds-text-heading_medium slds-m-left_small slds-m-right_small"/>
+                            </div>
+                            </div>
+                    </aura:if>
+                    <div class="slds-card">
+                        <aura:if isTrue="{!v.isLoading}">
+                            <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+                                <c:AACRSpinner/>
+                            </div>
+                            <aura:set attribute="else">
+                                    <aura:iteration items="{!v.selectedItems}" var="item">
+                                        <div class="slds-grid slds-box">
+                                            <div class="slds-col slds-size_11-of-12">
+                                                <div class="slds-text-heading_medium">{!item.Name}</div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-12">
+                                                <div class="slds-float_right">
+                                                    <div class="slds-grid slds-gutters">
+                                                        <div class="slds-col">
+                                                            <div class="slds-text-heading_medium">
+                                                                <ui:outputCurrency value="{!item.OrderApi__Price__c}"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-col">
+                                                            <lightning:buttonIcon iconName="utility:close" size="large"
+                                                                                  variant="brand"
+                                                                                  alternativeText="Remove item"
+                                                                                  onclick="{!c.removeItemFromSalesOrder}"
+                                                                                  value="{!item.Id}"
+                                                                                  disabled="{!v.processing}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                    </aura:iteration>
+
+
+                            </aura:set>
+                        </aura:if>
+                    </div>
+
+                    <div class="slds-align_absolute-center slds-m-top_medium">
+
+                        <aura:if isTrue="{!v.value=='payment'}">
+                            <lightning:button label="{!v.processing?'Processing...':'Pay Now'}" variant="brand" onclick="{!c.payNow}"
+                                              disabled="{!or(or(empty(v.selectedItems), v.prcessing), v.showPayment)}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.value=='invoice'}">
+                            <lightning:button label="{!v.processing?'Processing...':'Send Invoice'}" variant="brand" onclick="{!c.sendInvoice}"
+                                              disabled="{!or(empty(v.selectedItems), v.processing)}"/>
+                        </aura:if>
+                    </div>
+                </div>
+                <aura:if isTrue="{!v.showPayment}">
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning:card title="Payment" class="slds-p-around_medium">
+<!--                            <c:PaymentBillingAddress aura:id="ba"/>-->
+                            <iframe id="iframe" src="{!'/apex/StripeCheckout?reqAddr=false&amp;salesOrder=' + v.salesOrderId}" height="290"/>
+                        </lightning:card>
+                    </div>
+                </aura:if>
+            </div>
+
+
+        </div>
+    </lightning:card>
+    <aura:if isTrue="{!and(not(empty(v.invoices)), v.value=='invoice')}">
+        <lightning:card title="Invoices Processed" class="slds-p-around_medium slds-m-bottom_medium">
+            <table class="slds-table slds-table--bordered">
+                <thead>
+                <tr class="slds-text-heading--label">
+                    <th scope="col">
+                        <span class="slds-truncate">Invoice</span>
+                    </th>
+                    <th scope="col">
+                        <span class="slds-truncate">Sales Order</span>
+                    </th>
+                    <th scope="col">
+                        <span class="slds-truncate">Account</span>
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+            <aura:iteration items="{!v.invoices}" var="inv" indexVar="{!idx}">
+                <tr class="slds-hint-parent">
+                    <td data-label="stage">
+                        <span class="slds-truncate">
+                            <a href="{!'/' + inv.Id}">{!inv.Name}</a>
+                        </span>
+                    </td>
+                    <td data-label="stage">
+                        <span class="slds-truncate">
+                            <a href="{!'/' + inv.OrderApi__Sales_Order__c}">{!inv.OrderApi__Sales_Order__r.Name}</a>
+                        </span>
+                    </td>
+                    <td data-label="stage">
+                        <span class="slds-truncate">
+                            <a href="{!'/' + inv.OrderApi__Account__c}">{!inv.OrderApi__Account__r.Name}</a>
+                        </span>
+                    </td>
+                </tr>
+            </aura:iteration>
+                </tbody>
+
+            </table>
+        </lightning:card>
+    </aura:if>
+
+</aura:component>

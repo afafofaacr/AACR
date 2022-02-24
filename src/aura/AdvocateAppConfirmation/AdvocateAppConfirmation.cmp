@@ -1,0 +1,117 @@
+<!--
+ - Created by lauren.lezberg on 7/14/2021.
+ -->
+
+<aura:component description="AdvocateAppConfirmation" controller="AdvocateAppConfirmationController">
+    <aura:attribute name="imgURL" type="String" description="event image url"/>
+    <aura:attribute name="event" type="BR_Event__c" description="event object"/>
+    <aura:attribute name="eventDate" type="String" description="event dates"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!--    <ltng:require styles="{!$Resource.BrEvents + '/css/style.css'}"/>-->
+
+    <div class="background">
+        <div class="slds-align_absolute-center">
+            <div class="slds-m-around_x-large slds-p-around_x-large box">
+<!--                <div class="slds-align_absolute-center">-->
+<!--                    <img src="https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/AACR+Logo.jpg"/>-->
+<!--                </div>-->
+<!--                <br/><br/>-->
+                <div class="slds-text-align_center" style="font-size: 35px; font-weight: bold">Request Received!</div>
+                <br/><br/>
+                <div class="slds-align_absolute-center">
+                    <div class="header slds-text-align_center">
+                        Your request is being reviewed by AACR staff. Once confirmed, you will receive an email with
+                        a special link to pay for your ticket at your new rate.
+                    </div>
+                </div>
+                <br/><br/><br/><br/>
+                <div class="slds-align_absolute-center slds-border_bottom" style="width:800px"/>
+                <br/><br/><br/><br/>
+
+                    <div class="container slds-grid slds-gutters slds-wrap slds-grid--align-center">
+                        <div class="slds-grid">
+                            <div class="slds-size--1-of-1 spinner-list-min-height">
+                <div class="slds-card slds-m-bottom--small cont-box cont-box--shadow-sm">
+                    <div class="slds-card__body">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3 slds-large-size_1-of-5">
+                                <div class="wrap-img">
+
+                                        <div style="z-index: 1;position:relative;">
+                                            <img src="{!v.imgURL}" title="{!v.event.Name}" style="z-index: 2;" width="228" height="164"/>
+                                            <span id="overlay_text" style="z-index: 3;position: absolute; left:0;">
+                                    <aura:if isTrue="{!v.event.Event_Stage__c=='Virtual'}">
+                                    <div class="eventStage gothamMedium slds-text-title_caps" style="background:#005cab; padding:3px; color:white;">
+                                        {!v.event.Event_Stage__c}
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.event.Event_Stage__c=='In Person'}">
+                                    <div class="eventStage gothamMedium slds-text-title_caps" style="background:#ed1849; padding:3px; color:white;">
+                                        {!v.event.Event_Stage__c}
+                                    </div>
+                                </aura:if>
+                                </span>
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3 slds-large-size_4-of-5">
+                                <div class="slds-p-around--medium">
+                                    <h1 class="h1 eventTitle slds-section__title slds-text-heading_large">
+                                        <div class="slds-grid slds-wrap">
+
+                                            <div class="slds-col slds-size_2-of-3">
+                                                {!v.event.Name}
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-3">
+                                                <!--                                    </div>-->
+                                                <div class="slds-float_right desktop">
+                                                    <!--                            <aura:if isTrue="{!and(not(empty(v.item.item.Virtual_Venue__c)),or(v.tab == 'Attending', v.tab == 'Past' ))}">-->
+                                                    <lightning:button variant="brand" label="Details" class="detailBtn" value="{!v.event.Id}" onclick="{!c.openItemButton}" />
+                                                    <!--                            </aura:if>-->
+                                                </div>
+                                                <!--                                </div>-->
+                                            </div>
+                                        </div>
+
+                                    </h1>
+                                    <p class="slds-p-around--medium slds-text-heading_medium">
+                           <span>
+                               <aura:if isTrue="{!not(v.event.Hide_Date_Time__c)}">
+                                   <div class="eventDate">{!v.eventDate}</div>
+                               </aura:if>
+                               <br/>
+                            </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                        </div>
+                    </div>
+
+<!--                <div class="slds-box slds-m-around_large">-->
+<!--                <div class="slds-text-title_bold slds-text-title_caps slds-text-align_center">Event Details:</div>-->
+<!--                <br/>-->
+<!--                <div class="slds-text-heading_medium slds-text-align_center">{!'Name: ' + v.event.Name}</div>-->
+<!--                <br/>-->
+<!--                <div class="slds-text-heading_medium slds-text-align_center">-->
+<!--                    Start Date:-->
+<!--                    <lightning:formattedDateTime value="{!v.event.Start_Date__c}"/>-->
+<!--                </div>-->
+<!--                <br/>-->
+<!--                    <div class="slds-text-heading_medium slds-text-align_center">-->
+<!--                        End Date:-->
+<!--                        <lightning:formattedDateTime value="{!v.event.End_Date__c}"/>-->
+<!--                    </div>-->
+<!--                    <br/>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+
+</aura:component>

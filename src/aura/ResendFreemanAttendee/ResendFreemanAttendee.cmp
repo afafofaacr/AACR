@@ -1,0 +1,19 @@
+<!--
+ - Created by lauren.lezberg on 6/22/2020.
+ -->
+
+<aura:component description="ResendFreemanAttendee" controller="ResendFreemanAttendeeController" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId">
+    <aura:attribute name="showCmp" type="Boolean" default="false" description="show component to user"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <aura:if isTrue="{!v.showCmp}">
+    <lightning:card iconName="utility:send" title="Resend Freeman Attendee" >
+        <aura:set attribute="actions">
+            <lightning:button label="Send" variant="brand" onclick="{!c.sendToFreeman}"/>
+        </aura:set>
+    </lightning:card>
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tracks speakers and maintains a list of all the schedule items the speaker will be featured and/or presenting.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>EventApi__Bio__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Biographical information is displayed on the event with the speaker&apos;s name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Biographical information is displayed on the event with the speaker&apos;s name..</inlineHelpText>
+        <label>Bio</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Company_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the company the Speaker would like to display on his/her Speaker page and name badge.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the company the Speaker would like to display on his/her Speaker page and name badge.</inlineHelpText>
+        <label>Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the speaker&quot;s contact record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the speaker&quot;s contact record.</inlineHelpText>
+        <label>CRM Contact Link</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Speaking Engagements</relationshipLabel>
+        <relationshipName>Speakers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Display_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Value in this field defines the order used to display speakers for featured speakers and speaker components.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value in this field defines the order used to display speakers for featured speakers and speaker components.</inlineHelpText>
+        <label>Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The email for the Speaker. Derived from the linked Contact&apos;s &quot;Preferred Email&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The email for the Speaker. Derived from the linked Contact&apos;s &quot;Preferred Email&quot; field.</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related event.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Speakers</relationshipLabel>
+        <relationshipName>Speakers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Featured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Speaker will display in the &quot;Featured Speakers&quot; component for Lightning Events.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Speaker will display in the &quot;Featured Speakers&quot; component for Lightning Events.</inlineHelpText>
+        <label>Is Featured</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Large_Profile_Photo_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Secure (&quot;https://&quot;) location of an image that will display on the event with the speaker&quot;s name and bio. Square images work best. Image should be at least 412px square and the file size should be less than 250 KB.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Secure (&quot;https://&quot;) location of an image that will display on the event with the speaker&quot;s name and bio. Square images work best. Image should be at least 412px square and the file size should be less than 250 KB.</inlineHelpText>
+        <label>Speaker Photo URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Other_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Alternate phone for the Speaker.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Alternate phone for the Speaker.</inlineHelpText>
+        <label>Other Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** The primary phone for the Speaker. Derived from the linked Contact&apos;s &quot;Preffered Phone&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** The primary phone for the Speaker. Derived from the linked Contact&apos;s &quot;Preffered Phone&quot; field.</inlineHelpText>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Special_Requests__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Other information or notes about the speaker.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Other information or notes about the speaker.</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** The current Status for the Speaker.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The current Status for the Speaker.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Considering</fullName>
+                    <color>#0B6FCE</color>
+                    <default>true</default>
+                    <label>Considering</label>
+                </value>
+                <value>
+                    <fullName>Invited</fullName>
+                    <color>#78C953</color>
+                    <default>false</default>
+                    <label>Invited</label>
+                </value>
+                <value>
+                    <fullName>Tentative</fullName>
+                    <color>#E27001</color>
+                    <default>false</default>
+                    <label>Tentative</label>
+                </value>
+                <value>
+                    <fullName>Negotiating</fullName>
+                    <color>#A845DC</color>
+                    <default>false</default>
+                    <label>Negotiating</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <color>#F3D904</color>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <color>#A53711</color>
+                    <default>false</default>
+                    <label>Declined</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <color>#33CCFF</color>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The title the Speaker would like to display on his/her Speaker page and name badge.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The title the Speaker would like to display on his/her Speaker page and name badge.</inlineHelpText>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LTE__Facebook_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link to Speaker&apos;s Facebook profile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to Speaker&apos;s Facebook profile.</inlineHelpText>
+        <label>Facebook URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>LTE__Is_Featured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Speaker will display in the &quot;Featured Speakers&quot; component for Lightning Events.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Speaker will display in the &quot;Featured Speakers&quot; component for Lightning Events.</inlineHelpText>
+        <label>DEPRECATED</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LTE__LinkedIn_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link to the Speaker&apos;s LinkedIn profile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Speaker&apos;s LinkedIn profile.</inlineHelpText>
+        <label>LinkedIn URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>LTE__Twitter_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link to the Speaker&apos;s Twitter profile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Speaker&apos;s Twitter profile.</inlineHelpText>
+        <label>Twitter URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>Speaker</label>
+    <listViews>
+        <fullName>EventApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>EventApi__Company_Name__c</columns>
+        <columns>EventApi__Email__c</columns>
+        <columns>EventApi__Event__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Speaker Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Speakers</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventApi__Company_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Email__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Event__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Phone__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Company_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Email__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Phone__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Company_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Email__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Event__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Phone__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EventApi__Company_Name__c</searchFilterFields>
+        <searchFilterFields>EventApi__Email__c</searchFilterFields>
+        <searchFilterFields>EventApi__Event__c</searchFilterFields>
+        <searchFilterFields>EventApi__Phone__c</searchFilterFields>
+        <searchResultsAdditionalFields>EventApi__Company_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Email__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Event__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Phone__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,50 @@
+<aura:component controller="BrEventsController" description="BrEvents" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="environmentType" type="String" default="Community" access="global" />
+    <aura:attribute name="zoneId" type="String" default="a4b2a000000CePaAAK" access="global" />
+    <aura:attribute name="itemsPerPage" type="Integer" default="5" access="global" />
+    <aura:attribute name="showPastTab" type="Boolean" default="true" access="global" />
+
+
+    <aura:attribute name="view" type="String" default="list"/>
+    <aura:attribute name="userInfo" type="Object" />
+    <aura:attribute name="isGuest" type="Boolean" default="false" />
+    <aura:attribute name="itemId" type="Id"/>
+    <aura:attribute name="systemMessage" type="Object" />
+    <aura:attribute name="dateFilter" type="String" default=""/>
+    <aura:attribute name="isCommunity" type="Boolean" default="true"/>
+
+    <aura:attribute name="isLoaded" type="Boolean" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!--<aura:handler event="aura:locationChange" action="{!c.changeLocation}"/>-->
+    <aura:handler name="eventsErrorEvent" event="c:BrEventsError" action="{!c.handleErrorEvent}" />
+    <aura:handler name="eventsOpenItemEvent" event="c:BrEventsOpenItem" action="{!c.handleOpenItem}" />
+
+    <ltng:require styles="{!$Resource.BrEvents + '/css/style.css'}"/>
+
+    <div>
+        <aura:if isTrue="{!not(empty(v.systemMessage.body))}">
+            <div class="slds-notify_container slds-m-bottom--small">
+                <div class="slds-notify slds-notify--alert slds-theme--alert-texture">
+                    <h2>{!v.systemMessage.body}</h2>
+                </div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.isLoaded}">
+        <aura:if isTrue="{!v.view == 'list'}">
+            <c:BrEventsList userInfo="{!v.userInfo}" zoneId="{!v.zoneId}" itemsPerPage="{!v.itemsPerPage}" dateFilter="{!v.dateFilter}" isCommunity="{!v.isCommunity}" showPastTab="{!v.showPastTab}" isGuest="{!v.isGuest}"/>
+        </aura:if>
+        <aura:if isTrue="{!and(v.view == 'item', v.itemId)}">
+            <c:BrEventsItem userInfo="{!v.userInfo}" id="{!v.itemId}"
+                              isCommunity="{!v.isCommunity}"
+                              isGuest="{!v.isGuest}"
+                              view="{!v.view}"/>
+        </aura:if>
+            <aura:set attribute="else">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner loadingText="Loading..."/>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

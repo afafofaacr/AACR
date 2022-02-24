@@ -1,0 +1,48 @@
+/**
+ * Created by lauren.lezberg on 9/15/2020.
+ */
+
+.THIS {
+    font-size:15px;
+}
+
+
+
+.THIS .slds-icon_small{
+    height:1rem;
+    width:1rem;
+}
+
+.THIS .slds-pill__icon_container .slds-icon{
+    width:1rem;
+    height:1rem;
+}
+
+.THIS .pillSize{
+    width:100%;
+}
+
+.THIS .slds-pill__label{
+    font-size: 15px;
+}
+
+
+.THIS .slds-listbox__option-text{
+    font-size: 15px;
+}
+
+.THIS div.slds-pill.pillSize{
+    padding:5px;
+}
+
+.THIS button.slds-button.slds-button_icon.slds-button_icon-bare{
+    right:0px;
+    bottom:0px;
+}
+
+
+/*.THIS .slds-pill__icon_container~.slds-pill__action{*/
+/*    padding-left: calc(1.75rem + 0.25rem + 2px);*/
+/*    padding-top:5px;*/
+/*    padding-bottom: 5px;*/
+/*}*/

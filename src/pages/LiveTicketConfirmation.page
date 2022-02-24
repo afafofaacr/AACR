@@ -1,0 +1,326 @@
+<!--
+ - Created by lauren.lezberg on 10/5/2020.
+ -->
+
+<apex:page id="LiveTicketConfirmation"
+           controller="LiveTicketConfirmationController"
+           action="{!checkExhibitStatus}"
+           docType="html-5.0"
+           showHeader="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false">
+
+    <apex:slds />
+    <apex:includeLightning />
+
+    <c:pageStyle />
+    <style>
+        .generalText {
+            font-size: 1.5rem;
+        }
+
+        .slds-button.slds-button_brand {
+            font-size: 14px;
+            border-color: #50B848;
+            color: black;
+            background: #50B848;
+            padding: 6px;
+            font-weight: 700;
+            min-width: 130px;
+            border-radius:0rem;
+            line-height: 1.0em;
+            box-shadow:none;
+            text-shadow:none;
+        }
+
+        .slds-button.slds-button_brand:hover{
+            font-size: 14px;
+            border-color: #50B848;
+            color: black;
+            background: white;
+            padding: 6px;
+            border-radius:0rem;
+            line-height: 1.0em;
+            box-shadow:none;
+            text-shadow:none;
+        }
+
+        div.well {
+            border: 2px solid #50B848;
+        }
+
+        .centerContent {
+            width: 1170px;
+            margin: auto;
+        }
+
+        /*img {*/
+        /*    display: block;*/
+        /*    width: 100%;*/
+        /*}*/
+        .iFrameSize {
+            width: 100%;
+            min-height: 800px;
+        }
+
+        .header {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+
+        /*a#addeventatc1-home{*/
+        /*    display:none;*/
+        /*}*/
+
+        /*em.copyx {*/
+        /*    display:none;*/
+        /*}*/
+
+        /*.addeventatc_dropdown .copyx {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*div#addeventatc1.addeventatc{*/
+        /*    border:1px solid black;*/
+        /*}*/
+
+        /*.plain-box {*/
+        /*    border: 1px solid white;*/
+        /*    padding: 10px;*/
+        /*}*/
+
+        .center {
+            margin: auto;
+            width: 400px;
+        }
+
+        .box {
+            color: white;
+            background-color: #50B848;
+            width: 400px;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            padding: 10px;
+        }
+
+        @media (min-width: 992px) {
+            .col-md-4 {
+                width: 45%;
+            }
+        }
+
+        .alignLeftCenter {
+            text-align: left;
+            margin-left: 20%;
+            display: inline-block;
+            padding: 8px;
+            align-self: flex-end;
+        }
+
+        .addeventatc .addeventatc_icon{
+            display:none;
+        }
+
+        .addeventatc {
+            padding:6px;
+            font-size: 14px;
+            border-radius: 0rem;
+            background:lightgrey;
+            min-width: 130px;
+            line-height: 1.0em;
+            font-weight: 700;
+            box-shadow:none;
+            text-shadow:none;
+        }
+
+        .addeventatc:hover {
+            padding:6px;
+            font-size: 14px;
+            border-radius: 0rem;
+            background:lightgrey;
+            line-height: 1.0em;
+            font-weight: 700;
+            box-shadow:none;
+            text-shadow:none;
+        }
+
+
+        /*.alignCenter {*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-content: center;*/
+        /*    align-items: center;*/
+        /*    margin: auto;*/
+        /*}*/
+
+        /*@media print {*/
+        /*    .noprint {*/
+        /*        display: none !important;*/
+        /*    }*/
+
+        /*    .print {*/
+        /*        display: block !important;*/
+        /*    }*/
+        /*}*/
+
+
+    </style>
+
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
+
+    </head>
+
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            AACR eStore Checkout
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="slds-scope">
+                <div class="centerContent">
+                    <!--                    <div class="slds-grid slds-gutters">-->
+                    <!--                        <div class="slds-col slds-size_1-of-2">-->
+                    <br/>
+                    <div class="heading">
+                        Thank you for your purchase!
+                    </div>
+
+
+                    <div class="well">
+                        <apex:form id="form" styleClass="form-signin" acceptcharset="utf-8">
+                            <div class="generalText alignLeftCenter">
+                                {!'Thank you for registering for ' + evt.Name + '. You will receive a confirmation email and receipt.'}
+                            </div>
+                            <br/>
+                            <div class="generalText">
+                                <apex:outputText value="{!evt.Ticket_Purchase_Confirmation_Message__c}" escape="false"/>
+                            </div>
+                            <br/><br/>
+                            <div class="generalText alignLeftCenter">
+                                You can close this window or take the following actions (optional):
+                            </div>
+                            <br/>
+                            <div class="slds-grid">
+                                <div class="generalText alignLeftCenter slds-size_1-of-5">
+                                    Navigate back to Event Page:
+                                </div>
+                                <div class="slds-col">
+                                    <apex:outputLink value="{!'/LiveEventsList?ac__id=' + evt.Id}"
+                                                     styleClass="slds-button slds-button_brand" id="theLink">View
+                                        Event
+                                    </apex:outputLink>
+                                </div>
+                            </div>
+
+                            <div class="slds-grid">
+                                <div class="generalText alignLeftCenter slds-size_1-of-5">
+                                    Save to your Calendar:
+                                </div>
+                                <div>
+                                    <div title="Add to Calendar" class="addeventatc">
+                                        Add to Calendar
+                                        <span class="start">{!StartDate}</span>
+                                        <span class="end">{!EndDate}</span>
+                                        <span class="timezone">America/New_York</span>
+                                        <span class="alarm_reminder">60</span>
+                                        <span class="title">{!evt.Name}</span>
+                                        <span class="description">
+                                                <apex:outputText value="{!evt.Description__c}" escape="false"/>
+                                                <p>Click the link below to reach the event page:
+                                                    <br/>
+                                                    {!location}
+                                                </p>
+                                                <p>
+                                                    Click the link below to see the program for the event:
+                                                    <br/>
+                                                    {!evt.Draft_Program__c}
+                                                </p>
+                                            </span>
+                                        <span class="location"><a href="{!location}">{!location}</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+
+                        </apex:form>
+
+                        <apex:outputPanel rendered="{!evt.Display_on_Confirmation_Page__c}">
+                            <br/>
+                        <div>
+                            <div id="EventSponsor"/>
+                        </div>
+                        <br/>
+                        </apex:outputPanel>
+                    </div>
+
+                    <apex:outputPanel rendered="{!receiptId!=null}">
+
+                        <iframe id="transactionFrame" src="/OrderApi__receipt?id={!receiptId}"
+                                class="iFrameSize slds-m-bottom_large"/>
+
+                    </apex:outputPanel>
+
+                    <div class="col-xs-12 text-center m-b-30 slds-text-heading_medium">
+                        <button class="btn btn-default noprint" id="printInvoice"><i
+                                    class="btr bt-print m-r-5"></i>Print
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+        $(document).on('click', '#printInvoice', function (event) {
+            event.preventDefault();
+            var printWindow = window.open('', '', 'width=2,height=2,top=300,left=800,toolbar=no,menubar=no,scrollbars=no,location=no,directories=no');
+            var printContent = $('iframe#transactionFrame').contents().find("body").html();
+            var printCSS = 'font-family: "Helvetica+Neue", Arial, sans-serif !important; padding: 0px; margin: 0px;';
+            var printHTML = "<html><body style='" + printCSS + "'><style>.print-button, body { display: none } @media print { body { display: inherit } }</style>" + printContent + "</body></html>";
+            printWindow.document.write(printHTML);
+            setTimeout(function () {
+                printWindow.focus();
+                printWindow.print();
+                if (printWindow.stop()) {
+                    printWindow.reload();
+                    printWindow.stop();
+                }
+                printWindow.close();
+            }, 500);
+        });
+    </script>
+    <script>
+
+        $Lightning.use("c:LiveEvents", function() {
+            $Lightning.createComponent("c:EventSponsorDisplay",
+                {
+                    "eventId": "{!evt.Id}",
+                    "orientation" : {!evt.View_Confirmation_Page_Horizontally__c},
+                    "showLogos" : {!evt.Show_Confirmation_Page_Logos__c},
+                    "isVisualForce" : true
+                },
+                "EventSponsor",
+                function(cmp) {
+                // console.log('display on confirmation page == ' + {!evt.Display_on_Confirmation_Page__c} + '; display horizontally = ' + {!evt.View_Confirmation_Page_Horizontally__c});
+                });
+        });
+    </script>
+
+
+</apex:page>

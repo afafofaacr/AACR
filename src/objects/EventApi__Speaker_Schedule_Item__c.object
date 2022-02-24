@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Schedule Item Speakers track the various Sessions and Seminars a Speaker is scheduled to present for a Event.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>EventApi__Is_Primary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Speaker is considered the lead or &quot;primary&quot; presenter for the Schedule Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Speaker is considered the lead or &quot;primary&quot; presenter for the Schedule Item.</inlineHelpText>
+        <label>Is Primary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The speaker&apos;s role with respect to the related schedule item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The speaker&apos;s role with respect to the related schedule item.</inlineHelpText>
+        <label>Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conference Chair</fullName>
+                    <default>false</default>
+                    <label>Conference Chair</label>
+                </value>
+                <value>
+                    <fullName>Conference Cochair</fullName>
+                    <default>false</default>
+                    <label>Conference Cochair</label>
+                </value>
+                <value>
+                    <fullName>Program Committee</fullName>
+                    <default>false</default>
+                    <label>Program Committee</label>
+                </value>
+                <value>
+                    <fullName>Scientific Committee</fullName>
+                    <default>false</default>
+                    <label>Scientific Committee</label>
+                </value>
+                <value>
+                    <fullName>Scientific Committee Chair</fullName>
+                    <default>false</default>
+                    <label>Scientific Committee Chair</label>
+                </value>
+                <value>
+                    <fullName>Scientific Committee Cochair</fullName>
+                    <default>false</default>
+                    <label>Scientific Committee Cochair</label>
+                </value>
+                <value>
+                    <fullName>Organizing Committee</fullName>
+                    <default>false</default>
+                    <label>Organizing Committee</label>
+                </value>
+                <value>
+                    <fullName>Executive Committee</fullName>
+                    <default>false</default>
+                    <label>Executive Committee</label>
+                </value>
+                <value>
+                    <fullName>Keynote Speaker</fullName>
+                    <default>false</default>
+                    <label>Keynote Speaker</label>
+                </value>
+                <value>
+                    <fullName>Speaker</fullName>
+                    <default>false</default>
+                    <label>Speaker</label>
+                </value>
+                <value>
+                    <fullName>Session Chair</fullName>
+                    <default>false</default>
+                    <label>Session Chair</label>
+                </value>
+                <value>
+                    <fullName>Discussant</fullName>
+                    <default>false</default>
+                    <label>Discussant</label>
+                </value>
+                <value>
+                    <fullName>Moderator</fullName>
+                    <default>false</default>
+                    <label>Moderator</label>
+                </value>
+                <value>
+                    <fullName>Panelist</fullName>
+                    <default>false</default>
+                    <label>Panelist</label>
+                </value>
+                <value>
+                    <fullName>Accepted Abstract Presenter</fullName>
+                    <default>false</default>
+                    <label>Accepted Abstract Presenter</label>
+                </value>
+                <value>
+                    <fullName>Workshop Director</fullName>
+                    <default>false</default>
+                    <label>Workshop Director</label>
+                </value>
+                <value>
+                    <fullName>Workshop Co-director</fullName>
+                    <default>false</default>
+                    <label>Workshop Co-director</label>
+                </value>
+                <value>
+                    <fullName>Faculty</fullName>
+                    <default>false</default>
+                    <label>Faculty</label>
+                </value>
+                <value>
+                    <fullName>Faculty-Clinician</fullName>
+                    <default>false</default>
+                    <label>Faculty-Clinician</label>
+                </value>
+                <value>
+                    <fullName>Faculty-Biostatistician</fullName>
+                    <default>false</default>
+                    <label>Faculty-Biostatistician</label>
+                </value>
+                <value>
+                    <fullName>Faculty-Patient Advocate</fullName>
+                    <default>false</default>
+                    <label>Faculty-Patient Advocate</label>
+                </value>
+                <value>
+                    <fullName>Faculty-PDG</fullName>
+                    <default>false</default>
+                    <label>Faculty-PDG</label>
+                </value>
+                <value>
+                    <fullName>Jr. Faculty</fullName>
+                    <default>false</default>
+                    <label>Jr. Faculty</label>
+                </value>
+                <value>
+                    <fullName>Lab Director</fullName>
+                    <default>false</default>
+                    <label>Lab Director</label>
+                </value>
+                <value>
+                    <fullName>Lab Assistant</fullName>
+                    <default>false</default>
+                    <label>Lab Assistant</label>
+                </value>
+                <value>
+                    <fullName>Lecturer</fullName>
+                    <default>false</default>
+                    <label>Lecturer</label>
+                </value>
+                <value>
+                    <fullName>Trainee</fullName>
+                    <default>false</default>
+                    <label>Trainee</label>
+                </value>
+                <value>
+                    <fullName>Sr. Scientist</fullName>
+                    <default>false</default>
+                    <label>Sr. Scientist</label>
+                </value>
+                <value>
+                    <fullName>Observer</fullName>
+                    <default>false</default>
+                    <label>Observer</label>
+                </value>
+                <value>
+                    <fullName>Poster Highlight Presenter</fullName>
+                    <default>false</default>
+                    <label>Poster Highlight Presenter</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Schedule_Item__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link to the schedule item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the schedule item.</inlineHelpText>
+        <label>Schedule Item</label>
+        <referenceTo>EventApi__Schedule_Item__c</referenceTo>
+        <relationshipLabel>Speakers</relationshipLabel>
+        <relationshipName>Speaker_Schedule_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>EventApi__Speaker__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the speaker.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the speaker.</inlineHelpText>
+        <label>Speaker</label>
+        <referenceTo>EventApi__Speaker__c</referenceTo>
+        <relationshipLabel>Schedule</relationshipLabel>
+        <relationshipName>Speaker_Schedule_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Invitation_Status__c</fullName>
+        <description>Indicates when the speaker invitation was last sent. Used to determine follow up.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates when the speaker invitation was last sent. Used to determine follow up.</inlineHelpText>
+        <label>Invitation Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Presentation_Order__c</fullName>
+        <description>The order in which the person will be speaking within the session so that staff can order appropriately in a report.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The order in which the person will be speaking within the session.</inlineHelpText>
+        <label>Presentation Order</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Presentation_Time__c</fullName>
+        <description>The time period for the presentation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The time period for the presentation (e.g. 8:00am - 9:00am)</inlineHelpText>
+        <label>Presentation Time</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Presentation_Title__c</fullName>
+        <description>Speaker presentation title</description>
+        <externalId>false</externalId>
+        <label>Presentation Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Replacement_for__c</fullName>
+        <description>Notates if a speaker is a replacement for a previous invitee that declined.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Notates if a speaker is a replacement for a previous invitee that declined.</inlineHelpText>
+        <label>Replacement for</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Speaker_Status__c</fullName>
+        <description>Tracking invitation status of a speaker for a session. Determining whether a speaker has been invited, accepted or declined, and move onto next potential candidate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tracking invitation status of a speaker for a session.</inlineHelpText>
+        <label>Speaker Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <label>Declined</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Invited</fullName>
+                    <default>false</default>
+                    <label>Invited</label>
+                </value>
+                <value>
+                    <fullName>Suggested</fullName>
+                    <default>false</default>
+                    <label>Suggested</label>
+                </value>
+                <value>
+                    <fullName>Replacement for</fullName>
+                    <default>false</default>
+                    <label>Replacement for</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Speaker Schedule Item</label>
+    <nameField>
+        <label>Speaker Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Speaker Schedule Items</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Schedule_Item__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Is_Primary__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Schedule_Item__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Role__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Is_Primary__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EventApi__Schedule_Item__c</searchFilterFields>
+        <searchFilterFields>EventApi__Role__c</searchFilterFields>
+        <searchFilterFields>EventApi__Is_Primary__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

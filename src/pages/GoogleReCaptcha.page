@@ -1,0 +1,218 @@
+<!--
+ - Created by afaf.awad on 10/13/2021.
+ -->
+
+<apex:page id="GoogleReCaptcha"
+           controller="GoogleReCaptchaController"
+           sidebar="false"
+           showHeader="false"
+           standardStylesheets="false"
+           cache="false"
+           applyBodyTag="false">
+
+    <apex:includeScript value="{!$Resource.jQuery_3_1_1}"/>
+
+    <style>
+        body, div{
+            background:transparent !important;
+        }
+        html {overflow:hidden;}
+        /*.recaptcha {*/
+        /*    transform: scale(0.74);*/
+        /*    transform-origin: 0 0;*/
+        /*    -webkit-transform:scale(0.74);*/
+        /*    -webkit-transform-origin: 0 0*/
+        /*}*/
+    </style>
+    <body class="body-tag">
+
+    <script type="text/javascript">
+        const COMPONENT_ORIGIN = '{!siteDomain}',
+            SITE_KEY = '{!JSENCODE(siteKey)}';
+        console.log('Site key == ' + SITE_KEY);
+        console.log('hosturl == ' + COMPONENT_ORIGIN);
+        jQuery(function($){
+            var lastHeight = 0, curHeight = 0, $frame = $('iframe:eq(0)');
+            setInterval(function(){
+                curHeight = $frame.prevObject[0].activeElement.scrollHeight
+                if ( curHeight != lastHeight ) {
+                    var hostURL = COMPONENT_ORIGIN;
+                    curHeight = curHeight && curHeight === 480 ? curHeight + 18 : curHeight + 22;
+                    // console.log('height change from jquery == ' + curHeight);
+                    parent.postMessage({ action: 'heightChange', height : curHeight + 'px' }, hostURL);
+                }
+            },500);
+        });
+        var callPostMethod = function (action, response) {
+            var hostURL = COMPONENT_ORIGIN;
+            parent.postMessage({ action: action, response : response }, hostURL);
+        }
+        var onVerifyCallback = function () {
+            console.log ('Verified');
+            let val = document.getElementById("g-recaptcha-response").value;
+            callPostMethod ('verified', val);
+        };
+        var onErrorCallback = function () {
+            console.log ('Error');
+            let val = document.getElementById("g-recaptcha-response").value;
+            callPostMethod ('error', val);
+        };
+        var onExpiredCallback = function () {
+            console.log ('Expired');
+            let val = document.getElementById("g-recaptcha-response").value;
+            callPostMethod ('expired', val);
+        };
+        var onloadCallback = function() {
+            console.log ('Loaded');
+            callPostMethod ('loaded', '');
+            grecaptcha.render('recaptcha-div', {
+                'sitekey' : '{!$Setup.ReCaptcha__c.Key__c}',
+                'theme' : 'light',
+                'callback' : onVerifyCallback,
+                'expired-callback' :onExpiredCallback,
+                'error-callback' : onErrorCallback
+            });
+        };
+
+
+        /*
+            Extra snippet to communicate with Aura component
+        */
+        window.addEventListener("message", function(event) {
+            var hostURL = '';
+            if(event.origin !== hostURL){
+                return;
+            }
+
+            if(event.data.action == "alohaCallingCAPTCHA"){
+                var message = document.getElementById("g-recaptcha-response").value;
+            }
+        }, false);
+
+    </script>
+    <div id="recaptcha-div" class="g-recaptcha recaptcha"></div>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" type="application/javascript"/>
+    </body>
+
+
+
+
+
+<!--    <html>-->
+<!--    <head>-->
+<!--        <script type='text/javascript'>-->
+<!--            const COMPONENT_ORIGIN = '{!siteDomain}',-->
+<!--                SITE_KEY = '{!JSENCODE(siteKey)}';-->
+<!--                // console.log('SITE_KEY == ' + SITE_KEY);-->
+<!--            var verifyCallback = function(response){-->
+<!--                console.log('CmpOrigin = ' + COMPONENT_ORIGIN);-->
+<!--                parent.postMessage('Unlock', COMPONENT_ORIGIN);-->
+<!--            };-->
+
+<!--            var onloadCallback = function() {-->
+<!--                console.log('onloadCallback...');-->
+<!--                grecaptcha.render('reCAPTCHAWidget', {-->
+<!--                    'sitekey' : SITE_KEY,-->
+<!--                    'callback' : verifyCallback-->
+<!--                });-->
+<!--            };-->
+<!--        </script>-->
+<!--    </head>-->
+<!--    <body>-->
+<!--    <form action="?" method="POST">-->
+<!--        <div id="reCAPTCHAWidget"></div>-->
+<!--    </form>-->
+<!--    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async="" defer=""/>-->
+
+<!--    </body>-->
+<!--    </html>-->
+
+<!--    <style>-->
+<!--        body, div {-->
+<!--            background: transparent !important;-->
+<!--        }-->
+<!--        #widget1 {-->
+<!--            transform: scale(0.74);-->
+<!--            transform-origin: 0 0;-->
+<!--            -webkit-transform:scale(0.74);-->
+<!--            -webkit-transform-origin: 0 0-->
+<!--        }-->
+<!--    </style>-->
+
+<!--    <head>-->
+<!--    <script type="text/javascript">-->
+<!--        var sitekey = null;-->
+<!--        var hostUrl = null;-->
+
+<!--        var onloadCallback = function () {-->
+<!--            console.log('onLoadCallback...');-->
+<!--            grecaptcha.render('widget1', {-->
+<!--                'sitekey': sitekey,-->
+<!--                'callback': grecaptchaRenderCallback-->
+<!--            });-->
+<!--        };-->
+
+<!--        function grecaptchaRenderCallback(res) {-->
+<!--            console.log('grecaptchaRenderCallback response == ' + res);-->
+<!--            parent.postMessage({-->
+<!--                action: "checkCAPTCHAState",-->
+<!--                isValid: res ? true : false-->
+<!--            }, '*');-->
+<!--        }-->
+
+
+<!--        window.addEventListener("message", function(event) {-->
+<!--            console.log('addEventListener...');-->
+<!--            if (event.data.type === 'CAPTCHA-SITEKEY') {-->
+<!--                sitekey = event.data.key;-->
+<!--                hostURL = event.data.hostURL;-->
+<!--                /*-->
+<!--                 * Adding the captcha script to the header if it's not there already. We're doing this manually so that-->
+<!--                 * we can control when the script loads (ie. not until the sitekey is available).-->
+<!--                 */-->
+<!--                var gCaptchaScript = document.getElementById('g-captcha-script')-->
+
+<!--                if (!gCaptchaScript) {-->
+<!--                    var script = document.createElement('script');-->
+<!--                    head = document.head || document.getElementsByTagName('head')[0];-->
+<!--                    script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'-->
+<!--                    script.id = 'g-captcha-script'-->
+<!--                    document.head.insertBefore(script, head.firstChild);-->
+<!--                }-->
+<!--            }-->
+<!--            /*-->
+<!--             *  If a message was received not from the expected origin, let's bail.-->
+<!--             */-->
+<!--            if (event.origin !== hostURL){-->
+<!--                return;-->
+<!--            }-->
+<!--            /*-->
+<!--             *  Let's check for a recaptcha token and send back the result to our component.-->
+<!--             */-->
+<!--            if (event.data.action == "alohaCallingCAPTCHA"){-->
+<!--                var token = document.getElementById("g-recaptcha-response").value;-->
+
+<!--                if (token == ""){-->
+<!--                    parent.postMessage({-->
+<!--                        action: "alohaCallingCAPTCHA",-->
+<!--                        alohaResponseCAPTCHA : "NOK"-->
+<!--                    }, hostURL);-->
+<!--                }  else {-->
+<!--                    parent.postMessage({-->
+<!--                        action: "alohaCallingCAPTCHA",-->
+<!--                        alohaResponseCAPTCHA : "OK",-->
+<!--                        response: token-->
+<!--                    },  hostURL);-->
+<!--                }-->
+<!--            }-->
+<!--        }, false);-->
+
+<!--    </script>-->
+<!--    </head>-->
+
+
+<!--    <body>-->
+<!--    <div id="widget1" class="g-recaptcha"></div>-->
+<!--    </body>-->
+
+</apex:page>

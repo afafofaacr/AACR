@@ -1,0 +1,86 @@
+<apex:component controller="DW_ProgressBarCtrl">
+    <script>
+        var pageNamesWithSO = '{!pageNamesWithSO}';
+        var soId = '{!soId}';
+    </script>
+    <apex:includeScript value="{!$Resource.DW_ProgressBarJs}" loadOnReady="true" />
+    <div id="progressbar-stepslistwrap">
+        <div class="loader-stepBG">
+                <div class="loader-step">
+                    <div class="ball-pulse">
+                        <div></div><div></div><div></div>
+                    </div>
+                </div>
+            </div>
+        <div id="progressbar-stepslist"></div>
+    </div>
+    
+    <script type="text/template" id="progressbar_template">
+        <ul class="progressList">
+            
+            <% 
+            var skipStepCount = 0;
+            _.each( steps,function( step, idx, list ) {
+                
+                if(step.isSkip){
+                   skipStepCount++; 
+                }
+                else{
+                
+                if( step.order <= lastAccessdStepOrder ) {                
+                    if( ( currentStepId == step.Id.substring(0, step.Id.length - 3) && currentStepId.length < 18) 
+                        || currentStepId == step.Id  ) { %>
+                        <li class="current-step">
+                            <div class="order-no"><%= ((idx+1)-skipStepCount) %></div>
+                            <div class="step-title"><%= step.title %></div>
+                        </li>
+                    <% } else { 
+                        //decide whether to append salesorder query param in url or not
+                        if( steps[idx+1].prevStepUrl.toLowerCase().indexOf("salesorder") === -1 &&
+                          	pageNamesWithSO.indexOf( step.pageName ) !== -1 && soId != '' ) { 
+                            if( steps[idx+1].prevStepUrl.indexOf('?') !== -1 ) {
+                            	var newPageUrl = steps[idx+1].prevStepUrl+'&salesoredr='+soId;
+                            } else {
+                                var newPageUrl = steps[idx+1].prevStepUrl+'?salesoredr='+soId;
+                            }
+                             %>
+                            <li class="active-step">
+                                <a href="<%= newPageUrl %>">
+                                    <div class="order-no"><%= ((idx+1)-skipStepCount) %></div>
+                                    <div class="step-title">
+                                        <%= step.title %>
+                                    </div>
+                                </a>
+                            </li>
+                        <% } else { %>
+                        		<li class="active-step">
+                                    <a href="<%= steps[idx+1].prevStepUrl %>">
+                                        <div class="order-no"><%= ((idx+1)-skipStepCount) %></div>
+                                        <div class="step-title">
+                                            <%= step.title %>
+                                        </div>
+                                    </a>
+                                </li>
+                        <% } %>
+                        
+                    <% } 
+                } else {
+                    if( ( currentStepId == step.Id.substring(0, step.Id.length - 3) && currentStepId.length < 18 ) 
+                        || currentStepId == step.Id  ) { %>
+                        <li class="current-step">
+                            <div class="order-no"><%= ((idx+1)-skipStepCount) %></div>
+                            <div class="step-title"><%= step.title %></div>
+                        </li>
+                <%  } else { %>
+                        <li class="disabled-step">
+                            <div class="order-no"><%= ((idx+1)-skipStepCount) %></div>
+                            <div class="step-title"><%= step.title %></div>
+                        </li>
+                <%  }
+                }  
+              }   
+            } );
+            %>
+        </ul>    
+    </script>
+</apex:component>

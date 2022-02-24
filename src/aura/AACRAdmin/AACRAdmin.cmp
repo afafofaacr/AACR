@@ -1,0 +1,148 @@
+<!--
+ - Created by lauren.lezberg on 9/6/2019.
+ -->
+
+<aura:component description="AACRAdmin" implements="force:appHostable">
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="standard:service_report" size="medium"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="AACR Admin">AACR Admin</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">Manage myAACR and other Admin Functions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <lightning:tabset variant="scoped">
+        <lightning:tab label="Settings">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">General Settings</div>
+                        </aura:set>
+                        <!-- Maintenance_Mode_Config__mdt -->
+                        <c:SiteConfigurations/>
+                        <c:UpdateMemberCount/>
+<!--                        <c:CommunityLicenseCount />-->
+                    </lightning:card>
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">Service Now Settings</div>
+                        </aura:set>
+                        <!-- ServiceNow_Incident_Type__mdt -->
+                        <c:ServiceNowSettings/>
+                    </lightning:card>
+
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">World Bank Settings</div>
+                        </aura:set>
+                        <div style="margin-left: 15px;">
+                            This process will update World Bank Income Level settings, then update any Contact that has
+                            a Mailing Country that has been updated.
+                            <br/>
+                            <br/>
+                            <c:WorldBankSetting/>
+                        </div>
+                    </lightning:card>
+
+<!--                    <lightning:card class="slds-p-around_medium">-->
+<!--                        <aura:set attribute="title">-->
+<!--                            <div class="slds-page-header__title">Manage User Passwords</div>-->
+<!--                        </aura:set>-->
+<!--                        <div style="margin-left: 15px;">-->
+<!--                            Update Passwords in mass for community users.-->
+<!--                            <br/>-->
+<!--                            <br/>-->
+<!--                            <c:MassUpdateUserPasswords />-->
+<!--                        </div>-->
+<!--                    </lightning:card>-->
+                </div>
+                <div class="slds-col">
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">Renewal Settings</div>
+                        </aura:set>
+                        <!-- Custom Settings: DW_Manage_Dues_Item__c & Renewal_Settings__c  -->
+                        <c:RenewalSettings/>
+                    </lightning:card>
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">Directory Settings</div>
+                        </aura:set>
+                        <!-- Directory_Criteria__mdt & Directory_Launch_Data__mdt -->
+                        <c:DirectorySettings/>
+                    </lightning:card>
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">BOOP</div>
+                        </aura:set>
+                        <div style="margin-left: 15px;">
+                            Trigger update on all Contacts.
+                            <br/>
+                            <br/>
+                            <c:MassContactUpdate />
+                        </div>
+                    </lightning:card>
+                </div>
+            </div>
+        </lightning:tab>
+        <lightning:tab label="Live! Configurations">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">Segment Builder Fields</div>
+                        </aura:set>
+                        <c:SegmentFieldSelector objectName="Contact"/>
+                        <c:SegmentFieldSelector objectName="Account"/>
+                    </lightning:card>
+                </div>
+                <div class="slds-col">
+
+                </div>
+            </div>
+        </lightning:tab>
+        <lightning:tab label="myAACR Banner">
+            <c:myAACRBannerSettings/>
+        </lightning:tab>
+        <lightning:tab label="Membership Updates">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">Renew Non-Dues Paying Members</div>
+                        </aura:set>
+                        <c:MassUpdateSubscriptions isRenew="true" />
+                    </lightning:card>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:card class="slds-p-around_medium">
+                        <aura:set attribute="title">
+                            <div class="slds-page-header__title">Update Prior Membership Status</div>
+                        </aura:set>
+                        <c:MassUpdateSubscriptions isRenew="false"/>
+                    </lightning:card>
+                </div>
+            </div>
+        </lightning:tab>
+        <lightning:tab label="BAM Builder">
+            COMING SOON!
+        </lightning:tab>
+    </lightning:tabset>
+
+
+</aura:component>

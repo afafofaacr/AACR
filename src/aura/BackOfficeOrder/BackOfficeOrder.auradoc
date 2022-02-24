@@ -1,0 +1,30 @@
+<!--
+ - Created by lauren.lezberg on 9/25/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: BackOfficeOrderController</p>
+        <p>
+            The <code>BackOfficeOrder</code> component is a replacement for Fonteva's 'Rapid Order Entry'. It is a back office ordering form where an
+            internal user can create a new application or renewal sales order for a contact. The main difference is that BackOfficeOrder follows
+            AACR's custom join and renewal logic. It also provides an easier way for internal users to select a subscription plan when applicable.
+        </p>
+        <p>
+            The available terms button group relies on the custom setting for Renewals. If the setting is active and the sales order is meant for a new application, the buttons
+            will appear dynamically based on the current year as well as the Term_Year__c field on the custom setting. If the setting is active and it is a renewal and the subscription
+            is one or two years expired, the terms will display dynamically for the current year and future year.</p>
+        <p>
+            The component utilizes the <code>ItemQuickAdd</code> component and filters results by active items only.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The component available to for use in an internal join process(BAMContainer) and is currently used in the back office order process.</p>
+        <p>The component relies on a sales order id present in the url and conditionally shows an option to select the term if that sales order is meant for a new application. If the sales order is a renewal,
+        all previous subscriptions will be displayed as sales order lines with the appropriate terms.</p>
+        <p>The component itself only adds sales order lines to an existing sales order, it does not process the sales order.</p>
+    </aura:description>
+    <aura:example name="BackOfficeOrder" ref="c:BackOfficeOrder" label="BackOfficeOrder">
+        Example for BackOfficeOrder
+    </aura:example>
+</aura:documentation>

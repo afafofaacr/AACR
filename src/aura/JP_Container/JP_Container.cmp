@@ -1,0 +1,50 @@
+<!--
+ - Created by lauren.lezberg on 3/5/2019.
+ -->
+
+<aura:component description="JP_Container" controller="JP_ContainerController" >
+    <aura:attribute name="joinId" type="String" description="Id of join process"/>
+    <aura:attribute name="salesOrderId" type="String" description="SalesOrderId"/>
+
+    <aura:attribute name="currentStepId" type="String" description="Current join step id"/>
+    <aura:attribute name="joinSteps" type="List" description="List of join process steps"/>
+    <aura:attribute name="isInitialStep" type="Boolean" default="true"/>
+
+    <aura:attribute name="vResult" type="Object" description="offercode result"/>
+    <aura:attribute name="errorMsg" type="String" description="offer error msg"/>
+
+    <aura:attribute type="Aura.Component[]" name="stepCmp"/>
+
+    <aura:handler event="c:JP_NavigateEvt" action="{!c.handleNavigate}"/>
+
+
+    <div aura:id="toastMsg" class="toast slds-theme_alert-texture slds-hide">
+        <div class="desc">Offer has been applied.</div>
+        <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeOfferModal}" class="slds-float_right slds-m-top_small slds-m-right_medium" variant="bare-inverse"/>
+    </div>
+    <div aura:id="errorToastMsg" class="errorToast slds-theme_alert-texture slds-hide">
+        <div class="desc">{!v.errorMsg}</div>
+        <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeErrorModal}" class="slds-float_right slds-m-top_small slds-m-right_medium" variant="bare-inverse"/>
+    </div>
+
+
+
+
+
+    <!-- OFFER CODE VALIDATION -->
+    <div class="slds-hide">
+        <c:validateOfferCode aura:id="offerCmp" salesOrderId="{!v.salesOrderId}" oncodesuccess="{!c.handleCodeSuccess}" oncodeerror="{!c.handleCodeError}"/>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <c:JP_ProgressBar currentStepId="{!v.currentStepId}" joinSteps="{!v.joinSteps}" />
+
+    <!-- DYNAMIC COMPONENT -->
+    <div style="margin:auto; width:1140px;">
+        {!v.stepCmp}
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <c:JP_NavButtons currentStepId="{!v.currentStepId}" joinSteps="{!v.joinSteps}"/>
+
+</aura:component>

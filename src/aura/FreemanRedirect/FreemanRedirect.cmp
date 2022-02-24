@@ -1,0 +1,27 @@
+<!--
+ - Created by lauren.lezberg on 4/25/2020.
+ -->
+
+<aura:component description="FreemanRedirect" controller="FreemanRedirectController">
+    <aura:attribute name="imageURL" type="String" description="url of gif"/>
+    <aura:attribute name="hasDelay" type="Boolean" description="does redirect have a delay" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    
+    <center>
+        <img src="{!$Resource.spinner_gif}"/>
+    </center>
+
+    <!--<aura:if isTrue="{!v.hasDelay}">-->
+    <!---->
+    <!--<div class="slds-align_absolute-center slds-text-heading_medium slds-m-top_medium">-->
+    <!--Your registration is being processed. Please do not leave this page. You will be entered in the AACR Virtual Annual Meeting in 60 seconds.-->
+    <!--</div>-->
+    <!--</aura:if>-->
+    <!--<div class="slds-align_absolute-center">-->
+    <!--<c:AACRSpinner loadingText="Loading..."/>-->
+    <!--</div>-->
+
+
+</aura:component>

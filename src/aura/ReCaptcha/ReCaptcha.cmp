@@ -1,0 +1,26 @@
+<!--
+ - Created by afaf.awad on 11/8/2021.
+ -->
+
+<aura:component description="ReCaptcha" implements="force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+    <ltng:require scripts="{!join(',',
+                           $Resource.jQuery_3_1_1)}"
+                  afterScriptsLoaded="{!c.onScriptLoaded}"/>
+
+    <aura:attribute name="hasreCaptchaVerified" type="Boolean" default="false" />
+    <aura:attribute name="hostUrl" type="String" />
+    <aura:attribute name="recaptchaPageName" type="String" default="apex/reCaptcha"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="ReCaptchaEvent" type="c:ReCaptchaEvent"/>
+    <aura:handler name="change" value="{!v.hasreCaptchaVerified}" action="{!c.callCaptchaEvt}"/>
+
+
+    <div>
+        <div class="slds-align_absolute-center container">
+                <iframe src="/apex/GoogleRecaptcha" frameborder="0" height="100" width="320" allowtransparency="true" id="recaptchaFrame" class="recaptchaFrame "/>
+        </div>
+    </div>
+
+
+</aura:component>

@@ -1,0 +1,75 @@
+<!--
+ - Created by lauren.lezberg on 1/23/2020.
+ -->
+
+<aura:component description="SpeakerFormModal" controller="SpeakerFormController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="speakerId" type="String" description="Id of speaker if being edited"/>
+    <aura:attribute name="sessionId" type="String" description="id of session that speaker belongs to"/>
+    <aura:attribute name="isOpen" type="Boolean" description="is speaker modal open" default="false"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="assistants" type="List" description="List of current assistants" access="private"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="change" value="{!v.speakerId}" action="{!c.handleIdChange}"/>
+    <aura:registerEvent name="scheduleUpdate" type="c:EventScheduleUpdate"/>
+
+
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close">
+                        <lightning:button iconName="utility:close" variant="neutral" onclick="{!c.closeModal}"/>
+                        <span class="slds-assistive-text">Close</span>
+                    </button> 
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!not(empty(v.speakerId))?'Edit Session Speaker': 'New Session Speaker'}</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:recordEditForm aura:id="speakerForm" objectApiName="Session_Speaker__c"
+                                              onload="{!c.handleLoad}" onsubmit="{!c.handleSubmit}"
+                                              onsuccess="{!c.handleSuccess}">
+                        <lightning:messages/>
+
+                        <lightning:inputField aura:id="name" fieldName="Name"/>
+                        <!--<lightning:inputField aura:id="contactId" fieldName="Speaker__c"/>-->
+                        <lightning:inputField aura:id="contactId" fieldName="Speaker__c"
+                                              onchange="{!c.handleSpeakerChange}"/> 
+                         <!--assistants list-->
+                        <aura:if isTrue="{!not(empty(v.assistants))}">
+                            <lightning:select aura:id="assistantsList" label="Assistant"
+                                              class="slds-m-left_xx-small slds-m-right_xx-small">
+                                <option value="">-- SELECT ASSISTANT --</option>
+                                <aura:iteration items="{!v.assistants}" var="a">
+                                    <option value="{!a.npe4__RelatedContact__c}">{!a.npe4__RelatedContact__r.Name}</option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </aura:if>
+                        <lightning:inputField aura:id="roles" fieldName="Roles__c"/>
+                        <lightning:inputField aura:id="status" fieldName="Status__c"/>
+                        <lightning:input aura:id="startTime" type="time" label="Presentation Time"/>
+
+                        <!-- hidden fields -->
+                        <div class="slds-hide">
+                            <lightning:inputField aura:id="assistantId" fieldName="Assistant__c"/>
+                            <lightning:inputField aura:id="hiddenTime" fieldName="Presentation_Time__c"/>
+                            <lightning:inputField aura:id="sessionId" fieldName="Session__c"/>
+                        </div>
+
+                        <div class="slds-align_absolute-center slds-m-top_medium">
+                            <lightning:button type="submit" label="Save Speaker" variant="brand"/>
+                        </div>
+
+                    </lightning:recordEditForm>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,28 @@
+<!--
+ - Created by lauren.lezberg on 9/14/2020.
+ -->
+
+<aura:component description="MarkBadAddress" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader">
+
+    <lightning:recordEditForm objectApiName="OrderApi__Known_Address__c" recordId="{!v.recordId}" onerror="{!c.handleError}" onsuccess="{!c.handleSuccess}">
+        <lightning:messages/>
+        <lightning:inputField class="slds-hide" fieldName="Bad_Address__c" value="{!true}"/>
+
+        <div class="slds-align_absolute-center">
+        <div class="slds-text-heading_medium">
+            Are you sure you want to mark this address as a bad address?
+        </div>
+        </div>
+
+        <br/>
+
+        <div class="slds-align_absolute-center">
+        <div class="slds-grid">
+            <lightning:button label="Cancel"/>
+            &nbsp;
+            <lightning:button type="submit" label="Save" variant="brand"/>
+        </div>
+        </div>
+    </lightning:recordEditForm>
+
+</aura:component>

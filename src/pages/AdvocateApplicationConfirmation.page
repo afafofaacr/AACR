@@ -1,0 +1,43 @@
+<!--
+ - Created by lauren.lezberg on 7/13/2021.
+ -->
+
+<apex:page id="AdvocateApplicationConfirmation" showHeader="false" sideBar="false">
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <style>
+    .page-wrapper{
+        background-color:#edf8ed;
+    }
+    </style>
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Request Confirmation
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="slds-scope">
+                <div id="confirmation"/>
+            </div>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:AdvocateAppConfirmation",
+                {},
+                "confirmation",
+                function (cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

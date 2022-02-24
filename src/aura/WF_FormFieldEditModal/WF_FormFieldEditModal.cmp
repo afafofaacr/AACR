@@ -1,0 +1,100 @@
+<!--
+ - Created by afaf.awad on 10/8/2021.
+ -->
+
+<aura:component description="WF_FormFieldEditModal" controller="WF_FormFieldEditModalController">
+
+    <aura:attribute name="sqId" type="Id" description="Survey Question recordId"/>
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="fieldDetails" type="Object" description="Metadata of selected field"/>
+    <aura:attribute name="fieldType" type="String" description="field type to determine what kind of field to display"/>
+    <aura:attribute name="customLabel" type="String" description="Label of field"
+                    default="{!v.fieldDetails.sqRecord ? v.fieldDetails.sqRecord.Label__c: v.fieldDetails.Default_Text__c == null ? v.fieldDetails.Label : v.fieldDetails.Default_Text__c}"/>
+    <aura:attribute name="imageId" type="String" description="image Id for header Image"
+                    default="{!v.fieldDetails.sqRecord ? v.fieldDetails.sqRecord.ImageId__c : v.fieldDetails.imageId != null ? v.fieldDetails.imageId : null}" />
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="callWFEvent" type="c:WF_AppEvent"/>
+
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+             aria-modal="true" aria-describedby="modal-content-id-1"
+             class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <div class="slds-modal__close">
+                    <lightning:button iconName="utility:close" variant="base" onclick="{!c.cancel}"/>
+                </div>
+                <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!v.fieldDetails.Label}</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <lightning:recordEditForm aura:id="SurveyQuestionForm"
+                        objectApiName="Survey_Question__c"
+                                          recordId="{!v.fieldDetails.sqId}"
+                                            onsuccess="{!c.handleSuccess}">
+
+                    <lightning:messages />
+                    <lightning:inputField aura:id="fieldLabel" fieldName="Label__c" onchange="{!c.showButtonText}"/>
+
+                    <!--    IMAGE    -->
+                    <aura:if isTrue="{!v.fieldType == 'image'}">
+                        <c:WF_ImageUploader recordObj="{!v.fieldDetails}"/>
+<!--                        <lightning:fileUpload aura:id="headerImage"-->
+<!--                                              name="fileUploader"-->
+<!--                                              multiple="false"-->
+<!--                                              label="{!v.fieldDetails.Label}"-->
+<!--                                              recordId="{!v.fieldDetails.sqId}"-->
+<!--                                              onuploadfinished="{! c.handleUploadFinished }"-->
+<!--                                              class="slds-align_absolute-center slds-p-bottom_small"/>-->
+
+<!--                        <aura:if isTrue="{!v.imageId != null}">-->
+<!--                        <div class="slds-align_absolute-center">-->
+<!--                            <br/>-->
+<!--                            <img src="{!'/sfc/servlet.shepherd/version/download/' + v.imageId}"  style="width:auto"/>-->
+<!--                        </div>-->
+<!--                        </aura:if>-->
+                        <lightning:inputField aura:id="imageId" fieldName="ImageId__c" value="{!v.imageId}" class="slds-hide"/>
+                    </aura:if>
+
+                    <!--    BUTTON  -->
+                    <aura:if isTrue="{!v.fieldType == 'button'}">
+                        <div class="slds-align_absolute-center">
+                            <br/>
+                            <lightning:button aura:id="footButton" label="" type="button" class="slds-p-around_small"/>
+                        </div>
+                    </aura:if>
+
+                    <!--    SELECT FIELDS    -->
+                    <aura:if isTrue="{!or(v.fieldType == 'single-select', v.fieldType == 'multi-select')}">
+                        <div>Please enter the list of answers/responses in the field below. Each value should be separated by a new line.</div>
+                        <lightning:inputField aura:id="qResponses" fieldName="Question_Responses__c" />
+                        <lightning:inputField aura:id="questionType" fieldName="Question_Type__c" />
+                        <lightning:inputField fieldName="isBold__c"/>
+
+                    </aura:if>
+
+<!--                    STANDARD FIELDS   -->
+                    <aura:if isTrue="{!and(v.fieldType == 'standard', not(v.fieldDetails.Output_Field__c))}">
+                        <lightning:inputField fieldName="isRequired__c"/>
+                        <lightning:inputField fieldName="isBold__c"/>
+                    </aura:if>
+
+<!--                    HIDDEN FIELDS-->
+                    <lightning:inputField fieldName="MetaTypeId__c" value="{!v.fieldDetails.Id}" class="slds-hide"/>
+                    <lightning:inputField fieldName="Field_Type__c" value="{!v.fieldDetails.Field_Type__c}" class="slds-hide"/>
+                    <lightning:inputField aura:id="surveyLookup" fieldName="Survey__c" value="{!v.survey.Id}" class="slds-hide"/>
+                    <lightning:inputField aura:id="fieldCategory" fieldName="Field_Category__c" value="{!v.fieldDetails.Field_Category__c}" class="slds-hide"/>
+
+
+                    <div class="slds-m-top_large slds-grid slds-align_absolute-center">
+                        <lightning:button aura:id="saveBtn" type="submit" label="Save" variant="brand" onclick="{!c.handleSave}"/>
+                        <lightning:button label="Cancel" onclick="{!c.cancel}"/>
+                    </div>
+                </lightning:recordEditForm>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+
+
+</aura:component>

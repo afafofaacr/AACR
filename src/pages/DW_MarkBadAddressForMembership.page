@@ -1,0 +1,33 @@
+<!--  Uesd to show picklist of addresses on contact and onclick of  mark as bad address button update Conatct -->
+<apex:page sidebar="false" standardController="Contact" extensions="DW_MarkBadAdressForMembership" showHeader="false" >
+    
+    <apex:form >
+        
+        <apex:pageblock tabStyle="Contact" id="pageblock" mode="detail" title="Select Bad Address">
+            
+            <!-- Picklist shows all Physical addresses on contact -->
+            <apex:selectList multiselect="false" size="1" value="{!selectedValue}" >
+                <apex:selectOptions value="{!PickLstValue}"/>
+            </apex:selectList>
+            
+            <!-- after clicking This button the selected bad address checkbox on contact will be updated -->
+            <apex:pageBlockButtons location="Bottom" >
+                <apex:commandButton action="{!markAsBadAddressOnContact}" value="Mark As Bad Address" oncomplete="refreshPage();"/>
+            </apex:pageBlockButtons>    
+            
+        </apex:pageblock>
+        
+    </apex:form>
+   
+    <script>
+    
+    /**
+     *Purpose : to refresh record detail page
+     */
+    function refreshPage(){
+        window.top.location='/{!contactId}';
+    }
+    
+    </script>
+    
+</apex:page>

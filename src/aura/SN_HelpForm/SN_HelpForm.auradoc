@@ -1,0 +1,50 @@
+<!--
+ - Created by lauren.lezberg on 12/18/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>SN_HelpForm</code> component allows users encountering an error to submit a form response to the AACR with details of the issue they are facing.
+            This form response will do two things, first it will create an AACR_Error_Log__c record within salesforce and second it will send an email to service now that will create a ticket.
+        </p>
+        <p>
+            Once the user submits the request and the information has been validated, if there is no contact record logged in,
+            there is a search performed to look for a contact record that matches the name and email entered.
+            If there are multiple matching contacts (ie. Duplicates) only the first record will be returned.
+            If one is found, it will be automatically linked to the error log created.
+        </p>
+        <p>
+            For logged in users, the form will appear slightly different as all their contact information will already be prefilled in the form.
+            One additional field will also be on the form, the AACR ID.
+            All the prefilled information will not be editable except for the email address and phone number.
+        </p>
+        <p>
+            An error log is created after form validation and immediately after that, an email is sent using the ‘ServiceNow Request’ email template.
+            The email template leverages the error log data so that the information passed to service now can easily be modified in the future.
+        </p>
+        <p>
+            Because of a salesforce limitation where community guest users do not have the ability to upload a salesforce file linked to a record,
+            the screenshot will be uploaded as a salesforce attachment for new users or users who cannot login. However, for logged in users,
+            the file will be uploaded as a salesforce file and not an attachment.
+            Any screenshots or attachments provided will be sent with the email as well as being linked to the error log in salesforce.
+        </p>
+        <h2>Form Specifications:</h2>
+        <p>
+            <ul>
+                <li>
+                    The required fields are full name, email and issue type. If the preferred method of contact is set to phone, the phone number is also required.
+                </li>
+                <li>
+                    The affiliation search box is the same lookup used in the self registration page and the personal information page.
+                </li>
+                <li>
+                    Issue types are determined from the custom metadata type ‘ServiceNow Incident Type’ and can be managed from the AACR Admin Tab.
+                </li>
+            </ul>
+        </p>
+    </aura:description>
+    <aura:example name="SN_HelpForm" ref="c:SN_HelpForm" label="SN_HelpForm">
+        Example for SN_HelpForm
+    </aura:example>
+</aura:documentation>

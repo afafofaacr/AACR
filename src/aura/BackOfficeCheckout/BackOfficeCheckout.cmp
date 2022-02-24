@@ -1,0 +1,224 @@
+<!--
+ - Created by lauren.lezberg on 10/9/2019.
+ -->
+
+<aura:component description="BackOfficeCheckout" controller="JP_CheckoutController"  implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <ltng:require scripts="{!$Resource.jQueryJs}"/>
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="joinId" type="String" description="The current process id"/>
+    <aura:attribute name="salesOrderId" type="String" description="Id of sales order being processed"/>
+    <aura:attribute name="processing" type="Boolean" description="Action is processing" default="false"/>
+    <aura:attribute name="currentTab" type="String" access="public"/>
+    <aura:attribute name="isModify" type="Boolean" description="Is modify membership process checkout" default="false"/>
+    <aura:attribute name="isInvoice" type="Boolean" description="Is invoice sales order" default="false"/>
+
+
+    <!-- PAYNOW ATTRIBUTES -->
+    <aura:attribute name="environmentKey" type="String" description="Environment Key"/>
+    <aura:attribute name="store" type="Object" description="AACR store"/>
+    <aura:attribute name="salesOrder" type="Object" description="Current sales order"/>
+    <aura:attribute name="redirectURL" type="String" description="Redirect URL after successful payment"/>
+
+
+    <aura:attribute name="paymentObject" type="Object"
+                    description="Returned payment object from OrderApi:PayNow component" default="{}"/>
+    <aura:attribute name="salesOrderJSON" type="String"/>
+    <aura:attribute name="paymentJSON" type="String"/>
+    <aura:attribute name="paymentReturnObj" type="map" default="{}"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="cartItems" type="List" access="private" description="List of items in sales order"/>
+    <aura:attribute name="subTotal" type="Decimal" access="private" description="SubTotal of all cart items"/>
+    <aura:attribute name="taxTotal" type="Decimal" access="private" description="Total of all taxes"/>
+    <aura:attribute name="fullTotal" type="Decimal" access="private"
+                    description="Total of all items and taxes combined"/>
+    <aura:attribute name="discountCode" type="String" access="private" description="Discount/promo code"/>
+    <aura:attribute name="discountApplied" type="Boolean" access="private"
+                    description="Message about applying discount code" default="false"/>
+    <aura:attribute name="applyingDiscount" type="Boolean" access="private" description="Processing promo code action"/>
+    <aura:attribute name="showPayment" type="Boolean" access="private" default="false"
+                    description="Display payment component"/>
+    <aura:attribute name="windowLocation" type="String" access="private" description="Current window url"/>
+    <aura:attribute name="showCheckForm" type="Boolean" access="private" default="false"
+                    description="Display check payment form"/>
+
+
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+    <aura:if isTrue="{!v.showCheckForm}">
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="brand" label="Go Back To Credit Card" onclick="{!c.hideCheckForm}"/>
+        </div>
+        <OrderApi:SalesOrders aura:id="salesOrder"
+                              salesOrderId="{!v.salesOrder.Id}"
+                              storeId="{!v.store.Id}"
+                              environmentKey="{!v.environmentKey}"
+                              retURL="{!v.redirectURL}"/>
+
+
+        <aura:set attribute="else">
+
+
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <!-- ORDER TOTAL AND TAXES -->
+                    <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                         style="background: #50B848; color: white; font-size:2rem;">
+                        Order Total
+                        <div class="slds-float_right">
+                            <ui:outputCurrency value="{!v.fullTotal}"/>
+                        </div>
+                    </div>
+                    <div class="slds-card slds-theme_default slds-p-around_small">
+                        <div class="slds-m-right_x-large slds-m-left_x-large">
+                            <div class="slds-m-bottom_x-small">
+                                <label for="subTotal" class="slds-text-heading_small bold"> Shopping Cart:</label>
+                                <div id="subTotal" class="slds-float_right" style="display:inline">
+                                    <ui:outputCurrency value="{!v.subTotal}" class="slds-text-heading_small "/>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="tax" class="slds-text-heading_small bold"> Tax:</label>
+                                <div id="tax" class="slds-float_right" style="display:inline">
+                                    <ui:outputCurrency value="{!v.taxTotal}" class="slds-text-heading_small "/>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <aura:if isTrue="{!not(v.isModify)}">
+                        <div class="slds-align_absolute-center">
+                            <lightning:input aura:id="discountCode" label="discountCode" variant="label-hidden"
+                                             placeholder="{!empty(v.discountCode)?'Discount Code': v.discountCode}"
+                                             value="{!v.discountCode}" disabled="{!v.discountApplied}"
+                                             class="slds-text-title_small slds-input_small"/>
+                            <lightning:button variant="brand" label="{!v.applyingDiscount?'Processing...':'Apply'}"
+                                              onclick="{!c.applyDiscount}" disabled="{!v.discountApplied}"/>
+                        </div>
+
+                        <br/>
+                        </aura:if>
+                        <div class="slds-box slds-theme_default slds-align_absolute-center slds-size_1-of-4 lightBackground bold">
+                            <label for="total" class="slds-text-heading_small bold"> Total:</label>
+                            <div id="total" style="display:inline">
+                                <ui:outputCurrency value="{!v.fullTotal}" class="slds-text-heading_small bold"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br/>
+
+                    <!-- ITEMIZED CART -->
+                    <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                         style="background: #50B848; color: white; font-size:2rem;">
+                        Shopping Cart
+                        <div class="slds-float_right">{!v.cartItems.length + ' Items'}</div>
+                    </div>
+                    <div class="slds-card slds-theme_default">
+                        <aura:if isTrue="{!not(empty(v.cartItems))}">
+                        <div class="slds-grid slds-m-around_small">
+                            <aura:if isTrue="{!not(v.isModify)}">
+                                <div class="slds-col slds-size_1-of-8 slds-align_absolute-center">
+                                    <aura:if isTrue="{!v.cartItems[0].OrderApi__Item__r.OrderApi__Image_Path__c!=null}">
+                                        <div class="slds-align_absolute-center">
+                                            <img src="{!v.cartItems[0].OrderApi__Item__r.OrderApi__Image_Path__c}"
+                                                 class="img-responsive slds-m-right_small" width="80" height="80"/>
+                                        </div>
+                                        <aura:set attribute="else">
+                                            <aura:if isTrue="{!v.cartItems[0].OrderApi__Item_Class__r.Name == 'Live Event Tickets'}">
+                                                <div class="slds-align_absolute-center" style="position:relative;top:25%;">
+                                                    <lightning:icon iconName="custom:custom45" size="large"/>
+                                                </div>
+                                                <aura:set attribute="else">
+                                                    <lightning:button iconName="utility:close" variant="base" value="{!v.cartItems[0].Id}"
+                                                                      onclick="{!c.removeItem}" disabled="{!v.processing}"/>
+                                                </aura:set>
+                                            </aura:if>
+                                        </aura:set>
+                                    </aura:if>
+
+                                </div>
+
+<!--                                <div class="{!v.cartItems[0].OrderApi__Item__r.OrderApi__Image_Path__c!=null?'slds-col slds-size_1-of-8 slds-align_absolute-center':'slds-hide'}">-->
+<!--                                    <img src="{!v.cartItems[0].OrderApi__Item__r.OrderApi__Image_Path__c}"-->
+<!--                                         class="img-responsive slds-m-right_small" width="80" height="80"/>-->
+<!--                                </div>-->
+<!--                                <aura:set attribute="else">-->
+<!--                                    <div class="slds-col slds-size_1-of-8 slds-align_absolute-center">-->
+<!--                                        <lightning:button iconName="utility:close" variant="base" value="{!v.cartItems[0].Id}"-->
+<!--                                                          onclick="{!c.removeItem}" disabled="{!v.processing}"/>-->
+<!--                                    </div>-->
+<!--                                </aura:set>-->
+                            </aura:if>
+                            <div class="slds-col slds-size_6-of-8">
+                                <div class="slds-text-title_medium"> {!v.cartItems[0].OrderApi__Item__r.Name}</div>
+                                <ui:outputCurrency value="{!v.cartItems[0].OrderApi__Sale_Price__c}"
+                                                   class="slds-text-title_medium bold"/>
+                            </div>
+                        </div>
+                        <div class="slds-m-top_medium">
+                            <aura:iteration items="{!v.cartItems}" var="item" start="1">
+
+                                <div class="slds-grid slds-m-around_small ">
+                                    <div class="slds-col slds-size_1-of-8 slds-align_absolute-center">
+                                        <aura:if isTrue="{!item.OrderApi__Item__r.Name != 'Blood Cancer Discovery - Online'}">
+                                            <lightning:button iconName="utility:close" variant="base" value="{!item.Id}"
+                                                              onclick="{!c.removeItem}" disabled="{!v.processing}"/>
+                                        </aura:if>
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-8">
+                                        <div class="slds-text-title_small">{!item.OrderApi__Item__r.Name}</div>
+                                        <ui:outputCurrency value="{!item.OrderApi__Sale_Price__c}"
+                                                           class="slds-text-heading_small bold"/>
+                                    </div>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                        </aura:if>
+                    </div>
+
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <!-- FONTEVA PAYMENT COMPONENT --> 
+                    <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                         style="background: #50B848; color: white; font-size:2rem;">
+                        Payment
+                    </div>
+                    <lightning:tabset>
+                        <lightning:tab label="Credit Card">
+                            <aura:if isTrue="{!v.showPayment}">
+                                <c:PaymentBillingAddress aura:id="ba" contactId="{!v.salesOrder.OrderApi__Contact__c}"/>
+                            </aura:if>
+                            <aura:if isTrue="{!not(empty(v.salesOrderId))}">
+                                <iframe id="iframe" src="{!'/apex/StripeCheckout?id=' + v.joinId +'&amp;salesOrder=' + v.salesOrderId}" height="290" frameBorder="0"/>
+                            </aura:if>
+                        </lightning:tab>
+                        <lightning:tab label="Offline">
+                            <c:OfflinePayment salesOrderId="{!v.salesOrderId}" />
+<!--                            <div class="slds-align_absolute-center">-->
+<!--                                <div class="slds-grid" data-name="processBtnDiv" aura:id="processBtnDiv">-->
+<!--                                    <div class="slds-col slds-p-bottom&#45;&#45;medium slds-p-top_medium slds-grid_vertical slds-text-align_center">-->
+<!--                                        <lightning:button label="Cancel Order" variant="neutral"-->
+<!--                                                          onclick="{!c.cancelOrder}"/>-->
+
+<!--                                    </div>-->
+<!--                                    <div class="slds-col slds-p-bottom&#45;&#45;medium slds-p-top_medium slds-grid_vertical slds-text-align_center">-->
+<!--                                        <lightning:button-->
+<!--                                                label="{!v.processing?'Processing...':'Process Offline Payment'}"-->
+<!--                                                variant="Brand"-->
+<!--                                                onclick="{!c.processCheckPayment}"/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </lightning:tab>
+                    </lightning:tabset>
+<!--                    <c:PaymentForm showPayment="{!v.showPayment}" showCheckForm="{!v.showCheckForm}" stepId="{!v.stepId}"/>-->
+                </div>
+            </div>
+        </aura:set>
+    </aura:if>
+</aura:component>

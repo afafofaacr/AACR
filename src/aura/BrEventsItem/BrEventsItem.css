@@ -1,0 +1,114 @@
+/**
+ * Created by lauren.lezberg on 3/3/2020.
+ */
+
+
+
+.THIS p{
+    font-size:15px;
+    line-height:20px;
+    /*margin-bottom:2rem;*/
+    color:black;
+    font-family:'GothamBook';
+}
+
+.THIS div.slds-grid.dateLocation{
+    font-size:16px;
+    line-height:16px;
+    font-family:'GothamBold' !important;
+    color:black;
+}
+
+.THIS lightning-map.slds-grid{
+    height:500px;
+}
+
+.THIS div.slds-map:before{
+    display: none;
+}
+
+.THIS .slds-text-title_bold{
+    font-size:1.5rem;
+}
+
+.THIS lightning-button.refundButton{
+    pointer-events: all !important;
+}
+
+.THIS .slds-button__icon{
+    color:white;
+}
+
+.THIS a{
+    color: token(aacrGreen);
+}
+
+.THIS button.slds-button.slds-button_brand{
+    padding:8px;
+    font-size:13px;
+    line-height:13px;
+    background-color: token(aacrGreen);
+    border-color:token(aacrGreen);
+    color: white;
+}
+
+.THIS button.slds-button.slds-button_brand:active{
+    color:white;
+    background-color: token(aacrGreen);
+    border-color:token(aacrGreen);
+}
+
+.THIS button.slds-button.slds-button_brand:hover{
+    color:token(aacrGreen);
+    background-color: white;
+    border:1px solid token(aacrGreen);
+}
+
+.THIS button.slds-button.slds-button_brand:disabled{
+    background: rgb(201, 199, 197);
+    border-color: rgb(201, 199, 197);
+    color: rgb(255, 255, 255);
+}
+
+.THIS button.slds-button.slds-button_neutral:disabled{
+    background-color: var(--sds-c-button-brand-color-background-disabled,#c9c7c5);
+    border-color: var(--sds-c-button-brand-color-border-disabled,#c9c7c5);
+    color: var(--sds-c-button-brand-color-text-disabled,#fff);
+}
+
+.THIS button.slds-button.slds-button_success{
+    background-color:black;
+    border-color:black;
+    font-size:13px;
+    line-height:13px;
+    padding:8px;
+    color:white;
+}
+
+.THIS button.slds-button.slds-button_success:hover{
+    background-color:white;
+    border: 1px solid black;
+    font-size:13px;
+    line-height:13px;
+    padding:8px;
+    color:black;
+}
+
+.THIS button.slds-button.slds-button_neutral{
+    color:token(aacrGreen);
+    border-color:token(aacrGreen);
+}
+
+.THIS button.slds-button{
+    font-size:13px;
+    line-height:13px;
+    padding:7px;
+    font-family:'GothamMedium';
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px){
+    .THIS .mobile{
+        display:contents;
+    }
+}

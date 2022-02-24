@@ -1,0 +1,15 @@
+/**
+ * Created by afaf.awad on 3/3/2021.
+ */
+
+.THIS .slds-tile{
+    font-size: 16px;
+}
+
+.THIS .slds-card{
+    max-height: 700px;
+}
+
+.THIS .autoHeight{
+    max-height: 500px;
+}

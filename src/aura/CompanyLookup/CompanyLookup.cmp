@@ -1,0 +1,97 @@
+<!--
+ - Created by afaf.awad on 7/29/2020.
+ -->
+
+<aura:component description="CompanyLookup" controller="CompanyLookupController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+
+    <!--declare attributes--> 
+    <aura:attribute name="contactId" type="String" default="" description="When contactId needs to be passed"/>
+    <aura:attribute name="selectedRecord" type="Object" default="{}" description="stores selected account record"/>
+    <aura:attribute name="newRecord" type="String" description="Use for new records returned from DunNBradstreet"/>
+    <aura:attribute name="listOfSearchRecords" type="List" description="Use,for store the list of search records which returns from apex class"/>
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="objectAPIName" type="string" default=""/>
+    <aura:attribute name="IconName" type="string" default="standard:account"/>
+    <aura:attribute name="label" type="string" default="Organization"/>
+    <aura:attribute name="Message" type="String" default=""/>
+    <aura:attribute name="firstname" type="String" default=""/>
+    <aura:attribute name="lastname" type="String"  default=""/>
+    <aura:attribute name="isRequired" type="Boolean" default="true"/>
+    <aura:attribute name="token" type="String" default=""/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="Saving Organization"/>
+
+    <aura:handler name="oSelectedRecordEvent" event="c:SelectedObjectRecordEvt" action="{!c.handleComponentEvent}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div style="font-size: medium">
+    <div aura:id="horizontalForm" class="slds-form_horizontal">
+    <div onmouseleave="{!c.onblur}" aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close" data-select="single">
+        <div>
+        <div aura:id="isRequired" class="{!v.isRequired == false ? 'slds-hide' : 'slds-show'}">
+        <label class="slds-form-element__label" for="lookup-348" style="padding-right: 0px;">
+            <span class="slds-required">*</span>
+        </label>
+        </div>
+            <label class="slds-form-element__label" style="padding-left: 0px;">
+                {!v.label}
+            </label>
+        </div>
+        <div class="slds-form-element__control">
+            <div class="slds-form-element">
+            <div class="slds-input-has-icon slds-input-has-icon--right">
+                <!-- This markup is for when an record is selected -->
+                <div aura:id="lookup-pill" class="slds-pill-container slds-hide">
+                    <div class="slds-pill pillSize">
+                        <div class="slds-col">
+                      <span class="slds-pill__icon_container">
+                        <span class="slds-icon_container slds-icon-standard-account" title="Account">
+                          <lightning:icon iconName="{!v.IconName}" alternativeText="{!v.IconName}"/>
+                        </span>
+                      </span>
+                            <span class="slds-pill__label">{!v.selectedRecord.accountName}</span>
+                        </div>
+                        <div class="slds-col">
+                            <div class="slds-clearfix">
+                                <div class="slds-float_right">
+                                    <lightning:buttonIcon alternativeText="Remove" iconName="utility:close" onclick="{!c.clear}" variant="bare"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div aura:id="lookupField" class="slds-show">
+                    <lightning:icon class="slds-input__icon slds-show" iconName="utility:search" size="x-small" alternativeText="search"/>
+                    <span class="slds-icon_container  slds-combobox__input-entity-icon" title="record">
+                        <lightning:icon class="slds-icon slds-icon slds-icon_small slds-icon-text-default" iconName="{!v.IconName}" size="small" alternativeText="icon"/>
+                        <span class="slds-assistive-text"></span>
+                    </span>
+                    <ui:inputText click="{!c.onfocus}" required="{!v.isRequired}" updateOn="keyup" keyup="{!c.keyPressController}" class="slds-lookup__search-input slds-input leftPaddingClass" value="{!v.SearchKeyWord}" placeholder=" Start typing..."/>
+                </div>
+
+            </div>
+                <div>
+                    <!--This part is to Display typeahead lookup result List-->
+                    <ul style="min-height:30px;margin-top:0 !important;padding-left: 5px; padding-right: 3px;" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+                        <lightning:spinner class="slds-hide" variant="brand" size="small" aura:id="mySpinner"/>
+                        <!--             {!v.Message}-->
+                        <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                            <c:CompanyLookupResult aura:id="clResult" oRecord="{!singleRec}" IconName="{!v.IconName}" Message="{!v.Message}"/>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </div>
+
+<!--            <div class="slds-form-element">-->
+<!--            Or-->
+<!--            <lightning:button label="No Affiliation" variant="brand" class="sfdc_button" onclick="{!c.noAffiliation}"/>-->
+<!--&lt;!&ndash;            *****************************************************************************&ndash;&gt;-->
+<!--&lt;!&ndash;         #######################   TODO: set permission to hide Test Account button &ndash;&gt;-->
+<!--            <lightning:button label="Test Account" variant="destructive" class="sfdc_button_red" onclick="{!c.testAccount}"/>-->
+<!--            </div>-->
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+</aura:component>

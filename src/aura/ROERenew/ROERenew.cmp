@@ -1,0 +1,20 @@
+<!--
+ - Created by lauren.lezberg on 2/5/2019.
+ -->
+
+<aura:component description="ROERenew" controller="ROERenewController" > 
+    <aura:attribute name="recordId" type="String" description="contact record id"/>
+    <aura:attribute name="processing" type="Boolean" description="action is processing"/>
+    <aura:attribute name="showButton" type="Boolean" default="false" description="show component for current user?"/>
+    <aura:attribute name="joinId" type="String" description="Id of join process "/>
+
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:if isTrue="{!v.showButton}">
+        <lightning:button variant="brand"  iconName="standard:record" onclick="{!c.createROESalesOrder}" label="{!v.processing?'Processing...': 'Renew'}" disabled="{!v.processing}"/>
+    </aura:if>
+</aura:component>

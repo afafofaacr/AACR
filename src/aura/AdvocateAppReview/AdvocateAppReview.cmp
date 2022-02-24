@@ -1,0 +1,128 @@
+<!--
+ - Created by lauren.lezberg on 7/15/2021.
+ -->
+
+<aura:component description="AdvocateAppReview" controller="AdvocateAppReviewController" implements="force:hasRecordId">
+    <aura:attribute name="pendingTickets" type="List" description="list of pending tickets"/>
+    <aura:attribute name="showButton" type="Boolean" default="false" description="show advocate button"/>
+    <aura:attribute name="reviewOpen" type="Boolean" default="false" description="is review modal open"/>
+    <aura:attribute name="contactRecord" type="Object" description="contact record"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.reviewOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModal }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Review Advocate Status</h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium " id="modal-content-id-1">
+                    <div class="slds-text-heading_small slds-text-title_bold">
+                        Contact Information
+                    </div>
+                    <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Contact">
+                        <div class="slds-box">
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:outputField fieldName="Name" />
+                                    <lightning:outputField fieldName="Member_Type__c" />
+                                    <lightning:outputField fieldName="Membership_Status__c" />
+                                    <lightning:outputField fieldName="Initial_Join_Date__c" />
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:outputField fieldName="Primary_Stakeholder__c" />
+                                    <lightning:outputField fieldName="Primary_Stakeholder_Other__c" />
+                                    <lightning:outputField fieldName="Secondary_Stakeholder__c" />
+                                    <lightning:outputField fieldName="Secondary_Stakeholder_Other__c" />
+                                </div>
+                            </div>
+                        </div>
+                    </lightning:recordViewForm>
+                    <aura:if isTrue="{!not(empty(v.pendingTickets))}">
+                        <br/>
+                    <div class="slds-text-heading_small slds-text-title_bold">
+                        Pending Tickets
+                    </div>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped" aria-label="Example table of Opportunities with striped rows">
+                            <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Event Name">Event Name</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Segment Name">Segment Name</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Total">Total</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Sales Order">Sales Order</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <aura:iteration items="{!v.pendingTickets}" var="ticket">
+                            <tr class="slds-hint-parent">
+                                <td data-label="Event Name">
+                                    <div class="slds-truncate" title="{!ticket.BR_Event__r.Name}">
+                                        {!ticket.BR_Event__r.Name}
+                                    </div>
+                                </td>
+                                <td data-label="Segment Name">
+                                    <div class="slds-truncate" title="{!ticket.AC_User_Segment__r.Name}">
+                                        {!ticket.AC_User_Segment__r.Name}
+                                    </div>
+                                </td>
+                                <td data-label="Total">
+                                    <div class="slds-truncate" title="{!ticket.Fon_Sales_Order__r.OrderApi__Total__c}">
+                                        <ui:outputCurrency value="{!ticket.Fon_Sales_Order__r.OrderApi__Total__c}"/>
+                                    </div>
+                                </td>
+                                <td data-label="Sales Order">
+                                    <div class="slds-truncate" title="{!ticket.Fon_Sales_Order__r.Name}">
+                                        <a href="{!'/' + ticket.Fon_Sales_Order__c}" target="_blank">{!ticket.Fon_Sales_Order__r.Name}</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            </aura:iteration>
+                            </tbody>
+                        </table>
+                    </aura:if>
+                    <br/>
+                    <div class="slds-text-heading_small slds-text-title_bold">
+                        Rejection Message
+                    </div>
+                    <lightning:inputRichText aura:id="rejectMsg"/>
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral"
+                                      label="Cancel"
+                                      title="Cancel"
+                                      onclick="{! c.closeModal }"/>
+                    <lightning:button variant="destructive"
+                                      label="Reject"
+                                      title="Reject"
+                                      onclick="{! c.handleRejection }"/>
+                    <lightning:button variant="brand"
+                                      label="Approve"
+                                      title="Approve"
+                                      onclick="{! c.handleApproval }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+        <aura:set attribute="else">
+            <lightning:button label="Review Advocate Status" variant="brand" onclick="{!c.openReviewModal}"/>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

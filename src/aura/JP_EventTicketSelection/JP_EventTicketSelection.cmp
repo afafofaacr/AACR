@@ -1,0 +1,125 @@
+<!--
+ - Created by lauren.lezberg on 3/17/2020.
+ -->
+
+<aura:component description="JP_EventTicketSelection" controller="JP_EventTicketSelectionController">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="step in join process"/>
+    <aura:attribute name="salesOrderId" type="String" description="salesOrderId"/>
+    <aura:attribute name="ticketPrice" type="Decimal" description="selected ticket price"/>
+    <aura:attribute name="ticketType" type="String" description="selected ticket type"/>
+    <aura:attribute name="eventId" type="String" description="id of selected event"/>
+    <aura:attribute name="isLoading" type="Boolean" description="is component loading" default="false"/>
+    <aura:attribute name="soldOut" type="Boolean" description="is event sold out" default="false"/>
+    <aura:attribute name="eventSegments" type="List" access="private" description="list of available event user segments"/>
+    <aura:attribute name="dupeAlert" type="Boolean" description="hasTicket" default="false"/>
+    <aura:attribute name="refundAlert" type="Boolean" description="hasTicket" default="false"/>
+
+    <aura:attribute name="processing" type="Boolean" description="is component processing" default="false"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.eventId}" action="{!c.getTicketPrice}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <!-- EVENT LOOKUP -->
+    <c:CustomLookup aura:id="eventLookup" filterString="Cancelled__c = false" label="Event:" objectAPIName="BR_Event__c" IconName="standard:event" selectedId="{!v.eventId}" allowNewRecord="false" />
+
+    <!-- SOLD OUT MSGING -->
+    <aura:if isTrue="{!v.soldOut}">
+        <div class="slds-box slds-theme_warning slds-theme_alert-texture slds-m-top_medium">
+            <div class="slds-grid">
+            <lightning:icon size="small" iconName="utility:warning"/>
+            <div class="slds-text-heading_medium slds-text-color_weak slds-text-align_center slds-p-left_small">This event is sold out.</div>
+            </div>
+        </div>
+    </aura:if>
+    <!-- DUPE/REFUND ALERT -->
+    <aura:if isTrue="{!v.dupeAlert}">
+        <div class="slds-box slds-align_absolute-center slds-theme_warning slds-theme_alert-texture slds-m-top_medium">
+            <div class="slds-grid">
+                <lightning:icon size="small" iconName="utility:warning"/>
+                <div class="slds-col">
+                    <div class="slds-text-heading_medium slds-text-align_center slds-text-color_weak slds-p-left_small">
+                    This user already has a ticket for this event.
+
+                    <aura:if isTrue="{!v.refundAlert}">
+                        If you need to re-register them under a different price, please follow standard procedures to notify Finance to refund them for the previous purchase.
+                    </aura:if>
+                </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+
+    <!-- EVENT TICKET SELECTION -->
+    <div class="slds-card slds-p-around_medium slds-m-top_medium">
+        <aura:if isTrue="{!v.isLoading}">
+            <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+                <c:AACRSpinner/>
+            </div>
+            <aura:set attribute="else">
+                <aura:if isTrue="{!not(empty(v.ticketType))}">
+                    <div class="slds-clearfix slds-m-around_small">
+                        <div class="slds-float_right">
+                            <div class="slds-grid">
+                                <lightning:button label="Choose New Price" variant="brand" onclick="{!c.getPriceMap}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-box slds-m-around_small">
+                        <div class="slds-col slds-size_11-of-12">
+                            <div class="slds-text-heading_medium">{!'Event Ticket - ' + v.ticketType}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12">
+                            <div class="slds-float_right">
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <div class="slds-text-heading_medium"><ui:outputCurrency value="{!v.ticketPrice}"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </aura:if>
+            </aura:set>
+        </aura:if>
+    </div>
+
+    <!-- SEGMENT MODAL -->
+    <aura:if isTrue="{!not(empty(v.eventSegments))}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Ticket Types</h2>
+                </header>
+                <div class="slds-modal__content slds-p-left_medium slds-p-right_medium slds-p-top_x-large slds-p-bottom_x-large" id="modal-content-id-1">
+                    <aura:iteration items="{!v.eventSegments}" var="segment">
+                        <div class="slds-grid slds-box slds-m-around_small">
+                            <div class="slds-col">
+                                <div class="slds-text-heading_medium">{!'Event Ticket - ' + segment.key}</div>
+                                <div class="slds-text-heading_medium"><ui:outputCurrency value="{!segment.value}"/></div>
+                            </div>
+                            <div class="slds-col ">
+                                <div class="slds-float_right">
+                                <lightning:buttonIcon iconName="utility:add" size="large" variant="brand" alternativeText="Select item"
+                                                      onclick="{!c.selectTicketType}" value="{!segment.key}"/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </aura:iteration>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

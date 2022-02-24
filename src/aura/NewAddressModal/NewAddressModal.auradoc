@@ -1,0 +1,18 @@
+<!--
+ - Created by lauren.lezberg on 9/24/2020.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>The <code>c:NewAddressModal</code> component allows for addition or editing of a known address. The address can be added
+            through the <code>c:AddressAutocomplete</code> component or manually.</p>
+
+        <strong>Usage Considerations</strong>
+        <p>If the addressId is provided, the address is pre-populated on the screen. If no addressId is provided, the
+        modal has blank inputs.</p>
+        <p>The component fires the <code>c:NewKnownAddressEvt</code> when a new address is added.</p>
+    </aura:description>
+<!--    <aura:example name="NewAddressModal" ref="NewAddressModal" label="NewAddressModal">-->
+<!--        Example for NewAddressModal-->
+<!--    </aura:example>-->
+</aura:documentation>

@@ -1,0 +1,29 @@
+<!--
+ - Created by lauren.lezberg on 1/2/2020.
+ -->
+
+<aura:component description="FS_Selector" controller="FS_SelectorController">
+    <aura:attribute name="eventId" type="String" description="Id of event"/>
+    <aura:attribute name="selectedPreference" type="string" description="selected dietary preference option"/>
+    <aura:attribute name="FSfields" type="List" description="list of fields in fieldset"/>
+    <aura:attribute name="availablePreferences" type="List" description="list of dietary preferences for selection"/>
+    <aura:attribute name="allPreferences" type="Object" description="list of dietary preferences for selection" access="private"/>
+
+    <aura:attribute name="fieldSetLabel" type="String" description="label for list of options"/>
+    <aura:attribute name="sObjectName" type="String" description="sObject name"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.selectedPreference}" action="{!c.handleChange}"/>
+    <aura:method name="saveForm" action="{!c.saveFieldset}"/>
+    
+    <lightning:combobox name="Dietary Preferences" label="{!v.fieldSetLabel}" value="{!v.selectedPreference}" options="{! v.availablePreferences }" />
+
+    <aura:if isTrue="{!not(empty(v.FSfields))}">
+        <div class="slds-text-title_caps slds-m-top_medium">Data Collected: </div>
+        <br/>
+        <aura:iteration items="{!v.FSfields}" var="FSField" >
+            <div class="slds-text-heading_small slds-m-left_medium slds-m-top-small">{!FSField}</div>
+        </aura:iteration>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,96 @@
+<!--
+ - Created by afaf.awad on 2/15/2021.
+ -->
+
+<aura:component description="EC_OrderScheduler" controller="EC_OrderSchedulerController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="orderId" type="String" description="SF Id of Exhibitor Order"/>
+    <aura:attribute name="eventId" type="String" description="SF Id of Event"/>
+    <aura:attribute name="timeSlotId" type="String" description="SF Id of TimeSlot, if one exists"/>
+    <aura:attribute name="schedule" type="List" description="Exhibitor Order Object" />
+    <aura:attribute name="scheduleId" type="String" description="Exhibitor Schedule Id" />
+    <aura:attribute name="partCount" type="Integer" default="0" description="Total count of participants based on user selections"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="selectedDate" type="String" />
+    <aura:attribute name="timeSlots" type="List" description="List of timeSlots to display"/>
+    <aura:attribute name="selectedTime" type="String" description="Time Range user selected"/>
+    <aura:attribute name="moreDetails" type="String" description="More Detail Documentation link"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:handler event="c:EC_DateChange" action="{!c.getDateFromEvent}"/>
+
+
+    <div style="margin: auto">
+        <div class="slds-form slds-m-top_large">
+            <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner/>
+                </div>
+            </div>
+            <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+<!--                <h1 class="slds-text-heading_large">Please select the date you would like your email to be sent (Emails are not sent until approved. <a href="{!v.moreDetails}" target="_blank">More details</a>).-->
+<!--                    All times are Eastern Standard Time (EST).</h1>-->
+                <br/>
+<!--                DATE PICKER -->
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-3">
+                        <c:EC_DatePicker eventId="{!v.eventId}" zoneId="a4k1I000000YMu8QAG"/>
+
+<!--                DATE PICKER -->
+<!--                    LEGENDS-->
+                    <div aura:id="schLegend" class="scheduleLegend slds-m-around_small slds-p-around_medium">
+                        <h1 class="slds-align_absolute-center slds-text-heading_medium"><b>Scheduler Legend</b></h1>
+                        <lightning:layout verticalAlign="center" class="x-large" >
+                            <lightning:layoutItem flexibility="grow" padding="around-small">
+                                <div class="legendAvailable"/>
+                                <div class="legendBlocked slds-m-top_x-small slds-m-bottom_x-small"/>
+                                <div class="legendBooked"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem flexibility="grow" padding="around-small">
+                                <div class="slds-text-heading_medium">Available</div>
+                                <div class="slds-text-heading_medium slds-m-top_x-small slds-m-bottom_x-small">Blocked</div>
+                                <div class="slds-text-heading_medium ">Booked</div>
+
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </div>
+<!--                    LEGENDS-->
+                    </div>
+
+<!--                    SCHEDULE PICKER-->
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:messages aura:id="errorMeg" class="errorMessage"/>
+                        <aura:if isTrue="{!v.selectedTime != null}">
+                            <div class="scheduleLegend slds-p-around_medium slds-m-bottom_medium">
+                            <h1 class="slds-text-heading_large slds-align_absolute-center"> <b>Selected Time Slot : {!v.selectedTime}</b></h1>
+                            </div>
+                        </aura:if>
+                            <div class="scheduleLegend slds-box slds-box_border slds-scrollable slds-m-top_small" style="height: 450px">
+                                <aura:if isTrue="{!empty(v.timeSlots)}">
+                                    <h1 class="slds-text-heading_large slds-align_absolute-center timeSlotInstructions"> Select a date from the calendar to see available time slots</h1>
+                                    <aura:set attribute="else">
+                                <aura:iteration items="{!v.timeSlots}" var="t">
+                                    <div class="slds-align_absolute-center">
+                                    <lightning:button label="{!t.timeRange}" value="{!t}" variant="{!t.marked == 'taken' ? 'destructive' : 'success'}"
+                                                      disabled="{!t.marked == 'blocked'}"
+                                                      onclick="{!c.handleSelectedTimeSlot}" class="timeButtons"/>
+                                    </div>
+                                </aura:iteration>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+ <!--                    SCHEDULE PICKER-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</aura:component>

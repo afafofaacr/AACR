@@ -1,0 +1,24 @@
+<!--
+ - Created by lauren.lezberg on 10/17/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_WorkingGroupDonationsController</p>
+        <p>
+            The <code>JP_WorkingGroupDonations</code> component is a join process component meaning it relies on a sales order id being present in the url. The component looks for any working group items
+            that are present in the sales order and constructs a list of donation items for each working group. The list is constructed by finding all active items under an item class
+            that matches the working group name. When the component is saved, all selected donation items are added as sales order lines on the given sales order lines.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>Working group donation items present in the sales order that are valid will be preselected when the component loads.</p>
+        <p>If a working group donation item is present in the sales order but the working group is no longer present, the donation item will be deleted.</p>
+        <p>A $0 option is added for each donation that does not represent an item. If this option is selected, no donation item will be added to the sales order.</p>
+        <p>For donation items to appear, the item class needs to share the same name as the working group with ' Donations' appended to the name. If these conditions are not met, donations will not appear
+        for the selected working group.</p>
+    </aura:description>
+    <aura:example name="JP_WorkingGroupDonations" ref="c:JP_WorkingGroupDonations" label="JP_WorkingGroupDonations">
+        Example for JP_WorkingGroupDonations
+    </aura:example>
+</aura:documentation>

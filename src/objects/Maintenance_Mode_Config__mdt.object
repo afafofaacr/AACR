@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether maintenance mode is turned on</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Maintenance_Message__c</fullName>
+        <description>Messge to display to users about why page is not working</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Maintenance Message</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Page_API_Name__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Visualforce page api name where maintenance is occurring</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Page API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Site Configurations</label>
+    <listViews>
+        <fullName>Detail</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Is_Active__c</columns>
+        <columns>Maintenance_Message__c</columns>
+        <columns>Page_API_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Detail</label>
+    </listViews>
+    <pluralLabel>Maintenance Mode Configs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

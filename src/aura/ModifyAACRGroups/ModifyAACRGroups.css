@@ -1,0 +1,27 @@
+/**
+ * Created by lauren.lezberg on 4/1/2021.
+ */
+
+.THIS .slds-button.slds-button_neutral{
+    background-color: white;
+    border-color: token(aacrGreen);
+    color: token(aacrGreen);
+    font-size: 1.5rem;
+    width: 100px;
+    padding:5px;
+}
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+    padding:5px;
+}
+
+.THIS .header{
+    font-size: 30px;
+    font-weight:500;
+
+}

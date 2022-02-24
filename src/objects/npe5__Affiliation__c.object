@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>npsp__NPSP_Affiliation_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>npe5__Organization__c</fields>
+        <fields>npe5__Contact__c</fields>
+        <label>NPSP Affiliation Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name(s)</label>
+        <length>2000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Abbreviation__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(IF( INCLUDES(Relationship_Type__c, &apos;Advisor/Board Member&apos;), &apos;A,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Consultant/Independent Contractor&apos;), &apos;C,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Full-time/part-time Employee&apos;), &apos;E,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Grants/Research Support Recipient&apos;), &apos;G,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Honorarium Recipient&apos;), &apos;H,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Stock Shareholder (Self Managed)&apos;), &apos;S,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Speakers Bureau&apos;), &apos;SB,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other (Please Specify)&apos;), &apos;O,&apos;, &apos;&apos;),
+
+LEN(IF( INCLUDES(Relationship_Type__c, &apos;Advisor/Board member&apos;), &apos;A,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Consultant/Independent Contractor&apos;), &apos;C,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Full-time/part-time Employee&apos;), &apos;E,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Grants/Research Support Recipient&apos;), &apos;G,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Honorarium Recipient&apos;), &apos;H,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Stock Shareholder (Self Managed)&apos;), &apos;S,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Speakers Bureau&apos;), &apos;SB,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other (Please Specify)&apos;), &apos;O,&apos;, &apos;&apos;)) - 1)</formula>
+        <label>Relationship Abbreviation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disclosure_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Date(Year(Disclosure_Start_Date__c) + 1,Month(Disclosure_Start_Date__c), Day(Disclosure_Start_Date__c))</formula>
+        <label>Disclosure Date (End)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Disclosure Date (Start)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event Name</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Disclosures</relationshipLabel>
+        <relationshipName>Affiliations</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Advisor/Board Member</fullName>
+                    <default>false</default>
+                    <label>Advisor/Board Member</label>
+                </value>
+                <value>
+                    <fullName>Consultant/Independent Contractor</fullName>
+                    <default>false</default>
+                    <label>Consultant/Independent Contractor</label>
+                </value>
+                <value>
+                    <fullName>Full-time/part-time Employee</fullName>
+                    <default>false</default>
+                    <label>Full-time/part-time Employee</label>
+                </value>
+                <value>
+                    <fullName>Honorarium Recipient</fullName>
+                    <default>false</default>
+                    <label>Honorarium Recipient</label>
+                </value>
+                <value>
+                    <fullName>Stock Shareholder (Self Managed)</fullName>
+                    <default>false</default>
+                    <label>Stock Shareholder (Self-Managed)</label>
+                </value>
+                <value>
+                    <fullName>Speakers Bureau</fullName>
+                    <default>false</default>
+                    <label>Speakers Bureau</label>
+                </value>
+                <value>
+                    <fullName>Other (Please Specify)</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Grants/Research Support Recipient</fullName>
+                    <default>false</default>
+                    <label>Grants/Research Support Recipient</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Relationships_to_Disclose__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationships to Disclose</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>c4g_Contact_Name_Type_Channel__c</fullName>
+        <externalId>false</externalId>
+        <formula>npe5__Contact__r.FirstName &amp; &quot; &quot; &amp;  npe5__Contact__r.LastName &amp;&quot;-&quot;&amp; TEXT(cfg_Type__c) &amp; &quot;-&quot; &amp; TEXT(cfg_Channel__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Name, Type &amp; Channel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cfg_Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Advocacy</fullName>
+                    <default>false</default>
+                    <label>Advocacy</label>
+                </value>
+                <value>
+                    <fullName>In-kind gifts</fullName>
+                    <default>false</default>
+                    <label>In-kind gifts</label>
+                </value>
+                <value>
+                    <fullName>Grants</fullName>
+                    <default>false</default>
+                    <label>Grants</label>
+                </value>
+                <value>
+                    <fullName>Event sponsorships</fullName>
+                    <default>false</default>
+                    <label>Event sponsorships</label>
+                </value>
+                <value>
+                    <fullName>R&amp;D</fullName>
+                    <default>false</default>
+                    <label>R&amp;D</label>
+                </value>
+                <value>
+                    <fullName>Brand Commercial</fullName>
+                    <default>false</default>
+                    <label>Brand Commercial</label>
+                </value>
+                <value>
+                    <fullName>Medical Affairs</fullName>
+                    <default>false</default>
+                    <label>Medical Affairs</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cfg_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Foundation</fullName>
+                    <default>false</default>
+                    <label>Foundation</label>
+                </value>
+                <value>
+                    <fullName>Trusts</fullName>
+                    <default>false</default>
+                    <label>Trusts</label>
+                </value>
+                <value>
+                    <fullName>Board</fullName>
+                    <default>false</default>
+                    <label>Board</label>
+                </value>
+                <value>
+                    <fullName>Committee</fullName>
+                    <default>false</default>
+                    <label>Committee</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>npe5__Contact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Organization Affiliations</relationshipLabel>
+        <relationshipName>Affiliations</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>npe5__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>npe5__EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>npe5__Organization__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Affiliated Contacts</relationshipLabel>
+        <relationshipName>Affiliations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>npe5__Primary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, the Affiliation&apos;s Organization will be stored on the Contact record.</inlineHelpText>
+        <label>Primary</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>npe5__Role__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>npe5__StartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>npe5__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Current</fullName>
+                    <default>true</default>
+                    <label>Current</label>
+                </value>
+                <value>
+                    <fullName>Former</fullName>
+                    <default>false</default>
+                    <label>Former</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>npsp__Related_Opportunity_Contact_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When you create an Opportunity for the Organization in this Affiliation, NPSP assigns this Opportunity Contact Role to the affiliated Contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When you create an Opportunity for the Organization in this Affiliation, NPSP assigns this Opportunity Contact Role to the affiliated Contact.</inlineHelpText>
+        <label>Related Opportunity Contact Role</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Soft Credit</fullName>
+                    <default>false</default>
+                    <label>Soft Credit</label>
+                </value>
+                <value>
+                    <fullName>Solicitor</fullName>
+                    <default>false</default>
+                    <label>Solicitor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Affiliation</label>
+    <listViews>
+        <fullName>Disclosures</fullName>
+        <columns>NAME</columns>
+        <columns>Event__c</columns>
+        <columns>npe5__Contact__c</columns>
+        <columns>npe5__EndDate__c</columns>
+        <columns>Relationships_to_Disclose__c</columns>
+        <columns>Disclosure_Abbreviation__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>npe5__Affiliation__c.Disclosure</value>
+        </filters>
+        <filters>
+            <field>Event__c</field>
+            <operation>contains</operation>
+            <value>2019 Bladder</value>
+        </filters>
+        <label>Disclosures</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AF-{000000}</displayFormat>
+        <label>Affiliation Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Affiliations</pluralLabel>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Disclosure</fullName>
+        <active>false</active>
+        <label>Disclosure</label>
+        <picklistValues>
+            <picklist>Relationship_Type__c</picklist>
+            <values>
+                <fullName>Advisor%2FBoard Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant%2FIndependent Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full-time%2Fpart-time Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants%2FResearch Support Recipient</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honorarium Recipient</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Please Specify%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speakers Bureau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Shareholder %28Self Managed%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationships_to_Disclose__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>cfg_Channel__c</picklist>
+            <values>
+                <fullName>Advocacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brand Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event sponsorships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-kind gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R%26D</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>cfg_Type__c</picklist>
+            <values>
+                <fullName>Board</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trusts</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe5__Status__c</picklist>
+            <values>
+                <fullName>Current</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Former</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npsp__Related_Opportunity_Contact_Role__c</picklist>
+            <values>
+                <fullName>Soft Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>c4g_Foundation_Affiliations</fullName>
+        <active>true</active>
+        <description>For use by AACR Foundation staff</description>
+        <label>Affiliations</label>
+        <picklistValues>
+            <picklist>Relationship_Type__c</picklist>
+            <values>
+                <fullName>Advisor%2FBoard Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant%2FIndependent Contractor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full-time%2Fpart-time Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants%2FResearch Support Recipient</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honorarium Recipient</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28Please Specify%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speakers Bureau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Shareholder %28Self Managed%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationships_to_Disclose__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>cfg_Channel__c</picklist>
+            <values>
+                <fullName>Advocacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brand Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event sponsorships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grants</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In-kind gifts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Affairs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R%26D</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>cfg_Type__c</picklist>
+            <values>
+                <fullName>Board</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Committee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trusts</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npe5__Status__c</picklist>
+            <values>
+                <fullName>Current</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Former</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>npsp__Related_Opportunity_Contact_Role__c</picklist>
+            <values>
+                <fullName>Soft Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>No_Relationships_to_Disclose</fullName>
+        <active>true</active>
+        <description>If &quot;Relationships to Disclose&quot; = No, all other fields should be blank.</description>
+        <errorConditionFormula>AND( RecordType.Name = &quot;Disclosure&quot;
+,TEXT(Relationships_to_Disclose__c)=&quot;No&quot;
+,NOT(ISBLANK(Company_Name__c))
+,NOT(ISBLANK(Relationship_Type__c))
+)</errorConditionFormula>
+        <errorMessage>If there are NO relationships to disclose, there should not be anything entered in Relationship Types or Company Name(s).</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

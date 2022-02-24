@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object is used for the creation and management of directories to be displayed to site users.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>DirectoryApi__Badge_types_filter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>User defined badge types</description>
+        <externalId>false</externalId>
+        <inlineHelpText>User defined badge types</inlineHelpText>
+        <label>Badge types filter</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Criteria_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field defines the type of criteria used to filter the results of the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field defines the type of criteria used to filter the results of the directory.</inlineHelpText>
+        <label>Criteria Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Badge Type</fullName>
+                    <default>true</default>
+                    <label>Badge Type</label>
+                </value>
+                <value>
+                    <fullName>Filter Criteria</fullName>
+                    <default>false</default>
+                    <label>Filter Criteria</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the badge or the criteria used to filter the full list of possible results in the directory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the badge or the criteria used to filter the full list of possible results in the directory</inlineHelpText>
+        <label>Criteria</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Directory_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the object which stores the records to be displayed in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the object which stores the records to be displayed in the directory.</inlineHelpText>
+        <label>Directory Object</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>true</default>
+                    <label>Contact</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Display_Results__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the maximum number of results that will be returned on one page after a search is entered in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the maximum number of results that will be returned on one page after a search is entered in the directory.</inlineHelpText>
+        <label>Display Results</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Email_Me_From_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The email in this field defines the From email address to appear in the recipients email.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The email in this field defines the From email address to appear in the recipients email.</inlineHelpText>
+        <label>Email Me - From Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Email_Me_To_Address_API_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Define the API name of the email field you wish to populate the To field when using the Email Me feature of the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Define the API name of the email field you wish to populate the To field when using the Email Me feature of the directory.</inlineHelpText>
+        <label>Email Me - To Address API Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Email_Template__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Provide the Email Template you wish to use for directory communication</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide the Email Template you wish to use for directory communication</inlineHelpText>
+        <label>Email Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this directory.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Enable_Email_Me__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, directory visitors will be able to contact members of the directory by clicking the Email Me button that appears on the member profile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, directory visitors will be able to contact members of the directory by clicking the Email Me button that appears on the member profile.</inlineHelpText>
+        <label>Enable Email Me</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Enable_Profile_Link__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>By checking this field, authenticated users will be able to navigate back to their profile to update their contact record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By checking this field, authenticated users will be able to navigate back to their profile to update their contact record.</inlineHelpText>
+        <label>Enable Profile Link</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Instructional_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the instructional text to be displayed above the search filters in the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the instructional text to be displayed above the search filters in the directory.</inlineHelpText>
+        <label>Instructional Text</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>11</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Profile_Display_Name_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the fields (csv) displayed on the directory entry&apos;s name in the Profile modal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the fields (csv) displayed on the directory entry&apos;s name in the Profile modal.</inlineHelpText>
+        <label>Profile Display Name Fields</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Profile_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the fields (csv) displayed in the Profile modal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the fields (csv) displayed in the Profile modal.</inlineHelpText>
+        <label>Profile Fields</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Search_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the fields (csv) to be used as search filters at the top of the directory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the fields (csv) to be used as search filters at the top of the directory.</inlineHelpText>
+        <label>Search Fields</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Search_Results_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the fields (csv) to be shown on search results.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the fields (csv) to be shown on search results.</inlineHelpText>
+        <label>Search Results Fields</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Member Directory</label>
+    <listViews>
+        <fullName>DirectoryApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>DirectoryApi__Criteria__c</columns>
+        <columns>DirectoryApi__Directory_Object__c</columns>
+        <columns>DirectoryApi__Display_Results__c</columns>
+        <columns>DirectoryApi__Email_Me_From_Address__c</columns>
+        <columns>DirectoryApi__Email_Me_To_Address_API_Field__c</columns>
+        <columns>DirectoryApi__Enable_Email_Me__c</columns>
+        <columns>DirectoryApi__Enable_Profile_Link__c</columns>
+        <columns>DirectoryApi__Profile_Display_Name_Fields__c</columns>
+        <columns>DirectoryApi__Profile_Fields__c</columns>
+        <columns>DirectoryApi__Search_Fields__c</columns>
+        <columns>DirectoryApi__Search_Results_Fields__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Display Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Member Directories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

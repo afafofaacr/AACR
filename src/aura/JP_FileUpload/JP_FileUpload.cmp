@@ -1,0 +1,58 @@
+<!--
+ - Created by lauren.lezberg on 2/28/2019.
+ -->
+
+<aura:component description="JP_FileUpload" controller="JP_FileUploadController">
+    <aura:attribute name="recordId" type="String" description="Record to attach file to"/>
+    <aura:attribute name="fileId" type="String" description="uploaded file Id"/>
+    <aura:attribute name="contentDocumentId" type="String" description="ContentDocumentId"/>
+    <aura:attribute name="FileList" type="Object" description="List of uploaded files"/>
+    <aura:attribute name="fileNameOverride" type="String" description="Name of file that was uploaded"/>
+    <aura:attribute name="fileName" type="String" description="Name of file that was uploaded"/>
+    <aura:attribute name="required" type="Boolean" description="File upload required" default="false"/>
+    <aura:attribute name="inputLabel" type="String" description="Label for file input" default="File Upload"/>
+    <aura:attribute name="uploading" type="Boolean" description="File is in the process uploading"/>
+    <aura:attribute name="errorMsg" type="String" description="Error message when file upload fails"/>
+    <aura:attribute name="fileCategory" type="String" description="file category"/>
+    <aura:attribute name="uploadDate" type="Datetime" description="datetime when file was uploaded"/>
+
+    <aura:attribute name="fileUploaded" type="Boolean" default="false" description="has file been uploaded"/>
+
+    <aura:attribute name="acceptedFileTypes" type="String" access="private"
+                    default="application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-word.document.macroEnabled.12,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.template,application/vnd.ms-word.template.macroEnabled.12,application/pdf,text/html, application/rtf, text/plain, application/xml, text/xml, application/vnd.oasis.opendocument.text, image/bmp, image/jpeg, image/gif, image/tiff, image/png, application/vnd.ms-xpsdocument, application/oxps, message/rfc822, image/bmp, image/heif"/>
+
+    <aura:handler name="change" value="{!v.fileId}" action="{!c.doInit}"/>
+
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:input aura:id="fileInput" name="file2" label="{!v.inputLabel}" required="{!v.required}"
+                             type="file" files="{!v.FileList}" onchange="{! c.handleUploadFinished }"
+                              accept="{!v.acceptedFileTypes}" multiple="false" variant="{!if(empty(v.inputLabel),'label-hidden','')}"/>
+            <aura:if isTrue="{!v.uploading}">
+                <div class="slds-text-heading_medium slds-has-error">Uploading...</div>
+            </aura:if>
+            <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                <div class="slds-text-heading_medium slds-required slds-has-error">{!v.errorMsg}</div>
+            </aura:if>
+        </div>
+
+        <aura:if isTrue="{!and(not(empty(v.fileId)),not(v.uploading))}">
+            <div class="slds-col">
+                <div class="slds-grid slds-m-top_large">
+                    <div class="slds-text-heading_medium slds-m-top_large slds-m-left_medium slds-m-right_small"
+                         style="color:#4e6593; font-weight:700;">{!v.fileName}</div>
+                    <lightning:button variant="base" iconName="utility:close"
+                                      class="slds-text-heading_large slds-m-top_large slds-required slds-border_left slds-border_right slds-border_top slds-border_bottom"
+                                      onclick="{!c.removeFileAttachment}"/>
+
+                </div>
+                <div class="slds-text-heading_small slds-m-top_xx-small">
+                    Uploaded: <lightning:formattedDateTime value="{!v.uploadDate}" year="2-digit" month="short" day="2-digit"
+                                                           hour="2-digit" minute="2-digit" timeZoneName="short" hour12="true"/>
+                </div>
+            </div>
+
+        </aura:if>
+
+    </div>
+</aura:component>

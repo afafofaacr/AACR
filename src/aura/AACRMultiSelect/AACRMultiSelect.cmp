@@ -1,0 +1,39 @@
+<!--
+ - Created by lauren.lezberg on 1/6/2021.
+ -->
+
+<aura:component description="AACRMultiSelect">
+    <aura:attribute name="isRequired" type="Boolean" default="false" description="is select list required"/>
+    <aura:attribute name="hasError" type="Boolean" default="false" description="does input have an error"/>
+    <aura:attribute name="label" type="String" description="multi select label"/>
+    <aura:attribute name="available" type="List" default="[]" description="list of available options"/>
+    <aura:attribute name="selected" type="List" default="[]" description="list of selected options"/>
+
+    {!v.available}
+    <div class="slds-form-element" >
+        <label class="slds-form-element__label">
+            <aura:if isTrue="{!v.isRequired}">
+                <abbr class="slds-required">*</abbr>
+            </aura:if>
+            {!v.label}
+        </label>
+        <div class="slds-form-element__control" >
+            <div class="{!v.hasError?'slds-box hasError':'slds-box'}" style="min-height:40px;" onclick="{!c.openOptions}" >
+                <aura:iteration items="{!v.selected}" var="s">
+                    <lightning:pill name="{!s}" label="{!s}" onremove="{!c.handleRemove }"/>
+                </aura:iteration>
+            </div>
+
+            <div aura:id="avail" class="slds-hide slds-box slds-p-around-medium customScroll" onmouseleave="{!c.closeOptions}" >
+                <aura:iteration items="{!v.available}" var="a">
+                    <div aura:id="{!a}" id="{!a}" title="{!a}" class="availableOption" onclick="{!c.handleAdd}">{!a}</div>
+                </aura:iteration>
+            </div>
+
+        </div>
+        <aura:if isTrue="{!v.hasError}">
+            <div class="slds-has-error slds-form-element__help">Complete this field.</div>
+        </aura:if>
+    </div>
+
+</aura:component>

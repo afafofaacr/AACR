@@ -1,0 +1,228 @@
+<!--
+ - Created by afaf.awad on 9/21/2020.
+ -->
+
+<aura:component description="AdvocateRegistration" controller="VolunteerFormController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="recordType" type="String" default="Advocate" description="RecordTypeId tp create contact"/>
+    <aura:attribute name="isLoading" type="Boolean" default="true" description="Loading page"/>
+    <aura:attribute name="isSuccess" type="Boolean" default="false" description="Is submission successful"/>
+
+    <aura:attribute name="contact" type="Contact" description="current contact record"/>
+    <aura:attribute name="statesList" type="List" description="List of available states"/>
+    <aura:attribute name="countryList" type="List" description="List of available countries"/>
+    <aura:attribute name="address" type="Object" description="address object for current contact"/>
+    <aura:attribute name="accountId" type="String" description="Id of selected Account"/>
+    <aura:attribute name="stakeholderOptions" type="List" description="List of Stakeholder Options for dependent Secondary Stakeholder"/>
+    <aura:attribute name="primaryStakeholder" type="String" description="Primary Stakeholder choice"/>
+    <aura:attribute name="secondaryStakeholder" type="String" description="Secondary Stakeholder choice"/>
+
+    <aura:attribute name="salutationOptions" type="List" default="[
+        {'label': 'Dr.', 'value': 'Dr.'},
+        {'label': 'Mr.', 'value': 'Mr.'},
+        {'label': 'Mrs.', 'value': 'Mrs.'},
+        {'label': 'Ms.', 'value': 'Ms.'},
+        {'label': 'Prof.', 'value': 'Prof.'},
+    ]"/>
+    <aura:attribute name="fields" type="List" default="['salutation','firstName', 'lastName']"/>
+
+
+    <!--    Recaptcha-->
+    <aura:attribute name="domain" type="String" description="Domain"/>
+    <aura:attribute name="disabled" type="Boolean" description="Disable button"/>
+    <aura:attribute name="showIframe" type="Boolean" default="false" description="Show iframe"/>
+
+    <aura:registerEvent name="registerEvent" type="c:BrRegisterEvent"/>
+    <!--    Recaptcha-->
+
+    <aura:method name="updateContact" action="{!c.doNothing}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="registerEvent" event="c:BrRegisterEvent" action="{!c.saveContactInfo}"/>
+
+    <div class="slds-align_absolute-center">
+        <div style="width: 100%">
+                    <lightning:recordEditForm aura:id="recordEditForm"
+                                              objectApiName="Contact"
+                                              recordTypeId="{!v.recordType}"
+                                              onsuccess="{!c.onSuccess}"
+                                              onerror="{!c.onError}">
+                        <div class="slds-text-longform" style="padding-bottom: 20px">
+                            <div class="slds-align_absolute-center slds-text-heading_large"><b>AACR Virtual Patient
+                                    Advocate Forum:</b></div>
+                            <div class="slds-align_absolute-center slds-text-heading_large"><b>COVID-19 and Cancer</b>
+                            </div>
+                            <br/>
+                            <p class="slds-text-heading_medium"><b>Event Date and Time:</b></p>
+                            <p class="slds-text-heading_small"> Thursday, October 1, 2020 <br/> 1:00 – 3:30 pm EDT</p>
+                            <br/>
+                            <br/>
+                            <div class="slds-text-heading_medium"><b>Free Registration Now Open!</b></div>
+                            <br/>
+                            <p class="slds-text-heading_small">
+                                The COVID-19 pandemic has sickened more than 22.8 million people globally and claimed
+                                the lives of more than
+                                796,000 people around the world. It threatens to reverse decades of research progress in
+                                the fight against
+                                cancer and jeopardize the future care and treatment of patients with cancer. AACR is
+                                working diligently to
+                                keep all members of the cancer community informed and safe from infection. Join
+                                advocates from across the
+                                cancer community for this free virtual event to get the latest information on COVID-19
+                                and cancer.</p>
+                            <p class="slds-text-heading_small">Moderated by Anna D. Barker, USC Chief Strategy Officer
+                                and co-founder of the AACR <b>Scientist Survivor <img class="arrow" src="{!$Resource.double_arrow}"/>Program&#174;
+<!--                                    <span style="font-size: 30px;">®</span>-->
+                                </b>, and featuring patient advocate Adam Hayden, the program will
+                                highlight:</p>
+                            <ul class="slds-text-heading_small" style="padding-left: 20px">
+                                <li>Patient perspectives on the impact of COVID-19 on cancer care and research</li>
+                                <li>Current state of COVID-19 science</li>
+                                <li>Development of COVID-19 vaccines and treatments</li>
+                                <li>Impact on healthcare for patients with cancer</li>
+                            </ul>
+                        </div>
+                        <aura:if isTrue="{!v.isLoading}">
+                            <div class="slds-align_absolute-center">
+                                <c:AACRSpinner/>
+                            </div>
+                            <aura:set attribute="else">
+                                <div class="slds-text-title_bold" style="font-size: 18px;">
+                                   <lightning:formattedUrl label="PROGRAM"
+                                                           value="https://www.aacr.org/patients-caregivers/patient-advocacy/aacr-events-for-patient-advocates/patient-advocate-forum-covid-19-and-cancer/"
+                                                            target="_blank"/>
+                                </div>
+
+                                <br/>
+                                <div class="slds-box">
+                                    <div class="slds-grid slds-form slds-gutters">
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <p class="slds-text-heading_small slds-text-align_center "><b>PERSONAL
+                                                    INFORMATION</b></p>
+                                            <p class="slds-text-body_regular"> *Required Information </p>
+                                            <br/>
+                                            <!--                                    BASIC INFO-->
+                                            <lightning:messages/>
+                                            <div style="margin-left: 3px;padding-right: 5px; padding-top: 3px;">
+
+                                            <lightning:inputName
+                                                    aura:id="conName"
+                                                    label="Name"
+                                                    required="true"
+                                                    firstName=""
+                                                    lastName=""
+                                                    salutation=""
+                                                    options="{!v.salutationOptions}"
+                                                    fieldsToDisplay="{!v.fields}"
+                                                    onchange="{!c.handleFieldUpdate}"/>
+
+                                            </div>
+                                            <div aura:id="fName_help_msg" data-help-message="true" role="alert"
+                                                 class="slds-hide slds-form-element__help">Complete this field. </div>
+
+<!--                                            <lightning:inputField aura:id="Name" fieldName="Name"-->
+<!--                                                                  onchange="{!c.handleFieldUpdate}"-->
+<!--                                                                  variant="label-stacked"/>-->
+<!--                                            <lightning:inputField aura:id="salutation" fieldName="Salutation"-->
+<!--                                                                  onchange="{!c.handleFieldUpdate}"-->
+<!--                                                                  variant="label-stacked"/>-->
+<!--                                            <lightning:inputField aura:id="firstName" fieldName="FirstName"-->
+<!--                                                                  required="true" onchange="{!c.handleFieldUpdate}"-->
+<!--                                                                  variant="label-stacked"/>-->
+<!--                                            <div aura:id="fName_help_msg" data-help-message="true" role="alert"-->
+<!--                                                 class="slds-hide slds-form-element__help">Complete this field.-->
+<!--                                            </div>-->
+<!--                                            <lightning:inputField aura:id="lastName" fieldName="LastName"-->
+<!--                                                                  onchange="{!c.handleFieldUpdate}"-->
+<!--                                                                  variant="label-stacked"/>-->
+<!--                                            <div aura:id="lName_help_msg" data-help-message="true" role="alert"-->
+<!--                                                 class="slds-hide slds-form-element__help">Complete this field.-->
+<!--                                            </div>-->
+                                            <lightning:inputField aura:id="suffix" fieldName="DonorApi__Suffix__c"
+                                                                  variant="label-stacked"/>
+                                            <lightning:inputField aura:id="email" fieldName="Email" required="true"
+                                                                  onchange="{!c.handleFieldUpdate}"
+                                                                  variant="label-stacked"/>
+                                            <div aura:id="email_help_msg" data-help-message="true" role="alert"
+                                                 class="slds-hide slds-form-element__help">Complete this field.
+                                            </div>
+                                            <lightning:inputField aura:id="phone" fieldName="Phone"
+                                                                  onchange="{!c.handleFieldUpdate}"
+                                                                  variant="label-stacked"/>
+                                            <div class="slds-list_horizontal"
+                                                 style="margin-left: 3px;padding-right: 5px; padding-top: 3px;">
+                                                <c:CustomLookup aura:id="company" objectAPIName="Account"
+                                                                label="Organization" IconName="standard:account"
+                                                                selectedId="{!v.accountId}" allowNewRecord="true"
+                                                                filterString="((NOT Name LIKE '%Household%') AND (NOT Name LIKE '%AACR%'))"/>
+                                            </div>
+                                            <div style="padding-top: 10px">
+                                                <lightning:inputField aura:id="title" fieldName="Title"
+                                                                      onchange="{!c.handleFieldUpdate}"
+                                                                      variant="label-stacked"/>
+                                            </div>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <p class="slds-text-heading_small slds-text-align_center"><b>ADDRESS</b></p>
+                                            <br/>
+                                            <br/>
+                                            <div style="margin-left: 3px;padding-right: 5px;">
+                                                <c:AddressEntry aura:id="mailingAddress" parent="{!this}"
+                                                                countryList="{!v.countryList}"
+                                                                statesList="{!v.statesList}"
+                                                                address="{!v.address}" isPreferred="true"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- COMMUNITY INFORMATION-->
+                                <br/>
+                                <br/>
+                                <div class="slds-box">
+                                    <div class="slds-text-heading_medium"><b>Community Information</b></div>
+                                    <p class="slds-text-heading_small">
+                                        Patient advocates represent a broad range of communities with a stake in
+                                        supporting
+                                        cancer research and policy. We recognize
+                                        that patient advocates may be members of several stakeholder communities. For
+                                        most
+                                        activities, we ask participants to identify
+                                        the viewpoint they are primarily representing. However, we find it valuable to
+                                        recognize all the perspectives that an advocate
+                                        has experienced across the research continuum. (Adapted from the PCORI 2018 <i>Defining
+                                            Stakeholders</i>)
+                                    </p>
+                                    <br/>
+                                    <div class="slds-align_absolute-center" style="display:grid; width: 50%">
+                                    <p class="slds-text-body_regular">To help us better understand our community, please
+                                        select the following.</p>
+
+                                    <lightning:inputField aura:id="primaryStakeholder"
+                                                          fieldName="Primary_Stakeholder__c" value="{!v.primaryStakeholder}"
+                                                          onchange="{!c.stakeholderChange}" variant="label-stacked"
+                                                          style="padding-top: 15px;"/>
+                                    <lightning:inputField aura:id="primaryStakeOther"
+                                                              fieldName="Primary_Stakeholder_Other__c"
+                                                              variant="label-stacked" disabled="{!v.primaryStakeholder != 'Other'}"/>
+                                       <lightning:combobox aura:id="secondaryStakeholder" name="secondaryStakeholder" label="Secondary Stakeholder" placeholder="--None--"
+                                                           options="{!v.stakeholderOptions}" value="{!v.secondaryStakeholder}" onchange="{!c.doNothing}"/>
+
+                                        <lightning:inputField aura:id="secondaryStakeOther" disabled="{!v.secondaryStakeholder != 'Other'}"
+                                                              fieldName="Secondary_Stakeholder_Other__c"
+                                                              variant="label-stacked"/>
+                                    </div>
+                                    <div class="captcha">
+                                        <iframe src="{!'/apex/ForceRecaptcha'}" class="iframe" frameborder="0"/>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </lightning:recordEditForm>
+        </div>
+    </div>
+
+</aura:component>

@@ -1,0 +1,14 @@
+<!--
+ - Created by lauren.lezberg on 1/8/2021.
+ -->
+
+<apex:page id="OasisTestPage" controller="OasisTest">
+
+    <apex:form >
+    <apex:commandButton value="Callout" action="{!startRequest}" reRender="test"/>
+    </apex:form>
+
+    <apex:outputPanel id="test">
+        {!result}
+    </apex:outputPanel>
+</apex:page>

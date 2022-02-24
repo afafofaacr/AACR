@@ -1,0 +1,9 @@
+<!--
+ - Created by afaf.awad on 11/10/2021.
+ -->
+
+<aura:event type="APPLICATION" description="ReCaptchaEvent">
+
+    <aura:attribute name="verified" type="Boolean" description="send message ReCaptcha has bee=en verified"/>
+
+</aura:event>

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Fonteva System Logs captures diagnostic and debugging data for all exceptions handled by Registered Apps using the Fonteva Framework.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Framework__Data__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Data contains the current log at the time the System Log was generated either by an exception, Registered App event, Fonteva Framework event, or user triggered event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Data contains the current log at the time the System Log was generated either by an exception, Registered App event, Fonteva Framework event, or user triggered event.</inlineHelpText>
+        <label>Data</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Framework__Exception_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Exception data contains information specifically related to exceptions handled by the Fonteva Platform including code line number, exception message, exception type, as well as blamed Registered App and/or Registered Object when applicable.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Exception data contains information specifically related to exceptions handled by the Fonteva Platform including code line number, exception message, exception type, as well as blamed Registered App and/or Registered Object when applicable.</inlineHelpText>
+        <label>Exception Data</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Framework__Is_Shipped__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whether or not the log has shipped to our remote logging server.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether or not the log has shipped to our remote logging server.</inlineHelpText>
+        <label>Is Shipped</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Framework__Path__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The path of the requested URL from the user who created the System Log.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The path of the requested URL from the user who created the System Log.</inlineHelpText>
+        <label>Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Framework__Registered_App__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The display name of the Registered App that generated the log.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The display name of the Registered App that generated the log.</inlineHelpText>
+        <label>Registered App</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Framework__Registered_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The full api name of the Registered Object that generated the System Log.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The full api name of the Registered Object that generated the System Log.</inlineHelpText>
+        <label>Registered Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Framework__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Populates with a general description of the event that triggered the System Log.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Populates with a general description of the event that triggered the System Log.</inlineHelpText>
+        <label>Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Framework__User_Profile__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The user profile.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; CreatedBy.ProfileId, CreatedBy.Profile.Name , &quot;_blank&quot;)</formula>
+        <inlineHelpText>The user profile.</inlineHelpText>
+        <label>User Profile</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Framework__User_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The user type.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(CreatedBy.UserType)</formula>
+        <inlineHelpText>The user type.</inlineHelpText>
+        <label>User Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>System Log</label>
+    <listViews>
+        <fullName>Framework__All</fullName>
+        <columns>NAME</columns>
+        <columns>Framework__Registered_App__c</columns>
+        <columns>Framework__Registered_Object__c</columns>
+        <columns>Framework__Type__c</columns>
+        <columns>Framework__Path__c</columns>
+        <columns>Framework__User_Type__c</columns>
+        <columns>Framework__User_Profile__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>4/22/2020 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>lessOrEqual</operation>
+            <value>4/24/2020 12:00 AM</value>
+        </filters>
+        <label>All System Logs</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>System Log ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>System Logs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Framework__Registered_App__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Framework__Registered_Object__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Framework__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Framework__Path__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Framework__User_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Framework__User_Profile__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>Framework__Delete_Records</listViewButtons>
+        <lookupDialogsAdditionalFields>Framework__Registered_App__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Framework__Registered_Object__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Framework__Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Framework__Path__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Framework__User_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Framework__User_Profile__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupFilterFields>Framework__Registered_App__c</lookupFilterFields>
+        <lookupFilterFields>Framework__Registered_Object__c</lookupFilterFields>
+        <lookupFilterFields>Framework__Type__c</lookupFilterFields>
+        <lookupFilterFields>Framework__User_Type__c</lookupFilterFields>
+        <lookupFilterFields>Framework__User_Profile__c</lookupFilterFields>
+        <lookupFilterFields>CREATEDBY_USER</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>Framework__Registered_App__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Framework__Registered_Object__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Framework__Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Framework__Path__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Framework__User_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Framework__User_Profile__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATEDBY_USER</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Framework__Registered_App__c</searchFilterFields>
+        <searchFilterFields>Framework__Registered_Object__c</searchFilterFields>
+        <searchFilterFields>Framework__Type__c</searchFilterFields>
+        <searchFilterFields>Framework__User_Type__c</searchFilterFields>
+        <searchFilterFields>Framework__User_Profile__c</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchResultsAdditionalFields>Framework__Registered_App__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Framework__Registered_Object__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Framework__Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Framework__Path__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Framework__User_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Framework__User_Profile__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>Framework__Delete_Records</searchResultsCustomButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Framework__Delete_Records</fullName>
+        <availability>online</availability>
+        <description>Deletes the selected System Logs.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Delete Records</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/9.0/connection.js&quot;)}
+
+var records = {!GETRECORDIDS( $ObjectType.Framework__System_Log__c )};
+
+if (records[0] == null) {
+alert(&quot;Please select at least one record.&quot;)
+} else {
+
+var errors = [];
+var result = sforce.connection.deleteIds(records);
+if (result &amp;&amp; result.length){
+var numFailed = 0;
+var numSucceeded = 0;
+for (var i = 0; i &lt; result.length; i++){
+var res = result[i];
+if (res &amp;&amp; res.success == &apos;true&apos;){
+numSucceeded++;
+} else {
+var es = res.getArray(&quot;errors&quot;);
+if (es.length &gt; 0) {
+errors.push(es[0].message);
+}
+numFailed++;
+}
+}
+if (numFailed &gt; 0){
+alert(&quot;Failed: &quot; + numFailed + &quot;\nSucceeded: &quot; + numSucceeded + &quot; \n Due to: &quot; + errors.join(&quot;\n&quot;));
+} else {
+alert(&quot;Number of records deleted: &quot; + numSucceeded);
+}
+}
+window.location.reload();
+}</url>
+    </webLinks>
+</CustomObject>

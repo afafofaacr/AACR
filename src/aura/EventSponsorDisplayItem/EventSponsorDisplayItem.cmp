@@ -1,0 +1,36 @@
+<!--
+ - Created by afaf.awad on 6/30/2021.
+ -->
+
+<aura:component description="EventSponsorDisplayItem">
+
+    <aura:attribute name="sponsors" type="List" description="List of Sponsors"/>
+    <aura:attribute name="sponsorLevel" type="String" description="Name of sponsorship level"/>
+    <aura:attribute name="orientation" type="Boolean" description="Display Sponsors horizontally(true) or vertically(false)"/>
+    <aura:attribute name="showLogos" type="Boolean" description="Display Sponsor logos"/>
+    <aura:attribute name="isVisualForce" type="Boolean" default="false" description="Is Sponsor cmp on visualforce page"/>
+
+    <div class="slds-align_absolute-center slds-text-title_bold">
+        <h1 style="{!'color: #50b848;' + (v.isVisualForce == true ? ' font-size: 2rem;' : '')}">{!v.sponsorLevel}</h1>
+    </div>
+
+    <div class="slds-grid slds-wrap slds-gutters slds-align_absolute-center">
+        <aura:iteration items="{!v.sponsors}" var="s">
+            <div class="{!'slds-col ' + (v.orientation == true ? 'slds-size_1-of-4' : 'slds-size_1-of-1')}">
+            <aura:if isTrue="{!v.showLogos}">
+                <a href="{!s.sponsor.Logo_URL__c}" target="_blank" >
+                <img src="{!s.sponsorImage}" alt="{!s.sponsor.Display_As__c}" title="{!s.sponsor.Display_As__c}"
+                     class="slds-align_absolute-center" style="max-height: 119px; max-width: 250px;"
+                     id="{!s.sponsor.Logo_URL__c}" /></a>
+                    <aura:set attribute="else">
+                        <a href="{!s.sponsor.Logo_URL__c}" target="_blank" >
+                            <div class="slds-text-heading_medium slds-text-title_bold slds-align_absolute-center" style="{!v.isVisualForce == true ? ' font-size: 1.5rem;' : ''}"> {!s.sponsor.Display_As__c} </div>
+                        </a>
+                    </aura:set>
+                </aura:if>
+            </div>
+        </aura:iteration>
+    </div>
+
+
+</aura:component>

@@ -1,0 +1,80 @@
+<!--
+ - Created by lauren.lezberg on 6/5/2019.
+ -->
+
+<aura:component description="DirectoryDetails" controller="DirectoryController">
+    <aura:attribute name="Contact" type="Object" description="Contact record to display details for"/>
+    <aura:attribute name="workingGroups" type="String" description="List of working groups"/>
+    <aura:attribute name="isOpen" type="Boolean" description="is modal open" default="false"/>
+
+    <aura:attribute name="parent" type="Aura.Component" access="public" required="true"/>
+
+    <aura:handler name="change" action="{!c.getWorkingGroups}" value="{!v.Contact}"/>
+
+    <aura:if isTrue="{!v.isOpen}">
+    <div style="height:640px; position:absolute; " >
+        <section role="dialog" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon alternativeText="Close" iconName="utility:close" class="slds-float_right" onclick="{!c.closeModal}"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate slds-align_absolute-center" style="display:inline-block;">
+                        <div style="font-weight:bold;" class="slds-text-heading_medium">{!v.Contact.Name} </div>
+                        <div class="slds-text-heading_small">{!v.Contact.Omit_Household_Label__c} </div>
+                        <div class="slds-text-heading_small">{!v.Contact.Account.Institution_Type__c}</div>
+                        <div class="slds-text-heading_small">{!v.Contact.MailingState!=null?v.Contact.MailingCity + ', ' + v.Contact.MailingState: v.Contact.MailingCity}</div>
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <!--<div class="slds-form-element slds-form-element_readonly " style="display:flex;">-->
+                        <!--<span class="slds-form-element__label">Account: </span>-->
+                        <!--<div class="slds-form-element__control">-->
+                            <!--<div class="slds-form-element__static">{!v.Contact.Omit_Household_Label__c}</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="slds-form-element slds-form-element_readonly " style="display:flex;">-->
+                        <!--<span class="slds-form-element__label">Institution Type: </span>-->
+                        <!--<div class="slds-form-element__control">-->
+                            <!--<div class="slds-form-element__static">{!v.Contact.Account.Institution_Type__c}</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="slds-form-element slds-form-element_readonly ">
+                        <span class="slds-form-element__label">Primary Research Area: </span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">{!v.Contact.Primary_Research_Area_of_Expertise__c}</div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_readonly ">
+                        <span class="slds-form-element__label">Specific Research Areas: </span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">{!v.Contact.Specific_Research_Areas__c}</div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_readonly " >
+                        <span class="slds-form-element__label">Additional Research Areas: </span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">{!v.Contact.Additional_Research_Areas__c}</div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_readonly " >
+                        <span class="slds-form-element__label">Organ Sites: </span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">{!v.Contact.Organ_Sites__c}</div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-form-element_readonly " >
+                        <span class="slds-form-element__label">AACR Groups: </span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">{!v.workingGroups}</div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button onclick="{!c.closeModal}" variant="neutral" label="Close"/>
+                    <lightning:button onclick="{!c.emailMember}" variant="brand" label="Email"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    </aura:if>
+</aura:component>

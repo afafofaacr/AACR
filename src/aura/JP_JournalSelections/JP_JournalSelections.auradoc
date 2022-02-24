@@ -1,0 +1,30 @@
+<!--
+ - Created by lauren.lezberg on 10/16/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_ItemSelectionController</p>  
+        <p>
+            The <code>JP_JournalSelections</code> component is a join process component which means it relies on a sales order id present in the url. The component is meant to display all available
+            journal subscriptions. Any pre-existing journal subscriptions in the given sales order will be automatically selected on load. Journals are displayed to user using the <code>JP_JournalItem</code>
+            component. The component also has a required journal address section where a user can select their primary address or enter a new address which will populate the journal address fields on the
+            contact record.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>
+            If membership item is an 'Active Membership' a complimentary journal selector is added at the top of the page and must have a selection before buy up journals are loaded. The selector has options for
+            online, print or decline. If decline is selected, a decline journal item is added to the selection.
+        </p>
+        <p>
+            The 'Blood Cancer Discovery Journal - Online' is always preselected and disabled because it is automatically given to every user that has a membership.
+        </p>
+        <p>
+            If the complimentary journal selector is present, whichever journal the user selects will not appear in the list of buy up journals.
+        </p>
+    </aura:description>
+    <!--<aura:example name="JP_JournalSelections" ref="c:JP_JournalSelections" label="JP_JournalSelections">-->
+        <!--Example for JP_JournalSelections-->
+    <!--</aura:example>-->
+</aura:documentation>

@@ -1,0 +1,18 @@
+<!--
+ - Created by mitfity on 31.07.2019.
+ -->
+
+<!-- AC Input Rich Text -->
+<template>
+    <div class="slds-form-element">
+        <label class="slds-form-element__label">
+            <template if:true={required}>
+                <span class="slds-required" title="required">*</span>
+            </template>
+            <span>{label}</span>
+        </label>
+        <lightning-input-rich-text placeholder={placeholder} message-when-bad-input={errorMessage} valid={isValid}
+                                   onblur={onBlur}>
+        </lightning-input-rich-text>
+    </div>
+</template>

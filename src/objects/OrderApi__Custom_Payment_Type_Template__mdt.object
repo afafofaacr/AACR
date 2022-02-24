@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Configurations for custom payment types available for stores.</description>
+    <fields>
+        <fullName>OrderApi__Apex_Class__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Apex Class to drive multiple display features of custom payment types.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Apex Class to drive multiple display features of custom payment types.</inlineHelpText>
+        <label>Apex Class</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Auto_Post_Sales_Order__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, Sales Orders will be posted prior to receiving payment. Usually occurs when payments take several days to process. When unchecked Sales Orders will post once payments are received.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>When checked, Sales Orders will be posted prior to receiving payment. Usually occurs when payments take several days to process. When unchecked Sales Orders will post once payments are received.</inlineHelpText>
+        <label>Auto Post Sales Order</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Available_for_Recurring_Payments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, payment methods will be available for recurring payments.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>When checked, payment methods will be available for recurring payments.</inlineHelpText>
+        <label>Available for Recurring Payments</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whether the metadata record is enabled or not.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Whether the metadata record is enabled or not.</inlineHelpText>
+        <label>Is Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Lightning_Component_for_Checkout__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the lightning component to be used in checkout pages.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Defines the lightning component to be used in checkout pages.</inlineHelpText>
+        <label>Lightning Component for Checkout</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Lightning_Component_for_Payment_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the lightning component to be used in the Payment Method page for the front and backend.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Defines the lightning component to be used in the Payment Method page for the front and backend.</inlineHelpText>
+        <label>Lightning Component for Payment Method</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Custom Payment Type Template</label>
+    <pluralLabel>Custom Payment Type Templates</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

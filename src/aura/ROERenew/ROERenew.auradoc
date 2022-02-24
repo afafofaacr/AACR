@@ -1,0 +1,14 @@
+<!--
+ - Created by lauren.lezberg on 10/17/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: ROERenewController</p>
+        <p>The <code>ROERenew</code> component simply displays a button that will create a renewal sales order and redirect the user to the back office renewal process.</p>
+        <br/>
+        <div style="font-size:1.5rem;">Usage Considerations:</div>
+        <p>The button should be displayed on contact records who are eligible for renewals based on the subscription data and renewal custom setting.</p>
+        <p>The button should only be displayed to users that have the 'ROERenew' custom permission.</p>
+    </aura:description>
+</aura:documentation>

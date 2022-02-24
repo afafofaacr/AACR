@@ -1,0 +1,28 @@
+/**
+ * Created by lauren.lezberg on 3/21/2019.
+ */
+
+.THIS .leftPaddingClass {
+    padding-left: 2rem;
+}
+
+.THIS .pillSize{
+    width:100%;
+}
+
+.THIS div.slds-pill.pillSize{
+    padding:5px;
+}
+
+.THIS .slds-pill__icon_container .slds-icon{
+    display:inherit;
+}
+
+.THIS button.slds-button.slds-button_icon.slds-button_icon-bare{
+    right:0px;
+    bottom:0px;
+}
+
+.THIS.slds-lookup.slds-is-open .slds-lookup__menu{
+    position: inherit;
+}

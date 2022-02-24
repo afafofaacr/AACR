@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Scheduled Payments track the status and details around recurring and scheduled invoice E-Payments related to a Sales Order.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__API_Response__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** API Response from the callout made for processing the payment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** API Response from the callout made for processing the payment</inlineHelpText>
+        <label>API Response</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The amount charged successfully against the Scheduled Payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** The amount charged successfully against the Scheduled Payment.</inlineHelpText>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Custom_Scheduled_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked these scheduled payments wont run as part of the OrderApi ScheduledPaymentBatchable.cls ** Defaults unchecked **</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked these scheduled payments wont run as part of the OrderApi ScheduledPaymentBatchable.cls ** Defaults unchecked **</inlineHelpText>
+        <label>Custom Scheduled Payment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__EPayment_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if the system has generated an E-Payment regardless of the result.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if the system has generated an E-Payment regardless of the result.</inlineHelpText>
+        <label>E-Payment Created</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Has_Errors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Checked if the Scheduled Payment was processed with errors.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Checked if the Scheduled Payment was processed with errors.</inlineHelpText>
+        <label>Has Errors</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Invoice scheduled for payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Invoice scheduled for payment.</inlineHelpText>
+        <label>Invoice</label>
+        <referenceTo>OrderApi__Invoice__c</referenceTo>
+        <relationshipLabel>Scheduled Payments</relationshipLabel>
+        <relationshipName>Scheduled_Payments</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Cancelled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Checked when the Scheduled Payment has been cancelled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Checked when the Scheduled Payment has been cancelled.</inlineHelpText>
+        <label>Is Cancelled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Payment_Processed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** checked if a callout is made and the payment is processed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** checked if a callout is made and the payment is processed</inlineHelpText>
+        <label>Is Payment Processed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Processed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Field** Do not manually update/override. Checked when the system has processed the API transaction for the scheduled payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Field** Do not manually update/override. Checked when the system has processed the API transaction for the scheduled payment.</inlineHelpText>
+        <label>Is Processed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Description formula for scheduled payments.</description>
+        <externalId>false</externalId>
+        <formula>IF (OrderApi__Invoice__c != null,
+            $Label.orderapi__payment_description_prefix_invoice &amp;  OrderApi__Invoice__r.Name,
+            IF (OrderApi__Subscription__c != null,
+            $Label.orderapi__payment_description_prefix_invoice &amp; &quot; &quot; &amp; OrderApi__Subscription__r.OrderApi__Item__r.OrderApi__Display_Name__c,
+            IF (OrderApi__Sales_Order__c != null,
+            $Label.orderapi__payment_description_prefix_sales_order &amp; &quot; (REF:&quot; &amp; OrderApi__Sales_Order__r.Name &amp; &quot;)&quot;,
+            &quot;&quot;
+            )))</formula>
+        <inlineHelpText>** System Calculated ** Description formula for scheduled payments.</inlineHelpText>
+        <label>Payment Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Gateway__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to the Payment Gateway to use for the Scheduled Payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to the Payment Gateway to use for the Scheduled Payment.</inlineHelpText>
+        <label>Payment Gateway</label>
+        <referenceTo>OrderApi__Payment_Gateway__c</referenceTo>
+        <relationshipLabel>Scheduled Payments</relationshipLabel>
+        <relationshipName>Scheduled_Payments</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** Master-detail Payment Method. Link to the E-Payment Method that will be used/has been used for the Schedule Payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Master-detail Payment Method. Link to the E-Payment Method that will be used/has been used for the Schedule Payment.</inlineHelpText>
+        <label>Payment Method</label>
+        <referenceTo>OrderApi__Payment_Method__c</referenceTo>
+        <relationshipLabel>Scheduled Payments</relationshipLabel>
+        <relationshipName>Scheduled_Payments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Processed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Field** Do not manually update/override. The date the Scheduled Payment was processed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Field** Do not manually update/override. The date the Scheduled Payment was processed.</inlineHelpText>
+        <label>Processed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sales_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**Required** Link to related Sales Order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Link to related Sales Order.</inlineHelpText>
+        <label>Sales Order</label>
+        <referenceTo>OrderApi__Sales_Order__c</referenceTo>
+        <relationshipLabel>Scheduled Payments</relationshipLabel>
+        <relationshipName>Scheduled_Payments</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Scheduled_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** The date scheduled for the charge against the linked Payment Method.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** The date scheduled for the charge against the linked Payment Method.</inlineHelpText>
+        <label>Scheduled Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Link to the related Subscription</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Link to the related Subscription</inlineHelpText>
+        <label>Subscription</label>
+        <referenceTo>OrderApi__Subscription__c</referenceTo>
+        <relationshipLabel>Scheduled Payments</relationshipLabel>
+        <relationshipName>Scheduled_Payments</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Succeeded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Field** Do not manually update/override. Checked when the schedule payment has been successfully charged.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Field** Do not manually update/override. Checked when the schedule payment has been successfully charged.</inlineHelpText>
+        <label>Succeeded</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__System_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** API/Gateway Message for decline/success descriptions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** API/Gateway Message for decline/success descriptions.</inlineHelpText>
+        <label>System Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Token__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Token used for API transactions.</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Payment_Method__r.OrderApi__Payment_Method_Token__c</formula>
+        <inlineHelpText>**System Calculated** Token used for API transactions.</inlineHelpText>
+        <label>Token</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Scheduled Payment</label>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>Scheduled Payment ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Scheduled Payments</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Payment_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Payment_Method__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Payment_Gateway__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Scheduled_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Processed_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Succeeded__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Amount__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>OrderApi__Payment_Method__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Sales_Order__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Subscription__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Invoice__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Payment_Gateway__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Payment_Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Payment_Method__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Payment_Gateway__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Scheduled_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Processed_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Is_Cancelled__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Succeeded__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Amount__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>OrderApi__Payment_Gateway__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Payment_Method__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Processed_Date__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Scheduled_Date__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Is_Cancelled__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Succeeded__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Has_Errors__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Sales_Order__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Invoice__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Subscription__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

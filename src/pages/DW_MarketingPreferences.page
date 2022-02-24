@@ -1,0 +1,235 @@
+<!-- Displaying current login Contact's marketing preferences data and edit that and save that -->
+<apex:page controller="DW_MarketingPreferencesController" docType="html-5.0"
+           showHeader="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false">
+    
+    <apex:pageMessages />
+    <c:pageStyle />
+    
+    <!-- Spinner design -->
+    <div class="slds-scope">
+        <div class="slds-spinner_container slds-is-fixed page-spinner hidden">
+            <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </div>
+    
+    <apex:includeScript value="{!$Resource.jQueryJs}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}" loadOnReady="true" /> 
+    <apex:includeScript value="{!$Resource.DW_journalsSubscriptionJs}" loadOnReady="true" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/jquery.toast.css')}" />
+    
+    <apex:composition template="CPBase__template">
+        
+        <apex:define name="pageTitle">
+            Marketing Preferences
+        </apex:define>
+        
+        <apex:define name="pageMain">
+            <div class="container m-t-30">
+                <div class="inner-wrapper">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Marketing Preferences</h1>
+                            <hr class="m-b-15" />
+                        </div>                        
+                    </div>
+                    <apex:form >
+                        <div class="container form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="right">
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Conferences & Workshops" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Conferences_Workshops__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Membership Information" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Membership_Information__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Minorities in Cancer Research" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Minorities_in_Cancer_Research__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Molecular Epidemiology" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Molecular_Epidemiology__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Stand Up 2 Cancer" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Stand_Up_2_Cancer__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Survivor Advocacy" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Survivor_Advocacy__c}"/>
+                                            </div>
+                                        </div> 
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Tumor Microenvironment" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Tumor_Microenvironment__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                    </div><!--/.right-->
+                                    <div class="left">
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="AACR Announcements" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.AACR_Announcements__c}"/>
+                                            </div>
+                                        </div>   
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="AACR Foundation" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.AACR_Foundation__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Annual Meeting" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Annual_Meeting__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Awards & Grants" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Awards_Grants__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Cancer Immunology Group" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Cancer_Immunology_Group__c}"/>
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Cancer Today Magazine" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Cancer_Today_Magazine__c}"/> 
+                                            </div>
+                                        </div>   
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Chemistry in Cancer Research" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Chemistry_in_Cancer_Research__c}"/>
+                                            </div>
+                                        </div> 
+                                        
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                <label >
+                                                    <apex:outputText value="Women in Cancer Research" /> 
+                                                </label >
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <apex:inputField value="{!contact.Women_in_Cancer_Research__c}"/>
+                                            </div>
+                                        </div> 
+                                        
+                                    </div><!--/.left-->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="btnDiv">
+                            <apex:commandButton id="saveButton" action="{! saveContact}" value="Save" styleClass="btn btn-mini m-r-5 btn-neutral ladda-button nextStep btn-wrap"/> 
+                            <apex:commandButton id="cancelButton" action="{! cancelContact}" value="Cancel" immediate="true" styleClass="btn btn-mini m-r-5 btn-neutral ladda-button nextStep btn-wrap" />  
+                        </div>
+                        
+                    </apex:form>
+                </div>
+            </div>
+            
+        </apex:define>
+        
+    </apex:composition>
+    
+</apex:page>

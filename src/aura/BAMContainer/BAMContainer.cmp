@@ -1,0 +1,36 @@
+<!--
+ - Created by lauren.lezberg on 8/8/2019.
+ -->
+
+<aura:component description="BAMContainer" implements="lightning:isUrlAddressable"> 
+    <aura:attribute name="joinId" type="String" description="Id of join process"/>
+    <aura:attribute name="salesOrderId" type="String" description="SalesOrderId"/>
+
+    <aura:attribute name="currentStepId" type="String" description="Current join step id"/>
+    <aura:attribute name="joinSteps" type="List" description="List of join process steps"/>
+    <aura:attribute name="isInitialStep" type="Boolean" default="true"/>
+
+    <aura:attribute type="Aura.Component[]" name="stepCmp"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+    <aura:handler event="c:JP_NavigateEvt" action="{!c.handleNavigate}"/>
+
+
+    <div class="slds-card">
+        <div class="slds-m-left_small slds-m-right_small">
+            <c:JP_ProgressBar currentStepId="{!v.currentStepId}" joinSteps="{!v.joinSteps}" joinId="{!v.joinId}" />
+        </div>
+
+        <!-- DYNAMIC COMPONENT -->
+        <div class="slds-m-around_small" style="margin:auto; width:1140px;">
+            {!v.stepCmp}
+        </div>
+
+        <!-- NAV BUTTONS -->
+        <div class="slds-m-around_small">
+        <c:JP_NavButtons currentStepId="{!v.currentStepId}" joinSteps="{!v.joinSteps}"/>
+        </div>
+    </div>
+</aura:component>

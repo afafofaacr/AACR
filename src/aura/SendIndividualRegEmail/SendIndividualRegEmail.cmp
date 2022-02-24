@@ -1,0 +1,38 @@
+<!--
+ - Created by lauren.lezberg on 4/21/2020.
+ -->
+
+<aura:component description="SendIndividualRegEmail" controller="SendIndividualRegEmailController" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId">
+    <aura:attribute name="eventId" type="String" description="Id of event"/>
+    <aura:attribute name="contactId" type="String" description="id of attendee"/>
+
+    <aura:attribute name="selectedContacts" type="List" description="list of attendees to send email to"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <aura:if isTrue="{!empty(v.recordId)}">
+    <lightning:card iconName="utility:send" title="Send Virtual Registration Email" class="slds-p-around_medium">
+
+    <c:CustomLookup aura:id="events" label="Event" objectAPIName="EventApi__Event__c" IconName="standard:event" selectedId="{!v.eventId}" allowNewRecord="false"/>
+
+    <aura:if isTrue="{!not(empty(v.eventId))}">
+        <c:CustomLookup aura:id="contacts" label="Contacts" objectAPIName="Contact" IconName="standard:contact" selectedId="{!v.contactId}" allowNewRecord="false" filterString="{!'Id IN (SELECT EventApi__Contact__c FROM EventApi__Attendee__c WHERE EventApi__Event__c=\'' + v.eventId + '\')'}"/>
+
+        <div class="slds-align_absolute-center slds-m-top_medium">
+            <lightning:button label="Re-send Registration Confirmation" variant="brand" onclick="{!c.sendEmail}"/>
+        </div>
+    </aura:if>
+
+    </lightning:card>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!not(empty(v.eventId))}">
+                <lightning:card iconName="utility:send" title="Resend Confirmation Email" >
+                    <aura:set attribute="actions">
+                        <lightning:button label="Send" variant="brand" onclick="{!c.sendEmail}"/>
+                    </aura:set>
+                </lightning:card>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

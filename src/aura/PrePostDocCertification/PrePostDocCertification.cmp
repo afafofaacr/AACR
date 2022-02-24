@@ -1,0 +1,61 @@
+<!--
+ - Created by lauren.lezberg on 11/2/2020.
+ -->
+
+<aura:component description="PrePostDocCertification" controller="EventRegisterController">
+    <aura:attribute name="salesOrderId" type="String" description="salesOrderId"/>
+    <aura:attribute name="participantId" type="String" description="participant id"/>
+    <aura:attribute name="contactId" type="String" description="contact id"/>
+    <aura:attribute name="showFileUpload" type="Boolean" description="show/hide file upload" default="false"/>
+    <aura:attribute name="isValid" type="Boolean" description="are all required fields filled in" default="true"/>
+
+<!--    <aura:handler name="change" value="{!v.salesOrderId}" action="{!c.getParticipantId}"/>-->
+    <aura:method name="validate" action="{!c.validateInput}"/>
+
+    <aura:if isTrue="{!v.contactId}">
+        <lightning:recordEditForm aura:id="pForm" objectApiName="Contact" recordId="{!v.contactId}" onload="{!c.handleLoad}">
+            <div class="slds-grid slds-m-right_medium">
+                <div class="slds-col slds-size_1-of-6">
+                    <label class="slds-form-element__label">I certify that I am a Predoctoral Student/Postdoctoral or Clinical Fellow</label>
+                </div>
+                <div class="slds-col slds-size_5-of-6">
+                    <lightning:inputField aura:id="checkbox" fieldName="Pre_Post_Doc__c" onchange="{!c.handleCheckboxChange}" variant="label-hidden"/>
+                </div>
+            </div>
+
+            <aura:if isTrue="{!v.showFileUpload}">
+
+                <div class="slds-grid slds-m-right_medium">
+                    <div class="slds-col slds-size_1-of-6">
+                        <label class="slds-form-element__label"><abbr class="slds-required">*</abbr>
+                            Proof of Status
+                        </label>
+                    </div>
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-grid slds-p-around_small">
+                            <lightning:icon size="small" iconName="utility:info" />
+                            <div class="infoTxt slds-m-left_small">{!$Label.c.Pre_Post_Certification_Text}</div>
+
+                        </div>
+                        <c:JP_FileUpload aura:id="fileUpload" inputLabel="" recordId="{!v.contactId}" fileCategory="Pre/Post Doc Certification" fileNameOverride="Pre/Post Doc" fileName="Pre/Post Doc"/>
+                        <aura:if isTrue="{!not(v.isValid)}">
+                            <div class="slds-text-heading_medium slds-required slds-has-error">Required fields are missing: [Proof of Status]</div>
+                        </aura:if>
+                    </div>
+                </div>
+
+            </aura:if>
+        </lightning:recordEditForm>
+    </aura:if>
+
+<!--    <aura:if isTrue="{!v.participantId}">-->
+<!--    <lightning:recordEditForm aura:id="pForm" objectApiName="BR_Participation__c" recordId="{!v.participantId}" onload="{!c.handleLoad}"  >-->
+<!--        <div class="slds-hide">-->
+<!--            <lightning:inputField aura:id="contactId" fieldName="Contact__c"/>-->
+<!--        </div>-->
+<!--        -->
+
+<!--    </lightning:recordEditForm>-->
+<!--    </aura:if>-->
+
+</aura:component>

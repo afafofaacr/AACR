@@ -1,0 +1,67 @@
+<apex:page id="brRecaptcha" controller="BrRecaptchaCtrl" showHeader="false" sideBar="false">
+    <style type="text/css">
+        .container {
+            float: right;
+            margin-top: 20px;
+        }
+        .brand_button {
+            background: rgb(37, 116, 169);
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            border-color: rgb(37, 116, 169);
+        }
+        .saveBtn {
+            margin-top: 10px;
+            width: 300px;
+            height: 52px;
+            font-size: 16px;
+            position: absolute;
+        }
+        .cp {
+            cursor: pointer;
+        }
+
+        .op {
+            opacity: 0.5;
+        }
+    </style>
+
+            <script type="text/javascript">
+                const COMPONENT_ORIGIN = '{!'https://' + domain}',
+                SITE_KEY = '{!JSENCODE(siteKey)}';
+
+                function verifyCallback() {
+                    let el = document.getElementsByClassName('saveBtn')[0];
+                    el.className = 'brand_button saveBtn cp';
+                    el.disabled = '';
+                }
+
+                function registerEvent() {
+                    if(grecaptcha.getResponse() !== "") {
+                        parent.postMessage('registerEvent', COMPONENT_ORIGIN);
+                    }
+                }
+
+                function onloadCallback() {
+                    console.log('onload function');
+                    grecaptcha.render('html_element', {
+                        'sitekey': SITE_KEY,
+                        'callback': verifyCallback,
+                    });
+                }
+            </script>
+
+            <div class="container">
+                <form action="?" method="POST">
+                    <div id="html_element"></div>
+                </form>
+                <button class="brand_button saveBtn op"
+                        disabled="disabled"
+                        onclick="registerEvent()">
+                    {!$Label.btn_register}
+                </button>
+            </div>
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async="" defer="">
+            </script>
+</apex:page>

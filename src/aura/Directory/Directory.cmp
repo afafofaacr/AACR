@@ -1,0 +1,256 @@
+<!--
+ - Created by lauren.lezberg on 5/20/2019.
+ -->
+
+<aura:component description="Directory" controller="DirectoryController">
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="Contacts" type="Contact[]" description="List of contact records that are AACR Members" access="private"/>
+    <aura:attribute name="contactId" type="String" description="Selected contactId from table" access="private"/>
+
+
+    <aura:attribute name="page" type="Integer" description="Used for storing the current page number" access="private"/>
+    <aura:attribute name="pages" type="Integer" description="Used for storing the total number of pages" access="private"/>
+    <aura:attribute name="total" type="Integer" description="Used to store the total number of records" access="private"/>
+    <aura:attribute name="recordsToDisplay" type="Integer" description="Used to store the number of records to display on a page" default="25" access="private"/>
+    <aura:attribute name="showFilters" type="Boolean" description="Used to show or hide filter panel" access="private" default="false"/>
+
+    <aura:attribute name="primaryFocusOptions" type="List"  description="List of options for primary research area filters" access="private"/>
+    <aura:attribute name="countryOptions" type="List"  description="List of options for country filters" access="private"/>
+    <aura:attribute name="stateOptions" type="List"  description="List of options for state filters" access="private"/>
+
+    <aura:attribute name="focusFilters" type="List" description="List of selected filters for primary research area" access="private"/>
+    <aura:attribute name="countryFilters" type="List" description="List of selected filters for country" access="private"/>
+    <aura:attribute name="stateFilters" type="List" description="List of selected filters for state" access="private"/>
+    <aura:attribute name="nameFilter" type="String" description="Selected filter for name from search bar" access="private"/>
+    <aura:attribute name="accountFilter" type="String" description="Selected filter for account" access="private"/>
+
+    <aura:attribute name="orderBy" type="String" description="Used to sort records" default="Name" access="private"/>
+    <aura:attribute name="order" type="String" description="Ascending or Descending order for sorting" default="ASC" access="private"/>
+
+    <aura:attribute name="emailModalOpen" type="Boolean" description="Used to show or hide email modal" default="false" access="private"/>
+    <aura:attribute name="isLoading" type="Boolean" description="Used to display loading spinner while records are loaded initially" default="false" access="private"/>
+
+    <!-- EVENT HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.accountFilter}" action="{!c.accountFilterChange}"/>
+
+    <!-- MODALS -->
+    <c:DirectoryEmailModal aura:id="emailModal" isOpen="{!v.emailModalOpen}"/>
+    <c:DirectoryDetails aura:id="detailModal" parent="{!this}"/>
+
+    <div class="slds-m-around_small">
+        <!-- HEADER -->
+        <div class="slds-page-header" role="banner">
+            <img src="https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg" class="img-responsive slds-m-right_small" height="5" width="360"/>
+            <div class="slds-float_right slds-m-top_large">
+                <a class="slds-text-heading_medium" href="https://www.aacr.org/professionals/membership/membership-directory/" target="_blank">How-to Guide</a>
+            </div>
+            <div class="slds-clearfix slds-align-bottom">
+                <div class="slds-text-heading_large slds-m-top_large slds-float_left">myAACR Member Directory</div>
+                <!-- SEARCH BAR -->
+                <div class="slds-size_1-of-4 slds-float_right">
+                    <div class="slds-grid slds-float_right" style="display:-webkit-box;">
+                        <div class="slds-form-element__control slds-m-top_large" style="bottom:2px;">
+                            <div class="slds-combobox_container">
+                                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                        <div onkeyup="{!c.enterPressed}">
+                                        <ui:inputText class="slds-text-heading_medium slds-lookup__search-input slds-input leftPaddingClass" value="{!v.nameFilter}" placeholder="Search by name..."/>
+                                        </div>
+                                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                            <aura:if isTrue="{!empty(v.nameFilter)}">
+                                                <lightning:icon iconName="utility:search" alternativeText="search" size="xx-small"/>
+                                                <aura:set attribute="else">
+                                                    <lightning:buttonIcon iconName="utility:close" variant="bare" onclick="{!c.clearSearch}" alternativeText="Clear"/>
+                                                </aura:set>
+                                            </aura:if>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <lightning:button label="Search" variant="brand" class="slds-m-top_large slds-m-left_small" onclick="{!c.searchForMember}"/>
+                    </div>
+                </div>
+                <!-- SEARCH BAR -->
+            </div>
+            <div class="slds-clearfix slds-align-bottom">
+            <lightning:button class="slds-float_left slds-page-header__title slds-m-top_large" variant="base" label="{!v.showFilters?'Hide Filters':'Show Filters'}" onclick="{!c.showFilterPanel}"/>
+            <div class="slds-float_right slds-m-top_large">
+                <!--{!v.total} Members •-->
+
+                <p class="slds-page-header__title slds-truncate">Page {!v.page} / {!v.pages}</p>
+            </div>
+            </div>
+        </div>
+        <!-- HEADER -->
+        <!-- FILTERS -->
+        <div class="slds-grid">
+            <div class="{!v.showFilters?'slds-col slds-size_1-of-6':'slds-hide'}">
+                <div class="slds-box slds-m-left_small slds-m-right_small">
+
+                    <div class="slds-clearfix">
+                        <div class="slds-text-heading_medium slds-float_left">Filters</div>
+                        <lightning:button class="slds-float_right" variant="base" label="Clear All" onclick="{!c.clearAllFilters}"/>
+                    </div>
+
+                    <div class="slds-m-top_xx-small slds-m-bottom_medium">
+                        <c:CustomLookup aura:id="accountFilters" objectAPIName="Account" IconName="standard:account" selectedId="{!v.accountFilter}" allowNewRecord="false" filterString="(NOT Name LIKE '%Household%') AND (NOT Name LIKE '%AACR%')" label="Affiliation"/>
+                    </div>
+
+                    <div>
+                    <lightning:combobox aura:id="focusFilters" label="Research Area of Expertise" placeholder="--Select--" options="{! v.primaryFocusOptions }" onchange="{!c.primaryFocusChange}"/>
+                    </div>
+                    <div class="slds-grid slds-m-top_xx-small slds-m-bottom_medium" style="display:block;">
+                        <aura:iteration items="{!v.focusFilters}" var="fFilter">
+                            <lightning:pill label="{!fFilter}" onremove="{! c.removeFocusFilter }" />
+                        </aura:iteration>
+                    </div>
+
+                    <lightning:combobox aura:id="stateFilters" name="states" label="States" placeholder="--Select--" options="{! v.stateOptions }" onchange="{!c.stateChange}"/>
+                    <div class="slds-grid slds-m-top_xx-small slds-m-bottom_medium" style="display:block;">
+                        <aura:iteration items="{!v.stateFilters}" var="sFilter">
+                            <lightning:pill label="{!sFilter}" onremove="{! c.removeStateFilter }" />
+                        </aura:iteration>
+                    </div>
+
+                        <lightning:combobox aura:id="countryFilters" name="countries" label="Countries" placeholder="--Select--" options="{! v.countryOptions }" onchange="{!c.countryChange}"/>
+                        <div class="slds-grid slds-m-top_xx-small slds-m-bottom_medium" style="display:block;">
+                            <aura:iteration items="{!v.countryFilters}" var="cFilter">
+                                <lightning:pill label="{!cFilter}" onremove="{! c.removeCountryFilter }" />
+                            </aura:iteration>
+                        </div>
+
+
+                </div>
+            </div>
+            <!-- FILTERS -->
+            <!-- TABLE -->
+            <div class="slds-col">
+
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
+                    <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col" >
+                            <div id="Name" class="slds-truncate slds-text-link_reset" title="Name" onclick="{!c.sortMembers}">
+                                <div class="slds-grid">
+                                Name
+                                <lightning:icon iconName="utility:arrowdown" size="xx-small" class="{!and(v.orderBy=='Name', v.order=='ASC')?'slds-show':'slds-hide'}"/>
+                                <lightning:icon iconName="utility:arrowup" size="xx-small" class="{!and(v.orderBy=='Name', v.order=='DESC')?'slds-show':'slds-hide'}"/>
+                                </div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div id="Omit_Household_Label__c" class="slds-truncate slds-text-link_reset" title="Affiliation" onclick="{!c.sortMembers}">
+                                <div class="slds-grid">
+                                    Affiliation
+                                    <lightning:icon iconName="utility:arrowdown" size="xx-small" class="{!and(v.orderBy=='Omit_Household_Label__c', v.order=='ASC')?'slds-show':'slds-hide'}"/>
+                                    <lightning:icon iconName="utility:arrowup" size="xx-small" class="{!and(v.orderBy=='Omit_Household_Label__c', v.order=='DESC')?'slds-show':'slds-hide'}"/>
+                                </div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div id="MailingCity" class="slds-truncate slds-text-link_reset" title="City" onclick="{!c.sortMembers}">
+                                <div class="slds-grid">
+                                    City
+                                    <lightning:icon iconName="utility:arrowdown" size="xx-small" class="{!and(v.orderBy=='MailingCity', v.order=='ASC')?'slds-show':'slds-hide'}"/>
+                                    <lightning:icon iconName="utility:arrowup" size="xx-small" class="{!and(v.orderBy=='MailingCity', v.order=='DESC')?'slds-show':'slds-hide'}"/>
+                                </div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div id="MailingState" class="slds-truncate slds-text-link_reset" title="State" onclick="{!c.sortMembers}">
+                                <div class="slds-grid">
+                                    State
+                                    <lightning:icon iconName="utility:arrowdown" size="xx-small" class="{!and(v.orderBy=='MailingState', v.order=='ASC')?'slds-show':'slds-hide'}"/>
+                                    <lightning:icon iconName="utility:arrowup" size="xx-small" class="{!and(v.orderBy=='MailingState', v.order=='DESC')?'slds-show':'slds-hide'}"/>
+                                </div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div id="MailingCountry" class="slds-truncate slds-text-link_reset" title="Country" onclick="{!c.sortMembers}">
+                                <div class="slds-grid">
+                                    Country
+                                    <lightning:icon iconName="utility:arrowdown" size="xx-small" class="{!and(v.orderBy=='MailingCountry', v.order=='ASC')?'slds-show':'slds-hide'}"/>
+                                    <lightning:icon iconName="utility:arrowup" size="xx-small" class="{!and(v.orderBy=='MailingCountry', v.order=='DESC')?'slds-show':'slds-hide'}"/>
+                                </div>
+                            </div>
+                        </th> 
+                        <th scope="col">
+                            <div id="Primary_Research_Area_of_Expertise__c" class="slds-cell-wrap slds-text-link_reset" title="Research Area of Expertise" onclick="{!c.sortMembers}">
+                                <div class="slds-grid">
+                                    Research Area of Expertise
+                                    <lightning:icon iconName="utility:arrowdown" size="xx-small" class="{!and(v.orderBy=='Primary_Research_Area_of_Expertise__c', v.order=='ASC')?'slds-show':'slds-hide'}"/>
+                                    <lightning:icon iconName="utility:arrowup" size="xx-small" class="{!and(v.orderBy=='Primary_Research_Area_of_Expertise__c', v.order=='DESC')?'slds-show':'slds-hide'}"/>
+                                </div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Actions"></div>
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <aura:if isTrue="{!v.isLoading}">
+                    <div style="margin:0 auto; position:absolute; left:40%;">
+                        <c:AACRSpinner loadingText="Loading members..."/>
+                    </div>
+                        <aura:set attribute="else">
+                    <aura:iteration items="{!v.Contacts}" var="contact">
+
+                        <tr>
+                            <th scope="row" data-label="Contact Name" >
+                                <div class="slds-truncate" title="{!contact.Name}"><lightning:button class="buttonLink" variant="base" onclick="{!c.openDetails}" value="{!contact.Id}" label="{!contact.Name}"/></div>
+                            </th>
+                            <th scope="row" data-label="Affiliation">
+                                <div class="slds-truncate" title="{!contact.Omit_Household_Label__c}">{!contact.Omit_Household_Label__c}</div>
+                            </th>
+                            <th scope="row" data-label="City">
+                                <div class="slds-truncate" title="{!contact.MailingCity}">{!contact.MailingCity}</div>
+                            </th>
+                            <th scope="row" data-label="State">
+                                <div class="slds-truncate" title="{!contact.MailingState}">{!contact.MailingState}</div>
+                            </th>
+                            <th scope="row" data-label="Country">
+                                <div class="slds-truncate" title="{!contact.MailingCountry}">{!contact.MailingCountry}</div>
+                            </th>
+                            <th scope="row" data-label="Primary Research Area">
+                                <div class="slds-cell-wrap" title="{!contact.Primary_Research_Area_of_Expertise__c}">{!contact.Primary_Research_Area_of_Expertise__c}</div>
+                            </th>
+                            <th scope="row" data-label="Actions">
+                                <div  style="display:flex; float:right;">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-m-right_small" >
+                                        <div class="slds-truncate" title="Detail">
+                                            <lightning:button value="{!contact.Id}" label="Details" onclick="{!c.openDetails}" class="slds-button slds-button_outline-brand" />
+                                        </div>
+                                    </div>
+                                    <div class="slds-col">
+                                        <div class="slds-truncate" title="Email" style="flex-grow:1; min-width:67px;">
+                                            <aura:if isTrue="{!contact.Email!=null}">
+                                                <lightning:button variant="brand" value="{!contact.Email}" label="Email" onclick="{!c.emailMember}" />
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </aura:iteration>
+                        </aura:set>
+                    </aura:if>
+                    </tbody>
+                </table>
+                <aura:if isTrue="{!not(v.isLoading)}">
+                <div class="slds-align_absolute-center slds-m-around_medium">
+                    <lightning:button disabled="{!or(v.page == 1, v.page == 0)}" variant="base" label="Previous" onclick="{! c.navigate }" iconPosition="left" iconName="utility:chevronleft" />
+                    &nbsp;
+                    <lightning:button disabled="{!v.page == v.pages}" aura:id="previousPage" variant="base" label="Next" onclick="{! c.navigate }" iconPosition="right" iconName="utility:chevronright"/>
+                </div>
+                </aura:if>
+            </div>
+            <!-- TABLE -->
+        </div>
+    </div>
+</aura:component>

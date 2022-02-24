@@ -1,0 +1,37 @@
+<!--
+ - Created by afaf.awad on 11/3/2020.
+ -->
+
+<aura:component description="SecurityCode"
+                implements="lightning:availableForFlowScreens,force:appHostable,forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="code" type="Integer"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+<!--    <div style="width:400px">-->
+<!--    <div class="slds-box slds-box_small slds-wrap" >-->
+<!--        <h2 class="slds-align_absolute-center"><b>Please do not close this window</b></h2>-->
+<!--        <br/>-->
+<!--        <p><b>We have emailed you a one-time security code</b><br/>-->
+<!--        Our records indicate your myAACR Account is already in use on another computer or browser.-->
+<!--            Please enter the security code that was just sent to your e-mail address.-->
+<!--        </p>-->
+<!--<br/>-->
+<!--        <lightning:input type="number" label="Security Code" value="{!v.code}" required="true"/>-->
+<!--        <br/>-->
+<!--        <br/>-->
+<!--        <div class="slds-clearfix">-->
+<!--            <div class="slds-float_right">-->
+<!--        <lightning:button variant="brand" label="Verify" title="Verify" />-->
+<!--    </div>-->
+<!--        </div>-->
+<!--    <br/>-->
+<!--       <lightning:formattedUrl value="/myAACRHelp" label="Get AACR IT Help" target="_blank" class="slds-align_absolute-center aacrHelp"/>-->
+<!--    </div>-->
+<!--    </div>-->
+
+
+</aura:component>

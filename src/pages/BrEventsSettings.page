@@ -1,0 +1,48 @@
+<apex:page id="BrEventsSettings" controller="BrEventsSettingsCtrl">
+    <apex:stylesheet value="{!URLFOR($Resource.BrEvents, '/css/style.css')}"/>
+
+    <div class="BrEvents-settings">
+        <div class="settings">
+            <h1>AC Events Settings Page</h1>
+            <apex:messages styleClass="messages" />
+            <apex:form >
+                <div class="settings-group">
+                    <div class="field-row">
+                        <div class="label">Send Event Confirmation Emails:</div>
+                        <apex:inputCheckbox value="{!sendEmail}" />
+                    </div>
+                    <div class="field-row">
+                        <div class="label">Organization Wide Email Id:</div>
+                        <apex:inputText value="{!orgWideEmailId}" />
+                    </div>
+                    <p><b>Guest Registration</b></p>
+                    <div class="field-row">
+                        <div class="label">Guest Account ID:</div>
+                        <apex:inputText value="{!guestAccountId}" />
+                    </div>
+                    <div class="field-row">
+                        <div class="label">Contact Record Type Id:</div>
+                        <apex:inputText value="{!contactRecordTypeId}" />
+                    </div>
+                    <div class="field-row">
+                        <div class="label">Create lead when guests register</div>
+                        <apex:inputCheckbox value="{!createLeadGuestRegister}" />
+                    </div>
+                    <div class="field-row">
+                        <div class="label">reCAPTCHA API Key:</div>
+                        <apex:inputText value="{!recaptchaKey}" />
+                    </div>
+                </div>
+                <div class="buttons">
+                    <apex:commandButton action="{!saveSettings}" value="Save changes" />
+                </div>
+            </apex:form>
+        </div>
+        <div class="company-info">
+            <img src="{!URLFOR($Resource.BrEvents, '/images/ac_logo.png')}" alt="Advanced Communities" class="logo" />
+            <p><span>AC Events</span> is created and maintained by <span>AdvancedCommunities.com</span> - the Community Cloud experts.</p>
+            <p>We specialize in Community Cloud customization, development and consulting.<br /> Feel free to contact us regarding anything related to Community Cloud.</p>
+            <p><a href="http://advancedcommunities.com">advancedcommunities.com</a><br /> <a href="mailto:sales@advancedcommunities.com">sales@advancedcommunities.com</a></p>
+        </div>
+    </div>
+</apex:page>

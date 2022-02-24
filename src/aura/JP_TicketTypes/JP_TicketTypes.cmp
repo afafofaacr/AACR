@@ -1,0 +1,131 @@
+<!--
+ - Created by lauren.lezberg on 11/7/2019.
+ -->
+
+<aura:component description="JP_TicketTypes" controller="JP_TicketTypesController">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="allSegments" type="List" description="List of all user segments"/>
+    <aura:attribute name="availableSegments" type="List" description="List of selectable/available user segments"/>
+    <aura:attribute name="selectedSegments" type="List" description="List of selected user segments"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-4">
+            <ul class="slds-listbox slds-box slds-size_1-of-1">
+                <aura:if isTrue="{!empty(v.availableSegments)}">
+                    <div class="slds-text-heading_medium slds-align_absolute-center">There are no available user
+                        segments.
+                    </div>
+                </aura:if>
+                <aura:iteration items="{!v.availableSegments}" var="us">
+                    <li class="slds-listbox__item slds-p-around_xx-small">
+                        <div class="slds-clearfix slds-align_absolute-center">
+                            <div class="slds-text-heading_medium slds-float_left slds-size_3-of-4"
+                                 title="{!us.Description__c}">{!us.Name}</div>
+                            <lightning:buttonIcon iconName="utility:add" class="slds-float_right" size="small"
+                                                  value="{!us.Id}" onclick="{!c.selectUserSegment}" variant="brand"/>
+                        </div>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+        <div class="slds-col slds-size_4-of-6">
+
+            <aura:iteration items="{!v.selectedSegments}" var="us">
+                <div class="slds-box slds-m-bottom_small">
+                    <div class="slds-text-heading_medium" style="font-weight:500;">{!us.Name}</div>
+
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-4">
+                            <div class="slds-text-heading_medium">
+                                <lightning:input value="{!us.Price}" type="number" name="input7" label="Price"
+                                                 formatter="currency" step="0.01"/>
+                                <lightning:input type="checkbox" label="Early Bird Pricing?" checked="{!us.EB}"
+                                                 class="slds-text-heading_medium slds-m-bottom_small"/>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="slds-text-heading_medium slds-m-bottom_small">
+                                <lightning:input type="number" label="Priority" value="{!us.Priority}"/>
+                                <lightning:input type="checkbox" label="On Demand Pricing?" checked="{!us.OD}"
+                                                 class="slds-text-heading_medium slds-m-bottom_small"/>
+                            </div>
+                        </div>
+
+                        <div class="slds-col slds-size_1-of-3">
+                            <div class="slds-text-heading_medium">
+                                <c:FS_Selector aura:id="fsSelector" eventId="{!us.Id}"
+                                               selectedPreference="{!us.DietPreferences}"
+                                               sObjectName="BR_Participation__c" fieldSetLabel="Dietary preferences"/>
+                            </div>
+
+                        </div>
+                        <div class="slds-col slds-m-top_xx-small">
+                            <div class="slds-form-element ">
+                                <span class="slds-form-element__label"></span>
+                                <div class="slds-form-element__control">
+                                    <aura:if isTrue="{!us.Name!='Nonmember Individual'}">
+                                        <lightning:buttonIcon iconName="utility:close" size="small" value="{!us.Id}"
+                                                              onclick="{!c.removeUserSegment}" variant="brand"/>
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <aura:if isTrue="{!us.EB}">
+                            <div class="slds-text-heading_medium slds-col slds-size_1-of-4">
+                                <lightning:input value="{!us.EBPrice}" type="number" label="Early Bird Price"
+                                                 formatter="currency" step="0.01" required="{!us.EB}"/>
+                            </div>
+                            &nbsp;
+                            <div class="slds-text-heading_medium slds-col">
+                                <label class="slds-form-element__label">Early Bird End Date</label>
+                                <lightning:input type="datetime" variant="label-hidden" value="{!us.EBDate}"
+                                                 required="{!us.EB}"/>
+                            </div>
+                            <div class="slds-col slds-m-top_xx-small">
+                                <div class="slds-form-element ">
+                                </div>
+                            </div>
+                        </aura:if>
+                    </div>
+                    <div class="slds-grid">
+                        <aura:if isTrue="{!us.OD}">
+                            <div class="slds-text-heading_medium slds-col slds-size_1-of-4">
+                                <lightning:input value="{!us.ODPrice}" type="number" label="On Demand Price"
+                                                 formatter="currency" step="0.01" required="{!us.OD}"/>
+                            </div>
+                            &nbsp;
+                            <div class="slds-text-heading_medium slds-col">
+                                <label class="slds-form-element__label">On Demand Start Date</label>
+                                <lightning:input type="datetime" variant="label-hidden" value="{!us.ODDate}"
+                                                 required="{!us.OD}"/>
+                            </div>
+                            <div class="slds-col slds-m-top_xx-small">
+                                <div class="slds-form-element ">
+                                </div>
+                            </div>
+                        </aura:if>
+                    </div>
+
+                </div>
+
+
+            </aura:iteration>
+            <div class="slds-align_absolute-center slds-m-around_medium">
+                <lightning:button variant="brand" label="Save Event" onclick="{!c.createEvent}"/>
+            </div>
+        </div>
+
+
+    </div>
+
+</aura:component>

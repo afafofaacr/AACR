@@ -1,0 +1,18 @@
+<!--
+ - Created by lauren.lezberg on 10/29/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>OrderEntryForm</code> component is part of the back office ordering system.
+            It utilizes the <code>ItemQuickAdd</code> component based on a given filter string to add items to a sales order.
+            It is a replacement for fonteva's Rapid Order Entry (ROE).
+        </p>
+        <h4>Usage Considerations:</h4>
+        <p>The component does not process the sales order, it only adds items to it.</p>
+    </aura:description>
+    <aura:example name="OrderEntryForm" ref="c:OrderEntryForm" label="OrderEntryForm">
+        Example for OrderEntryForm
+    </aura:example>
+</aura:documentation>

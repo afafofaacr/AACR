@@ -1,0 +1,18 @@
+/**
+ * Created by lauren.lezberg on 3/12/2020.
+ */
+.THIS .slds-modal__content{
+    /*overflow-y: hidden;*/
+}
+
+.THIS .slds-dropdown-trigger_click.slds-is-open.slds-dropdown{
+    margin-bottom: 10px;
+}
+
+.THIS .slds-dropdown-trigger_click .slds-dropdown{
+    margin-bottom:15px; 
+}
+
+.THIS .slds-dropdown_length-with-icon-5{
+    max-height: 8rem;
+}

@@ -1,0 +1,103 @@
+<!--
+ - Created by afaf.awad on 6/3/2021.
+ -->
+
+<aura:component description="DimensionTagExplorer" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable" access="global">
+
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="dimTagData" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="objectFilters" type="List" default="['Account','Contact','Lead','Opportunity']" description="object filters to search with."/>
+    <aura:attribute name="searchString" type="String" default="" description="search string from user"/>
+    <aura:attribute name="choice" type="String" default="account"/>
+    <aura:attribute name="options" type="List" default="[{'label': 'Account', 'value': 'account'},
+                                                                {'label': 'Contact', 'value': 'contact'},
+                                                                {'label': 'Lead', 'value': 'lead'}
+                                                                {'label': 'Opportunity', 'value': 'opportunity'}]"/>
+
+    <!-- HEADER -->
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="utility:topic2" size="medium"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate"
+                                                  title="Exhibitor Connect Dashboard">Tag Explorer</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <p class="slds-page-header__name-meta">Search and manage Dimension Tags.</p>
+                            </div>
+                                <div class="slds-float_right">
+                                    <lightning:button label="Creat New Tag" iconName="utility:add" onclick="{!c.openNewTagModal}"/>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /HEADER -->
+
+    <c:DimensionTagModal aura:id="DimTagModal" objectName=""/>
+
+    <div class="slds-card slds-m-bottom_small slds-p-around_small">
+        <lightning:layout horizontalAlign="spread">
+            <lightning:layoutItem size="3" class="slds-align_absolute-center slds-p-right_small">
+                <lightning:buttonGroup>
+                    <lightning:button aura:id="accBtn"
+                                              label="Account"
+                                              name="accBtn"
+                                              variant="brand"
+                                              onclick="{!c.updateFilter}"
+                                              />
+                    <lightning:button aura:id="conBtn"
+                                              label="Contact"
+                                              name="conBtn"
+                                              variant="brand"
+                                              onclick="{!c.updateFilter}"
+                                              />
+                    <lightning:button aura:id="leadBtn"
+                                      label="Lead"
+                                      name="leadBtn"
+                                      variant="brand"
+                                      onclick="{!c.updateFilter}"
+                    />
+                    <lightning:button aura:id="oppBtn"
+                                              label="Opportunity"
+                                              name="oppBtn"
+                                              variant="brand"
+                                              onclick="{!c.updateFilter}"
+                                              />
+
+                </lightning:buttonGroup>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="9">
+                <lightning:input aura:id="lookupField" label="Tag Filter" variant="label-hidden" type="search"
+                                 value="{!v.searchString}" placeholder="Search..."/>
+            </lightning:layoutItem>
+        </lightning:layout>
+
+    </div>
+
+    <div class="slds-grid slds-gutters">
+        <!-- DIM TAG TABLE -->
+        <div class="slds-col slds-size_1-of-3">
+            <c:DimensionTagTable tagLevel="Private" objectFilters="{!v.objectFilters}" searchString="{!v.searchString}"/>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <c:DimensionTagTable tagLevel="Public" objectFilters="{!v.objectFilters}" searchString="{!v.searchString}"/>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <c:DimensionTagTable tagLevel="System" objectFilters="{!v.objectFilters}" searchString="{!v.searchString}"/>
+        </div>
+    </div>
+</aura:component>

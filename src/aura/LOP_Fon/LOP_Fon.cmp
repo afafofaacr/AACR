@@ -1,0 +1,48 @@
+<!--
+ - Created by afaf.awad on 12/3/2020.
+ -->
+
+<aura:component description="LOP_Fon"
+                controller="BackOfficeLOPController"
+                implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:lightningQuickAction" access="global">
+
+    <aura:attribute name="isOpen" type="Boolean" default="false" description="is modal open"/>
+    <aura:attribute name="message" type="String" description="text to display to user"/>
+    <aura:attribute name="enable" type="Boolean" default="true" description="Decide whether button should be enabled or not"/>
+    <aura:attribute name="url" type="String" description="url to Letter of Participation PDF"/>
+
+<!--    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+
+    <lightning:card title="Letter of Participation" iconName="utility:page">
+        <aura:set attribute="actions">
+            <div class="slds-align_absolute-center">
+                <lightning:button label="Send LoP" onclick="{!c.sendLetter}" variant="brand"/>
+            </div>
+        </aura:set>
+    </lightning:card>
+
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate"><b>Cannot Create Letter</b></h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-align_absolute-center">
+                        <div class="slds-text-heading_medium">{!v.message}</div>
+                    </div>
+
+                    <div class="slds-m-top_medium slds-grid slds-align_absolute-center">
+                        <lightning:button label="Ok" onclick="{!c.closeModal}"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

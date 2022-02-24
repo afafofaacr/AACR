@@ -1,0 +1,66 @@
+<!--
+ - Created by lauren.lezberg on 10/17/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: MemberProfileController</p>
+        <p>
+            The <code>MyMembership</code> component is displayed to portal users to show their current membership status in our system or show their membership information.
+            It also allows the user to become a member if they are not one already. The display of information is different for each user based on contact record type, application status and subscription
+            information. The options and criteria for what users see is as follows:
+            <ul>
+                <li>Become a Member:
+                    <ul>
+                        <li>Contact record type is nonmember</li>
+                        <li>Application status is not equal to 'Incomplete Application'</li>
+                        <li>Application status is not equal to 'Pending Approval'</li>
+                    </ul>
+                </li>
+                <li>Incomplete Application:
+                    <ul>
+                        <li>Contact record type is nonmember</li>
+                        <li>Application status is equal to 'Incomplete Application'</li>
+                    </ul>
+                </li>
+                <li>Application Pending Approval:
+                    <ul>
+                        <li>Contact record type is nonmember</li>
+                        <li>Application status is equal to 'Pending Approval'</li>
+                    </ul>
+                </li>
+                <li>Membership Subcription information:
+                    <ul>
+                        <li>Contact record type is equal to Member or Prior Member</li>
+                        <li>A membership subscription exists and does not start in the future </li>
+                        <li>The membership status is equal to current, 1YR suspended or 2YR suspended</li>
+                        <li>Contact is not an ineligible student</li>
+                    </ul>
+                </li>
+                <li>Upcoming Membership:
+                    <ul>
+                        <li>Contact record type is Member</li>
+                        <li>Subscription starts in the future</li>
+                    </ul>
+                </li>
+                <li>Error Message - None of the above criteria fits</li>
+            </ul>
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>Active, Affiliate and Emeritus members are able to renew if their subscription is eligible for renewal. The button follows the same logic as the <code>ROERenew</code> component
+            except for the custom permission check.</p>
+        <p>Associate, Student and Honorary members only see the 'Member Since' field and are not able to renew.</p>
+        <p>Upcoming members will see their member type as well as a message explaining they will not receive benefits until their subscription activation date.</p>
+        <p>Pending approval members will see a message explaining they will receive benefits once approved by the membership department.</p>
+        <p>
+            Incomplete applications members will see a message explaining they have already started an application in the system and have a choice to continue with the current application or cancel that one
+            and start a new one. If they choose to continue, they will be redirected to the correct process at the step they left off at. If they choose to start over, the current application will be canceled
+            and deleted. They will be redirect to the membership categories page to start a new application.
+        </p>
+        <p>If a user is able to see their subscription information, the only fields that come from the contact record are 'Member Since' and 'Expires On' fields. </p>
+    </aura:description>
+    <aura:example name="MyMembership" ref="c:MyMembership" label="MyMembership">
+        Example for MyMembership
+    </aura:example>
+</aura:documentation>

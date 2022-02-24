@@ -1,0 +1,88 @@
+<template>
+    <div class="slds-is-relative slds-clearfix">
+        <c-csi-spinner class="form-spinner"></c-csi-spinner>
+
+        <lightning-card class="slds-card" title="Membership Code Generator">
+    
+            <lightning-button label="Create" slot="actions" onclick={handleCreateClick}></lightning-button>
+            <div if:true={fieldsInfo} class="slds-card__body slds-card__body_inner">
+                <lightning-combobox
+                    label="Offer"
+                    value={formData.selectedOffer}
+                    placeholder="Select an Offer"
+                    options={offers}
+                    class="slds-p-bottom_small"
+                    onchange={handleOfferChange} 
+                    required></lightning-combobox>
+                    
+                <lightning-input
+                    type="date"
+                    value={formData.startDate}
+                    data-field="startDate"
+                    data-type="date"
+                    label="Start Date"
+                    onchange={handleInputChange}
+                    class="slds-p-bottom_small"
+                    field-level-help={fieldsInfo.StartDate__c.inlineHelpText}></lightning-input>
+                
+                <lightning-input
+                    type="date"
+                    value={formData.endDate}
+                    data-field="endDate"
+                    data-type="date"
+                    label="End Date"
+                    onchange={handleInputChange}
+                    class="slds-p-bottom_small"
+                    field-level-help={fieldsInfo.EndDate__c.inlineHelpText} ></lightning-input>
+                
+                <lightning-input
+                    type="checkbox"
+                    value={formData.override}
+                    data-field="override"
+                    data-type="checkbox"
+                    label="Override"
+                    onchange={handleInputChange}
+                    class="slds-p-bottom_small"
+                    field-level-help={fieldsInfo.Override__c.inlineHelpText} ></lightning-input>
+
+                <lightning-input
+                    type="checkbox"
+                    value={formData.publish}
+                    data-field="publish"
+                    data-type="checkbox"
+                    label="Publish"
+                    onchange={handleInputChange}
+                    class="slds-p-bottom_small"
+                    field-level-help={fieldsInfo.Publish__c.inlineHelpText} ></lightning-input>
+
+                <lightning-input 
+                    label="Version Code" 
+                    value={formData.versionCode}
+                    maxlength="4"
+                    data-field="versionCode"
+                    data-type="string"
+                    onchange={handleInputChange}
+                    class="slds-p-bottom_small"
+                    field-level-help={fieldsInfo.VersionCode__c.inlineHelpText}
+                    required></lightning-input>
+                
+                <lightning-textarea 
+                    label="SOQL" 
+                    value={formData.soqlString}
+                    data-field="soqlString"
+                    data-type="string"
+                    onchange={handleInputChange}
+                    class="slds-p-bottom_small"
+                    field-level-help={fieldsInfo.SOQLQuery__c.inlineHelpText}
+                    required></lightning-textarea>
+
+                <lightning-textarea 
+                    label="Description" 
+                    value={formData.description}
+                    data-field="description"
+                    data-type="string"
+                    onchange={handleInputChange}></lightning-textarea>
+            </div>
+        </lightning-card>
+    </div>
+</template>

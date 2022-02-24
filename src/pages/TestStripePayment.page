@@ -1,0 +1,292 @@
+<!--
+ - Created by lauren.lezberg on 5/27/2021.
+ -->
+
+<apex:page id="TestStripePayment" controller="TestStripePaymentController" showHeader="false" lightningStylesheets="true" sidebar="false" docType="html-5.0">
+    <head>
+        <title>Payment</title>
+        <meta content="initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, minimal-ui, width=device-width" name="viewport"/>
+    </head>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <style>
+        @font-face {
+            font-family: 'GothamMedium';
+            src: url("{!URLFOR($Resource.GothamNarrow, '/GothamNarrow/GothamNarrowtff/GothamNarrow-Medium.ttf')}");
+            /*format('truetype');*/
+        }
+
+        *{
+            font-family:'GothamMedium';
+        }
+
+        .gothamMedium{
+            font-family:'GothamMedium' !important;
+        }
+
+        .slds-text-title_medium{
+            font-size: 1rem;
+        }
+
+        .slds-spinner_large.slds-spinner:before{
+            background: #50B848;
+        }
+        .slds-spinner_large.slds-spinner:after{
+            background: #50B848;
+        }
+        .slds-spinner_large .slds-spinner__dot-a:before{
+            background: #50B848;
+        }
+
+        .slds-spinner_large .slds-spinner__dot-b:before{
+            background: #50B848;
+        }
+
+        .slds-spinner_large .slds-spinner__dot-a:after{
+            background: #50B848;
+        }
+
+        .slds-spinner_large .slds-spinner__dot-b:after{
+            background: #50B848;
+        }
+
+        input {
+            background-color: transparent;
+            display: block;
+            font-family: 'GothamMedium' !important;
+            font-size: 1em !important;
+            color:black;
+            height:35px;
+            padding: 10px 12px !important;
+        }
+
+        /*input::placeholder{*/
+        /*    font-size: 1em !important;*/
+        /*}*/
+
+        .group .slds-input {
+            min-height: 0px;
+            padding: .25rem 1rem .25rem .75rem;
+        }
+
+        .group input::placeholder {
+            font-size: 1em;
+        }
+
+        .StripeElement{
+            box-sizing: border-box;
+            height: 35px;
+            padding: 10px 12px !important;
+            color:black;
+            font-family: 'GothamMedium' !important;
+        }
+
+        .ElementsApp input{
+            font-family: 'GothamMedium' !important;
+        }
+
+        .hasError {
+            color: rgb(255, 255, 255);
+            background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.025) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.025) 50%, rgba(0, 0, 0, 0.025) 75%, transparent 75%, transparent);
+            background-size: 64px 64px;
+            background-color: rgb(194, 57, 52);
+            padding: 0.5rem;
+            border-radius: .25rem;
+            border: 1px solid rgb(221, 219, 218);
+        }
+
+        .stripe-input-holder {
+            height: 31px;
+            overflow: hidden;
+        }
+
+        /*.paymentBtn{*/
+        /*    left:49%;*/
+        /*}*/
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+    </style>
+
+    <apex:includeLightning />
+    <apex:slds />
+
+
+    <!-- ACTION FUNCTIONS TO SEND DATA TO STRIPE -->
+    <apex:form >
+        <apex:actionFunction id="paymentProcessor" name="processPaymentIntent" action="{!createPaymentIntent}" reRender="paymentScript, error">
+        </apex:actionFunction>
+
+        <apex:actionFunction action="{!finalizePayment}" name="finishOrder" reRender="false" oncomplete="redirect();">
+            <apex:param name="pmID" value=""/>
+        </apex:actionFunction>
+    </apex:form>
+
+    <div id="loadingWheel" style="display:block; position:relative; z-index:10000;" class="slds-hide slds-m-around_small">
+        <div class="slds-align_absolute-center" >
+            <div role="status" class="slds-spinner slds-spinner_large">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a" style="font-size: 100px;"></div>
+                <div class="slds-spinner__dot-b" style="font-size: 100px;"></div>
+            </div>
+        </div>
+        <div style="font-weight:500; margin-top:6.5rem;" class="slds-align_absolute-center slds-text-heading_large">Processing...</div>
+    </div>
+
+    <apex:outputPanel rendered="{!showPayment}">
+
+        <!-- PAYMENT FORM -->
+        <form id="payment-form" >
+
+            <div class="group slds-p-around_medium">
+                <div class="slds-align_absolute-center slds-m-around_small">
+                    <div id="card-errors" role="alert" class="slds-text-heading_small"></div>
+                    <apex:outputPanel id="error">
+                        <apex:outputPanel rendered="{!errorMsg!=null}">
+                            <div role="alert" class="slds-m-around_small hasError">
+                                {!errorMsg}
+                            </div>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </div>
+
+                <label class="slds-text-title_medium slds-text-title_bold">
+                    <span>Cardholder Name</span>
+                </label>
+                <input name="cardholderName" type="text" class="slds-text-heading_medium slds-input slds-m-bottom_small"
+                       placeholder="{!currentContact.Name}" value=""/>
+
+                <br/>
+                <label class="slds-text-title_medium slds-text-title_bold slds-m-top_medium">
+                    <span>Card</span>
+                </label>
+                <div id="card-element" class="slds-input gothamMedium slds-m-bottom_small"></div>
+
+                <div class="slds-align_absolute-center">
+                    <button class="slds-button slds-button_neutral" onclick="cancelOrder();">Cancel Order</button>
+                    &nbsp;
+                    <!--                <div style="left:45%">-->
+                    <apex:outputPanel rendered="{!processed}">
+                        <button class="slds-button slds-button_brand paymentBtn" disabled="disabled" onClick="processPayment();return false;">Process Payment</button>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!NOT(processed)}">
+                        <button class="slds-button slds-button_brand paymentBtn" onClick="processPayment();return false;">Process Payment</button>
+                    </apex:outputPanel>
+                    <!--                </div>-->
+                </div>
+            </div>
+        </form>
+
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!showPayment==false}">
+        <div class="slds-align_absolute-center slds-m-top_medium">
+            <button class="slds-button slds-button_neutral" onclick="cancelOrder();">Cancel Order</button>
+            <button class="slds-button slds-button_brand paymentBtn" onClick="processZeroDollarOrder();">Process Payment</button>
+        </div>
+    </apex:outputPanel>
+
+    <script>
+
+        stripe = Stripe('{!publicKey}');
+        elements = stripe.elements();
+
+        // console.log('initialized!');
+
+        cardElement = elements.create('card');
+        cardElement.mount('#card-element', {style: {
+                base: {
+                    // Add your base input styles here. For example:
+                    fontSize: '1.25rem',
+                    '::placeholder': {
+                        color: 'black',
+                        fontSize: '1.25rem'
+                    },
+                    color: "black",
+                    height: '35px'
+                },
+                invalid: {
+                    color: '#e5424d',
+                    ':focus': {
+                        color: '#303238',
+                    },
+                },
+            }});
+
+
+
+        function processPayment(){
+            document.getElementById('payment-form').classList.add("slds-hide");
+            document.getElementById('loadingWheel').classList.remove("slds-hide");
+
+            processPaymentIntent();
+        }
+
+
+    </script>
+
+    <apex:outputPanel id="paymentScript">
+        <script >
+
+            if('{!piSecret}'!=null && '{!piSecret}'!=undefined && '{!piSecret}'!='') {
+                document.getElementById('payment-form').classList.add("slds-hide");
+                document.getElementById('loadingWheel').classList.remove("slds-hide");
+
+                stripe.confirmCardPayment('{!piSecret}', {
+                    payment_method: {
+                        card: cardElement,
+                        billing_details: {
+                            name: '{!JSENCODE(currentContact.Name)}',
+                        },
+                    },
+                }).then(function (result) {
+                    // Handle result.error or result.paymentIntent
+                    if (result.error) {
+                        document.getElementById('payment-form').classList.remove("slds-hide");
+                        document.getElementById('loadingWheel').classList.add("slds-hide");
+                        //Show error in payment form
+                        //Inform the customer that there was an error.
+                        var errorElement = document.getElementById('card-errors');
+                        errorElement.textContent = result.error.message;
+                        errorElement.classList.add('hasError');
+
+                    } else {
+                        console.log('success');
+                        // console.log('paymentIntent: ' + JSON.stringify(result.paymentIntent.payment_method));
+                        // finishOrder(result.paymentIntent.payment_method);
+                    }
+                });
+            } else {
+                console.log('hide loading wheel...');
+                document.getElementById('payment-form').classList.remove("slds-hide");
+                document.getElementById('loadingWheel').classList.add("slds-hide");
+            }
+
+            function processZeroDollarOrder(){
+                console.log('processZeroDollarOrder.....');
+                // document.getElementById('payment-form').classList.add("slds-hide");
+                document.getElementById('loadingWheel').classList.remove("slds-hide");
+
+                finishOrder(null);
+            }
+
+            function redirect(){
+                window.top.location.href = '{!retURL}';
+            }
+
+            function cancelOrder(){
+                event.preventDefault();
+                var lexOrigin = '{!ltngHostName}';
+                var message = 'cancel';
+                parent.postMessage(message, lexOrigin);
+
+            }
+
+        </script>
+    </apex:outputPanel>
+</apex:page>

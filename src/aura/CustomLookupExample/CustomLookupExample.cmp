@@ -1,0 +1,7 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:component description="CustomLookupExample">
+    <c:CustomLookup objectAPIName="Account" IconName="standard:account" label="Account"/>
+</aura:component>

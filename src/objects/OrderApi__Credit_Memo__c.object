@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Credit Memos track revenue received as additional payment.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Link to the customer&apos;s account record. Auto-populates with the related contact&apos;s parent account if not defined prior to entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Link to the customer&apos;s account record. Auto-populates with the related contact&apos;s parent account if not defined prior to entry.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Credit Memos</relationshipLabel>
+        <relationshipName>Credit_Memos</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Total over payments received.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Total over payments received.</inlineHelpText>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Applied_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The total amount of credit memo lines that have been posted related to this Credit Memo.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The total amount of credit memo lines that have been posted related to this Credit Memo.</inlineHelpText>
+        <label>Applied Amount</label>
+        <summarizedField>OrderApi__Credit_Memo_Line__c.OrderApi__Amount__c</summarizedField>
+        <summaryForeignKey>OrderApi__Credit_Memo_Line__c.OrderApi__Credit_Memo__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Link to the business group record - business groups will auto-populate if not defined on entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Link to the business group record - business groups will auto-populate if not defined on entry.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Credit Memos</relationshipLabel>
+        <relationshipName>Credit_Memos</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Link to the customer&apos;s contact record. Auto-populates with the related account&apos;s primary contact if not defined prior to entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Link to the customer&apos;s contact record. Auto-populates with the related account&apos;s primary contact if not defined prior to entry.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Credit Memos</relationshipLabel>
+        <relationshipName>Credit_Memos</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Credit_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** The account to use for crediting additional revenue received. Default value is the linked Business Group&apos;s Credit Memo account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** The account to use for crediting additional revenue received. Default value is the linked Business Group&apos;s Credit Memo account.</inlineHelpText>
+        <label>Credit Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Credit Memo&apos;s</relationshipLabel>
+        <relationshipName>Credit_Memo_s</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Customer_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the customer record.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(OrderApi__Entity__c,&quot;Account&quot;), HYPERLINK(&quot;/&quot; &amp; OrderApi__Account__r.Id, OrderApi__Account__r.Name, &quot;&quot;),
+            HYPERLINK(&quot;/&quot; &amp; OrderApi__Contact__r.Id, OrderApi__Contact__r.FirstName &amp; &quot; &quot; &amp; OrderApi__Contact__r.LastName, &quot;&quot;))</formula>
+        <inlineHelpText>**System Calculated** A link to the record the system considers the &quot;Customer&quot;  as determined by the &quot;Entity&quot; field.</inlineHelpText>
+        <label>Customer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Debit_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** The GL account to use when posting to debit. Default value is the linked Business Group&apos;s writeoff account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** The GL account to use when posting to debit. Default value is the linked Business Group&apos;s writeOff account.</inlineHelpText>
+        <label>Debit Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Debit Credit Memos</relationshipLabel>
+        <relationshipName>Debit_Credit_Memos</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Entity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** Select &quot;Account&quot; if the Credit Memo should be added to the related account, select &quot;Contact&quot; if the Credit Memo should be added to the related &quot;Contact&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Select &quot;Account&quot; if the Credit Memo should be added to the related account, select &quot;Contact&quot; if the Credit Memo should be added to the related &quot;Contact&quot;.</inlineHelpText>
+        <label>Entity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>true</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                    <label>Contact</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Invoice where the OverPayment is made.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Invoice where the OverPayment is made.</inlineHelpText>
+        <label>Invoice</label>
+        <referenceTo>OrderApi__Invoice__c</referenceTo>
+        <relationshipLabel>Credit Memos</relationshipLabel>
+        <relationshipName>Credit_Memos</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Drafted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the credit memo is in a draft status.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the credit memo is in a draft status.</inlineHelpText>
+        <label>Is Drafted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Posted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the credit memo creates transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the credit memo creates transactions.</inlineHelpText>
+        <label>Is Posted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Posted_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated/Override ** The date the Credit Memo was posted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated/Override ** The date the Credit Memo was posted.</inlineHelpText>
+        <label>Posted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Remaining_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Total - Applied</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Amount__c - OrderApi__Applied_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** Total - Applied</inlineHelpText>
+        <label>Remaining Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Primary indicator of the credit memo&apos;s current status. Default value is &quot;Draft&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Primary indicator of the credit memo&apos;s current status. Default value is &quot;Draft&quot;.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Posted</fullName>
+                    <default>false</default>
+                    <label>Posted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Credit Memo</label>
+    <listViews>
+        <fullName>OrderApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>OrderApi__Contact__c</columns>
+        <columns>OrderApi__Account__c</columns>
+        <columns>OrderApi__Remaining_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Credit Memo Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Credit Memos</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Entity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Remaining_Amount__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Entity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Remaining_Amount__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>OrderApi__Entity__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Contact__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Account__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Status__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Remaining_Amount__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

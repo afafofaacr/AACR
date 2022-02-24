@@ -1,0 +1,20 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>c:DirectoryEmailModal</code> component displays a form to enter a subject and body for an email.
+            It is a child component of the <code>c:Directory</code> component.
+            The component becomes visible whenever a user clicks the 'Email' button from the directory.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The actions available are send and cancel. Send will send an email to the selected user from the current user using the AACR_Dir_EmailMe template.
+            Cancel will erase all previous selections and inputs and close the window.</p>
+    </aura:description>
+    <aura:example name="DirectoryEmailModal" ref="c:DirectoryEmailModal" label="DirectoryEmailModal">
+        Example for DirectoryEmailModal
+    </aura:example>
+</aura:documentation>

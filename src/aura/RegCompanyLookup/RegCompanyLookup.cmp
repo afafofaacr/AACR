@@ -1,0 +1,26 @@
+<!--
+ - Created by lauren.lezberg on 5/21/2020.
+ -->
+
+<aura:component description="RegCompanyLookup">
+    <aura:attribute name="required" type="Boolean" description="is field required"/>
+    <aura:attribute name="accountId" type="String" description="current contact accountId"/>
+
+    <aura:method name="updateLookup" action="{!c.refreshAccount}"/> 
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    <!--<aura:handler name="change" value="{!v.affiliatedWithSelf}" action="{!c.changeAffiliation}"/>-->
+
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-6">
+            <div class="slds-grid">
+                <div class="slds-align-middle">
+                <lightning:icon size="small" class="slds-p-right_small" iconName="utility:info" title="To change this, use the link provided at the bottom of the form." alternativeText="To change this, use the link provided at the bottom of the form."/>
+                </div>
+                <label style="display:inline-flex;" class="customLabel"><div class="{!if(v.required, 'slds-text-heading_medium slds-required', 'slds-hide')}">*</div>Company</label>
+            </div>
+        </div>
+        <div class="slds-col slds-size_5-of-6">
+            <c:CustomLookup aura:id="company" objectAPIName="Account" label="Company" IconName="standard:account" selectedId="{!v.accountId}" allowNewRecord="true" filterString="((NOT Name LIKE '%Household%') AND (NOT Name LIKE '%AACR%'))"/>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,88 @@
+/**
+ * Created by lauren.lezberg on 8/12/2019.
+ */
+.THIS .slds-card__header{ 
+    zoom: 50%;
+}
+
+.THIS.cJP_CheckoutCart.slds-tabs--default.slds-tabs__item.slds-active{
+    font-size:1rem;
+}
+
+.THIS.slds-tabs--default__link a{
+    font-size:1rem;
+}
+
+
+.THIS button.fonteva-slds-button.slds-button.slds-button--brand.FrameworkButton{
+    padding-top:0rem;
+    padding-bottom:0rem;
+    font-size:1rem;
+}
+
+
+.THIS button.slds-button.slds-button_brand{
+    padding-top:0rem;
+    padding-bottom:0rem;
+    font-size:1rem;
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+}
+
+.THIS .slds-button_icon-brand{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    display: block;
+}
+
+.THIS .slds-radio_button+.slds-radio_button{
+    color: token(AACRBlue);
+}
+
+.THIS .slds-radio_button{
+    color:token(AACRBlue);
+}
+
+.THIS .slds-radio_button [type=radio]:checked+.slds-radio_button__label{
+    background-color: token(AACRBlue);
+}
+
+.THIS button.slds-button.slds-button_neutral{
+    padding-top:0rem;
+    padding-bottom:0rem;
+    font-size:1rem;
+}
+
+.THIS label.slds-text-heading_small{
+    font-size: 1rem;
+}
+
+.THIS div.slds-text-title_medium{
+    font-size:1rem;
+}
+
+.THIS div.slds-text-title_small{
+    font-size:1rem;
+}
+
+.THIS div.slds-text-heading_medium{
+    font-size:1rem;
+}
+
+.THIS span.slds-text-title_medium.bold.uiOutputCurrency{
+    font-size:1rem;
+}
+
+.THIS span.slds-text-heading_small.bold.uiOutputCurrency{
+    font-size:1rem;
+}
+
+.THIS span.slds-text-heading_small.uiOutputCurrency{
+    font-size:1rem;
+}
+
+
+.THIS svg.slds-button__icon.slds-button__icon_left{
+    width: 1rem;
+    height: 1rem;
+}

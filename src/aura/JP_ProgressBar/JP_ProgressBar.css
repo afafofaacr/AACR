@@ -1,0 +1,103 @@
+/**
+ * Created by lauren.lezberg on 1/10/2019.
+*/
+
+.THIS .slds-path__link{ 
+    height:3rem;
+}
+
+.THIS .slds-path__title{
+    font-size:15px;
+}
+
+.THIS .infoMessage{
+    font-size: 14px;
+}
+
+.THIS .header{
+    font-size: 30px;
+    font-weight:500;
+
+}
+
+
+
+/*.THIS .slds-path__nav{*/
+    /*background: token(aacrGreen);*/
+/*}*/
+
+.THIS lightning-progress-step.slds-path__item.slds-is-complete {
+    background: token(aacrGreen);
+    height:3rem;
+}
+
+.THIS lightning-progress-step.slds-path__item.slds-is-complete::before{
+    background: token(aacrGreen);
+    height: 1.5rem;
+}
+
+.THIS lightning-progress-step.slds-path__item.slds-is-complete::after{
+    background: token(aacrGreen);
+    height:1.5rem;
+}
+
+.THIS  lightning-progress-step.slds-path__item.slds-is-current{
+    background: token(AACRBlue);
+    height:3rem;
+}
+
+.THIS  lightning-progress-step.slds-path__item.slds-is-current::before{
+    background: token(AACRBlue);
+    height: 1.5rem;
+}
+.THIS  lightning-progress-step.slds-path__item.slds-is-current::after{
+    background: token(AACRBlue);
+    height: 1.5rem;
+}
+
+.THIS  lightning-progress-step.slds-path__item.slds-is-incomplete{
+    height: 3rem;
+}
+.THIS  lightning-progress-step.slds-path__item.slds-is-incomplete::before{
+    height: 1.5rem;
+}
+.THIS  lightning-progress-step.slds-path__item.slds-is-incomplete::after{
+    height: 1.5rem;
+}
+
+.THIS .slds-path__item:first-child:before{
+    left:2rem;
+}
+
+.THIS .slds-path__item:first-child:after{
+    left:2rem;
+}
+
+.THIS .slds-path__nav .slds-is-active:first-child .slds-path__link{
+    margin-top: 0.5rem;
+}
+
+.THIS .slds-path__nav .slds-is-current:first-child{
+    background: token(AACRBlue);
+    height:3rem;
+}
+
+.THIS .slds-path__nav .slds-is-active:first-child:after{
+    background: token(AACRBlue);
+}
+
+.THIS .slds-path__nav .slds-is-active:first-child:before{
+    background: token(AACRBlue);
+}
+
+.THIS .slds-path__nav .slds-is-current:first-child:hover:before{
+    background-image: linear-gradient(90deg, token(AACRBlue), token(AACRBlue) 0.125rem, transparent 0.125rem);
+}
+
+.THIS .slds-path__nav .slds-is-current:first-child:hover:after{
+    background-image: linear-gradient(90deg, token(AACRBlue), token(AACRBlue) 0.125rem, transparent 0.125rem);
+}
+
+.THIS .slds-text-heading_medium{
+    font-size: 1.5rem;
+}

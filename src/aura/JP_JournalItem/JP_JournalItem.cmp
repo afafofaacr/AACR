@@ -1,0 +1,60 @@
+<!--
+ - Created by lauren.lezberg on 1/17/2019.
+ -->
+
+<aura:component description="JP_JournalItem">
+    <aura:attribute name="name" type="String" description="Name of journal"/>
+    <aura:attribute name="itemClass" type="String" description="Name of journal item class"/>
+    <aura:attribute name="imgURL" type="String" description="Journal item image url"/>
+    <aura:attribute name="openAccessURL" type="String" description="open access journal url"/>
+    <aura:attribute name="items" type="List" description="List of online and print journal items"/>
+    <aura:attribute name="itemPriceMap" type="Map" description="Item price map"/>
+    <aura:attribute name="iconName" type="String" default="utility:add" description="icon on button"/>
+
+    <aura:attribute name="selectedItem" type="String" description="selected item"/>
+    <aura:attribute name="itemOptions" type="List" description="List of selectable item options"/>
+    <aura:attribute name="selected" type="Boolean" description="If item is selected" default="false"/>
+    <aura:attribute name="price" type="Decimal" description="Selected item price"/>
+    <aura:attribute name="itemDescription" type="String" description="Description of Item"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div aura:id="item" class="{!or(v.name == 'Blood Cancer Discovery ',v.itemClass == 'Open Access Journals')?'slds-box slds-p-around_medium slds-theme_alert-texture':'slds-box slds-p-around_medium'}">
+        <div class="slds-grid">
+            <div class="slds-col slds-align_absolute-center slds-size_1-of-8">
+                <img src="{!v.imgURL}" class="img-responsive slds-m-right_small"/>
+            </div>
+            <div class="slds-col slds-size_5-of-8">
+                <div class="slds-text-title_medium">{!v.name}</div>
+                <div class="slds-text-heading_medium">
+                <aura:if isTrue="{!or(v.name == 'Blood Cancer Discovery ',v.itemClass == 'Open Access Journals')}">{!v.itemDescription}</aura:if>
+                </div>
+                <aura:if isTrue="{!v.itemClass != 'Open Access Journals'}">
+                <lightning:select name="select1" onchange="{!c.onSelectChange}" value="{!v.selectedItem}" disabled="{!v.itemOptions.length==1}" >
+                    <aura:iteration items="{!v.itemOptions}" var="item">
+                        <option value="{!item.value}">{!item.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+                </aura:if>
+            </div>
+            <div class="slds-col slds-align_absolute-center">
+                <aura:if isTrue="{!v.name == 'Blood Cancer Discovery '}">
+                    <lightning:button disabled="true" label="Included" title="Included" class="slds-p-around_small"/>
+                </aura:if>
+                <aura:if isTrue="{!v.itemClass == 'Open Access Journals'}">
+                    <lightning:button label="Launch" title="Launch" class="slds-p-around_small" onclick="{!c.launchOpenAccessJournal}"/>
+                </aura:if>
+                <aura:if isTrue="{!and(v.name != 'Blood Cancer Discovery ',v.itemClass != 'Open Access Journals')}">
+                        <aura:if isTrue="{!v.selected}">
+                            <lightning:button label="Remove" title="Remove from cart" onclick="{!c.addToList}" variant="destructive" class="slds-p-around_small"/>
+                            <aura:set attribute="else">
+                                <lightning:button label="Add" title="Add to cart" onclick="{!c.addToList}" class="slds-p-around_small"/></aura:set>
+                        </aura:if>
+                </aura:if>
+<!--                <lightning:buttonIcon iconName="{!v.selected?'action:remove' : 'utility:add'}" size="large" variant="brand" alternativeText="Add to cart" onclick="{!c.addToList}" disabled="{!v.name == 'Blood Cancer Discovery '}" />-->
+            </div>
+        </div>
+    </div>
+
+
+</aura:component>

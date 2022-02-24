@@ -1,0 +1,31 @@
+<!--
+ - Created by lauren.lezberg on 9/13/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_ProgressBarController</p>
+        <p>
+            The <code>JP_ProgressBar</code> component is composed of a <code>lightning:progressIndicator</code> component that is created on initialization from all the Process_Steps__mdt records for a particular Join_Process__mdt recordId.
+        </p>
+        <p>
+            It registers the <code>JP_StepChangeEvt</code> which signifies to the join process that a new step in the progress bar was clicked and the user would like to move forward or backwards.
+            When a button is clicked, the component iterates through all Process_Steps__mdt records to find the desired component and its associated Join_Step__mdt id.
+            This is information is used when the event is fired in order to determine which component to load next.
+            If an error occurs and the user is not able to move forward, a null <code>JP_StepChangeEvt</code> is fired and the progress bar will not move forward.
+        </p>
+        <p>
+            It also registers the <code>JP_NavigateEvt</code> but this is only fired once on component initialization to signify the initial component should be loaded in <code>JP_Container</code>.
+        </p>
+        <p>
+            The <code>JP_ProgressBar</code> component also handles the <code>JP_NavigateEvt</code>. This event is used to update the currentStepId and change the step in the progress bar.
+            When the event is fired, it means the user would like to move forward or backwards and if there are no errors the new step id is passed through the <code>JP_NavigateEvt</code>.
+            This new step id is used as the current step id and is then reflected in the <code>lightning:progressIndicator</code> component.
+        </p>
+        <h4>Usage Considerations:</h4>
+        <p>The component is styled according to AACR color preferences which are stored in defaultTokens.</p>
+    </aura:description>
+    <aura:example name="JP_ProgressBar" ref="c:JP_ProgressBar" label="JP_ProgressBar">
+        Example for JP_ProgressBar
+    </aura:example>
+</aura:documentation>

@@ -1,0 +1,25 @@
+<!--
+ - Created by lauren.lezberg on 9/13/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_ProgressBarController</p>
+        <p>
+            The <code>JP_NavButtons</code> component is composed of 3 <code>lightning:button</code> components and handles the button navigation for Join_Process__mdt records. It is a child component of <code>JP_Container</code>.
+        </p>
+        <p>
+            The <code>JP_NavButtons</code> component monitors the current step of the join process and dynamically determines which buttons should be displayed to the user based on where they are in the process. (eg. A user on the first step should not see the 'Previous' button)
+        </p>
+        <p>
+            It registers the <code>JP_StepChangeEvt</code> which signifies to the join process that a navigation button was clicked and the user would like to move forward or backwards.
+            When a button is clicked, the component iterates through all Process_Steps__mdt records to find the desired component and its associated Join_Step__mdt id.
+            This is information is used when the event is fired in order to determine which component to load next.
+        </p>
+
+
+    </aura:description>
+    <aura:example name="JP_NavButtons" ref="c:JP_NavButtons" label="JP_NavButtons">
+        Example for JP_NavButtons
+    </aura:example>
+</aura:documentation>

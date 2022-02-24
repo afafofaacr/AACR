@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Terms track the Subscription terms, dates for all Customer Subscriptions.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__Grace_Period_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This date is calculated by the Term End Date plus the number of days defined on the Subscription Plan&apos;s Grace Period field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This date is calculated by the Term End Date plus the number of days defined on the Subscription Plan&apos;s Grace Period field.</inlineHelpText>
+        <label>Grace Period End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the active subscription term.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the active subscription term.</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Renewed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The date the customer renewed the Subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The date the customer renewed the Subscription.</inlineHelpText>
+        <label>Paid Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sales_Order_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Related Sales Order Line(source).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Related Sales Order Line(source).</inlineHelpText>
+        <label>Sales Order Line</label>
+        <referenceTo>OrderApi__Sales_Order_Line__c</referenceTo>
+        <relationshipLabel>Terms</relationshipLabel>
+        <relationshipName>Renewals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sales_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Related Sales Order (source).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Related Sales Order (source).</inlineHelpText>
+        <label>Sales Order</label>
+        <referenceTo>OrderApi__Sales_Order__c</referenceTo>
+        <relationshipLabel>Terms</relationshipLabel>
+        <relationshipName>Renewals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to related Subscription Plan</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to related Subscription Plan</inlineHelpText>
+        <label>Subscription Plan</label>
+        <referenceTo>OrderApi__Subscription_Plan__c</referenceTo>
+        <relationshipLabel>Terms</relationshipLabel>
+        <relationshipName>Renewals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required ** Link to related Subscription</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required ** Link to related Subscription</inlineHelpText>
+        <label>Subscription</label>
+        <referenceTo>OrderApi__Subscription__c</referenceTo>
+        <relationshipLabel>Terms</relationshipLabel>
+        <relationshipName>Renewals</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Term_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The date the term ends.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The date the term ends.</inlineHelpText>
+        <label>Term End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Term_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The date the term begins.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The date the term begins.</inlineHelpText>
+        <label>Term Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Term</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Term ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Terms</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Subscription__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Renewed_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Subscription_Plan__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Term_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Term_End_Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Subscription__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Renewed_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Subscription_Plan__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Term_Start_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Term_End_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>OrderApi__Subscription__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Renewed_Date__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Subscription_Plan__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Term_Start_Date__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Term_End_Date__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

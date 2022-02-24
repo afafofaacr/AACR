@@ -1,0 +1,73 @@
+<!--
+ - Created by lauren.lezberg on 3/3/2020.
+ -->
+
+<aura:component description="SpeakerInviteSend" controller="SpeakerInviteController" implements="lightning:isUrlAddressable,force:appHostable">
+    <aura:attribute name="speakers" type="List" description="list of all speakers to be invited"/>
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="eventId" type="String"/>
+
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-text-heading_medium">Speakers ({!v.speakers.length})</div>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Speaker Name">Speaker Name</div>
+                    </th>
+                    <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Speaker Email">Speaker Email</div>
+                    </th>
+                    <!--<th class="slds-cell-wrap slds-text-title_caps" scope="col">-->
+                        <!--<div class="slds-truncate" title="Presentation Name">Presentation Name</div>-->
+                    <!--</th>-->
+                    <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="CC Assistant">CC Assistant</div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <aura:iteration items="{!v.speakers}" var="speaker">
+                    <tr class="slds-hint-parent">
+                        <td data-label="name" class="slds-cell-wrap">
+                            <div class="slds-truncate"
+                                 title="{!speaker.Speaker__r.Name}">{!speaker.Speaker__r.Name}</div>
+                        </td>
+                        <td data-label="email" class="slds-cell-wrap">
+                            <div class="slds-truncate"
+                                 title="{!speaker.Speaker__r.Email}">{!speaker.Speaker__r.Email}</div>
+                        </td>
+                        <!--<td data-label="session" class="slds-cell-wrap">-->
+                            <!--<div class="slds-truncate"-->
+                                 <!--title="{!speaker.Session__r.Name}">{!speaker.Session__r.Name}</div>-->
+                        <!--</td>-->
+                        <td data-label="assistant" class="slds-cell-wrap">
+                            <div class="slds-truncate" title="{!speaker.cc_assistant__c}">
+                                <lightning:input type="checkbox" checked="{!speaker.cc_assistant__c}" disabled="true"/>
+                            </div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <c:SpeakerInviteEmailPreview aura:id="emailPreview" eventId="{!v.eventId}"/>
+        </div>
+    </div>
+
+    <div class="slds-align_absolute-center slds-m-top_large">
+        <lightning:button variant="neutral" label="Cancel" onclick="{!c.cancelProcess}"/>
+        <lightning:button variant="brand" label="Send Invites" onclick="{!c.sendInvites}"/>
+    </div>
+</aura:component>

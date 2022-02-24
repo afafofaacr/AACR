@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CongaWorkflow__Workflow_Region__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Workflow Region</label>
+        <referenceTo>CongaWorkflow__Workflow_Region__mdt</referenceTo>
+        <relationshipLabel>Workflow Settings</relationshipLabel>
+        <relationshipName>Workflow_Settings</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <label>Workflow Setting</label>
+    <pluralLabel>Workflow Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

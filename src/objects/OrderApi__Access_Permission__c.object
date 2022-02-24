@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Access Permissions control the accessibility of content accessed via the API.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Directories__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Directories</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Directories</inlineHelpText>
+        <label>Directories</label>
+        <referenceTo>DRCTS__Directories__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DirectoryApi__Directory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Directory related to the configured Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Directory related to the configured Access Permission.</inlineHelpText>
+        <label>Directory</label>
+        <referenceTo>DirectoryApi__Directory__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the Event Category configured with the Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to the Event Category configured with the Access Permission.</inlineHelpText>
+        <label>Event Category</label>
+        <referenceTo>EventApi__Event_Category__c</referenceTo>
+        <relationshipLabel>Access Permissions (Template)</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Status_Page__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The link to the Event Status Page configured with the Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The link to the Event Status Page required for Access Permission.</inlineHelpText>
+        <label>Event Status Page</label>
+        <referenceTo>EventApi__Event_Status_Page__c</referenceTo>
+        <relationshipLabel>Page Access Permissions</relationshipLabel>
+        <relationshipName>Page_Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Event related to the configured Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Event related to the configured Access Permission.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Registration_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the Registration Group configured with the Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to the Registration Group configured with the Access Permission.</inlineHelpText>
+        <label>Registration Group</label>
+        <referenceTo>EventApi__Registration_Group__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Schedule_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the Schedule Item configured with the Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to the Schedule Item configured with the Access Permission.</inlineHelpText>
+        <label>Schedule Item</label>
+        <referenceTo>EventApi__Schedule_Item__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sponsor_Package__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The link to the Sponsor Package configured with the Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The link to the Sponsor Package configured with the Access Permission.</inlineHelpText>
+        <label>Sponsor Package</label>
+        <referenceTo>EventApi__Sponsor_Package__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The link to the Ticket Type configured with the Access Permission.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The link to the Ticket Type configured with the Access Permission.</inlineHelpText>
+        <label>Ticket Type</label>
+        <referenceTo>EventApi__Ticket_Type__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Badge_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** If &quot;User Restricted Access Rule&quot; is unchecked, a link to the Badge Type required to access the content is required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** If &quot;User Restricted Access Rule&quot; is unchecked, a link to the Badge Type required to access the content is required.</inlineHelpText>
+        <label>Badge Type</label>
+        <referenceTo>OrderApi__Badge_Type__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Catalog__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related Catalog that the Display Permission is controlling.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related Catalog that the Display Permission is controlling.</inlineHelpText>
+        <label>Catalog</label>
+        <referenceTo>OrderApi__Catalog__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Icon__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Icon for the related Badge Type with Badge Name.</description>
+        <externalId>false</externalId>
+        <formula>IF(OrderApi__Badge_Type__c != null, OrderApi__Badge_Type__r.OrderApi__Icon__c, &quot;Image Not Available&quot;) &amp; &quot; &quot; &amp;  HYPERLINK(&quot;/&quot; &amp; OrderApi__Badge_Type__c, OrderApi__Badge_Type__r.Name, &quot;_tab&quot;)</formula>
+        <inlineHelpText>** System Calculated ** Icon for the related Badge Type with Badge Name.</inlineHelpText>
+        <label>Enabled Badge Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the controlled Item Class -- when linked to an Item Class the Access Permission will clone itself by default to all Items created as a child to the Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the controlled Item Class -- when linked to an Item Class the Access Permission will clone itself by default to all Items created as a child to the Item Class.</inlineHelpText>
+        <label>Item Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Default Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When linked to an Item - the Access Permission serves as validation for wether the purchasing Account or Contact is allowed to be assigned and/or sold the Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When linked to an Item - the Access Permission serves as validation for wether the purchasing Account or Contact is allowed to be assigned and/or sold the Item.</inlineHelpText>
+        <label>Item</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Page__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related Page that the Display Permission is controlling.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related Page that the Display Permission is controlling.</inlineHelpText>
+        <label>Page</label>
+        <referenceTo>PagesApi__Page__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related Site that the Display Permission is controlling.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related Site that the Display Permission is controlling.</inlineHelpText>
+        <label>Site</label>
+        <referenceTo>PagesApi__Site__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Store__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related Store that the Display Permission is controlling.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related Store that the Display Permission is controlling.</inlineHelpText>
+        <label>Store</label>
+        <referenceTo>OrderApi__Store__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Join_Process__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Relates access permissions to Join Processes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relates access permissions to Join Processes</inlineHelpText>
+        <label>Join Process</label>
+        <referenceTo>joinapi__Join_Process__c</referenceTo>
+        <relationshipLabel>Access Permissions</relationshipLabel>
+        <relationshipName>Access_Permissions</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Access Permission</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Access Permission ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Access Permissions</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>OrderApi__Manage_Permissions</listViewButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Catalog__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Store__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Badge_Type__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Badge_Type__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>OrderApi__Store__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Catalog__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Badge_Type__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>OrderApi__Manage_Permissions</fullName>
+        <availability>online</availability>
+        <description>Manage Access Permissions for a record in bulk edit mode.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Manage Permissions</masterLabel>
+        <openType>replace</openType>
+        <page>OrderApi__access_permissions</page>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+    </webLinks>
+</CustomObject>

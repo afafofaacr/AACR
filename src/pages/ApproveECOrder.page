@@ -1,0 +1,78 @@
+<!--
+ - Created by afaf.awad on 3/5/2021.
+ -->
+
+<apex:page id="ApproveECOrder" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false"
+            controller="CommunityPermissionsCtrl">
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <style>
+        div.ecHeading{
+            margin-left: 10px;
+            font-size: 25px;
+            font-weight: bolder;
+            color: black;
+        }
+
+        div.approveMessage{
+            font-size: 2rem;
+            margin: auto
+        }
+
+        @media only screen and (max-width: 767px), (max-device-width: 991px) and (min-device-width: 767px)
+        table, tbody, td, th, thead, tr {
+            display: inline-block;
+        }
+    </style>
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Exhibitor Connect
+        </apex:define>
+
+        <apex:define name="supernavLeft">
+<!--            <div style="width:400px">-->
+<!--                <div class="ecHeading">Exhibitor Connect</div>-->
+<!--            </div>-->
+        </apex:define>
+
+
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <apex:define name="navbarOverride">
+            <apex:outputPanel rendered="{!NOT(ecAccess)}">
+                <OrderApi:navlist name="AACR: SITE NAV"
+                                  ulStyleClass="nav navbar-nav navbar-right open" contactId="{!con.Id}"/>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!ecAccess}">
+                <OrderApi:navlist name="EC WITH PROFILE: SITE NAV"
+                                  ulStyleClass="nav navbar-nav navbar-right open" contactId="{!con.Id}"/>
+            </apex:outputPanel>
+
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div style="margin:auto; max-width:1140px;">
+                <div id="EC_ApproveBudget"/>
+            </div>
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+
+        $Lightning.use("c:ExhibitorConnect", function() {
+            $Lightning.createComponent("c:EC_ApproveBudget",
+                {},
+                "EC_ApproveBudget",
+                function(cmp) {
+                });
+        });
+    </script>
+
+</apex:page>

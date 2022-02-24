@@ -1,0 +1,33 @@
+<!--
+ - Created by lauren.lezberg on 4/1/2021.
+ -->
+
+<aura:component description="ModifyAACRGroups" controller="ModifyAACRGroupsController">
+    <aura:attribute name="salesOrderId" type="String" description="id of sales order"/>
+
+    <!-- AURA HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_NavigateEvt" action="{!c.handleNavigate}"/>
+    <aura:registerEvent name="JP_StepChange" type="c:JP_StepChangeEvt"/>
+
+    <aura:if isTrue="{!v.salesOrderId!=null}">
+        <div class="slds-align_absolute-center slds-m-bottom_medium">
+            <div style="width: 1140px; ">
+                <div class="header slds-border_bottom slds-m-top_medium">Modify AACR Groups</div>
+                <br/>
+                <div style="display: flex;" class="slds-text-heading_large">
+                    If your demographic information reflects "Female" under gender, the "Women In Cancer Research" AACR Group will default to selected.
+                </div>
+                <br/>
+                <c:JP_WorkingGroupSelection aura:id="workingGroups"/>
+            </div>
+        </div>
+
+    </aura:if>
+
+    <div class="slds-align_absolute-center">
+    <lightning:button variant="neutral" title="Cancel" label="Cancel" onclick="{!c.handleCancel}"/>
+        &nbsp;&nbsp;
+    <lightning:button variant="brand" title="Save" label="Save" onclick="{!c.handleSave}"/>
+    </div>
+</aura:component>

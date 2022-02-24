@@ -1,0 +1,35 @@
+<!--
+ - Created by lauren.lezberg on 2/26/2019.
+ -->
+
+<aura:component description="AddressEntry" controller="JP_PersonalInfoController"> 
+    <aura:attribute name="address" type="Object" description="address object to return" />
+    <aura:attribute name="isPreferred" type="Boolean" description="Is preferred address" />
+    <aura:attribute name="displayStateList" type="List" description="list of states to show in individual instance"/>
+
+    <aura:attribute name="countryList" type="List" description="List of available countries"/>
+    <aura:attribute name="statesList" type="List" description="List of available states"/>
+
+    <aura:attribute name="parent" type="Aura.Component"/>
+
+    <aura:handler name="change" value="{!v.statesList}" action="{!c.setStatesList}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:input aura:id ="street1" label="Address 1" value="{!v.address.street1}" required="{!v.isPreferred}" class="slds-text-heading_medium" messageWhenValueMissing="Complete this field."/>
+    <lightning:input aura:id ="street2" label="Address 2" value="{!v.address.street2}" class="slds-text-heading_medium"/>
+    <lightning:input aura:id ="street3" label="Address 3" value="{!v.address.street3}" class="slds-text-heading_medium"/>
+    <lightning:select aura:id ="country" onchange="{!c.onCountryChange}" value="{!v.address.countryCode}" required="{!v.isPreferred}" label="Country" class="slds-text-heading_medium" messageWhenValueMissing="Complete this field." >
+        <option value="">Select a country...</option>
+        <aura:iteration items="{!v.countryList}" var="cntry">
+            <option value="{!cntry.value}" selected="{!cntry.value==v.address.countryCode}">{!cntry.label}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:input aura:id ="city" label="City" value="{!v.address.city}" required="{!v.isPreferred}" class="slds-text-heading_medium" messageWhenValueMissing="Complete this field."/>
+    <lightning:select aura:id ="state" disabled="{!empty(v.displayStateList)}" value="{!v.address.stateCode}" required="{!or(v.address.countryCode=='US', v.address.countryCode=='CA')}" label="State" class="slds-text-heading_medium" messageWhenValueMissing="Complete this field.">
+        <option value="">Select a state...</option>
+        <aura:iteration items="{!v.displayStateList}" var="state">
+            <option value="{!state.value}" selected="{!state.value==v.address.stateCode}">{!state.label}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:input aura:id ="zip" label="Zip" value="{!v.address.zip}" class="slds-text-heading_medium"/>
+</aura:component>

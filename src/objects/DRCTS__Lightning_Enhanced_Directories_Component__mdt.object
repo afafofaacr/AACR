@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>DRCTS__Is_Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this record will become enabled as a template.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>When checked, this record will become enabled as a template.</inlineHelpText>
+        <label>Is Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DRCTS__Lightning_Component_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**REQUIRED** Name of the Lightning component that needs to be instantiated. Only provide the name of the component without namespace.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>**REQUIRED** Name of the Lightning component that needs to be instantiated. Only provide the name of the component without namespace.</inlineHelpText>
+        <label>Lightning Component API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lightning Enhanced Directories Component</label>
+    <pluralLabel>Lightning Enhanced Directories Component</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

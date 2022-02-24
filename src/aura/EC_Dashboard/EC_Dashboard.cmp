@@ -1,0 +1,100 @@
+<!--
+ - Created by afaf.awad on 2/8/2021.
+ -->
+
+<aura:component description="EC_Dashboard" controller="EC_DashboardController">
+
+    <aura:attribute name="exhibitorId" type="String" description="Exhibitor Setting Id"/>
+
+    <aura:attribute name="orders" type="EC_Order__c[]" description="List of orders"/>
+    <aura:attribute name="orderColumns" type="List" description="List of columns for order table"/>
+    <aura:attribute name="schedule" type="EC_Schedule__c[]" description="List of email schedules"/>
+    <aura:attribute name="scheduleColumns" type="List" description="List of columns for schedule table"/>
+    <aura:attribute name="emailActivity" type="List" description="List of email activities for delivered emails"/>
+    <aura:attribute name="emailColumns" type="List" description="List of columns for email activity"/>
+    <aura:attribute name="isLoading" type="Boolean" default="true" description="Is page loading"/>
+    <aura:attribute name="loadingEmailActivity" type="Boolean" default="false" description="Is page loading"/>
+
+    <aura:attribute name="disableOrderBtn" type="Boolean" default="false" description="Does contact's associated account have an exhibitor setting?"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div style="margin:auto; width:1140px;">
+
+    <!-- HEADER -->
+        <div class="tableMargins">
+        <lightning:card title="Exhibitor Connect">
+            <aura:set attribute="actions">
+                <lightning:button label="Settings" variant="brand" onclick="{!c.goToSettings}" class="dashButtons"/>
+            </aura:set>
+            <p class="slds-p-horizontal_large" style="font-size: 1.5rem; font-family: 'GothamBook';">
+                Manage Exhibitor settings and requests.
+            </p>
+        </lightning:card>
+        </div>
+    <!-- /HEADER -->
+        <!-- ORDER TABLE -->
+        <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+            <div class="slds-align_absolute-center">
+                <c:AACRSpinner/>
+            </div>
+        </div>
+
+        <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+        <div class="tableMargins">
+            <lightning:card title="Order Status">
+                <aura:set attribute="actions">
+                    <lightning:button label="New Order" variant="brand" onclick="{!c.startNewOrder}" disabled="{!v.disableOrderBtn}" class="dashButtons"/>
+                </aura:set>
+<!--                <div style="max-height: 600px; overflow: auto;">-->
+                    <lightning:datatable data="{!v.orders}"
+                                         columns="{!v.orderColumns}"
+                                         keyField="Name"
+                                         hideCheckboxColumn="true"
+                                         onrowaction="{!c.handleRowAction}"
+                                         aura:id="orderTable"
+                                            class="tableStyle"/>
+<!--                </div>-->
+            </lightning:card>
+        </div>
+        <!-- END ORDER TABLE -->
+        <!-- SCHEDULE -->
+        <div class="tableMargins">
+            <lightning:card title="Schedule">
+                <!--                <div style="max-height: 600px; overflow: auto;">-->
+                <lightning:datatable data="{!v.schedule}"
+                                     columns="{!v.scheduleColumns}"
+                                     keyField="Id"
+                                     hideCheckboxColumn="true"
+                                     aura:id="scheduleTable"
+                                     class="tableStyle"/>
+                <!--                </div>-->
+            </lightning:card>
+        </div>
+        <!-- END SCHEDULE -->
+
+<!--            <aura:if isTrue="{!not(empty(v.schedule))}">-->
+<!--                &lt;!&ndash; EMAIL ACTIVITY &ndash;&gt;-->
+<!--                <div class="{!v.loadingEmailActivity?'slds-show':'slds-hide'}">-->
+<!--                    <div class="slds-align_absolute-center">-->
+<!--                        <c:AACRSpinner/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="{!v.loadingEmailActivity?'slds-hide':'slds-show'}">-->
+<!--                <div class="tableMargins">-->
+<!--                    <lightning:card title="Email Activity">-->
+<!--                        <lightning:datatable data="{!v.emailActivity}"-->
+<!--                                             columns="{!v.emailColumns}"-->
+<!--                                             keyField="Id"-->
+<!--                                             hideCheckboxColumn="true"-->
+<!--                                             aura:id="emailActivityTable"-->
+<!--                                             class="tableStyle"/>-->
+<!--                    </lightning:card>-->
+<!--                </div>-->
+<!--                </div>-->
+<!--            </aura:if>-->
+        </div>
+
+        <!-- EMAIL ACTIVITY -->
+    </div>
+</aura:component>

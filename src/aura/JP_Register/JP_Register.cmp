@@ -1,0 +1,7 @@
+<!--
+ - Created by lauren.lezberg on 6/4/2019.
+ -->
+
+<aura:component description="JP_Register">
+    <c:selfRegister includePasswordField = "true" submitButtonLabel="Create Account" />
+</aura:component>

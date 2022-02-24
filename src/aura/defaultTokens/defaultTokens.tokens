@@ -1,0 +1,27 @@
+<!--
+ - Created by lauren.lezberg on 1/10/2019.
+ -->
+
+<aura:tokens>
+    <aura:token name="aacrGreen" value="#50B848" /> <!-- AACR Dark Green -->
+    <aura:token name="aacrGreenL1" value="#edf8ed"/>
+    <aura:token name="aacrGreenL2" value="#d1f3d1"/>
+    <aura:token name="AACRLightGreen" value="#c1d82f"/>
+
+    <aura:token name="AACRBlue" value="#005cab"/>
+    <aura:token name="AACRBlueL1" value="#00a4e4"/>
+    <aura:token name="BlueD1" value="#4e6593"/>
+    <aura:token name="BlueL1" value="#D9F5FF"/>
+    <aura:token name="BlueL2" value="#ddefff"/>
+
+    <aura:token name="PurpleL1" value="#8A8097"/>
+    <aura:token name="PurpleD1" value="#403E5C"/>
+
+    <aura:token name="RedD1" value="#90585C"/>
+    <aura:token name="AACRRed" value="#ed1849"/>
+
+    <aura:token name="AACRYellow" value="#ffc425"/>
+
+    <aura:token name="AACRGray" value="#6a737b"/>
+    <aura:token name="AACRGrayL1" value="#e6e7e8"/>
+</aura:tokens>

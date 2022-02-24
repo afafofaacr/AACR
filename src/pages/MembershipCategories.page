@@ -1,0 +1,44 @@
+<!--
+ - Created by lauren.lezberg on 12/5/2018.
+ -->
+
+<apex:page id="MembershipCategories" docType="html-5.0"
+           showHeader="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false">
+    <apex:includeLightning />
+    <apex:slds />
+ 
+
+    <apex:composition template="CPBase__template">
+        <apex:define name="pageTitle">
+            Membership Categories
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <apex:define name="pageMain">
+                <div class="container ">
+                    <div id="lightning" />
+                </div>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+        $Lightning.use("c:AACRMembership", function() {
+            $Lightning.createComponent("c:MembershipCategories",
+                {},
+               "lightning",
+                function(cmp) {
+
+             });
+        });
+    </script>
+
+
+
+
+
+
+</apex:page>

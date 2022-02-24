@@ -1,0 +1,14 @@
+<!--
+ - Created by lauren.lezberg on 9/24/2020.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>The <code>c:AddressAutocompleteResult</code> displays an individual list item for the <code>c:AddressAutocomplete</code> results. </p>
+        <p>It fires the <code>c:SelectedObjectRecordEvt</code> event when an item is selected.</p>
+
+    </aura:description>
+<!--    <aura:example name="AddressAutocompleteResult" ref="AddressAutocompleteResult" label="AddressAutocompleteResult">-->
+<!--        Example for AddressAutocompleteResult-->
+<!--    </aura:example>-->
+</aura:documentation>

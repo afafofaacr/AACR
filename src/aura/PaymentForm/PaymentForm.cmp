@@ -1,0 +1,92 @@
+<!--
+ - Created by lauren.lezberg on 2/5/2020.
+ -->
+
+<aura:component description="PaymentForm" controller="PaymentFormController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="Id of current join process step"/>
+    <aura:attribute name="salesOrderId" type="String" description="Id of sales order being processed"/>
+    <aura:attribute name="processing" type="Boolean" description="Action is processing" default="true"/>
+    <aura:attribute name="showPayment" type="Boolean" default="false" description="Display payment component"/>
+    <aura:attribute name="showCheckForm" type="Boolean" default="false" description="Display check payment form"/>
+    <aura:attribute name="isModify" type="Boolean" description="Is modify membership process checkout" default="false"/>
+
+    <!-- PAYNOW ATTRIBUTES -->
+    <aura:attribute name="environmentKey" type="String" description="Environment Key"/>
+    <aura:attribute name="store" type="Object" description="AACR store"/>
+    <!--<aura:attribute name="salesOrder" type="Object" description="Current sales order"/>-->
+    <aura:attribute name="redirectURL" type="String" description="Redirect URL after successful payment"/>
+    <aura:attribute name="paymentObject" type="Object"
+                    description="Returned payment object from OrderApi:PayNow component"/>
+    <aura:attribute name="salesOrderJSON" type="String"/>
+    <aura:attribute name="paymentJSON" type="String"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-card slds-theme_default slds-p-around_small">
+        <aura:if isTrue="{!v.showPayment}">
+            <lightning:tabset>
+                <lightning:tab label="Credit Card">
+                    <OrderApi:PayNow aura:id="payNowCmp"
+                                     isFrontEnd = "false"
+                                     storeId="{!v.store.Id}"
+                                     enableSavePayment="false"
+                                     showOfflinePayment="true"
+                                     offsiteRedirectUrl="{!v.windowLocation}"
+                                     postbackRedirectUrl="{!v.windowLocation}"
+                                     successRedirectUrl="{!v.redirectURL}"
+                                     recordId="{!v.salesOrderId}"
+                                     environmentKey="{!v.environmentKey}"
+                                     renderAsTabs="true"
+                                     paymentObj="{!v.paymentObject}"
+                                     suppressOffsiteButtons="true"
+                                     iFrameStyles=".slds .slds-form-element__label {color: ‘+text_color+‘;font-weight: 700;font-size: 14px; font-family:Proxima-Nova,“Helvetica Neue”,Helvetica,Arial,sans-serif } .slds-size--1-of-2 {width:100%}"/>
+                    <div class="slds-align_absolute-center">
+                        <div class="slds-grid" data-name="processBtnDiv" aura:id="processBtnDiv">
+                            <div class="slds-col slds-p-bottom--medium slds-p-top_medium slds-grid_vertical slds-text-align_center">
+                                <lightning:button label="Cancel Order" variant="neutral"
+                                                  onclick="{!c.cancelOrder}"/>
+
+                            </div>
+                            <div class="slds-col slds-p-bottom--medium slds-p-top_medium slds-grid_vertical slds-text-align_center">
+                                <aura:if isTrue="{!not(v.processing)}">
+                                <Framework:Button onClickAction="{!c.processPayment}"
+                                                  qaData='{"type" : "button", "name": "processBtn"}'
+                                                  aura:id="processBtn" group="paymentButtons"
+                                                  label="Process Payment" />
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </lightning:tab>
+                <lightning:tab label="Offline">
+
+                    <div class="slds-align_absolute-center">
+                        <div class="slds-grid" data-name="processBtnDiv" aura:id="processBtnDiv">
+                            <div class="slds-col slds-p-bottom--medium slds-p-top_medium slds-grid_vertical slds-text-align_center">
+                                <lightning:button label="Cancel Order" variant="neutral"
+                                                  onclick="{!c.cancelOrder}"/>
+
+                            </div>
+                            <div class="slds-col slds-p-bottom--medium slds-p-top_medium slds-grid_vertical slds-text-align_center">
+                                <lightning:button
+                                        label="{!v.processing?'Processing...':'Process Offline Payment'}"
+                                        variant="Brand"
+                                        onclick="{!c.processCheckPayment}"/>
+                            </div>
+                        </div>
+                    </div>
+                </lightning:tab>
+            </lightning:tabset>
+
+            <aura:set attribute="else">
+                <div class="slds-align_absolute-center">
+                    <lightning:button label="{!v.processing?'Processing...':'Process Order'}"
+                                      variant="Brand"
+                                      onclick="{!c.processEmptyPayment}"/>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

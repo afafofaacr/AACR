@@ -1,0 +1,19 @@
+<!--
+ - Created by lauren.lezberg on 10/7/2019.
+ -->
+
+<aura:component description="GetTickets" controller="GetTicketsController">
+    <aura:attribute name="recordId" type="String" description="Contact record id"/>
+    <aura:attribute name="processing" type="Boolean" description="An action is processing"/>
+    <aura:attribute name="hasAccess" type="Boolean" description="Can current user see button" default="false"/>
+
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:if isTrue="{!v.hasAccess}">
+        <lightning:button variant="brand"  iconName="standard:event" onclick="{!c.goToBackOfficeTicketing}" label="{!v.processing?'Processing...': 'Event Ticketing'}" disabled="{!v.processing}"/>
+    </aura:if>
+</aura:component>

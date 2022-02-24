@@ -1,0 +1,197 @@
+<!--
+ - Created by lauren.lezberg on 5/14/2020.
+ -->
+
+<aura:component description="VirtualEventRegister" controller="VirtualEventRegisterController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="contactId" type="String" description="id of current contact"/>
+    <aura:attribute name="contactRecord" type="Contact" description="current contact record"/>
+    <aura:attribute name="accountId" type="String" description="current contact account Id"/>
+    <aura:attribute name="ticketSelection" type="String" description="selected ticket" default="free"/>
+    <aura:attribute name="exhibitOpen" type="Boolean" description="is virtual exhibit open" default="false"/>
+    <aura:attribute name="donationUrl" type="String" description="url for donor drive donations"/>
+    <aura:attribute name="stateRequired" type="Boolean" description="is state required - only for US and Canada"/>
+
+    <aura:attribute name="displayStateList" type="List" description="list of states to show in individual instance"/>
+    <aura:attribute name="countryList" type="List" description="List of available countries"/>
+
+    <aura:attribute name="headerImg" type="String" description="url for header img"/>
+    <aura:attribute name="logoImg" type="String" description="url for logo img"/>
+    <aura:attribute name="freeTxt" type="String" description="text for free ticket"/>
+    <aura:attribute name="donationTxt" type="String" description="text for donation ticket"/>
+
+    <aura:attribute name="processing" type="Boolean" description="is form processing" default="false"/>
+    <aura:attribute name="errorMsg" type="String" description="error msg if registration fails"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.accountId}" action="{!c.handleAccountChange}"/>
+
+    <div class="slds-grid slds-border_bottom slds-m-bottom_large slds-m-left_xx-large slds-m-right_xx-large">
+        <div class="slds-col">
+            <div class="header ">
+                Registration Form
+            </div>
+        </div>
+        <div class="slds-col">
+            <div class="slds-clearfix">
+                <div class="slds-float_right">
+                    <img src="{!v.logoImg}" width="700" height="150"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <aura:if isTrue="{!not(empty(v.errorMsg))}">
+        <div class="slds-align_absolute-center">
+        <div class="slds-box slds-theme_error slds-theme_alert-texture slds-size_1-of-2">
+            <div class="slds-align_absolute-center">
+                <div class="slds-text-color_inverse slds-text-heading_large">{!v.errorMsg}</div>
+            </div>
+        </div>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!v.contactId!=null}">
+        <aura:if isTrue="{!v.processing}">
+           <lightning:spinner size="large" alternativeText="Loading..." variant="brand" />
+
+        </aura:if>
+    <lightning:recordEditForm aura:id="recordEditForm" recordTypeId="{!v.contactRecord.RecordTypeId}" recordId="{!v.contactId}" objectApiName="Contact" class="slds-m-around_xx-large">
+        <lightning:messages/>
+        <div class="slds-grid slds-form_horizontal slds-form slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <div style="display:none;">
+                    <lightning:inputField fieldName="Name"/>
+                </div>
+                <c:RegCompanyLookup aura:id="affiliation" required="true" accountId="{!v.accountId}"/>
+                <div aura:id="affiliation_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id ="salutation" required="true" fieldName="Salutation" class="slds-text-heading_medium" />
+                <div aura:id="salutation_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+
+                <lightning:inputField aura:id ="firstName" id="firstName" fieldName="FirstName" class="slds-text-heading_medium" onchange="{!c.handleFieldUpdate}" required="true"/>
+                <div aura:id="firstName_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id ="middleName" fieldName="MiddleName" class="slds-text-heading_medium "/>
+
+                <lightning:inputField aura:id ="lastName" id="lastName" fieldName="LastName" class="slds-text-heading_medium " onchange="{!c.handleFieldUpdate}" />
+                <div aura:id="lastName_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id ="suffix" fieldName="DonorApi__Suffix__c" class="slds-text-heading_medium"/>
+
+                <lightning:inputField aura:id ="title" fieldName="Title" class="slds-text-heading_medium "/>
+
+                <lightning:inputField aura:id ="degree" id="degree" fieldName="Highest_Degree__c" required="true" class="slds-text-heading_medium " onchange="{!c.handleFieldUpdate}" value=""/>
+                <div aura:id="degree_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id ="department" fieldName="Department" class="slds-text-heading_medium"/>
+
+                <lightning:input aura:id="email" id="email" label="Email" required="true" onchange="{!c.handleFieldUpdate}" value="{!if(v.contactRecord.OrderApi__Preferred_Email_Type__c=='Work', v.contactRecord.OrderApi__Work_Email__c, v.contactRecord.OrderApi__Personal_Email__c)}" class="slds-text-heading_medium"/>
+                <div aura:id="email_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id ="WorkPhone" fieldName="OrderApi__Work_Phone__c" class="slds-text-heading_medium"/>
+                <lightning:inputField aura:id ="MobilePhone" fieldName="MobilePhone" class="slds-text-heading_medium"/>
+
+                <lightning:select aura:id ="country" onchange="{!c.onCountryChange}" required="true" label="Country" class="slds-text-heading_medium" messageWhenValueMissing="Complete this field." >
+                    <option value="">Select a country...</option>
+                    <aura:iteration items="{!v.countryList}" var="cntry">
+                        <option value="{!cntry.value}" selected="{!or(and(v.contactRecord.Preferred_Address__c=='Business',cntry.value == v.contactRecord.MailingCountryCode), and(v.contactRecord.Preferred_Address__c!='Business',cntry.value == v.contactRecord.OtherCountryCode) )}">{!cntry.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+
+                <lightning:input aura:id="street" id="street" label="Street" required="true" value="{!if(v.contactRecord.Preferred_Address__c=='Business',v.contactRecord.MailingStreet, v.contactRecord.OtherStreet)}" class="slds-text-heading_medium"/>
+
+                <lightning:input aura:id="city" id="city" label="City" required="true" value="{!if(v.contactRecord.Preferred_Address__c=='Business',v.contactRecord.MailingCity, v.contactRecord.OtherCity)}" class="slds-text-heading_medium"/>
+
+                <lightning:select aura:id ="state" disabled="{!empty(v.displayStateList)}" required="{!v.stateRequired}" label="State" class="slds-text-heading_medium" >
+                    <option value="">Select a state...</option>
+                    <aura:iteration items="{!v.displayStateList}" var="state">
+                        <option value="{!state.value}" selected="{!or(and(v.contactRecord.Preferred_Address__c=='Business',state.value == v.contactRecord.MailingStateCode), and(v.contactRecord.Preferred_Address__c!='Business',state.value == v.contactRecord.OtherStateCode) )}">{!state.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+
+                <lightning:input aura:id="zip" label="Zip"  value="{!if(v.contactRecord.Preferred_Address__c=='Business',v.contactRecord.MailingPostalCode, v.contactRecord.OtherPostalCode)}" class="slds-text-heading_medium"/>
+
+
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning:inputField aura:id="primaryResearch" id="primaryResearch" onchange="{!c.handleFieldUpdate}" fieldName="Primary_Research_Area_of_Expertise__c" required="true" class="slds-text-heading_medium" value=""/>
+                <div aura:id="primaryResearch_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id="majorFocus" id="majorFocus" onchange="{!c.handleFieldUpdate}" fieldName="Major_Focus__c" required="true" class="slds-text-heading_medium"/>
+                <div aura:id="majorFocus_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id="organSites" id="organSites" onchange="{!c.handleFieldUpdate}" fieldName="Organ_Sites__c" required="true" class="slds-text-heading_medium"/>
+                <div aura:id="organSites_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <lightning:inputField aura:id="workSetting" id="workSetting" onchange="{!c.handleFieldUpdate}" fieldName="Work_Setting__c" required="true" class="slds-text-heading_medium" value=""/>
+                <div aura:id="workSetting_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+
+                <label class="slds-m-top_large slds-form-element__label">{!if(v.exhibitOpen, '', 'Please pick one:')}</label>
+
+                <div class="slds-grid slds-gutters">
+
+                    <div class="slds-col slds-size_1-of-3"></div>
+
+                    <div class="slds-col slds-size_1-of-3 slds-m-right_small">
+                        <div aura:id="freeTicket" class="{!if(v.ticketSelection == 'free', 'slds-box selected', 'slds-box selectable')}" onclick="{!c.selectFreeTicket}">
+                            <div class="slds-align_absolute-center">
+                                <div class="slds-text-heading_large" style="font-weight:700;">FREE</div>
+                            </div>
+                            <br/>
+                            <div class="slds-align_absolute-center">
+                                <img src="{!v.headerImg}" height="60" width="250" />
+                            </div>
+                            <br/>
+                            <div class="slds-align_absolute-center slds-text-align_center">
+                                <div class="slds-text-heading_medium">{!v.freeTxt}</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div  class="slds-col slds-size_1-of-3">
+                        <aura:if isTrue="{!not(v.exhibitOpen)}">
+                        <div aura:id="donationTicket" class="{!if(v.ticketSelection == 'donation', 'slds-box selected', 'slds-box selectable')}" onclick="{!c.selectDonationTicket}" >
+                            <div class="slds-align_absolute-center">
+                                <div class="slds-text-heading_large" style="font-weight:700;">FREE WITH DONATION</div>
+                            </div>
+                            <br/>
+                            <div class="slds-align_absolute-center">
+                                <img src="{!v.headerImg}" height="60" width="250" />
+                            </div>
+                            <br/>
+                            <div class="slds-align_absolute-center slds-text-align_center">
+                                <div class="slds-text-heading_medium">{!v.donationTxt}</div>
+                            </div>
+                        </div>
+                        </aura:if>
+                    </div>
+
+                </div>
+                <br/><br/><br/><br/>
+                <div class="slds-align_absolute-center slds-m-top_xx-large">
+                    <lightning:button label="Cancel" variant="neutral" onclick="{!c.cancelReg}"/>
+                    <lightning:button label="{!if(v.processing, 'Processing', if(v.ticketSelection=='free', 'Complete', 'Continue'))}" disabled="{!v.processing}" variant="brand" onclick="{!c.saveContactInfo}"/>
+                </div>
+        </div>
+        </div>
+    </lightning:recordEditForm>
+
+    <div class="slds-grid">
+        <div class="slds-size_1-of-2">
+        </div>
+        <div class="slds-size_1-of-2">
+            <!--<div class="slds-align_absolute-center slds-m-top_xx-large">-->
+                <!--<lightning:button label="Cancel" variant="neutral" onclick="{!c.cancelReg}"/>-->
+                <!--<lightning:button label="{!if(v.processing, 'Processing', if(v.ticketSelection=='free', 'Complete', 'Continue'))}" disabled="{!v.processing}" variant="brand" onclick="{!c.saveContactInfo}"/>-->
+            <!--</div>-->
+        </div>
+    </div>
+        <aura:set attribute="else">
+            <div class="slds-align_absolute-center">
+                <c:AACRSpinner loadingText="Loading..."/>
+            </div>
+        </aura:set>
+    </aura:if>
+</aura:component>

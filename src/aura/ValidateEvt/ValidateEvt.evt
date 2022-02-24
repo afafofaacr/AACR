@@ -1,0 +1,13 @@
+<!--
+ - Created by afaf.awad on 12/16/2019.
+ -->
+
+<aura:event type="APPLICATION" description="ValidateEvt">
+
+    <aura:attribute name="cmpName" type="String"/>
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="fieldId" type="String"/>
+    <aura:attribute name="isValid" type="Boolean"/>
+    
+
+</aura:event>

@@ -1,0 +1,56 @@
+<!--
+ - Created by lauren.lezberg on 6/3/2019.
+ -->
+
+<aura:component description="JP_RequiredDocumentation" controller="JP_RequiredDocumentationController">
+    <aura:attribute name="stepId" type="String" />
+
+    <aura:attribute type="Aura.Component[]" name="fileInput1" />
+    <aura:attribute type="Aura.Component[]" name="fileInput2" />
+    <aura:attribute type="Aura.Component[]" name="fileInput3" />
+    <aura:attribute type="Aura.Component[]" name="fileInput4" />
+
+    <aura:attribute name="contactId" type="String" required="true" />
+    <aura:attribute name="itemName" type="String" description="membership item name" required="true"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleNext}"/>
+
+
+    <div class="slds-text-heading_medium slds-m-top_medium" style="font-size:1.5rem;">
+
+
+        <div class="{!v.itemName=='Active Membership'?'slds-show':'slds-hide'}">
+            A copy of the candidate's most current curriculum vitae and bibliography is required.
+        </div>
+        <div class="{!v.itemName=='Affiliate Membership'?'slds-show':'slds-hide'}">
+            A copy of the candidate's most current curriculum vitae and bibliography is required,
+            as well as a cover letter explaining the reasons for the candidate's interest in joining,
+            his or her particular qualifications for this membership category, and the benefit(s) he or she expects to drive from becoming a member.
+            We also require a recommendation letter from either an Active, Emeritus, or Honorary Member, which comments on the Candidate's current research activity,
+            the specific role the candidate has within the department,
+            and why the nominator feels the candidate should apply for Affiliate rather than Active or Associate membership.
+        </div>
+        <div class="{!v.itemName=='Associate Membership'?'slds-show':'slds-hide'}">
+            A copy of the candidate's most current curriculum vitae and bibliography is required.
+        </div>
+        <div class="{!v.itemName=='Student Membership'?'slds-show':'slds-hide'}">
+            Please upload your most current resumé and a cover letter explaining the reasons for the candidate's interest in joining,
+            his or her particular qualifications for this membership category, and the benefit(s) he or she expects to drive from becoming a member.
+        </div>
+    </div>
+
+    <div class="slds-grid">
+        <div class="slds-col">
+            {!v.fileInput1}
+            <br/>
+            {!v.fileInput3}
+        </div>
+        <div class="slds-col">
+            {!v.fileInput2}
+            <br/>
+            {!v.fileInput4}
+        </div>
+    </div>
+</aura:component>

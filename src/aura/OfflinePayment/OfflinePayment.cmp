@@ -1,0 +1,64 @@
+<!--
+ - Created by lauren.lezberg on 7/6/2021.
+ -->
+
+<aura:component description="OfflinePayment" controller="OfflinePaymentController">
+    <aura:attribute name="isLoading" type="Boolean" description="is cmp processing"/>
+    <aura:attribute name="paymentType" type="String" default="check"/>
+    <aura:attribute name="paymentOptions" type="List" default="[
+    {'label': 'Check', 'value': 'Check'},
+    {'label': 'EFT', 'value': 'EFT'}
+    ]"/>
+    <aura:attribute name="errorMsg" type="String" description="error message"/>
+    <aura:attribute name="salesOrderId" type="String" description="sales order id"/>
+    <aura:attribute name="salesOrder" type="Object" description="sales order "/>
+    <aura:attribute name="amount" type="Decimal" description="amount paid"/>
+    <aura:attribute name="balanceDue" type="Decimal" description="balanceDue"/>
+    <aura:attribute name="isInvoice" type="Boolean" description="is sales order invoice"/>
+    <aura:attribute name="depositAccount" type="String" description="default deposit GL account Id"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <c:AACRSpinner loadingText="Processing..."/>
+        <aura:set attribute="else">
+
+            <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                <div class="slds-box slds-theme_error slds-theme_alert-texture">{!v.errorMsg}</div>
+            </aura:if>
+
+            <aura:if isTrue="{!v.salesOrder.OrderApi__Is_Invoiced__c}">
+                <div style="font-weight: bold;">Apply Payment:</div>
+                <lightning:input label="Payment Amount" type="number" formatter="currency" step="0.01" required="true"
+                                value="{!v.amount}"/>
+                <br/>
+                <div style="font-weight: bold;">Payment Details:</div>
+            </aura:if>
+
+
+            <lightning:recordEditForm aura:id="editForm" objectApiName="OrderApi__Receipt__c"
+                                      onsuccess="{!c.handleSuccess}" onsubmit="{!c.handleSubmit}">
+                <lightning:messages/>
+
+                <div class="slds-hide">
+                    <lightning:inputField fieldName="OrderApi__Contact__c" value="{!v.salesOrder.OrderApi__Contact__c}"/>
+                    <lightning:inputField fieldName="OrderApi__Sales_Order__c" value="{!v.salesOrder.Id}"/>
+                    <lightning:inputField aura:id="type" fieldName="OrderApi__Payment_Type__c"
+                                          value="{!v.paymentType}"/>
+                </div>
+
+                <lightning:inputField fieldName="OrderApi__Deposit_Account__c" value="{!v.depositAccount}"/>
+                <lightning:combobox aura:id="paymentMethod" label="Payment Method" options="{!v.paymentOptions}"
+                                    value="{!v.paymentType}" required="true" class="slds-m-left-xx-small slds-m-right_xx-small"/>
+                <lightning:inputField fieldName="OrderApi__Reference_Number__c" required="true"/>
+                <lightning:inputField fieldName="OrderApi__Posted_Date__c" required="true"/>
+                <lightning:inputField fieldName="OrderApi__Memo__c" required="true"/>
+
+                <div class="slds-align_absolute-center slds-m-top_medium">
+                    <lightning:button variant="brand" label="Process Offline Payment" type="submit"/>
+                </div>
+            </lightning:recordEditForm>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

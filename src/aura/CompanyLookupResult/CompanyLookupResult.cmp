@@ -1,0 +1,56 @@
+<!--
+ - Created by afaf.awad on 7/29/2020.
+ -->
+
+<aura:component description="CompanyLookupResult" controller="CompanyLookupController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+
+    <aura:attribute name="oRecord" type="Object"/>
+    <aura:attribute name="IconName" type="string"/>
+    <aura:attribute name="newRecord" type="String"/>
+    <aura:attribute name="Message" type="String" default=""/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+
+    <!--Register the component level event-->
+    <aura:registerEvent name="oSelectedRecordEvent" type="c:SelectedObjectRecordEvt"/>
+    <aura:method name="getAccount" action="{!c.selectRecord}" access="PUBLIC"/>
+
+    <div style="font-size: small">
+        <aura:if isTrue="{!v.isLoading}">
+            <c:AACRSpinner />
+        <aura:set attribute="else">
+    <aura:if isTrue="{!v.oRecord.isSuggested}">
+        We did not find a matching organization. Please <a href="javascript:void(0)" style="color: #0645AD" onclick="{!c.callHelp}">
+            submit a request</a> and include company name, city, and country to add your organization in our system.
+        <br/>
+        <br/>
+        <div class="suggestResult">
+            <lightning:icon iconName="utility:light_bulb" class="lightBulb" size="x-small" alternativeText="icon"/>
+            Did you mean <a class="companyLink" href="javascript:void(0)" onclick="{!c.selectRecord}"
+                            style="color:red; text-decoration: underline"> {!v.oRecord.accountName} </a>?
+        </div>
+        <aura:set attribute="else">
+
+            <li role="presentation" class="slds-listbox__item" onclick="{!c.selectRecord}">
+        <span id="listbox-option-unique-id-01"
+              class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+              role="option">
+              <span class="slds-media__figure">
+                  <span class="slds-icon_container" title="Description of icon when needed">
+                    <lightning:icon iconName="{!v.IconName}" class="slds-icon slds-icon_small" size="small"
+                                    alternativeText="icon"/>
+                    <span class="slds-assistive-text">Description of icon</span>
+                  </span>
+              </span>
+              <span class="slds-media__body">
+                          <span class="slds-listbox__option-text slds-listbox__option-text_entity">{!v.oRecord.accountName}</span>
+              </span>
+        </span>
+            </li>
+        </aura:set>
+    </aura:if>
+        </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

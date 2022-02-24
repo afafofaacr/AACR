@@ -1,0 +1,36 @@
+<!--
+ - Created by lauren.lezberg on 9/13/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+
+        <p>***See documentation for <code>JP_Container</code>. </p>
+        <p>
+            The <code>BAMContainer</code> component is the same as <code>JP_Container</code> except that it is lightning only and implements "lightning:isUrlAddressable".
+            This component is used for internal join processes. The <code>JP_Container</code> component is for external processes and leverages the community template through a visualforce page.
+        </p>
+
+        <p>In order to get to redirect to a process using <code>BAMContainer</code> use the following code:</p>
+        <pre>
+                var pageReference = {
+                            type: 'standard__component',
+                            attributes: {
+                                componentName: 'c__BAMContainer',
+                            },
+                            state: {
+                                "c__id": joinId,
+                                "c__salesOrder" : salesOrderId,
+                                "c__isRenew" : "true/false"
+                            }
+                        };
+                cmp.set("v.pageReference", pageReference);
+
+                var navService = cmp.find("navService");
+                event.preventDefault();
+                navService.navigate(pageReference);
+        </pre>
+        <p>Things to consider:</p>
+        <p>The component that redirects to <code>BAMContainer</code> must include a nav service <code>lightning:navigation</code> tag.</p>
+    </aura:description>
+</aura:documentation>

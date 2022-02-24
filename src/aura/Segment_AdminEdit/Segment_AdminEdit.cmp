@@ -1,0 +1,18 @@
+<!--
+ - Created by lauren.lezberg on 4/17/2020.
+ -->
+
+<aura:component description="Segment_AdminEdit" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader">
+
+    <h2 class="title slds-text-heading_medium slds-text-align_center slds-hyphenate slds-border_bottom">Admin Edit</h2>
+    <br/><br/>
+    <lightning:recordForm
+            recordId="{!v.recordId}"
+            objectApiName="AC_User_Segment__c"
+            columns="2"
+            layoutType="Full"
+            mode="edit"
+            oncancel="{!c.handleCancel}"
+            onsuccess="{!c.handleSuccess}"/>
+
+</aura:component>

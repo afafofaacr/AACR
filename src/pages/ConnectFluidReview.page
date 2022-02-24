@@ -1,0 +1,10 @@
+<apex:page showHeader="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false"
+  applyBodyTag="false" Controller="FluidReviewController" action="{!login}">
+     
+    	<apex:composition rendered="{!apex:pageMessages != ''}" template="CPBase__template">
+            <apex:define name="pageMain">
+        		<apex:pageMessages ></apex:pageMessages>
+            </apex:define>
+        </apex:composition>
+        
+</apex:page>

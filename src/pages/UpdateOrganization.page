@@ -1,0 +1,86 @@
+<!--
+ - Created by afaf.awad on 8/12/2020.
+ -->
+
+<apex:page id="UpdateOrganization" controller="DW_UpdateInstitutionCtrl" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" >
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Update Organization
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+<!--        <apex:define name="pageMain">-->
+
+<!--            <div style="margin-left:50px; margin-right:50px; margin-top:15px;">-->
+<!--                <div id="updateOrganization"/>-->
+<!--            </div>-->
+
+<!--        </apex:define>-->
+
+
+        <apex:define name="pageMain">
+            <apex:form >
+                <div class="container m-t-30" style="overflow: visible">
+                    <div class="inner-wrapper">
+                        <br/>
+                        <div id="updateOrganization"/>
+<!--                        <table width="100%" id="poc" class="data-details-table" >-->
+<!--                            <tr>-->
+<!--                                <th colspan="2">Update Your Organization </th>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <th width="10%">-->
+<!--                                    <label>Current : </label >-->
+<!--                                </th>-->
+<!--                                <td class="current-institution">{!UserContactData.Account_Name__c}</td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <th>-->
+<!--                                    <label>New :  </label>-->
+<!--                                </th>-->
+<!--                                <td>-->
+<!--                                    <div id="updateOrganization"/>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--&lt;!&ndash;                            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <td colspan="2">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <input type="button" value="Save & Close" onclick="updateContact()" class="savebtn"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <input type="button" value="Cancel" onclick="self.close()" class="cancelbtn"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </tr>&ndash;&gt;-->
+<!--                        </table>-->
+                    </div>
+                </div>
+            </apex:form>
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+        // <!--var fname = "{!$CurrentPage.parameters.id}";-->
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:UpdateOrganization",
+                {
+                    "firstname" : "{!$User.FirstName}",
+                    "lastname" : "{!$User.LastName}",
+                    // "isRequired" : "false",
+                    "contactId" : "{!UserContactData.Id}",
+                    "accountId" : "{!UserContactData.AccountId}"
+                },
+
+                "updateOrganization",
+                function(cmp) {
+                console.log('Creating component...');
+                });
+
+        });
+    </script>
+</apex:page>

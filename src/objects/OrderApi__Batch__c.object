@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Batch receipts to improve and faciliate bank reconcilation.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__Actual_Amount__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The sum (amount) of entries entered for the batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** The sum (amount) of entries entered for the batch.</inlineHelpText>
+        <label>Actual Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Actual_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The current number of entries entered for the batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** The current number of entries entered for the batch.</inlineHelpText>
+        <label>Actual Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Batch_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Auto Calculated** Auto incrementing number. (External Id)</description>
+        <displayFormat>{0000000000}</displayFormat>
+        <externalId>true</externalId>
+        <inlineHelpText>**Auto Calculated** Auto incrementing number. (External Id)</inlineHelpText>
+        <label>Batch Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override/Required** Link to the related Business Group from the Batch inherited from the current user&apos;s assigned Business Group if not defined on record creation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override/Required** Link to the related Business Group from the Batch inherited from the current user&apos;s assigned Business Group if not defined on record creation.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Batches</relationshipLabel>
+        <relationshipName>Batches</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Closed_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the Batch was closed and assessed as Ready to Post.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the Batch was closed and assessed as Ready to Post.</inlineHelpText>
+        <label>Closed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date to use as the default Date for related Receipts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date to use as the default Date for related Receipts.</inlineHelpText>
+        <label>Default Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Deposit_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override/Required** The GL account related to the deposit account (bank) for the batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override/Required** The GL account related to the deposit account (bank) for the batch.</inlineHelpText>
+        <label>Deposit Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Batches</relationshipLabel>
+        <relationshipName>Batches</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Entity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Select a default Entity for related Receipts to the Batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a default Entity for related Receipts to the Batch.</inlineHelpText>
+        <label>Default Entity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                    <label>Contact</label>
+                </value>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Expected_Amount__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Required** The expected sum (amount) of entries for the batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The expected sum (amount) of entries for the batch.</inlineHelpText>
+        <label>Expected Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Expected_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Required** The expected number of entries for the batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The expected number of entries for the batch.</inlineHelpText>
+        <label>Expected Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Closed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the batch is considered closed and the system will restrict users (without special permissions assigned to their profile) from editing the batch or entries associated with the batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked the batch is considered closed and the system will restrict users (without special permissions assigned to their profile) from editing the batch or entries associated with the batch.</inlineHelpText>
+        <label>Is Closed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Posted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, related receipts are posted to Transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, related receipts are posted to Transactions.</inlineHelpText>
+        <label>Is Posted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Item to use as &quot;Default&quot; for related Batch Receipts. (Available in Batch UI only)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Item to use as &quot;Default&quot; for related Batch Receipts. (Available in Batch UI only)</inlineHelpText>
+        <label>Default Item</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Batches</relationshipLabel>
+        <relationshipName>Batches</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Opened_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the Batch was opened.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the Batch was opened.</inlineHelpText>
+        <label>Opened Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Gateway__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Payment Gateway assigned to the Batch (for online transactions and offline entry of transactions)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Payment Gateway assigned to the Batch (for online transactions and offline entry of transactions)</inlineHelpText>
+        <label>Payment Gateway</label>
+        <referenceTo>OrderApi__Payment_Gateway__c</referenceTo>
+        <relationshipLabel>Batches</relationshipLabel>
+        <relationshipName>Batches</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Select the Payment Type for the Batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Payment Type for the Batch.</inlineHelpText>
+        <label>Payment Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Check</fullName>
+                    <default>false</default>
+                    <label>Check</label>
+                </value>
+                <value>
+                    <fullName>Credit Card</fullName>
+                    <default>false</default>
+                    <label>Credit Card</label>
+                </value>
+                <value>
+                    <fullName>EFT</fullName>
+                    <default>false</default>
+                    <label>EFT</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Posted_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the Batch was posted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the Batch was posted.</inlineHelpText>
+        <label>Posted Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Source_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Source Code to set by default on cash entries created from the Batch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Source Code to set by default on cash entries created from the Batch.</inlineHelpText>
+        <label>Source Code</label>
+        <referenceTo>OrderApi__Source_Code__c</referenceTo>
+        <relationshipLabel>Batches</relationshipLabel>
+        <relationshipName>Batches</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Batch</label>
+    <listViews>
+        <fullName>OrderApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>OrderApi__Batch_Number__c</columns>
+        <columns>OrderApi__Deposit_Account__c</columns>
+        <columns>OrderApi__Business_Group__c</columns>
+        <columns>OrderApi__Source_Code__c</columns>
+        <columns>OrderApi__Actual_Count__c</columns>
+        <columns>OrderApi__Actual_Amount__c</columns>
+        <columns>OrderApi__Expected_Count__c</columns>
+        <columns>OrderApi__Expected_Amount__c</columns>
+        <columns>OrderApi__Is_Closed__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Batch Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Batches</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>OrderApi__Expected_Count__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Expected_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Actual_Count__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Actual_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Source_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Deposit_Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Closed_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderApi__Posted_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Batch_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Expected_Count__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Expected_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Actual_Count__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Actual_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Source_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Deposit_Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>UPDATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Business_Group__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Opened_Date__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Closed_Date__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Posted_Date__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Deposit_Account__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Deposit_Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OWNER.LAST_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Opened_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Closed_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Posted_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>OrderApi__Deposit_Account__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Source_Code__c</searchFilterFields>
+        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
+        <searchFilterFields>OrderApi__Opened_Date__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Closed_Date__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Posted_Date__c</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+        <searchFilterFields>UPDATEDBY_USER</searchFilterFields>
+        <searchResultsAdditionalFields>OrderApi__Batch_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Expected_Count__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Expected_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Actual_Count__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Actual_Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Source_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderApi__Deposit_Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>OrderApi__Enter_Receipts</fullName>
+        <availability>online</availability>
+        <description>Launches the Batch Entry UI.</description>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Enter Receipts</masterLabel>
+        <openType>replace</openType>
+        <page>OrderApi__BatchReceiptEntry</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,64 @@
+/**
+ * Created by afaf.awad on 9/21/2020.
+ */
+
+.THIS .slds-form-element__help{
+    color: rgb(194, 57, 52);
+}
+
+.THIS .slds-form-element__legend{
+    font-weight:400;
+    display: none;
+}
+
+.THIS .slds-form-element__icon{
+    display:none;
+}
+
+.THIS .slds-form-element__label{
+    font-weight: 400;
+}
+
+.THIS .container{
+    float: none;
+}
+
+.THIS .iframe {
+    height: 500px;
+    width: 320px;
+    align:center;
+    margin: auto;
+    display: block;
+}
+
+/*.THIS .slds-form-element{*/
+/*    padding-top: 15px;*/
+/*}*/
+
+.THIS .slds-select{
+    font-size: small;
+    font-weight: 400;
+}
+
+.THIS .slds-input{
+    font-size: small;
+    font-weight: 400;
+}
+
+.THIS .slds-box{
+    width: 70%;
+    margin: auto;
+    border: none;
+}
+
+.THIS .cAddressEntry{
+    padding-bottom: 7px;
+}
+
+.THIS .arrow{
+    width: 2.5%;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+}

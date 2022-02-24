@@ -1,0 +1,65 @@
+<!--
+ - Created by afaf.awad on 5/27/2021.
+ -->
+
+<aura:component description="DimensionTagModal" controller="DimensionTagModalController">
+
+    <aura:attribute name="isOpen" type="Boolean" default="false" description="is modal open"/>
+    <aura:attribute name="tagName" type="String" description="Name of tag"/>
+    <aura:attribute name="objectName" type="String" default="" description="Object cmp is sitting on"/>
+    <aura:attribute name="recordId" type="Id" default="" description="record Id of page"/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="is form saving?"/>
+    <aura:attribute name="visibilityChoice" type="String" default="public"/>
+    <aura:attribute name="visibilityOptions" type="List" default="[{'label': 'Public', 'value': 'public'},
+                                                                {'label': 'Private', 'value': 'private'}]"/>
+    <aura:attribute name="objectChoice" type="String"/>
+    <aura:attribute name="objectOptions" type="List" default="[{'label': 'Account', 'value': 'Account'},
+                                                                {'label': 'Contact', 'value': 'Contact'},
+                                                                {'label': 'Lead', 'value': 'Lead'},
+                                                                {'label': 'Opportunity', 'value': 'Opportunity'}]"/>
+
+
+    <aura:registerEvent name="callDimTagEvent" type="c:DimTagEvent"/>
+    <aura:handler name="callDimTagEvent" event="c:DimTagEvent" action="{!c.refresh}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Add New Tag</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:input aura:id="tagName" label="Name" value="{!v.tagName}" required="true"/>
+                    <lightning:input aura:id="tagDescription" label="Description" required="true"/>
+                    <lightning:radioGroup label="Visibility"
+                                          options="{!v.visibilityOptions}"
+                                          value="{!v.visibilityChoice}"
+                                          type="button"
+                                            style="padding-top:5px"/>
+                    <lightning:radioGroup aura:id="tagType"
+                                          label="Tag Type"
+                                          options="{!v.objectOptions}"
+                                          value="{!v.objectChoice}"
+                                          type="button"
+                                          required="true"
+                                          class="{!v.objectName == '' ? 'slds-show' : 'slds-hide'}"
+                                          style="padding-top:5px"/>
+
+
+                    <div class="slds-m-top_medium slds-grid slds-align_absolute-center">
+                        <lightning:button aura:id="saveBtn" label="{!v.processing? 'Saving...' : 'Save'}" onclick="{!c.handleSave}" variant="brand"/>
+                        <lightning:button aura:id="andNewBtn" label="{!v.processing? 'Saving...' : 'Save and New'}" onclick="{!c.handleSave}" variant="brand" value="andNew"/>
+                        <lightning:button label="Cancel" onclick="{!c.cancel}"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

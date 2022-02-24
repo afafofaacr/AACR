@@ -1,0 +1,12 @@
+<!--
+ - Created by lauren.lezberg on 3/29/2021.
+ -->
+
+<aura:component description="ORCIDLinkBtn" controller="VerifyORCIDController">
+    <aura:attribute name="hasId" type="Boolean" description="has ORCID Linked"/>
+    <aura:attribute name="parent" type="Aura.Component" required="true"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:button label="{!v.hasId?'ORCID Linked':'Link my ORCID'}" title="{!v.hasId?'ORCID Linked':'Link my ORCID'}" variant="brand" disabled="{!v.hasId}" onclick="{!c.linkToORCID}"/>
+</aura:component>

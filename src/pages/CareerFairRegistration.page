@@ -1,0 +1,71 @@
+<!--
+ - Created by lauren.lezberg on 2/16/2021.
+ -->
+
+<apex:page id="CareerFairRegistration"
+           controller="CareerFairRegController"
+           showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           applyHtmlTag="false"
+           applyBodyTag="false">
+    <apex:slds />
+    <apex:includeLightning />
+
+
+    <style>
+
+        .containerWithBackground{
+            /*width:100%;*/
+            /*background-image: url('https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegBkgd_1920x1080_2003059_2.jpg');*/
+        }
+
+    </style>
+    <c:pageStyle />
+
+
+        <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Career Fair Registration
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="slds-scope">
+
+            <div class="container " style="padding-top: 20px">
+                <div class="row">
+                    <div class="slds-align_absolute-center" style="width:1133px;">
+                        <img src="{!imgURL}"/>
+                    </div>
+                    <div class="slds-align_absolute-center" style="width: 1133px; margin: auto;">
+                        <div class="well">
+
+                            <div id="regCmp"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+        </apex:define>
+    </apex:composition>
+
+
+
+    <script>
+
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:CareerFairRegContainer",
+                {},
+                "regCmp",
+                function(cmp) {
+                    console.log('loading cmp');
+                });
+        });
+    </script>
+
+
+</apex:page>

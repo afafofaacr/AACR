@@ -1,0 +1,94 @@
+/**
+ * Created by lauren.lezberg on 2/26/2021.
+ */
+
+.THIS .slds-size_1-of-6{
+    width:33.3%;
+}
+
+.THIS .slds-size_5-of-6{
+    width:67.5%;
+}
+
+.THIS .slds-form-element .slds-checkbox [type=checkbox]+.slds-checkbox_faux{
+    height:2rem;
+    width:2rem;
+}
+
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox_faux:after{
+    height:0.4rem;
+    width:0.8rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(107, 109, 112);
+}
+
+.THIS h2.slds-modal__title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+
+
+
+.THIS .slds-input__icon-group{
+    margin-top: -.75rem;
+}
+
+.THIS .slds-input__icon-group_right .slds-input__icon_right{
+    right: 1.5rem;
+}
+
+.THIS .slds-input::placeholder{
+    font-size:1.5rem;
+}
+
+.THIS .slds-pill_link .slds-pill__icon_container{
+    margin-top:2px;
+    display: table;
+    left: 0.5rem;
+}
+
+.THIS .slds-combobox__input-entity-icon .slds-icon{
+    display:contents;
+}
+
+.THIS .slds-input-has-icon .slds-input__icon{
+    top:40%;
+    margin-right:10px;
+}
+
+.THIS div.slds-card__header.slds-grid{
+    padding-top:0px;
+    margin:0px;
+}
+
+/*.THIS .slds-input-has-icon{*/
+/*    margin-right: 10px;*/
+/*    margin-left: 5px;*/
+/*}*/
+
+
+/*.THIS [class*=slds-input-has-icon_left] .slds-combobox__input.slds-combobox__input-value{*/
+/*    padding-left:2.75rem;*/
+/*}*/
+
+
+.THIS .slds-pill_link .slds-pill__remove{
+    right:0.5rem;
+    top: 45%;
+}
+
+.THIS .slds-pill__remove svg{
+    width:1.25rem;
+    height:1.25rem;
+}
+
+.THIS svg.slds-icon{
+    height:2rem !important;
+    width:2rem !important;
+}

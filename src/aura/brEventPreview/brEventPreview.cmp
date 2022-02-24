@@ -1,0 +1,15 @@
+<!--
+ - Created by mitfity on 02.09.2019.
+ -->
+
+<aura:component description="brEventPreview" implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+                access="global" controller="BrEventsController">
+    <aura:attribute name="userInfo" type="Object" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <ltng:require styles="{!$Resource.BrEvents + '/css/style.css'}"/>
+
+    <c:brEventPreviewActions eventId="{!v.recordId}"/>
+    <c:BrEventsItem id="{!v.recordId}" isCommunity="false" userInfo="{!v.userInfo}" isGuest="false" isPreview="true"/>
+</aura:component>

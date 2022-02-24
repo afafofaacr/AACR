@@ -1,0 +1,58 @@
+<!--
+ - Created by lauren.lezberg on 2/14/2020.
+ -->
+
+<aura:component description="SpeakerEmailResponse" controller="SpeakerEmailResponseController">
+    <aura:attribute name="disclosureLink" type="String" description="disclosure link"/>
+    <aura:attribute name="accepted" type="Boolean" description="did recipient accept invitation"/>
+    <aura:attribute name="contactId" type="String" description="Id of contact record"/>
+    <aura:attribute name="assistant" type="String" description="name of assistant"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+
+    <lightning:card class="slds-align_absolute-center slds-m-top_xx-large slds-size_1-of-2 ">
+        <br/><br/>
+        <div class="slds-align_absolute-center">
+            <img src="https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/MyAACR-Login-Logo.jpg" />
+        </div>
+        <br/>
+
+        <div class="slds-m-top_medium">
+            <div class="slds-text-heading_large slds-text-align_center" style="font-weight: bold; color:#50B848;">Thank you for your response.</div>
+        </div>
+        <br/><br/>
+        <aura:if isTrue="{!v.accepted}">
+
+            <div class="slds-box" style="box-shadow: 3px 0 13px rgba(0,0,0,0.3);">
+            <div class="slds-text-heading_medium">Please go to the following link to provide disclosures. The link will also be emailed to you.</div>
+            <br/>
+                <div class="slds-align_absolute-center">
+            <a href="{!v.disclosureLink}" target="_self" class="btn">Disclosures</a>
+                </div>
+            </div>
+
+            <br/><br/>
+
+            <aura:if isTrue="{!not(empty(v.assistant))}">
+                <div class="slds-box" style="box-shadow: 3px 0 13px rgba(0,0,0,0.3);">
+                <div class="slds-text-heading_medium slds-text-align_center slds-m-top_medium">We have cc'd the following assistant for you:</div>
+                <div class="slds-text-heading_medium slds-text-align_center slds-m-top_small" style="font-weight:550;">{!v.assistant}</div>
+                <br/>
+                    <div class="slds-text-heading_small slds-text-align_center">
+                        Click
+                        <lightning:button variant="base" class="slds-text-heading_small" label=" here " onclick="{!c.goToHelpForm}"/>
+                        to submit a help form request if you would like to update your assistant.
+                    </div>
+                </div>
+                <br/>
+            </aura:if>
+
+            <!--<aura:if isTrue="{!not(empty(v.contactId))}">-->
+                <!--<c:UpdateAssistants contactId="{!v.contactId}" />-->
+            <!--</aura:if>-->
+
+        </aura:if>
+    </lightning:card>
+</aura:component>

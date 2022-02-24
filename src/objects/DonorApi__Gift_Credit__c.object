@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Summary of gifts</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>DonorApi__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account (organization or household) receiving credit for the gift.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account (organization or household) receiving credit for the gift.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Gift Credits</relationshipLabel>
+        <relationshipName>Gift_Credits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Assignee__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Link to the gift credit assignee record.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(DonorApi__Entity__c,&quot;Account&quot;),HYPERLINK(&quot;/&quot; &amp; DonorApi__Account__r.Id, DonorApi__Account__r.Name), IF(ISPICKVAL(DonorApi__Entity__c,&quot;Contact&quot;),HYPERLINK(&quot;/&quot; &amp; DonorApi__Contact__r.Id, DonorApi__Contact__r.FirstName &amp; &quot; &quot; &amp; DonorApi__Contact__r.LastName),HYPERLINK(&quot;/&quot; &amp; DonorApi__User__r.Id, DonorApi__User__r.FirstName &amp; &quot; &quot; &amp; DonorApi__User__r.LastName)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** Link to the gift credit assignee record.</inlineHelpText>
+        <label>Assignee</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The contact (individual person) receiving credit for the gift.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The contact (individual person) receiving credit for the gift.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Gift Credits</relationshipLabel>
+        <relationshipName>Gift_Credits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Credit_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** The amount of the gift credit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The amount of the gift credit.</inlineHelpText>
+        <label>Credit Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Credit_Sub_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Select the credit sub type that describes the gift credit (if applicable). This determines the detailed type of gift credit the constituent receives.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the credit sub type that describes the gift credit (if applicable). This determines the detailed type of gift credit the constituent receives.</inlineHelpText>
+        <label>Credit Sub Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>DonorApi__Credit_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business Owner</fullName>
+                    <default>false</default>
+                    <label>Business Owner</label>
+                </value>
+                <value>
+                    <fullName>Donor-Advised Giving</fullName>
+                    <default>false</default>
+                    <label>Donor-Advised Giving</label>
+                </value>
+                <value>
+                    <fullName>General Soft Credit</fullName>
+                    <default>false</default>
+                    <label>General Soft Credit</label>
+                </value>
+                <value>
+                    <fullName>Matching Gift</fullName>
+                    <default>false</default>
+                    <label>Matching Gift</label>
+                </value>
+                <value>
+                    <fullName>Spouse</fullName>
+                    <default>false</default>
+                    <label>Spouse</label>
+                </value>
+                <value>
+                    <fullName>Workplace Giving</fullName>
+                    <default>false</default>
+                    <label>Workplace Giving</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Soft Credit</controllingFieldValue>
+                <valueName>Business Owner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Soft Credit</controllingFieldValue>
+                <valueName>Donor-Advised Giving</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Soft Credit</controllingFieldValue>
+                <valueName>General Soft Credit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Soft Credit</controllingFieldValue>
+                <valueName>Matching Gift</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Soft Credit</controllingFieldValue>
+                <valueName>Spouse</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Soft Credit</controllingFieldValue>
+                <valueName>Workplace Giving</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Credit_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of credit assigned to the entity on the gift credit record. The standard types are hard, soft, and solicitor credit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of credit assigned to the entity on the gift credit record. The standard types are hard, soft, and solicitor credit.</inlineHelpText>
+        <label>Credit Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Soft Credit</fullName>
+                    <default>false</default>
+                    <label>Soft Credit</label>
+                </value>
+                <value>
+                    <fullName>Solicitation Credit</fullName>
+                    <default>false</default>
+                    <label>Solicitation Credit</label>
+                </value>
+                <value>
+                    <fullName>Hard Credit</fullName>
+                    <default>false</default>
+                    <label>Hard Credit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Date__c</fullName>
+        <defaultValue>today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Required** The date the constituent receives credit for the gift. This is typically the date the gift payment is processed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The date the constituent receives credit for the gift. This is typically the date the gift payment is processed.</inlineHelpText>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Entity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The entity to be given credit for the gift. Valid values are &quot;User&quot;, &quot;Account&quot;, or &quot;Contact&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The entity to be given credit for the gift. Valid values are &quot;User&quot;, &quot;Account&quot;, or &quot;Contact&quot;.</inlineHelpText>
+        <label>Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>true</default>
+                    <label>Contact</label>
+                </value>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Gift_Detail__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**Conditionally Required** Link to the related gift detail. Required for all credits except credits associated with Non-Cash Gifts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Conditionally Required** Link to the related gift detail. Required for all credits except credits associated with Non-Cash Gifts.</inlineHelpText>
+        <label>Gift Detail</label>
+        <referenceTo>OrderApi__Receipt_Line__c</referenceTo>
+        <relationshipLabel>Gift Credits</relationshipLabel>
+        <relationshipName>Gift_Credits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Gift__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related gift. Required for all credits except credits associated with Non-Cash Gifts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related gift. Required for all credits except credits associated with Non-Cash Gifts.</inlineHelpText>
+        <label>Gift</label>
+        <referenceTo>OrderApi__Receipt__c</referenceTo>
+        <relationshipLabel>Gift Credits</relationshipLabel>
+        <relationshipName>Gift_Credits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Non_Cash_Gift__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The related non-cash gift for the gift credit. Gift credits require either a gift or a non-cash gift to be assigned prior to saving.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The related non-cash gift for the gift credit. Gift credits require either a gift or a non-cash gift to be assigned prior to saving.</inlineHelpText>
+        <label>Non-Cash Gift</label>
+        <referenceTo>DonorApi__Gift_In_Kind__c</referenceTo>
+        <relationshipLabel>Gift Credits</relationshipLabel>
+        <relationshipName>Gift_Credits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Relates the credit to user in the system. The user is typically the solicitor.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relates the credit to user in the system. The user is typically the solicitor.</inlineHelpText>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Gift_Credits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Gift Credit</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Gift Credit ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Gift Credits</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>DonorApi__Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Credit_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Credit_Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Gift__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Gift_Detail__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Non_Cash_Gift__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Credit_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Credit_Amount__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Gift__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Gift_Detail__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Non_Cash_Gift__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>DonorApi__Account__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Assignee__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Contact__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Credit_Type__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Entity__c</searchFilterFields>
+        <searchFilterFields>DonorApi__User__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Date__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Gift__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

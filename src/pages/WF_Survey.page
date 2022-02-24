@@ -1,0 +1,47 @@
+<!--
+ - Created by afaf.awad on 11/4/2021.
+ -->
+
+<apex:page id="WF_Survey"
+           showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           applyHtmlTag="false"
+           applyBodyTag="false">
+
+    <head>
+        <title>AACR Survey</title>
+        <meta content="initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, minimal-ui" name="viewport"/>
+    </head>
+
+    <apex:includeLightning />
+    <apex:slds/>
+    <style>
+        body {
+            /*background-image: url('https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegBkgd_1920x1080_2003059_2.jpg');*/
+            /*background-repeat:repeat;*/
+        }
+        input[type="text"] {
+            background: transparent;
+            border:1px solid #000;
+        }
+    </style>
+
+    <div id="container" style="padding-top: 150px">
+        <div id="WebForm"/>
+        <br style="clear: both"/>
+    </div>
+
+    <script>
+
+        $Lightning.use("c:WebForms", function() {
+            $Lightning.createComponent("c:WF_SurveyForm",
+                {},
+                "WebForm",
+                function(cmp) {
+                console.log('createing cmp...');
+                });
+        });
+    </script>
+
+</apex:page>

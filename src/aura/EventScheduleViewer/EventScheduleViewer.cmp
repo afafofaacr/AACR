@@ -1,0 +1,217 @@
+<!--
+ - Created by lauren.lezberg on 1/10/2020.
+ -->
+
+<aura:component description="EventScheduleViewer" controller="EventScheduleViewerController"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="scheduleItems" type="List" access="public"
+                    description="scheduled event days including all sessions"/>
+    <aura:attribute name="eventObj" type="Object" default="{}"/>
+
+    <aura:attribute name="sessionModalOpen" type="Boolean" description="is session modal open" default="false"/>
+    <aura:attribute name="speakerModalOpen" type="Boolean" description="is speaker modal open" default="false"/>
+    <aura:attribute name="orgTimezone" type="String" description="timeZone"/>
+
+    <aura:attribute name="selectedId" type="String" access="private" description="selectedId for deletion"/>
+
+    <aura:method name="refreshSchedule" action="{!c.doInit}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:EventScheduleUpdate" action="{!c.handleScheduleUpdate}"/>
+    <aura:handler event="c:AreYouSureResponseEvt" action="{!c.handleResponseClick}"/>
+
+
+
+    <div class="slds-clearfix">
+        <div class="slds-float_left">
+            <div class="slds-m-left_small slds-text-align_center slds-text-heading_small" style="font-weight:550">
+                Event Dates:
+                <lightning:formattedDateTime value="{!v.eventObj.Start_Date__c}" year="numeric" month="numeric"
+                                             day="numeric" hour="2-digit"
+                                             minute="2-digit" hour12="true" timeZone="{!v.orgTimezone}"/>
+                &nbsp; - &nbsp;
+                <lightning:formattedDateTime value="{!v.eventObj.End_Date__c}" year="numeric" month="numeric"
+                                             day="numeric" hour="2-digit"
+                                             minute="2-digit" hour12="true" timeZone="{!v.orgTimezone}"/>
+            </div>
+        </div>
+        <div class="slds-float_right">
+            <div class="slds-grid slds-gutters slds-m-right_small">
+                <lightning:button label="Open All Sessions" onclick="{!c.openAll}" variant="base"/>
+                <div class="slds-text-align_center slds-border_right slds-m-left_small slds-m-right_small"/>
+                <lightning:button label="Close All Sessions" onclick="{!c.closeAll}" variant="base"/>
+            </div>
+        </div>
+    </div>
+
+
+    <aura:if isTrue="{!empty(v.scheduleItems)}">
+        <lightning:button iconName="utility:add" label="Add Session" onclick="{!c.openSessionModal}"/>
+    </aura:if>
+
+    <!--Iterate through schedule items-->
+    <aura:iteration items="{!v.scheduleItems}" var="item" indexVar="idx" start="0">
+        <div class="slds-text-heading_medium ">
+            <div class="header">
+                <div class="slds-clearfix">
+                    <div class="slds-float_left">
+                        <lightning:formattedDateTime value="{!item.eventDay}"/>
+                    </div>
+                    <div class="slds-float_right">
+                        <lightning:button iconName="utility:add" label="Add Session" onclick="{!c.openSessionModal}"
+                                          value="{!item.eventDay}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds">
+ 
+            <lightning:accordion aura:id="accordion" title="{!item.eventDay}" allowMultipleSectionsOpen="true">
+                <aura:iteration items="{!item.sessions}" var="eSession">
+                    <lightning:accordionSection name="{!eSession.sessionId}" title="{!eSession.sessionName}">
+                        <!--<span>-->
+                        <aura:set attribute="actions">
+                            <div class="slds-clearfix slds-align_absolute-center">
+                                <div class="slds-float_left">
+                                    <div class="slds-truncate slds-text-heading_small" title="{!eSession.sessionName}">
+                                        <a href="{!'/' + eSession.sessionId}"
+                                           target="_blank">{!eSession.sessionName}</a>
+                                        {!' ( '}
+                                        <lightning:formattedDateTime value="{!eSession.startTime}" hour="numeric"
+                                                                     minute="2-digit" timeZone="{!v.orgTimezone}"/>
+                                        {!' - '}
+                                        <lightning:formattedDateTime value="{!eSession.endTime}" hour="numeric"
+                                                                     minute="2-digit" timeZone="{!v.orgTimezone}"/>
+                                        {!' ) '}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="flex-grow:1;">
+                                <div class="slds-clearfix">
+                                    <div class="slds-float_right">
+                                        <div class="slds-align_absolute-center">
+                                            <lightning:buttonIcon iconName="utility:delete" onclick="{!c.confirmDeleteRecord}"
+                                                                  value="{!eSession.sessionId}"
+                                                                  alternativeText="Delete Session" variant="brand"/>
+                                            <lightning:buttonIcon iconName="utility:edit" onclick="{!c.openEditSession}"
+                                                                  value="{!eSession.sessionId}"
+                                                                  alternativeText="Edit Session" variant="brand"/>
+                                            <lightning:button iconName="utility:add" label="Add Speaker"
+                                                              onclick="{!c.openSpeakerModal}"
+                                                              value="{!eSession.sessionId}" variant="brand"
+                                                              title="Add Speaker"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </aura:set>
+                        <aura:set attribute="body">
+                            <aura:if isTrue="{!not(empty(eSession.panels))}">
+                                <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal"
+                                       role="grid">
+                                    <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th class="slds-cell-wrap" scope="col">
+                                            <div class="slds-truncate" title="Presentation Time">Presentation Time</div>
+                                        </th>
+                                        <th class="slds-cell-wrap" scope="col">
+                                            <div class="slds-truncate" title="Presentation Name">Presentation Name</div>
+                                        </th>
+                                        <th class="slds-cell-wrap" scope="col">
+                                            <div class="slds-truncate" title="Speaker Name">Speaker Name</div>
+                                        </th>
+                                        <th class="slds-cell-wrap" scope="col">
+                                            <div class="slds-truncate" title="Speaker Roles">Speaker Roles</div>
+                                        </th>
+                                        <th class="slds-cell-wrap" scope="col">
+                                            <div class="slds-truncate" title="Speaker Status">Speaker Status</div>
+                                        </th>
+                                        <th class="slds-cell-wrap" scope="col">
+                                            <div class="slds-truncate" title="Actions">Actions</div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <aura:iteration items="{!eSession.panels}" var="panel">
+                                        <tr class="slds-hint-parent">
+                                            <td role="gridcell" class="slds-cell-wrap">
+                                                <div class="">
+                                                    <aura:if isTrue="{!not(empty(panel.panelTime))}">
+                                                        <lightning:formattedDateTime value="{!panel.panelTime}"
+                                                                                     hour="numeric" minute="2-digit" timeZone="{!v.orgTimezone}"/>
+                                                    </aura:if>
+                                                </div>
+                                            </td>
+                                            <td role="gridcell" class="slds-cell-wrap">
+                                                <aura:if isTrue="{!panel.panelName != panel.panelId}">
+                                                    <div class="" title="{!panel.panelName}">
+                                                        <a href="{!'/' + panel.panelId}"
+                                                           target="_blank">{!panel.panelName}</a>
+                                                    </div>
+                                                </aura:if>
+                                            </td>
+                                            <td role="gridcell" class="slds-cell-wrap">
+                                                <div class="" title="{!panel.speakerName}">
+                                                    <a href="{!'/' + panel.speakerId}"
+                                                       target="_blank">{!panel.speakerName}</a>
+                                                </div>
+                                            </td>
+                                            <td role="gridcell" class="slds-cell-wrap">
+                                                <div class="" title="{!panel.speakerRoles}">
+                                                    {!panel.speakerRoles }
+                                                </div>
+                                            </td>
+                                            <td role="gridcell" class="slds-cell-wrap">
+                                                <div class="" title="{!panel.speakerStatus}">
+                                                    {!panel.speakerStatus}
+                                                </div>
+                                            </td>
+                                            <td role="gridcell" class="slds-cell-wrap">
+                                                <div class="" title="actions">
+                                                    <lightning:buttonIcon iconName="utility:edit"
+                                                                          onclick="{!c.openEditSpeaker}"
+                                                                          value="{!panel.panelId}"
+                                                                          alternativeText="Edit Speaker"
+                                                                          variant="bare"/>
+                                                    <lightning:buttonIcon iconName="utility:delete"
+                                                                          onclick="{!c.confirmDeleteRecord}"
+                                                                          value="{!panel.panelId}"
+                                                                          alternativeText="Delete Speaker"
+                                                                          variant="bare"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </aura:if>
+                            <aura:if isTrue="{!empty(eSession.panels)}">
+                                <div class="slds-align_absolute-center">
+                                    <div class="slds-box">
+                                        <div class="slds-text-heading_medium">There are no speakers scheduled for this
+                                            session.
+                                        </div>
+                                    </div>
+                                </div>
+                            </aura:if>
+                        </aura:set>
+                             <!--</span> -->
+                    </lightning:accordionSection>
+
+                </aura:iteration>
+            </lightning:accordion>
+
+        </div>
+    </aura:iteration>
+
+    <c:AreYouSureModal aura:id="confirmModal"/>
+
+    <!-- NEW/EDIT MODALS -->
+    <c:SpeakerFormModal aura:id="speakerModal" isOpen="{!v.speakerModalOpen}"/>
+    <c:SessionFormModal aura:id="sessionModal" isOpen="{!v.sessionModalOpen}" eventObj="{!v.eventObj}"/>
+
+
+</aura:component>

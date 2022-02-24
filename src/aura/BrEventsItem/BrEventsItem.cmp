@@ -1,0 +1,396 @@
+<aura:component description="BrEventsItem" controller="BrEventsItemController">
+    <aura:attribute name="userInfo" type="Object" required="true"/>
+    <aura:attribute name="id" type="Id"/>
+    <aura:attribute name="item" type="BR_Event__c"/>
+    <aura:attribute name="venue" type="Object"/>
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" default="16"/>
+    <aura:attribute name="itemMainImage" type="String"/>
+    <aura:attribute name="itemImages" type="List"/>
+    <aura:attribute name="rsvpStatus" type="String" default="{!$Label.c.lbl_are_u_going}"/>
+    <aura:attribute name="hideAttendees" type="Boolean" default="true"/>
+    <aura:attribute name="showAttendeesList" type="Boolean" default="false"/>
+    <aura:attribute name="showAttendeesModal" type="Boolean" default="false"/>
+    <aura:attribute name="itemParticipations" type="List"/>
+    <aura:attribute name="attendeesLimit" type="Integer" default="0"/>
+    <aura:attribute name="attendeesCount" type="Integer" default="0"/>
+    <aura:attribute name="mainImageFilename" type="String" default=""/>
+    <aura:attribute name="listImageFilename" type="String" default=""/>
+    <aura:attribute name="isCommunity" type="Boolean"/>
+    <aura:attribute name="isGuest" type="Boolean"/>
+    <aura:attribute name="isPreview" type="Boolean" default="false"/>
+    <aura:attribute name="view" type="String"/>
+
+    <aura:registerEvent name="eventsErrorEvent" type="c:BrEventsError"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:BrDateChange" action="{!c.onDateChange}"/>
+
+    <div class="slds-align_absolute-center">
+        <div class="container slds-clearfix">
+            <div class="slds-float_left slds-m-bottom_medium slds-m-top_medium">
+                <aura:if isTrue="{!not(v.isPreview)}">
+                    <lightning:button label="{!$Label.c.br_btnBackToList}" onclick="{!c.backToList}" variant="brand"/>
+                </aura:if>
+            </div>
+            <!--            <div class="slds-float_right slds-m-bottom_medium slds-m-top_medium">-->
+            <!--                <aura:if isTrue="{!or(v.item.userIsParticipating, or(v.item.item.Limit_of_attendees__c > v.attendeesCount,v.item.item.Limit_of_attendees__c==0))}">-->
+            <!--                    &lt;!&ndash;                                            <aura:if isTrue="{!and(or(v.item.item.Limit_of_attendees__c > v.attendeesCount,v.item.item.Limit_of_attendees__c==0), not(v.userInfo.Type == 'Guest'))}">&ndash;&gt;-->
+            <!--                    <c:acPurchaseTicket eventId="{!v.item.item.Id}" event="{!v.item}"-->
+            <!--                                        class="slds-float_right" onrefundrequest="{!c.doInit}"/>-->
+            <!--                    &lt;!&ndash;                                            </aura:if>&ndash;&gt;-->
+            <!--                    <aura:set attribute="else">-->
+            <!--                        <lightning:button label="Sold Out" title="Event is sold out" disabled="true" class="slds-float_right" variant="destructive"/>-->
+            <!--                    </aura:set>-->
+            <!--                </aura:if>-->
+            <!--            </div>-->
+        </div>
+    </div>
+
+    <div class="slds-clear"></div>
+    <div class="slds-spinner_container spinner-item-min-height slds-hide" aura:id="spinner">
+        <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+        </div>
+    </div>
+
+    <aura:if isTrue="{!v.showAttendeesList}">
+        <div class="slds-grid slds-wrap slds-grid--vertical-align-center slds-p-around--medium cont-header">
+            <div class="slds-size--1-of-3">
+                <button class="slds-button slds-button--neutral slds-not-selected button"
+                        onclick="{!c.hideAttendeesList}">
+                  <span class="slds-text-not-selected">
+                      <c:BrSvgIcon svgPath="{!$Resource.BrEvents + '/icons/symbols.svg#back'}" category="action"
+                                   name="back"
+                                   class="slds-button__icon--stateful slds-button__icon--left"/>{!$Label.c.lbl_back}</span>
+                </button>
+            </div>
+            <div class="slds-size--1-of-3 slds-text-align--center"><span
+                        class="serv-text--main">{!$Label.c.lbl_attendees}</span></div>
+            <div class="slds-size--1-of-3 slds-text-align--right"><span
+                        class="serv-text--additional">{!v.attendeesCount}&nbsp;{!$Label.c.lbl_going}</span></div>
+        </div>
+        <c:BrEventsAttendeesList items="{!v.itemParticipations}" isCommunity="{!v.isCommunity}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.showAttendeesModal}">
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close modal__button--close"
+                            onclick="{!c.closeAttendeesListModal}">
+                        <c:BrSvgIcon svgPath="{!$Resource.BrEvents + '/icons/symbols.svg#close'}" category="utility"
+                                     name="close"
+                                     class="slds-button__icon slds-button__icon--large modal__button--close__icon"/>
+                    </button>
+                    <h2 class="slds-text-heading--medium serv-text--main">{!$Label.c.lbl_attendees}&nbsp;<span
+                                class="serv-text--additional">{!v.attendeesCount}&nbsp;{!$Label.c.lbl_going}</span></h2>
+                </div>
+                <div class="slds-modal__content">
+                    <c:BrEventsAttendeesList items="{!v.itemParticipations}" isCommunity="{!v.isCommunity}"/>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+    <aura:if isTrue="{!and(not(empty(v.item)),not(v.showAttendeesList))}">
+        <div class="container">
+            <div class="slds-grid">
+                <div class="slds-size--1-of-1">
+                    <div class="main-wrap-img">
+                        <div style="z-index: 1;position:relative;">
+                            <img class="main-img" src="{!v.itemMainImage}" alt="{!v.item.item.Name}"
+                                 style="z-index: 2;"/>
+                            <span id="overlay_text" style="z-index: 3;position: absolute; left:0;">
+                                <aura:if isTrue="{!v.item.item.Event_Stage__c=='Virtual'}">
+                                    <div class="eventStage gothamMedium slds-text-title_caps"
+                                         style="background:#005cab; padding:3px; color:white;">
+                                        {!v.item.item.Event_Stage__c}
+                                    </div>
+                                </aura:if>
+                                 <aura:if isTrue="{!v.item.item.Event_Stage__c=='Hybrid'}">
+                                    <div class="eventStage gothamMedium slds-text-title_caps"
+                                         style="background:#6a737b; padding:3px; color:white;">
+                                        {!v.item.item.Event_Stage__c}
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.item.item.Event_Stage__c=='In Person'}">
+                                    <div class="eventStage gothamMedium slds-text-title_caps"
+                                         style="background:#ed1849; padding:3px; color:white;">
+                                        {!v.item.item.Event_Stage__c}
+                                    </div>
+                                </aura:if>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid border-bottom--sm">
+                <div class="slds-size--1-of-1">
+                    <div class="slds-p-vertical_small slds-m-vertical_small">
+                        <div class="slds-grid slds-wrap slds-grid--vertical-align-center">
+                            <div class="slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--8-of-12">
+                                <h2 class="h2 slds-section__title slds-text-title--caps "><a href="javascript:void(0);"
+                                                                                             class="gothamBook">{!v.item.item.Name}</a>
+                                </h2>
+                            </div>
+                            <aura:if isTrue="{!not(v.isPreview)}">
+                                <div class="slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--4-of-12">
+                                    <aura:if isTrue="{!v.item.item.Ticket_Not_Required__c}">
+                                        <aura:if isTrue="{!not(v.userInfo.Type == 'Guest')}">
+                                            <div aura:id="dropdown-wrapper-going"
+                                                 class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click wrap-dropdown--lg">
+                                                <!-- .slds-is-open -->
+                                                <button id="dropdown-button-going"
+                                                        class="slds-button slds-button--neutral slds-picklist__label dropdown-button"
+                                                        aria-haspopup="true" onclick="{!c.toggleGoingDropdown}">
+                                                    <span class="slds-truncate">{!v.rsvpStatus}</span>
+                                                    <c:BrSvgIcon
+                                                            svgPath="{!$Resource.BrEvents + '/icons/symbols.svg#down'}"
+                                                            category="utility" size="medium" name="down"
+                                                            class="slds-icon slds-icon--medium button-icon"/>
+                                                </button>
+                                                <div class="slds-dropdown slds-dropdown--left">
+                                                    <ul class="dropdown__list slds-dropdown--length-5" role="menu">
+                                                        <li aura:id="goingBtnYesItem" class="slds-dropdown__item"
+                                                            role="presentation">
+                                                            <a href="javascript:void(0);" role="menuitemcheckbox"
+                                                               data-type="Yes" onclick="{!c.rsvpItem}" tabindex="0">
+                                                        <span class="slds-truncate">
+                                                            <c:BrSvgIcon
+                                                                    svgPath="{!$Resource.BrEvents + '/icons/symbols.svg#check'}"
+                                                                    category="utility" size="x-small" name="check"
+                                                                    class="slds-icon slds-icon--x-small slds-icon--selected slds-icon-text-default slds-m-right--x-small"/>{!$Label.c.lbl_going}</span>
+                                                            </a>
+                                                        </li>
+                                                        <li aura:id="goingBtnNoItem" class="slds-dropdown__item"
+                                                            role="presentation">
+                                                            <a href="javascript:void(0);" role="menuitemcheckbox"
+                                                               data-type="No" onclick="{!c.rsvpItem}" tabindex="-1">
+                                                        <span class="slds-truncate">
+                                                            <c:BrSvgIcon
+                                                                    svgPath="{!$Resource.BrEvents + '/icons/symbols.svg#check'}"
+                                                                    category="utility" size="x-small" name="check"
+                                                                    class="slds-icon slds-icon--x-small slds-icon--selected slds-icon-text-default slds-m-right--x-small"/>{!$Label.c.lbl_not_going}</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div><!-- end of .slds-dropdown -->
+                                            </div><!-- end of .slds-picklist -->
+
+                                            <aura:set attribute="else">
+                                                <aura:if isTrue="{!v.item.item.Enable_registration_for_guests__c}">
+                                                    <c:brEventsGuestRegisterForm eventId="{!v.item.item.Id}"/>
+                                                </aura:if>
+                                            </aura:set>
+                                        </aura:if>
+
+                                        <aura:set attribute="else">
+                                            <aura:if
+                                                    isTrue="{!or(v.item.userIsParticipating, or(v.item.item.Limit_of_attendees__c > v.attendeesCount,v.item.item.Limit_of_attendees__c==0))}">
+                                                <!--                                            <aura:if isTrue="{!and(or(v.item.item.Limit_of_attendees__c > v.attendeesCount,v.item.item.Limit_of_attendees__c==0), not(v.userInfo.Type == 'Guest'))}">-->
+                                                <c:acPurchaseTicket eventId="{!v.item.item.Id}" event="{!v.item}"
+                                                                    class="slds-float_right mobile"
+                                                                    onrefundrequest="{!c.doInit}"/>
+                                                <!--                                            </aura:if>-->
+                                                <aura:set attribute="else">
+                                                    <lightning:button label="Sold Out" title="Event is sold out"
+                                                                      disabled="true" class="slds-float_right"
+                                                                      variant="destructive"/>
+                                                </aura:set>
+                                            </aura:if>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                            </aura:if>
+                        </div>
+                        <aura:if isTrue="{!not(empty(v.item.item.Parent_Event__c))}">
+                            <br/>
+                            <div class="slds-text-heading_medium">
+                                <div class="slds-grid">
+                                    <lightning:icon iconName="utility:link" size="small"/> &nbsp;
+                                    This event is available to registrants of  &nbsp;
+                                    <a href="{!v.isCommunity ? '?ac__id=' + v.item.item.Parent_Event__c : 'javascript:void(0)'}"
+                                       target="_blank" data-id="{!v.item.item.Parent_Event__c}" onclick="{!c.openItem}"
+                                       class="parentTitle">
+                                        {!v.item.item.Parent_Event__r.Name}.
+                                    </a>
+                                </div>
+                            </div>
+                        </aura:if>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap slds-m-bottom--small slds-grid--vertical-stretch border-bottom--sm">
+                <aura:if
+                        isTrue="{!or(v.item.item.Event_Stage__c=='On Demand', and(v.item.item.Hide_Date_Time__c),empty(v.item.venue))}">
+                    <aura:set attribute="else">
+                        <div class="{!v.hideAttendees?'slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--12-of-12 slds-grid':'slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--9-of-12 slds-grid'}">
+                            <div class="slds-box cont-box cont-box-bg">
+
+                                <aura:if isTrue="{!not(v.item.item.Hide_Date_Time__c)}">
+                                    <div class="slds-grid dateLocation">
+                            <span>
+                                <div class="slds-grid">
+                                <lightning:icon iconName="utility:clock" size="small" class="gothamBold"/>
+                                <div class="slds-p-left_small slds-p-right_small gothamBold ">Date/Time:</div>
+                                    </div>
+                            </span>
+                                        <span>
+                                <div class="gothamBold"> {!v.item.itemDate}</div>
+                                    <br/>
+                                </span>
+                                    </div>
+                                </aura:if>
+
+                                <!--<aura:if isTrue="{!not(empty(v.item.item.Venue_Address__c))}">-->
+                                <!--<p class="icontext icontext&#45;&#45;balloon">{!v.item.item.Venue_Address__c}</p>-->
+                                <!--</aura:if>-->
+                                <aura:if isTrue="{!not(empty(v.item.venue))}">
+                                    <!--                            <p class="icontext icontext&#45;&#45;balloon">-->
+                                    <div class="slds-grid gothamBold dateLocation">
+                                <span>
+                                     <div class="slds-grid">
+                                         <lightning:icon iconName="utility:checkin" size="small" class="gothamBold"/>
+                                    <div class="slds-p-left_small slds-p-right_small gothamBold">Location:</div>
+                                     </div>
+                                </span>
+                                        <span>
+                                    <div class="gothamBold">
+                                    {!if(v.item.venue.Street_1__c!=null,v.item.venue.Street_1__c,'')}
+                                        {!if(v.item.venue.Street_2__c!=null,', ' + v.item.venue.Street_2__c,'')}
+                                        {!if(v.item.venue.Street_3__c!=null,', ' + v.item.venue.Street_3__c,'')}
+                                        {!if(v.item.venue.City__c!=null,', ' + v.item.venue.City__c,'')}
+                                        {!if(v.item.venue.State__c!=null,', ' + v.item.venue.State__c,'')}
+                                        {!if(v.item.venue.Zip__c!=null,' ' + v.item.venue.Zip__c,'')}
+                                        {!if(v.item.venue.Country__c!=null,', ' + v.item.venue.Country__c,'')}
+                                        </div>
+                                </span>
+                                    </div>
+                                    <!--                            </p>-->
+                                </aura:if>
+                            </div>
+                        </div>
+                    </aura:set>
+                </aura:if>
+                <!--                <aura:if isTrue="{!and(v.item.item.Event_Stage__c!='On Demand', and(not(v.item.item.Hide_Date_Time__c), not(empty(v.item.venue))))}">-->
+                <!--                    -->
+                <!--                </aura:if>-->
+                <aura:if isTrue="{!not(v.hideAttendees)}">
+                    <div class="slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--3-of-12 slds-grid pl-10">
+                        <div class="slds-box cont-box overflow--hidden">
+                            <div class="members-quant">
+                                <span class="members-quant__num">{!v.attendeesCount}</span>{!$Label.c.lbl_going_lower}
+                            </div>
+                            <div class="users-set">
+                                <aura:if isTrue="{!not(empty(v.itemParticipations))}">
+                                    <aura:iteration items="{!v.itemParticipations}" var="part" indexVar="index">
+                                        <aura:if isTrue="{!lessthan(index, 3)}">
+                                            <a href="{!v.isCommunity ? 'profile/' + part.User__r.Id : '/one/one.app?#/sObject/'+ part.User__r.Id + '/view'}"
+                                               target="_blank">
+                                                <img class="users-set__pic"
+                                                     src="{!part.User__r.Id ? part.User__r.SmallPhotoUrl : $SfdcSite.pathPrefix + '/profilephoto/005/T'}"
+                                                     alt="{!part.User__r.Name}"/>
+                                            </a>
+                                        </aura:if>
+                                    </aura:iteration>
+                                    <aura:if isTrue="{!greaterthan(v.itemParticipations.length, 3)}">
+                                        <a href="javascript:void(0);" onclick="{!c.openAttendeesListModal}"
+                                           class="users-set__link">{!$Label.c.lbl_more_lower}</a>
+                                    </aura:if>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+            </div>
+            <aura:if isTrue="{!v.item.userIsParticipating}">
+                <div class="slds-grid slds-m-bottom_small">
+                    <div class="slds-size--1-of-1">
+                        <div class="slds-box cont-box">
+                            <div class="cont-area">
+                                <div class="slds-grid slds-m-bottom_small">
+                                    <lightning:icon iconName="utility:task" size="small" class="slds-m-top_x-small"/>
+                                    <div class="slds-p-left_small slds-p-right_small slds-text-title_bold">Event
+                                        Actions:
+                                    </div>
+                                </div>
+                                <aura:if isTrue="{!not(empty(v.item.item.Virtual_Venue__c))}">
+                                    <lightning:button variant="brand" label="Attend" value="{!v.item.item.Id}"
+                                                      title="Attend"
+                                                      disabled="{!or(not(v.item.exhibitOpen),v.item.refundRequested)}"
+                                                      onclick="{!c.attendMeeting}"/>
+                                </aura:if>
+                                <lightning:button variant="brand" label="Add To Calendar" value="{!v.item.item.Id}"
+                                                  title="Add to Calendar" disabled="{!v.item.refundRequested}"
+                                                  onclick="{!c.goToAddToCalendar}"/>
+                                <aura:if isTrue="{!v.item.item.CME_Open__c}">
+                                    <lightning:button label="CME Credit" variant="brand" onclick="{!c.redirect}"
+                                                      title="CME Credit" disabled="{!v.item.refundRequested}"
+                                                      value="{!v.item.item.CME_Survey_Link__c}"/>
+                                </aura:if>
+                                <aura:if isTrue="{!v.item.item.LOP_Open__c}">
+                                    <lightning:button label="Letter of Participation" variant="brand"
+                                                      title="Letter of Participation"
+                                                      disabled="{!v.item.refundRequested}" onclick="{!c.downloadPDF}"/>
+                                </aura:if>
+                                <aura:if isTrue="{!v.item.item.LOI_Open__c}">
+                                    <lightning:button label="Letter of Invitation" variant="brand"
+                                                      title="Letter of Invitation"
+                                                      disabled="{!v.item.refundRequested}" onclick="{!c.downloadInvitePDF}"/>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aura:if>
+            <div class="slds-grid slds-m-bottom--small">
+                <div class="slds-size--1-of-1">
+                    <div class="slds-box cont-box">
+                        <div class="gothamBook evtDescription slds-text-longform">
+                            <aura:unescapedHtml value="{!v.item.item.Description__c}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--   *** MAP ***-->
+            <div class="slds-m-bottom_small">
+            <aura:if isTrue="{!and(notequals(v.item, null),v.mapMarkers.length > 0)}">
+                <lightning:map
+                        mapMarkers="{! v.mapMarkers }"
+                        zoomLevel="{!v.zoomLevel}"/>
+            </aura:if>
+            </div>
+
+
+            <!--   *** EVENT SPONSORS-->
+            <div style="z-index: 10">
+                <aura:if isTrue="{!v.item.item.Display_on_Landing_Page__c}">
+                <div class="slds-grid slds-m-bottom_small">
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-box cont-box">
+                            <c:EventSponsorDisplay eventId="{!v.item.item.Id}"
+                                                   orientation="{!v.item.item.View_Landing_Page_Horizontally__c}"
+                                                   showLogos="{!v.item.item.Show_Landing_Page_Logos__c}"/>
+                        </div>
+                    </div>
+                </div>
+            </aura:if>
+            </div>
+
+            <!--   ***END EVENT SPONSORS-->
+
+
+            <!--<aura:if isTrue="{!and(notequals(v.item, null), not(empty(v.item.item.Location__Latitude__s)))}">-->
+            <!--<div class="slds-grid slds-m-bottom&#45;&#45;small">-->
+            <!--<div class="slds-size&#45;&#45;1-of-1">-->
+            <!--<div id="map" class="map">-->
+            <!--<iframe height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{!'https://maps.google.com/maps?q='-->
+            <!--+ v.item.item.Location__Latitude__s + ',' + v.item.item.Location__Longitude__s + '&amp;hl=en;z=14&amp;output=embed'}"></iframe>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</aura:if>-->
+        </div><!-- end of .container -->
+    </aura:if>
+</aura:component>

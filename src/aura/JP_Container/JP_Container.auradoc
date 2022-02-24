@@ -1,0 +1,17 @@
+<!--
+ - Created by lauren.lezberg on 6/10/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p><code>JP_Container</code> dynamically builds a join process based off a given Join_Process__mdt ID.
+            The component is contains 3 parts:
+            <ul>
+                <li>A dynamic Aura.Component[] attribute</li>
+                <li><code>JP_ProgressBar</code></li>
+                <li><code>JP_NavButtons</code></li>
+            </ul>
+        </p>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+    </aura:description>
+</aura:documentation>

@@ -1,0 +1,94 @@
+<!--
+ - Created by lauren.lezberg on 1/12/2021.
+ -->
+
+<aura:component description="NewAddressForm" controller="MyAddressesController">
+    <aura:attribute name="contactId" type="String" description="contact id for known address"/>
+    <aura:attribute name="manual" type="Boolean" description="manual address entry" default="false"/>
+    <aura:attribute name="showDetails" type="Boolean" description="show additional details field if type is 'Other'" default="false"/>
+    <aura:attribute name="countryList" type="List" description="List of countries"/>
+    <aura:attribute name="stateList" type="List" description="List of countries"/>
+    <aura:attribute name="addressId" type="String" description="Id of known address"/>
+    <aura:attribute name="types" type="List" description="list of available types"/>
+    <aura:attribute name="selectedType" type="String" description="selected type"/>
+    <aura:attribute name="errorMsg" type="String" description="error message if form is not valid"/>
+
+    <aura:attribute name="address" type="Object" description="address object" default="{}" />
+
+    <aura:method name="submitForm" action="{!c.handleSubmit}" description="submit address form"/>
+    <aura:handler name="change" value="{!v.addressId}" action="{!c.addressIdChange}"/>
+    <aura:registerEvent name="newAddress" type="c:NewKnownAddressEvt"/>
+
+    <lightning:recordEditForm aura:id="newAddressForm"
+                              objectApiName="OrderApi__Known_Address__c"
+                              onerror="{!c.handleError}"
+                              onsuccess="{!c.handleSuccess}"
+                              onsubmit="{!c.handleSubmit}">
+        <lightning:messages />
+        <div class="slds-hide">
+            <lightning:inputField fieldName="OrderApi__Contact__c" value="{!v.contactId}"/>
+            <lightning:inputField aura:id="kastreet" fieldName="OrderApi__Street__c"/>
+            <lightning:inputField aura:id="kacity" fieldName="OrderApi__City__c"/>
+            <lightning:inputField aura:id="kastate" fieldName="OrderApi__Province__c"/>
+            <lightning:inputField aura:id="kazip" fieldName="OrderApi__Postal_Code__c"/>
+            <lightning:inputField aura:id="kacountry" fieldName="OrderApi__Country__c"/>
+            <lightning:inputField aura:id="type" fieldName="Type__c"/>
+<!--            <lightning:inputField aura:id="manualEntry" fieldName="Manual_Entry__c"/>-->
+        </div>
+
+        <div class="slds-form_horizontal">
+            <lightning:select aura:id ="typeSelect" onchange="{!c.checkType}" required="true" label="Type" messageWhenValueMissing="Complete this field." >
+                <option value="">--None--</option>
+                <aura:iteration items="{!v.types}" var="t">
+                    <option value="{!t}" selected="{!t==v.selectedType}">{!t}</option>
+                </aura:iteration>
+            </lightning:select>
+
+
+            <c:AddressAutocomplete aura:id="autoAddress" label="Address" required="{!not(v.manual)}" address="{!v.address}"/>
+            <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                <div class="slds-m-left_medium slds-text-color_error">{!v.errorMsg}</div>
+            </aura:if>
+        </div>
+        <div class="slds-clearfix">
+            <div class="slds-float_right">
+                <lightning:inputField fieldName="Manual_Entry__c" onchange="{!c.toggleManualEntry}"/>
+<!--                <lightning:input type="checkbox" label="Manual Entry" onchange="{!c.toggleManualEntry}" value="{!v.manual}"/>-->
+            </div>
+        </div>
+
+        <div class="slds-form_horizontal">
+            <aura:if isTrue="{!v.manual}">
+                <div class="slds-m-top_small ">
+                    <!--                                <div class="slds-form_stacked">-->
+                    <lightning:input aura:id ="street1" label="Address 1" value="{!v.address.street1}" required="true"  messageWhenValueMissing="Complete this field."/>
+                    <lightning:input aura:id ="street2" label="Address 2" value="{!v.address.street2}" />
+                    <lightning:input aura:id ="street3" label="Address 3" value="{!v.address.street3}" />
+                    <lightning:select aura:id ="country" onchange="{!c.onCountryChange}" required="true" label="Country" messageWhenValueMissing="Complete this field." >
+                        <option value="">Select a country...</option>
+                        <aura:iteration items="{!v.countryList}" var="cntry">
+                            <option value="{!cntry.value}" selected="{!cntry.value==v.address.countryCode}">{!cntry.label}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:input aura:id ="city" label="City" value="{!v.address.city}" required="true" messageWhenValueMissing="Complete this field."/>
+                    <lightning:select aura:id ="state" disabled="{!empty(v.stateList)}" value="{!v.address.stateCode}" required="{!or(v.address.countryCode=='US', v.address.countryCode=='CA')}" label="State"  messageWhenValueMissing="Complete this field.">
+                        <option value="">Select a state...</option>
+                        <aura:iteration items="{!v.stateList}" var="state">
+                            <option value="{!state.value}" selected="{!state.value==v.address.stateCode}">{!state.label}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:input aura:id ="zip" label="Postal Code" value="{!v.address.zip}"  required="true"/>
+                    <!--                            </div>-->
+                </div>
+            </aura:if>
+
+            <aura:if isTrue="{!v.showDetails}">
+                <lightning:inputField fieldName="OrderApi__Additional_Details__c"/>
+            </aura:if>
+        </div>
+
+<!--        <div class="slds-align_absolute-center">-->
+<!--            <lightning:button type="submit" label="Save" variant="brand"/>-->
+<!--        </div>-->
+    </lightning:recordEditForm>
+</aura:component>

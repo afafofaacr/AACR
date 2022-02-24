@@ -1,0 +1,41 @@
+/**
+ * Created by lauren.lezberg on 9/9/2020.
+ */
+.THIS {
+    /*font-size:1.5rem;*/
+}
+
+.THIS.slds-checkbox_faux{
+    height:2rem;
+    width:2rem;
+}
+
+.THIS [lightning-input_input-host]{
+    display:flex;
+}
+
+.THIS .slds-modal .slds-modal__title{
+    font-size:1.5rem;
+}
+
+.THIS .slds-modal__header{
+    border-bottom: 1px solid rgb(217, 219, 221);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+}
+
+/*.THIS .slds-button.slds-button_neutral{*/
+/*    border-color: token(aacrGreen);*/
+/*    color: token(aacrGreen);*/
+/*    background:transparent;*/
+/*    font-size: 1.5rem;*/
+/*    padding:8px;*/
+/*}*/
+
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.25rem;
+    padding:8px;
+}

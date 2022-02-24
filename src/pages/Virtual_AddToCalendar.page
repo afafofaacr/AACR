@@ -1,0 +1,240 @@
+<!--
+ - Created by lauren.lezberg on 5/18/2020.
+ -->
+
+<apex:page id="Virtual_AddToCalendar" showHeader="false"
+           standardStylesheets="false"
+           controller="Virtual_AddToCalendarController"
+           docType="html-5.0"
+           applyHtmlTag="false"
+           applyBodyTag="false">
+
+    <apex:slds />
+
+    <style>
+
+        a#addeventatc1-home{
+            display:none;
+        }
+
+        em.copyx {
+            display:none;
+        }
+
+        .addeventatc_dropdown .copyx {
+            display: none;
+        }
+
+        div#addeventatc1.addeventatc{
+            border:1px solid black;
+        }
+
+        .plain-box {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        .center {
+            margin: auto;
+            width: 310px;
+        }
+
+        .box {
+            color: white;
+            background-color: #50B848;
+            width: 300px;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            padding: 10px;
+        }
+
+        body#main.pageFormatInternal.pg-loaded {
+            background-image: url({!backgroundImg})
+            /*background-image: url('https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegBkgd_1920x1080_2003059_2.jpg');*/
+        }
+
+        .login-brand {
+            margin: 5px auto;
+            max-height: 160px;
+        }
+
+        .col-md-4 {
+            width: 35%;
+        }
+
+        .alignCenter {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .account_modal_wrapper {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .account_modal {
+            text-align: center;
+            max-width: 500px;
+            margin: 62px auto 10px;
+            box-shadow: 1px 2px 2px #616161;
+            border: 1px solid #616161;
+            border-radius: 6px;
+            bottom: unset !important;
+        }
+
+        .account_modal .modal-body {
+            padding: 25px !important;
+        }
+
+        .form-group {
+            width: 100% !important;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 11px;
+        }
+
+        .form-group label {
+            width: 30%;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        .account_modal .modal-footer button {
+            font-size: 14px !important;
+        }
+
+        .form-group div {
+            text-align: left;
+            width: 50%;
+        }
+
+        .form-group div input {
+            width: 100%;
+        }
+
+        .erroInputStyle {
+            border: 1px solid red;
+        }
+
+        .error_text {
+            display: inherit;
+            float: left;
+            margin-top: 5px;
+            color: red;
+        }
+
+        .password-infoicon {
+            cursor: pointer;
+            position: absolute;
+            right: -23px;
+            top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: 3px 7px;
+            line-height: 11px;
+            font-weight: bold;
+            color: #0a5c96;
+        }
+
+        .password-info {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            top: -98px;
+            width: 100%;
+            padding: 10px;
+            font-size: 12px;
+            text-align: left;
+            min-width: 274px;
+            right: -41px;
+        }
+
+        span.password-info:after {
+            content: '';
+            border-top: 12px solid #ccc;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            left: 87%;
+            top: 100%;
+        }
+
+    </style>
+
+    <head>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
+
+    </head>
+
+    <apex:composition template="CPBase__template_skeleton">
+
+        <apex:define name="pageTitle">Add To Calendar</apex:define>
+
+        <apex:define name="pageStyles">
+            <link rel="stylesheet" type="text/css"
+                  href="{!URLFOR($Resource.CPBase__emerald_1_0,'css/pages/login.min.css')}"/>
+            <link rel="stylesheet"
+                  href="https://aacr-april-virtual-event-vitlvinjjg-webappbucket-1hxvvpowvptzm.s3.amazonaws.com/style-chatbot-min.css"/>
+        </apex:define>
+
+
+        <apex:define name="pageMain">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+
+                        <!--<div class="well login-form">-->
+                        <div class="well">
+
+                            <div class="login-brand">
+                                <Framework:img src="{!headerImg}"/>
+                                <!--<Framework:img src="https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegPg_LogoTag_700x410_2003059_2.jpg" width="auto"/>-->
+                            </div>
+
+                            <Framework:messages />
+
+                            <apex:form id="form" styleClass="form-signin" acceptcharset="utf-8">
+                                <div class="slds-text-heading_medium text-center">
+                                    {!confirmationTxt}
+                                </div>
+
+                                <br/><br/>
+                                <div class="center">
+                                    <!--<div class="box">-->
+                                        <!--<strong>Save the date: </strong>-->
+                                        <!--<br/><br/>-->
+                                        <div style="margin-left:20%">
+                                            <div title="Add to Calendar" class="addeventatc">
+                                                Add to Calendar
+                                                <span class="start">{!event.EventApi__Start_Date_Time__c}</span>
+                                                <span class="end">{!event.EventApi__End_Date_Time__c}</span>
+                                                <span class="timezone">America/New_York</span>
+                                                <span class="title">{!event.EventApi__Display_Name__c}</span>
+                                                <span class="description"><apex:outputText value="{!event.Calendar_Invite_Msg__c}" escape="false"/></span>
+                                                <span class="location"><a href="{!viewLink}"/></span>
+                                            </div>
+                                        </div>
+                                    <!--</div>-->
+                                </div>
+                                <br/>
+
+                            </apex:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>

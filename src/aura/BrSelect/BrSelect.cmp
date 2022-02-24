@@ -1,0 +1,21 @@
+<aura:component description="brSelect" controller="BrSelectCtrl" access="global">
+    <aura:attribute name="options" type="List" access="global"/>
+    <aura:attribute name="value" type="String" access="global"/>
+    <aura:attribute name="label" type="String" access="global"/>
+    <aura:attribute name="name" type="String" access="global"/>
+    <aura:attribute name="required" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="validity" type="object" access="global"/>
+    <aura:attribute name="picklistField" type="String" access="global"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!not(empty(v.options))}">
+        <lightning:select name="{!v.name}" label="{!v.label}" value="{!v.value}" required="{!v.required}" validity="{!v.validity}">
+            <option value="">-- Select --</option>
+            <aura:iteration items="{!v.options}" var="option">
+                <option value="{!option.name}">{!option.label}</option>
+            </aura:iteration>
+        </lightning:select>
+    </aura:if>
+
+</aura:component>

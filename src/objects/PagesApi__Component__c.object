@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>List of dynamic components that can be used to create new page elements.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>PagesApi__Apex_Class__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the Apex Class that implements the dynamic component interface.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the Apex Class that implements the dynamic component interface.</inlineHelpText>
+        <label>Apex Class</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Short description for the Dynamic Component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Short description for the Dynamic Component.</inlineHelpText>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Do_Not_Display_In_Page_Builder_UI__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Component will not be made available for selection in the page builder ui.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Component will not be made available for selection in the page builder ui.</inlineHelpText>
+        <label>Do Not Display In Page Builder UI</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Has_Body__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If true, users can define custom html that will be inserted into the apex:componentBody. Default false.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If true, users can define custom html that will be inserted into the apex:componentBody. Default false.</inlineHelpText>
+        <label>Has Body</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Icon_Path__c</fullName>
+        <defaultValue>&quot;https://dl.dropboxusercontent.com/u/74862951/no_image.jpg&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The path to the component Icon that can be used in various pages</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide the Icon path that can be utilized in the various pages</inlineHelpText>
+        <label>Icon Path</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Image_Path__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Link to an image file showing an example implementation of the dynamic component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to an image file showing an example implementation of the dynamic component.</inlineHelpText>
+        <label>Image Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Preview_Width__c</fullName>
+        <defaultValue>12</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Preview Width</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Component</label>
+    <visibility>Public</visibility>
+</CustomObject>

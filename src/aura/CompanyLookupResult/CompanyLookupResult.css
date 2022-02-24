@@ -1,0 +1,12 @@
+/**
+ * Created by afaf.awad on 8/10/2020.
+ */
+
+
+.THIS.suggestResult > .lightBulb svg{
+    fill: red !important;
+}
+
+.THIS.suggestResult {
+    color: red;
+}

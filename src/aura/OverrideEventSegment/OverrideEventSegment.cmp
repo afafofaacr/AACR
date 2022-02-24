@@ -1,0 +1,79 @@
+<!--
+ - Created by afaf.awad on 9/20/2021.
+ -->
+
+<aura:component description="OverrideEventSegment" controller="EventSegmentHelper" implements="force:hasRecordId">
+    <aura:attribute name="hasAccess" type="Boolean" description="Can current user see button" default="false"/>
+    <aura:attribute name="modalOpen" type="Boolean" default="false" description="is modal open"/>
+    <aura:attribute name="contactRecord" type="Object" description="contact record"/>
+    <aura:attribute name="accountId" type="Contact" description="Contact object of current record"/>
+
+    <aura:attribute name="overrideReason" type="String" description="Override Reason field on Contact"/>
+    <aura:attribute name="incomeLevel" type="String" description="income level field on Contact"/>
+    <aura:attribute name="intTypeReasonRequired" type="Boolean" default="false" description="If int type value changed, reason is required"/>
+    <aura:attribute name="wbilReasonRequired" type="Boolean" default="false" description="If wbil value changed, reason is required"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.hasAccess}">
+    <lightning:button label="Override Segment" variant="brand" onclick="{!c.openModal}" iconName="utility:new_direct_message"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.modalOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModal }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Override Event Segment</h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium " id="modal-content-id-1" style="overflow: initial;">
+<!--                    <div class="slds-text-heading_small slds-text-title_bold">-->
+<!--                        Contact Information-->
+<!--                    </div>-->
+                    <lightning:recordEditForm recordId="{!v.recordId}"
+                                              objectApiName="Contact">
+                            <div class="slds-grid slds-align_absolute-center">
+                                <div class="slds-col slds-size_1-of-2">
+<!--                                    <lightning:inputField aura:id="overrideReason" fieldName="Override_Reason__c" required="true" />-->
+                                    <lightning:inputField aura:id="wbil" fieldName="Income_Level__c" onchange="{!c.inputChanged}" />
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:inputField aura:id="wbilReason" fieldName="WBIL_Override_Reason__c" required="{!v.wbilReasonRequired}" />
+                                </div>
+                            </div>
+                    </lightning:recordEditForm>
+                    <lightning:recordEditForm recordId="{!v.accountId}"
+                                              objectApiName="Account">
+                        <div class="slds-grid slds-align_absolute-center">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="intType" fieldName="Institution_Type__c" onchange="{!c.inputChanged}"/>
+                            </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField aura:id="intTypeReason" fieldName="Institution_Type_Override_Reason__c" required="{!v.intTypeReasonRequired}"/>
+                            </div>
+                        </div>
+                    </lightning:recordEditForm>
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral"
+                                      label="Cancel"
+                                      title="Cancel"
+                                      onclick="{! c.closeModal }"/>
+                    <lightning:button variant="brand"
+                                      label="Save"
+                                      title="Override"
+                                      onclick="{! c.handleSave }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+</aura:component>

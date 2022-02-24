@@ -1,0 +1,20 @@
+<!--
+ - Created by lauren.lezberg on 9/24/2020.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>The <code>c:MyAddresses</code> component displays valid known addresses in a table for a specified contact.
+            It also allows for addition of new addresses and editing of pre-existing addresses.</p>
+        <p>The component contains the <code>c:NewAddressModal</code> component.</p>
+
+        <div style="font-size:1.5rem;font-weight:600;">Usage Considerations</div>
+        <p>The component responds to the <code>c:NewKnownAddressEvt</code> lighting event when a new known address is
+        added, signaling the component to reload.</p>
+        <p>The component also responds to a change in account. If a new account is selected, the business known address
+        is updated to reflect the account BillingAddress field.</p>
+    </aura:description>
+<!--    <aura:example name="MyAddresses" ref="MyAddresses" label="MyAddresses">-->
+<!--        Example for MyAddresses-->
+<!--    </aura:example>-->
+</aura:documentation>

@@ -1,0 +1,46 @@
+<!--
+ - Created by lauren.lezberg on 4/3/2020.
+ -->
+
+<aura:component description="EventRegContent">
+    <aura:attribute name="eventId" type="String" description="id of event"/>
+    <aura:attribute name="contactId" type="String" description="id of contact"/>
+    <aura:attribute name="virtual" type="Boolean" description="is meeting virtual"/>
+    <aura:attribute name="title" type="String" description="title of event"/>
+    <aura:attribute name="dateString" type="String" description="date string of event"/>
+    <aura:attribute name="imgURL" type="String" description="url of event image"/>
+    <aura:attribute name="description" type="Long" description="description of event"/>
+    <aura:attribute name="attendeeId" type="String" description="id of attendee"/>
+
+
+    <div class="slds-grid slds-grid_vertical-align-center slds-wrap">
+       <div class="slds-small-size--5-of-12 slds-large-size--5-of-12 slds-p-around_small">
+           <img src="{!v.imgURL}" style="zoom:2"/>
+       </div>
+        <div class="slds-small-size--7-of-12 slds-large-size--7-of-12 slds-p-around_small">
+            <div class="slds-text-heading_medium" style="font-weight: bold;">{!v.title}</div>
+            <div class="slds-text-heading_medium" style="font-weight: bold;">{!v.dateString}</div>
+            <div class="slds-text-heading_medium">{!v.description}</div>
+            <aura:if isTrue="{!v.virtual}">
+                <c:EventRegContentButtons eventId="{!v.eventId}" contactId="{!v.contactId}" attendeeId="{!v.attendeeId}" />
+            </aura:if>
+        </div>
+    </div>
+
+    <!--<lightning:layout verticalAlign="center" class="x-large">-->
+        <!--<lightning:layoutItem size="5" padding="around-small">-->
+            <!--<img src="{!v.imgURL}" style="zoom:2"/>-->
+        <!--</lightning:layoutItem>-->
+        <!--<lightning:layoutItem size="7" padding="around-small">-->
+            <!--<div class="slds-text-heading_medium" style="font-weight: bold;">{!v.title}</div>-->
+            <!--<div class="slds-text-heading_medium" style="font-weight: bold;">{!v.dateString}</div>-->
+            <!--<div class="slds-text-heading_medium">{!v.description}</div>-->
+            <!--<aura:if isTrue="{!v.virtual}">-->
+                <!--<c:EventRegContentButtons eventId="{!v.eventId}" contactId="{!v.contactId}" attendeeId="{!v.attendeeId}" />-->
+            <!--</aura:if>-->
+        <!--</lightning:layoutItem>-->
+    <!--</lightning:layout>-->
+
+
+
+</aura:component>

@@ -1,0 +1,91 @@
+<!--
+ - Created by lauren.lezberg on 4/15/2021.
+ -->
+
+<aura:component description="MyMembershipToolbar" controller="MyMembershipToolbarController">
+    <aura:attribute name="isLoading" type="Boolean" description="something on component is loading/processing"/>
+    <aura:attribute name="canTransfer" type="Boolean"
+                    description="whether current contact can transfer their membership"/>
+    <aura:attribute name="canReinstate" type="Boolean"
+                    description="whether current contact can transfer their membership"/>
+    <aura:attribute name="canRecertify" type="Boolean"
+                    description="whether current contact can transfer their membership"/>
+    <aura:attribute name="canReinstateTransfer" type="Boolean"
+                    description="whether current contact can transfer their membership"/>
+    <aura:attribute name="canRenew" type="Boolean" description="whether current contact can renew their membership"/>
+    <aura:attribute name="canCatchUp" type="Boolean" description="whether current contact can catch up to current"
+                    default="false"/>
+    <aura:attribute name="renewalsOpen" type="Boolean" description="Are renewals open for upcoming year"/>
+    <aura:attribute name="pendingApproval" type="Boolean" description="is transfer/reinstatement application pending"/>
+    <aura:attribute name="noOperations" type="Boolean" description="membership is emeritus or honorary"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card class="slds-p-around_medium smallCard">
+        <aura:set attribute="title">
+            <div class="slds-text-heading_medium" style="font-weight:700;">
+              Membership Operations
+            </div>
+        </aura:set>
+        <aura:if isTrue="{!v.noOperations}">
+            <div class="slds-align_absolute-center">
+                <div class="slds-text-heading_medium slds-m-around_small slds-text-align_center">
+                    There are no available membership operations.
+                </div>
+            </div>
+        </aura:if>
+        <div class="slds-text-align_center">
+            <aura:if isTrue="{!v.pendingApproval}">
+                <div class="slds-text-heading_medium slds-text-align_center">
+                    Your application has been received and is awaiting review.
+                </div>
+                <aura:set attribute="else">
+                    <aura:if isTrue="{!v.canRecertify}">
+                        <lightning:button variant="brand"
+                                          label="{!v.isLoading?'Processing...':'Recertify'}"
+                                          onclick="{!c.recertify}"/>
+                        <br/><br/>
+                    </aura:if>
+                    <aura:if isTrue="{!v.canTransfer}">
+                        <lightning:button variant="brand"
+                                          label="{!v.isLoading?'Processing...':'Transfer'}"
+                                          onclick="{!c.goToTransfer}"/>
+                        <br/><br/>
+                    </aura:if>
+                    <aura:if isTrue="{!v.canReinstate}">
+                        <lightning:button variant="brand"
+                                          onclick="{!c.reinstate}"
+                                          label="{!v.isLoading?'Processing...':'Reinstate'}" />
+                        <br/><br/>
+                    </aura:if>
+                    <aura:if isTrue="{!v.canReinstateTransfer}">
+                        <lightning:button variant="brand"
+                                          onclick="{!c.goToTransfer}"
+                                          label="{!v.isLoading?'Processing...':'Reinstate/Transfer'}"/>
+                        <br/><br/>
+                    </aura:if>
+                    <aura:if isTrue="{!v.canRenew}">
+                        <div class="slds-text-heading_medium slds-m-bottom_small">
+                            Pay Dues Through:
+                        </div>
+                        <div style="display:inline-flex;">
+                            <aura:if isTrue="{!and(v.canCatchUp, v.renewalsOpen)}">
+
+                                <lightning:button variant="brand"
+                                                  class="slds-p-around_medium slds-m-around_small slds-align_absolute-center "
+                                                  onclick="{!c.catchUp}"
+                                                  label="{!v.isLoading?'Processing...':'Current Year'}"/>
+                                <br/>
+                            </aura:if>
+                            <lightning:button variant="brand"
+                                              class="slds-p-around_medium slds-m-around_small slds-align_absolute-center"
+                                              label="{!v.isLoading?'Processing...':v.renewalsOpen?'Forthcoming Year':'Current Year'}"
+                                              onclick="{!c.renew}"/>
+                        </div>
+                        <br/>
+                    </aura:if>
+                </aura:set>
+            </aura:if>
+        </div>
+    </lightning:card>
+</aura:component>

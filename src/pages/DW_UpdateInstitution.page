@@ -1,0 +1,185 @@
+<apex:page controller="DW_UpdateInstitutionCtrl" docType="html-5.0" contentType="text/html; charset=UTF-8"
+    showHeader="false"
+    standardStylesheets="false"
+    applyBodyTag="false"
+    applyHtmlTag="false">
+        <c:pageStyle />
+
+        <!-- Spinner design -->
+        <div class="slds-scope">
+            <div class="slds-spinner_container slds-is-fixed page-spinner hidden">
+                <div role="status" class="slds-spinner slds-spinner_medium">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+
+        <apex:includeScript value="{!$Resource.jQueryJs}" />
+        <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}" loadOnReady="true" />
+        <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/jquery.toast.css')}" />
+
+        <apex:composition template="CPBase__template">
+    
+            <apex:define name="pageTitle">
+               Update Institution
+            </apex:define>
+           
+                <apex:define name="pageMain">
+                    <apex:form > 
+                        <div class="container m-t-30">
+                            <div class="inner-wrapper">
+                        <table width="100%" id="poc" class="data-details-table" >
+                            <tr>
+                                <th colspan="2">Update Your Affiliation </th>
+                            </tr>
+                            <tr>
+                                <th width="10%">
+                                    <label>Current : </label >
+                                </th>
+                                <td class="current-institution">{!UserContactData.Account_Name__c}</td>
+                            </tr>
+                            <tr>
+                                <th> 
+                                    <label>New :  </label>                                    
+                                </th>
+                                <td>
+                                    <apex:inputText id="institutionLookup" value="{!UserContactData.Account_Name__c}" styleClass="autocomplete-field" html-placeholder="Begin by typing your Company or Institution" />
+                                    <c:DW_AutoComplete returnValue="{!UserContactData['AccountId']}"
+                                                       for="institutionLookup"
+                                                       componentLabel=""
+                                                       labelStyleClass="col-md-3"
+                                                       sObject="Account"
+                                                       label="Name"
+                                                       value="Id"
+                                                       details="" 
+                                                       whereClause="RecordTypeId != \'{!accountRecordTypeId}\' and RecordTypeId = \'{!activeAccountRecordTypeId}\' and ( not Name like \'%Household%\' ) and ( not Name like \'%AACR%\')" />
+
+                                </td>
+                            </tr>  
+                            <tr>
+                                <td colspan="2">
+                                    <input type="button" value="Save & Close" onclick="updateContact()" class="savebtn"/>
+                                    <input type="button" value="Cancel" onclick="self.close()" class="cancelbtn"/>
+                                </td>
+                            </tr>            
+                        </table> 
+                        </div>
+                        </div>
+                    </apex:form>
+                </apex:define>
+           
+        </apex:composition>
+        <script type="text/javascript">
+            function updateContact() {
+                if( $( ".autocomplete-field" ).val() != '' ) {
+                    var contactId = '{!UserContactData["Id"]}';
+                    var accountId = $( '#institutionLookup_hiddenDiv input[type=hidden]' ).val();
+                    console.log( 'currentUserData: Id :', contactId, 'accountId: ', accountId );
+                    if( accountId && contactId ) {
+                        $( '.page-spinner' ).removeClass( "hidden" );
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.DW_UpdateInstitutionCtrl.updateContact}',
+                            contactId, accountId, 
+                            function(result, event) {                        
+                                console.log( "updateContact result", result );
+                                if (event.status) {
+                                    if( result.isSuccess ) {
+                                        $.toast().reset('all');//remove all toast messages
+                                        $.toast({text: result.message,
+                                        icon: 'success',position: 'top-center'});
+                                        setTimeout(function() {
+                                            self.close(); //close window
+                                            window.opener.location.reload(); //reload parent page
+                                            //location.reload();
+                                        }, 1000);
+                                    } else {
+                                        $( '.page-spinner' ).addClass( "hidden" );
+                                        $.toast().reset('all');//remove all toast messages
+                                        $.toast({text: result.message,
+                                        icon: 'error',position: 'top-center'});
+                                    }
+                                } else if (event.type === 'exception') {   
+                                    $( '.page-spinner' ).addClass( "hidden" );
+                                    $.toast().reset('all');//remove all toast messages
+                                    $.toast({text: 'Error:'+event.message+' at '+event.where,
+                                        icon: 'error',position: 'top-center'});
+                                } else {
+                                    $( '.page-spinner' ).addClass( "hidden" );
+                                    $.toast().reset('all');//remove all toast messages
+                                    $.toast({text: 'Error:'+event.message,
+                                        icon: 'error',position: 'top-center'});
+                                }
+                            }, 
+                            {escape: true}
+                        );
+                    } else {
+                        $.toast().reset('all');//remove all toast messages
+                        $.toast({text: 'Please select any institution',
+                                        icon: 'error',position: 'top-center'});
+                    }
+                } else {
+                    $.toast().reset('all');//remove all toast messages
+                    $.toast({text: 'You can not remove istitution. Either select one or cancel',
+                                    icon: 'error',position: 'top-center'});
+                }
+            }
+    function saveNewAccount() {
+                console.log( "in saveNewAccount" );
+                var accountName = $('#accountName').val();
+                console.log( "in saveNewAccount accountName", accountName );
+                if( accountName != '' ) {
+                    $( '.page-spinner' ).removeClass( "hidden" );
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.DW_UpdateInstitutionCtrl.saveAccount}',
+                        accountName, 
+                        function(result, event){
+                            $( '.page-spinner' ).addClass( "hidden" );
+                            console.log( "saveAccount result:::", result );
+                            if (event.status) {
+                                if( result.isSuccess && result.data && result.data.Id ) {
+                                    console.log( "in", $( ".autocomplete-field" ).length, $( ".autocomplete-field" ).val()  );
+                                    $( "#institutionLookup_hiddenDiv input[type=hidden]" ).val( result.data.Id );
+                                    $( ".autocomplete-field" ).val( accountName );
+                                    $.toast().reset('all');//remove all toast messages
+                                    $.toast({text: result.message,
+                                    icon: 'success',position: 'top-center'});
+                                    $('#accountName').val( '' ); //clear form
+                                    hideModal(); //hide modal
+                                } else {
+                                    $.toast().reset('all');//remove all toast messages
+                                    $.toast({text: result.message,
+                                    icon: 'error',position: 'top-center'});
+                                }
+                            } else if (event.type === 'exception') {   
+                                $.toast().reset('all');//remove all toast messages
+                                $.toast({text: 'Error:'+event.message+' at '+event.where,
+                                    icon: 'error',position: 'top-center'});
+                            } else {
+                                $.toast().reset('all');//remove all toast messages
+                                $.toast({text: 'Error:'+event.message,
+                                    icon: 'error',position: 'top-center'});
+                            }
+                        }, 
+                        {escape: true}
+                    );
+                } else {
+                    $.toast().reset('all');
+                    $.toast({text: 'Please enter account name',
+                            icon: 'error',position: 'top-center'});
+                }
+            }
+            $( document ).ready( function() {
+                var currentInstitution = '{!UserContactData.Account_Name__c}';
+                console.log('currentInstitution '+currentInstitution);
+                if( currentInstitution != '' ) {
+                    if( currentInstitution.indexOf( 'Household' ) !== -1 ) {
+                        $( '.current-institution' ).text( 'No Company or Institution' );
+                        $( '.autocomplete-field' ).val( '' );
+                        $( "#institutionLookup_hiddenDiv input[type=hidden]" ).val( '' );                        
+                    }
+                }
+            } );
+       </script>
+</apex:page>

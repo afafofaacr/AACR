@@ -1,0 +1,42 @@
+/**
+ * Created by lauren.lezberg on 4/1/2020.
+ */
+
+.THIS .centerContainer{
+    margin-top: 50%;
+}
+
+.THIS .buttonContainer{
+    display:grid;
+}
+
+.THIS h2{
+    text-transform: capitalize;
+}
+
+.THIS option{
+    cursor:pointer;
+}
+
+.THIS option:hover{
+    background-color:token(aacrGreenL1);
+}
+
+.THIS option:active{
+    background-color:token(aacrGreen);
+    border-color:token(aacrGreen);
+}
+
+.THIS option:selected{
+    background-color:token(aacrGreenL1);
+    border-color:token(aacrGreen);
+}
+
+.THIS .selectedField{
+    border-color:token(aacrGreen);
+}
+
+.THIS .scrollable{
+    height:500px;
+    overflow-y:scroll;
+}

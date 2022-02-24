@@ -1,0 +1,126 @@
+<!--
+ - Created by lauren.lezberg on 1/30/2020.
+ -->
+
+<aura:component description="BackOfficeModify" controller="ModifyMembershipController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="processing" type="Boolean"
+                    description="Used to determine if information is currently being processed on page"
+                    default="false"/>
+    <aura:attribute name="contactId" type="String" description="Id of contact"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+
+    <aura:attribute name="nextStepId" type="String"
+                    description="The next step id received from stepChangeEvt - necessary for confirmation modal"
+                    access="private"/>
+    <aura:attribute name="nextCmpName" type="String"
+                    description="The next cmp name received from stepChangeEvt - necessary for confirmation modal"
+                    access="private"/>
+    <aura:attribute name="selectedId" type="String" description="Id of item selected from search bar" access="private"/>
+    <aura:attribute name="salesOrderId" type="String" description="ID of sales order being processed" access="private"/>
+    <aura:attribute name="salesOrderLines" type="List" description="Sales order lines associated with the sales order"
+                    access="private"/>
+    <aura:attribute name="subscriptions" type="List" description="List of all current subscriptions" access="private"/>
+    <aura:attribute name="subsToCancel" type="List" description="List of subscriptions to delete" access="private"/>
+    <aura:attribute name="subPlanId" type="String" description="Id of subscriptions plan" access="private"/>
+    <aura:attribute name="errorMsg" type="String" description="Error message" default="" access="private"/>
+    <aura:attribute name="modalOpen" type="Boolean" description="Confirmation modal is open" default="false" access="private"/>
+
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <div class="slds-card slds-m-around_small">
+        <c:ErrorMessage aura:id="errorMsg" errorMsg="{!v.errorMsg}"/>
+        <!--<aura:if isTrue="{!not(empty(v.errorMsg))}">-->
+            <!--<div class="slds-box slds-theme_error slds-theme_alert-texture">-->
+                <!--<div class="slds-text-heading_medium">{!v.errorMsg}</div>-->
+            <!--</div>-->
+        <!--</aura:if>-->
+        <div class="slds-grid slds-gutters">
+            <!-- SALES ORDER ENTRY FORM -->
+            <div class="slds-col slds-size_1-of-2 slds-border_right">
+                <div class="slds-m-bottom_large">
+                    <c:ItemQuickAdd aura:id="itemLookup" selectedId="{!v.selectedId}"
+                                    filterString="OrderApi__Is_Active__c = true AND OrderApi__Item_Class__r.OrderApi__Is_Event__c = false AND OrderApi__Item_Class__r.Name != 'Individual Memberships'"/>
+                    <div class="slds-clearfix">
+                        <div class="slds-align_bottom slds-m-top_x-small slds-float_right">
+                            <lightning:button label="{!v.processing?'Processing...': 'Add to Order'}" variant="brand"
+                                              onclick="{!c.addItemToSalesOrder}" disabled="{!v.processing}"/>
+                        </div>
+                    </div>
+                </div>
+                <aura:iteration items="{!v.salesOrderLines}" var="line">
+                    <aura:if isTrue="{!line.OrderApi__Item_Class__r.Name!='Individual Memberships'}">
+                        <div class="slds-grid slds-box slds-m-top_medium">
+                            <div class="slds-col slds-size_11-of-12">
+                                <div class="slds-text-heading_medium">{!line.OrderApi__Item__r.Name}</div>
+                                <aura:if isTrue="{!line.OrderApi__End_Date__c!=null}">
+                                    <div class="slds-grid">
+                                        <div class="slds-text-heading_medium">{!line.OrderApi__Subscription_Plan__r.Name}</div>
+                                    </div>
+                                </aura:if>
+                            </div>
+                            <div class="slds-col slds-size_1-of-12">
+                                <div class="slds-float_right">
+                                    <div class="slds-grid slds-gutters">
+                                        <div class="slds-col">
+                                            <lightning:buttonIcon iconName="utility:close" size="large" variant="brand"
+                                                                  alternativeText="Remove Item"
+                                                                  onclick="{!c.removeItemFromSalesOrder}"
+                                                                  value="{!line.OrderApi__Item__c}"
+                                                                  disabled="{!v.processing}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aura:if>
+                </aura:iteration>
+                <aura:if isTrue="{!v.salesOrderLines.length>1}">
+                    <div class="slds-float_right slds-text-heading_medium slds-m-top_small">
+                        Total:
+                        <ui:outputCurrency
+                                value="{!v.salesOrderLines[0].OrderApi__Sales_Order__r.OrderApi__Subtotal__c!=null?v.salesOrderLines[0].OrderApi__Sales_Order__r.OrderApi__Subtotal__c:0.00}"
+                                class="bold slds-text-heading_medium slds-m-left_small slds-m-right_small"/>
+                    </div>
+                </aura:if>
+            </div>
+
+            <!-- EXISTING SUBSCRIPTIONS -->
+            <div class="slds-col slds-size_1-of-2 ">
+                <c:CurrentSubscriptions aura:id="currentSubs" subscriptions="{!v.subscriptions}" contactId="{!v.contactId}" processing="{!v.processing}" showRemove="true"/>
+            </div>
+        </div>
+
+        <!-- CONFIRMATION MODAL -->
+        <div class="{!v.modalOpen ? 'slds-show': 'slds-hide'}" style="height: 640px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Are you sure?</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="slds-p-horizontal--small">
+                           <div class="slds-text-heading_medium slds-align_absolute-center">
+                               Are you sure of your modifications? Clicking “Continue” will cancel any Subscriptions you removed.
+                           </div>
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-align_absolute-center">
+                            <lightning:button label="Cancel" variant="neutral" onclick="{!c.handleModalReject}" disabled="{!v.processing}" class="slds-p-around_medium"/>
+                            <lightning:button label="Continue" variant="brand" onclick="{!c.handleModalConfirm}" disabled="{!v.processing}" class="slds-p-around_medium"/>
+                        </div>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="BrEventsOpenItem">
+    <aura:attribute name="itemId" type="String"/> 
+</aura:event>

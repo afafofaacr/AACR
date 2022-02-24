@@ -1,0 +1,20 @@
+/**
+ * Created by afaf.awad on 10/28/2020.
+ */
+
+.THIS .contactCard.slds-text-heading_small{
+    font-size: 25px;
+}
+
+.THIS .slds-form-element__icon .slds-button_icon{
+    display:none;
+}
+
+.THIS .errMessage{
+    font-size: medium;
+    padding-left: 20px;
+}
+
+.THIS .slds-textarea {
+    border-color: transparent;
+}

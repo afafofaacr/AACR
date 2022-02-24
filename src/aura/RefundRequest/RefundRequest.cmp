@@ -1,0 +1,75 @@
+<!--
+ - Created by lauren.lezberg on 12/2/2020.
+ -->
+
+<aura:component description="RefundRequest" controller="RefundRequestController" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader,lightning:isUrlAddressable">
+    <aura:attribute name="processing" type="Boolean" default="false" description="is component processing"/>
+<!--    <aura:attribute name="adjustedAmount" type="Decimal" description="adjusted amount to be refunded" />-->
+    <aura:attribute name="receiptRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    <aura:attribute name="receiptLines" type="List" default="[]" description="list of receipt lines for partial refund"/>
+
+    <aura:attribute name="refundOptions" type="List" default="[
+    {'label': 'Full Refund', 'value': 'full'},
+    {'label': 'Partial Refund', 'value': 'partial'}
+    ]"/>
+    <aura:attribute name="refundVal" type="String" default="full"/>
+
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      fields="OrderApi__Total__c"
+                      targetFields="{!v.receiptRecord}"
+                      targetError="{!v.recordLoadError}"/>
+
+    <div class="slds-text-align_center">
+        <div class="slds-text-heading_medium">
+            Are you sure you want to process this refund? This action cannot be undone.
+        </div>
+    </div>
+    <div class="slds-align_absolute-center">
+    <lightning:radioGroup aura:id="typeSelect"
+                          label="Refund Type"
+                          options="{! v.refundOptions }"
+                          value="{! v.refundVal }"
+                          onchange="{!c.handleTypeToggle}"
+                          type="button"/>
+    </div>
+
+    <aura:if isTrue="{!v.refundVal=='full'}">
+
+    <div class="slds-text-align_center slds-m-top_medium slds-text-heading_medium">
+        <label class="slds-text-heading_medium slds-text-title_bold">Amount to be refunded:</label>
+        <br/>
+        <lightning:formattedNumber style="currency" currencyCode="USD" value="{!v.receiptRecord.OrderApi__Total__c}" title="Amount Refunded" />
+    </div>
+<!--    <br/>-->
+<!--    <div class="slds-text-align_center slds-text-heading_medium">-->
+<!--        <label class="slds-text-heading_medium slds-text-title_bold">Adjusted refund amount:</label>-->
+<!--        <div class="slds-align_absolute-center">-->
+<!--        <lightning:input type="number" variant="label-hidden"  value="{!v.adjustedAmount}" formatter="currency" step="0.01" class="slds-size_1-of-3 slds-text-heading_medium"/>-->
+<!--        </div>-->
+<!--    </div>-->
+    </aura:if>
+    <aura:if isTrue="{!v.refundVal=='partial'}">
+    <aura:if isTrue="{!not(empty(v.receiptLines))}">
+        <aura:iteration items="{!v.receiptLines}" var="line">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:input label="Item" disabled="true" value="{!line.OrderApi__Item__r.Name}"/>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:input type="number" label="Adjusted Refund Amount"  value="{!line.OrderApi__Sale_Price__c}" formatter="currency" step="0.01" class="slds-text-heading_medium"/>
+                </div>
+            </div>
+        </aura:iteration>
+    </aura:if>
+    </aura:if>
+    <div class="slds-align_absolute-center slds-m-top_large">
+        <div class="slds-grid slds-gutters">
+            <lightning:button variant="neutral" label="Cancel" onclick="{!c.cancel}"/>
+            <lightning:button label="{!v.processing?'Processing...':'Confirm'}" disabled="{!v.processing}" onclick="{!c.startRefundProcess}" variant="brand"/>
+
+        </div>
+    </div>
+
+</aura:component>

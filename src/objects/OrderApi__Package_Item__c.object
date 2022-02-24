@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Package Items allow one Item to bundle other Items.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>RESERVED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>RESERVED</inlineHelpText>
+        <label>RESERVED</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>RESERVED</relationshipLabel>
+        <relationshipName>Package_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Schedule_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to related schedule item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to related schedule item.</inlineHelpText>
+        <label>Schedule Item</label>
+        <referenceTo>EventApi__Schedule_Item__c</referenceTo>
+        <relationshipLabel>Package Items</relationshipLabel>
+        <relationshipName>Package_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Sponsor_Package__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Sponsor Package.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Sponsor Package.</inlineHelpText>
+        <label>Sponsor Package</label>
+        <referenceTo>EventApi__Sponsor_Package__c</referenceTo>
+        <relationshipLabel>Package Items</relationshipLabel>
+        <relationshipName>Package_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Link to the related Ticket Type. Derived, required and restricted to Package Items linked to parent Item that has a relationship with a Ticket Type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Link to the related Ticket Type. Derived, required and restricted to Package Items linked to parent Item that has a relationship with a Ticket Type.</inlineHelpText>
+        <label>Ticket Type</label>
+        <referenceTo>EventApi__Ticket_Type__c</referenceTo>
+        <relationshipLabel>Package Items</relationshipLabel>
+        <relationshipName>Package_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Calculate_Pricing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Denotes a required Package Item Price has to be calculated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes a required Package Item Price has to be calculated.</inlineHelpText>
+        <label>Calculate Pricing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Display_Button_Label__c</fullName>
+        <defaultValue>$Label.orderapi__package_item_default_add_to_cart_button_label</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The label to display for the &quot;Add to Cart&quot; button in the shopping cart. Defaults to &quot;Add to Cart&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The label to display for the &quot;Add to Cart&quot; button in the shopping cart. Defaults to &quot;Add to Cart&quot;.</inlineHelpText>
+        <label>Add To Cart Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Display_Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The shopping cart instructions displays above the package item view.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The shopping cart instructions displays above the package item view.</inlineHelpText>
+        <label>Display Instructions</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Display_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The shopping cart label replaces the default &quot;Package Item&quot; label which will render if no other label is provided.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The shopping cart label replaces the default &quot;Package Item&quot; label which will render if no other label is provided.</inlineHelpText>
+        <label>Display Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Display_Order__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The integer value of the order the system will use to render the package item views in the shopping cart.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The integer value of the order the system will use to render the package item views in the shopping cart.</inlineHelpText>
+        <label>Display Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Denotes a required Package Item when the Package (Item) is selected in the parent Sales Order Line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes a required Package Item when the Package (Item) is selected in the parent Sales Order Line.</inlineHelpText>
+        <label>Is Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Item Class that contains Items that are either required or optional for selection as part of a sale of the Package Item. The requirement for selection of the Item related to the Item Class is controlled by the &quot;Is Optional&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Item Class that contains Items that are either required or optional for selection as part of a sale of the Package Item. The requirement for selection of the Item related to the Item Class is controlled by the &quot;Is Optional&quot; field.</inlineHelpText>
+        <label>Item Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Package Items (Do Not Display)</relationshipLabel>
+        <relationshipName>Package_Items</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to the Item that is included in the Package.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to the Item that is included in the Package. Required when the Package Item is not linked to a Item Class.</inlineHelpText>
+        <label>Item</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Packages</relationshipLabel>
+        <relationshipName>Packages</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Maximum_Quantity_Per_Item__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** For Package Item for Item Classes only ** Identifies the maximum quantity of a single Item that can be selected when selecting Items from this Item Class. Defaults 0. The value of 0 is infinite.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** For Package Item for Item Classes only ** Identifies the maximum quantity of a single Item that can be selected when selecting Items from this Item Class. Defaults 0. The value of 0 is infinite.</inlineHelpText>
+        <label>Maximum Quantity Per Item</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Maximum_Quantity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Identifies the maximum quantity of Packaged Items that can be selected when selecting this Item or Items from this Item Class. Defaults 0. The value of 0 is infinite.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the maximum quantity of Packaged Items that can be selected when selecting this Item or Items from this Item Class. Defaults 0. The value of 0 is infinite.</inlineHelpText>
+        <label>Maximum Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Minimum_Quantity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Identifies the minimum quantity of Packaged Items that must be selected when selecting this Item or Items from this Item Class. Defaults 0. The value of 0 has no minimum.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the minimum quantity of Packaged Items that must be selected when selecting this Item or Items from this Item Class. Defaults 0. The value of 0 has no minimum.</inlineHelpText>
+        <label>Minimum Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Package__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** The Item that packages the Item linked in the &quot;Packaged Item&quot; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The Item that packages the Item linked in the &quot;Packaged Item&quot; field.</inlineHelpText>
+        <label>Package (Item)</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Package Items</relationshipLabel>
+        <relationshipName>Package_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <label>Package Item</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Package Item ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Package Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

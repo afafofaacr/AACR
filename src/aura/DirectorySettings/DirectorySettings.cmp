@@ -1,0 +1,67 @@
+<!--
+ - Created by lauren.lezberg on 9/6/2019.
+ -->
+
+<aura:component description="DirectorySettings" controller="AACRAdminController">
+    <aura:attribute name="directoryCriteria" type="Object" description="Directory display criteria"/>
+    <aura:attribute name="launchData" type="List" description="directory component launch data"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!not(empty(v.directoryCriteria))}">
+    <div class="slds-box slds-m-around_small">
+    <div class="slds-text-heading_medium boxLabel">Display Criteria</div>
+
+    <lightning:layout verticalAlign="center" class="x-large">
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            <div class="slds-box slds-theme_alert-texture">
+                <div class="slds-grid slds-gutters ">
+                    <div class="slds-col slds-size_3-of-4">
+                        <lightning:textarea label="Query"
+                                            value="{!v.directoryCriteria.Query__c}" maxlength="255"/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4 slds-p-around_medium">
+                        <div class="slds-align_absolute-center">
+                            <lightning:input type="checkbox" label="Show Filters by Default"
+                                                                                 checked="{!v.directoryCriteria.Show_Filters__c}"/>
+                        </div>
+                        <br/>
+                        <div class="slds-align_absolute-center">
+                            <lightning:button label="Update" variant="brand" onclick="{!c.updateDisplayCriteria}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+
+    </div>
+    </aura:if>
+
+    <aura:if isTrue="{!not(empty(v.launchData))}">
+    <div class="slds-box slds-m-around_small">
+        <div class="slds-text-heading_medium boxLabel">Directory Launch Component Data</div>
+        <aura:iteration items="{!v.launchData}" var="setting">
+            <lightning:layout verticalAlign="center" class="x-large">
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <div class="slds-box slds-theme_alert-texture">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left">
+                                <div class="slds-text-heading_medium boxLabel slds-m-bottom_small">{!setting.Record_Type__c}</div>
+                            </div>
+                            <div class="slds-float_right">
+                                <lightning:button label="Update" value="{!setting.Id}" variant="brand"
+                                                  onclick="{!c.updateLaunchData}"/>
+                            </div>
+                        </div>
+                        <lightning:textarea label="User Message To Display"
+                                            value="{!setting.Message__c}" maxlength="255"/>
+                        <lightning:input label="Redirect URL" value="{!setting.URL__c}"/>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:iteration>
+    </div>
+    </aura:if>
+</aura:component>

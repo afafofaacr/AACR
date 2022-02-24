@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The configuration of what is presented to the customer during the join process.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Hide_in_Progress_Bar__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked the step will be skipped from progress bar</description>
+        <externalId>false</externalId>
+        <label>Hide in Progress Bar</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Disable_Item_Navigation_URL__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Disables the item links on the marketing page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disables the item links on the marketing page.</inlineHelpText>
+        <label>Disable Item Navigation URL</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Dynamic_Item_Selection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be dynamic item selection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be dynamic item selection.</inlineHelpText>
+        <label>Dynamic Item Selection</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Enable_Account_Lookup__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field will allow the end user to search for organizations (Accounts) to relate their contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field will allow the end user to search for organizations (Accounts) to relate their contact.</inlineHelpText>
+        <label>Enable Account Lookup</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Populated when using a qualifying question step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Populated when using a qualifying question step.</inlineHelpText>
+        <label>Form</label>
+        <referenceTo>PagesApi__Form__c</referenceTo>
+        <relationshipName>Join_Process_Steps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value in this field will be presented under the title at the top of the page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The value in this field will be presented under the title at the top of the page.</inlineHelpText>
+        <label>Instructions</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Authentication_Step__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a authentication step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a authentication step.</inlineHelpText>
+        <label>Is Authentication Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Confirmation_Step__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a confirmation step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a confirmation step.</inlineHelpText>
+        <label>Is Confirmation Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Custom_Page__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a custom page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a custom page.</inlineHelpText>
+        <label>Is Custom Page</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Final_Step__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked indicates this is the final step in the Join Process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked indicates this is the final step in the Join Process</inlineHelpText>
+        <label>Is Final Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_First_Step__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked indicates this is the first step in the Join Process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked indicates this is the first step in the Join Process</inlineHelpText>
+        <label>Is First Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Marketing_Step__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a marketing step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a marketing step.</inlineHelpText>
+        <label>Is Marketing Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Payment_Step__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a payment step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a payment step.</inlineHelpText>
+        <label>Is Payment Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Product_Step__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a item flow step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a item flow step.</inlineHelpText>
+        <label>Is Product Step</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked this step is visible to end users.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked this step is visible to end users.</inlineHelpText>
+        <label>Is Published</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Is_Qualifying_Question__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a qualifying question step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a qualifying question step.</inlineHelpText>
+        <label>Is Qualifying Question</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Join_Process__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Relates the join process step to the join process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relates the join process step to the join process.</inlineHelpText>
+        <label>Join Process</label>
+        <referenceTo>joinapi__Join_Process__c</referenceTo>
+        <relationshipName>Join_Process_Steps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Login_Button_Label__c</fullName>
+        <defaultValue>&apos;Login&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the button label for the login section of the authentication page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the button label for the login section of the authentication page.</inlineHelpText>
+        <label>Login Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>joinapi__Login_Header__c</fullName>
+        <defaultValue>&apos;Login&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Appears as the header for the login section of the authentication page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Appears as the header for the login section of the authentication page.</inlineHelpText>
+        <label>Login Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>joinapi__Login_Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Instructions to be presented to the end user for finding their contact record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Instructions to be presented to the end user for finding their contact record.</inlineHelpText>
+        <label>Login Instructions</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>joinapi__Navigation_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the navigation url as a result of clicking the action button.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the navigation url as a result of clicking the action button.</inlineHelpText>
+        <label>Navigation URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__New_User_Button_Label__c</fullName>
+        <defaultValue>&apos;Create Login&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the button label for the new user section of the authentication page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the button label for the new user section of the authentication page.</inlineHelpText>
+        <label>New User Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>joinapi__New_User_Header__c</fullName>
+        <defaultValue>&apos;Create Account&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Appears as the header for the new user section of the authentication page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Appears as the header for the new user section of the authentication page.</inlineHelpText>
+        <label>New User Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>joinapi__New_User_Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Instructions to be presented to the end user for creating a new user.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Instructions to be presented to the end user for creating a new user.</inlineHelpText>
+        <label>New User Instructions</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>joinapi__Next_Step_Button_Label__c</fullName>
+        <defaultValue>&apos;Next Step&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the button label for the next step on every step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the button label for the next step on every step.</inlineHelpText>
+        <label>Next Step Button Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>joinapi__Next_Step__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the step that is redirected after the current step is submitted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the step that is redirected after the current step is submitted</inlineHelpText>
+        <label>Next Step</label>
+        <referenceTo>joinapi__Step__c</referenceTo>
+        <relationshipLabel>Steps</relationshipLabel>
+        <relationshipName>Steps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the order the steps are to be displayed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the order the steps are to be displayed.</inlineHelpText>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>joinapi__Page_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the page title text that is displayed at the top of the page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the page title text that is displayed at the top of the page.</inlineHelpText>
+        <label>Page Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>joinapi__Product_Step_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Used for product flow steps, this field defines the item for the item flow.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for product flow steps, this field defines the item for the item flow.</inlineHelpText>
+        <label>Product Step Item</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipName>Join_Process_Steps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Specific_Item_Selection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the step to be a specific item selection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the step to be a specific item selection.</inlineHelpText>
+        <label>Specific Item Selection</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Store__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Defines the store that controls the authentication and payment rules used for this page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the store that controls the authentication and payment rules used for this page.</inlineHelpText>
+        <label>Store</label>
+        <referenceTo>OrderApi__Store__c</referenceTo>
+        <relationshipName>Join_Process_Steps</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>joinapi__Visual_Force_Page_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Define the VF page to be used for this step.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Define the VF page to be used for this step.</inlineHelpText>
+        <label>Visual Force Page API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Step</label>
+    <listViews>
+        <fullName>joinapi__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>Step Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Steps</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>joinapi__Is_Published__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>joinapi__Is_Authentication_Step__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>joinapi__Is_Custom_Page__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>joinapi__Is_Marketing_Step__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>joinapi__Is_Payment_Step__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>joinapi__Is_Product_Step__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>joinapi__Is_Qualifying_Question__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>joinapi__Is_Published__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>joinapi__Is_Authentication_Step__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>joinapi__Is_Custom_Page__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>joinapi__Is_Marketing_Step__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>joinapi__Is_Payment_Step__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>joinapi__Is_Product_Step__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>joinapi__Is_Qualifying_Question__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>joinapi__Is_Published__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>joinapi__Is_Authentication_Step__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>joinapi__Is_Custom_Page__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>joinapi__Is_Marketing_Step__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>joinapi__Is_Payment_Step__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>joinapi__Is_Product_Step__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>joinapi__Is_Qualifying_Question__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>joinapi__Is_Published__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>joinapi__Is_Authentication_Step__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>joinapi__Is_Custom_Page__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>joinapi__Is_Marketing_Step__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>joinapi__Is_Payment_Step__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>joinapi__Is_Product_Step__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>joinapi__Is_Qualifying_Question__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,63 @@
+<!--
+ - Created by lauren.lezberg on 12/7/2018.
+ -->
+
+<aura:component description="MembershipApprovalAndResignation" implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" controller="ApproveAndResignController">
+    <aura:attribute name="showApprove" type="Boolean" description="Whether the approve button appears for the current contact record Id" default="false"/>
+    <aura:attribute name="showResign" type="Boolean" description="Whether the approve button appears for the current contact record Id" default="false"/>
+    <aura:attribute name="processing" type="Boolean" description="An action is processing"/>
+    <aura:attribute name="showModal" type="Boolean" description="Display popup confirmation on the screen" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!v.showApprove}">
+        <lightning:button variant="brand" iconName="utility:approval" label="Approve" onclick="{!c.openModal}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.showResign}">
+        <lightning:button variant="brand" iconName="utility:cancel_transfer" label="Resign" onclick="{!c.openModal}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.showModal}">
+        <!-- Modal/Popup Box starts here-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box Header Starts here-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModal }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Are you sure?</h2>
+                </header>
+                <!--Modal/Popup Box Body Starts here-->
+                <div class="slds-modal__content slds-p-around_medium " id="modal-content-id-1">
+                    <p class="slds-align_absolute-center">
+                        Are you sure you want to {!v.showApprove?'approve':'resign'} this member?
+                    </p>
+                </div>
+                <!--Modal/Popup Box Footer Starts here-->
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral"
+                                      label="Cancel"
+                                      title="Cancel"
+                                      onclick="{! c.closeModal }"/>
+                    <aura:if isTrue="{!v.showApprove}">
+                    <lightning:button variant="brand"
+                                      label="{!v.processing?'Processing...': 'Approve'}"
+                                      disabled="{!v.processing}"
+                                      onclick="{!c.approveMembership}"/>
+                    <aura:set attribute="else">
+                        <lightning:button variant="brand"
+                                          label="{!v.processing?'Processing...': 'Resign'}"
+                                          disabled="{!v.processing}"
+                                          onclick="{!c.resignMembership}"/>
+                    </aura:set>
+                    </aura:if>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+
+</aura:component>

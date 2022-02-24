@@ -1,0 +1,33 @@
+<!--
+ - Created by lauren.lezberg on 1/24/2019.
+ -->
+
+<aura:component description="JP_OptionalItemSelection" controller="JP_ItemSelectionController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" />
+    <aura:attribute name="nextStepURL" type="String" description="next join step url"/>
+    <aura:attribute name="previousStepURL" type="String" description="previous join step url"/>
+    <aura:attribute name="cancelURL" type="String" description="cancel join process url"/>
+
+    <aura:attribute name="items" type="List" description="List of working groups"/>
+    <aura:attribute name="isLoading" type="Boolean" description="component is loading" default="false"/>
+
+
+    <!-- AURA HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+            <c:AACRSpinner />
+        </div>
+        <aura:set attribute="else">
+            <aura:iteration items="{!v.items}" var="item" >
+                <c:JP_WorkingGroupItem aura:id="optionalItem" name="{!item.itemLabel}" itemId="{!item.itemId}" isSelected="{!item.isSelected}"/>
+                <br/>
+            </aura:iteration>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

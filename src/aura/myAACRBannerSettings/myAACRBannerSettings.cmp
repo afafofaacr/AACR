@@ -1,0 +1,173 @@
+<!--
+ - Created by lauren.lezberg on 9/22/2020.
+ -->
+
+<aura:component description="myAACRBannerSettings" controller="myAACRBannerController" implements="force:appHostable">
+    <aura:attribute name="imgs" type="List" description="list of banner images"/>
+    <aura:attribute name="intervalSeconds" type="Integer" description="integer for interval seconds"/>
+    <!--<aura:attribute name="defaultImg" type="Object" description="default image"/>-->
+    <aura:attribute name="isActive" type="Boolean" description="are all images deactivated"/>
+    <aura:attribute name="newImgTemplate" type="Object" description="new image template" />
+    <aura:attribute name="modalOpen" type="Boolean" description="is new modal open"/>
+    <aura:attribute name="showVisibility" type="Boolean" description="show banner image visibility"/>
+    <aura:attribute name="availableSegments" type="List" description="all available segments"/>
+    <aura:attribute name="selectedSegments" type="List" description="selected segments" default="[]"/>
+    <aura:attribute name="selectedId" type="String" description="selected image id"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{! c.doInit}" />
+
+
+    <lightning:card title="Banner Settings" class="slds-p-around_medium">
+
+        <aura:set attribute="actions">
+            <lightning:button label="New Image" variant="brand" onclick="{!c.openModal}"/>
+            <lightning:button label="Deactivate All" variant="brand" onclick="{!c.deactivateBannerImages}"/>
+        </aura:set>
+
+        <div class="slds-m-left_medium">
+            <div class="slds-size_1-of-4">
+                <lightning:input type="number" label="Interval Seconds" value="{!v.intervalSeconds}"/>
+            </div>
+            <br/>
+            <lightning:button label="Update" variant="brand" onclick="{!c.updateIntervalSeconds}"/>
+        </div>
+
+    </lightning:card>
+
+    <aura:iteration items="{!v.imgs}" var="img">
+        <lightning:card class="slds-p-around_small">
+            <aura:set attribute="title">
+                <aura:if isTrue="{!img.Is_Default__c}">
+                    <div class="slds-text-heading_medium">Default Image</div>
+                </aura:if>
+            </aura:set>
+            <aura:set attribute="actions">
+                <aura:if isTrue="{!not(img.Is_Default__c)}">
+                    <lightning:button label="Make Default" variant="brand" value="{!img.Id}" onclick="{!c.makeDefault}"/>
+                </aura:if>
+                <lightning:button label="Visibility" variant="brand" onclick="{!c.openVisibility}" value="{!img.Id}"/>
+                <lightning:button label="Update" variant="brand" value="{!img.Id}" onclick="{!c.updateImage}"/>
+                <aura:if isTrue="{!not(img.Is_Default__c)}">
+                <lightning:button value="{!img.Id}" label="{!img.Is_Active__c?'Deactivate':'Activate'}" onclick="{!c.activateBannerImage}" variant="{!img.Is_Active__c?'success':'destructive'}"/>
+                </aura:if>
+                <aura:if isTrue="{!and(not(img.Is_Default__c), not(img.Is_Active__c) )}">
+                    <lightning:buttonIcon iconName="utility:delete" title="Delete" variant="brand" onclick="{!c.deleteImg}" value="{!img.Id}"/>
+                </aura:if>
+            </aura:set>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-3 slds-p-top_medium">
+                    <img src="{!img.Image_URL__c}" />
+                    <lightning:input label="Image URL" value="{!img.Image_URL__c}"/>
+                </div>
+                <div class="slds-col slds-size_2-of-3">
+                    <lightning:input label="Label" value="{!img.Name}"/>
+                    <lightning:input label="Link" value="{!img.Image_Link__c}"/>
+                    <lightning:input label="Header" value="{!img.Header_Text__c}"/>
+                    <lightning:input label="Text" value="{!img.Image_Text__c}"/>
+                    <!--<lightning:input label="Is Default" type="checkbox" checked="{!img.Is_Default__c}"/>-->
+                </div>
+            </div>
+
+        </lightning:card>
+
+    </aura:iteration>
+    <br/>
+
+    <aura:if isTrue="{!v.showVisibility}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeVisibility}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Image Visibility</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:dualListbox aura:id="segments"
+                                           name="segments"
+                                           label= "User Segments"
+                                           sourceLabel="Available"
+                                           selectedLabel="Selected"
+                                           disableReordering="true"
+                                           fieldLevelHelp="Select which segments apply to the image."
+                                           value="{!v.selectedSegments}"
+                                           options="{!v.availableSegments}"/>
+
+                    <div class="slds-m-top_medium slds-grid slds-align_absolute-center">
+                        <lightning:button label="Cancel" onclick="{!c.closeVisibility}"/>
+                        <lightning:button label="Update" onclick="{!c.updateVisibility}" variant="brand"/>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+    <aura:if isTrue="{!v.modalOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">New Banner Image</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:tabset>
+                        <lightning:tab label="Details">
+                            <!--<div class="slds-align_absolute-center">-->
+                            <lightning:input label="Label" value="{!v.newImgTemplate.Name}"/>
+                            <lightning:input label="Image Location" value="{!v.newImgTemplate.Image_URL__c}"/>
+                            <lightning:input label="Image Link" value="{!v.newImgTemplate.Image_Link__c}"/>
+                            <lightning:input label="Header Text" value="{!v.newImgTemplate.Header_Text__c}"/>
+                            <lightning:input label="Content" value="{!v.newImgTemplate.Image_Text__c}"/>
+                            <br/>
+                            <lightning:input type="checkbox" label="Is Active" checked="{!v.newImgTemplate.Is_Active__c}"/>
+                            <!--</div>-->
+                        </lightning:tab>
+                        <lightning:tab label="Visibility">
+                            <lightning:dualListbox aura:id="segments"
+                                                   name="segments"
+                                                   label= "User Segments"
+                                                   sourceLabel="Available"
+                                                   selectedLabel="Selected"
+                                                   disableReordering="true"
+                                                   fieldLevelHelp="Select which segments apply to the image."
+                                                   value="{!v.selectedSegments}"
+                                                   options="{!v.availableSegments}"/>
+<!--                            <div class="slds-grid">-->
+<!--                                <div class="slds-col slds-size_1-of-2">-->
+<!--                                    <div class="slds-form-element__label">Available Segments: </div>-->
+<!--                                    <div class="slds-box">-->
+<!--                                    <aura:iteration items="{!v.availableSegments}" var="seg">-->
+<!--                                        <div class="slds-truncate">{!seg.Name}</div>-->
+<!--                                    </aura:iteration>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="slds-col slds-size_1-of-2">-->
+<!--                                    <div class="slds-form-element__label">Selected Segments: </div>-->
+<!--                                    <aura:iteration items="{!v.selectedSegments}" var="seg">-->
+<!--                                        {!seg.Name}-->
+<!--                                    </aura:iteration>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </lightning:tab>
+                    </lightning:tabset>
+
+                    <div class="slds-m-top_medium slds-grid slds-align_absolute-center">
+                        <lightning:button label="Cancel" onclick="{!c.closeModal}"/>
+                        <lightning:button label="Save" onclick="{!c.addNewImage}" variant="brand"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

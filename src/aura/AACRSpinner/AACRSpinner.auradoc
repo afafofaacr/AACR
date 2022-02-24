@@ -1,0 +1,14 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Simple loading spinner with AACR branding and optional message customization. </p>
+        <p>The default text is 'Loading...' </p>
+        <p>The component inherits styling from slds-spinner and is centered by default.</p>
+    </aura:description>
+    <aura:example name="AACRSpinner" ref="c:AACRSpinner" label="AACRSpinner">
+        <p>The following example creates an loading spinner with the default loading text.</p>
+    </aura:example>
+</aura:documentation>

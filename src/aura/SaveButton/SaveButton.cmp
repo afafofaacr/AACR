@@ -1,0 +1,15 @@
+<!--
+ - Created by afaf.awad on 1/29/2020.
+ -->
+
+<aura:component description="SaveButton" controller="JP_ScientificInterestsController" >
+
+    <aura:registerEvent name="JP_StepChangeEvt" type="c:JP_StepChangeEvt"/>
+    <aura:handler event="c:JP_NavigateEvt" action="{!c.closeWindow}"/>
+
+    <div class="slds-align_absolute-center slds-m-top_large">
+            <lightning:button label="Cancel" title="Cancel" onclick="{! c.cancelPage}" variant="neutral"/>
+            <lightning:button label="Save" title="Save" onclick="{! c.goSave }" variant="neutral" />
+    </div>
+
+</aura:component>

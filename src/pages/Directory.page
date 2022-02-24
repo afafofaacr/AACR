@@ -1,0 +1,101 @@
+<!--
+ - Created by lauren.lezberg on 5/20/2019.
+ -->
+
+<apex:page id="Directory" controller="DirectoryController" action="{!checkDirectoryAccess}"  docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <apex:includeLightning />
+    <apex:slds />
+    
+    <!--
+     - GTM Added by jonathan.davis on 08/16/2019.
+     -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NVPP7GK');</script>
+    <!-- End Google Tag Manager -->
+
+    <c:pageStyle />
+
+    <style>
+        .custom-box{
+            padding: 1rem;
+            border-radius: .25rem;
+            border: 1px solid rgb(217, 219, 221);
+            margin: 1rem;
+        }
+
+        .heading-large{
+            font-weight:300;
+            font-size: 2rem;
+            line-height: 1.25;
+        }
+
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align:center;
+        }
+
+        .margin-top_medium{
+            margin-top:2rem;
+        }
+
+    </style>
+
+    <apex:outputPanel rendered="{!!showDirectory}">
+    <div class="margin-top_medium">
+        <div class="center custom-box">
+            <div class="slds-align_absolute-center slds-m-bottom_large">
+                <img src="https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg" class="img-responsive slds-m-right_small" height="60" width="430"/>
+            </div>
+            <apex:outputPanel rendered="{!nonMember}">
+                <div class="heading-large">
+                    <p>Thank you for your interest in AACR's Member Directory. Access to the Member Directory is a member benefit for AACR Members in good standing. </p>
+                    <p>To successfully access the directory, please apply for membership. You may apply by clicking on the 'My Membership' tab in your menu. </p>
+                    <p>If you have any questions, please contact the Membership Department at membership@aacr.org or 215-440-9300. Thank you.</p>
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!suspended}">
+                <div class="heading-large">
+                    <p>Thank you for your interest in AACR's Member Directory. Access to the Member Directory is a member benefit for AACR Members in good standing. </p>
+                    <p>To successfully access the directory, please pay your dues current for this year and access will be automatically granted. </p>
+                    <p>If you have any questions, please contact the Membership Department at membership@aacr.org or 215-440-9300. Thank you.</p>
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!lapsed}">
+                <div class="heading-large">
+                    <p>Thank you for your interest in AACR's Member Directory. Access to the Member Directory is a member benefit for AACR Members in good standing. </p>
+                    <p>To successfully access the directory, please reinstate your membership. Please contact the Membership Department at membership@aacr.org or 215-440-9300 for assistance. Thank you. </p>
+                </div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!error}">
+                <div class="heading-large">
+                    <p>Your account requires assistance from our Membership Staff.</p>
+                    <p>Please contact the Membership Department at membership@aacr.org or 215-440-9300 for assistance.</p>
+                </div>
+            </apex:outputPanel>
+
+        </div>
+    </div>
+    </apex:outputPanel>
+
+    <div style="{!if(showDirectory, '', 'display:none;')}">
+        <div id="directory"/>
+    </div>
+
+    <script>
+
+        $Lightning.use("c:myAACRDirectory", function() {
+            $Lightning.createComponent("c:Directory",
+                {},
+                "directory",
+                function(cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

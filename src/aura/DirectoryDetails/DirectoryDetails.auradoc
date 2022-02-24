@@ -1,0 +1,19 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>c:DirectoryDetails</code> component displays specific details about a contact record based on the contact Id.
+            It is a child component of the <code>c:Directory</code> component. The component becomes visible whenever a user clicks on a specific Name in the directory or presses the 'Detail' button.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The fields displayed in the header are contact Name, Affiliation and Institution Type.</p>
+        <p>The fields displayed in the body of the popup are Primary Research Area of Expertise, Specific Research Areas, Additional Research Areas, Organ Sites and Working Groups.</p>
+    </aura:description>
+    <!--<aura:example name="DirectoryDetails" ref="c:DirectoryDetails" label="Directory Details">-->
+        <!--Example for Directory Details-->
+    <!--</aura:example>-->
+</aura:documentation>

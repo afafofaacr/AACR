@@ -1,0 +1,221 @@
+<!--
+ - Created by lauren.lezberg on 1/6/2021.
+ -->
+
+<aura:component description="PersonalInformationClone" controller="JP_PersonalInfoController">
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="contactRecord" type="Contact" description="current contact record"/>
+    <aura:attribute name="accountId" type="String" description="current contact account Id"/>
+    <aura:attribute name="selectedAccount" type="Object" default="{}" description="stores selected account record"/>
+
+
+    <aura:attribute name="primaryAddress" type="Object" description="mailing address object for current contact"/>
+
+    <aura:attribute name="nextStepURL" type="String" description="next join step url"/>
+    <aura:attribute name="cancelURL" type="String" description="cancel join process url"/>
+    <aura:attribute name="isLoading" type="Boolean" description="is content loading on component" default="false"/>
+    <aura:attribute name="accountModalOpen" type="Boolean" description="new account modal is open"/>
+
+    <aura:attribute name="initialLoadComplete" type="Boolean" default="false"/>
+    <aura:attribute name="disableDoNotDisplay" type="Boolean" default="false"/>
+    <aura:attribute name="hideDoNotDisplay" type="Boolean" default="false"/>
+
+
+    <aura:attribute name="phoneOptions" type="List" default="[
+    {'label': 'Work', 'value': 'work'},
+    {'label': 'Mobile', 'value': 'mobile'},
+    {'label': 'Home', 'value': 'home'}
+    ]"/>
+    <aura:attribute name="phoneVal" type="String" default="work"/>
+
+    <aura:attribute name="emailOptions" type="List" default="[
+    {'label': 'Work', 'value': 'work'},
+    {'label': 'Personal', 'value': 'personal'}
+    ]"/>
+    <aura:attribute name="emailVal" type="String" default="work"/>
+
+    <aura:attribute name="addressOptions" type="List" default="[
+    {'label': 'Business', 'value': 'business'},
+    {'label': 'Personal', 'value': 'personal'}
+    ]"/>
+    <aura:attribute name="addressVal" type="String" default="business"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:handler event="c:CreateNewRecordFromLookup" action="{!c.createNewAccount}"/>
+
+    <aura:method name="updateContact" action="{!c.resetContact}"/>
+
+
+    <aura:if isTrue="{!v.contactRecord.Id!=null}">
+                <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+                    <c:ContactAccountLookup aura:id="accountLookup" selectedRecord="{!v.selectedAccount}" accountId="{!v.accountId}" affiliatedWithSelf="{!v.contactRecord.is_affiliated_with_self__c}" contactId="{!v.contactRecord.Id}"/>
+<!--                    <c:CompanyLookup aura:id="companyLookup" contactId="{!v.contactRecord.Id}" />-->
+
+                </div>
+
+        <lightning:recordEditForm aura:id="recordEditForm"
+                                  recordId="{!v.contactRecord.Id}"
+                                  recordTypeId="{!v.contactRecord.RecordTypeId}"
+                                  objectApiName="Contact"
+                                  onsuccess="{!c.handleSuccess}"
+                                  onerror="{!c.handleError}"
+                                  class="slds-m-left_medium slds-m-right_medium">
+            <lightning:messages/>
+            <aura:if isTrue="{!v.isLoading}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner/>
+                </div>
+                <aura:set attribute="else">
+                    <div style="display:none">
+                        <lightning:inputField fieldName="Name"/>
+                    </div>
+                    <div class="slds-hide">
+                        <lightning:inputField aura:id="degreesHeld" fieldName="Degrees_Held__c" />
+                        <lightning:inputField aura:id="acc" fieldName="AccountId"/>
+                        <lightning:inputField aura:id="bDay" fieldName="Birthdate" />
+                        <lightning:inputField aura:id="dnd" fieldName="Do_Not_Display_in_Directory__c"/>
+                        <lightning:inputField aura:id="pEmail" fieldName="OrderApi__Preferred_Email_Type__c"/>
+                        <lightning:inputField aura:id="pPhone" fieldName="OrderApi__Preferred_Phone_Type__c"/>
+                    </div>
+
+
+                    <lightning:inputField aura:id="salutation" fieldName="Salutation" onchange="{!c.validateSalutation}"
+                                          class="slds-text-heading_medium" required="true"/>
+                    <lightning:inputField aura:id="firstName" fieldName="FirstName" class="slds-text-heading_medium"
+                                          required="true"/>
+                    <lightning:inputField aura:id="middleName" fieldName="MiddleName" class="slds-text-heading_medium"/>
+                    <lightning:inputField aura:id="lastName" fieldName="LastName" class="slds-text-heading_medium "/>
+                    <lightning:inputField aura:id="title" fieldName="Title" class="slds-text-heading_medium "/>
+                    <lightning:inputField aura:id="suffix" fieldName="DonorApi__Suffix__c"
+                                          class="slds-text-heading_medium"/>
+                    <lightning:inputField aura:id="department" fieldName="Department" class="slds-text-heading_medium"/>
+
+                    <div class="slds-form_horizontal">
+                        <c:AACRMultiSelect aura:id="degrees" isRequired="true" label="Degrees Held"/>
+                        <div aura:id="degreeError" class="slds-form-element__help slds-required"></div>
+                    </div>
+
+                    <div class="slds-border_bottom slds-text-heading_large bold">Contact Information</div>
+                    <div aura:id="emailSection"
+                         class="slds-form_horizontal slds-form slds-m-top_small slds-border_bottom">
+                        <lightning:radioGroup name="primaryEmail"
+                                              label="Primary Email"
+                                              options="{! v.emailOptions }"
+                                              value="{! v.emailVal }"
+                                              type="button"/>
+                        <lightning:inputField aura:id="WorkEmail" onchange="{!c.validateEmail}"
+                                              fieldName="OrderApi__Work_Email__c" class="slds-text-heading_medium"
+                                              required="{!v.emailVal == 'work'}"/>
+                        <div aura:id="WorkEmailError" class="slds-text-heading_small slds-form-element__help"></div>
+                        <lightning:inputField aura:id="PersonalEmail" onchange="{!c.validateEmail}"
+                                              fieldName="OrderApi__Personal_Email__c" class="slds-text-heading_medium"
+                                              required="{!v.emailVal == 'personal'}"/>
+                        <div aura:id="PersonalEmailError" class="slds-text-heading_small slds-form-element__help"></div>
+                    </div>
+                    <div aura:id="phoneSection" class="slds-form_horizontal slds-form slds-m-top_small">
+                        <lightning:radioGroup name="primaryPhone"
+                                              label="Primary Phone"
+                                              options="{! v.phoneOptions }"
+                                              value="{! v.phoneVal }"
+                                              type="button"/>
+                        <lightning:inputField aura:id="WorkPhone" onchange="{!c.validatePhone}"
+                                              fieldName="OrderApi__Work_Phone__c" class="slds-text-heading_medium"
+                                              required="{!v.phoneVal == 'work'}"/>
+                        <div aura:id="WorkPhoneError" class="slds-text-heading_small slds-form-element__help"></div>
+                        <lightning:inputField aura:id="MobilePhone" onchange="{!c.validatePhone}"
+                                              fieldName="MobilePhone" class="slds-text-heading_medium"
+                                              required="{!v.phoneVal == 'mobile'}"/>
+                        <div aura:id="MobilePhoneError" class="slds-text-heading_small slds-form-element__help"></div>
+                        <lightning:inputField aura:id="HomePhone" onchange="{!c.validatePhone}" fieldName="HomePhone"
+                                              class="slds-text-heading_medium" required="{!v.phoneVal == 'home'}"/>
+                        <div aura:id="HomePhoneError" class="slds-text-heading_small slds-form-element__help"></div>
+                    </div>
+                    <div class="slds-border_bottom slds-text-heading_large bold">Demographics</div>
+                    <div aura:id="demographicsSection" class="slds-form_horizontal slds-form slds-m-top_small ">
+                        <c:AACRDateInput aura:id="birthdate" label="Birthdate" isRequired="true" dateInput="{!v.contactRecord.Birthdate}"/>
+<!--                        <lightning:input aura:id="birthdate" type="Date" label="Birthdate"-->
+<!--                                         class="slds-text-heading_medium" value="{!v.contactRecord.Birthdate}"-->
+<!--                                         required="true" onchange="{!c.birthdateValidation}"/>-->
+                        <div aura:id="birthdateError" class="slds-form-element__help slds-required"></div>
+                        <lightning:inputField aura:id="race" fieldName="Race__c" class="slds-text-heading_medium"
+                                              required="true" onchange="{!c.validateRace}"/>
+<!--                        <div aura:id="raceError" class="slds-text-heading_small slds-form-element__help"></div>-->
+                        <lightning:inputField aura:id="gender" fieldName="Gender__c" class="slds-text-heading_medium"
+                                              required="true"/>
+<!--                        <div aura:id="genderError" class="slds-text-heading_small slds-form-element__help"></div>-->
+                    </div>
+
+                    <div class="slds-border_bottom slds-text-heading_large bold">Addresses</div>
+                    <div aura:id="addressSection"
+                         class="slds-form_horizontal slds-form slds-m-top_small">
+<!--                        <aura:if isTrue="{!empty(v.primaryAddress)}">-->
+<!--                        <lightning:radioGroup name="primaryAddress"-->
+<!--                                              label="Type"-->
+<!--                                              options="{! v.addressOptions }"-->
+<!--                                              value="{! v.addressVal }"-->
+<!--                                              type="button"/>-->
+<!--                        <c:AddressAutocomplete aura:id="autoAddress" label="Address" required="true" address="{!v.primaryAddress}"/>-->
+<!--&lt;!&ndash;                        <c:AACRAddressInput isRequired="true" label="Primary Address"/>&ndash;&gt;-->
+
+<!--                        <div class="slds-clearfix" style="margin-left:33%;">-->
+<!--                            <div class="slds-float_right">-->
+<!--&lt;!&ndash;                                <div class="slds-grid">&ndash;&gt;-->
+<!--                                <lightning:input type="checkbox" label="Manual" class="slds-text-heading_medium"/>-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                            <c:NewAddressForm aura:id="addressForm" contactId="{!c.contactRecord.Id}"/>-->
+<!--                            <div class="slds-align_absolute-center">-->
+<!--                                <lightning:button variant="brand" label="Add Address"/>-->
+<!--                            </div>-->
+<!--                            <aura:set attribute="else">-->
+                        <div class="{!empty(v.primaryAddress)?'':'slds-form-element'}" >
+                            <aura:if isTrue="{!not(empty(v.primaryAddress))}">
+                            <label class="slds-form-element__label">
+                                    Current Addresses
+                            </label>
+                            </aura:if>
+                            <div class="{!empty(v.primaryAddress)?'':'slds-form-element__control'}" >
+<!--                        <div style="margin-left:33%">-->
+                                <c:MyAddresses aura:id="myAddresses" viewType="list" contactId="{!v.contactRecord.Id}" accountId="{!v.accountId}"/>
+<!--                        </div>-->
+                            </div>
+                        </div>
+                        <div class="slds-clearfix" style="margin-left:33%;">
+                            <div class="slds-float_left">
+                                <div class="slds-grid">
+                                    <lightning:icon iconName="utility:info" size="small" class="slds-m-top_small"/>
+                                    <div class="slds-m-around_small">
+                                        You can manage all your addresses <a href="/UpdateAddressInformation">here.</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--                            </aura:set>-->
+<!--                        </aura:if>-->
+                    </div>
+
+
+                    <aura:if isTrue="{!not(v.hideDoNotDisplay)}">
+                        <div class="slds-border_bottom slds-text-heading_large bold slds-m-bottom_small">Other</div>
+                        <div class="slds-grid">
+                            <label class="slds-form-element__label slds-m-bottom_small">Do Not Display In
+                                Directory</label>
+                            <lightning:input aura:id="displayInDirectory" type="checkbox"
+                                             checked="{!v.contactRecord.Do_Not_Display_in_Directory__c}"
+                                             disabled="{!v.disableDoNotDisplay}"/>
+                        </div>
+                    </aura:if>
+                    <!--<lightning:inputField aura:id="displayInDirectory" fieldName="Do_Not_Display_in_Directory__c" class="slds-text-heading_medium lookup-disabled"/>-->
+
+                </aura:set>
+            </aura:if>
+        </lightning:recordEditForm>
+    </aura:if>
+
+</aura:component>

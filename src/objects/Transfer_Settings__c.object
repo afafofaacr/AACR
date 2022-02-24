@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>holds logic for transfers</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Primary_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Type</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transfer_Options__c</fullName>
+        <externalId>false</externalId>
+        <label>Transfer Options</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Transfer Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

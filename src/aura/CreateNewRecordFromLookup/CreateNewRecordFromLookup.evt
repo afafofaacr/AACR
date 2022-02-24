@@ -1,0 +1,8 @@
+<!--
+ - Created by lauren.lezberg on 3/22/2019.
+ -->
+
+<aura:event type="APPLICATION" description="CreateNewRecordFromLookup">
+    <aura:attribute name="recordName" type="String"/>
+    <aura:attribute name="objectAPIName" type="String"/>
+</aura:event>

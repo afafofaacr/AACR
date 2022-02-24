@@ -1,0 +1,157 @@
+<!--
+ - Created by lauren.lezberg on 1/14/2020.
+ -->
+
+<aura:component description="ChairPersons" controller="ChairPersonsController" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="persons" type="List" description="list of chair persons for event"/>
+    <aura:attribute name="newModalOpen" type="Boolean" description="is new chair person modal open" default="false"/>
+    <aura:attribute name="speakerModalOpen" type="Boolean" description="is speaker form edit modal open"/>
+    <aura:attribute name="recordTypeId" type="String" description="chair person record type Id"/>
+    <aura:attribute name="errorMsg" type="String" description="error msg"/>
+    <aura:attribute name="cmpId" type="String" description="unique component id" access="private"/>
+    <aura:attribute name="selectedId" type="String" access="private" description="id of selected record"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:EventScheduleUpdate" action="{!c.handleScheduleUpdate}"/>
+    <aura:handler event="c:AreYouSureResponseEvt" action="{!c.handleResponseClick}"/>
+
+
+    <div class="slds-p-around_small slds-box">
+        <div class="slds-m-around_small">
+        <div class="slds-clearfix">
+            <div class="slds-float_left">
+                <h2 class="header-title-container">
+                    <span class="slds-card__header-title slds-truncate">Chairpersons</span>
+                </h2>
+            </div>
+            <div class="slds-float_right">
+                <lightning:button label="New Chairperson" iconName="utility:add" onclick="{!c.openModal}"/>
+            </div>
+        </div>
+        </div>
+        <aura:if isTrue="{!not(empty(v.persons))}">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal"
+               role="grid">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th>
+<!--                <th class="" scope="col">-->
+<!--                    <div class="slds-truncate" title="Assistant">Assistant</div>-->
+<!--                </th>-->
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Roles">Roles</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Status">Status</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Status">Use on Invite</div>
+                </th>
+                <th class="slds-cell-wrap" scope="col">
+                    <div class="slds-truncate" title="Actions">Actions</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <aura:iteration items="{!v.persons}" var="person">
+                <tr class="slds-hint-parent">
+                    <td role="gridcell" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="{!person.Speaker__r.Name}">
+                            <a href="{!'/' + person.Speaker__c}"
+                               target="_blank">{!person.Speaker__r.Name}</a>
+                        </div>
+                    </td>
+<!--                    <td role="gridcell" class="slds-cell-wrap">-->
+<!--                        <div class="slds-truncate" title="{!person.Assistant__r.Name}">-->
+<!--                            <a href="{!'/' + person.Assistant__c}"-->
+<!--                               target="_blank">{!person.Assistant__r.Name}</a>-->
+<!--                        </div>-->
+<!--                    </td>-->
+                    <td role="gridcell" class="slds-cell-wrap">
+                        <div class="slds-truncate" title="{!person.Roles__c}">
+                            {!person.Roles__c}
+                        </div>
+                    </td>
+                    <td role="gridcell" class="slds-cell-wrap">
+                        <div class="slds-truncate " title="{!person.Status__c}">
+                            {!person.Status__c}
+                        </div>
+                    </td>
+                    <td role="gridcell" class="slds-cell-wrap">
+                        <div class="slds-truncate slds-m-left_large" title="{!person.Use_for_Invite__c}">
+                            <lightning:input type="checkbox" disabled="true" checked="{!person.Use_for_Invite__c}" />
+                        </div>
+                    </td>
+                    <td role="gridcell" class="slds-cell-wrap">
+                        <div class="" title="actions">
+                            <lightning:buttonIcon iconName="utility:edit"
+                                                  onclick="{!c.openEditSpeaker}"
+                                                  value="{!person.Id}"
+                                                  alternativeText="Edit Chairperson"
+                                                  variant="bare"/>
+                            <lightning:buttonIcon iconName="utility:delete"
+                                                  onclick="{!c.confirmDelete}"
+                                                  value="{!person.Id}"
+                                                  alternativeText="Delete Chairperson"
+                                                  variant="bare"/>
+                        </div>
+                    </td>
+                </tr>
+            </aura:iteration>
+            </tbody>
+        </table>
+        </aura:if>
+    </div>
+
+    <c:AreYouSureModal aura:id="confirmModal" cmpId="{!v.cmpId}"/> 
+    <c:SpeakerFormModal aura:id="speakerModal" isOpen="{!v.speakerModalOpen}"/>
+
+    <aura:if isTrue="{!v.newModalOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">New Chairperson</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:recordEditForm aura:id="cpNew" objectApiName="Session_Speaker__c" recordTypeId="{!v.recordTypeId}"
+                                              onsuccess="{!c.handleSuccess}" onsubmit="{!c.handleSubmit}">
+
+                        <lightning:messages/>
+
+                        <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                            <div class="slds-box slds-theme_error slds-theme_alert-texture">
+                                <div class="slds-grid">
+                                    <lightning:icon iconName="utility:error" size="small" variant="inverse"/>
+                                    <div class="slds-text-heading_medium slds-text-align_center">{!v.errorMsg}</div>
+                                </div>
+                            </div>
+                        </aura:if>
+
+                        <label class="slds-form-element__label">Contact</label>
+                        <lightning:inputField fieldName="Speaker__c" variant="label-hidden"/>
+                        <lightning:inputField aura:id="roles" fieldName="Roles__c"/>
+                        <lightning:inputField fieldName="Status__c"/>
+                        <lightning:inputField aura:id="invite" fieldName="Use_for_Invite__c"/>
+                        <div class="slds-hide">
+                            <lightning:inputField fieldName="Event__c" value="{!v.recordId}"/>
+                        </div>
+
+                        <div class="slds-align_absolute-center slds-m-top_medium">
+                            <lightning:button type="submit" label="Save Chairperson" variant="brand"/>
+                        </div>
+                    </lightning:recordEditForm>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

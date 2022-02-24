@@ -1,0 +1,146 @@
+<!--
+ - Created by lauren.lezberg on 6/29/2020.
+ -->
+
+<aura:component description="SegmentFieldSelector" controller="SegmentFieldSelectorController">
+    <aura:attribute name="objectName" type="String" description="sobject api name"/>
+    <aura:attribute name="lowercaseOName" type="String" description="lowercase version of object name for icon"/>
+    <aura:attribute name="fieldList" type="List" description="list of field options"/>
+    <aura:attribute name="selectedField" type="List" description="selected field"/>
+    <aura:attribute name="selectedList" type="List" description="list of selected fields"/>
+    <aura:attribute name="newSelected" type="List" description="list of selected fields"/>
+    <aura:attribute name="modalOpen" type="Boolean" description="is modal open" default="false"/>
+
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card title="{!v.objectName + ' Fields:'}" iconName="{!'standard:' + v.lowercaseOName}" class="slds-p-around_small">
+        <aura:set attribute="actions">
+            <lightning:button iconName="utility:add" label="Add Fields" variant="brand" onclick="{!c.openModal}"/>
+        </aura:set>
+        <div class="slds-m-around_small">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Field">Label</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Operator">Name</div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <aura:iteration items="{!v.selectedList}" var="fvp">
+                    <tr class="slds-hint-parent">
+                        <td data-label="label">
+                            <div class="slds-truncate" title="{!fvp.fieldLabel}">
+                                <div class="slds-text-heading_medium">{!fvp.fieldLabel}</div>
+                                <!--<lightning:input value="{!fvp.fieldLabel}" disabled="true"/>-->
+                            </div>
+                        </td>
+                        <td data-label="apiname">
+                            <div class="slds-truncate" title="{!fvp.fieldName}">
+                                <div class="slds-text-heading_medium">{!fvp.fieldName}</div>
+
+                                <!--<lightning:input value="{!fvp.fieldName}" disabled="true"/>-->
+                            </div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+                </tbody>
+            </table>
+            <!--<aura:iteration items="{!v.selectedList}" var="sOption">-->
+                <!--<div class="slds-text-heading_medium">{!sOption.fieldLabel}</div>-->
+                <!--<br/>-->
+            <!--</aura:iteration>-->
+        </div>
+
+        <aura:if isTrue="{!v.modalOpen}">
+
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                     aria-modal="true" aria-describedby="modal-content-id-1"
+                     class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <div class="slds-modal__close">
+                            <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                        </div>
+                        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Add Fields</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="slds-text-title_bold">Double click on a field to add it. Click save when complete.</div>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3">
+                                <select size="10" class="slds-box slds-m-around_small ">
+                                    <aura:iteration items="{!v.fieldList}" var="fOption">
+                                        <option aura:id="{!fOption.fieldName}" ondblclick="{!c.addField}" onclick="{!c.selectField}" title="{!fOption.fieldLabel}" text="{!fOption.fieldLabel}" value="{!fOption.fieldName}" class="slds-truncate slds-p-around_small"/>
+                                    </aura:iteration>
+                                </select>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <div class="slds-m-top_small slds-m-left_small">
+                                    <aura:iteration items="{!v.newSelected}" var="sOption">
+                                        <!--<div class="slds-grid slds-m-bottom_xx-small">-->
+                                        <div class="slds-clearfix slds-m-bottom_xx-small">
+                                            <div class="slds-float_left">
+                                                <div class="slds-text-heading_medium slds-float_left">{!sOption.fieldLabel}</div>
+                                            </div>
+                                            <div class="slds-float_right">
+                                                <lightning:buttonIcon iconName="utility:close" size="small" class="slds-float_right" onclick="{!c.removeField}" value="{!sOption.fieldName}" />
+                                            </div>
+                                        </div>
+                                        <!--</div>-->
+                                    </aura:iteration>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-align_absolute-center">
+                            <lightning:button label="Save" variant="neutral" onclick="{!c.saveFields}"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+
+
+        <!--<div class="slds-grid">-->
+            <!--<div class="slds-col slds-size_1-of-2">-->
+            <!--<select size="10" class="slds-box slds-m-around_small ">-->
+                <!--<aura:iteration items="{!v.fieldList}" var="fOption">-->
+                    <!--<option aura:id="{!fOption.fieldName}" ondblclick="{!c.addField}" onclick="{!c.selectField}" title="{!fOption.fieldLabel}" text="{!fOption.fieldLabel}" value="{!fOption.fieldName}" class="slds-truncate slds-p-around_small"/>-->
+                <!--</aura:iteration>-->
+            <!--</select>-->
+            <!--</div>-->
+            <!--<div class="slds-col slds-size_1-of-2">-->
+                <!--<div class="slds-m-top_small slds-m-left_small">-->
+                <!--<aura:iteration items="{!v.selectedList}" var="sOption">-->
+                    <!--&lt;!&ndash;<div class="slds-grid slds-m-bottom_xx-small">&ndash;&gt;-->
+                        <!--<div class="slds-clearfix slds-m-bottom_xx-small">-->
+                            <!--<div class="slds-float_left">-->
+                                <!--<div class="slds-text-heading_medium slds-float_left">{!sOption.fieldLabel}</div>-->
+                            <!--</div>-->
+                            <!--<div class="slds-float_right">-->
+                                <!--<lightning:buttonIcon iconName="utility:close" size="small" class="slds-float_right" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--</aura:iteration>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--&lt;!&ndash;<lightning:dualListbox name="multipleOptions"&ndash;&gt;-->
+                               <!--&lt;!&ndash;label= "{!v.objectName + ' Fields'}"&ndash;&gt;-->
+                               <!--&lt;!&ndash;sourceLabel="Available"&ndash;&gt;-->
+                               <!--&lt;!&ndash;selectedLabel="Selected"&ndash;&gt;-->
+                               <!--&lt;!&ndash;options="{!v.fieldList}"&ndash;&gt;-->
+                               <!--&lt;!&ndash;value="{!v.selectedList}"/>&ndash;&gt;-->
+        <!--</div>-->
+
+        <!--<div class="slds-m-top_medium">-->
+            <!--<div class="slds-align_absolute-center">-->
+                <!--<lightning:button label="Save" variant="brand" />-->
+            <!--</div>-->
+        <!--</div>-->
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,400 @@
+<apex:page title="{!$Label.cpbase__html_title_tag_login_page}"
+           showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           controller="DW_aacrCustomLoginController"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           action="{!checkSession}">
+    <style> 
+        .account_modal_wrapper{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,0.5);}
+        .account_modal{text-align:center; max-width:500px;margin:62px auto 10px;box-shadow:1px 2px 2px #616161;border:1px solid #616161;border-radius:6px;bottom: unset !important;}
+        .account_modal .modal-body{padding:25px !important;}
+        .form-group{width:100% !important;display: flex;justify-content: center; margin: 0 auto 11px;}
+        .form-group label{width: 30%; text-align: right; margin-right: 20px;}   
+        .account_modal .modal-footer button{font-size:14px !important;}
+        .form-group div{text-align:left;width:50%;} 
+        .form-group div input{width:100%;}
+        .erroInputStyle { border: 1px solid red;}
+        .error_text{display: inherit;float: left;margin-top: 5px;color: red;}
+        .password-infoicon{cursor:pointer;position: absolute; right: -23px; top: 4px; border: 1px solid #ccc; border-radius: 50%; padding: 3px 7px; line-height: 11px; font-weight: bold; color: #0a5c96;}
+       .password-info{position: absolute; background: #fff; border: 1px solid #ccc; top: -98px; width: 100%; padding: 10px; font-size: 12px; text-align: left; min-width: 274px; right: -41px;}
+        span.password-info:after { content: ''; border-top: 12px solid #ccc; border-left: 8px solid transparent; border-right: 8px solid transparent; position: absolute; left: 87%; top: 100%; }
+    </style> 
+     
+    <apex:composition template="CPBase__template_skeleton">
+        
+        <apex:define name="pageTitle">{!$Label.cpbase__login}</apex:define>
+        
+        <apex:define name="pageStyles">
+            <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CPBase__emerald_1_0,'css/pages/login.min.css')}"/>
+        </apex:define>
+        
+        <apex:define name="pageMain">
+            
+            <div class="container">
+                
+                <div class="row">
+                    
+                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+                        
+                        <div class="well login-form">
+                            
+                            <div class="login-brand">
+                                <Framework:img src="{!theme.PagesApi__Logo_Image__c}" width="auto"/>
+                            </div>
+                            
+                            <Framework:messages />
+                            
+                            <apex:form id="form" forceSSL="true" styleClass="form-signin" acceptcharset="utf-8">
+                                
+                                <apex:outputPanel id="usr-pwd-auth" layout="block" styleClass="m-t-20">
+                                    
+                                    <div class="form-group">
+                                        <label>{!$Label.cpbase__username}</label>
+                                        <apex:inputText html-type="email" styleClass="form-control" value="{!username}" html-autofocus="true"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{!$Label.cpbase__password}</label>
+                                        <apex:inputSecret html-type="password" styleClass="form-control password-field" value="{!password}" />
+                                    </div>
+                                    <div class="button-group">
+                                        <apex:commandButton value="{!$Label.cpbase__login}" action="{!login}" styleClass="btn btn-lg btn-primary btn-block"/>
+                                    </div>
+                                    
+                                </apex:outputPanel><!-- [#usr-pwd-auth] -->
+                                
+                                <apex:outputPanel id="social-auth-providers" layout="block" rendered="{!enableSocial}" styleClass="m-b-20 text-center">
+                                    
+                                    <div class="hr">
+                                        <span>{!$Label.cpbase__or}</span>
+                                    </div>
+                                    
+                                    <apex:commandLink styleClass="btn btn-social btn-twitter btn-block m-b-10" action="{!loginTwitter}" rendered="{!siteConfig.PagesApi__Twitter_Login_URL__c != null}">
+                                        <i class="fab fab-twitter"></i> {!$Label.CPBase__Login_With_Twitter}
+                                    </apex:commandLink>
+                                    
+                                    <apex:commandLink styleClass="btn btn-social btn-linkedin btn-block m-b-10" action="{!loginLinkedIn}" rendered="{!siteConfig.PagesApi__LinkedIn_Login_URL__c != null}">
+                                        <i class="fab fab-linkedin"></i> {!$Label.CPBase__Login_With_LinkedIn}
+                                    </apex:commandLink>
+                                    
+                                    <apex:commandLink styleClass="btn btn-social btn-google-plus btn-block" action="{!loginGoogle}" rendered="{!siteConfig.PagesApi__Google_Login_URL__c != null}">
+                                        <i class="fab fab-googleplus"></i> {!$Label.CPBase__Login_With_Google_Plus}
+                                    </apex:commandLink>
+                                    
+                                </apex:outputPanel><!-- [#social-auth-providers] -->
+                                
+                                <div class="reset-password-link f-s-10">
+                                    <a href="{!$Page.CPBase__forgot_password}" title="{!$Label.cpbase__forgot_password_link_anchor}">{!$Label.cpbase__forgot_password_link_anchor}</a>
+                                </div>
+                                
+                                <div class="reset-password-link f-s-10">
+                                    <a href="javascript:void(0)" class="new-account" title="Create New Account" target="_blank" >{!$Label.Create_New_Account_Link}</a>
+                                </div>
+                                
+                                
+                                <apex:insert name="login-additional-links"/>
+                                
+                            </apex:form>
+                            
+                        </div>
+                        <p class="login-additionaltext" style="text-align: justify;">{!$Label.DW_Login_Page_AdditionalText}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <apex:form > 
+               <!-- <div><apex:pagemessages escape="false" ></apex:pagemessages></div>-->
+                <!-- Create New Account modal -->
+                <div class="modal account_modal_wrapper"> 
+                    <div class="modal newrecord-modal account_modal">
+                        
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">                                
+                                <span class="close" onclick="hideModal();"></span>
+                                <h2>New Account</h2>
+                            </div>
+                            <div class="modal-body">
+                             <!-- <div><apex:pagemessages escape="false" ></apex:pagemessages></div>-->
+                                
+                                <div id="msgs" class="messageStyle errStyle" style="display:none;"></div>
+                                <div class="row">
+                                    <div class="form-group col-xs-10">
+                                        <label class="required-icon true">First Name</label>
+                                        <!--<input type="text" name="FirstName" class="form-control first-name" />-->
+                                        <div>
+                                            <apex:inputText styleClass="reqdField" html-placeholder="First Name" id="firstname" value="{!objUserDTO.FirstName}" /><br/>
+                                            <span class="error_text" id="firstNameSpan"></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group col-xs-10">
+                                        <label class="required-icon true">Last Name</label>
+                                        <!--<input type="text" name="LastName" class="form-control first-name" />-->
+                                        <div>
+                                            <apex:inputText styleClass="reqdField" html-placeholder="Last Name" id="lastname" value="{!objUserDTO.LastName}" /><br/>
+                                            <span class="error_text" id="lastNameSpan"></span>
+                                        </div>                                        
+                                    </div>
+                                    
+                                    <div class="form-group col-xs-10">
+                                        <label class="required-icon true">Email</label>
+                                        <!--<input type="text" name="Email" class="form-control email" />-->
+                                        <div>
+                                            <apex:inputText styleClass="reqdField" html-placeholder="Email (username)" id="email" value="{!objUserDTO.Email}" /><br/>
+                                            <span class="error_text" id="emailSpan"></span>
+                                            <apex:outputPanel id="panelError" rendered="{! showError }">
+                                                <script>
+                                                var showModel = '{!showModel}';
+                                                console.log(showModel);
+                                                if(showModel){
+                                                    $(".modal").addClass( 'show' );
+                                                    document.getElementById("emailSpan").innerHTML = "This email address is already used";
+                                                }
+                                                </script>
+                                               <!-- <span>{! errorMsg }</span>-->
+                                </apex:outputPanel>
+                                        </div>                                        
+                                    </div>
+                                    
+                                    <div class="form-group col-xs-10">
+                                        <label class="required-icon true">Password</label>
+                                        <!--<input type="password" name="Password" class="form-control password" />-->
+                                        <div style="position: relative;"> 
+                                            <apex:inputSecret styleClass="reqdField" html-placeholder="Password" id="pasword" value="{!objUserDTO.Password}" /><br/>
+                                            <span class="password-infoicon">i</span>
+                                            <span class="password-info" style="display: none;">Password should contain at least one lowercase character, at least one uppercase character, at least one digit and minimum 8 characters in length</span>
+                                            <span class="error_text" id="passwordSpan"></span>
+                                        </div>                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <!--<input type="button" name="" value="Save" onclick="createNewAccount();" />-->
+                                <button onclick="validateData(); return false;" class="btn btn-lg btn-primary" reRender="panelError">Sign Up</button>
+                               <!-- <apex:commandButton onclick="return validateData()" action="{!createECRMCommunityUser}" >Sign Up</apex:commandButton>-->
+                                <input type="button" name="" value="Cancel" class="btn cancelBtn" onclick="cancelSignup();" />
+                            </div>
+                        </div>
+                        <apex:actionFunction action="{!createECRMCommunityUser}" name="signUpUser" status="ProcessStatus" ></apex:actionFunction>
+                        <!--<apex:actionFunction action="{!createECRMCommunityUser}" name="signUpUser" status="ProcessStatus" oncomplete="onCompleteHandler()"></apex:actionFunction>-->
+                    </div>
+                </div>
+            </apex:form> 
+        </apex:define>
+        
+        <apex:define name="pageScripts">
+            <script type="text/javascript">
+            $(function() {
+                $('#main').addClass('login-format');
+                $('#{!$Component.loginForm}').on('keypress',function(e) {
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            });
+            $(document).ready(function() {
+                $( '.password-infoicon' ).on( 'click', function(){
+                    $( '.password-info' ).toggle();
+                } );
+                $(document).on('keydown', '.password-field', function (event) {
+                    if (event.which === 32) {
+                        return false;
+                    }
+                    return true;
+                });
+                $( ".new-account" ).on( "click", function() {
+                    $(".modal").addClass( 'show' );
+                } );
+            });
+            function hideModal() {
+                $(".modal").removeClass( 'show' );
+            }
+            function cancelSignup() {
+                //clear form explicitly
+                $( '.account_modal .modal-body input' ).val('');
+                $( '.error_text' ).html( '' );
+                hideModal();
+            }
+            function validateData(){
+                var isValid = true;
+                
+                // Validate FirstName
+                var firstNameField = $('input[id$=firstname]');
+                if (firstNameField.val() == '' || firstNameField.val().trim() == "") {
+                    isValid = false;
+                    document.getElementById("firstNameSpan").innerHTML = "Enter valid First Name";
+                }else{
+                    document.getElementById("firstNameSpan").innerHTML = "";
+                }
+                
+                // Validate LastName
+                var lastNameField = $('input[id$=lastname]');
+                if ( lastNameField.val() == '' || lastNameField.val().trim() == "" ) {
+                    isValid = false;
+                    document.getElementById("lastNameSpan").innerHTML = "Enter valid Last Name";
+                }else{
+                     document.getElementById("lastNameSpan").innerHTML = "";
+                }
+                
+                // Validate email
+                var emailField = $('input[id$=email]');
+                var validReg1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if(validReg1.test(emailField.val()) == false){
+                    isValid = false;
+                    document.getElementById("emailSpan").innerHTML = "Enter valid Email";
+                }else{
+                     document.getElementById("emailSpan").innerHTML = "";
+                }
+                
+                // Validate password
+                var passwordField = $('input[id$=pasword]');
+                //Password should contain at least 8 charecters, at least one digit, at least on capital letter, at least one small letter.
+                var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+                console.log( "password:", strongRegex.test( passwordField.val() ) );
+                if( !strongRegex.test( passwordField.val() ) ){
+                //if( passwordField.val() == '' ){
+                    isValid = false;
+                    document.getElementById("passwordSpan").innerHTML = "Enter valid Password";
+                }else{
+                     document.getElementById("passwordSpan").innerHTML = "";
+                }
+                
+                
+                if(isValid){
+                    signUpUser();
+                }
+            }
+            
+            
+            function onCompleteHandler() {
+               var showModel = '{!showModel}';
+               if(showModel){
+                   console.log('In onCompleteHandler');
+                   $(".modal").addClass( 'show' );
+                   document.getElementById("errorSpan").innerHTML = "This email address has already been used to create an account";
+               }
+            }
+            
+            /*  function validateUserDataAndProceed(){    // validate Sign up for user
+                console.log('In validateUserDataAndProceed');
+                if( isReqdFieldsFilled()
+                   && isEmailValid() 
+                   && isPasswordValid()
+                   && isValidFirstName()
+                   ){ // call action function if all fields are valid
+                    console.log('In If');
+                    signUpUser();
+                }                  
+                else{
+                    displayMessage('Please Fill valid Data');
+                }
+            }
+            
+            function isValidFirstName(){
+                var name = $('input[id$=firstname]');
+                var isAllValid = true;
+                if($(name).trim().val() == ''){
+                    isAllValid = false;
+                    displayMessage(' Invalid First Name');
+                    $(firstname).addClass('erroInputStyle');
+                }
+                else{
+                    displayMessage('');
+                    $(firstname).removeClass('erroInputStyle');
+                }
+                return isAllValid ;
+            }
+          
+            function isPasswordValid(){
+                var password = $('input[id$=pasword]');
+                var isPasswordValid = validatePassword($(password).val());
+                
+                if( !isPasswordValid ){
+                    displayMessage(' Invalid password : Minimum 8 characters at least one Alphabet and 1 Number required.');
+                    $(password).addClass('erroInputStyle');
+                }
+                else{
+                    displayMessage('');
+                    $(password).removeClass('erroInputStyle');
+                }
+                return isPasswordValid;
+            }
+            
+            function validatePassword(password){
+                console.log(password);
+                var re = /^(?=.*\d|[A-Za-z])(?=.*\d)[A-Za-z\d].{7,}$/;
+                //^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d].{8,}$/;
+                ///^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+                return re.test(password);
+            }
+            
+            function isReqdFieldsFilled(){
+                var listReqdFields = $('.reqdField');
+                var isAllValid = true;
+                
+                for( var fieldIndex=0, listSize = listReqdFields.length; fieldIndex < listSize; fieldIndex++ ){    // iterate on all required fields
+                    var currentField = listReqdFields[ fieldIndex ];
+                    
+                    if( !$(currentField).val()){
+                        isAllValid = false;
+                        $(currentField).addClass('erroInputStyle');
+                    }
+                    else{
+                        $(currentField).removeClass('erroInputStyle');
+                    }
+                }
+                
+                if( !isAllValid ){
+                    displayMessage('Please enter values in all required fields');
+                }
+                else{
+                    displayMessage('');
+                }
+                return isAllValid;
+            }
+            
+            function isEmailValid(){
+                var email = $('input[id$=email]');
+                var isEmailValid = validateEmail($(email).val());
+                
+                if( !isEmailValid ){
+                    displayMessage('Please enter a valid email');
+                    $(email).addClass('erroInputStyle');
+                }
+                else{
+                    displayMessage('');
+                    $(email).removeClass('erroInputStyle');
+                }
+                return isEmailValid;
+            }
+            
+            function validateEmail(email) {
+                console.log(email);
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }*/
+            
+            
+            function displayMessage( message ){
+                $msgsDiv = $('#msgs');
+                
+                if( !message ){    // hide div if msg is blank
+                    $msgsDiv.hide();
+                }
+                else{
+                    $msgsDiv.show();
+                }
+                $msgsDiv.text(message);
+            }
+            
+            </script>
+        </apex:define>
+        
+    </apex:composition>
+    
+</apex:page>

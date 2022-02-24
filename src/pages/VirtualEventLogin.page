@@ -1,0 +1,297 @@
+<!--
+ - Created by lauren.lezberg on 4/23/2020.
+ -->
+
+<apex:page id="VirtualEventLogin"
+           showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           controller="VirtualEventLoginController"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           action="{!checkIsActive}">
+
+    <apex:slds />
+
+    <style>
+
+        .container {
+            padding-top: 150px;
+        }
+
+        body#main.pageFormatInternal.pg-loaded {
+            background-image: url({!backgroundImg});
+            background-position: center;
+            padding-top: 0px !important;
+            /*background-image: url('https://image.aacr-outbound.com/lib/fe3a157175640478731775/m/1/SF_20AMvirtual_RegBkgd_1920x1080_2003059_2.jpg');*/
+        }
+
+        .login-brand {
+            margin: 5px auto;
+            max-height: 160px;
+        }
+
+        .col-md-4 {
+            width: 35%;
+        }
+
+        .alignCenter {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .account_modal_wrapper {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .account_modal {
+            text-align: center;
+            max-width: 500px;
+            margin: 62px auto 10px;
+            box-shadow: 1px 2px 2px #616161;
+            border: 1px solid #616161;
+            border-radius: 6px;
+            bottom: unset !important;
+        }
+
+        .account_modal .modal-body {
+            padding: 25px !important;
+        }
+
+        .form-group {
+            width: 100% !important;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 11px;
+        }
+
+        .form-group label {
+            width: 30%;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        .account_modal .modal-footer button {
+            font-size: 14px !important;
+        }
+
+        .form-group div {
+            text-align: left;
+            width: 50%;
+        }
+
+        .form-group div input {
+            width: 100%;
+        }
+
+        .erroInputStyle {
+            border: 1px solid red;
+        }
+
+        .error_text {
+            display: inherit;
+            float: left;
+            margin-top: 5px;
+            color: red;
+        }
+
+        .password-infoicon {
+            cursor: pointer;
+            position: absolute;
+            right: -23px;
+            top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: 3px 7px;
+            line-height: 11px;
+            font-weight: bold;
+            color: #0a5c96;
+        }
+
+        .password-info {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            top: -98px;
+            width: 100%;
+            padding: 10px;
+            font-size: 12px;
+            text-align: left;
+            min-width: 274px;
+            right: -41px;
+        }
+
+        span.password-info:after {
+            content: '';
+            border-top: 12px solid #ccc;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            left: 87%;
+            top: 100%;
+        }
+
+        .errorText {
+            font-size:1.5rem;
+        }
+
+        .btn.btn-primary{
+            color:white;
+            font-size:1.5rem;
+        }
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+    <apex:composition template="CPBase__template_skeleton">
+
+        <apex:define name="pageTitle">{!$Label.cpbase__login}</apex:define>
+
+        <apex:define name="pageStyles">
+            <link rel="stylesheet" type="text/css"
+                  href="{!URLFOR($Resource.CPBase__emerald_1_0,'css/pages/login.min.css')}"/>
+            <!--            <link rel="stylesheet" href="https://aacr-april-virtual-event-vitlvinjjg-webappbucket-1hxvvpowvptzm.s3.amazonaws.com/style-chatbot-min.css"/>-->
+        </apex:define>
+
+
+        <apex:define name="pageMain">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
+
+                        <!--<div class="well login-form">-->
+                        <div class="well">
+
+                            <div class="login-brand">
+                                <Framework:img src="{!headerImg}"/>
+                            </div>
+
+                            <Framework:messages />
+
+                            <apex:form id="form" forceSSL="true" styleClass="form-signin" acceptcharset="utf-8">
+                                <div class="slds-scope">
+                                    <apex:outputPanel rendered="{!errorMsg!=null}">
+                                        <div class="slds-box slds-theme_alert-texture slds-theme_error">
+                                            <div class="errorText slds-text-align_center">{!errorMsg}</div>
+                                        </div>
+                                        <br/>
+                                        <div class="button-group" style="margin-bottom:1rem;">
+                                            <apex:commandButton value="Go to Login" action="{!goToStandardLogin}"
+                                                                styleClass="btn btn-lg btn-primary btn-block"/>
+                                        </div>
+                                    </apex:outputPanel>
+                                </div>
+                                <apex:outputPanel rendered="{!errorMsg==null}">
+                                    <apex:outputPanel id="usr-pwd-auth" layout="block" styleClass="m-t-20">
+
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <apex:inputText html-type="email" styleClass="form-control"
+                                                            value="{!username}"
+                                                            html-autofocus="true"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>{!$Label.cpbase__password}</label>
+                                            <apex:inputSecret html-type="password"
+                                                              styleClass="form-control password-field"
+                                                              value="{!password}"/>
+                                        </div>
+                                        <div class="button-group" style="margin-bottom:1rem;">
+                                            <apex:commandButton value="{!$Label.cpbase__login}" action="{!login}"
+                                                                styleClass="btn btn-lg btn-primary btn-block"/>
+                                        </div>
+
+                                    </apex:outputPanel><!-- [#usr-pwd-auth] -->
+
+
+                                    <div class="reset-password-link f-s-10">
+                                        <a href="{!$Page.DW_Forgot_Password}"
+                                           title="{!$Label.cpbase__forgot_password_link_anchor}">{!$Label.cpbase__forgot_password_link_anchor}</a>
+                                    </div>
+
+
+                                    <div class="reset-password-link f-s-10">
+                                        <!--            <apex:outputPanel rendered="{!registrationOpen}">-->
+                                        <!--                <a href="{!$Page.CommunitiesSelfReg + '?retUrl=' + $Page.VirtualEventRegister + '?id=' + eventId}" title="Create New myAACR Account">{!$Label.Create_New_Account_Link}</a>-->
+                                        <!--            </apex:outputPanel>-->
+                                        <!--            <apex:outputPanel rendered="{!not(registrationOpen)}">-->
+                                        <a href="{!$Page.CommunitiesSelfReg + '?retUrl=' + redirectURL}"
+                                           title="Create New myAACR Account">{!$Label.Create_New_Account_Link}</a>
+                                        <!--            </apex:outputPanel>-->
+                                    </div>
+
+                                    <div class="reset-password-link f-s-10">
+                                        <a href="{!$Page.myAACRHelp}" title="Get AACR IT Help"> Get AACR IT Help</a>
+                                    </div>
+
+                                    <!--        <apex:outputText value="{!sponsorHTML}" escape="false"/>-->
+                                </apex:outputPanel>
+                            </apex:form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- START FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE AND CTA BUTTON -->
+            <!--            <div class="fluent-chat-app-embed">-->
+
+            <!--                &lt;!&ndash; FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE &ndash;&gt;-->
+            <!--                <a href="#" class="fluent-preview-close w-inline-block"><img id="fluent-preview-close-img" src="https://s3.amazonaws.com/freeman-chatbot-assets/close.svg" width="18" alt=""/></a>-->
+            <!--                <div class="fluent-preview-chat">-->
+            <!--                    <div class="fluent-preview-icon"></div>-->
+            <!--                    <div class="fluent-preview-headline">Have a question about AACR Virtual Annual Meeting?</div>-->
+            <!--                    <div>Ask our virtual assistant chatbot.</div>-->
+            <!--                </div>-->
+            <!--                &lt;!&ndash; FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE &ndash;&gt;-->
+
+            <!--                &lt;!&ndash; START FLUENT BY FREEMAN CHAT ICON &ndash;&gt;-->
+            <!--                <div class="fluent-open-button"></div>-->
+            <!--                &lt;!&ndash; END FLUENT BY FREEMAN CHAT ICON &ndash;&gt;-->
+
+            <!--            </div>-->
+            <!--            &lt;!&ndash; END FLUENT BY FREEMAN CHATBOT PREVIEW BUBBLE AND CTA BUTTON &ndash;&gt;-->
+
+            <!--            <div class="iframe-cont-freeman hide-freeman">-->
+            <!--                <div class="fluent-chat">-->
+            <!--                    <div class="fluent-chat-app-main-container embed">-->
+            <!--                        <div class="fluent-app-background">-->
+            <!--                            <div class="fluent-background-header">-->
+            <!--                                <div class="fluent-profile-header">-->
+            <!--                                    <div class="fluent-profile-name"></div>-->
+            <!--                                </div>-->
+            <!--                            </div>-->
+            <!--                            <div class="chat-wrap">-->
+            <!--                                <iframe class="" id="theiFrame" style="position:absolute; height: 442px; width: 320px; margin-right: auto; margin-left: auto;  border-top-left-radius: 12px; border-top-right-radius: 12px; border: 0;" src="https://aacr-april-virtual-event-vitlvinjjg-webappbucket-1hxvvpowvptzm.s3.us-east-1.amazonaws.com/index.html" width="100%" height="100%"></iframe>-->
+            <!--                            </div>-->
+            <!--                            <div class="fluent-background-footer">-->
+            <!--                                <div class="fluent-sponsor-area">-->
+            <!--                                    <a href="https://www.freeman.com/solutions/by-expertise/digital/fluent?utm_source=FOL&utm_medium=chatbot&utm_campaign=chatbot_footer" target="_blank" class="fluent-sponsor-link w-inline-block"><img src="https://s3.amazonaws.com/freeman-chatbot-assets/fluent-icon-new.svg" width="32" alt="Fluent by Freeman" class="fluent-sponsor-icon-bottom"/><div class="fluent-sponsor-text"><strong>Learn how Chatbot helps your <br/>-->
+            <!--                                                virtual and live experience!</strong></div></a>-->
+            <!--                                </div>-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+
+            <!--                    </div>-->
+            <!--                    <a data-w-id="5fce1ac3-01f6-3202-39d4-bbb1744369ac" href="#" class="fluent-close-button w-inline-block"><img src="https://s3.amazonaws.com/freeman-chatbot-assets/cancel.svg" alt="" class="fluent-close-image"/></a>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <script type="text/javascript" src="https://aacr-april-virtual-event-vitlvinjjg-webappbucket-1hxvvpowvptzm.s3.amazonaws.com/app-min.js"></script>-->
+        </apex:define>
+    </apex:composition>
+
+
+</apex:page>

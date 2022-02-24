@@ -1,0 +1,74 @@
+<!--
+ - Created by lauren.lezberg on 1/10/2019.
+ -->
+
+<aura:component description="JP_ProgressBar" controller="JP_ProgressBarController">
+    <aura:attribute name="currentStepId" type="String" description="Current step of process"/>
+
+    <aura:attribute name="joinSteps" type="List" description="list of join process steps"/>
+    <aura:attribute name="pathLabel" type="String" description="label for current join process"/>
+    <aura:attribute name="stepInfo" type="Object" description="current step info"/>
+
+    <aura:attribute name="joinId" type="String" description="Join process id"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:registerEvent name="JP_StepChangeEvt" type="c:JP_StepChangeEvt"/>
+
+    <div class="slds-clearfix">
+        <div class="slds-float_right">
+            <div class="slds-text-title_caps slds-m-right_large" style="font-size:14px; color: #50B848; align-content: flex-end;">{!v.pathLabel}</div>
+        </div>
+    </div>
+
+    <br/>
+
+    <lightning:progressIndicator currentStep="{!v.currentStepId}" type="path" variant="base" >
+        <aura:iteration items="{!v.joinSteps}" var="step">
+            <lightning:progressStep label="{!step.stepTitle}" value="{!step.stepId}" onclick="{!c.onStepChange}" title="{!step.stepTitle}" />
+        </aura:iteration>
+    </lightning:progressIndicator>
+
+    <aura:iteration items="{!v.joinSteps}" var="step">
+        <aura:if isTrue="{!v.currentStepId == step.stepId}">
+            <div class="slds-align_absolute-center slds-m-bottom_medium">
+                <div style="width: 1140px; ">
+                    <div class="header slds-border_bottom slds-m-top_medium">{!step.stepTitle}</div>
+                    <br/>
+                    <div class="infoMessage">
+                        <div class="slds-text-heading_medium">{!step.description}</div>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+    </aura:iteration>
+
+
+
+    <!--<div class="slds-clearfix">-->
+        <!--<div class="slds-float_right">-->
+            <!--<div class="slds-text-title_caps slds-m-right_large" style="font-size:14px; color: #50B848; align-content: flex-end;">{!v.pathLabel}</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<br/>-->
+    <!---->
+
+    <!--<lightning:progressIndicator currentStep="{!v.currentStepId}" type="path" variant="base">-->
+        <!--<aura:iteration items="{!v.joinSteps}" var="step">-->
+            <!--<lightning:progressStep label="{!step.joinapi__Page_Title__c}" value="{!step.Id}" onclick="{!c.onStepChange}" title="{!step.joinapi__Page_Title__c}"/>-->
+        <!--</aura:iteration>-->
+    <!--</lightning:progressIndicator>-->
+
+
+    <!--<div class="slds-align_absolute-center">-->
+        <!--<div style="width: 1140px; ">-->
+            <!--<div class="header slds-border_bottom slds-m-top_medium">{!v.stepInfo.joinapi__Page_Title__c}</div>-->
+            <!--<br/>-->
+            <!--<div class="infoMessage">-->
+                <!--<aura:unescapedHtml value="{!v.stepInfo.joinapi__Instructions__c}"/>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</aura:component>

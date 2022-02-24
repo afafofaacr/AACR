@@ -1,0 +1,102 @@
+<apex:page sidebar="false" showHeader="false" controller="DW_SubscriptionRenewController" docType="html-5.0"
+    standardStylesheets="false"
+    applyBodyTag="false"
+    applyHtmlTag="false">
+    <!-- Page Required CSS -->    
+    <c:pageStyle />
+    <apex:includeScript value="{!$Resource.jQueryJs}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-animate-sanitize-ngtable-ngtoast.min.js')}" />    
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-toastr.tpls.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" />
+    <apex:includeScript value="{!$Resource.DW_SubscriptionRenewAppJs}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/angular-toastr.css')}" />
+
+    <apex:slds />
+
+    <apex:form >
+        <apex:actionFunction name="removeRenewalSOLines" action="{!removeRenewalLinesFromSO}" reRender=""/>
+    </apex:form>
+
+    <div class="bgBlack" ng-show="pageData.showLoader">
+        <div class="spinnerBg">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+
+    <!--<apex:composition template="CPBase__template">        -->
+        <!--&lt;!&ndash; PAGE TITLE &ndash;&gt;        -->
+        <!--<apex:define name="pageTitle">-->
+            <!--Subscriptions-->
+        <!--</apex:define>-->
+        <!---->
+        <!--&lt;!&ndash; NAVIGATION BAR - RIGHT BLOCK &ndash;&gt;-->
+        <!--<apex:define name="supernavRight"></apex:define>-->
+        <!--url('https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg')-->
+        <!--&lt;!&ndash; PAGE &ndash;&gt;-->
+        <!--<apex:define name="pageMain">-->
+            <!--<div class="container m-t-30">-->
+                <!--&lt;!&ndash;ng-init="getRenewItem()"&ndash;&gt;-->
+                <!--<div class="inner-wrapper" ng-app="subscriptionRenewApp" ng-controller="subscriptionRenewController" >-->
+
+
+                	<!--&lt;!&ndash; PAGE LOADER - COMMON FOR ALL (SPANS WHOLE PAGE) &ndash;&gt;-->
+                    <!--<div class="bgBlack" ng-show="pageData.showLoader">-->
+                        <!--<div class="spinnerBg">-->
+                            <!--<div class="loader"></div>                    -->
+                        <!--</div>-->
+                    <!--</div>  -->
+
+                	<!--<div class="row">-->
+                        <!--<div class="col-sm-12">-->
+                            <!--<h1>{!$Label.DW_Renew_Subscription_Page_Title} </h1>-->
+                            <!--<hr class="m-b-15" />-->
+                        <!--</div>                        -->
+                    <!--</div>-->
+                    <!--<p class="custmlblTxt">-->
+                        <!--{!$Label.DW_Renew_Subscription_Page_Description}                        -->
+                    <!--</p>-->
+
+                    <!--<div class="item-details">-->
+	                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
+	                    	<!--&lt;!&ndash;{{pageData.Item.Name}} - {{ pageData.Item.OrderApi__Price__c | currency }}&ndash;&gt;-->
+	                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                        <!--<p>-->
+                            <!--{{pageData.Item.OrderApi__Item__r.Name}} - {{ pageData.Item.OrderApi__Sale_Price__c | currency }}-->
+                        <!--</p>-->
+	                    <!--<p>-->
+	                    	<!--{{pageData.Item.OrderApi__Item__r.OrderApi__Description__c }}-->
+	                    <!--</p>-->
+                    <!--</div>-->
+
+                    <!--<p class="custmlblTxt">-->
+                        <!--{!$Label.DW_Renew_Subscription_Page_HelpText}                        -->
+                    <!--</p>-->
+                    <!--<div class="btnDiv">-->
+                        <!--<button class="btn btn-default" ng-click="closeRenew()">Close</button>-->
+                        <!--&lt;!&ndash;<button class="btn btn-default btn-primary" onclick="removeCookie()" >Pay for Dues Only</button>&ndash;&gt;-->
+                        <!--<button class="btn btn-default btn-primary" ng-click="goToRenewProcesss()">Continue with Renewal</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</apex:define>-->
+    <!--</apex:composition>-->
+
+    <script>
+
+        window.onload = function(e) {
+            window.location.href = '{!joinProcessRenewalUrl}';
+        }
+
+        function removeCookie(){
+            document.cookie = '{!$Organization.Id}' + '-fonteva-shopping-cart'+'=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            duesOnlyRenewalRedirect();
+        }
+        function duesOnlyRenewalRedirect(){
+            console.log('callign duesOnlyRenewalRedirect');
+            removeRenewalSOLines();
+            window.location.href = '{!duesOnlyRenewalUrl}';
+        }
+    </script>
+</apex:page>

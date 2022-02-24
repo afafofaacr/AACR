@@ -1,0 +1,194 @@
+<!--
+ - Created by afaf.awad on 4/22/2021.
+ -->
+
+<aura:component description="EventSponsorship" implements="flexipage:availableForAllPageTypes,force:hasRecordId"
+                access="global" controller="EventSponsorshipController">
+
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="sponsorId" type="String"/>
+    <aura:attribute name="sponsorFileId" type="String" description="File Id for uploaded logo."/>
+    <aura:attribute name="isLevelDisabled" type="Boolean" default="false" description="Should level 2 and 3 be disabled?"/>
+    <aura:attribute name="isSponsorDisabled" type="Boolean" default="true" description="Disable Sponsor form until add sponsor is clicked."/>
+    <aura:attribute name="hasLevels" type="Boolean" default="false" description="Are there Sponsorship levels?"/>
+    <aura:attribute name="saving" type="Boolean" default="false" description="Is onload triggered from a save or and edit?"/>
+    <aura:attribute name="level" type="integer" default="1" description="Level of sponsorship"/>
+    <aura:attribute name="instructions" type="String" description="Instructions for Sponsor levels and record creation."/>
+    <aura:attribute name="isOpen" type="Boolean" default="false" description="Open or close Modal."/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="Deleting records.."/>
+    <aura:attribute name="account" type="Account" description="Chosen account in Sponsor Form"/>
+
+    <aura:attribute name="reloadForm" type="boolean" default="true" />
+    <aura:attribute name="sponsorsData" type="Sponsor__c[]" description="list of sponsors for current event"/>
+    <aura:attribute name="sponsorColumns" type="List" description="Columns for Sponsors table"/>
+    <aura:attribute name="sortDirection" type="String" default="desc" />
+    <aura:attribute name="sortedBy" type="String" default="Name" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!--    MODAL-->
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Remove Sponsorship Level</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p><b>You must delete Sponsors associated with this level before you can clear the Sponsorship Level. Would you like to delete related sponsors?
+                        </b>
+                    </p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral"
+                                      label="Cancel"
+                                      title="Cancel"
+                                      onclick="{! c.closeModel }"/>
+                    <lightning:button aura:id="clearSponBtn"
+                                      variant="brand"
+                                      label="{!v.processing ? 'Deleting...' : 'Clear Sponsors'}"
+                                      title="Clear Sponsors"
+                                      onclick="{! c.clearSponsors }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+    <!--    MODAL-->
+    <div class="slds-clearfix">
+        <div class="slds-float_left">
+            <div class="slds-m-left_small slds-text-align_center slds-text-heading_small slds-p-bottom_x-small" style="font-weight:550">
+                Sponsorship Levels
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col  slds-size_1-of-2">
+            <lightning:recordEditForm
+                    aura:id="eventSponsorForm"
+                    objectApiName="BR_Event__c"
+                    recordId="{!v.recordId}"
+                    onload="{!c.handleOnLoad}"
+                    onsuccess="{!c.handleOnSuccess}"
+                    onsubmit="{!c.handleSubmit}">
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col ">
+                        <lightning:layout class="slds-p-left_medium">
+                            <lightning:layoutItem>
+                                <p>{!v.instructions}</p>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        <br/>
+                        <lightning:layout class="slds-p-left_medium">
+                            <lightning:layoutItem>
+                                <lightning:inputField aura:id="levelCheck" fieldName="No_Sponsorship_Levels__c"
+                                                      onchange="{!c.changeLevels}" variant="label-hidden"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem>
+                                <label for="levelCheck">This event does not have any levels</label>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        <lightning:layout horizontalAlign="center">
+                            <lightning:layoutItem size="9" padding="around-small">
+                                <lightning:inputField aura:id="sponsorField1" fieldName="Sponsorship_Level_1__c" required="true"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="3" padding="around-small" class="slds-m-top_large">
+                                <lightning:button aura:id="sponsorBtn1" variant="brand" type="button" name="addSpon1" label="Add Sponsor" onclick="{!c.addSponsor}"/>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        <lightning:layout horizontalAlign="center">
+                            <lightning:layoutItem size="9" padding="around-small">
+                                <lightning:inputField aura:id="sponsorField2" fieldName="Sponsorship_Level_2__c"
+                                                      disabled="{!v.isLevelDisabled}"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="3" padding="around-small" class="slds-m-top_large">
+                                <lightning:button aura:id="sponsorBtn2" variant="brand" type="button" name="addSpon2" label="Add Sponsor" onclick="{!c.addSponsor}"/>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                        <lightning:layout horizontalAlign="center">
+                            <lightning:layoutItem size="9" padding="around-small">
+                                <lightning:inputField aura:id="sponsorField3" fieldName="Sponsorship_Level_3__c"
+                                                      disabled="{!v.isLevelDisabled}"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="3" padding="around-small" class="slds-m-top_large">
+                                <lightning:button aura:id="sponsorBtn3" variant="brand" type="button" name="addSpon3" label="Add Sponsor" onclick="{!c.addSponsor}"/>
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                    </div>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning:button class="slds-m-top_medium" variant="brand" type="button" name="save" onclick="{!c.handleSubmit}"
+                                      label="Save"/>
+                </div>
+            </lightning:recordEditForm>
+        </div>
+
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-box">
+                <lightning:recordEditForm
+                        aura:id="sponsorForm"
+                        objectApiName="Sponsor__c"
+                        recordId="{!v.sponsorId}"
+                        onload="{!c.handleOnLoadSponsor}"
+                        onsuccess="{!c.handleSuccessSponsor}">
+                    <div class="{!v.isSponsorDisabled ? 'slds-hide' : 'slds-show'}">
+                    <div class="slds-m-left_small slds-align_absolute-center slds-text-heading_medium" style="font-weight:550">
+                        {!v.sponsorId == '' ? 'Create' : 'Edit'} Level {!v.level} Sponsor
+                    </div>
+                    </div>
+
+                    <lightning:inputField aura:id="account" required="true" fieldName="Sponsor__c" disabled="{!v.isSponsorDisabled}" onchange="{!c.populateDisplay}"/>
+                    <lightning:inputField aura:id="displayAs" required="true" fieldName="Display_As__c" disabled="{!v.isSponsorDisabled}"/>
+
+                    <lightning:fileUpload aura:id="logoFile"
+                                          disabled="{!v.isSponsorDisabled}"
+                                          required="true"
+                                          name="fileUploader"
+                                          multiple="false"
+                                          label="Logo (300 x 119px)"
+                                          recordId="{!v.sponsorId}"
+                                          onuploadfinished="{! c.handleUploadFinished }"/>
+
+                    <lightning:fileCard aura:id="fileCard" fileId="{!v.sponsorFileId}" />
+<!--                        <div aura:id="fileCardError" class="slds-notify_toast slds-theme_error slds-hide">-->
+<!--                            <div class="desc">File Image is required.</div>-->
+<!--&lt;!&ndash;                            <lightning:buttonIcon iconName="utility:close" onclick="{!c.closeMessage}" class="slds-float_right slds-m-top_x-small slds-m-right_medium" variant="bare-inverse"/>&ndash;&gt;-->
+<!--                        </div>-->
+                    <div aura:id="fileError" class="slds-hide" style="color: rgba(194,57,52,255); font-weight: 600 "> File Image is required</div>
+                    <lightning:inputField aura:id="logoUrl" fieldName="Logo_URL__c" required="true" disabled="{!v.isSponsorDisabled}"/>
+                    <!--HIDDEN FIELDS-->
+                    <lightning:inputField aura:id="logoId" required="true" fieldName="Logo_Image_Id__c" class="slds-hide"/>
+                    <lightning:inputField aura:id="levelNum" fieldName="Level__c" class="slds-hide"/>
+                    <lightning:inputField aura:id="event" fieldName="Event__c" class="slds-hide"/>
+                    <!--HIDDEN FIELDS-->
+                    
+                </lightning:recordEditForm>
+
+                <div class="slds-align_absolute-center">
+                    <lightning:button class="slds-m-top_medium" variant="brand" type="submit" name="save"
+                                      label="Save" disabled="{!v.isSponsorDisabled}" onclick="{!c.handleSubmitSponsor}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <lightning:datatable aura:id="sponsorTable"
+                         data="{!v.sponsorsData}"
+                         columns="{!v.sponsorColumns}"
+                         keyField="Name"
+                         hideCheckboxColumn="true"
+                         onrowaction="{!c.actionRow}"
+                         sortedDirection="{!v.sortDirection}"
+                         sortedBy="{!v.sortedBy}"
+                         onsort="{!c.handleSort}"
+                         class="slds-border_top slds-m-around_medium"/>
+
+
+</aura:component>

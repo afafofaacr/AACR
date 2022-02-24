@@ -1,0 +1,44 @@
+/**
+ * Created by lauren.lezberg on 7/9/2020.
+ */
+
+.THIS.segmentFloat{
+    width: 15%;
+    z-index: 10;
+    position: fixed;
+    right: 10px;
+    top:170px
+}
+
+.THIS .slds-size_1-of-6{
+    width:33.3%; 
+}
+
+.THIS.jointCard {
+    border-width: 3px;
+}
+
+.THIS .slds-size_5-of-6{
+    width:67.5%;
+}
+
+.THIS .slds-form-element .slds-checkbox [type=checkbox]+.slds-checkbox_faux{
+    height:2rem;
+    width:2rem;
+}
+
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox_faux:after{
+    height:0.4rem;
+    width:0.8rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(107, 109, 112);
+}
+
+.THIS h2.slds-modal__title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}

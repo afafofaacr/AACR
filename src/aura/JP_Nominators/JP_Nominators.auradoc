@@ -1,0 +1,30 @@
+<!--
+ - Created by lauren.lezberg on 10/16/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_NominatorsController</p>
+        <p>
+            The <code>JP_Nominators</code> component is a join process component meaning it relies on a sales order Id being present in the url. It displays information differently depending
+            on the membership item present in the sales order. The type of information displayed is the same. The first section contains a <code>JP_RequiredDocumentation</code> component which
+            determines how many file inputs are displayed based on the membership item.
+            The second section allows for nominations. The user may enter a member # or an email. They will then click the 'Verify' button which will find the contact and determine if they are
+            eligible to be a nominator. Students do not see regular nominators, they simply enter an advisor or mentors information which is not validated in the system. The number of nominators
+            required varies per membership type:
+            <ul>
+                <li>Active Members: 2 </li>
+                <li>Affiliate Members: 1</li>
+                <li>Associate Members: 1</li>
+                <li>Student Members: 1 (Modified)</li>
+            </ul>
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>In order to be a valid nominator, the user must be a current member with an eligible membership item and a valid membership subscription.</p>
+        <p>All attachments will be saved with a description of 'Join Process'.</p>
+    </aura:description>
+    <aura:example name="JP_Nominators" ref="c:JP_Nominators" label="JP_Nominators">
+        Example for JP_Nominators
+    </aura:example>
+</aura:documentation>

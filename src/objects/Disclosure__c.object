@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Records of Contacts that have financial relationships to disclose</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Activity_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Program Committee</fullName>
+                    <default>false</default>
+                    <label>Program Committee</label>
+                </value>
+                <value>
+                    <fullName>Session Chairperson</fullName>
+                    <default>false</default>
+                    <label>Session Chairperson</label>
+                </value>
+                <value>
+                    <fullName>Speaker</fullName>
+                    <default>false</default>
+                    <label>Speaker</label>
+                </value>
+                <value>
+                    <fullName>Staff</fullName>
+                    <default>false</default>
+                    <label>Staff</label>
+                </value>
+                <value>
+                    <fullName>Abstract Submission</fullName>
+                    <default>false</default>
+                    <label>Abstract Submission</label>
+                </value>
+                <value>
+                    <fullName>Late Breaking and Clinical Trials</fullName>
+                    <default>false</default>
+                    <label>Late Breaking and Clinical Trials</label>
+                </value>
+                <value>
+                    <fullName>Chairperson</fullName>
+                    <default>false</default>
+                    <label>Chairperson</label>
+                </value>
+                <value>
+                    <fullName>Moderator</fullName>
+                    <default>false</default>
+                    <label>Moderator</label>
+                </value>
+                <value>
+                    <fullName>Invited Speaker</fullName>
+                    <default>false</default>
+                    <label>Invited Speaker</label>
+                </value>
+                <value>
+                    <fullName>Panelist</fullName>
+                    <default>false</default>
+                    <label>Panelist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CME_Eligible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CME Eligible</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Company Name(s)</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Disclosures</relationshipLabel>
+        <relationshipName>Disclosures</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Date(Year(Start_Date__c) + 1,Month(Start_Date__c), Day(Start_Date__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Fon Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Disclosures</relationshipLabel>
+        <relationshipName>Disclosures</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Live_Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Live Event</label>
+        <referenceTo>BR_Event__c</referenceTo>
+        <relationshipLabel>Disclosures</relationshipLabel>
+        <relationshipName>Disclosures</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_Abbreviation__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(IF( INCLUDES(Relationship_Type__c, &apos;Employment&apos;), &apos;E,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Fiduciary Officer&apos;), &apos;FO,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Independent Contractor&apos;), &apos;IC,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Stock&apos;), &apos;S,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Stock Option&apos;), &apos;SO,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other Securities&apos;), &apos;OS,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other Business Ownership&apos;), &apos;OBO,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Grant/Contract&apos;), &apos;GC,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Travel&apos;), &apos;T,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Gift&apos;), &apos;G,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Patent&apos;), &apos;P,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Trademark&apos;), &apos;TM,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Copyright&apos;), &apos;C,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other Intellectual Property&apos;), &apos;OIP,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other&apos;), &apos;O,&apos;, &apos;&apos;),
+
+LEN(IF( INCLUDES(Relationship_Type__c, &apos;Employment&apos;), &apos;E,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Fiduciary Officer&apos;), &apos;FO,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Independent Contractor&apos;), &apos;IC,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Stock&apos;), &apos;S,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Stock Option&apos;), &apos;SO,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other Securities&apos;), &apos;OS,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other Business Ownership&apos;), &apos;OBO,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Grant/Contract&apos;), &apos;GC,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Travel&apos;), &apos;T,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Gift&apos;), &apos;G,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Patent&apos;), &apos;P,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Trademark&apos;), &apos;TM,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Copyright&apos;), &apos;C,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other Intellectual Property&apos;), &apos;OIP,&apos;, &apos;&apos;)
+&amp; IF( INCLUDES(Relationship_Type__c, &apos;Other&apos;), &apos;O,&apos;, &apos;&apos;)) - 1)</formula>
+        <label>Relationship Abbreviation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                    <label>Employment</label>
+                </value>
+                <value>
+                    <fullName>Fiduciary Officer</fullName>
+                    <default>false</default>
+                    <label>Fiduciary Officer</label>
+                </value>
+                <value>
+                    <fullName>Independent Contractor</fullName>
+                    <default>false</default>
+                    <label>Independent Contractor</label>
+                </value>
+                <value>
+                    <fullName>Stock</fullName>
+                    <default>false</default>
+                    <label>Stock</label>
+                </value>
+                <value>
+                    <fullName>Stock Option</fullName>
+                    <default>false</default>
+                    <label>Stock Option</label>
+                </value>
+                <value>
+                    <fullName>Other Securities</fullName>
+                    <default>false</default>
+                    <label>Other Securities</label>
+                </value>
+                <value>
+                    <fullName>Other Business Ownership</fullName>
+                    <default>false</default>
+                    <label>Other Business Ownership</label>
+                </value>
+                <value>
+                    <fullName>Grant/Contract</fullName>
+                    <default>false</default>
+                    <label>Grant/Contract</label>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                    <label>Travel</label>
+                </value>
+                <value>
+                    <fullName>Gift</fullName>
+                    <default>false</default>
+                    <label>Gift</label>
+                </value>
+                <value>
+                    <fullName>Patent</fullName>
+                    <default>false</default>
+                    <label>Patent</label>
+                </value>
+                <value>
+                    <fullName>Trademark</fullName>
+                    <default>false</default>
+                    <label>Trademark</label>
+                </value>
+                <value>
+                    <fullName>Copyright</fullName>
+                    <default>false</default>
+                    <label>Copyright</label>
+                </value>
+                <value>
+                    <fullName>Other Intellectual Property</fullName>
+                    <default>false</default>
+                    <label>Other Intellectual Property</label>
+                </value>
+                <value>
+                    <fullName>Advisor/Board Member</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Advisor/Board Member</label>
+                </value>
+                <value>
+                    <fullName>Consultant/Independent Contractor</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Consultant/Independent Contractor</label>
+                </value>
+                <value>
+                    <fullName>Full-time/part-time Employee</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Full-time/part-time Employee</label>
+                </value>
+                <value>
+                    <fullName>Grants/Research Support Recipient</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Grants/Research Support Recipient</label>
+                </value>
+                <value>
+                    <fullName>Honorarium Recipient</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Honorarium Recipient</label>
+                </value>
+                <value>
+                    <fullName>Speaker&apos;s Bureau</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Speaker&apos;s Bureau</label>
+                </value>
+                <value>
+                    <fullName>Stock Shareholder (Self Managed)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Stock Shareholder (self managed)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Relationships_to_Disclose__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationships to Disclose</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Disclosure</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>Company_Name__c</columns>
+        <columns>Event_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>D-{0000}</displayFormat>
+        <label>Disclosure Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Disclosures</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Event_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Contact__c</searchFilterFields>
+        <searchFilterFields>Event_Name__c</searchFilterFields>
+        <searchFilterFields>Start_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,183 @@
+<!--
+ - Created by lauren.lezberg on 2/21/2019.
+ -->
+
+<aura:component description="JP_CheckoutCart" controller="JP_CheckoutController">
+    <ltng:require scripts="{!$Resource.jQueryJs}"/> 
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="joinId" type="String" description="The current process id"/>
+    <aura:attribute name="salesOrderId" type="String" description="Id of sales order being processed"/>
+    <aura:attribute name="processing" type="Boolean" description="Action is processing" default="false"/>
+
+    <!-- PAYNOW ATTRIBUTES -->
+<!--    <aura:attribute name="environmentKey" type="String" description="Environment Key"/>-->
+<!--    <aura:attribute name="store" type="Object" description="AACR store"/>-->
+    <aura:attribute name="salesOrder" type="Object" description="Current sales order"/>
+<!--    <aura:attribute name="redirectURL" type="String" description="Redirect URL after successful payment"/>-->
+<!--    <aura:attribute name="paymentObject" type="Object"-->
+<!--                    description="Returned payment object from OrderApi:PayNow component"/>-->
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="cartItems" type="List" access="private" description="List of items in sales order"/>
+    <aura:attribute name="subTotal" type="Decimal" access="private" description="SubTotal of all cart items"/>
+    <aura:attribute name="taxTotal" type="Decimal" access="private" description="Total of all taxes"/>
+    <aura:attribute name="fullTotal" type="Decimal" access="private"
+                    description="Total of all items and taxes combined"/>
+    <aura:attribute name="showPayment" type="Boolean" access="private" default="false"
+                    description="Display payment component"/>
+    <aura:attribute name="isInvoice" type="Boolean" access="private" default="false"
+                    description="is order part of transfer"/>
+<!--    <aura:attribute name="windowLocation" type="String" access="private" description="Current window url"/>-->
+
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2">
+
+            <!-- ITEMIZED CART -->
+            <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                 style="background: #50B848; color: white; font-size:2rem;">
+                Shopping Cart
+                <div class="slds-float_right">{!v.cartItems.length + ' Items'}</div>
+            </div>
+
+            <div class="slds-card slds-theme_default">
+                <div class="slds-grid slds-m-around_small">
+                    <div class="slds-col slds-size_1-of-8 slds-align_absolute-center">
+                    <aura:if isTrue="{!v.cartItems[0].OrderApi__Item__r.OrderApi__Image_Path__c!=null}">
+                        <div class="">
+                            <img src="{!v.cartItems[0].OrderApi__Item__r.OrderApi__Image_Path__c}"
+                                 class="img-responsive slds-m-right_small" width="80" height="80"/>
+                        </div>
+                        <aura:set attribute="else">
+                            <aura:if isTrue="{!v.cartItems[0].OrderApi__Item_Class__r.Name == 'Live Event Tickets'}">
+                                <div style="position:relative;top:25%;">
+                                    <lightning:icon iconName="custom:custom45" size="large"/>
+                                </div>
+                            </aura:if>
+                        </aura:set>
+                    </aura:if>
+
+                    </div>
+
+                    <div class="slds-col slds-size_6-of-8">
+                        <div class="slds-text-heading_medium">{!v.cartItems[0].OrderApi__Item__r.Name}</div>
+                        <aura:if isTrue="{!v.cartItems[0].OrderApi__Item_Class__r.Name == 'Live Event Tickets'}">
+                            <div class="slds-text-heading_small">{!v.cartItems[0].AC_User_Segment__r.Name + ' Price'} </div>
+                        </aura:if>
+                        <ui:outputCurrency value="{!v.cartItems[0].OrderApi__Sale_Price__c}"
+                                           class="slds-text-heading_medium bold"/>
+                    </div>
+                </div>
+                <div class="slds-m-top_medium">
+
+                    <aura:iteration items="{!v.cartItems}" var="item" start="1">
+
+                        <div class="slds-grid slds-m-around_small ">
+                            <div class="slds-col slds-size_1-of-8 slds-align_absolute-center">
+                                <aura:if isTrue="{!and(and(item.OrderApi__Item_Class__r.Name!='Open Access Journals', item.OrderApi__Item_Class__r.Name!='Prior Year Dues'), item.OrderApi__Item__r.Name != 'Blood Cancer Discovery - Online')}">
+                                    <lightning:button iconName="utility:close" variant="base" value="{!item.Id}"
+                                                      onclick="{!c.removeItem}" disabled="{!v.processing}"/>
+                                </aura:if>
+                            </div>
+                            <div class="slds-col slds-size_6-of-8">
+                                <div class="slds-text-title_small">{!item.OrderApi__Item__r.Name}</div>
+                                <ui:outputCurrency value="{!item.OrderApi__Sale_Price__c}"
+                                                   class="slds-text-heading_small bold"/>
+                            </div>
+                        </div>
+                    </aura:iteration>
+                </div>
+            </div>
+
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <!-- ORDER TOTAL AND TAXES -->
+            <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                 style="background: #50B848; color: white; font-size:2rem;">
+                Order Total
+                <div class="slds-float_right">
+                    <ui:outputCurrency value="{!v.fullTotal}"/>
+                </div>
+            </div>
+            <div class="slds-card slds-theme_default slds-p-around_small">
+                <div class="slds-m-right_x-large slds-m-left_x-large">
+                    <div class="slds-m-bottom_x-small">
+                        <label for="subTotal" class="slds-text-heading_small bold"> Shopping Cart:</label>
+                        <div id="subTotal" class="slds-float_right" style="display:inline">
+                            <ui:outputCurrency value="{!v.subTotal}" class="slds-text-heading_small "/>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="tax" class="slds-text-heading_small bold"> Tax:</label>
+                        <div id="tax" class="slds-float_right" style="display:inline">
+                            <ui:outputCurrency value="{!v.taxTotal}" class="slds-text-heading_small "/>
+                        </div>
+                    </div>
+
+                </div>
+                <br/>
+
+                <!-- OFFER APP COMPONENT -->
+<!--                <c:validateOfferCode aura:id="offerCmp" oncodesuccess="{!c.handleCheckoutCodeSuccess}" salesOrderId="{!v.salesOrderId}"/>-->
+<!--                <br/>-->
+
+                <div class="slds-box slds-theme_default slds-align_absolute-center slds-size_1-of-4 lightBackground bold">
+                    <label for="total" class="slds-text-heading_small bold"> Total:</label>
+                    <div id="total" style="display:inline">
+                        <ui:outputCurrency value="{!v.fullTotal}" class="slds-text-heading_small bold"/>
+                    </div>
+                </div>
+
+            </div>
+            <br/>
+            <aura:if isTrue="{!not(v.isInvoice)}">
+            <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                 style="background: #50B848; color: white; font-size:2rem;">
+                Payment
+            </div>
+
+            <div class="slds-card slds-theme_default" style="{!v.showPayment?'position: relative;z-index: 9999;height:400px;':'position: relative;z-index: 9999;height:150px;'}">
+
+                <!-- BILLING ADDRESS COMPONENT  -->
+                <aura:if isTrue="{!v.showPayment}">
+                    <c:PaymentBillingAddress aura:id="ba" contactId="{!v.salesOrder.OrderApi__Contact__c}"/>
+                </aura:if>
+                <aura:if isTrue="{!not(empty(v.salesOrderId))}">
+                <!-- STRIPE CHECKOUT PAGE  -->
+                <iframe src="{!'/StripeCheckout?id=' + v.joinId +'&amp;salesOrder=' + v.salesOrderId}" height="400" allowtransparency="true" frameborder="0" style="position: absolute;"/>
+                </aura:if>
+
+            </div>
+            <!-- FONTEVA PAYMENT COMPONENT -->
+            <!--            <c:PaymentForm showPayment="{!v.showPayment}" showCheckForm="false" stepId="{!v.stepId}"/>-->
+                <aura:set attribute="else">
+                    <div class="slds-card__header slds-p-vertical--medium slds-p-horizontal--large slds-m-bottom_none"
+                         style="background: #50B848; color: white; font-size:2rem;">
+                        Submit
+                    </div>
+
+                    <div class="slds-card slds-theme_default" style="position: relative;z-index: 9999;height:170px;">
+                        <div class="slds-text-heading_small slds-m-around_small">
+                            Upon selection of ‘Submit Order’, your application will be sent for review. If during the
+                            review process any clarification is needed, our Membership staff will contact you. Once
+                            approved, an invoice with your total payment due will be sent to your preferred email
+                            address. Please allow up to 30 days for the review and approval process to be completed.
+                        </div>
+<br/>
+                            <div class="slds-align_absolute-center">
+                                <lightning:button variant="neutral" disabled="{!v.processing}" label="{!v.processing?'Processing...':'Cancel Order'}" onclick="{!c.cancelOrder}"/>
+                                &nbsp;
+                                <lightning:button variant="brand" disabled="{!v.processing}" label="{!v.processing?'Processing...':'Submit Order'}" onclick="{!c.submitOrder}"/>
+                            </div>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

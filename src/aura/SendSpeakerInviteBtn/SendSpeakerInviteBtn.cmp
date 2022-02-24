@@ -1,0 +1,16 @@
+<!--
+ - Created by lauren.lezberg on 2/18/2020.
+ -->
+
+<aura:component description="SendSpeakerInviteBtn" implements="force:hasRecordId,force:lightningQuickAction,lightning:isUrlAddressable" controller="SpeakerInviteController">
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="processing" type="Boolean" description="action is processing" default="false"/>
+
+
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--<aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" />-->
+
+    <lightning:button variant="brand" iconName="utility:send" onclick="{!c.goToSpeakerInviteWizard}" label="{!v.processing?'Processing...': 'Send Speaker Invitations'}" disabled="{!v.processing}"/>
+</aura:component>

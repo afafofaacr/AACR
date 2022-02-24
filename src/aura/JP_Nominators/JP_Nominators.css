@@ -1,0 +1,76 @@
+/**
+ * Created by lauren.lezberg on 2/28/2019.
+ */
+.THIS .bold{
+    font-weight:700;
+}
+
+.THIS .customRequired:before{
+    content: "*";
+    margin: 0 0.125rem 0 0.125rem;
+    color: rgb(194, 57, 52);
+    float: left;
+    font-size:1.5rem;
+}
+
+.THIS.customError{
+    border: 1px solid rgb(194,57,52);
+}
+
+.THIS .slds-file-selector{
+    font-size:1.5rem;
+}
+
+.THIS .verified{
+    background-color: token(aacrGreenL1);
+    color:token(aacrGreen);
+}
+
+.THIS lightning-icon.verified > lightning-primitive-icon > svg > use{
+    fill:token(aacrGreen);
+}
+
+.THIS .slds-file-selector_files .slds-file-selector__body{
+    font-weight:400;
+    padding:5px;
+}
+
+.THIS .slds-file-selector_files .slds-file-selector__button{
+    padding: 0.75rem;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size:1.5rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size:1.5rem;
+}
+
+.THIS .slds-icon_small{
+    height:2rem;
+    width:2rem;
+}
+
+.THIS .slds-icon-standard-contact{
+    background-color: token(AACRBlue);
+    height:2rem;
+    width:2rem;
+}
+
+.THIS .slds-dropdown-trigger_click .slds-dropdown{
+    font-size: 1.5rem;
+    display:inline-table;
+}
+
+.THIS .slds-dropdown-trigger_click.slds-is-open .slds-dropdown{
+    display:block;
+    font-size: 1.5rem;
+}

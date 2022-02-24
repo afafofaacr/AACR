@@ -1,0 +1,20 @@
+<!--
+ - Created by afaf.awad on 2/24/2021.
+ -->
+
+<aura:component description="EC_TargetAudience" controller="EC_Helper">
+
+    <aura:attribute name="orderId" type="String" description="Id of Exhibitor Order"/>
+    <aura:attribute name="count" type="Integer" default="0" description="Total target audience"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:EC_AudienceEvent" action="{!c.doInit}"/>
+    <aura:method name="refreshCount" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!not(empty(v.orderId))}">
+        <div class="slds-float_right slds-has-bottom-magnet" style="font-size: 18px; margin:inherit">
+            Target Audience: {!v.count}
+        </div>
+    </aura:if>
+
+</aura:component>

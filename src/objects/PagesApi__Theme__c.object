@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Themes store configurations for page style and branding.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>PagesApi__Body_Background_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Valid hexadecimal, rgb, or rgba notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid hexadecimal, rgb, or rgba notation required.</inlineHelpText>
+        <label>Body Background</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Brand_Primary__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Valid hexadecimal, rgb, or rgba notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid hexadecimal, rgb, or rgba notation required.</inlineHelpText>
+        <label>Brand Primary</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Brand_Secondary__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Valid hexadecimal, rgb, or rgba notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid hexadecimal, rgb, or rgba notation required.</inlineHelpText>
+        <label>Brand Secondary</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Community_Styles__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Generated Styles for Community.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Generated Styles for Community.</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>30000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Custom_CSS__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom CSS is inserted before the closing html head (&quot;&lt;/head&gt;&quot;) tag into pages using this Theme.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom CSS is inserted before the closing html head (&quot;&lt;/head&gt;&quot;) tag into pages using this Theme.</inlineHelpText>
+        <label>Custom CSS</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Custom_Print_Stylesheet_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Secure (&quot;https://&quot;) url to the location of a custom stylesheet to use for rendering pages for print media.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Secure (&quot;https://&quot;) url to the location of a custom stylesheet to use for rendering pages for print media.</inlineHelpText>
+        <label>Custom Print Stylesheet URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Custom_Stylesheet_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secure (&quot;https://&quot;) url where the stylesheet is hosted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secure (&quot;https://&quot;) url where the stylesheet is hosted.</inlineHelpText>
+        <label>Custom Stylesheet URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional description for the Theme.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional description for the Theme.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Favicon_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The image to use for a favicon used for visual site identification in various browser interfaces (bookmarks,tabs,etc...).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The image to use for a favicon used for visual site identification in various browser interfaces (bookmarks,tabs,etc...).</inlineHelpText>
+        <label>Favicon Image</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Footer__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom HTML to display in the footer of all pages that use the theme.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom HTML to display in the footer of all pages that use the theme.</inlineHelpText>
+        <label>Footer</label>
+        <length>55000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__HTML_Head__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Insert custom scripts and styles before the closing &lt;/head&gt; tag into pages that use this Theme.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Insert custom scripts and styles before the closing &lt;/head&gt; tag into pages that use this Theme.</inlineHelpText>
+        <label>HTML Head</label>
+        <length>55000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Header__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom HTML to display in the header of all pages that use the theme.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom HTML to display in the header of all pages that use the theme.</inlineHelpText>
+        <label>Header</label>
+        <length>55000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Lightning_Community_Styles__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Generated Styles for Lightning Community.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Generated Styles for Lightning Community.</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>30000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Link_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Valid hexadecimal, rgb, or rgba notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid hexadecimal, rgb, or rgba notation required.</inlineHelpText>
+        <label>Link</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Logo_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secure (&quot;https://&quot;) url where the logo image file is located. We recommend uploading a logo that is of equal height and width and less than 20kb with a 72dpi resolution. The minimum height and width is 150px the maximum is 1000px.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secure (&quot;https://&quot;) url where the logo image file is located. We recommend uploading a logo that is of equal height and width and less than 20kb with a 72dpi resolution. The minimum height and width is 150px the maximum is 1000px.</inlineHelpText>
+        <label>Logo Image</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Logo_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If a logo image is not defined for the Theme the logo text will be used by default. Applies only for themes using &quot;Fonteva Drive&quot; as a stylesheet template.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If a logo image is not defined for the Theme the logo text will be used by default. Applies only for themes using &quot;Fonteva Drive&quot; as a stylesheet template.</inlineHelpText>
+        <label>Logo Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Logo_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The url of the web page to direct users when they click the logo text or logo image on any web page using this Theme. Valid only for Themes using &quot;Fonteva Drive&quot; as a stylesheet template.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The url of the web page to direct users when they click the logo text or logo image on any web page using this Theme. Valid only for Themes using &quot;Fonteva Drive&quot; as a stylesheet template.</inlineHelpText>
+        <label>Logo URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Navbar_Background_Color__c</fullName>
+        <defaultValue>&quot;#F1F1F1&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The background color to use for the primary navigation bar affixed to the top of community related pages.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The background color to use for the primary navigation bar affixed to the top of community related pages.</inlineHelpText>
+        <label>Navbar Background</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Navbar_Link_Color__c</fullName>
+        <defaultValue>&quot;#555555&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The color to use for links contained inside the primary navigation bar affixed to the top of community related pages.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The color to use for links contained inside the primary navigation bar affixed to the top of community related pages.</inlineHelpText>
+        <label>Navbar Link</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Supernav_Background_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The background color to use for the supernav.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The background color to use for the supernav.</inlineHelpText>
+        <label>Supernav Background</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Supernav_HTML_Position_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Text/HTML for the Supernav Position #1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Text/HTML for the Supernav Position #1.</inlineHelpText>
+        <label>Supernav HTML Position 1</label>
+        <length>30000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Supernav_HTML_Position_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Text/HTML for the Supernav Position #2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Text/HTML for the Supernav Position #2.</inlineHelpText>
+        <label>Supernav HTML Position 2</label>
+        <length>30000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Supernav_HTML_Position_3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Text/HTML for the Supernav Position #3.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Text/HTML for the Supernav Position #3.</inlineHelpText>
+        <label>Supernav HTML Position 3</label>
+        <length>30000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Supernav_Link_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The color to use for links contained inside the supernav.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The color to use for links contained inside the supernav.</inlineHelpText>
+        <label>Supernav Link</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Supernav_Text_Color__c</fullName>
+        <defaultValue>&quot;#FFFFFF&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The color to use for text contained inside the supernav.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The color to use for text contained inside the supernav.</inlineHelpText>
+        <label>Supernav Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Text_Color__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Valid hexadecimal, rgb, or rgba notation required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Valid hexadecimal, rgb, or rgba notation required.</inlineHelpText>
+        <label>Text</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Theme</label>
+    <listViews>
+        <fullName>PagesApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>PagesApi__Body_Background_Color__c</columns>
+        <columns>PagesApi__Brand_Primary__c</columns>
+        <columns>PagesApi__Brand_Secondary__c</columns>
+        <columns>PagesApi__Link_Color__c</columns>
+        <columns>PagesApi__Text_Color__c</columns>
+        <columns>PagesApi__Logo_Image__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Theme Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Themes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>PagesApi__Description__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Description__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>PagesApi__Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

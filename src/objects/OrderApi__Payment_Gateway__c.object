@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Standard</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Payment gateways store configuration data for all connected Fonteva payment gateways in your organization.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__AVS_Configuration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>AVS fields that are required when a payment is made.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>AVS fields that are required when a payment is made.</inlineHelpText>
+        <label>AVS Configuration</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Validate Billing Address</fullName>
+                    <default>false</default>
+                    <label>Validate Billing Address</label>
+                </value>
+                <value>
+                    <fullName>Validate Postal Code</fullName>
+                    <default>false</default>
+                    <label>Validate Postal Code</label>
+                </value>
+                <value>
+                    <fullName>Disable AVS</fullName>
+                    <default>true</default>
+                    <label>Disable AVS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Attempt_3DS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When selected, 3D Secure will be enabled for the related payment gateway. Displayed only if a payment gateway supports
+            3D Secure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When selected, 3D Secure will be enabled for the related payment gateway. Displayed only if a payment gateway supports
+            3D Secure.</inlineHelpText>
+        <label>Enable 3D Secure</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**Required** Link to the related business group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Link to the related business group.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Payment Gateways</relationshipLabel>
+        <relationshipName>Payment_Gateways</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Company_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the payment gateway company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the payment gateway company.</inlineHelpText>
+        <label>Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Deposit_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related GL Account to use for the Deposit Account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related GL Account to use for the Deposit Account.</inlineHelpText>
+        <label>Deposit Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Payment Gateways</relationshipLabel>
+        <relationshipName>Payment_Gateways</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_AVS_Zip_Code_Only__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Caluclated** specifies whether to verify zip code on payment or not</description>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL( OrderApi__AVS_Configuration__c , &apos;Validate Postal Code&apos;)</formula>
+        <inlineHelpText>**System Caluclated** specifies whether to verify zip code on payment or not</inlineHelpText>
+        <label>Enable AVS Zip Code Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_AVS__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Caluclated** Checked if AVS is enabled</description>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(OrderApi__AVS_Configuration__c, &apos;Validate Billing Address&apos;)</formula>
+        <inlineHelpText>**System Caluclated** Checked if AVS is enabled</inlineHelpText>
+        <label>Enable AVS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Gateway_Specific_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Gateway specific fields to send part of every transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Gateway specific fields to send part of every transaction.</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Gateway_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The type of gateway used by the business group for credit card and e-check processing (not supported for all customers, check with your administrator if you have any questions).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** The type of gateway used by the business group for credit card and e-check processing (not supported for all customers, check with your administrator if you have any questions).</inlineHelpText>
+        <label>Gateway Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Homepage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The url for the payment gateway company website.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The url for the payment gateway company website.</inlineHelpText>
+        <label>Homepage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The gateway is enabled for payment processing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The gateway is enabled for payment processing.</inlineHelpText>
+        <label>Is Enabled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Offsite__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** -  When a payment gateway is an offsite payment gateway.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** -  When a payment gateway is an offsite payment gateway.</inlineHelpText>
+        <label>Is Offsite</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Test__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The gateway is a test gateway and not to be used for production environments.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The gateway is a test gateway and not to be used for production environments.</inlineHelpText>
+        <label>Is Test</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Post_Orders_in_Procesing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If selected, the offsite payment which have not been funded yet will be posted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, the offsite payment which have not been funded yet will be posted.</inlineHelpText>
+        <label>Post Orders in Processing</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Pre_Authorization_Purchases__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** True if the gateway supports pre-authorization purchases.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** True if the gateway supports pre-authorization purchases.</inlineHelpText>
+        <label>Supports Pre-Authorization Purchases</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Require_CVV__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checking this field will require the card&apos;s verification value (CVV) at the time of payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this field will require the card&apos;s verification value (CVV) at the time of payment.</inlineHelpText>
+        <label>Require CVV</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Require_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Requires a valid email when executing a payment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires a valid email when executing a payment</inlineHelpText>
+        <label>Require Email</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Require_Phone__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Requires a valid phone when executing a payment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires a valid phone when executing a payment</inlineHelpText>
+        <label>Require Phone</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The current state of the payment gateway connection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The current state of the payment gateway connection.</inlineHelpText>
+        <label>State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supported_Countries__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Full list of supported countries for the Payment Gateway.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Full list of supported countries for the Payment Gateway.</inlineHelpText>
+        <label>Supported Countries</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supported_Credit_Cards_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Image URL to show the supported credit cards for gateway.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Image URL to show the supported credit cards for gateway.</inlineHelpText>
+        <label>Supported Credit Cards Image</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supported_Regions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The payment gateway&apos;s supported geographic regions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The payment gateway&apos;s supported geographic regions.</inlineHelpText>
+        <label>Supported Regions</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_3DS_Purchase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>System field that indicates the related payment gateway supports 3DS purchases.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>System field that indicates the related payment gateway supports 3DS purchases.</inlineHelpText>
+        <label>Supports 3DS Purchase</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_Authorize__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Gateway supports credit card authorizations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Gateway supports credit card authorizations.</inlineHelpText>
+        <label>Supports Authorize</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_Capture__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Gateway supports credit card capture.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Gateway supports credit card capture.</inlineHelpText>
+        <label>Supports Capture</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_Credit_Card__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Gateway will be enabled for credit card payment processing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Gateway will be enabled for credit card payment processing.</inlineHelpText>
+        <label>Supports Credit Card</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_Credit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Gateway supports credit transactions. A credit is like a void, except it actually reverses a charge instead of just canceling a charge that hasn’t yet been made.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Gateway supports credit transactions. A credit is like a void, except it actually reverses a charge instead of just canceling a charge that hasn’t yet been made.</inlineHelpText>
+        <label>Supports Credit</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_EFT__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Checked when the configured gateway supports EFT (Electronic Funds Transfer)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Checked when the configured gateway supports EFT (Electronic Funds Transfer)</inlineHelpText>
+        <label>Supports EFT</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_Offsite_Authorize__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** - When an offsite payment gateway supports Authorize</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** - When an offsite payment gateway supports Authorize</inlineHelpText>
+        <label>Supports Offsite Authorize</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_Verify__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The payment gateway supports a verification only transaction that does not result in any charge to the customer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The payment gateway supports a verification only transaction that does not result in any charge to the customer.</inlineHelpText>
+        <label>Supports Verify</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_Void__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Gateway supports ability to void transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Gateway supports ability to void transactions.</inlineHelpText>
+        <label>Supports Void</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Supports_eCheck__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Gateway will be enabled for eCheck (EFT/ACH/Direct Debit) processing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Gateway will be enabled for eCheck (EFT/ACH/Direct Debit) processing.</inlineHelpText>
+        <label>Supports eCheck</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Token__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** The token used by the business group to process credit card and e-checks (not supported for all customers, check with your administrator if you have any questions).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** The token used by the business group to process credit card and e-checks (not supported for all customers, check with your administrator if you have any questions).</inlineHelpText>
+        <label>Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Use_Offsite__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When selected, the related payment gateway will use the offsite payment method. Displayed only if a payment gateway is a test gateway.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When selected, the related payment gateway will use the offsite payment method. Displayed only if a payment gateway is a test gateway.</inlineHelpText>
+        <label>Enable Offsite</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Payment Gateway</label>
+    <listViews>
+        <fullName>OrderApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>OrderApi__Token__c</columns>
+        <columns>OrderApi__Supports_Authorize__c</columns>
+        <columns>OrderApi__Supports_Capture__c</columns>
+        <columns>OrderApi__Supports_Credit__c</columns>
+        <columns>OrderApi__Supports_Void__c</columns>
+        <columns>OrderApi__Is_Test__c</columns>
+        <columns>OrderApi__Is_Enabled__c</columns>
+        <columns>OrderApi__Require_Email__c</columns>
+        <columns>OrderApi__Require_Phone__c</columns>
+        <columns>OrderApi__AVS_Configuration__c</columns>
+        <columns>OrderApi__Require_CVV__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Payment Gateway Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Payment Gateways</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>OrderApi__Token__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Supports_Authorize__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Supports_Capture__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Supports_Credit__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Supports_Void__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Is_Test__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OrderApi__Is_Enabled__c</lookupDialogsAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Business_Group__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Deposit_Account__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Is_Enabled__c</lookupFilterFields>
+        <lookupFilterFields>OrderApi__Is_Test__c</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Token__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Supports_Authorize__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Supports_Capture__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Supports_Credit__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Supports_Void__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Is_Test__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OrderApi__Is_Enabled__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>OrderApi__Token__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Supports_Authorize__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Supports_Capture__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Supports_Credit__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Supports_Void__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Is_Test__c</searchFilterFields>
+        <searchFilterFields>OrderApi__Is_Enabled__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

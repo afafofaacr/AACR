@@ -1,0 +1,26 @@
+<!--
+ - Created by lauren.lezberg on 2/13/2020.
+ -->
+
+<apex:page id="SpeakerEmailResponse" sideBar="false" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+
+    <head>
+        <title>Speaker Response</title>
+        <meta content="initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, minimal-ui" name="viewport"/>
+    </head>
+
+    <apex:includeLightning />
+    <apex:slds />
+
+    <div id="responseCmp"/>
+
+    <script>
+        $Lightning.use("c:AACRCommunity", function() {
+            $Lightning.createComponent("c:SpeakerEmailResponse",
+                {},
+                "responseCmp",
+                function(cmp) {});
+        });
+    </script>
+
+</apex:page>

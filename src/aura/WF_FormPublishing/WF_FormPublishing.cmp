@@ -1,0 +1,50 @@
+<!--
+ - Created by afaf.awad on 10/20/2021.
+ -->
+
+<aura:component description="WF_FormPublishing" controller="WF_FormPublishingController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="recordId" type="Id" default="" description="SF Id of Survey Object"/>
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="showDate" type="Boolean" default="false" description="Show publish date if publish type is schedule"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:registerEvent name="EC_AudienceEvent" type="c:EC_AudienceEvent"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+
+    <div style="padding-bottom: 35px">
+        <lightning:recordEditForm aura:id="publishingForm"
+                                  recordId="{!v.recordId}"
+                                  onload="{!c.handleOnLoad}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  onerror="{!c.handleError}"
+                                  objectApiName="Survey__c">
+
+            <lightning:messages/>
+            <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner/>
+                </div>
+            </div>
+            <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+                <div class="slds-grid slds-gutters slds-grow">
+                    <div class="slds-col slds-size_1-of-1">
+                        <div style="width: 50%">
+                            <lightning:inputField aura:id="publishMethod" fieldName="Publishing_Method__c" onchange="{!c.publishTypeChange}"/>
+                        </div>
+                            <lightning:inputField aura:id="publishDate" fieldName="Publish_Date__c" class="{!v.showDate ? '' : 'slds-hide'}"/>
+                            <lightning:inputField aura:id="confirmText" fieldName="Additional_Confirmation_Text__c"/>
+                    </div>
+
+                </div>
+            </div>
+        </lightning:recordEditForm>
+    </div>
+</aura:component>

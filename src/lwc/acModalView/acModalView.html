@@ -1,0 +1,39 @@
+<!--
+ - Created by mitfity on 24.07.2019.
+ -->
+
+<!-- AC Modal Window -->
+<template>
+    <section role="dialog" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <template if:false={lockButtons}>
+                    <lightning-button-icon class="slds-modal__close" variant="bare-inverse"
+                                           icon-name="utility:close" alternative-text={labels.labelClose}
+                                           size="large" onclick={onCloseModalClicked}></lightning-button-icon>
+                </template>
+                <h2 class="slds-text-heading_medium slds-hyphenate">{title}</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium">
+                <slot></slot>
+            </div>
+            <footer class="slds-modal__footer">
+                <template if:true={error}>
+                    <c-ac-error-panel errors={error}></c-ac-error-panel>
+                </template>
+                <template if:true={lockButtons}>
+                    <div class="slds-is-relative spinner-container">
+                        <lightning-spinner></lightning-spinner>
+                    </div>
+                </template>
+                <template if:false= {lockButtons}>
+                    <lightning-button class="slds-button" variant="neutral" onclick={onCloseModalClicked}
+                                      label={labels.btnCancel}></lightning-button>
+                    <lightning-button class="slds-button" variant={acceptVariant} onclick={onAcceptClicked}
+                                      label={acceptLabel}></lightning-button>
+                </template>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

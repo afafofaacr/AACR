@@ -1,0 +1,29 @@
+/**
+ * Created by lauren.lezberg on 1/2/2020.
+ */
+.THIS div.slds-col.slds-no-space.forceListViewManagerPrimaryDisplayManager{
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.THIS.slds-form-element__control{
+    display: inline-grid;
+    position:relative;
+}
+
+.THIS .slds-form-element__label{
+    font-weight:700;
+}
+
+.THIS .slds-select_container{
+    max-width:150px;
+}
+
+
+.THIS h3{
+    font-size:1.25rem;
+}
+
+.THIS .forceListViewManager{
+    height: auto;
+}

@@ -1,0 +1,82 @@
+<!--
+ - Created by lauren.lezberg on 9/8/2020.
+ -->
+
+<aura:component description="AddressAutocomplete" controller="AddressAutocompleteController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="label" type="string" default="" description="Label for lookup search bar" access="public"/>
+    <aura:attribute name="SearchKeyWord" type="string" description="Search word string to use to filter records"
+                    access="public"/>
+    <aura:attribute name="Message" type="String" default="" description="Message to display for any error conditions"
+                    access="public"/>
+    <aura:attribute name="required" type="Boolean" default="false" description="Is input required?"/>
+    <aura:attribute name="address" type="object" description="Final address object"/>
+    <aura:attribute name="placeId" type="String" description="google api place Id"/>
+
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="selection" type="object" default="{}" description="Used to store selected sObject Record"
+                    access="private"/>
+    <aura:attribute name="listOfSearchRecords" type="List"
+                    description="Used to store the list of search records which are returned based on the SearchKeyWord attribute"
+                    access="private"/>
+
+
+    <!-- HANDLERS -->
+    <aura:handler name="change" value="{!v.placeId}" action="{!c.handleAddressLoad}"/>
+    <aura:handler name="oSelectedRecordEvent" event="c:SelectedObjectRecordEvt" action="{!c.handleComponentEvent}"/>
+
+
+    <div onmouseleave="{!c.onblur}" aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close"
+         data-select="single">
+        <label class="slds-form-element__label" for="lookup-348">
+            <div class="slds-grid">
+                <aura:if isTrue="{!v.required}"><abbr title="required" class="slds-required">*</abbr></aura:if>
+                {!v.label}
+            </div>
+        </label>
+        <!-- SEARCH BAR -->
+        <div class="slds-form-element__control">
+        <div class="slds-input-has-icon slds-input-has-icon--right">
+            <!-- SELECTED RECORD -->
+            <div aura:id="lookup-pill" class="slds-pill-container slds-hide">
+                <div class="slds-pill pillSize">
+                    <div class="slds-col">
+                      <span class="slds-pill__icon_container">
+                        <span class="slds-icon_container slds-icon-standard-account" title="Account">
+                          <lightning:icon iconName="standard:address" alternativeText="Address"/>
+                        </span>
+                      </span>
+                        <span class="slds-pill__label">{!v.selection.description}</span>
+                    </div>
+                    <div class="slds-col">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_right">
+                        <lightning:buttonIcon alternativeText="Remove" iconName="utility:close" onclick="{!c.clear}" variant="bare"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div aura:id="lookupField" class="slds-show">
+                <ui:inputText click="{!c.onfocus}" updateOn="keyup" keyup="{!c.keyPressController}"
+                              class="slds-lookup__search-input slds-input leftPaddingClass"
+                              value="{!v.SearchKeyWord}" placeholder="Search..."/>
+            </div>
+            <ul style="min-height:40px;margin-top:0px !important"
+                class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds"
+                role="listbox">
+                <lightning:spinner class="slds-hide" variant="brand" size="small" aura:id="mySpinner"/>
+                <div class="slds-text-heading_medium">{!v.Message}</div>
+                <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                    <c:AddressAutocompleteResult oRecord="{!singleRec}"/>
+                </aura:iteration>
+            </ul>
+        </div>
+
+
+        <!--LOOKUP RESULT LIST-->
+
+        </div>
+    </div>
+</aura:component>

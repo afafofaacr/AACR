@@ -1,0 +1,65 @@
+<!--
+ - Created by lauren.lezberg on 9/25/2020.
+ -->
+
+<aura:component description="ResendConfirmationEmail" controller="ResendConfirmationEmailController" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable,force:hasRecordId">
+    <aura:attribute name="isOpen" type="Boolean" description="Is modal open"/>
+    <aura:attribute name="addresses" type="List" description="list of email addresses"/>
+    <aura:attribute name="sendDisabled" type="Boolean" default="false" description="is send button disabled"/>
+
+        <lightning:card iconName="utility:send" title="Resend Confirmation Email" >
+            <aura:set attribute="actions">
+                <lightning:button label="Send" variant="brand" onclick="{!c.openModal}"/>
+            </aura:set>
+        </lightning:card>
+
+
+    <aura:if isTrue="{!v.isOpen}">
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+             aria-modal="true" aria-describedby="modal-content-id-1"
+             class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close">
+                    <lightning:buttonIcon iconName="utility:close" variant="bare" onclick="{!c.closeModal}"/>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Are you sure?</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div class="slds-form-element__label">Please enter any email addresses you would like to CC by clicking the '+' button. </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_2-of-3">
+                            <lightning:input aura:id="eAddr" label="Add Email Address" onkeyup="{!c.validateInput}"/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                            <lightning:buttonIcon iconName="utility:add" variant="brand" onclick="{!c.addToList}" class="buttonTopMargin"/>
+                    </div>
+                </div>
+
+                <br/>
+                <aura:if isTrue="{!not(empty(v.addresses))}">
+                <label>CC'd Addresses:</label>
+                <aura:iteration items="{!v.addresses}" var="add">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_2-of-3">
+                        <div class="slds-text-heading_small">{!add}</div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                        <lightning:buttonIcon iconName="utility:close" value="{!add}" variant="bare" onclick="{!c.removeFromList}"/>
+                        </div>
+                    </div>
+                </aura:iteration>
+                </aura:if>
+
+                    <div class="slds-align_absolute-center">
+                        <lightning:button label="Cancel" onclick="{!c.closeModal}"/>
+                        <lightning:button label="Send" variant="brand" onclick="{!c.sendEmail}" disabled="{!v.sendDisabled}"/>
+                    </div>
+             </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

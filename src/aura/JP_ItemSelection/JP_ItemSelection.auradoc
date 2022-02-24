@@ -1,0 +1,30 @@
+<!--
+ - Created by lauren.lezberg on 10/15/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_ProductFlowController</p>
+        <p>
+            The <code>JP_ItemSelection</code> component is a Join_Process__mdt component that displays the membership related items in a sales order. These include actual memberships
+            and any dues items that may be present.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>
+            If the membership item is $0(Associate/Student) and the sales order is not a renewal but renewals are open, the component will display options for the user to choose which years
+            they want to purchase for. The available years are dynamic based on the Renewal_Settings__c custom setting.
+        </p>
+        <p>
+            If the membership item is $0(Associate/Student) and the sales order is not a renewal but renewals are open , the user will receive a 2 year membership if the current year is one year before the
+            Renewal_Settings__c term year field. (ex. The year is 2019 and renewals are open for 2020)
+        </p>
+        <p>
+            The <code>JP_ItemSelection</code> component performs no validation before moving forward/backward in a join process because the item cannot be manipulated.
+            Any error handling will be performed on term change if applicable.
+        </p>
+    </aura:description>
+    <!--<aura:example name="JP_ItemSelection" ref="c:JP_ItemSelection" label="JP_ItemSelection">-->
+        <!--Example for JP_ItemSelection-->
+    <!--</aura:example>-->
+</aura:documentation>

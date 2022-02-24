@@ -1,0 +1,140 @@
+<!--
+ - Created by lauren.lezberg on 9/17/2020.
+ -->
+
+<apex:page id="UpdateAddressInformation"
+           lightningStyleSheets="true"
+           docType="html-5.0"
+           showHeader="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           controller="MyAddressesController">
+
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <style>
+
+
+        .slds-form-element__label{
+            font-size:1.25rem !important;
+        }
+
+        .myAddresses{
+            font-size: 1.5rem;
+        }
+
+
+        .slds-checkbox .slds-checkbox_faux{
+            height:2rem !important;
+            width:2rem !important;
+        }
+
+        lightning-helptext{
+            display:none;
+        }
+
+        .header {
+            font-size: 30px;
+            font-weight:500;
+        }
+
+        .infoMessage {
+            font-size: 14px;
+        }
+
+        th{
+            font-size:1.25rem;
+        }
+
+        div.iziToast-capsule{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        button.slds-button.slds-button_icon.slds-button_icon-bare{
+            zoom:1.5;
+        }
+
+       .slds-button.slds-button_brand{
+            background-color: #50B848;
+            border-color: #50B848;
+            color: white;
+            font-size: 1.5rem;
+            padding:8px;
+       }
+
+        button.slds-button.slds-button_brand{
+            background-color: #50B848;
+            border-color: #50B848;
+            color: white;
+            font-size: 1.5rem;
+            padding:8px;
+        }
+
+
+        div.slds-form_stacked{
+            font-size:1.5rem;
+        }
+    </style>
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            My Addresses
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+
+            <div class="slds-scope">
+            <div class="slds-align_absolute-center slds-m-around_medium">
+                <div style="width: 1340px; ">
+                    <div class="header slds-border_bottom slds-m-top_medium">My Addresses</div>
+                    <br/>
+                    <div class="infoMessage">
+                        <div class="slds-text-heading_medium">
+                            <apex:outputText value=" {!$Setup.Update_Address_text__c.Header_Text__c}" escape="false"/>
+                        </div>
+                    </div>
+
+                    <div class="myAddresses">
+                        <div id="addressInfo"/>
+                    </div>
+
+                    <apex:form >
+                        <div class="slds-align_absolute-center">
+                            <apex:commandButton action="{!goToRedirect}" value="Done" styleClass="slds-button slds-button_brand"/>
+                        </div>
+                    </apex:form>
+
+                </div>
+            </div>
+
+            </div>
+
+        </apex:define>
+
+    </apex:composition>
+
+
+    <script>
+
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:MyAddresses",
+                {
+                    contactId : '{!contactId}'
+                },
+                "addressInfo",
+                function(cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

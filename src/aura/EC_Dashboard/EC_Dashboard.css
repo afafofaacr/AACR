@@ -1,0 +1,67 @@
+/**
+ * Created by afaf.awad on 2/8/2021.
+ */
+
+.THIS .dashButtons{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.25rem;
+    font-family:'GothamMedium';
+    text-transform: uppercase;
+    width: 100%;
+    padding: .8rem;
+    line-height: 1.5;
+}
+
+.THIS button.slds-button.slds-button_brand:hover{
+    color:token(aacrGreen);
+    background-color: white;
+    border:1px solid token(aacrGreen);
+}
+
+
+.THIS .slds-dropdown__item>a{
+    font-size: 1.25rem;
+}
+
+.THIS .tableStyle{
+    font-size: 1.5rem;
+    padding: .9rem;
+}
+
+.THIS .tableMargins{
+    margin-top: 1.5rem
+}
+
+.THIS .slds-scrollable_x {
+    overflow-y:visible!important;overflow-x:visible!important;
+}
+
+.THIS .slds-scrollable_y{
+    overflow-y:visible!important;overflow-x:visible!important;
+}
+
+.THIS .slds-dropdown__item{
+    font-size: .8rem;
+}
+
+.THIS .slds-text-heading_small{
+    font-size: 2.2rem;
+    color: token(aacrGreen);
+    font-family: 'GothamBook';
+    text-transform: uppercase;
+    line-height: 1.5;
+
+}
+
+.THIS .slds-cell-fixed{
+    font-family: 'GothamBold' !important;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.THIS .slds-grid{
+    font-family: 'GothamBook' !important;
+    font-size: 1.5rem;
+}

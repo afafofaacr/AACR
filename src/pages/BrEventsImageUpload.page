@@ -1,0 +1,46 @@
+<apex:page id="BrEventsImageUpload" standardController="BR_Event__c" extensions="BrEventsImageUploadCtrl">
+    <apex:form style="margin-top: 20px;">
+        <div style="{!if((fileMainImageId!=null),'display:block','display:none;')}">
+            <p style="font-size: 14px;">Please upload and save image in order to setup event main banner image.<br />
+                Recommended image size 1094 x 400px. This image would be visible on top of the event detail page.
+            </p>
+        </div>
+        <apex:inputFile value="{!mainImageFile}" fileName="{!mainImageFileName}" />
+        <apex:outputLabel style="font-size: 14px;" value="Delete previous banner image" />
+        <apex:inputCheckbox style="margin: 0 50px 0 10px;" value="{!isDeletePrevMainImage}" />
+        <apex:commandButton style="background:#0080ff;padding:7px;color:#ffffff;border:none;" value="Save Main Image" action="{!saveMainImage}" /><br />
+        <apex:image style="margin-top: 10px;{!if(or(fileMainImageId==null,BEGINS(fileMainImageId,'http://'),BEGINS(fileMainImageId,'https://')),'display:none','display:block')}"
+                    url="/sfc/servlet.shepherd/version/download/{!fileMainImageId}"
+                    height="400" width="1094"/>
+        <apex:image style="margin-top: 10px;{!if(or(BEGINS(fileMainImageId,'http://'),BEGINS(fileMainImageId,'https://')),'display:block','display:none')}"
+                    url="{!fileMainImageId}"
+                    height="400" width="1094"/>
+        <div style="{!if((fileMainImageId==null),'margin-top:10px;display:block;background-color:#B0AFB0;height:400px;width:1094px;','display:none')}">
+            <p style="font-size: 16px; padding: 180px;">Please upload and save image in order to setup event main banner image.<br />
+                Recommended image size 1094 x 400px. This image would be visible on top of the event detail page.
+            </p>
+        </div>
+        <div style="{!if((fileListViewId!=null),'display:block','display:none;')}">
+            <p style="font-size: 14px;">Please upload and save image in order to setup event list view image.<br />
+                Recommended image size 228 x 164px. This image would be visible on the event view page.
+            </p>
+        </div>
+        <div style="margin-top: 20px;">
+            <apex:inputFile value="{!fileListViewImage}" fileName="{!fileListViewImageName}" />
+            <apex:outputLabel style="font-size: 14px;" value="Delete previous list image" />
+            <apex:inputCheckbox style="margin: 0 50px 0 10px;" value="{!isDeletePrevListViewImage}"/>
+            <apex:commandButton style="background:#0080ff;padding:7px;color:#ffffff;border:none;" value="Save List View Image" action="{!saveListViewImage}" /><br />
+            <apex:image style="margin-top: 10px;{!if(or(fileListViewId==null,BEGINS(fileListViewId,'http://'),BEGINS(fileListViewId,'https://')),'display:none','display:block')}"
+                        url="/sfc/servlet.shepherd/version/download/{!fileListViewId}"
+                        height="164" width="228"/>
+            <apex:image style="margin-top: 10px;{!if(or(BEGINS(fileListViewId,'http://'),BEGINS(fileListViewId,'https://')),'display:block','display:none')}"
+                        url="{!fileListViewId}"
+                        height="164" width="228"/>
+            <div style="{!if((fileListViewId==null),'margin-top:10px;display:block;background-color:#B0AFB0;height:164px;width:228px;','display:none')}">
+                <p style="font-size: 14px; padding: 20px 10px;">Please upload and save image in order to setup event list view image.<br />
+                    Recommended image size 228 x 164px. This image would be visible on the event view page.
+                </p>
+            </div>
+        </div>
+    </apex:form>
+</apex:page>

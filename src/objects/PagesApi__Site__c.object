@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Sites are a collection of Pages published and hosted natively on the Force.com platform.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>CPBase__Authorization_Required_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description for the authorization required page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description for the authorization required page of the site</inlineHelpText>
+        <label>Authorization Required Description</label>
+        <length>2048</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CPBase__Authorization_Required_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title for the authorization required page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title for the authorization required page of the site</inlineHelpText>
+        <label>Authorization Required Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__Default_Event_Listing_Style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Dictates which event listing style is presented by default within the Events page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Dictates which event listing style is presented by default within the Events page.</inlineHelpText>
+        <label>Default Event Listing Style</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tile</fullName>
+                    <color>#0B6FCE</color>
+                    <default>true</default>
+                    <label>Tile</label>
+                </value>
+                <value>
+                    <fullName>List</fullName>
+                    <color>#78C953</color>
+                    <default>false</default>
+                    <label>List</label>
+                </value>
+                <value>
+                    <fullName>Calendar</fullName>
+                    <color>#E27001</color>
+                    <default>false</default>
+                    <label>Calendar</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CPBase__Event_Search_Filters_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field references the event field set that defines the attributes that a user can use to filter search results.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field references the event field set that defines the attributes that a user can use to filter search results.</inlineHelpText>
+        <label>Event Search Filters CSV</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__Generic_Error_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description for the generic error page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description for the generic error page of the site</inlineHelpText>
+        <label>Generic Error Description</label>
+        <length>2048</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CPBase__Generic_Error_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title for the generic error page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title for the generic error page of the site</inlineHelpText>
+        <label>Generic Error Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__Limit_Exceeded_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description for the limit exceeded page of the site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description for the limit exceeded page of the site.</inlineHelpText>
+        <label>Limit Exceeded Description</label>
+        <length>2048</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CPBase__Limit_Exceeded_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title for the limit exceeded page of the site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title for the limit exceeded page of the site</inlineHelpText>
+        <label>Limit Exceeded Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__Maintenance_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description for the maintainence page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description for the maintainence page of the site</inlineHelpText>
+        <label>Maintenance Description</label>
+        <length>2048</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CPBase__Maintenance_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title for the maintainence page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title for the maintainence page of the site</inlineHelpText>
+        <label>Maintenance Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__Page_Not_Found_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description for the page not found page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description for the page not found page of the site</inlineHelpText>
+        <label>Page Not Found Description</label>
+        <length>2048</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CPBase__Page_Not_Found_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title for the page not found page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title for the page not found page of the site</inlineHelpText>
+        <label>Page Not Found Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__Profile_Contact_Fieldset_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma separated field set names that will be displayed on the profile page.</inlineHelpText>
+        <label>Profile Contact Fieldset(s) CSV</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__Service_Not_Available_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description for the Service Not Available page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description for the Service Not Available page of the site</inlineHelpText>
+        <label>Service Not Available Description</label>
+        <length>2048</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CPBase__Service_Not_Available_title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title for the Service Not Available page of the site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Title for the Service Not Available page of the site</inlineHelpText>
+        <label>Service Not Available title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CPBase__User_Info_Contact_Field_Set__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>A single field set that will show information about a User in the system.</inlineHelpText>
+        <label>User Info Contact Field Set</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Sites</relationshipLabel>
+        <relationshipName>Sites</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked access to the Site is controlled by the related user-defined Access Permissions. Defaults unchecked - essentially enabling all public and authenticated Users access to the Site and related content.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked access to the Site is controlled by the related user-defined Access Permissions. Defaults unchecked - essentially enabling all public and authenticated Users access to the Site and related content.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Enable_eStore__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** Checked when the Site is linked to a Store.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** Checked when the Site is linked to a Store.</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Store__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Related Store.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Related Store.</inlineHelpText>
+        <label>Store</label>
+        <referenceTo>OrderApi__Store__c</referenceTo>
+        <relationshipLabel>Sites</relationshipLabel>
+        <relationshipName>Sites</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Auth_Provider_Default_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The default account to use for Auth Provider</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The default account to use for Auth Provider</inlineHelpText>
+        <label>Auth Provider Default Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sites</relationshipLabel>
+        <relationshipName>Sites</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Base_Title_Tag__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The Base Title Tag is used as a prefix or suffix to all child Page &quot;Title Tags&quot;. For example : &quot;My Custom Page &lt; My Base Title Tag&quot;. Defaults to the name of the Site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The Base Title Tag is used as a prefix or suffix to all child Page &quot;Title Tags&quot;. For example : &quot;My Custom Page &lt; My Base Title Tag&quot;. Defaults to the name of the Site.</inlineHelpText>
+        <label>Base Title Tag</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Community_Network_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Community Network Id that uniquely identifies Community</inlineHelpText>
+        <label>Community Network ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Community_Network_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Community Network Name that uniquely identifies Community</inlineHelpText>
+        <label>Community Network Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Cookie_Decline_Redirect_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Required if Enable Cookie Prompt is checked. Field contains the URL to redirect to if the prompt is not accepted. This is conditionally required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Required if Enable Cookie Prompt is checked. Field contains the URL to redirect to if the prompt is not accepted. This is conditionally required.</inlineHelpText>
+        <label>Cookie Decline Redirect URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Create_Account_Override_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Providing a URL will hide the &quot;Create a user account&quot; checkbox on the authentication page and display the provided URL link in its place.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Providing a URL will hide the &quot;Create a user account&quot; checkbox on the authentication page and display the provided URL link in its place.</inlineHelpText>
+        <label>Create Account Override URL</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Default_Community_New_User_Profile__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Default Community New User Profile</inlineHelpText>
+        <label>Default Community New User Profile</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional description of the Site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional description of the Site.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Enable_Cookie_Prompt__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Site will display a prompt asking the user to accept the use of cookies. If not accepted, the user will be redirected to an external site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Site will display a prompt asking the user to accept the use of cookies. If not accepted, the user will be redirected to an external site.</inlineHelpText>
+        <label>Enable Cookie Prompt</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Enable_SEF_URLs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Reserved for Future Use</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reserved for Future Use</inlineHelpText>
+        <label>Reserved for Future Use</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Google_Login_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Login URL from Auth Provider in Setup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Login URL from Auth Provider in Setup</inlineHelpText>
+        <label>Google Login URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Search_Default_Sort_Field__c</fullName>
+        <defaultValue>&quot;NAME&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** Defaults Group Name ** Combined with the Search Results Sort Order, this field defines the field to sort group search results in ascending or descending order. Limited to Group Fields Only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Defaults Group Name ** Combined with the Search Results Sort Order, this field defines the field to sort group search results in ascending or descending order. Limited to Group Fields Only.</inlineHelpText>
+        <label>Group Search Default Sort Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Search_Filters_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field references the field set that defines the attributes that a user can use to filter search results.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field references the field set that defines the attributes that a user can use to filter search results.</inlineHelpText>
+        <label>Group Search Filters (CSV)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Search_Page_Results__c</fullName>
+        <defaultValue>10</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** Default 10 ** The value in this field defines the maximum number of results that will be returned for search results on the Groups page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Default 10 ** The value in this field defines the maximum number of results that will be returned for search results on the Groups page.</inlineHelpText>
+        <label>Group Search Page Results</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Search_Result_Display_Fields_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the fields to be displayed on the group tiles in the Groups page using comma separated values of field API names. Limited to Community Group fields only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the fields to be displayed on the group tiles in the Groups page using comma separated values of field API names. Limited to Community Group fields only.</inlineHelpText>
+        <label>Group Search Result Display Fields (CSV)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Search_Results_Sort_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Defaults Ascending ** Combined with the Search Results Sort Field, this field defines the order in which the search results will be displayed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Defaults Ascending ** Combined with the Search Results Sort Field, this field defines the order in which the search results will be displayed.</inlineHelpText>
+        <label>Group Search Results Sort Order</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ASC</fullName>
+                    <default>false</default>
+                    <label>ASC</label>
+                </value>
+                <value>
+                    <fullName>DESC</fullName>
+                    <default>false</default>
+                    <label>DESC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Default__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The default site for a given community. Only one site can be default for a community.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The default site for a given community. Only one site can be default for a community.</inlineHelpText>
+        <label>Is Default</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Site will be published and made available to the appropriate audience. Defaults unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Site will be published and made available to the appropriate audience. Defaults unchecked.</inlineHelpText>
+        <label>Is Published</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__LinkedIn_Login_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Login URL from Auth Provider in Setup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Login URL from Auth Provider in Setup</inlineHelpText>
+        <label>LinkedIn Login URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Login_Override_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Portal users will be redirected to the provided URL when the &quot;Login&quot; button is clicked on the authentication page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Portal users will be redirected to the provided URL when the &quot;Login&quot; button is clicked on the authentication page.</inlineHelpText>
+        <label>Login Override URL</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Login_Redirect_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Relative URL to be redirected on successful login</inlineHelpText>
+        <label>Login Redirect URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Menu__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Menu to use for the Site&apos;s &quot;Primary&quot; Navigation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Menu to use for the Site&apos;s &quot;Primary&quot; Navigation.</inlineHelpText>
+        <label>Nav Menu</label>
+        <referenceTo>PagesApi__Menu__c</referenceTo>
+        <relationshipLabel>Sites</relationshipLabel>
+        <relationshipName>Sites</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__No_Archive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>No Archive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__No_Follow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>No Follow</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__No_Index__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>No Index</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Profile_Page_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL for the profile page.</inlineHelpText>
+        <label>Profile Page URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__SEF_Slug__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reserved for Future Use</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reserved for Future Use</inlineHelpText>
+        <label>Reserved for Future Use</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Show_Group_Search_Filters__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**  Default Unchecked ** This field enables or disables the filters in the Groups page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**  Default Unchecked ** This field enables or disables the filters in the Groups page.</inlineHelpText>
+        <label>Show Group Search Filters</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Site_Template_Key__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the template to use for creating standard pages and menus related to the site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the template to use for creating standard pages and menus related to the site.</inlineHelpText>
+        <label>Site Template Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Site_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The base URL for the Site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The base URL for the Site.</inlineHelpText>
+        <label>Site URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Theme__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** The Theme to use for the branding and style of pages contained in the Site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The Theme to use for the branding and style of pages contained in the Site.</inlineHelpText>
+        <label>Theme</label>
+        <referenceTo>PagesApi__Theme__c</referenceTo>
+        <relationshipLabel>Sites</relationshipLabel>
+        <relationshipName>Sites</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Title_Tag_Separator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional character to use to separate the Base Title Tag from the Page Title Tag. In the example below the &quot;&lt;&quot; character is used as the Title Tag Separator. Defaults to &quot;|&quot;
+
+&quot;My Custom Page Title Tag &lt; My Base Title Tag&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional character to use to separate the Base Title Tag from the Page Title Tag. In the example below the &quot;&lt;&quot; character is used as the Title Tag Separator. Defaults to &quot;|&quot;
+
+&quot;My Custom Page Title Tag &lt; My Base Title Tag&quot;</inlineHelpText>
+        <label>Title Tag Separator</label>
+        <length>1</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Twitter_Login_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Login URL from Auth Provider in Setup</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Login URL from Auth Provider in Setup</inlineHelpText>
+        <label>Twitter Login URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__User_Login_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL for the login page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL for the login page.</inlineHelpText>
+        <label>User Login URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__User_Reset_Password_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL for the reset password page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL for the reset password page.</inlineHelpText>
+        <label>User Reset Password URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__User_Self_Registration_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL for the self registration page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL for the self registration page.</inlineHelpText>
+        <label>User Self Registration URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <label>Site</label>
+    <listViews>
+        <fullName>PagesApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>PagesApi__Theme__c</columns>
+        <columns>PagesApi__Is_Default__c</columns>
+        <columns>PagesApi__Is_Published__c</columns>
+        <columns>PagesApi__Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Site Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Sites</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>PagesApi__Theme__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Is_Default__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Is_Published__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Description__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>PagesApi__Theme__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Is_Default__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Is_Published__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Description__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Theme__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Is_Default__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Is_Published__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Description__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>PagesApi__Theme__c</searchFilterFields>
+        <searchFilterFields>PagesApi__Is_Default__c</searchFilterFields>
+        <searchFilterFields>PagesApi__Is_Published__c</searchFilterFields>
+        <searchResultsAdditionalFields>PagesApi__Theme__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Is_Default__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Is_Published__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

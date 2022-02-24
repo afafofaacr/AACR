@@ -1,0 +1,52 @@
+<!--
+ - Created by afaf.awad on 4/28/2020.
+ -->
+
+<apex:page id="myAACRHelpCustom" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+        <apex:includeLightning />
+        <apex:slds />
+
+        <c:pageStyle />
+
+        <apex:composition template="CPBase__template">
+            <!-- PAGE TITLE -->
+            <apex:define name="pageTitle">
+                Help
+            </apex:define>
+            <apex:define name="supernavRight">
+                {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+            </apex:define>
+            <!-- PAGE -->
+<!--            <apex:define name="helpMessage">-->
+<!--                -->
+<!--            </apex:define>-->
+
+            <apex:define name="pageMain">
+                <br/>
+                <p style="align-content: center;
+                    padding-left: 350px;
+                    padding-right: 350px;
+                    font-size: medium;">
+                    We are sorry, the system was unable to generate a Certificate of Participation for your Virtual Ticket. We have pre-filled a help ticket for you below. Please review and add details to description below.</p>
+                <p style="align-content: center;
+                    padding-left: 350px;
+                    padding-right: 350px;
+                    font-size: medium;">**Choose "Unable to download my Virtual Meeting letter of participation" for your Issue Type.**</p>
+                <br/>
+
+                <div id="helpComponent"/>
+            </apex:define>
+        </apex:composition>
+
+    <script>
+
+            $Lightning.use("c:aacrCommunity", function() {
+                $Lightning.createComponent("c:SN_HelpForm",
+                    {},
+                    "helpComponent",
+                    function(cmp) {
+
+                    });
+            });
+        </script>
+</apex:page>

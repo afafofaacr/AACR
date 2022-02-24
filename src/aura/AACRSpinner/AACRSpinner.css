@@ -1,0 +1,33 @@
+/**
+ * Created by lauren.lezberg on 1/22/2019.
+ */ 
+.THIS {
+    position: absolute;
+    display: block;
+}
+
+
+.THIS .slds-spinner_large.slds-spinner:before{
+    background: token(aacrGreen);
+}
+
+.THIS .slds-spinner_large.slds-spinner:after{
+    background: token(aacrGreen);
+}
+
+.THIS .slds-spinner_large .slds-spinner__dot-a:before{
+    background: token(aacrGreen);
+}
+
+
+.THIS .slds-spinner_large .slds-spinner__dot-b:before{
+    background: token(aacrGreen);
+}
+
+.THIS .slds-spinner_large .slds-spinner__dot-a:after{
+    background: token(aacrGreen);
+}
+
+.THIS .slds-spinner_large .slds-spinner__dot-b:after{
+    background: token(aacrGreen);
+}

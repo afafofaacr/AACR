@@ -1,0 +1,26 @@
+<apex:page showHeader="false"
+    standardStylesheets="false"
+    docType="html-5.0"
+    applyHtmlTag="false"
+    applyBodyTag="false" controller="DW_SubscriptionsController">
+    <apex:composition template="CPBase__profile" >
+       <apex:define name="customProfilePageLinks" >
+          <li id="em-settings-tab">
+            <a data-toggle="tab" href="#em-renew">
+              My Membership
+            </a>
+          </li>
+       </apex:define>
+       <apex:define name="customProfilePage">
+           <div role="tabpanel" class="tab-pane" id="em-renew">
+               <c:DW_Subscriptions showMemberYear="{!memberYear}" showMemberCurrent="{!memberCurrent}" 
+                                   showNonMember="{!nonMember}" showMemberSuspended="{!memberSuspended}"
+                                   showMemberComplete="{!memberComplete}" showMemberIncomplete="{!memberIncomplete}"
+                                   showPrior="{!prior}" becomeMemberUrl="{!joinURL}" noAccess="{!noAccess}" canRenew="{!showRenew}"/>
+           </div>
+      <script type="text/javascript">
+      $("#em-profile").addClass("active in");$("#em-profile-tab").addClass("active");
+      </script>
+       </apex:define>
+    </apex:composition>
+</apex:page>

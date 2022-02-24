@@ -1,0 +1,124 @@
+<!--
+ - Created by afaf.awad on 9/11/2020.
+ -->
+
+<aura:component description="VolunteerForm" controller="VolunteerFormController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="recordType" type="String" default="Volunteer" description="RecordTypeId tp create contact"/>
+    <aura:attribute name="isLoading" type="Boolean" default="true" description="Loading page"/>
+    <aura:attribute name="isSuccess" type="Boolean" default="false" description="Is submission successful"/>
+
+    <aura:attribute name="contact" type="Contact" description="current contact record"/>
+    <aura:attribute name="statesList" type="List" description="List of available states"/>
+    <aura:attribute name="countryList" type="List" description="List of available countries"/>
+    <aura:attribute name="address" type="Object" description="address object for current contact"/>
+
+    <aura:attribute name="salutationOptions" type="List" default="[
+        {'label': 'Dr.', 'value': 'Dr.'},
+        {'label': 'Mr.', 'value': 'Mr.'},
+        {'label': 'Mrs.', 'value': 'Mrs.'},
+        {'label': 'Ms.', 'value': 'Ms.'},
+        {'label': 'Prof.', 'value': 'Prof.'},
+    ]"/>
+    <aura:attribute name="fields" type="List" default="['salutation','firstName', 'lastName']"/>
+
+
+<!--    Recaptcha-->
+    <aura:attribute name="domain" type="String" description="Domain"/>
+    <aura:attribute name="disabled" type="Boolean" description="Disable button"/>
+    <aura:attribute name="showIframe" type="Boolean" default="false" description="Show iframe"/>
+
+    <aura:registerEvent name="registerEvent" type="c:BrRegisterEvent"/>
+    <!--    Recaptcha-->
+
+    <aura:method name="updateContact" action="{!c.doNothing}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="registerEvent" event="c:BrRegisterEvent" action="{!c.saveContactInfo}"/>
+
+    <div class="slds-align_absolute-center">
+        <div style="width: 100%">
+            <aura:if isTrue="{!v.isSuccess}">
+                <div class="slds-box" style="border:none">
+                    <h2 class="slds-align_absolute-center slds-text-heading_large"><b>Thank you</b></h2>
+                    <p class="slds-text-heading_medium">Your submission has been received and an AACR staff member will
+                        be in touch shortly.</p>
+                </div>
+
+                <aura:set attribute="else">
+
+                    <lightning:recordEditForm aura:id="recordEditForm"
+                                              objectApiName="Contact"
+                                              recordTypeId="{!v.recordType}"
+                                              onsuccess="{!c.onSuccess}"
+                                              onerror="{!c.onError}">
+<!--                        <div style="padding-bottom: 20px">-->
+<!--                            <h2 class="slds-align_absolute-center slds-text-heading_large"><b>Volunteer Form</b></h2>-->
+<!--                            <br/>-->
+<!--                            <p class="slds-text-heading_small">-->
+<!--                                The AACR relies on people like you to lend your time and talent to help us spread the-->
+<!--                                word about the importance of cancer research.-->
+<!--                                We invite you to join us by volunteering at activities around the country that support-->
+<!--                                our programs. You can help by working with-->
+<!--                                us at runs, walks, rides, and many other events.</p>-->
+<!--                            <p class="slds-text-heading_small">Imagine a world without cancer. Join us in making it-->
+<!--                                happen.</p>-->
+<!--                        </div>-->
+                        <aura:if isTrue="{!v.isLoading}">
+                            <div class="slds-align_absolute-center">
+                                <c:AACRSpinner/>
+                            </div>
+                            <aura:set attribute="else">
+                                <lightning:messages/>
+
+                                <div style="margin-left: 3px;padding-right: 5px; padding-top: 3px;">
+
+                                    <lightning:inputName
+                                            aura:id="conName"
+                                            class="contactName"
+                                            label="Name"
+                                            required="true"
+                                            firstName=""
+                                            lastName=""
+                                            salutation=""
+                                            options="{!v.salutationOptions}"
+                                            fieldsToDisplay="{!v.fields}"
+                                            onchange="{!c.handleFieldUpdate}"/>
+
+                                </div>
+                                <div aura:id="fName_help_msg" data-help-message="true" role="alert"
+                                     class="slds-hide slds-form-element__help">Complete this field. </div>
+<!--                                <lightning:inputField aura:id="salutation" fieldName="Salutation" required="true" onchange="{!c.handleFieldUpdate}"/>-->
+<!--                                <div aura:id="salutation_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>-->
+<!--                                <lightning:inputField aura:id="firstName" fieldName="FirstName" required="true" onchange="{!c.handleFieldUpdate}"/>-->
+<!--                                <div aura:id="fName_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>-->
+<!--                                <lightning:inputField aura:id="lastName" fieldName="LastName" onchange="{!c.handleFieldUpdate}"/>-->
+<!--                                <div aura:id="lName_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>-->
+                                <lightning:inputField aura:id="suffix" fieldName="DonorApi__Suffix__c" style="padding-top: 11px;"/>
+                                <lightning:inputField aura:id="email" fieldName="Email" required="true" onchange="{!c.handleFieldUpdate}"/>
+                                <div aura:id="email_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+                                <abbr title="required" class="slds-required">*</abbr>
+                                <label class="phoneLabel" for="phone">Phone</label>
+                                <lightning:inputField aura:id="phone" fieldName="Phone" required="true" onchange="{!c.handleFieldUpdate}" variant="label-hidden" style="margin-left: 5px;"/>
+                                <div aura:id="phone_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+                                <div style="margin-left: 3px; margin-right: 2px;">
+                                <c:AddressEntry aura:id="mailingAddress" parent="{!this}" countryList="{!v.countryList}" statesList="{!v.statesList}" address="{!v.address}" />
+                                </div>
+                                <lightning:inputField aura:id="volunteerFor" fieldName="Volunteer_For__c" required="true" onchange="{!c.handleFieldUpdate}" style="padding-top: 15px;"/>
+                                <div aura:id="volFor_help_msg" data-help-message="true" role="alert" class="slds-hide slds-form-element__help">Complete this field.</div>
+                                <lightning:inputField aura:id="hearAACR" fieldName="Hear_About_AACR__c"/>
+                                <div class="captcha">
+                                    <iframe src="{!'/apex/ForceRecaptcha'}" class="iframe" frameborder="0" /><br/>
+                                    <br/>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </lightning:recordEditForm>
+                </aura:set>
+            </aura:if>
+        </div>
+    </div>
+
+</aura:component>

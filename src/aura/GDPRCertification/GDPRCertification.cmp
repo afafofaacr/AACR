@@ -1,0 +1,31 @@
+<!--
+ - Created by lauren.lezberg on 1/13/2021.
+ -->
+
+<aura:component description="GDPRCertification" controller="GDPRCertificationController">
+    <aura:attribute name="salesOrderId" type="String" description="salesOrderId"/>
+    <aura:attribute name="participantId" type="String" description="participant id"/>
+
+<!--    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    <aura:handler name="change" value="{!v.salesOrderId}" action="{!c.getInfo}"/>
+
+    <aura:if isTrue="{!v.participantId}">
+        <lightning:recordEditForm aura:id="gdprForm" objectApiName="BR_Participation__c" recordId="{!v.participantId}">
+            <lightning:messages/>
+            <div class="slds-grid">
+                <div class="slds-col">
+                <lightning:inputField aura:id="consent" variant="label-hidden" fieldName="GDPR_Certification__c"  onchange="{!c.handleChange}"/>
+                </div>
+                <div class="slds-col">
+                    <div class="slds-m-left_small">
+                        I agree that AACR and its affiliates may use, store and share my data to facilitate meeting
+                        registration and related activities. I understand that I may withdraw my permission at any time
+                        by submitting a request to AACR support at
+                    <a href="https://myaacr.aacr.org/myAACRHelp">https://myaacr.aacr.org/myAACRHelp</a>.
+                    </div>
+                </div>
+            </div>
+
+        </lightning:recordEditForm>
+    </aura:if>
+</aura:component>

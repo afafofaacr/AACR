@@ -1,0 +1,56 @@
+<!--
+ - Created by afaf.awad on 9/28/2021.
+ -->
+
+<aura:component description="WF_FormInfo" controller="WF_FormInfoController"
+                implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="recordId" type="Id" default="" description="SF Id of Survey Object"/>
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="disableSystemTag" type="Boolean" default="true" description="Enable system tag if it's a new form, else keep disabled"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+
+    <div style="padding-bottom: 35px">
+        <lightning:recordEditForm aura:id="surveyForm"
+                                  recordId="{!v.recordId}"
+                                  onload="{!c.handleOnLoad}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  onerror="{!c.handleError}"
+                                  objectApiName="Survey__c">
+
+            <lightning:messages/>
+            <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner/>
+                </div>
+            </div>
+            <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+                <div class="slds-grid slds-gutters slds-grow">
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning:inputField aura:id="Name" fieldName="Name" required="true" onchange="{!c.updateSystemTag}" />
+                        <lightning:inputField aura:id="description" fieldName="Description__c"/>
+                        <lightning:inputField aura:id="formType" fieldName="Form_Type__c" onchange="{!c.updateSystemTag}"/>
+                        <lightning:input aura:id="systemTag" label="System Tag" disabled="{!v.disableSystemTag}" required="true"
+                                         fieldLevelHelp="Leads and Contacts will be designated with the following System Tag"
+                                         class="slds-m-left_xx-small slds-p-bottom_small" />
+                        <lightning:inputField aura:id="authOptions" fieldName="Authentication_Options__c"/>
+                        <lightning:inputField aura:id="prefCategory" fieldName="Preference_Category__c"/>
+                        <lightning:inputField aura:id="optIn" fieldName="Opt_in_Options__c"/>
+
+                        <lightning:inputField aura:id="systemTagRO" fieldName="System_Tag__c" class="slds-hide"/>
+                    </div>
+
+                </div>
+            </div>
+        </lightning:recordEditForm>
+    </div>
+</aura:component>

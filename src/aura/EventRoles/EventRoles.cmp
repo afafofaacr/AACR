@@ -1,0 +1,124 @@
+<!--
+ - Created by lauren.lezberg on 6/17/2020.
+ -->
+
+<aura:component description="EventRoles" controller="EventRolesController" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="roles" type="List" description="list of all event roles"/>
+    <aura:attribute name="modalOpen" type="Boolean" description="is edit/new modal open" default="false"/>
+    <aura:attribute name="roleId" type="String" description="id of selected role"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:card title="AACR Meeting Roles" class="slds-p-around_small">
+        <aura:set attribute="actions">
+            <lightning:button label="Add" iconName="utility:add" value="" onclick="{!c.openModal}"/>
+        </aura:set>
+        <!--<aura:set attribute="title">-->
+            <!--<div class="slds-m-around_small">-->
+                <!--<div class="slds-clearfix">-->
+                    <!--<div class="slds-float_left">-->
+                        <!--<h2 class="header-title-container">-->
+                            <!--<span class="slds-card__header-title slds-truncate">AACR Meeting Roles</span>-->
+                        <!--</h2>-->
+                    <!--</div>-->
+                    <!--<div class="slds-float_right">-->
+                        <!--<lightning:button label="Add" iconName="utility:add" value="" onclick="{!c.openModal}"/>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</aura:set>-->
+    <!--<div class="slds-p-around_small slds-box">-->
+
+
+    <aura:if isTrue="{!not(empty(v.roles))}">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table--striped slds-max-medium-table--stacked-horizontal"
+               role="grid">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Role">Role</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Primary">Primary?</div>
+                </th>
+                <th class="slds-cell-wrap slds-text-align_right" scope="col">
+                    <div class="slds-truncate" title="Actions">Actions</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <aura:iteration items="{!v.roles}" var="person">
+                <tr class="slds-hint-parent">
+                    <td role="gridcell" class="">
+                        <div class="slds-cell-wrap" title="{!person.Role__c}">
+                            {!person.Role__c}
+                        </div>
+                    </td>
+                    <td role="gridcell" class="">
+                        <div class="slds-cell-wrap" title="{!person.User__r.Name}">
+                            <a href="{!'/' + person.User__c}"
+                               target="_blank">{!person.User__r.Name}</a>
+                        </div>
+                    </td>
+                    <td role="gridcell" class="">
+                        <div class="slds-cell-wrap" title="{!person.Primary__c}">
+                            <lightning:input type="checkbox" disabled="true" checked="{!person.Primary__c}"/>
+                        </div>
+                    </td>
+                    <td role="gridcell" class="slds-cell-wrap slds-text-align_right">
+                        <div class="" title="actions">
+                            <lightning:buttonIcon iconName="utility:edit"
+                                                  onclick="{!c.openModal}"
+                                                  value="{!person.Id}"
+                                                  alternativeText="Edit"
+                                                  variant="bare"/>
+                            <lightning:buttonIcon iconName="utility:delete"
+                                                  onclick="{!c.confirmDelete}"
+                                                  value="{!person.Id}"
+                                                  alternativeText="Delete"
+                                                  variant="bare"/>
+                        </div>
+                    </td>
+                </tr>
+            </aura:iteration>
+            </tbody>
+        </table>
+    </aura:if>
+    <!--</div>-->
+    </lightning:card>
+
+    <aura:if isTrue="{!v.modalOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!not(empty(v.roleId))?'Edit Role':'New Role'}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-left_medium slds-p-right_medium slds-p-top_x-large slds-p-bottom_x-large" id="modal-content-id-1">
+                    <lightning:recordEditForm aura:id="roleForm" objectApiName="Meeting_Role__c" onsuccess="{!c.handleSuccess}">
+                        <lightning:messages/>
+                        <lightning:inputField fieldName="User__c"/>
+                        <lightning:inputField fieldName="Role__c"/>
+                        <lightning:inputField fieldName="Primary__c"/>
+                        <div class="slds-hide">
+                            <lightning:inputField fieldName="AC_Event__c" value="{!v.recordId}"/>
+                        </div>
+
+                        <div class="slds-align_absolute-center slds-m-top_medium">
+                            <lightning:button label="Save" variant="brand" type="submit"/>
+                        </div>
+                    </lightning:recordEditForm>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+</aura:component>

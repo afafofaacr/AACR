@@ -1,0 +1,72 @@
+<!--
+ - Created by lauren.lezberg on 10/7/2019.
+ -->
+
+<aura:component description="BackOfficeTicketing" controller="BackOfficeOrderController">
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="salesOrderId" type="String" description="ID of sales order being processed" />
+    <aura:attribute name="selectedId" type="String" description="Id of item selected from search bar"/>
+    <aura:attribute name="salesOrderLines" type="List" description="Sales order lines associated with the sales order"/>
+    <aura:attribute name="todayString" type="String" description="string of todays date"/>
+
+    <aura:attribute name="errorMsg" type="String" description="Error message" default=""/>
+
+    <aura:attribute name="processing" type="Boolean" description="Used to determine if information is currently being processed on page" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+    <aura:if isTrue="{!not(empty(v.errorMsg))}">
+        <div class="slds-box slds-theme_error slds-theme_alert-texture">
+            <div class="slds-text-heading_medium">{!v.errorMsg}</div>
+        </div>
+    </aura:if>
+
+    <div class="slds-grid slds-gutters slds-m-top_medium">
+        <div class="slds-col slds-align_absolute-center">
+            <c:ItemQuickAdd aura:id="itemLookup" selectedId="{!v.selectedId}" filterString="OrderApi__Item_Class__r.EventApi__Event__r.EventApi__Sold_Out__c = false AND OrderApi__Item_Class__r.EventApi__Event__r.EventApi__Is_Active__c = true AND OrderApi__Item_Class__r.OrderApi__Is_Active__c = true AND OrderApi__Is_Active__c = true AND OrderApi__Item_Class__r.OrderApi__Is_Event__c = true "/>
+        </div>
+        <div class="slds-col">
+            <div class="slds-align_bottom" style="margin-top:2.2rem;">
+                <lightning:button label="{!v.processing?'Processing...': 'Add to Order'}" variant="brand" onclick="{!c.addItemToSalesOrder}" disabled="{!v.processing}"/>
+            </div>
+        </div>
+        <div class="slds-col">
+            <div class="slds-float_right slds-text-heading_medium" style="margin-top:3rem;">
+                Total: <ui:outputCurrency value="{!v.salesOrderLines[0].OrderApi__Sales_Order__r.OrderApi__Subtotal__c!=null?v.salesOrderLines[0].OrderApi__Sales_Order__r.OrderApi__Subtotal__c:0.00}"
+                                          class="bold slds-text-heading_medium slds-m-left_small slds-m-right_small"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-card slds-p-around_medium slds-m-top_large">
+        <aura:iteration items="{!v.salesOrderLines}" var="item">
+            <div class="slds-grid slds-box slds-m-around_small">
+                <div class="slds-col slds-size_11-of-12">
+                    <div class="slds-text-heading_medium">{!item.OrderApi__Item__r.Name}</div>
+                    <div class="slds-grid">
+                        <div class="slds-text-heading_medium">{!item.OrderApi__Item_Class__r.EventApi__Event__r.EventApi__Display_Name__c}</div>
+                        &nbsp;
+                        <div class="slds-text-heading_medium"> - <ui:outputDate value="{!item.OrderApi__Item_Class__r.EventApi__Event__r.EventApi__Start_Date__c}" format="YYYY"/> </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-12">
+                    <div class="slds-float_right">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <div class="slds-text-heading_medium"><ui:outputCurrency value="{!item.OrderApi__Total__c}"/></div>
+                            </div>
+                            <div class="slds-col">
+                                <lightning:buttonIcon iconName="utility:close" size="large" variant="brand" alternativeText="Remove item"
+                                                      onclick="{!c.removeItemFromSalesOrder}" value="{!item.OrderApi__Item__c}"
+                                                      disabled="{!v.processing}" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

@@ -1,0 +1,111 @@
+<!--
+ - Created by lauren.lezberg on 7/9/2020.
+ -->
+
+<aura:component description="EventRegister" controller="EventRegisterController">
+    <aura:attribute name="stepId" type="String" description="id of step in process"/>
+    <aura:attribute name="fieldsetName" type="String" description="name of fieldset for reg form"/>
+    <aura:attribute name="contactId" type="String" description="id of current contact"/>
+    <aura:attribute name="logoImage" type="String" description="logo image url"/>
+    <aura:attribute name="isFormValid" type="Boolean" description="is reg form valid"/>
+    <aura:attribute name="participantId" type="String" description="id of step in process"/>
+    <aura:attribute name="salesOrderId" type="String" description="sales order Id"/>
+    <aura:attribute name="confirmed" type="Boolean" description="confirm field rate message" default="false"/>
+    <aura:attribute name="fieldCheckMessage" type="String" description="field check"/>
+    <aura:attribute name="isLoading" type="Boolean" description="component is loading" default="false"/>
+
+    <aura:attribute name="nextStep" type="Object" description="next step in process"/>
+
+    <aura:attribute name="showJointFields" type="Boolean" description="show joint providership fields" default="false"/>
+    <aura:attribute name="showAdvocate" type="Boolean" description="show advocate fields" default="false"/>
+    <aura:attribute name="showPrePostDoc" type="Boolean" description="show pre/post doc fields" default="false"/>
+    <aura:attribute name="showWorkshopFields" type="Boolean" description="show workshop group fields" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.isFormValid}" action="{!c.goToNextStep}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+
+<!--    <div class="segmentFloat">-->
+<!--        <c:RegistrationUserSegment aura:id="segment" contactId="{!v.contactId}"/>-->
+<!--    </div>-->
+<!--    <br/>-->
+    <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+        <c:AACRSpinner loadingText="Processing..."/>
+    </div>
+    <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+    <lightning:card class="slds-p-around_medium">
+
+        <aura:if isTrue="{!not(empty(v.fieldsetName))}">
+            <c:Fieldset aura:id="fSet" isValid="{!v.isFormValid}" objectAPIName="Contact"
+                        fieldsetName="{!v.fieldsetName}" recordId="{!v.contactId}"/>
+        </aura:if>
+        <aura:if isTrue="{!v.showAdvocate==true}">
+            <div class="slds-m-bottom_small">
+                <c:AdvocateRegistrationFields aura:id="advocateFields" contactId="{!v.contactId}"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.showWorkshopFields==true}">
+            <div class="slds-m-bottom_small">
+                <c:MentorTraineeRegistrationFields aura:id="workshopFields" salesOrderId="{!v.salesOrderId}"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.showPrePostDoc==true}">
+<!--            salesOrderId="{!v.salesOrderId}"-->
+            <c:PrePostDocCertification aura:id="pdocCert" contactId="{!v.contactId}" />
+        </aura:if>
+
+        <c:EventHealthSafetyAttestation aura:id="healthSafety" salesOrderId="{!v.salesOrderId}"/>
+
+    </lightning:card>
+    <br/>
+    <aura:if isTrue="{!v.showJointFields==true}">
+        <lightning:card class="jointCard slds-p-around_medium">
+            <div class="slds-m-bottom_small">
+                <c:JointRegistrationFields aura:id="jointFields" salesOrderId="{!v.salesOrderId}"/>
+            </div>
+        </lightning:card>
+        <br/>
+    </aura:if>
+
+
+    <div class="slds-align_absolute-center">
+        <div class="slds-text-heading_large">
+            If you need to update your full contact information with us, please follow this link to the <a
+                    href="/UpdatePersonalInformation">personal information page</a>.
+        </div>
+    </div>
+    <br/>
+    <div class="slds-align_absolute-center slds-m-left_x-large slds-m-right_x-large slds-m-top_medium">
+        <c:GDPRCertification aura:id="gdprCert" salesOrderId="{!v.salesOrderId}"/>
+    </div>
+    </div>
+    <aura:if isTrue="{!not(empty(v.fieldCheckMessage))}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close">
+                        <lightning:button iconName="utility:close" variant="neutral" onclick="{!c.closeModal}"/>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                        Alert
+                    </h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-text-heading_large slds-text-align_center">
+                        {!v.fieldCheckMessage}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+
+</aura:component>

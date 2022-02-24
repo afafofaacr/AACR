@@ -1,0 +1,27 @@
+<!--
+ - Created by lauren.lezberg on 10/14/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: BackOfficeOrderController</p>
+        <p>The <code>BackOfficeTicketing</code> component is a clone of the the <code>BackOfficeOrder</code> component except that it does not follow the same join and renewal logic.</p>
+        <p>
+            The component utilizes the <code>ItemQuickAdd</code> component and filters results by the following:
+            <ol>
+                <li>Item Class must have isEvent checked</li>
+                <li>Item class must be active</li>
+                <li>Item must be active</li>
+                <li>Event must be active</li>
+                <li>Event must not be sold out</li>
+            </ol>
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The component available to for use in an internal join process(BAMContainer) and is currently used in the back office ticketing process.</p>
+        <p>The component relies on a sales order id present in the url</p>
+        <p>The component itself only adds sales order lines to an existing sales order, it does not process the sales order.</p></aura:description>
+    <aura:example name="BackOfficeTicketing" ref="c:BackOfficeTicketing" label="BackOfficeTicketing">
+        Example for BackOfficeTicketing
+    </aura:example>
+</aura:documentation>

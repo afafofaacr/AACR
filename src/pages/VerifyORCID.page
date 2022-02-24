@@ -1,0 +1,79 @@
+<!--
+ - Created by lauren.lezberg on 3/29/2021.
+ -->
+
+<apex:page id="VerifyORCID"
+           showHeader="false"
+           sideBar="false"
+           action="{!verify}"
+           controller="VerifyORCIDController">
+
+    <apex:includeLightning />
+    <apex:slds />
+
+    <style>
+        .page-wrapper {
+            background-color: #50B848;
+            margin-botto:0px;
+            display:block;
+        }
+
+        input.slds-button.slds-button_brand{
+            background-color: #50B848;
+            border-color:#50B848;
+        }
+
+        .slds-box{
+            background-color: white;
+            width:30%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .errorHeader {
+            font-size:2rem;
+            font-weight:bold;
+        }
+    </style>
+
+    <c:pageStyle />
+
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            ORCID Link
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="AACRBackground">
+            <div class="slds-scope">
+
+                    <div class="slds-m-around_large">
+                        <div class="slds-box slds-p-around_large" style="margin:auto;">
+                            <div class="errorHeader slds-text-align_center">{!if(hasError, 'Error', 'Success')}</div>
+                            <br/><br/>
+                            <div class="slds-text-heading_large slds-text-align_center">
+                                {!msg}
+                                <br/>
+                                <apex:outputPanel rendered="{!hasError}">
+                                <apex:form >
+                                    <br/><br/>
+<!--                                    <apex:commandButton action="{!goBack}" styleClass="slds-button slds-button_brand" title="Click here to go back." value="Click here to go back."/>-->
+<!--                                    <br/><br/>-->
+                                    <apex:commandButton action="{!verify}" styleClass="slds-button slds-button_brand" title="Click here to retry." value="Click here to retry."/>
+                                </apex:form>
+                                </apex:outputPanel>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>

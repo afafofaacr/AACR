@@ -1,0 +1,61 @@
+<!--
+ - Created by afaf.awad on 6/23/2021.
+ -->
+
+<aura:component description="BadAddressRecord">
+
+    <aura:attribute name="contactId" type="String" description="Contact ID"/>
+    <aura:attribute name="contact" type="Contact" description="Contact Object"/>
+    <aura:attribute name="address" type="Object" description="List of Known Addresses"/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="processing save"/>
+    <aura:attribute name="error" type="Boolean" default="false" description="Does the contact returned have duplicates?"/>
+    <aura:attribute name="errorMessage" type="String" default="false" description="error message"/>
+    <aura:attribute name="badMail" type="Boolean" default="false" description="Is Mailing Address marked as bad?"/>
+    <aura:attribute name="mailOther" type="Boolean" default="false" description="Is Mailing Address marked as Other Reason?"/>
+    <aura:attribute name="rtsMail" type="String" description="Mailing Address - Return to sender PICKLIST reason"/>
+    <aura:attribute name="rtsMailOther" type="String" description="Mailing Address - Return to sender OTHER reason"/>
+    <aura:attribute name="reasonList" type="List" description="List of reasons to return to sender"/>
+
+     <div class="c-container">
+            <lightning:layout>
+                <lightning:layoutItem padding="around-small" size="1" class="slds-align_absolute-center">
+                    <lightning:input aura:id="BadAdd" type="toggle" label="Bad Address" name="Toggle" variant="label-hidden"
+                                     messageToggleActive="Bad" messageToggleInactive="Good" checked="{!v.badMail}" onchange="{!c.toggleBadAddress}" />
+                </lightning:layoutItem>
+                <aura:if isTrue="{!v.badMail}">
+                    <lightning:layoutItem padding="around-small" size="2.5">
+                        <lightning:select aura:id="mailRTS" onchange="{!c.onReasonChange}"
+                                          required="{!v.badMail}" label="RTS Reason" value="{!v.address.rtsReason}">
+                            <option value="">Select a reason...</option>
+                            <aura:iteration items="{!v.reasonList}" var="r">
+                                <option value="{!r.label}">{!r.label}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                        <aura:if isTrue="{!v.mailOther}">
+                            <lightning:input aura:id="rtsOther" type="text" label="RTS Other Reason"
+                                             name="rtsReason" value="{!v.address.rtsReasonOther}" required="{!v.mailOther}"/>
+                        </aura:if>
+                    </lightning:layoutItem>
+                </aura:if>
+                <lightning:layoutItem padding="around-small" flexibility="auto">
+                    <lightning:textarea aura:id="Street" label="Street" name="Street" readonly="true" value="{!v.address.OrderApi__Street__c}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" flexibility="auto">
+                    <lightning:input aura:id="City" type="text" label="City" name="City" readonly="true" value="{!v.address.OrderApi__City__c}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" flexibility="auto">
+                    <lightning:input aura:id="State" type="text" label="State/Province" name="State" readonly="true" value="{!v.address.OrderApi__Province__c}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" flexibility="auto">
+                    <lightning:input aura:id="Country" type="text" label="Country" name="Country" readonly="true" value="{!v.address.OrderApi__Country__c}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" flexibility="auto">
+                    <lightning:input aura:id="Zip" type="text" label="Zip/Postal Code" name="Zip" readonly="true" value="{!v.address.OrderApi__Postal_Code__c}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small" flexibility="auto">
+                    <lightning:input aura:id="Type" type="text" label="Type" name="type" readonly="true" value="{!v.address.Type__c}"/>
+                </lightning:layoutItem>
+
+            </lightning:layout>
+        </div>
+</aura:component>

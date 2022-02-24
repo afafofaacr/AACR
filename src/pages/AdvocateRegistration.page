@@ -1,0 +1,94 @@
+<!--
+ - Created by afaf.awad on 9/21/2020.
+ -->
+
+<apex:page id="AdvocateRegistration"
+           showHeader="false"
+           standardStylesheets="false"
+           docType="html-5.0"
+           applyHtmlTag="false"
+           applyBodyTag="false">
+
+    <apex:includeLightning />
+    <apex:slds />
+
+    <script type="text/javascript">
+        document.title = 'AACR Advocate Registration';
+    </script>
+
+    <style>
+        body {
+            margin: 0px;
+            font-size: 14px;
+            line-height: 1.428571429;
+            color: #000000;
+            font-family: Proxima-Nova,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+            min-height: 100vh;
+        }
+
+        div.topPanel {
+            /*background-image: url(https://s3.us-east-1.amazonaws.com/fonteva-customer-media/undefined/KpqNjoIr_myAACR_4C_Oct22_2018_stack_png);*/
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 285px;
+            padding-top: 20px;
+        }
+        div.space-around {
+            padding: 25px 30px 7px 30px;
+            min-width: 300px;
+            border-radius: 4px;
+            margin: 0 auto;
+            box-shadow: none;
+            min-height: 20px;
+            background-color: #fff;
+            width: 65%;
+        }
+        .center{
+            margin: auto;
+            width: 35%;
+        }
+    </style>
+
+<!--    CLOSED REGISTRATION-->
+
+    <div class="slds-page-header slds-align_absolute-center center">
+        <img src="{!$Resource.AACRlogo}" style="height: 100px;"/>
+    </div>
+
+    <div class="slds-box slds-align_absolute-center slds-text-align_center" style="border:none; text-align: center; padding-top: 20px">
+<!--        <h1>This registration is closed.</h1>-->
+    </div>
+<!--    CLOSED REGISTRATION-->
+    
+
+<!--    OPEN REGISTRATION    -->
+<!--_________________________________________________________________________________-->
+    <div class="slds-page-header slds-align_absolute-center center" style="display: flex;
+  align-items: center;">
+        <img src="{!$Resource.advocate_banner}" style="height: 300px; width: 2000px"/>
+    </div>
+
+    <div class="space-around">
+
+        <apex:define name="body">
+            <apex:outputPanel layout="block" styleClass="topPanel" id="resetPassBlock">
+                <div id="advocateReg"/>
+            </apex:outputPanel>
+        </apex:define>
+    </div>
+
+    <script>
+        // <!--var fname = "{!$CurrentPage.parameters.id}";-->
+        $Lightning.use("c:GuestApp", function() {
+            $Lightning.createComponent("c:AdvocateRegistration",
+                {},
+
+                "advocateReg",
+                function(cmp) {
+                    console.log('Creating component...');
+                });
+
+        });
+    </script>
+
+</apex:page>

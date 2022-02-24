@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Sponsor_Type__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Sponsor Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Virtual_Meeting__c</fullName>
+        <description>Virtual Meeting being sponsored</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Virtual Meeting</label>
+        <referenceTo>Virtual_Meeting_Links__mdt</referenceTo>
+        <relationshipLabel>Virtual Meeting Sponsors</relationshipLabel>
+        <relationshipName>Virtual_Meeting_Sponsors</relationshipName>
+        <required>true</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <label>Virtual Meeting Sponsor</label>
+    <pluralLabel>Virtual Meeting Sponsors</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

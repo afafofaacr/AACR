@@ -1,0 +1,165 @@
+<!--
+ - Created by lauren.lezberg on 9/8/2020.
+ -->
+
+<aura:component description="MyAddresses" controller="MyAddressesController">
+
+    <aura:attribute name="accountId" type="String" description="id of contact account"/>
+    <aura:attribute name="contactId" type="String" description="id of current contact"/>
+    <aura:attribute name="addresses" type="List" description="List of addresses"/>
+    <aura:attribute name="processing" type="Boolean" description="is processing"/>
+
+    <aura:attribute name="countryList" type="List" description="List of countries"/>
+    <aura:attribute name="errorMsg" type="String" description="error message"/>
+
+    <aura:attribute name="viewType" type="String" description="table or list" default="table"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.accountId}" action="{!c.handleAddressChange}"/>
+    <aura:handler name="newAddress" event="c:NewKnownAddressEvt" action="{!c.doInit}"/>
+
+
+    <div class="slds-clearfix">
+        <div class="slds-float_left slds-size_2-of-3">
+            <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                <div class="slds-text-color_error slds-text-heading_medium slds-p-top_medium">
+                    {!v.errorMsg}
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.viewType == 'list'}">
+                <div class="slds-m-top_x-small">
+                    <aura:iteration items="{!v.addresses}" var="add">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-7 slds-m-right_small">
+                                <div class="slds-grid">
+                                    <aura:if isTrue="{!add.OrderApi__Is_Default__c}">
+                                        <strong>*</strong>
+                                    </aura:if>
+                                    <strong>{!add.Type__c + ' - '}</strong>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_6-of-7">
+                                <div class="slds-grid">
+                                    {!add.OrderApi__Street__c + ', ' +   add.OrderApi__City__c + ', ' + add.OrderApi__Province__c + ', ' + add.OrderApi__Country__c + ', ' + add.OrderApi__Postal_Code__c}
+                                    <div class="slds-align_top">
+                                        <div class="slds-grid">
+                                    <aura:if isTrue="{!not(add.OrderApi__Is_Default__c)}">
+                                        <lightning:buttonIcon iconName="utility:delete" size="large"
+                                                              class="slds-m-left_small" variant="bare" value="{!add.Id}"
+                                                              onclick="{!c.removeAddress}"/>
+                                        &nbsp;
+                                    </aura:if>
+                                    <lightning:buttonIcon iconName="utility:edit" size="large" variant="bare"
+                                                          class="slds-m-left_small" value="{!add.Id}"
+                                                          onclick="{!c.editAddress}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aura:iteration>
+                </div>
+            </aura:if>
+
+        </div>
+        <div class="slds-float_right">
+            <aura:if isTrue="{!or(not(empty(v.addresses)),v.viewType=='table')}">
+                <!--            <div class="slds-p-around_small">-->
+                <lightning:button iconName="utility:add" label="New Address" variant="brand"
+                                  onclick="{!c.openNewModal}"/>
+                <!--            </div>-->
+            </aura:if>
+        </div>
+    </div>
+    <aura:if isTrue="{!v.viewType == 'table'}">
+        <table class="slds-table slds-table_fixed-layout slds-table_cell-buffer slds-table_bordered slds-m-top_medium"
+               style="border-collapse: collapse;">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="slds-align_absolute-center" scope="col">Primary</th>
+                <th class="" scope="col">Type</th>
+                <th class="" scope="col">Street</th>
+                <th class="" scope="col">City</th>
+                <th class="" scope="col">State</th>
+                <th class="" scope="col">Zip</th>
+                <th class="" scope="col">Country</th>
+                <th class="" scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <aura:iteration items="{!v.addresses}" var="add">
+                <tr class="slds-hint-parent"
+                    style="{!and(v.accountError, add.Type__c == 'Business')?'border:3px solid red;':''}">
+                    <td>
+                        <div class="slds-truncate slds-align_absolute-center" title="Primary">
+                            <lightning:input type="checkbox" checked="{!add.OrderApi__Is_Default__c}" value="{!add.Id}"
+                                             onchange="{!c.changeDefault}"/>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="slds-truncate" title="{!add.Type__c}">
+                            {!add.Type__c}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="{!add.OrderApi__Street__c}">
+                            {!add.OrderApi__Street__c}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="{!add.OrderApi__City__c}">
+                            {!add.OrderApi__City__c}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="{!add.OrderApi__Province__c}">
+                            {!add.OrderApi__Province__c}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="{!add.OrderApi__Postal_Code__c}">
+                            {!add.OrderApi__Postal_Code__c}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="{!add.OrderApi__Country__c}">
+                            {!add.OrderApi__Country__c}
+                        </div>
+                    </td>
+                    <td class="slds-grid">
+                        <aura:if isTrue="{!not(add.OrderApi__Is_Default__c)}">
+                            <lightning:buttonIcon iconName="utility:delete" variant="bare" value="{!add.Id}"
+                                                  onclick="{!c.removeAddress}"/>
+                            &nbsp;
+                        </aura:if>
+                        <lightning:buttonIcon iconName="utility:edit" variant="bare" value="{!add.Id}"
+                                              onclick="{!c.editAddress}"/>
+                        <aura:if isTrue="{!add.Bad_Address__c}">
+                            &nbsp;
+                            <lightning:icon variant="error" iconName="utility:warning" title="Returned Address. Please review and update." class="slds-m-top_xx-small"/>
+                        </aura:if>
+                    </td>
+                </tr>
+            </aura:iteration>
+            </tbody>
+        </table>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!empty(v.addresses)}">
+                <c:NewAddressForm aura:id="addressForm" contactId="{!v.contactId}" countryList="{!v.countryList}"/>
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <div class="slds-align_absolute-center">
+                            <lightning:button variant="brand" label="{!v.processing?'Processing...':'Add Address'}"
+                                              disabled="{!v.processing}" onclick="{!c.addAddress}"/>
+                        </div>
+                    </div>
+                </div>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+
+
+    <c:NewAddressModal aura:id="newModal" countryList="{!v.countryList}" contactId="{!v.contactId}"/>
+
+</aura:component>

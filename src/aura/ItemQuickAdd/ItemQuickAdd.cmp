@@ -1,0 +1,49 @@
+<!--
+ - Created by lauren.lezberg on 10/2/2019.
+ -->
+
+<aura:component description="ItemQuickAdd" controller="ItemQuickAddController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="SearchKeyWord" type="string" description="Search word string to use to filter records" access="public"/>
+    <aura:attribute name="selectedId" type="String" description="Id of selected record for initial load" access="public"/>
+    <aura:attribute name="Message" type="String" default="" description="Message to display for any error conditions" access="public"/>
+    <aura:attribute name="filterString" type="String" description="query string for filtering results" access="public"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="selection" type="sObject" default="{}" description="Used to store selected sObject Record"/>
+    <aura:attribute name="listOfSearchRecords" type="List" description="Used to store the list of search records which are returned based on the SearchKeyWord attribute" access="private"/>
+
+    <!--EVENT HANDLERS-->
+    <aura:handler name="oSelectedRecordEvent" event="c:SelectedObjectRecordEvt" action="{!c.handleComponentEvent}"/>
+    <aura:method name="clearAccount" access="public" action="{!c.clear}"/>
+
+    <div onmouseleave="{!c.onblur}" aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close" data-select="single">
+        <label class="slds-form-element__label" for="lookup-348">Item Quick Add</label>
+        <!--SEARCH BAR-->
+
+            <div class="slds-form-element__control">
+                <div class="slds-input-has-icon slds-input-has-icon--right">
+                    <!-- SELECTED RECORD -->
+                    <div aura:id="lookup-pill" class="slds-pill-container slds-hide">
+                        <lightning:pill class="pillSize" label="{!v.selection.Name}" name="{!v.selection.Name}" onremove="{! c.clear }">
+                            <aura:set attribute="media">
+                                <lightning:icon iconName="standard:record" alternativeText="item"/>
+                            </aura:set>
+                        </lightning:pill>
+                    </div>
+                    <div aura:id="lookupField" class="slds-show">
+                        <ui:inputText click="{!c.onfocus}" updateOn="keyup" keyup="{!c.keyPressController}" class="slds-text-heading_medium slds-lookup__search-input slds-input leftPaddingClass" value="{!v.SearchKeyWord}" placeholder="Search..." />
+                    </div>
+                </div>
+            </div>
+        <!--LOOKUP RESULT LIST-->
+        <ul style="min-height:40px;margin-top:0px !important" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+            <lightning:spinner class="slds-hide" variant="brand" size="small" aura:id="mySpinner"/>
+            <div class="slds-text-heading_medium">{!v.Message}</div>
+            <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                <c:ItemQuickAddResults oRecord="{!singleRec}"/>
+            </aura:iteration>
+        </ul>
+
+    </div>
+
+</aura:component>

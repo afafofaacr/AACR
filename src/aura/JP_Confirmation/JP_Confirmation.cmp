@@ -1,0 +1,19 @@
+<!--
+ - Created by lauren.lezberg on 3/11/2019.
+ -->
+
+<aura:component description="JP_Confirmation">
+
+    <div class="slds-box">
+        <div class="slds-align_absolute-center slds-m-bottom_large">
+            <img src="https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg" class="img-responsive slds-m-right_small" height="60" width="430"/>
+        </div>
+        <div class="slds-align_absolute-center">
+            <div class="slds-text-heading_large">You have successfully created your myAACR Account!</div>
+        </div>
+        <div class="slds-align_absolute-center slds-m-top_small">
+            <lightning:button label="Go To Profile" variant="brand" onclick="{!c.goToProfile}"/>
+        </div>
+    </div>
+
+</aura:component>

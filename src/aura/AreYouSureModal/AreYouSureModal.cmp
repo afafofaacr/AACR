@@ -1,0 +1,38 @@
+<!--
+ - Created by lauren.lezberg on 3/30/2020.
+ -->
+
+<aura:component description="AreYouSureModal">
+    <aura:attribute name="isOpen" type="Boolean" description="is modal open"/>
+    <aura:attribute name="message" type="String" description="text to display to user"/>
+    <aura:attribute name="cmpId" type="String" description="global id of component"/>
+
+    <aura:registerEvent type="c:AreYouSureResponseEvt" name="respondToModal" description="click event"/>
+
+    <aura:if isTrue="{!v.isOpen}">
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Are you sure?</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-align_absolute-center">
+                        <div class="slds-text-heading_medium">{!v.message}</div>
+                    </div>
+
+                    <div class="slds-m-top_medium slds-grid slds-align_absolute-center">
+                        <lightning:button label="Cancel" onclick="{!c.closeModal}"/>
+                        <lightning:button label="Confirm" onclick="{!c.confirmModal}" variant="brand"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,153 @@
+<!--
+ - Created by afaf.awad on 6/8/2021.
+ -->
+
+<aura:component description="DimensionTagBulkImport" controller="DimensionTagBulkImportController">
+
+    <aura:attribute name="processing" type="Boolean" description="action is processing" default="false"/>
+    <aura:attribute name="DimTag" type="Object" description="Object of the selected Dim Tag"/>
+
+    <!--    PREVIEW PAGE-->
+    <aura:attribute name="showFile" type="Boolean" default="true" description="Show or Hide file upload"/>
+    <aura:attribute name="showPreview" type="Boolean" default="false" description="Show of Hide Preview page"/>
+    <aura:attribute name="TableContent" type="String" description="Preview table"/>
+    <aura:attribute name="TargetFileName" type="String" description="Name of the file"/>
+    <aura:attribute name="tableheaders" type="List" description="Headers of user's file"/>
+    <aura:attribute name="fileContentData" type="String" description="Data of user's file; preview data. It will only show first 10 rows."/>
+    <aura:attribute name="FileList" type="Object" description="Uploaded file"/>
+    <aura:attribute name="idField" type="String" description="Id picklist choice"/>
+    <aura:attribute name="resultsList" type="Object[]" description="List of results from import"/>
+
+    <!--    VALIDATION-->
+    <aura:attribute name="showValidation" type="Boolean" default="false" description="Show of Hide Validation page."/>
+    <aura:attribute name="idList" type="List" description="List of Ids to process."/>
+
+    <!--    CONFIRM-->
+    <aura:attribute name="showConfirm" type="Boolean" default="false" description="Show or Hide Confirm page."/>
+    <aura:attribute name="confirmList" type="Contact[]" description="List of Contacts to create new records"/>
+
+    <!--  PROGRESS BAR-->
+<!--    <aura:attribute name="progress" type="Integer" default="0"/>-->
+<!--    <aura:attribute name="apexJob" type="AsyncApexJob"/>-->
+
+    <!--    HANDLERS    -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <lightning:navigation aura:id="navLink"/>
+    <aura:registerEvent name="errorCmp" type="c:ComponentError"/>
+    <aura:registerEvent name="callDimTagEvent" type="c:DimTagEvent"/>
+
+
+    <!-- ****************MODAL******************-->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+             aria-modal="true" aria-describedby="modal-content-id-1"
+             class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container" style="max-width: 60rem !important; width: 70% !important;">
+            <header class="slds-modal__header">
+                <div class="slds-modal__close">
+                    <lightning:button iconName="utility:close" variant="base" onclick="{!c.cancel}"/>
+                </div>
+                <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Tag Records in Bulk</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="overflow: initial">
+    <div class="slds-card">
+        <aura:if isTrue="{!v.showFile}">
+
+            <!-- ****************FILE UPLOADER******************-->
+                <div class="slds-text-heading_small slds-align_absolute-center"><b>Upload, or Drag and Drop, your CSV file.</b></div>
+                <div class="slds-m-around_large slds-align_absolute-center" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
+                    <div>
+                        <lightning:input aura:id="fileInput" name="file2" label="Upload File" type="file" files="{!v.FileList}"
+                                         onchange="{!c.onDrop }" accept=".csv" required="true" messageWhenValueMissing="File is Required"/>
+                        <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                            <div class="slds-text-heading_medium slds-has-error">{!v.errorMsg}</div>
+                        </aura:if>
+                    </div>
+                </div>
+<!--            </div>-->
+        </aura:if>
+
+        <!--*********************PREVIEW*********************************-->
+        <aura:if isTrue="{!v.showPreview}">
+            <lightning:layout pullToBoundary="medium" class="slds-m-right_x-small slds-m-left_x-small">
+                <lightning:layoutItem flexibility="auto">
+                    <div class="slds-text-heading_small">
+                        <b>{!v.TargetFileName}</b>
+                    </div>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto">
+                    <lightning:button label="Remove File" variant="brand" onclick="{!c.removeFile}" class="slds-float_right slds-m-bottom_small"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+
+                <div class="slds-box slds-scrollable_x">
+                    <ui:outputRichText class="uiOutputRichText slds-m-around_large" value="{!v.TableContent}"/>
+                </div>
+
+            <br/>
+
+            <!--***************************MAPPING PICKIST*************************-->
+                <div class="slds-text-heading_small slds-align_absolute-center"><b>Select the column that matches the specified field:</b></div>
+                <br/>
+                <lightning:layout horizontalAlign="center">
+                    <lightning:layoutItem size="8">
+                        <div class="slds-form_horizontal">
+                            <lightning:combobox aura:id="idMap" placeholder="--Select a column from your file--" label="Record Id" options="{!v.tableheaders}" required="true"
+                                                value="{!v.idField}" title="Select your Id to map"  onchange="{!c.clearError}" dropdownAlignment="bottom-center"/>
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+<!--            </div>-->
+            <c:ErrorMessage />
+        </aura:if>
+        <aura:if isTrue="{!or(v.showFile, v.showPreview)}">
+            <div class="slds-p-around_large slds-align_absolute-center">
+                <lightning:button label="Cancel" variant="brand" onclick="{!c.cancel}"/>
+                <lightning:button label="{!v.processing?'Processing...': 'Next'}" variant="brand" onclick="{!c.processFileContent}"/>
+            </div>
+        </aura:if>
+        <!--*******************CONFIRMATION PAGE*******************-->
+
+        <aura:if isTrue="{!v.showConfirm}">
+            <div class="slds-align_absolute-center">
+                <div class="slds-text-heading_small"><b>{!v.idList.length}</b> new records will be tagged.</div>
+    </div>
+            <div class="slds-p-around_large slds-align_absolute-center">
+                <lightning:button label="Cancel" variant="brand" onclick="{!c.cancel}"/>
+                <lightning:button label="Back" variant="brand" onclick="{!c.goBack}"/>
+                <lightning:button label="{!v.processing?'Processing...': 'Tag Records'}" variant="brand" onclick="{!c.createRecords}"/>
+            </div>
+        </aura:if>
+
+    </div>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+    <!--        ********************END MODAL*********************-->
+
+
+<!--        &lt;!&ndash;        ********************BATCH PROCESSING*********************&ndash;&gt;-->
+<!--        <aura:if isTrue="{!v.apexJob != null}">-->
+<!--            <br/>-->
+<!--            <div class="slds-text-heading_large slds-align_absolute-center" >Creating Participants</div>-->
+<!--            <br/>-->
+<!--            <div class="slds-box slds-p-around_large" style="margin:auto;margin-bottom: 25px">-->
+<!--                <aura:if isTrue="{!v.apexJob.JobItemsProcessed != v.apexJob.TotalJobItems}">-->
+<!--                    Processing {!v.apexJob.JobItemsProcessed} of {!v.apexJob.TotalJobItems} batch(es)-->
+<!--                </aura:if>-->
+<!--                <aura:if isTrue="{!v.apexJob.Status == 'Completed'}">-->
+<!--                    Completed with {!v.apexJob.NumberOfErrors} errors.-->
+<!--                </aura:if>-->
+<!--                <lightning:progressBar value="{!v.progress}" size="large" variant="circular"/>-->
+<!--                <p>An email will be sent to you when this batch job is complete. </p>-->
+
+<!--                <div class="slds-p-around_large slds-align_absolute-center">-->
+<!--                    <lightning:button label="Done" variant="brand" onclick="{!c.backToEvent}"/>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </aura:if>-->
+
+</aura:component>

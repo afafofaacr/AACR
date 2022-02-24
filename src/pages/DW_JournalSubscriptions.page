@@ -1,0 +1,189 @@
+<apex:page controller="DW_ECRMControllerClone" docType="html-5.0"
+    showHeader="false"
+    standardStylesheets="false"
+    applyBodyTag="false"
+    applyHtmlTag="false">
+    
+    <c:pageStyle />
+
+    <!-- Spinner design -->
+    <div class="bgBlack" style="display: none;">
+        <div class="spinnerBg">
+            <div class="loader"></div>                    
+        </div>
+    </div>
+
+    <!-- Progress bar component -->
+    <c:DW_ProgressBar />
+
+    <apex:includeScript value="{!$Resource.jQueryJs}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}" loadOnReady="true" /> 
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/commonFunctions.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!$Resource.DW_journalsSubscriptionCloneJs}" loadOnReady="true" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/jquery.toast.css')}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
+
+    
+    <apex:composition template="CPBase__template">
+    
+        <apex:define name="pageTitle">
+            Journals Subscription
+        </apex:define>
+        
+        <apex:define name="pageMain">
+            <div class="container m-t-30">
+                <div class="inner-wrapper">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Association Journals</h1>
+                            <hr class="m-b-15" />
+                        </div>                        
+                    </div>
+                    <p>
+                        {!$Label.DW_Complimentary_Journal_Description}                        
+                    </p>
+                    <p class="declinecheck-wrap">
+                        <input type="checkbox" name="decline" class="decline-complimentary" /> Decline Complimentary Journal
+                    </p>
+                    <div class="div-relative">
+                        <div class="checkDiv filters-check">
+                            <label><input type="checkbox" name="filterOnlineOnly" class="filterJournals" />Online Only</label>
+                            <label><input type="checkbox" name="filterOnlineNPrint" class="filterJournals" />Online And Print</label>
+                        </div>                        
+                        <div id="journals_wrap"></div>
+                    </div>
+                    
+                    <div class="btnDiv">
+                        <button class="btn btn-default cancel-step">Cancel</button>
+                        <button class="btn btn-default btn-primary prev-step">Previous Step</button>
+                        <button class="btn btn-default btn-primary next-step">Next Step</button>
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+        
+    </apex:composition>
+    
+    <!-- Journal Address Modal -->
+    <div class="modal journalAddressModal customModal">          
+        <!-- Modal content -->
+        <div class="modal-content">
+            <apex:form >
+                <div class="modal-header">
+                     
+                    <span class="close" onclick="hideAddressModal();"></span>
+                    <h2>Journal Address</h2>
+                </div>
+                <div class="modal-body">
+                    <apex:outputPanel id="journalAddrUpdate">
+                        <div class="">
+                            <div class="form-group">
+                                <label class="required-icon true">Street</label>
+                                <apex:inputField html-data-api-name="Journal_Street__c" value="{!UserContactData['Journal_Street__c']}" styleClass="reqdField form-field" html-data-value="{!UserContactData['Journal_Street__c']}"  />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="required-icon true">Country</label>
+                                <apex:inputField html-data-api-name="Journal_Country__c" value="{!UserContactData['Journal_Country__c']}" styleClass="reqdField form-field" html-data-value="{!UserContactData['Journal_Country__c']}" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="required-icon true">State</label>
+                                <apex:inputField html-data-api-name="Journal_State_Province__c" value="{!UserContactData['Journal_State_Province__c']}" html-data-value="{!UserContactData['Journal_State_Province__c']}" styleClass="form-field" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="required-icon true">City</label>
+                                <apex:inputField html-data-api-name="Journal_City__c" value="{!UserContactData['Journal_City__c']}" styleClass="reqdField form-field" html-data-value="{!UserContactData['Journal_City__c']}" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="true">Postal code</label>
+                                <apex:inputField html-data-api-name="Journal_Zip_Postal_Code__c" value="{!UserContactData['Journal_Zip_Postal_Code__c']}" html-data-value="{!UserContactData['Journal_Zip_Postal_Code__c']}" styleClass="form-field" />
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="validateJournalsAddrAndProceed(); return false;" class="btn btn-lg btn-primary">Update address</button>
+                    <input type="button" value="Cancel" class="btn cancelBtn" onclick="cancelAddressUpdate();" />
+                </div>
+                <apex:actionFunction action="{!updateContactsJournalAddr}" name="updateContactsJournalAddr" rerender="journalAddrUpdate" oncomplete="hideLoader();hideAddressModal();"></apex:actionFunction>
+            </apex:form>
+        </div>
+    </div>
+
+    <!--underscore template for displaying journals -->
+    <script type="text/template" id="journals_template">
+        <div class="filters">
+            <select name="selectComplJournal" class="selectComplJournal" style="height:35px;">
+                <option value="" selected="selected">Select your complimentary journal</option>
+                <%       
+                    _.each( complementoryJournals,function( journal, key, list ) {
+
+                %>
+                    <option value="<%= journal.protalLabel %>"><%= journal.protalLabel %></option>
+                <%       
+
+                } );
+                %>
+            </select>            
+        </div>
+        <p>{!$Label.DW_Complimentary_Journal_Description_Additional}</p>
+        <hr class="hr-line" />
+        <table class="table subscription-journals">
+            <thead>
+                <tr>
+                    <th>Online Only</th>
+                    <th>Print & Online</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <%       
+                    _.each( journals,function(journal,key,list) {
+                        var onlineChecked = ( journal.onlineJrDefaultSelectedInJoin && isJoinProcess ) ? 'checked="true"' : '';
+                        var printChecked = ( journal.printJrDefaultSelectedInJoin && isJoinProcess ) ? 'checked="true"' : '';
+                %>
+                    <tr>
+                        <td>
+                            <label style="<%= ( journal.onlineJrHideInJoin && isJoinProcess ) ? 'display: none;' : '' %>">
+                                <input type="checkbox" name="onlineOnly" data-name="<%= journal.displayName %>" class="journalTypeChange" 
+                                data-id="<%= journal.onlineId %>" <%= onlineChecked %> />
+                                <% if( journal.onlinePrice == 'Free' ) { %> 
+                                        <%= journal.onlinePrice %>
+                                    <%}else { %>
+                                        $ <%= journal.onlinePrice %>
+                                <% } %>
+                            </label>
+                        </td>
+                        <td>
+                            <label style="<%= ( journal.printJrHideInJoin && isJoinProcess ) ? 'display: none;' : '' %>">
+                                <input type="checkbox" name="printAndOnline" data-name="<%= journal.displayName %>" class="journalTypeChange" 
+                                data-id="<%= journal.printOnlineId %>" <%= printChecked %> />
+                                <% if( journal.printOnlinePrice == 'Free' ) { %> 
+                                        <%= journal.printOnlinePrice %>
+                                    <%}else { %>
+                                        $ <%= journal.printOnlinePrice %>
+                                <% } %>
+                            </label>
+                        </td>
+                        <td>
+                            <%= journal.displayName %>
+                        </td>
+                    </tr>
+                <%       
+
+                } );
+                %>
+            </tbody>
+        </table>
+        <div>
+            <input type="checkbox" name="isJournalAddrSameAsPreferedAddr" class="isJournalAddrSameAsPreferedAddr">
+            {!$Label.DW_Journal_Address} <span class="link-span update-address" style="text-decoration: underline;cursor: pointer;"> 
+                or {!$Label.DW_Update_Journal_Address_Text}</span>
+        </div>       
+    </script>
+    
+</apex:page>

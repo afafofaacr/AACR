@@ -1,0 +1,7 @@
+<!--
+ - Created by afaf.awad on 11/3/2020.
+ -->
+
+<design:component label="SecurityCode">
+        <design:attribute name="code" label="Security Code" />
+</design:component>

@@ -1,0 +1,85 @@
+<!--
+ - Created by afaf.awad on 12/5/2019.
+ -->
+
+<aura:component description="BackOfficeFormFields" controller="BackOfficeFormController">
+    <aura:attribute name="formGroupId" type="String" description="Id of the Form Field Group from its parent"/>
+    <aura:attribute name="fieldsList" type="List" description="List of Form Fields passed from parent"/>
+    <aura:attribute name="field" type="PagesApi__Field__c" description="If responseList is empty, use this field"/>
+
+    <aura:attribute name="isFileType" type="Boolean" description="Used to determine if the field is a file input type" default="false"/>
+    <aura:attribute name="fileObj" type="Object" description="File information when a file is uploaded"/>
+    <aura:attribute name="fileName" type="String" description="Name of file uploaded"/>
+
+    <aura:attribute name="valid" type="Boolean" description="Send a pass or fail on validation to BackOfficeForm Cmp"/>
+    <aura:attribute name="errorMsg" type="String" description="Error message" default=""/>
+
+    <aura:attribute name="salesOrderId" type="String" description="Sales Order Id from OrderEntryForm"/>
+    <aura:attribute name="contactId" type="String" description="Contact of the person filling out form"/>
+
+    <aura:attribute name="fieldResponse" type="PagesApi__Field_Response__c" description="Used to return field Responses if form exists for this Sales Order"/>
+    <aura:attribute name="formResponseId" type="String" description="Form Response Id passed down from parent"/>
+    <aura:attribute name="responded" type="Boolean" description="Used to determine if the user responded to the form" default="true"/>
+    <aura:attribute name="responseList" type="List" description="List of responses from form fields"/>
+
+    <aura:attribute name="method" type="Aura.action"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <aura:registerEvent name="ValidateEvt" type="c:ValidateEvt"/>
+
+    <aura:if isTrue="{!v.isFileType}">
+        <div class="slds-grid slds-grid--vertical">
+            <div class="slds-col">
+                <aura:if isTrue="{!not(empty(v.errorMsg))}">
+                    <div class="slds-box slds-theme_error slds-theme_alert-texture">
+                        <div class="slds-text-heading_medium">{!v.errorMsg}</div>
+                    </div>
+                </aura:if>
+            </div>
+            <div class="slds-col">
+                <aura:if isTrue="{!v.responded == true ? v.fieldResponse.PagesApi__Field__r.PagesApi__Is_Required__c : v.field.PagesApi__Is_Required__c}">
+                    <label class="slds-form-element__label" for="text-input-id-1">
+                        <abbr class="slds-required" title="required">* </abbr>{!v.fieldResponse.PagesApi__Field__r.Name == '' ? v.field.Name : v.fieldResponse.PagesApi__Field__r.Name}</label>
+                    <aura:set attribute="else">
+                        {!v.fieldResponse.PagesApi__Field__r.Name == '' ? v.field.Name : v.fieldResponse.PagesApi__Field__r.Name}
+                    </aura:set>
+                </aura:if>
+            </div>
+            <div class="slds-grid">
+                <div>
+                    <lightning:fileUpload recordId="{!v.contactId}" label=""
+                                          disabled="{!not(empty(v.fileObj))}"
+                                          name="fileInput" multiple="false" onuploadfinished="{!c.handleFileUpload}"/>
+            </div>
+            <aura:if isTrue="{!not(empty(v.fileObj))}">
+                    <div class="slds-grid" style="align-items: center;">
+                        <div class="slds-text-heading_medium slds-m-top_large slds-m-left_medium slds-m-right_small"
+                             style="color:#4e6593; font-weight:700;">{!v.fileName}</div>
+                        <lightning:button variant="base" iconName="utility:close"
+                                          class="slds-m-top_large slds-required"
+                                          onclick="{!c.removeFileAttachment}"/>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+
+        <aura:set attribute="else">
+            <aura:if isTrue="{!v.responded}">
+                <lightning:input aura:id="fieldInput"
+                                 type="{!v.fieldResponse.PagesApi__Field__r.PagesApi__Type__c}"
+                                 name="{!'fieldResponse' + v.fieldResponse.PagesApi__Field__r.PagesApi__Order__c}"
+                                 label="{!v.fieldResponse.PagesApi__Field__r.Name}"
+                                 required="{!v.fieldResponse.PagesApi__Field__r.PagesApi__Is_Required__c}"
+                                 value="{!v.fieldResponse.PagesApi__Response__c}"/>
+                <aura:set attribute="else">
+                    <lightning:input aura:id="fieldInput"
+                                     type="{!v.field.PagesApi__Type__c}"
+                                     name="{!'field' + v.field.PagesApi__Order__c}"
+                                     label="{!v.field.Name}"
+                                     required="{!v.field.PagesApi__Is_Required__c}"
+                                     value="{!v.field.value}"/>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

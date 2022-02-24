@@ -1,0 +1,29 @@
+/**
+ * Created by lauren.lezberg on 4/3/2020.
+ */
+.THIS button.slds-button.slds-button_brand{
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-size:1.5rem;
+    background-color: token(aacrGreen);
+    border-color:token(aacrGreen);
+    color: white;
+}
+
+.THIS button.slds-button.slds-button_brand:active{
+    color:white;
+    background-color: token(aacrGreen);
+    border-color:token(aacrGreen);
+}
+
+.THIS button.slds-button.slds-button_brand:hover{
+    color:white;
+    background-color: token(aacrGreenL2);
+    border-color:token(aacrGreenL2);
+}
+
+.THIS button.slds-button.slds-button_brand:disabled{
+    background: rgb(201, 199, 197);
+    border-color: rgb(201, 199, 197);
+    color: rgb(255, 255, 255);
+}

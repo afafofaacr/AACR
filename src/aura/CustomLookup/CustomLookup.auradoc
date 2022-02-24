@@ -1,0 +1,21 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>The <code>c:CustomLookup</code> component is a dynamic object lookup component that allows for searching and creation of new records.
+            The component is initially rendered as a search bar unless <code>selectedId</code> is populated. A list of records will begin to appear as soon as the user starts typing.
+            Once an option is selected, the search bar will be populated with the selected record just as the standard lookup component does.
+            In order to perform another search, the user must click on the 'X' to the far right of the selection.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The component does not associate the selected record with a particular record, it simply searches a list of records based off of the <code>objectAPIName</code> and <code>filterString</code> attributes.</p>
+        <p>The <code>filterString</code> attribute must be in the form of a query string with filter conditions for the particular object type.</p>
+        <p>Set the <code>allowNewRecord</code> attribute to show the 'Create New' button and allow new record modal to be displayed.</p>
+    </aura:description>
+    <aura:example name="CustomLookup" ref="c:CustomLookupExample" label="Account Custom Lookup">
+
+    </aura:example>
+</aura:documentation>

@@ -1,0 +1,15 @@
+<!--
+ - Created by lauren.lezberg on 10/17/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>RecordUtilities</code> component displays all custom actions that can be performed on a contact. The component is placed on the
+            the contact page layout.
+        </p>
+        <br/>
+        <div style="font-size:1.5rem">Usage Considerations: </div>
+        <p>The component does not determine visibility of any of the buttons, that is determined by the button components themselves.</p>
+    </aura:description>
+</aura:documentation>

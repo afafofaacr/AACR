@@ -1,0 +1,28 @@
+<!--
+ - Created by lauren.lezberg on 2/26/2021.
+ -->
+
+<aura:component description="ExhibitorRegistration" controller="ExhibitorRegistrationController">
+    <aura:attribute name="stepId" type="String" description="id of step in process"/>
+    <aura:attribute name="fieldsetName" type="String" default="Registration_Exhibitor" description="name of fieldset for reg form"/>
+    <aura:attribute name="contactId" type="String" description="id of current contact"/>
+    <aura:attribute name="isFormValid" type="Boolean" description="is reg form valid"/>
+    <aura:attribute name="selectedRecord" type="Object" default="{}" description="stores selected account record"/>
+
+    <aura:attribute name="nextStep" type="Object" description="next step in process"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.isFormValid}" action="{!c.goToNextStep}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <lightning:card class="slds-p-around_medium">
+        <c:CompanyLookup aura:id="companyLookup" contactId="{!v.contactId}" selectedRecord="{!v.selectedRecord}" />
+        <aura:if isTrue="{!not(empty(v.fieldsetName))}">
+            <c:Fieldset aura:id="fSet" isValid="{!v.isFormValid}" objectAPIName="Contact"
+                        fieldsetName="{!v.fieldsetName}" recordId="{!v.contactId}"/>
+        </aura:if>
+    </lightning:card>
+    <br/>
+</aura:component>

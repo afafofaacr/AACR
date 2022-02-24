@@ -1,0 +1,83 @@
+<!--
+ - Created by afaf.awad on 10/21/2021.
+ -->
+
+<aura:component description="WF_FormSummary" controller="WF_FormPreviewController" implements="force:hasRecordId">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+
+    <aura:attribute name="recordId" type="Id" description="SF Id of Survey Object"/>
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+    <lightning:navigation aura:id="navService"/>
+
+    <div style="padding-bottom: 35px">
+        <aura:if isTrue="{!v.recordId == null}">
+            <div class="slds-align_absolute-center">
+                <c:AACRSpinner/>
+            </div>
+        <aura:set attribute="else">
+        <lightning:recordViewForm
+                                  recordId="{!v.recordId}"
+                                  objectApiName="Survey__c"
+                                    density="compact">
+
+            <lightning:messages/>
+            <div class="slds-border_bottom bold slds-m-top_large slds-clearfix" style="font-size: 20px">Form Settings</div>
+                <div class="slds-grid slds-gutters slds-grow">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField aura:id="Name" fieldName="Name"/>
+                        <lightning:outputField aura:id="description" fieldName="Description__c"/>
+                        <lightning:outputField aura:id="systemTag" fieldName="System_Tag__c" />
+
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField aura:id="formType" fieldName="Form_Type__c"/>
+                        <lightning:outputField aura:id="optIn" fieldName="Opt_in_Options__c"/>
+                        <lightning:outputField aura:id="authOptions" fieldName="Authentication_Options__c"/>
+
+                    </div>
+
+                </div>
+            <div class="slds-border_bottom bold slds-m-top_large slds-clearfix" style="font-size: 20px">Publishing Settings</div>
+            <div class="slds-grid slds-gutters slds-grow">
+                <div class="slds-col slds-size_1-of-1">
+                    <lightning:outputField aura:id="publishMethod" fieldName="Publishing_Method__c" class="slds-form-element_1-col"/>
+                    <lightning:outputField aura:id="publishDate" fieldName="Publish_Date__c" class="slds-form-element_1-col"/>
+                    <lightning:outputField aura:id="confirmText" fieldName="Additional_Confirmation_Text__c" class="slds-form-element_1-col"/>
+                </div>
+            </div>
+        </lightning:recordViewForm>
+
+            <div class="slds-border_bottom bold slds-m-top_large slds-clearfix slds-m-bottom_medium" style="font-size: 20px">
+                Preview
+                <lightning:buttonIcon alternativeText="Preview in new tab" iconName="utility:preview" title="Preview"
+                                      tooltip="Preview in new tab" variant="bare" iconClass="dark" size="large"  onclick="{!c.previewInTab}"/>
+            </div>
+            <c:WF_FormPreview recordId="{!v.recordId}"/>
+        </aura:set>
+        </aura:if>
+
+        <div class="slds-align_absolute-center slds-m-top_large">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning:button label="Cancel" title="Cancel" onclick="{! c.goBack }" class="navButtons slds-p-top_medium slds-p-bottom_medium" />
+                    </div>
+                    <div class="slds-col">
+                        <lightning:button label="Previous" title="Previous" onclick="{! c.goPrevious }" class="navButtons slds-p-around_medium"/>
+                    </div>
+                    <div class="slds-col">
+                        <lightning:button label="Submit" title="Submit" onclick="{! c.handleSubmit }" class="navButtons slds-p-around_medium"/>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</aura:component>

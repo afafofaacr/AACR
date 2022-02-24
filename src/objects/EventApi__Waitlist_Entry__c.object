@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Waitlist Entry store the Contact Information for people who want to be notified when any available ticket/registrations become open either for a Event or a Schedule Item at an Event.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>EventApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Link to related Contact. Derived from email fields matching a Contact record through query.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Link to related Contact. Derived from email fields matching a Contact record through query.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Waitlist_Contacts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Date_Added__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** The date the Waitlist Entry was added. Defaults to the day the record was created in the database.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** The date the Waitlist Entry was added. Defaults to the day the record was created in the database.</inlineHelpText>
+        <label>Date Added</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Email address to send related notifications to the Waitlist Contact. Derives from the linked Contact&apos;s &quot;Preferred Email&quot; address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Email address to send related notifications to the Waitlist Contact. Derives from the linked Contact&apos;s &quot;Preferred Email&quot; address.</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to related Event. Required for &quot;Event&quot; Waitlist Entries.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to related Event. Required for &quot;Event&quot; Waitlist Entries.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Waitlist</relationshipLabel>
+        <relationshipName>Waitlist_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Full_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displayed on Event Registration UI to allow registrant to input their name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displayed on Event Registration UI to allow registrant to input their name</inlineHelpText>
+        <label>Full Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Registered__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Waitlist Entries that have registered for the Event or Schedule Item successfully after notification will have this checkbox checked automatically.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Waitlist Entries that have registered for the Event or Schedule Item successfully after notification will have this checkbox checked automatically.</inlineHelpText>
+        <label>Is Registered</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional message that can be populated by the Waitlist Contact on Waitlist opt-in pages.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional message that can be populated by the Waitlist Contact on Waitlist opt-in pages.</inlineHelpText>
+        <label>Message</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Notification_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Waitlist Entry has been notified of tickets becoming available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Waitlist Entry has been notified of tickets becoming available.</inlineHelpText>
+        <label>Notification Sent</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Notified_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The date and time the Waitlist Entry was notified of availability.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The date and time the Waitlist Entry was notified of availability.</inlineHelpText>
+        <label>Notified Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Other_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional alternate phone for the Waitlist Contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional alternate phone for the Waitlist Contact.</inlineHelpText>
+        <label>Other Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Primary Contact Phone. Derives from the linked Contact&apos;s &quot;Preferred Phone&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Primary Contact Phone. Derives from the linked Contact&apos;s &quot;Preferred Phone&quot;.</inlineHelpText>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The priority of a Waitlist Entry determines who the system will notify first when tickets become available. Defaults &quot;Medium&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The priority of a Waitlist Entry determines who the system will notify first when tickets become available. Defaults &quot;Medium&quot;.</inlineHelpText>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>true</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Critical</fullName>
+                    <default>false</default>
+                    <label>Critical</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Requested__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The number of tickets requested for purchase.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of tickets requested for purchase.</inlineHelpText>
+        <label>Quantity Requested</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Schedule_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to related Schedule Item. Required for &quot;Schedule Item&quot; Waitlist Entries.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to related Schedule Item. Required for &quot;Schedule Item&quot; Waitlist Entries.</inlineHelpText>
+        <label>Schedule Item</label>
+        <referenceTo>EventApi__Schedule_Item__c</referenceTo>
+        <relationshipLabel>Waitlist</relationshipLabel>
+        <relationshipName>Waitlist_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The current status of the Waitlist Entry. Defaults to &quot;Waiting&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The current status of the Waitlist Entry. Defaults to &quot;Waiting&quot;.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Waiting</fullName>
+                    <default>true</default>
+                    <label>Waiting</label>
+                </value>
+                <value>
+                    <fullName>Notified</fullName>
+                    <default>false</default>
+                    <label>Notified</label>
+                </value>
+                <value>
+                    <fullName>Registered</fullName>
+                    <default>false</default>
+                    <label>Registered</label>
+                </value>
+                <value>
+                    <fullName>Notified - No Response</fullName>
+                    <default>false</default>
+                    <label>Notified - No Response</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Ticket_Type__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to related Ticket Type. Required for &quot;Ticket Type&quot; Waitlist Entries.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to related Ticket Type. Required for &quot;Ticket Type&quot; Waitlist Entries.</inlineHelpText>
+        <label>Ticket Type</label>
+        <referenceTo>EventApi__Ticket_Type__c</referenceTo>
+        <relationshipLabel>Waitlist</relationshipLabel>
+        <relationshipName>Waitlist_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LTE__Sales_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Linked the to related Sales Order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Linked the to related Sales Order.</inlineHelpText>
+        <label>SYSTEM</label>
+        <referenceTo>OrderApi__Sales_Order__c</referenceTo>
+        <relationshipName>Sales_Orders</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Waitlist Entry</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Waitlist Entry ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Waitlist Entries</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Ticket_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Schedule_Item__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Full_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Date_Added__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Email__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Phone__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Event__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Ticket_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Schedule_Item__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Full_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Date_Added__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Email__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Phone__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EventApi__Event__c</searchFilterFields>
+        <searchFilterFields>EventApi__Ticket_Type__c</searchFilterFields>
+        <searchFilterFields>EventApi__Schedule_Item__c</searchFilterFields>
+        <searchFilterFields>EventApi__Contact__c</searchFilterFields>
+        <searchFilterFields>EventApi__Full_Name__c</searchFilterFields>
+        <searchFilterFields>EventApi__Status__c</searchFilterFields>
+        <searchFilterFields>EventApi__Date_Added__c</searchFilterFields>
+        <searchFilterFields>EventApi__Email__c</searchFilterFields>
+        <searchFilterFields>EventApi__Phone__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

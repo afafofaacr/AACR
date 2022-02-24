@@ -1,0 +1,213 @@
+/**
+ * Created by lauren.lezberg on 5/14/2020.
+ */
+.THIS [lightning-input_input].slds-form-element__control{
+    padding-left:0%;
+}
+
+.THIS .slds-spinner_container  {
+    background-color: rgba(0, 0, 0, 0.10);
+    /*margin-top: 200px;*/
+    /*margin-bottom: 200px;*/
+}
+
+.THIS .requiredError{
+    border: 2px solid rgb(194, 57, 52);
+}
+
+.THIS .slds-form-element__help{
+    color: rgb(194, 57, 52);
+}
+
+.THIS .disabled{
+    background: lightgrey;
+    border-color: grey;
+}
+
+.THIS .slds-form-element.slds-lookup.slds-is-close{
+    padding-left:0.5rem;
+}
+
+.THIS .slds-form-element.slds-lookup.slds-is-open{
+    padding-left:0.5rem;
+}
+
+.THIS .slds-input::placeholder{
+    font-size:1.5rem;
+}
+
+.THIS .slds-pill_link .slds-pill__icon_container{
+    margin-top:2px;
+    display: table;
+    left: 0.5rem;
+}
+
+.THIS .slds-combobox__input-entity-icon{
+    width: 2rem;
+    height: 2rem;
+}
+
+.THIS [class*=slds-input-has-icon_left] .slds-combobox__input.slds-combobox__input-value{
+    padding-left:2.75rem;
+}
+
+
+.THIS .slds-combobox__input-entity-icon .slds-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.THIS .slds-pill__icon_container .slds-icon{
+    height:2rem;
+    width:2rem;
+}
+
+.THIS .slds-pill_link .slds-pill__remove{
+    right:0.5rem;
+    top: 45%;
+}
+
+.THIS .slds-pill__remove svg{
+    width:1.25rem;
+    height:1.25rem;
+}
+
+.THIS .slds-pill_link .slds-pill__icon_container{
+    margin-top:2px;
+    display: table;
+    left: 0.5rem;
+}
+
+.THIS .slds-pill__label{
+    font-size:1.5rem;
+    margin-left: 1rem;
+}
+
+/*.THIS ul.slds-listbox.slds-listbox_vertical.slds-dropdown.slds-dropdown_fluid.slds-lookup__menu.slds{*/
+    /*margin-left: 16.5%;*/
+    /*width: 67%;*/
+/*}*/
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    min-width:100px;
+    padding:5px;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    background-color: transparent;
+    border-color: token(aacrGreen);
+    color: token(aacrGreen);
+    font-size: 1.5rem;
+    min-width:100px;
+    padding:5px;
+}
+
+.THIS .slds-col{
+    display:grid;
+}
+
+.THIS .slds-form-element__help{
+    font-size:1rem;
+}
+
+.THIS .slds-text-heading_medium {
+    font-size:1.5rem;
+}
+
+.THIS span.slds-form-element__label{
+    font-size:1.5rem;
+}
+
+.THIS .slds-dropdown-trigger_click .slds-dropdown{
+    font-size: 1.5rem;
+    display:inline-table;
+}
+
+.THIS .slds-dropdown-trigger_click.slds-is-open .slds-dropdown{
+    display:block;
+    font-size: 1.5rem;
+}
+
+.THIS .selected{
+    border: 2px solid token(aacrGreen);
+    background-color:token(aacrGreenL1);
+}
+
+.THIS .selectable {
+    cursor: pointer;
+}
+
+
+
+.THIS .slds-size_1-of-6{
+    width:32%;
+}
+
+.THIS .slds-size_5-of-6{
+    width:69%;
+}
+
+.THIS .header{
+    font-size: 30px;
+    font-weight:500;
+    margin-top: 5rem;
+
+}
+
+.THIS.slds-border_bottom{
+    padding:10px;
+    border-bottom: 2px solid token(aacrGreen);
+}
+/**
+Dualing picklist
+ */
+.THIS .slds-dueling-list__column_responsive .slds-dueling-list__options{
+    width:100%;
+    max-width:100%;
+}
+.THIS .slds-dueling-list__column{
+    width:33%;
+    align-items: center;
+    justify-content: center;
+}
+.THIS .slds-dueling-list__column_responsive{
+    flex: 0 1 auto;
+}
+
+.THIS [lightning-duallistbox_duallistbox].slds-form-element__control{
+    padding-left:5%;
+}
+
+.THIS .slds-form-element__legend{
+    font-weight:600;
+    font-size:1.5rem;
+    /*display: none;*/
+}
+
+.THIS .slds-form-element__icon{
+    display:none;
+}
+
+.THIS .slds-dropdown-trigger_click .slds-dropdown{
+    font-size: 1.5rem;
+    display:inline-table;
+}
+
+.THIS .slds-dropdown-trigger_click.slds-is-open .slds-dropdown{
+    display:block;
+    font-size: 1.5rem;
+}
+
+.THIS .slds-grid{
+    width:100%;
+}
+
+
+.THIS .slds-form-element__label {
+    align-self: center;
+    font-size: 1.5rem;
+}

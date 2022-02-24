@@ -1,0 +1,64 @@
+/**
+ * Created by lauren.lezberg on 1/6/2021.
+ */
+
+.THIS *{
+    font-size: 1.5rem;
+}
+
+.THIS .slds-checkbox .slds-checkbox_faux{
+    height:1.5rem;
+    width:1.5rem;
+}
+
+.THIS .slds-checkbox .slds-checkbox__label .slds-form-element__label{
+    font-size:1.5rem;
+}
+
+
+/*calendar */
+.THIS .slds-dropdown-trigger_click.slds-is-open .slds-dropdown{
+    display:inline-table;
+}
+
+.THIS .slds-form-element__label{
+    font-size: 1.5rem;
+}
+
+.THIS .hide-error-message > .slds-form-element__help {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .THIS .contentScreen{
+        width:1140px;
+    }
+}
+
+.THIS .slds-has-error .slds-form-element__help{
+    font-size: 1.25rem;
+}
+
+.THIS div.slds-form-element__help.slds-required{
+    font-size: 1.25rem;
+}
+
+.THIS .slds-form-element__icon{
+    display:none;
+}
+
+.THIS label.slds-radio_button__label {
+    margin-bottom:0px;
+    padding:5px;
+}
+
+.THIS span.slds-button.slds-radio_button:active{
+    background-color:token(AACRBlue);
+    color:white;
+}
+
+
+.THIS span.slds-button.slds-radio_button{
+    background-color:white;
+    color:token(AACRBlue);
+}

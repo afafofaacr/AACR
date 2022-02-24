@@ -1,0 +1,43 @@
+<!--
+ - Created by afaf.awad on 6/29/2021.
+ -->
+
+<aura:component description="EventSponsorDisplay" controller="EventSponsorDisplayController">
+
+    <aura:attribute name="eventId" type="Id" description="Id of Event"/>
+    <aura:attribute name="sponsorLevel1" type="List" description="List of Level 1 Sponsors"/>
+    <aura:attribute name="sponsorLevel2" type="List" description="List of Level 2 Sponsors"/>
+    <aura:attribute name="sponsorLevel3" type="List" description="List of Level 3 Sponsors"/>
+    <aura:attribute name="orientation" type="Boolean" description="Display horizontally (true) or vertically (false)"/>
+    <aura:attribute name="showLogos" type="Boolean" description="Display Sponsor logos"/>
+    <aura:attribute name="isVisualForce" type="Boolean" description="Is Sponsor on visualforce page."/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+<!--    <div class="slds-box cont-box">-->
+        <div class="gothamBook slds-text-longform">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium slds-p-top_medium">
+                    <c:EventSponsorDisplayItem
+                            sponsorLevel="{!v.sponsorLevel1[0].sponsor.Event__r.Sponsorship_Level_1__c}" isVisualForce="{!v.isVisualForce}"
+                            sponsors="{!v.sponsorLevel1}" orientation="{!v.orientation}" showLogos="{!v.showLogos}"/>
+                </div>
+                <aura:if isTrue="{!v.sponsorLevel2.length > 0}">
+                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium slds-p-top_medium">
+                        <c:EventSponsorDisplayItem
+                                sponsorLevel="{!v.sponsorLevel2[0].sponsor.Event__r.Sponsorship_Level_2__c}" isVisualForce="{!v.isVisualForce}"
+                                sponsors="{!v.sponsorLevel2}" orientation="{!v.orientation}" showLogos="{!v.showLogos}"/>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.sponsorLevel3.length > 0}">
+                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium slds-p-top_medium">
+                        <c:EventSponsorDisplayItem
+                                sponsorLevel="{!v.sponsorLevel3[0].sponsor.Event__r.Sponsorship_Level_3__c}" isVisualForce="{!v.isVisualForce}"
+                                sponsors="{!v.sponsorLevel3}" orientation="{!v.orientation}" showLogos="{!v.showLogos}"/>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+<!--    </div>-->
+
+</aura:component>

@@ -1,0 +1,15 @@
+<design:component label="AC Events">
+    <design:attribute name="environmentType"
+                      label="Environment Type"
+                      datasource="Community,Internal"
+                      description="Please indicate which environment this component is used on" />
+    <design:attribute name="zoneId"
+                      label="Zone ID"
+                      description="Events Zone ID" />
+    <design:attribute name="itemsPerPage"
+                      label="Items Per Page"
+                      description="Items per page" />
+    <design:attribute name="showPastTab"
+                      label="Show Past Events"
+                      description="Show a tab which includes past events" />
+</design:component>

@@ -1,0 +1,24 @@
+/**
+ * Created by lauren.lezberg on 9/18/2020.
+ */
+
+.THIS .slds-button{
+    display:block;
+}
+
+.THIS lightning-input-field{
+    font-size:1.65rem;
+}
+
+.THIS input{
+    font-size:1.65rem;
+}
+
+.THIS .slds-media.slds-listbox__option.slds-media_center.slds-media_small.slds-listbox__option_plain{
+    font-size:1.5rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size:1.25rem;
+    font-weight:300;
+}

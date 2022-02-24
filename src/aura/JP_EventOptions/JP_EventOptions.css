@@ -1,0 +1,18 @@
+/**
+ * Created by lauren.lezberg on 7/8/2020.
+ */
+.THIS .requiredError{
+    border-color: rgb(194, 57, 52);
+}
+
+.THIS .slds-checkbox {
+    /*display: inline !important;*/
+}
+
+.THIS .slds-radio_button [type=radio]:checked+.slds-radio_button__label {
+    background-color: token(aacrGreen);
+}
+
+.THIS .slds-radio_button .slds-radio_button__label{
+    color: black;
+}

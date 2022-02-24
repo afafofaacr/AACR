@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Abbreviation__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Abbreviation</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Country Code</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Income_Level__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Income Level</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High Income</fullName>
+                    <default>true</default>
+                    <label>High Income</label>
+                </value>
+                <value>
+                    <fullName>Upper middle income</fullName>
+                    <default>false</default>
+                    <label>Upper Middle Income</label>
+                </value>
+                <value>
+                    <fullName>Lower middle income</fullName>
+                    <default>false</default>
+                    <label>Lower Middle Income</label>
+                </value>
+                <value>
+                    <fullName>Low Income</fullName>
+                    <default>false</default>
+                    <label>Low Income</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Region</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>East Asia &amp; Pacific</fullName>
+                    <default>true</default>
+                    <label>East Asia &amp; Pacific</label>
+                </value>
+                <value>
+                    <fullName>Europe &amp; Central Asia</fullName>
+                    <default>false</default>
+                    <label>Europe &amp; Central Asia</label>
+                </value>
+                <value>
+                    <fullName>Latin America &amp; Caribbean</fullName>
+                    <default>false</default>
+                    <label>Latin America &amp; Caribbean</label>
+                </value>
+                <value>
+                    <fullName>Middle East &amp; North Africa</fullName>
+                    <default>false</default>
+                    <label>Middle East &amp; North Africa</label>
+                </value>
+                <value>
+                    <fullName>North America</fullName>
+                    <default>false</default>
+                    <label>North America</label>
+                </value>
+                <value>
+                    <fullName>South Asia</fullName>
+                    <default>false</default>
+                    <label>South Asia</label>
+                </value>
+                <value>
+                    <fullName>Sub-Saharan Africa</fullName>
+                    <default>false</default>
+                    <label>Sub-Saharan Africa</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>WB_Country__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>WB Country</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>World Bank Income Level</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>MasterLabel</columns>
+        <columns>WB_Country__c</columns>
+        <columns>Abbreviation__c</columns>
+        <columns>Country_Code__c</columns>
+        <columns>Income_Level__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <pluralLabel>World Bank Income Levels</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

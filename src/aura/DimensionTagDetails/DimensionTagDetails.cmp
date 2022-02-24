@@ -1,0 +1,136 @@
+<!--
+ - Created by afaf.awad on 6/7/2021.
+ -->
+
+<aura:component description="DimensionTagDetails" controller="DimensionTagDetailsController"
+                implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,lightning:hasPageReference" access="global">
+
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="detailsDataDefault" type="Object"/>
+    <aura:attribute name="detailsData" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="isLoading" type="Boolean" default="true" description="Loading page"/>
+    <aura:attribute name="processing" type="Boolean" default="false" description="processing records"/>
+    <aura:attribute name="dimTagId" type="String" description="Id of the selected Dim Tag"/>
+    <aura:attribute name="DimTag" type="Object" description="Object of the selected Dim Tag"/>
+    <aura:attribute type="Aura.Component[]" name="actionCmp" description="Display component based on which button was clicked."/>
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+    <aura:attribute name="flagFilter" type="String" default="All"/>
+    <aura:attribute name="cTagFilter" type="String" default="All"/>
+
+    <aura:attribute name="pageNumber" type="Integer" default="1"/>
+    <aura:attribute name="pageSize" type="Integer" default="50"/>
+    <aura:attribute name="isLastPage" type="Boolean" default="false"/>
+    <aura:attribute name="dataSize" type="Integer" default="0"/>
+
+    <!--    <aura:attribute name="initialRows" type="Integer" default="50"/>-->
+<!--    <aura:attribute name="rowsToLoad" type="Integer" default="50"/>-->
+<!--    <aura:attribute name="totalNumberOfRows" type="Integer" />-->
+<!--    <aura:attribute name="loadMoreStatus" type="String" default=""/>-->
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="callDimTagEvent" event="c:DimTagEvent" action="{!c.handleDimTagEvent}"/>
+
+
+    <!-- HEADER -->
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="utility:topic2" size="medium"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate"
+                                                  title="Exhibitor Connect Dashboard">{!v.DimTag.Label + ' Details'}</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <p class="slds-page-header__name-meta">{!v.DimTag.Description__c}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /HEADER -->
+
+    <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+        <div class="slds-align_absolute-center">
+            <lightning:spinner size="medium" alternativeText="Waiting for data"/>
+        </div>
+    </div>
+
+    <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+    <div class="slds-grid slds-gutters">
+        <!-- DIM TAG TABLE -->
+
+        <div class="slds-col slds-size_2-of-3">
+            <lightning:datatable keyField="Id"
+                                 data="{!v.detailsData}"
+                                 columns="{!v.columns}"
+                                 hideCheckboxColumn="true"
+                                 onrowaction="{!c.goToSubTab}"
+                                 defaultSortDirection="{!v.defaultSortDirection}"
+                                 sortedDirection="{!v.sortDirection}"
+                                 sortedBy="{!v.sortedBy}"
+                                 onsort="{!c.handleSort}"
+                                 onheaderaction="{!c.handleHeaderAction}"
+                                 />
+
+            <div class="slds-clearfix">
+                <div class="slds-page-header" role="banner">
+                    <div class="slds-float_right">
+                        <lightning:button label="Prev" iconName="utility:chevronleft" iconPosition="left"
+                                          onclick="{!c.handlePrev}" disabled="{! v.pageNumber == 1}"/>
+                        <lightning:button label="Next" iconName="utility:chevronright" iconPosition="right"
+                                          disabled="{! v.isLastPage}" onclick="{!c.handleNext}"/>
+                    </div>
+                    <p class="slds-page-header__title">Page {!v.pageNumber} | {! ((v.pageNumber-1)*v.pageSize)+' to '+((v.pageNumber-1)*v.pageSize+v.dataSize)}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-card">
+                <div class="slds-card__header slds-align_absolute-center slds-text-heading_medium slds-p-bottom_medium"
+                     style="background-color: #f3f2f2;"> Tag Options
+                </div>
+                <div class="slds-align_absolute-center slds-m-top_medium slds-m-bottom_medium">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-m-right_x-small slds-m-bottom_small">
+                            <lightning:button aura:id="NewRecord" label="Tag Records" title="Add Records" variant="brand"
+                                              onclick="{!c.callActionCmp}"/>
+                        </div>
+                        <div class="slds-col slds-m-right_x-small slds-m-bottom_small">
+                            <lightning:button aura:id="BulkImport" label="Tag Records (Bulk)" title="Bulk Import Records" variant="brand"
+                                              onclick="{!c.callActionCmp}"/>
+                        </div>
+                        <aura:if isTrue="{!v.DimTag.Object__c == 'Contact'}">
+                        <div class="slds-col">
+                            <lightning:button aura:id="marketExport" label="{!v.processing ? 'Exporting...' : 'Marketing Export'}" title="Export" variant="brand" onclick="{!c.exportData}"
+                                              disabled="{!v.processing}"/>
+                        </div>
+                        </aura:if>
+                        <div class="slds-col">
+                            <lightning:button aura:id="fullExport" label="{!v.processing ? 'Exporting...' : 'Full Export'}" title="Export" variant="brand" onclick="{!c.exportData}"
+                            disabled="{!v.processing}"/>
+                        </div>
+                    </div>
+                </div>
+                <div>{!v.actionCmp}</div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</aura:component>

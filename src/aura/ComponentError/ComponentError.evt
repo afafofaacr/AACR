@@ -1,0 +1,7 @@
+<!--
+ - Created by lauren.lezberg on 2/11/2020.
+ -->
+
+<aura:event type="APPLICATION" description="ComponentError">
+    <aura:attribute name="errorMsg" type="String"/>
+</aura:event>

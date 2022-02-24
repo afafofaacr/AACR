@@ -1,0 +1,88 @@
+/**
+ * Created by lauren.lezberg on 1/28/2019.
+ */
+.THIS .slds-form-element__label{
+    font-size:1.5rem;
+}
+.THIS .slds-form-element_stacked .slds-form-element__icon{
+    display:none;
+}
+
+.THIS.header{
+    font-size: 30px;
+    font-weight:500;
+}
+
+.THIS .slds-input{
+    font-size:1.5rem;
+}
+
+.THIS .slds-form-element{
+    font-size:1.5rem;
+}
+
+.THIS .slds-text-heading_small{
+    color: rgb(194, 57, 52);
+    font-size: 1.5rem;
+}
+
+.THIS .slds-box{
+    background-color: token(aacrGreenL1);
+    border-color: token(aacrGreen);
+}
+
+.THIS .emptyError {
+    border: 2px solid rgb(194, 57, 52);
+}
+
+.THIS .slds-card{
+    border: 5px solid rgb(221, 219, 218);
+}
+
+
+.THIS .slds-datepicker .slds-dropdown .slds-dropdown_left{
+    position:fixed;
+}
+
+.THIS .slds-datepicker__month{
+    font-size:1rem;
+}
+
+.THIS .slds-dropdown-trigger_click.slds-is-open .slds-dropdown{
+    font-size:1.5rem;
+}
+
+.THIS .slds-text-title{
+    font-weight: 500;
+    font-size:2rem;
+}
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(AACRBlue);
+    border-color:  token(AACRBlue);
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+    padding:5px;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+.THIS .slds-button__icon{
+    height:1.5rem;
+    width:1.5rem;
+}
+
+.THIS .slds-input-has-icon .slds-input__icon:not(button){
+    width: 1.5rem;
+}
+
+.THIS .slds-form-element__help{
+    font-size:1rem;
+}

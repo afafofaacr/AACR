@@ -1,0 +1,9 @@
+<!--
+ - Created by lauren.lezberg on 3/30/2020.
+ -->
+
+<aura:event type="APPLICATION" description="AreYouSureResponseEvt">
+    <aura:attribute name="confirm" type="Boolean"/>
+    <aura:attribute name="reject" type="Boolean"/>
+    <aura:attribute name="cmpId" type="String"/>
+ </aura:event>

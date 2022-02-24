@@ -1,0 +1,35 @@
+/**
+ * Created by lauren.lezberg on 1/8/2019.
+ */
+
+.THIS .selected{
+    background-color: #edf8ed; 
+}
+
+.THIS.slds-button_brand{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+}
+
+.THIS .slds-button.slds-button_brand{
+    background-color: token(AACRBlue);
+    border-color: token(AACRBlue);
+    color: white;
+    font-size:1.5rem;
+    padding-top: 1rem;
+    padding-bottom: .75rem;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0rem;
+    display: block;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size: 1.875rem;
+}
+
+.THIS .slds-no-flex{
+    display:flex;
+}

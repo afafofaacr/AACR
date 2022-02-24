@@ -1,0 +1,12 @@
+<!--
+ - Created by lauren.lezberg on 12/11/2019.
+ -->
+
+<aura:component description="EventNew_Override" controller="EventNew_OverrideController" implements="lightning:isUrlAddressable,force:appHostable,force:lightningQuickAction,lightning:actionOverride,force:hasRecordId,force:hasSObjectName">
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+
+</aura:component>

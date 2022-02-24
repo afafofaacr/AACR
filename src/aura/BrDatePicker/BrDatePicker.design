@@ -1,0 +1,5 @@
+<design:component label="AC Calendar">
+    <design:attribute name="zoneId"
+                      label="Zone ID"
+                      description="Events Zone ID" />
+</design:component>

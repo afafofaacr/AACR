@@ -1,0 +1,9 @@
+<!--
+ - Created by lauren.lezberg on 3/7/2019.
+ -->
+
+<aura:event type="APPLICATION" description="JP_NavigateEvt is the event to signal that the join process should move steps and create new component">
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="cmpName" type="String"/>
+    <aura:attribute name="isValid" type="Boolean"/>
+</aura:event>

@@ -1,0 +1,22 @@
+<!--
+ - Created by mitfity on 08.08.2019.
+ -->
+
+<aura:component description="brDietaryPreferences">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="isSaving" type="Boolean" default="false"/>
+    <aura:attribute name="nextCmp" type="String" />
+    <aura:attribute name="nextStep" type="String" />
+
+    <!-- HANDLERS -->
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <lightning:card class="slds-p-around_medium">
+
+        <c:acDietaryPreferencesForm aura:id="dietaryForm" onformSaved="{!c.goNext}"/>
+
+    </lightning:card>
+
+</aura:component>

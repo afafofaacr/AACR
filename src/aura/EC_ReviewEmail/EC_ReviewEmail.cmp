@@ -1,0 +1,48 @@
+<!--
+ - Created by afaf.awad on 3/1/2021.
+ -->
+
+<aura:component description="EC_ReviewEmail" controller="EC_ReviewEmailController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="emailId" type="String" description="SF Id of Exhibitor Email"/>
+    <aura:attribute name="exOrder" type="EC_Email__c" description="Exhibitor Order Object" />
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="options" type="List" description="List of available users to send test email."/>
+    <aura:attribute name="selectedUsers" type="List" description="List of selected users to send test email."/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <div style="padding-bottom: 35px">
+            <div class="{!v.isLoading?'slds-show':'slds-hide'}">
+                <div class="slds-align_absolute-center">
+                    <c:AACRSpinner/>
+                </div>
+            </div>
+            <div class="{!v.isLoading?'slds-hide':'slds-show'}">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <c:EC_EmailPreview aura:id="emailPreview" emailId="{!v.emailId}"/>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:dualListbox name="usersSelectBox"
+                                               label= "Select Users to send test"
+                                               sourceLabel="Available"
+                                               selectedLabel="Selected"
+                                               options="{!v.options}"
+                                               onchange="{! c.handleChange }"/>
+
+                        <div class="slds-align_absolute-center">
+                            <lightning:button label="{!v.processing ? 'Sending...' : 'Send Test Email'}" class="updateButton slds-m-around_medium" variant="brand" onclick="{!c.sendEmail}"/>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</aura:component>

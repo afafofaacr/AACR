@@ -1,0 +1,13 @@
+<!--
+ - Created by afaf.awad on 3/5/2021.
+ -->
+
+<aura:component description="EC_ApproveBudget" controller="EC_Helper">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    
+    <div style="font-size: 3.5rem;margin: auto; padding-left: 25%; padding-top: 8%">
+        Thank you. Your Order is Approved.
+    </div>
+</aura:component>

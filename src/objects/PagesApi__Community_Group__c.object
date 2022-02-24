@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>A group of members which could contain either groups or contacts or accounts.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fieldSets>
+        <fullName>CPBase__Default_Group_Edit</fullName>
+        <description>Defines the attributes to be updated by the group when editing their group profile.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Facebook_Profile_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Twitter_Profile_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__LinkedIn_Profile_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Google_Profile_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Private_Community_Feed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Private_Members__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Private_Events__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Enable_Community_Feed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Enable_Members__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Enable_Events__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Default Group Edit</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>CPBase__Default_Group_View</fullName>
+        <description>Defines the attributes to be seen on the group member modal.</description>
+        <displayedFields>
+            <field>PagesApi__Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PagesApi__Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Default Group View</label>
+    </fieldSets>
+    <fields>
+        <fullName>PagesApi__Banner__c</fullName>
+        <defaultValue>&quot;https://s3.amazonaws.com/package-assets/integration/emerald/img/cover-bgs/cover-1.jpg&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Banner displayed in the group</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Banner displayed in the group</inlineHelpText>
+        <label>Banner</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Chatter_Group_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Collaboration group ID that the community group is linked with.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>**System Calculated** Collaboration group ID that the community group is linked with.</inlineHelpText>
+        <label>Chatter Group ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Community_Network_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** This field shows the ID for the related community.</description>
+        <externalId>false</externalId>
+        <formula>PagesApi__Site__r.PagesApi__Community_Network_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>** System Calculated ** This field shows the ID for the related community.</inlineHelpText>
+        <label>Community Network ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the group that should appear in the dashboard of the group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of the group that should appear in the dashboard of the group.</inlineHelpText>
+        <label>Description</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Disable_Join__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Disable joining the community group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disable joining the community group.</inlineHelpText>
+        <label>Disable Join</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Group&apos;s email address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Group&apos;s email address.</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the Group will only be made visible when the Contact meets the criteria set in the &quot;Access Permissions&quot; related list. Unchecked by default.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the Group will only be made visible when the Contact meets the criteria set in the &quot;Access Permissions&quot; related list. Unchecked by default.</inlineHelpText>
+        <label>DEPRECATED</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Enable_Community_Feed__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables chatter features in the community. Requires members to be enabled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables chatter features in the community. Requires members to be enabled.</inlineHelpText>
+        <label>Enable Community Feed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Enable_Events__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables event only features in the community.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables event only features in the community.</inlineHelpText>
+        <label>Enable Events</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Enable_Members__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables Member features in the community.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables Member features in the community.</inlineHelpText>
+        <label>Enable Members</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Facebook_Profile_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL where the user should be redirected when they click the Facebook icon in the group dashboard.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL where the user should be redirected when they click the Facebook icon in the group dashboard.</inlineHelpText>
+        <label>Facebook Profile URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Google_Profile_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL where the user should be redirected when they click the Google+ icon in the group dashboard.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL where the user should be redirected when they click the Google+ icon in the group dashboard.</inlineHelpText>
+        <label>Google+ Profile URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Image_URL__c</fullName>
+        <defaultValue>&quot;https://s3.amazonaws.com/package-assets/integration/emerald/img/placeholders/item.png&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>URL for the group image that should appear in the dashboard of the group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL for the group image that should appear in the dashboard of the group.</inlineHelpText>
+        <label>Group Image URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Member_Edit_Field_Sets_CSV__c</fullName>
+        <defaultValue>&quot;Community_Group_Member_Edit&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field references field sets that define the attributes to be updated by the group member when editing their group member profile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field references field sets that define the attributes to be updated by the group member when editing their group member profile.</inlineHelpText>
+        <label>Group Member Edit Field Sets(CSV)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Member_View_Field_Sets_CSV__c</fullName>
+        <defaultValue>&quot;Community_Group_Member_View&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field references field sets that define the attributes to be seen on the group member modal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field references field sets that define the attributes to be seen on the group member modal.</inlineHelpText>
+        <label>Group Member View Field Sets(CSV)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Owner of the group. Defaults to the user creating the group, if not populated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Owner of the group. Defaults to the user creating the group, if not populated.</inlineHelpText>
+        <label>Group Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Community_Groups</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Roster_Label__c</fullName>
+        <defaultValue>&quot;Group Roster&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Button label displayed on the group detail page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Button label displayed on the group detail page.</inlineHelpText>
+        <label>Group Roster Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Group_Roster_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Page where the user should be redirected when they click the roster link. Defaults to the group roster page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Page where the user should be redirected when they click the roster link. Defaults to the group roster page.</inlineHelpText>
+        <label>Group Roster Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Account_Member_Entity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Selected if Member Entity Type is &quot;Account.&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Selected if Member Entity Type is &quot;Account.&quot;</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Contact_Member_Entity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Selected if Member Entity Type is &quot;Contact.&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Selected if Member Entity Type is &quot;Contact.&quot;</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Group_Member_Entity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Selected if Member Entity Type is &quot;Group.&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Selected if Member Entity Type is &quot;Group.&quot;</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Private__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if the group is Private.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if the group is Private.</inlineHelpText>
+        <label>Is Private</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Public__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if group is Public.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if group is Public.</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Published__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>By checking this field, the group will be displayed in the Community Portal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>By checking this field, the group will be displayed in the Community Portal.</inlineHelpText>
+        <label>Is Published</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Unlisted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if group is Unlisted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if group is Unlisted.</inlineHelpText>
+        <label>SYSTEM</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__LinkedIn_Profile_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL where the user should be redirected when they click the LinkedIn icon in the group dashboard.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL where the user should be redirected when they click the LinkedIn icon in the group dashboard.</inlineHelpText>
+        <label>LinkedIn Profile URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Member_Entity_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the member type. Only the type selected can be a member of the group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the member type. Only the type selected can be a member of the group.</inlineHelpText>
+        <label>Member Entity Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group</fullName>
+                    <default>false</default>
+                    <label>Group</label>
+                </value>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>true</default>
+                    <label>Contact</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Member_Search_Display_Field_s_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the fields to be displayed on the group member tiles in the Group Members page using comma separated values of field API names. Limited to Group Member fields only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the fields to be displayed on the group member tiles in the Group Members page using comma separated values of field API names. Limited to Group Member fields only.</inlineHelpText>
+        <label>Member Search Display Fields (CSV)</label>
+        <length>31768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Member_Search_Display_Fields_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the fields to be displayed on the group member tiles in the Group Members page using comma separated values of field API names. Limited to Group Member fields only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the fields to be displayed on the group member tiles in the Group Members page using comma separated values of field API names. Limited to Group Member fields only.</inlineHelpText>
+        <label>Member Search Display Fields (CSV)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Member_Search_Filter_Field_s_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter additional fields, comma separated, to narrow group member searches on the group listing page. Be sure to use the field&apos;s API name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter additional fields, comma separated, to narrow group member searches on the group listing page. Be sure to use the field&apos;s API name.</inlineHelpText>
+        <label>Member Search Filter Fields (CSV)</label>
+        <length>31768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Member_Search_Filter_Fields_CSV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter additional fields, comma separated, to narrow group member searches on the group listing page. Be sure to use the field&apos;s API name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter additional fields, comma separated, to narrow group member searches on the group listing page. Be sure to use the field&apos;s API name.</inlineHelpText>
+        <label>Member Search Filter Fields (CSV)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Members__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of members in the group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of members in the group.</inlineHelpText>
+        <label>Members</label>
+        <summaryForeignKey>PagesApi__Community_Group_Member__c.PagesApi__Community_Group__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Privacy_Setting__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Choose the privacy settings of the group:
+1. Public - Open visibility; Open join process
+2. Private - Restricted visibility; Approval based join process
+3. Unlisted - Visible only to members, not searchable; Backend join process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>1. Public - Open visibility; Open join process
+2. Private - Restricted visibility; Approval based join process
+3. Unlisted - Visible only to members, not searchable; Backend join process</inlineHelpText>
+        <label>Privacy Setting</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Public</fullName>
+                    <default>true</default>
+                    <label>Public</label>
+                </value>
+                <value>
+                    <fullName>Private</fullName>
+                    <default>false</default>
+                    <label>Private</label>
+                </value>
+                <value>
+                    <fullName>Unlisted</fullName>
+                    <default>false</default>
+                    <label>Unlisted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Private_Community_Feed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables Chatter only for members of the community group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables Chatter only for members of the community group.</inlineHelpText>
+        <label>Private Community Feed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Private_Events__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables Events only for members of the community group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables Events only for members of the community group.</inlineHelpText>
+        <label>Private Events</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Private_Members__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enables member features for members only in the community.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables member features for members only in the community.</inlineHelpText>
+        <label>Private Members</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Search_Results_Sort_Field__c</fullName>
+        <defaultValue>&quot;Name&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** Defaults Group Name ** Combined with the Search Results Sort Order, this field defines the field to sort group member search results in ascending or descending order. Limited to Community Group Member Fields Only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Defaults Group Name ** Combined with the Search Results Sort Order, this field defines the field to sort group member search results in ascending or descending order. Limited to Community Group Member Fields Only.</inlineHelpText>
+        <label>Search Results Sort Field</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Search_Results_Sort_Order__c</fullName>
+        <defaultValue>&quot;ASC&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** Defaults Ascending ** Combined with the Search Results Sort Field, this field defines the order in which the search results will be displayed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Defaults Ascending ** Combined with the Search Results Sort Field, this field defines the order in which the search results will be displayed.</inlineHelpText>
+        <label>Search Results Sort Order</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Search_Results__c</fullName>
+        <defaultValue>10</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** Default 10 ** The value in this field defines the maximum number of results that will be returned for search results on the Group Members tab.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Default 10 ** The value in this field defines the maximum number of results that will be returned for search results on the Group Members tab.</inlineHelpText>
+        <label>Search Results</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Show_Group_Roster__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Displays the link of the group roster in the community group dashboard.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the link of the group roster in the community group dashboard.</inlineHelpText>
+        <label>Show Group Roster</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Show_Search_Filters__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**  Default Unchecked ** This field enables or disables the filters in the Group Search page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**  Default Unchecked ** This field enables or disables the filters in the Group Search page.</inlineHelpText>
+        <label>Show Search Filters</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Site__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Required ** Link to the Site which owns the Community Group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Link to the Site which owns the Community Group.</inlineHelpText>
+        <label>Site</label>
+        <referenceTo>PagesApi__Site__c</referenceTo>
+        <relationshipLabel>Community Groups</relationshipLabel>
+        <relationshipName>Community_Groups</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Twitter_Profile_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL where the user should be redirected when they click the Twitter icon in the group dashboard.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL where the user should be redirected when they click the Twitter icon in the group dashboard.</inlineHelpText>
+        <label>Twitter Profile URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field allows you to define a type of group to be available in the group search.  This field&apos;s values can be updated to better suite your organization&apos;s needs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field allows you to define a type of group to be available in the group search.  This field&apos;s values can be updated to better suite your organization&apos;s needs.</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Chapter</fullName>
+                    <default>false</default>
+                    <label>Chapter</label>
+                </value>
+                <value>
+                    <fullName>Committee</fullName>
+                    <default>false</default>
+                    <label>Committee</label>
+                </value>
+                <value>
+                    <fullName>Member Group</fullName>
+                    <default>true</default>
+                    <label>Member Group</label>
+                </value>
+                <value>
+                    <fullName>Task-Force</fullName>
+                    <default>false</default>
+                    <label>Task-Force</label>
+                </value>
+                <value>
+                    <fullName>Working Group</fullName>
+                    <default>false</default>
+                    <label>Working Group</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Community Group</label>
+    <listViews>
+        <fullName>PagesApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>PagesApi__Group_Owner__c</columns>
+        <columns>PagesApi__Email__c</columns>
+        <columns>PagesApi__Type__c</columns>
+        <columns>PagesApi__Privacy_Setting__c</columns>
+        <columns>PagesApi__Members__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Community Group Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Community Groups</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>PagesApi__Privacy_Setting__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Members__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Email__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PagesApi__Description__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>PagesApi__Privacy_Setting__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Members__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Email__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PagesApi__Description__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Privacy_Setting__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Members__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Email__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Description__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>PagesApi__Type__c</searchFilterFields>
+        <searchFilterFields>PagesApi__Privacy_Setting__c</searchFilterFields>
+        <searchResultsAdditionalFields>PagesApi__Privacy_Setting__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Members__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Email__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PagesApi__Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

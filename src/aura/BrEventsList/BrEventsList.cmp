@@ -1,0 +1,113 @@
+<aura:component description="BrEventsList" controller="BrEventsListController">
+    <aura:attribute name="userInfo" type="Object" />
+    <aura:attribute name="zoneId" type="String" />
+    <aura:attribute name="itemsPerPage" type="Integer"/>
+    <aura:attribute name="listItems" type="List" />
+    <aura:attribute name="currentPage" type="Integer" default="1" />
+    <aura:attribute name="pagesTotal" type="Integer" default="1" />
+    <aura:attribute name="filters" type="Object" default="{}"/>
+    <aura:attribute name="searchQuery" type="String" />
+    <aura:attribute name="dateFilter" type="String"/>
+    <aura:attribute name="isCommunity" type="Boolean" />
+    <aura:attribute name="showPastTab" type="Boolean" default="true" />
+    <aura:attribute name="isGuest" type="Boolean" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:BrDateChange" action="{!c.retrieveItemsForDate}"/>
+
+    <div class="container slds-grid slds-gutters slds-wrap slds-grid--align-center">
+        <div class="slds-col slds-size--1-of-1 slds-large-size_2-of-3">
+        <div class="slds-size--1-of-1 slds-medium-size--12-of-12 slds-large-size--12-of-12">
+            <div class="slds-grid slds-wrap slds-grid--vertical-align-end border-bottom slds-grid--align-center">
+                <div class="slds-size--1-of-1 slds-order--2">
+                    <div class="tabbed">
+                        <ul class="tabList">
+                            <li aura:id="tabAll" class="active slds-text-heading_medium" onclick="{!c.selectTab}" data-target="All">{!$Label.c.lbl_all_events}</li>
+
+                            <aura:if isTrue="{!not(v.isGuest)}">
+                                <li aura:id="tabAttending" class="slds-text-heading_medium" onclick="{!c.selectTab}" data-target="Attending">{!$Label.c.lbl_events_im_attending}</li>
+
+                                <!--                            <aura:if isTrue="{!v.showPastTab}">-->
+                                <li aura:id="tabPast" class="slds-text-heading_medium" onclick="{!c.selectTab}" data-target="Past">{!$Label.c.lbl_past_events}</li>
+<!--                            </aura:if>-->
+
+                            </aura:if>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slds-size--1-of-1 slds-order--1">
+                    <div class="search-outer-wrapper">
+                        <div class="slds-form-element__control search-wrapper">
+                            <ui:inputText aura:id="searchInput" value="{!v.searchQuery}" class="slds-text-heading_large slds-input search-type" change="{!c.searchEvents}" />
+                            <a href="javascript:void(0)" onclick="{!c.searchEvents}" class="search-btn slds-m-top_small"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aura:if isTrue="{!not(empty(v.listItems))}">
+
+            <div class="slds-grid">
+                <div class="slds-size--1-of-1 spinner-list-min-height">
+                    <div class="slds-spinner_container slds-hide" aura:id="spinner">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                    <aura:iteration items="{!v.listItems}" var="item">
+                        <c:BrEventsListItem userInfo="{!v.userInfo}" item="{!item}"
+                                              isCommunity="{!v.isCommunity}" tab="{!v.filters.tab}"
+                                              isGuest="{!v.isGuest}"/>
+                    </aura:iteration>
+                </div>
+            </div>
+
+                <div class="slds-col slds-size--1-of-1">
+
+                    <div class="slds-grid slds-grid--align-center slds-m-vertical--medium">
+
+                        <div class="slds-col--padded">
+                            <aura:if isTrue="{!greaterthan(v.currentPage, 1)}">
+                                <button class="slds-button slds-button--neutral pagination-button-active" onclick="{!c.openPreviousPage}">{!$Label.c.lbl_prev}</button>
+                                <aura:set attribute="else">
+                                    <button class="slds-button slds-button--neutral" disabled="disabled">{!$Label.c.lbl_prev}</button>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                        <div class="slds-col--padded slds-p-top_medium">
+                            <span class="slds-text-heading_small pages">{!v.currentPage}&nbsp;{!$Label.c.lbl_of}&nbsp;{!v.pagesTotal}</span>
+                        </div>
+                        <div class="slds-col--padded">
+                            <aura:if isTrue="{!and(greaterthan(v.pagesTotal, 1), lessthan(v.currentPage, v.pagesTotal))}">
+                                <button class="slds-button slds-button--neutral pagination-button-active" onclick="{!c.openNextPage}">{!$Label.c.lbl_next}</button>
+                                <aura:set attribute="else">
+                                    <button class="slds-button slds-button--neutral" disabled="disabled">{!$Label.c.lbl_next}</button>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </div>
+
+                <aura:set attribute="else">
+                    <aura:if isTrue="{!or(v.filters.tab=='Attending',v.filters.tab=='Past' )}">
+                        <div class="slds-box slds-m-around_medium slds-align_absolute-center">
+                            <div class="slds-text-heading_large">
+                                You are not currently registered for any upcoming AACR events. Click the UPCOMING EVENTS tab to review and register for upcoming events.
+                            </div>
+                        </div>
+                    </aura:if>
+
+                </aura:set>
+            </aura:if>
+
+        </div>
+
+        </div>
+        <div class="slds-col slds-size--1-of-1 slds-large-size_1-of-3">
+            <div class="slds-m-top_medium">
+            <c:BrDatePicker zoneId="{!v.zoneId}"/>
+            </div>
+        </div>
+    </div><!-- end of .container -->
+</aura:component>

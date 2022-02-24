@@ -1,0 +1,226 @@
+<!--
+ - Created by lauren.lezberg on 1/2/2020.
+ -->
+
+<aura:component description="AACREventsDashboard" controller="AACREventsDashboardController"
+                implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:appHostable">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="isLoading" type="Boolean" description="is data processing"/>
+    <aura:attribute name="openNew" type="Boolean" description="open new event wizard" default="false"/>
+    <aura:attribute name="mvalue" type="String"/>
+    <aura:attribute name="yvalue" type="Integer"/>
+    <aura:attribute name="monthEvents" type="List" description="list of events for a specific month"/>
+    <aura:attribute name="months" type="List" default="[
+    {'label': 'Jan', 'value': '1'},
+    {'label': 'Feb', 'value': '2'},
+    {'label': 'Mar', 'value': '3'},
+    {'label': 'Apr', 'value': '4'},
+    {'label': 'May', 'value': '5'},
+    {'label': 'Jun', 'value': '6'},
+    {'label': 'Jul', 'value': '7'},
+    {'label': 'Aug', 'value': '8'},
+    {'label': 'Sep', 'value': '9'},
+    {'label': 'Oct', 'value': '10'},
+    {'label': 'Nov', 'value': '11'},
+    {'label': 'Dec', 'value': '12'}
+    ]"/>
+    <aura:attribute name="years" type="List" default="[]"/>
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <!-- HEADER -->
+    <div class="slds-page-header slds-m-bottom_medium">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="standard:event" size="medium"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_left">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate"
+                                                  title="AACR Events Dashboard">AACR Events Dashboard</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <p class="slds-page-header__name-meta">Manage All Events</p>
+                            </div>
+                            <div class="slds-float_right">
+                                <lightning:button label="New Event" iconName="utility:add" onclick="{!c.goToNew}"/>
+                                <aura:if isTrue="{!v.openNew}">
+                                    <c:EventNew_Override/>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /HEADER -->
+
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-2 ">
+            <lightning:card title="Filters: " class="slds-p-around_medium">
+                <div class="slds-grid slds-gutters slds-wrap slds-p-around_medium">
+                    <div class="slds-col" style="overflow:auto;">
+                    <lightning:radioGroup name="radioButtonGroup"
+                                          class="slds-size_7-of-8"
+                                          options="{! v.months }"
+                                          label="Months:"
+                                          value="{! v.mvalue }"
+                                          onchange="{!c.changeMonth}"
+                                          type="button"/>
+                    </div>
+                    <div class="slds-col">
+                    <lightning:select label="Year:" onchange="{!c.changeYear}">
+                        <aura:iteration items="{!v.years}" var="y">
+                            <option value="{!y.value}" selected="{!y.value == v.yvalue}">{!y.label}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                    </div>
+                </div>
+
+            </lightning:card>
+            <aura:if isTrue="{!not(empty(v.monthEvents))}">
+
+                <!-- PUBLIC EVENTS -->
+                <lightning:card title="Public Events" iconName="utility:events">
+                    <aura:iteration var="evt" items="{!v.monthEvents}">
+                        <aura:if isTrue="{!not(evt.isPrivate)}">
+                            <lightning:tile label="{!evt.eventName + ' (' + evt.dateString + ')'}"
+                                            href="{!'/' + evt.eventId}"
+                                            class="slds-m-around_small slds-box">
+                                <div class="slds-grid  slds-gutters">
+                                    <div class="slds-col slds-align-bottom slds-size_1-of-3">
+                                        <h3 class="slds-text-heading_medium">Tickets Sold</h3>
+                                        <div class="slds-box slds-align_absolute-center">
+                                            <div class="slds-text-heading_medium">{!evt.ticketsSold}</div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-align-bottom slds-size_1-of-3">
+                                        <h3 class="slds-text-heading_medium">Tickets Remaining</h3>
+                                        <div class="slds-box slds-align_absolute-center">
+                                            <aura:if isTrue="{!evt.ticketsAllocated!=0}">
+                                                <div class="slds-text-heading_medium">{!evt.ticketsRemaining}</div>
+                                                <aura:set attribute="else">
+                                                    <div class="slds-text-heading_medium">NA</div>
+                                                </aura:set>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-align-bottom slds-size_1-of-3">
+                                        <h3 class="slds-text-heading_medium">Paid Budgeted Attendance</h3>
+                                        <div class="slds-box slds-align_absolute-center">
+                                            <div class="slds-text-heading_medium">{!evt.budgetedAttendance}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br/>
+                                <div class="slds-text-heading_medium">Event Attendance Progress:</div>
+                                <lightning:progressBar value="{!(evt.ticketsSold / evt.ticketsAllocated) * 100}"
+                                                       size="large"
+                                                       title="{!(evt.ticketsSold / evt.ticketsAllocated) * 100 + '%'}"/>
+                                <br/>
+                                <div class="slds-text-heading_medium">{!evt.percentOverUnder==abs(evt.percentOverUnder)?'Percent Over Budget':'Percent Under Budget'}</div>
+                                <lightning:progressBar value="{!abs(evt.percentOverUnder)}"
+                                                       size="large"
+                                                       title="{!evt.percentOverUnder + '%'}"/>
+                            </lightning:tile>
+                        </aura:if>
+                    </aura:iteration>
+
+                </lightning:card>
+
+                <!-- PRIVATE EVENTS -->
+                <lightning:card title="Private Events" iconName="utility:privately_shared" class="slds-m-bottom_medium">
+                    <aura:iteration var="evt" items="{!v.monthEvents}">
+                        <aura:if isTrue="{!evt.isPrivate}">
+                            <lightning:tile label="{!evt.eventName + ' (' + evt.dateString + ')'}"
+                                            href="{!'/' + evt.eventId}"
+                                            class="slds-m-around_small slds-box">
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-align-bottom slds-size_1-of-3">
+                                        <div class="slds-text-heading_medium">Tickets Sold</div>
+                                        <div class="slds-box slds-align_absolute-center">
+                                            <div class="slds-text-heading_medium">{!evt.ticketsSold}</div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-align-bottom slds-size_1-of-3">
+                                        <div class="slds-text-heading_medium">Tickets Remaining</div>
+                                        <div class="slds-box slds-align_absolute-center">
+                                            <div class="slds-text-heading_medium">{!evt.ticketsRemaining}</div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-align-bottom slds-size_1-of-3">
+                                        <div class="slds-text-heading_medium">Paid Budgeted Attendance</div>
+                                        <div class="slds-box slds-align_absolute-center">
+                                            <div class="slds-text-heading_medium">{!evt.budgetedAttendance}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br/>
+                                <div class="slds-text-heading_medium">Event Attendance Progress:</div>
+                                <lightning:progressBar value="{!(evt.ticketsSold / evt.ticketsAllocated) * 100}"
+                                                       size="large"
+                                                       title="{!(evt.ticketsSold / evt.ticketsAllocated) * 100 + '%'}"/>
+                                <br/>
+                                <div class="slds-text-heading_medium">{!evt.percentOverUnder==abs(evt.percentOverUnder)?'Percent Over Budget':'Percent Under Budget'}</div>
+                                <lightning:progressBar value="{!abs(evt.percentOverUnder)}"
+                                                       size="large"
+                                                       title="{!evt.percentOverUnder + '%'}"/>
+                            </lightning:tile>
+                        </aura:if>
+                    </aura:iteration>
+                </lightning:card>
+
+            </aura:if>
+            <aura:if isTrue="{!v.isLoading}">
+                <lightning:spinner alternativeText="Loading" size="medium"/>
+            </aura:if>
+        </div>
+
+        <!-- LIST VIEWS -->
+        <div class="slds-col slds-size_1-of-2">
+            <lightning:listView aura:id="listViewEvents"
+                                objectApiName="BR_Event__c"
+                                listName="Upcoming_Events"
+                                rows="20"
+                                showSearchBar="true"
+                                showActionBar="false"
+                                enableInlineEdit="true"
+                                showRowLevelActions="false"
+            />
+            <br/>
+            <lightning:listView aura:id="pastViewEvents"
+                                objectApiName="BR_Event__c"
+                                listName="Past_Events"
+                                rows="20"
+                                showSearchBar="true"
+                                showActionBar="false"
+                                enableInlineEdit="true"
+                                showRowLevelActions="false"
+            />
+            <br/>
+            <lightning:listView aura:id="cancelledViewEvents"
+                                objectApiName="BR_Event__c"
+                                listName="Cancelled"
+                                rows="20"
+                                showSearchBar="true"
+                                showActionBar="false"
+                                enableInlineEdit="true"
+                                showRowLevelActions="false"
+            />
+            <br/>
+        </div>
+    </div>
+</aura:component>

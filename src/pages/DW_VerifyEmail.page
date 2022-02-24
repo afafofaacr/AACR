@@ -1,0 +1,14 @@
+<apex:page controller="DW_VerifyEmailController" showHeader="false" sidebar="false" action="{!updateContactEmailAddress}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
+    <style>
+        *{font-family: 'Roboto', sans-serif;}
+    	.centerContainer { max-width: 1200px; text-align: center; margin: 0 auto; padding: 15px;font-size: 15px;}
+        .message.errorM3 { background: #fff; text-align: left; display: inline-block; }
+        
+    </style>
+    <div class="centerContainer">
+        <apex:image url="{!$Resource.DW_AACRLogo}" width="250" height=" "/><br/>
+        <apex:pagemessages /> <br/>
+        <apex:outputText value="{!$Label.DW_Email_Verification_Success_Msg}" rendered="{! isEmailVerified}"/><br/>
+    </div>
+</apex:page>

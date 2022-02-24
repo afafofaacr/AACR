@@ -1,0 +1,40 @@
+/**
+ * Created by lauren.lezberg on 5/22/2019.
+ */
+.THIS .slds-input-has-icon .slds-input__icon:not(button){
+    pointer-events: all;
+}
+
+.THIS .slds-media__body>:last-child{
+    font-size:0.75rem;
+    align-self:center;
+    margin-top:0.5rem;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size: 1rem;
+}
+
+.THIS .slds-page-header{
+    background: transparent;
+}
+
+.THIS .buttonLink {
+    color:rgb(22, 50, 92);
+}
+
+.THIS .buttonLink:hover{
+    color: rgb(0, 112, 210);
+}
+
+.THIS tr {
+    position: relative;
+}
+
+.THIS .slds-table:not(.slds-no-row-hover) tbody tr:hover>th{
+    background-color:token(BlueL2);
+}
+
+.THIS .slds-dropdown-trigger.slds-is-open .slds-listbox__option.slds-has-focus {
+    background-color: token(BlueL2);
+}

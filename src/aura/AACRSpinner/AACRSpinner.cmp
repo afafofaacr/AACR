@@ -1,0 +1,18 @@
+<!--
+ - Created by lauren.lezberg on 1/22/2019.
+ -->
+ 
+<aura:component description="AACRSpinner">
+    <aura:attribute name="loadingText" type="String" description="text to be displayed under loading wheel" default="Loading..."/>
+
+    <div style="display:block; position:relative;" class="slds-m-around_small">
+        <div class="slds-align_absolute-center" >
+            <div role="status" class="slds-spinner slds-spinner_large">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a" style="font-size: 100px;"></div>
+                <div class="slds-spinner__dot-b" style="font-size: 100px;"></div>
+            </div>
+        </div>
+        <div style="font-weight:500; margin-top:6.5rem;" class="slds-align_absolute-center slds-text-heading_large">{!v.loadingText}</div>
+    </div>
+</aura:component>

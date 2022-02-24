@@ -1,0 +1,19 @@
+<!--
+ - Created by lauren.lezberg on 10/17/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: JP_ItemSelectionController</p>
+        <p>
+            The <code>JP_WorkingGroupSelection</code> component is a join process component meaning it relies on a sales order id present in the URL. The component displays all available items under the
+            Working Groups item class. Any working groups present in the sales order will be preselected on load. Each working group is displayed using the <code>JP_WorkingGroupItem</code> component.
+        </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>If the current contact is female, the WICR working group is preselected even if it is not present in the sales order.</p>
+    </aura:description>
+    <aura:example name="JP_WorkingGroupSelection" ref="c:JP_WorkingGroupSelection" label="JP_WorkingGroupSelection">
+        Example for JP_WorkingGroupSelection
+    </aura:example>
+</aura:documentation>

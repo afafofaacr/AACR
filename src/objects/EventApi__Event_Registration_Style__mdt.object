@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores registration styles for events.</description>
+    <fields>
+        <fullName>EventApi__Is_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this style will be available on the event builder.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>When checked, this style will be available on the event builder.</inlineHelpText>
+        <label>DEPRECATED</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Style_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, this style will be available on the event builder.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>When checked, this style will be available on the event builder.</inlineHelpText>
+        <label>Is Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Target_Page__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**REQUIRED** Name of the lightning/visualforce page that will be used to generate the event&apos;s URL.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>**REQUIRED** Name of the lightning/visualforce page that will be used to generate the event&apos;s URL.</inlineHelpText>
+        <label>Target Page</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Registration Style</label>
+    <pluralLabel>Event Registration Styles</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,50 @@
+<!--
+ - Created by lauren.lezberg on 8/23/2019.
+ -->
+
+<aura:component description="JP_WorkingGroupDonations" controller="JP_WorkingGroupDonationsController"> 
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="workingGroups" type="List" description="List of working groups"/>
+    <aura:attribute name="isLoading" type="Boolean" description="component is loading" default="false"/>
+
+    <!-- AURA HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+            <c:AACRSpinner/>
+        </div>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!not(empty(v.workingGroups))}">
+            <aura:iteration items="{!v.workingGroups}" var="WG" indexVar="indx">
+                <div class="slds-grid slds-align_absolute-center slds-box slds-m-around_small">
+                <div class="slds-col slds-size_1-of-2 ">
+                    <div class="slds-text-heading_medium slds-text-align_left">{!WG.name}</div>
+                    <div class="slds-text-heading_small slds-text-color_weak slds-text-align_left">{!WG.description}</div>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-text-align_right">
+                <lightning:radioGroup aura:id="donationItems"
+                                      options="{!WG.items}"
+                                      value="{!WG.selected}"
+                                      type="radio"
+                                      class="customRadio slds-text-heading_medium"/>
+                </div>
+                </div>
+            </aura:iteration>
+                <aura:set attribute="else">
+                    <div class="slds-box">
+                        <div class="slds-align_absolute-center">
+                            <div class="slds-text-heading_large slds-text-align_center">
+                                You have not joined any AACR Groups to donate to. If you would like to make a general donation to the AACR click 'Donate Today' in the top right hand corner of the screen.
+                            </div>
+                        </div>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

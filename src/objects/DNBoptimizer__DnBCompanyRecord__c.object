@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>DNBoptimizer__D_B_Company_Record</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>DNBoptimizer__D_B_Company_Record</fullName>
+        <fields>DNBoptimizer__BusinessName__c</fields>
+        <label>D&amp;B Company Record</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>DNBoptimizer__Combined_Address</fullName>
+        <description>D&amp;B Company record</description>
+        <displayedFields>
+            <field>DNBoptimizer__combined_address__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Combined Address</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>DNBoptimizer__DNB_Account_Fields</fullName>
+        <description>It is used to show the DNB Account fields</description>
+        <displayedFields>
+            <field>DNBoptimizer__BusinessName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__DUNSNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__EmployeesHere__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__SalesVolumeUSDollars__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__EmployeeCountTotal__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__SIC4Code1__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__SIC4Code1Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__NAICSCode1__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__NAICSDescription1__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DNBoptimizer__LocationType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>DNB Account Fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>DNBoptimizer__BusinessDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the entity’s business operations, if available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the entity’s business operations, if available.</inlineHelpText>
+        <label>Business Description</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__BusinessName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The single name by which the entity is primarily known or identified.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The single name by which the entity is primarily known or identified.</inlineHelpText>
+        <label>Business Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__DUNSNumber__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>The Dun &amp; Bradstreet D-U-N-S® Number is an identification number assigned by Dun &amp; Bradstreet that uniquely identifies the entity in accordance with the Data Universal Numbering System (D-U-N-S).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Dun &amp; Bradstreet D-U-N-S® Number is an identification number assigned by Dun &amp; Bradstreet that uniquely identifies the entity in accordance with the Data Universal Numbering System (D-U-N-S).</inlineHelpText>
+        <label>D-U-N-S Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__DelistedIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates that the subject has requested that they not be included in any D&amp;B marketing lists (e.g.: mailing, telephone).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates that the subject has requested that they not be included in any D&amp;B marketing lists (e.g.: mailing, telephone).</inlineHelpText>
+        <label>Opted out of Direct Marketing</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__DomesticUltimateBusinessName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the highest business in the family tree that is in the same country/region as the subject.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the highest business in the family tree that is in the same country/region as the subject</inlineHelpText>
+        <label>Domestic Ultimate Business Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__DomesticUltimateDUNSNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The D-U-N-S Number of the highest level parent within a corporate family tree that is domiciled in the same country/region as the requested company. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The D-U-N-S Number of the highest level parent within a corporate family tree that is domiciled in the same country/region as the requested company. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock.</inlineHelpText>
+        <label>Domestic Ultimate D-U-N-S Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__DomesticUltimateIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the subject record is the Domestic Ultimate Parent within their corporate family tree.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether the subject record is the Domestic Ultimate Parent within their corporate family tree.</inlineHelpText>
+        <label>Domestic Ultimate Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__EmployeeCountTotalReliabilityCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code value which describes the reliability of the Employees Total figure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A code value which describes the reliability of the Employees Total figure.</inlineHelpText>
+        <label>Employee Count Total Reliability Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__EmployeeCountTotalReliabilityDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the reliability of the Employees Total figure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the reliability of the Employees Total figure.</inlineHelpText>
+        <label>Employee Count Total Reliability Desc</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__EmployeeCountTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total number of employees in the business organization; it should include subsidiary and branch locations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total number of employees in the business organization; it should include subsidiary and branch locations.</inlineHelpText>
+        <label>Employee Count Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__EmployeeCountTrendYear__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The percentage change of this item as of base year compared to the trend year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The percentage change of this item as of base year compared to the trend year</inlineHelpText>
+        <label>Employee Count Trend Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__EmployeesHereReliabilityCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code value which describes the reliability of the Employees Here figure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A code value which describes the reliability of the Employees Here figure.</inlineHelpText>
+        <label>Employee Count Here Reliability Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__EmployeesHereReliabilityDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the reliability of the Employees Here figure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the reliability of the Employees Here figure.</inlineHelpText>
+        <label>Employee Count Here Reliability Desc</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__EmployeesHere__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of employees at this location.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of employees at this location.</inlineHelpText>
+        <label>Employee Count Here</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__FaxNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The fax number of the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The fax number of the business.</inlineHelpText>
+        <label>Fax Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__FiscalYearEnd__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the accounting period ended. If the Reliability Code denotes the figures are projected (future), then this is the date when the accounting period will end.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the accounting period ended. If the Reliability Code denotes the figures are projected (future), then this is the date when the accounting period will end.</inlineHelpText>
+        <label>Fiscal Year End</label>
+        <length>12</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__Fortune1000Rank__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the company is in the Fortune 1000 by its rank.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if the company is in the Fortune 1000 by its rank.</inlineHelpText>
+        <label>Fortune 1000 Rank</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__GlobalUltimateBusinessName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary name of the highest level parent within a corporate family tree. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock. A subject may be its own global ultimate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary name of the highest level parent within a corporate family tree. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock. A subject may be its own global ultimate.</inlineHelpText>
+        <label>Global Ultimate Business Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__GlobalUltimateDUNSNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The D-U-N-S number of the highest-level parent within a corporate family tree. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock. A subject may be its own global ultimate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The D-U-N-S number of the highest-level parent within a corporate family tree. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock. A subject may be its own global ultimate.</inlineHelpText>
+        <label>Global Ultimate D-U-N-S Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__GlobalUltimateIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the subject record is the Global Ultimate Parent within their corporate family tree.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether the subject record is the Global Ultimate Parent within their corporate family tree.</inlineHelpText>
+        <label>Global Ultimate Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__HeadquarterBusinessName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The business name of the headquarters company. A headquarters is a business establishment that has branches or divisions reporting to it.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business name of the headquarters company. A headquarters is a business establishment that has branches or divisions reporting to it.</inlineHelpText>
+        <label>Headquarter Business Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__HeadquarterDUNSNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The D-U-N-S Number of the headquarters company. A headquarters is a business establishment that has branches or divisions reporting to it.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The D-U-N-S Number of the headquarters company. A headquarters is a business establishment that has branches or divisions reporting to it.</inlineHelpText>
+        <label>Headquarter D-U-N-S Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__ImporterExporterDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description that, if known, identifies whether the business imports goods or services for re-manufacture or sale, exports products or services to a foreign country, and/or is an agent for goods.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description that, if known, identifies whether the business imports goods or services for re-manufacture or sale, exports products or services to a foreign country, and/or is an agent for goods.</inlineHelpText>
+        <label>Importer Exporter Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__ImporterExporterIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code value that identifies whether the business imports goods or services for re-manufacture or sale, exports products or services to a foreign country, and/or is an agent for goods.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A code value that identifies whether the business imports goods or services for re-manufacture or sale, exports products or services to a foreign country, and/or is an agent for goods.</inlineHelpText>
+        <label>Importer Exporter Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__IncorporatedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date on which the registered business was incorporated, as stated in the business registration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date on which the registered business was incorporated, as stated in the business registration.</inlineHelpText>
+        <label>Incorporation Date</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__LegalStatusCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code value which describes the legal structure of the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A code value which describes the legal structure of the business.</inlineHelpText>
+        <label>Legal Status Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__LegalStructureDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the legal structure of the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the legal structure of the business.</inlineHelpText>
+        <label>Legal Structure Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__LocationType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identifies the organizational status of a company. Available values are Single location, Headquarters/Parent, and Branch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the organizational status of a company. Available values are Single location, Headquarters/Parent, and Branch.</inlineHelpText>
+        <label>Location Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingAddress1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The address number, or post office box number, and street name where the business has its mail delivered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The address number, or post office box number, and street name where the business has its mail delivered.</inlineHelpText>
+        <label>Mailing Address Line 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingAddress2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The second line of the address number, or post office box number, and street name where the business has its mail delivered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The second line of the address number, or post office box number, and street name where the business has its mail delivered.</inlineHelpText>
+        <label>Mailing Address Line 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingCityName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the city where the business has its mail delivered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the city where the business has its mail delivered.</inlineHelpText>
+        <label>Mailing Address City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingCountryCode_ISO__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Mailing Address Country/Region Code normalized by the Salesforce ISO Service</description>
+        <externalId>false</externalId>
+        <label>Mailing Address Country/Region Code ISO</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingCountryCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The two-letter country/region code, defined by the International Organization for Standardization (ISO) ISO 3166-1 scheme, identifying the country/region which the business uses for mailing purposes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The two-letter country/region code, defined by the International Organization for Standardization (ISO) ISO 3166-1 scheme, identifying the country/region which the business uses for mailing purposes.</inlineHelpText>
+        <label>Mailing Address Country/Region Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingPostalCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An identifier used by the local country/region Postal Authority which the business uses for mailing purposes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An identifier used by the local country/region Postal Authority which the business uses for mailing purposes.</inlineHelpText>
+        <label>Mailing Address Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingStateAbbreviation_ISO__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Mailing Address State Abbrev normalized by the Salesforce ISO Service</description>
+        <externalId>false</externalId>
+        <label>Mailing Address State Abbrev ISO</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingStateAbbreviation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The abbreviation for the state or province where the business has its mail delivered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The abbreviation for the state or province where the business has its mail delivered.</inlineHelpText>
+        <label>Mailing Address State Abbrev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MailingStateName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the state or province where the business has its mail delivered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the state or province where the business has its mail delivered.</inlineHelpText>
+        <label>Mailing Address State Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MarketableIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether or not the subject record satisfies D&amp;B&apos;s global marketability rules.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether or not the subject record satisfies D&amp;B&apos;s global marketability rules.</inlineHelpText>
+        <label>Marketability Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__MinorityOwnedIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When &apos;true&apos; indicates that this organization is certified as a business that is greater than 50% owned by and whose management and daily business operations are controlled by one or more minority group members.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When &apos;true&apos; indicates that this organization is certified as a business that is greater than 50% owned by and whose management and daily business operations are controlled by one or more minority group members.</inlineHelpText>
+        <label>Minority Owned Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NAICSCode1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary North American Industry Classification System (NAICS) code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary North American Industry Classification System (NAICS) code for the business.</inlineHelpText>
+        <label>NAICS Code 1</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NAICSCode2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secondary North American Industry Classification System (NAICS) code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secondary North American Industry Classification System (NAICS) code for the business.</inlineHelpText>
+        <label>NAICS Code 2</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NAICSCode3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The tertiary North American Industry Classification System (NAICS) code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The tertiary North American Industry Classification System (NAICS) code for the business.</inlineHelpText>
+        <label>NAICS Code 3</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NAICSDescription1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary North American Industry Classification System (NAICS) description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary North American Industry Classification System (NAICS) description for the business.</inlineHelpText>
+        <label>NAICS Description 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NAICSDescription2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secondary North American Industry Classification System (NAICS) description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secondary North American Industry Classification System (NAICS) description for the business.</inlineHelpText>
+        <label>NAICS Description 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NAICSDescription3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The tertiary North American Industry Classification System (NAICS) description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The tertiary North American Industry Classification System (NAICS) description for the business.</inlineHelpText>
+        <label>NAICS Description 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationNumber2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The business identification number used in some countries for business registration and tax collection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business identification number used in some countries for business registration and tax collection.</inlineHelpText>
+        <label>National Identification Number 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationNumber3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The business identification number used in some countries for business registration and tax collection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business identification number used in some countries for business registration and tax collection.</inlineHelpText>
+        <label>National Identification Number 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationNumber4__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The business identification number used in some countries for business registration and tax collection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business identification number used in some countries for business registration and tax collection.</inlineHelpText>
+        <label>National Identification Number 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The business identification number used in some countries for business registration and tax collection.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business identification number used in some countries for business registration and tax collection.</inlineHelpText>
+        <label>National Identification Number 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationSystem2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the type of National ID number 2 provided.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the type of National ID number 2 provided.</inlineHelpText>
+        <label>National Identification System 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationSystem3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the type of National ID number 3 provided.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the type of National ID number 3 provided.</inlineHelpText>
+        <label>National Identification System 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationSystem4__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the type of National ID number 4 provided.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the type of National ID number 4 provided.</inlineHelpText>
+        <label>National Identification System 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NationalIdentificationSystem__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the type of National ID number 1 provided.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the type of National ID number provided.</inlineHelpText>
+        <label>National Identification System 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__NumberofFamilyMembers__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the number of linkages in the upward and downward directions of the entire family tree that the subject belongs to, starting from then global ultimate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the number of linkages in the upward and downward directions of the entire family tree that the subject belongs to, starting from then global ultimate.</inlineHelpText>
+        <label>Number of Family Members</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__OutofBusinessIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the business at this address has discontinued operations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether the business at this address has discontinued operations.</inlineHelpText>
+        <label>Out of Business Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__ParentBusinessName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The business name of the parent company. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock; these owned companies are subsidiaries to the parent company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business name of the parent company. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock; these owned companies are subsidiaries to the parent company.</inlineHelpText>
+        <label>Parent Business Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__ParentDUNSNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The D-U-N-S number of the parent company. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock; these owned companies are subsidiaries to the parent company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The D-U-N-S number of the parent company. A parent is a corporation that owns more than 50% of another corporation&apos;s capital stock; these owned companies are subsidiaries to the parent company.</inlineHelpText>
+        <label>Parent D-U-N-S Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryCityName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the city where the business is physically located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the city where the business is physically located.</inlineHelpText>
+        <label>Primary Address City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryCountryCode_ISO__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Primary Address Country/Region Code normalized by the Salesforce ISO Service</description>
+        <externalId>false</externalId>
+        <label>Primary Address Country/Region Code ISO</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryCountryCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The two-letter country/region code, defined by the International Organization for Standardization (ISO) ISO 3166-1 scheme, identifying the country/region of the business entity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The two-letter country/region code, defined by the International Organization for Standardization (ISO) ISO 3166-1 scheme, identifying the country/region of the business entity.</inlineHelpText>
+        <label>Primary Address Country/Region Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryCountryName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the country/region where the business is physically located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the country/region where the business is physically located.</inlineHelpText>
+        <label>Primary Address Country/Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryCountyName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the county where the business is physically located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the county where the business is physically located.</inlineHelpText>
+        <label>Primary Address County</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryLatitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The angular distance of the organization&apos;s primary physical address north or south from the Earth&apos;s equator measured through 90 degrees expressed in decimal numbers.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The angular distance of the organization&apos;s primary physical address north or south from the Earth&apos;s equator measured through 90 degrees expressed in decimal numbers.</inlineHelpText>
+        <label>Primary Address Latitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryLongitude__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The angular distance of the organization&apos;s primary physical address east or west from an imaginary line (called the prime meridian) that goes from the North Pole to the South Pole measured through 90 degrees expressed in decimal numbers.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The angular distance of the organization&apos;s primary physical address east or west from an imaginary line (called the prime meridian) that goes from the North Pole to the South Pole measured through 90 degrees expressed in decimal numbers.</inlineHelpText>
+        <label>Primary Address Longitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryOwns_RentsCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code value that denotes if the business owns or rents the building it occupies.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A code value that denotes if the business owns or rents the building it occupies.</inlineHelpText>
+        <label>Primary Address Owns/Rents Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryPostalCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An identifier used by the local country/region Postal Authority to identify where the business is located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>An identifier used by the local country/region Postal Authority to identify where the business is located.</inlineHelpText>
+        <label>Primary Address Postal Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimarySquareFootage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The building space this entity operates from within a building as measured in square feet</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The building space this entity operates from within a building as measured in square feet.</inlineHelpText>
+        <label>Primary Address Square Footage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryStateProvinceAbbreviation_ISO__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Primary Address State Province normalized by the Salesforce ISO Service</description>
+        <externalId>false</externalId>
+        <label>Primary Address State Province ISO</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryStateProvinceAbbreviation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The abbreviation for the state or province where the business is physically located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The abbreviation for the state or province where the business is physically located.</inlineHelpText>
+        <label>Primary Address State Province Abbrev</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryStateProvinceName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the state or province where the business is physically located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the state or province where the business is physically located.</inlineHelpText>
+        <label>Primary Address State Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryStreetAddress2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The second line of the address number, or post office box number, and street name where the business is located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The second line of the address number, or post office box number, and street name where the business is located.</inlineHelpText>
+        <label>Primary Address Line 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryStreetAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The address number, or post office box number, and street name where the business is located.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The address number, or post office box number, and street name where the business is located.</inlineHelpText>
+        <label>Primary Address Line 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__PrimaryUSMetropolitanArea__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name assigned to the 5-digit CBSA (Core Based Statistical Area) assigned by US Census board to denote a geographical region with a relatively high population density at its core.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name assigned to the 5-digit CBSA (Core Based Statistical Area) assigned by US Census board to denote a geographical region with a relatively high population density at its core.</inlineHelpText>
+        <label>Primary Address US Metropolitan Area</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__Public_PrivateIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether ownership of the business is public or private.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether ownership of the business is public or private.</inlineHelpText>
+        <label>Public Private Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__RevenueTrendYear__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The percentage change of this item as of base year compared to the trend year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The percentage change of this item as of base year compared to the trend year.</inlineHelpText>
+        <label>Revenue Trend Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC4Code1Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary Standard Industrial Classification (SIC) description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary Standard Industrial Classification (SIC) description for the business.</inlineHelpText>
+        <label>SIC4 Code 1 Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC4Code1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary Standard Industrial Classification (SIC) four digit code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary Standard Industrial Classification (SIC) four digit code for the business.</inlineHelpText>
+        <label>SIC4 Code 1</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC4Code2Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secondary Standard Industrial Classification (SIC) description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secondary Standard Industrial Classification (SIC) description for the business.</inlineHelpText>
+        <label>SIC4 Code 2 Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC4Code2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secondary Standard Industrial Classification (SIC) four digit code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secondary Standard Industrial Classification (SIC) four digit code for the business.</inlineHelpText>
+        <label>SIC4 Code 2</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC4Code3Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The tertiary Standard Industrial Classification (SIC) description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The tertiary Standard Industrial Classification (SIC) description for the business.</inlineHelpText>
+        <label>SIC4 Code 3 Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC4Code3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The tertiary Standard Industrial Classification (SIC) four digit code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The tertiary Standard Industrial Classification (SIC) four digit code for the business.</inlineHelpText>
+        <label>SIC4 Code 3</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC8Code1Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary Standard Industrial Classification (SIC) description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary Standard Industrial Classification (SIC) description for the business.</inlineHelpText>
+        <label>SIC8 Code 1 Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC8Code1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary Standard Industrial Classification (SIC) eight digit code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The primary Standard Industrial Classification (SIC) eight digit code for the business</inlineHelpText>
+        <label>SIC8 Code 1</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC8Code2Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secondary Standard Industrial Classification (SIC)  description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secondary Standard Industrial Classification (SIC)  description for the business.</inlineHelpText>
+        <label>SIC8 Code 2 Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC8Code2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The secondary Standard Industrial Classification (SIC) eight digit code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The secondary Standard Industrial Classification (SIC) eight digit code for the business.</inlineHelpText>
+        <label>SIC8 Code 2</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC8Code3Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The tertiary Standard Industrial Classification (SIC)  description for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The tertiary Standard Industrial Classification (SIC)  description for the business.</inlineHelpText>
+        <label>SIC8 Code 3 Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SIC8Code3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The tertiary Standard Industrial Classification (SIC) eight digit code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The tertiary Standard Industrial Classification (SIC) eight digit code for the business.</inlineHelpText>
+        <label>SIC8 Code 3</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SalesVolumeReliabilityCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A code value which describes the reliability of the annual Sales Volume figure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A code value which describes the reliability of the annual Sales Volume figure.</inlineHelpText>
+        <label>Sales Volume Reliability Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SalesVolumeReliabilityDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A description of the reliability of the Sales Volume figure.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A description of the reliability of the Sales Volume figure.</inlineHelpText>
+        <label>Sales Volume Reliability Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SalesVolumeUSDollars__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The monetary value of income received from customers from the sale of the entitys goods and/or services.  This is the gross sales minus any returns, rebates/discounts, allowances for damages or shortages, shipping expenses passed on to the customer.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The monetary value of income received from customers from the sale of the entitys goods and/or services.  This is the gross sales minus any returns, rebates/discounts, allowances for damages or shortages, shipping expenses passed on to the customer.</inlineHelpText>
+        <label>Sales Volume USD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SmallBusinessIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the business is designated a small business as defined by the Small Business Administration of the US government.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether the business is designated a small business as defined by the Small Business Administration of the US government.</inlineHelpText>
+        <label>Small Business Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__StockExchange__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the Stock Exchange on which the subject&apos;s shares are traded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the Stock Exchange on which the subject&apos;s shares are traded.</inlineHelpText>
+        <label>Stock Exchange</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__StockSymbol__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text that identifies the subject at the Stock Exchange for share trading purposes, e.g., DNB.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text that identifies the subject at the Stock Exchange for share trading purposes, e.g., DNB.</inlineHelpText>
+        <label>Stock Symbol</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__SubsidiaryIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the subject record is a Subsidiary within their corporate family tree.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether the subject record is a Subsidiary within their corporate family tree.</inlineHelpText>
+        <label>Subsidiary Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__TelephoneNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The main phone number for the entity, including the international dialing code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The main phone number for the entity, including the international dialing code.</inlineHelpText>
+        <label>Telephone Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__TradestyleName1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name that the entity trades under for commercial purposes although the registered legal name used for contracts and other formal situations may be another name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name that the entity trades under for commercial purposes although the registered legal name used for contracts and other formal situations may be another name.</inlineHelpText>
+        <label>Tradestyle Name 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__TradestyleName2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name that the entity trades under for commercial purposes although the registered legal name used for contracts and other formal situations may be another name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name that the entity trades under for commercial purposes although the registered legal name used for contracts and other formal situations may be another name.</inlineHelpText>
+        <label>Tradestyle Name 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__TradestyleName3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name that the entity trades under for commercial purposes although the registered legal name used for contracts and other formal situations may be another name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name that the entity trades under for commercial purposes although the registered legal name used for contracts and other formal situations may be another name.</inlineHelpText>
+        <label>Tradestyle Name 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__USTaxID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The business identification number used in the United State for business registration and tax collection, also known as Federal Employer Identification Number (FEIN).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The business identification number used in the United State for business registration and tax collection, also known as Federal Employer Identification Number (FEIN).</inlineHelpText>
+        <label>US Tax ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__WebAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Internet URL (Uniform Resource Locator) which uniquely identifies the proprietary website of the subject or the website preferred by the subject which gives more information on the subject.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Internet URL (Uniform Resource Locator) which uniquely identifies the proprietary website of the subject or the website preferred by the subject which gives more information on the subject.</inlineHelpText>
+        <label>Web Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__WomanOwnedIndicator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When &apos;true&apos; indicates that this organization is certified as a business that is greater than 50% owned by, and whose management and daily business operations are controlled by, one or more female persons.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When &apos;true&apos; indicates that this organization is certified as a business that is greater than 50% owned by, and whose management and daily business operations are controlled by, one or more female persons.</inlineHelpText>
+        <label>Woman Owned Indicator</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__YearStarted__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The year in which the entity was established as a business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The year in which the entity was established as a business.</inlineHelpText>
+        <label>Year Started</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__combined_address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Internally used: Combined Address Field</description>
+        <externalId>false</externalId>
+        <label>Combined Address Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNBoptimizer__inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Inactivate a record from data vendor</description>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>D&amp;B Company Record</label>
+    <listViews>
+        <fullName>DNBoptimizer__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Id</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>D&amp;B Company Records</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

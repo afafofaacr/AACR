@@ -1,0 +1,158 @@
+<!--
+ - Created by lauren.lezberg on 2/28/2019.
+ -->
+
+<aura:component description="JP_Nominators" controller="JP_NominatorsController">
+    <aura:attribute name="stepId" type="String" description="Join_Step__c id that represents current component step in the join process"/>
+    <aura:attribute name="isLoading" default="true" type="Boolean" description="Component is loading/processing"/>
+
+    <aura:attribute name="contactId" type="String" description="Current contact Id"/>
+    <aura:attribute name="nominator1" type="Object" default="{}" description="Nominator data for nominator 1"/>
+    <aura:attribute name="nominator2" type="Object" default="{}" description="Nominator data for nominator 2"/>
+    <aura:attribute name="studentNominator" type="Object" default="{}" description="Student nominator data"/>
+
+    <aura:attribute name="itemName" type="String" description="Membership item name"/>
+    <aura:attribute name="response" type="Object" description="Response from server that indicates success or failure"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-var-m-bottom_xx-large">
+            <c:AACRSpinner />
+        </div>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!and(not(v.response.isSuccess), v.response!=null )}">
+                <div class="demo-only" style="height:4rem">
+                    <div class="slds-notify_container slds-is-relative">
+                        <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
+                            <lightning:icon iconName="utility:error" size="small" alternativeText="Error" variant="bare"/>
+                            <div class="slds-notify__content">
+                                <h2 class="slds-text-heading_small slds-m-left_small">Could not save nominator data. Please contact membership at membership@aacr.org.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aura:if>
+
+            <div class="slds-border_bottom slds-text-heading_large bold" style="font-weight: bold;">Required Documentation</div>
+            <c:JP_RequiredDocumentation aura:id="requiredDocumentation" contactId="{!v.contactId}" itemName = "{!v.itemName}"/>
+
+            <div class="slds-border_bottom slds-text-heading_large slds-m-top_large bold" style="font-weight:bold;">Nominations</div>
+            <aura:if isTrue="{!v.itemName != 'Student Membership'}">
+                <div class="slds-text-heading_medium slds-m-top_medium" style="font-size:1.5rem;">
+                    Candidate must provide the AACR Member Number or email address of a nominator who is an Active, Emeritus or Honorary member in good standing.
+                    (Active candidates require TWO nominations). Nominators will receive an email notification of their selection.
+                    If you are unable to procure a nominator to support your application, please send a request that includes your name, institution, City, State,
+                    and Country to membership@aacr.org and we will be happy to provide a list of eligible nominators.
+                </div>
+                <lightning:card aura:id="nominator1" class="slds-m-around_small slds-p-around_small" iconName="standard:contact">
+                    <aura:set attribute="title">
+                        <div class="slds-grid">
+                            <div class="slds-text-heading_large slds-required bold">*</div>
+                            <div class="slds-text-heading_large bold">Nominator 1</div>
+                        </div>
+                    </aura:set>
+                    <div class="slds-grid slds-gutters slds-m-right_small slds-m-left_small">
+                        <div class="slds-col  ">
+                            <lightning:input label="Member #" class="slds-text-heading_medium slds-m-bottom_large" value="{!v.nominator1.memberNo}" disabled="{!v.nominator1.isVerified}" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-7 slds-align_absolute-center ">
+                            <div class="slds-required slds-text-heading_medium bold">OR</div>
+                        </div>
+                        <div class="slds-col ">
+                            <lightning:input label="Email" class="slds-text-heading_medium slds-m-bottom_large" value="{!v.nominator1.emailAddr}" disabled="{!v.nominator1.isVerified}"/>
+                        </div>
+                        <div class="slds-col slds-align_absolute-center">
+                            <aura:if isTrue="{!not(v.nominator1.isVerified)}">
+                                <lightning:button label="Verify Nominator" variant="neutral" class="slds-p-top_medium slds-p-bottom_medium" value="nominator1" onclick="{!c.verify}"/>
+                                <aura:set attribute="else">
+                                    <div class="slds-box verified">
+                                        <div class="slds-grid">
+                                            <lightning:icon iconName="utility:check" size="medium" class="verified"/>
+                                            <div class="slds-text-heading_medium slds-m-left_small bold">Verified</div>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                    <aura:if isTrue="{!v.nominator1.isVerified == false}">
+                        <div class="slds-box slds-theme_error slds-theme_alert-texture slds-align_absolute-center slds-size_3-of-4">
+                            <div class="slds-text-heading_medium ">This member is not eligible to support your application. Please contact membership@aacr.org for assistance.</div>
+                        </div>
+                    </aura:if>
+                </lightning:card>
+
+                <aura:if isTrue="{!v.itemName=='Active Membership'}">
+                <lightning:card aura:id="nominator2" class="slds-m-around_small slds-p-around_small" iconName="standard:contact">
+                    <aura:set attribute="title">
+                        <div class="slds-grid">
+                            <div class="slds-text-heading_large slds-required bold">*</div>
+                            <div class="slds-text-heading_large bold">Nominator 2</div>
+                        </div>
+                    </aura:set>
+                    <div class="slds-grid slds-gutters slds-m-right_small slds-m-left_small">
+                        <div class="slds-col  ">
+                            <lightning:input label="Member #" class="slds-text-heading_medium slds-m-bottom_large" value="{!v.nominator2.memberNo}" disabled="{!v.nominator2.isVerified}" />
+                        </div>
+                        <div class="slds-col slds-align_absolute-center ">
+                            <div class="slds-required slds-text-heading_medium bold">OR</div>
+                        </div>
+                        <div class="slds-col ">
+                            <lightning:input label="Email" class="slds-text-heading_medium slds-m-bottom_large" value="{!v.nominator2.emailAddr}" disabled="{!v.nominator2.isVerified}"/>
+                        </div>
+                        <div class="slds-col slds-align_absolute-center">
+                            <aura:if isTrue="{!not(v.nominator2.isVerified)}">
+                                <lightning:button label="Verify Nominator" variant="neutral" class="slds-p-top_medium slds-p-bottom_medium" value="nominator2" onclick="{!c.verify}"/>
+                                <aura:set attribute="else">
+                                    <div class="slds-box verified">
+                                        <div class="slds-grid">
+                                            <lightning:icon iconName="utility:check" size="medium" class="verified"/>
+                                            <div class="slds-text-heading_medium slds-m-left_small bold">Verified</div>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                    <aura:if isTrue="{!v.nominator2.isVerified == false}">
+                        <div class="slds-box slds-theme_error slds-theme_alert-texture slds-align_absolute-center slds-size_3-of-4">
+                            <div class="slds-text-heading_medium ">This member is not eligible to support your application. Please contact membership@aacr.org for assistance.</div>
+                        </div>
+                    </aura:if>
+                </lightning:card>
+                </aura:if>
+            </aura:if>
+            <aura:if isTrue="{!v.itemName == 'Student Membership'}">
+                <div class="slds-text-heading_medium slds-m-top_medium" style="font-size:1.5rem;">
+                    Candidates for Student membership can include a school advisor, mentor, dean, or principal.
+                </div>
+                <lightning:card aura:id="studentNominator" class="slds-m-around_small slds-p-around_small" iconName="standard:contact">
+                    <aura:set attribute="title">
+                        <div class="slds-grid">
+                            <div class="slds-text-heading_large slds-required bold">*</div>
+                            <div class="slds-text-heading_large bold">Nominator 1</div>
+                        </div>
+                    </aura:set>
+
+                    <lightning:recordEditForm aura:id="recordEditForm"
+                                              recordId="{!v.contactId}"
+                                              objectApiName="Contact">
+
+                        <div class="slds-grid slds-gutters slds-m-right_small slds-m-left_small">
+                            <div class="slds-col  ">
+                                <lightning:inputField aura:id ="nominatorType" fieldName="Contact_StudentNominatorType__c" class="slds-text-heading_medium customRequired " />
+                                <lightning:inputField aura:id ="nominatorName" fieldName="Contact_StudentNominatorName__c" class="slds-text-heading_medium customRequired" />
+                            </div>
+                            <div class="slds-col  ">
+                                <lightning:inputField aura:id ="nominatorTitle" fieldName="Contact_StudentNominatorTitle__c" class="slds-text-heading_medium customRequired" />
+                            </div>
+                        </div>
+                    </lightning:recordEditForm>
+                </lightning:card>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,108 @@
+<!--
+ - Created by afaf.awad on 9/29/2021.
+ -->
+
+<aura:component description="WF_FormFields" controller="WF_FormFieldsController">
+
+    <aura:attribute name="field" type="Object" description="Object details of layout field"/>
+    <aura:attribute name="fieldType" type="String" description="field type to determine what kind of field to display"/>
+    <aura:attribute name="customLabel" type="String" description="Label of field"
+                    default="{!v.field.sqRecord ? v.field.sqRecord.Label__c: v.field.Default_Text__c == null ? v.field.Label : v.field.Default_Text__c}"/>
+    <aura:attribute name="sqId" type="String" description="SQ Id of field, if one exists"
+                    default="{!v.field.sqRecord ? v.field.sqRecord.Id: ''}"/>
+    <aura:attribute name="imageId" type="String" description="documentId for header Image"
+                    default="{!v.field.sqRecord ? v.field.sqRecord.ImageId__c : v.field.imageId != null ? v.field.imageId : null}" />
+    <aura:attribute name="isBold" type="Boolean" description="is field marked as bolded"
+                    default="{!v.field.sqRecord ? v.field.sqRecord.isBold__c : v.field.Default_Bold__c}"/>
+    <aura:attribute name="isRequired" type="Boolean" description="Is field required"
+                    default="{!v.field.sqRecord ? v.field.sqRecord.isRequired__c : v.field.isLocked__c}"/>
+
+    <aura:attribute name="options" type="List" description="List of options for select questions"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+<!--    <aura:registerEvent name="wfEvent" type="c:WF_AppEvent"/>-->
+    <aura:handler event="c:WF_AppEvent" action="{!c.doInit}"/>
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}"/>
+
+    <!--    HEADER-->
+    <aura:if isTrue="{!v.fieldType == 'header'}">
+        <div class="slds-text-heading_large slds-align_absolute-center">
+            <aura:if isTrue="{!v.isBold}">
+                <b>{!v.customLabel}</b>
+                <aura:set attribute="else">
+                    {!v.customLabel}
+                </aura:set>
+            </aura:if>
+        </div>
+    </aura:if>
+
+    <!--    IMAGE-->
+    <aura:if isTrue="{!v.fieldType == 'image'}">
+<!--        <aura:if isTrue="{!v.imageId == null}">-->
+            <c:WF_ImageUploader recordObj="{!v.field}" showUploader="{!v.imageId == null}"/>
+<!--        <div class="slds-align_absolute-center">-->
+<!--        {!v.customLabel}-->
+<!--        </div>-->
+<!--        <aura:set attribute="else">-->
+
+<!--            <div class="slds-align_absolute-center">-->
+<!--                <img src="{!'/sfc/servlet.shepherd/version/download/' + v.imageId}"  style="width:auto; height:200px;"/>-->
+<!--            </div>-->
+<!--        </aura:set>-->
+<!--        </aura:if>-->
+
+    </aura:if>
+
+    <!--    SINGLE-SELECT-->
+    <aura:if isTrue="{!v.fieldType == 'single-select'}">
+        <lightning:radioGroup aura:id="SingleSelect"
+                              name="singleSelect"
+                              label="{!v.customLabel}"
+                              options="{! v.options }"
+                              isRequired="{!v.isRequired}"
+                              type="radio"
+        class="{!v.field.sqRecord.Question_Type__c == 'ssHorizontal' ? 'customRadioCls' : ''}"/>
+    </aura:if>
+
+    <!--   MULTI-SELECT-->
+    <aura:if isTrue="{!v.fieldType == 'multi-select'}">
+        <lightning:checkboxGroup aura:id="MultiSelect"
+                                 name="multiSelect"
+                                 label="{!v.customLabel}"
+                                 options="{! v.options }"
+                                 isRequired="{!v.isRequired}"
+                                 value=""
+                                 />
+    </aura:if>
+
+    <!--        OUTPUT TEXT-->
+    <aura:if isTrue="{!v.fieldType == 'outputText'}">
+        <div class="{!v.isBold ? 'slds-text-title_bold' : ''}">{!v.customLabel}</div>
+    </aura:if>
+
+<!--        STANDARD FIELDS-->
+    <aura:if isTrue="{!v.fieldType == 'standard'}">
+            <lightning:input label="{!v.customLabel}"  class="{!v.isBold ? 'slds-text-title_bold' : ''}" variant="standard" type="{!v.field.Field_Type__c}"
+                             required="{!v.isRequired}"/>
+    </aura:if>
+
+
+    <!--    CAPTCHA-->
+    <aura:if isTrue="{!v.fieldType == 'captcha'}">
+        <div class="captcha slds-align_absolute-center">
+            <img src="{!$Resource.reCAPTCHA_image}" style="max-width: 70%"/>
+            <br/>
+            <br/>
+        </div>
+    </aura:if>
+
+
+    <!--    BUTTON-->
+    <aura:if isTrue="{!v.fieldType == 'button'}">
+        <div class="slds-align_absolute-center">
+            <lightning:button label="{!v.customLabel}" type="button"/>
+        </div>
+    </aura:if>
+
+
+</aura:component>

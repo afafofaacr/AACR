@@ -1,0 +1,16 @@
+<!--
+ - Created by lauren.lezberg on 10/17/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: NewApplicationController</p>
+        <p>The <code>NewApplication</code> component simply displays a button that creates a new sales order and redirects user to the BackOfficeOrder process with that sales order id.</p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The new application button only appears for contacts that have no membership subscriptions and the current user has the custom permission 'New_Application'.</p>
+    </aura:description>
+    <!--<aura:example name="NewApplication" ref="c:NewApplication" label="NewApplication">-->
+        <!--Example for NewApplication-->
+    <!--</aura:example>-->
+</aura:documentation>

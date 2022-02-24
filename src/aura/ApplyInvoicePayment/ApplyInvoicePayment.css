@@ -1,0 +1,25 @@
+/**
+ * Created by afaf.awad on 1/14/2021.
+ */
+
+.THIS .slds-text-heading_small {
+    font-size: 40px;
+}
+
+.THIS .slds-card__header{
+    zoom: 50%;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+}
+
+.THIS button.slds-button.slds-button_neutral{
+    padding-top:0rem;
+    padding-bottom:0rem;
+    font-size:1rem;
+}

@@ -1,0 +1,23 @@
+<!--
+ - Created by lauren.lezberg on 3/13/2020.
+ -->
+
+<aura:component description="UpdateMemberCount" controller="AACRAdminController">
+    <aura:attribute name="memberCount" type="Object" description="Member Count custom setting"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-box slds-m-around_small">
+        <div class="slds-text-heading_medium boxLabel slds-m-bottom_small">Member Count</div>
+        <aura:if isTrue="{!not(empty(v.memberCount))}">
+        <div class="slds-grid slds-gutters ">
+            <div class="slds-col slds-size_2-of-3">
+                <lightning:input label="AACR Member Count" value="{!v.memberCount.Count__c}"/>
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-align_absolute-center">
+                <lightning:button label="Update" variant="brand" onclick="{!c.updateCount}" class="slds-m-right_medium"/>
+            </div>
+        </div>
+        </aura:if>
+    </div>
+</aura:component>

@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="AccountBadgeController" >
+    <apex:form >
+<table>
+    <tr>          
+<apex:repeat value="{!badges}" var="b">
+<td>
+    <apex:image url="{!URLFOR(b.Image__c)}" height="100" width="100" title="{!b.Description__c}"/>
+    </td>
+        </apex:repeat>
+   </tr>
+        </table>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,34 @@
+/**
+ * Created by lauren.lezberg on 3/26/2020.
+ */
+
+
+
+.THIS a{
+    color: token(aacrGreen);
+}
+
+.THIS .pages{
+    font-family: 'GothamBold';
+    font-size:12px;
+    line-height: 13px;
+    color:black;
+}
+
+.THIS button.slds-button.slds-button--neutral:disabled{
+    color:token(AACRGray);
+}
+
+.THIS button.slds-button.slds-button--neutral{
+    font-size:12px;
+    line-height: 13px;
+    font-family:'GothamNarrowBook';
+    color:token(aacrGreen);
+    padding-top: 1rem;
+    padding-bottom: .75rem;
+    border-color:token(AACRGrayL1);
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0rem;
+}

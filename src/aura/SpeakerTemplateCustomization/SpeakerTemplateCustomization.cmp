@@ -1,0 +1,73 @@
+<!--
+ - Created by lauren.lezberg on 2/17/2020.
+ -->
+
+<aura:component description="SpeakerTemplateCustomization" controller="SpeakerInviteController">
+    <aura:attribute name="inviteMessage" type="String"/>
+    <aura:attribute name="eventId" type="String" description="id of event"/>
+    <aura:attribute name="stepId" type="String" />
+    <aura:attribute name="fileName" type="String"/>
+
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:recordEditForm aura:id="eventEdit" recordId="{!v.eventId}" onload="{!c.handleOnLoad}" objectApiName="BR_Event__c">
+        <!-- the messages component is for error messages -->
+        <lightning:messages />
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <div class="slds-text-heading_medium">Customizations</div>
+                <div class="slds-box">
+                    <lightning:inputField aura:id="inviteMessage" fieldName="Invite_Message__c"/>
+<!--                    <lightning:inputField aura:id="replyToEmail" fieldName="Reply_To__c"/>-->
+                    <lightning:inputField aura:id="programLink" fieldName="Draft_Program__c"/>
+                </div>
+                <div class="slds-box slds-m-top_small">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:fileUpload aura:id="fileUpload"
+                                          label="Header Image"
+                                          multiple="false"
+                                          disabled="false"
+                                          recordId="{!v.eventId}"
+                                          onuploadfinished="{! c.handleUploadFinished}"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2 slds-align_absolute-center">
+                            <div class="slds-text-heading_small">{!v.fileName}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-box slds-m-top_small">
+                    <div class="slds-m-left_small slds-text-heading_medium">Email Signatures</div>
+                    <div class="slds-grid">
+                        <div class="slds-col">
+                            <lightning:input aura:id="sig1" label="Signature 1"/>
+                            <lightning:input aura:id="sig1Title" variant="label-hidden" class="slds-m-top_xx-small"/>
+                            <lightning:input aura:id="sig3" label="Signature 3" class="slds-m-top_x-small"/>
+                            <lightning:input aura:id="sig3Title" variant="label-hidden" class="slds-m-top_xx-small"/>
+                            <lightning:input aura:id="sig5" label="Signature 5" class="slds-m-top_x-small"/>
+                            <lightning:input aura:id="sig5Title" variant="label-hidden" class="slds-m-top_xx-small"/>
+                        </div>
+                        <div class="slds-col">
+                            <lightning:input aura:id="sig2" label="Signature 2"/>
+                            <lightning:input aura:id="sig2Title" variant="label-hidden" class="slds-m-top_xx-small"/>
+                            <lightning:input aura:id="sig4" label="Signature 4" class="slds-m-top_x-small"/>
+                            <lightning:input aura:id="sig4Title" variant="label-hidden" class="slds-m-top_xx-small"/>
+                            <lightning:input aura:id="sig6" label="Signature 6" class="slds-m-top_x-small"/>
+                            <lightning:input aura:id="sig6Title" variant="label-hidden" class="slds-m-top_xx-small"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-align_absolute-center">
+                    <lightning:button label="Update Preview" class="slds-m-around_small" variant="brand" onclick="{!c.updatePreview}"/>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <c:SpeakerInviteEmailPreview aura:id="emailPreview" eventId="{!v.eventId}"/>
+            </div>
+        </div>
+    </lightning:recordEditForm>
+
+</aura:component>

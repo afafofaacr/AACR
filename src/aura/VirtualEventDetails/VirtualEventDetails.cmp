@@ -1,0 +1,103 @@
+<!--
+ - Created by lauren.lezberg on 7/6/2020.
+ -->
+
+<aura:component description="VirtualEventDetails" controller="VirtualEventDetailsController"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <!--<aura:attribute name="eventId" type="String" description="Id of ac event"/>-->
+    <aura:attribute name="detailId" type="String" description="Id of detail record"/>
+    <aura:attribute name="editable" type="Boolean" description="is form editable?" default="false"/>
+    <aura:attribute name="exhibitOpen" type="Boolean" default="false" description="is exhibit open"/>
+    <aura:attribute name="requireId" type="Boolean" default="false" description="is external event id required"/>
+    <aura:attribute name="showPassword" type="Boolean" default="false" description="show password input"/>
+    <aura:attribute name="hideDetails" type="Boolean" default="false"
+                    description="hide all detail parameters except custom URL"/>
+
+    <aura:attribute name="zoomUsers" type="List" access="private"/>
+    <aura:attribute name="zoomUserId" type="String"/>
+
+    <aura:method name="save" action="{!c.saveForm}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <aura:if isTrue="{!v.editable}">
+
+        <lightning:recordEditForm aura:id="editForm" objectApiName="Virtual_Event_Details__c">
+            <lightning:inputField fieldName="Event__c" value="{!v.recordId}" class="slds-hide"/>
+            <aura:if isTrue="{!v.hideDetails}">
+                <lightning:inputField fieldName="Custom_URL__c"/>
+                <aura:set attribute="else">
+
+                    <lightning:inputField aura:id="userId" fieldName="Zoom_User_Id__c" class="slds-hide"/>
+                    <lightning:inputField aura:id="zAccount" fieldName="Zoom_Account__c" class="slds-hide"/>
+                    <!--<div class="slds-grid">-->
+                    <!--<div class="slds-col">-->
+                    <lightning:inputField fieldName="Exhibit_Open__c"/>
+                    <!--</div>-->
+                    <!--<div class="slds-col">-->
+                    <div aura:id="eventMessageBox">
+                        <aura:if isTrue="{!or(not(v.showPassword),and(v.showPassword,v.detailId!=null))}">
+                            <lightning:inputField aura:id="externalEventId" fieldName="External_Event_Id__c"
+                                                  required="{!and(and(v.requireId, not(v.hideDetails)), not(v.showPassword))}"/>
+                        </aura:if>
+                    </div>
+                    <aura:if isTrue="{!v.showPassword}">
+                        <aura:if isTrue="{!empty(v.detailId)}">
+                            <lightning:inputField aura:id="type" fieldName="Zoom_Type__c"
+                                                  onchange="{!c.handleTypeChange}" required="{!v.showPassword}"/>
+                        </aura:if>
+                        <lightning:select aura:id="users" name="users" onchange="{!c.updateZoomAccount}"
+                                          label="Zoom Account" required="{!v.showPassword}"
+                                          class="slds-m-left_xx-small slds-m-bottom_x-small slds-m-right_xx-small">
+                            <option value="">--None--</option>
+                            <aura:iteration items="{!v.zoomUsers}" var="u" indexVar="key">
+                                <option selected="{!u.key == v.zoomUserId}" value="{!u.key}">{!u.value}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                        <lightning:inputField aura:id="password" fieldName="Meeting_Password__c"/>
+                    </aura:if>
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="slds-p-left_small slds-p-right_small">-->
+                    <!--<lightning:inputField fieldName="System_Requirements_URL__c"/>-->
+                    <!--</div>-->
+                </aura:set>
+            </aura:if>
+        </lightning:recordEditForm>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!not(empty(v.detailId))}">
+                <div class="slds-box" style="background:white;">
+                    <div class="slds-clearfix">
+                        <div class="slds-float_left">
+                            <h2 class="slds-text-heading_small slds-m-bottom_small">Virtual Details</h2>
+                        </div>
+                        <div class="slds-float_right">
+                            <lightning:button onclick="{!c.toggleExhibit}"
+                                              label="{!v.exhibitOpen?'Close Exhibit':'Open Exhibit'}"
+                                              variant="brand"/>
+                        </div>
+                    </div>
+
+                    <lightning:recordViewForm aura:id="viewForm" recordId="{!v.detailId}"
+                                              objectApiName="Virtual_Event_Details__c">
+                        <aura:if isTrue="{!v.hideDetails}">
+                            <lightning:outputField fieldName="Custom_URL__c"/>
+                            <aura:set attribute="else">
+                                <lightning:outputField fieldName="External_Event_Id__c"/>
+                                <aura:if isTrue="{!v.showPassword}">
+                                    <lightning:outputField fieldName="Meeting_Password__c"/>
+                                    <lightning:outputField fieldName="Zoom_Account__c"/>
+
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+                        <!--                    <lightning:outputField fieldName="System_Requirements_URL__c"/>-->
+                    </lightning:recordViewForm>
+                </div>
+            </aura:if>
+        </aura:set>
+
+    </aura:if>
+
+</aura:component>

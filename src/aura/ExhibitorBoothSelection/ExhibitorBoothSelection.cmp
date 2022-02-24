@@ -1,0 +1,31 @@
+<!--
+ - Created by lauren.lezberg on 2/26/2021.
+ -->
+
+<aura:component description="ExhibitorBoothSelection" controller="ExhibitorBoothSelectionController">
+    <aura:attribute name="stepId" type="String" description="id of step in process"/>
+    <aura:attribute name="boothItems" type="List" description="list of booth items"/>
+
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <lightning:card class="slds-p-around_medium">
+        <aura:iteration items="{!v.boothItems}" var="booth">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-7 slds-align_absolute-center">
+                <lightning:input type="checkbox" value="{!booth.Id}"/>
+                </div>
+                <div class="slds-col slds-size_3-of-7">
+                <lightning:input disabled="true" value="{!booth.Portal_Label__c}"/>
+                </div>
+                <div class="slds-col slds-size_3-of-7">
+                <lightning:input disabled="true" type="number" formatter="currency" step="0.01" value="{!booth.OrderApi__Price__c}"/>
+                </div>
+            </div>
+        </aura:iteration>
+    </lightning:card>
+
+</aura:component>

@@ -1,0 +1,67 @@
+/**
+ * Created by afaf.awad on 2/2/2021.
+ */
+
+@media screen and (max-width: 1100px) {
+    .THIS .contentScreen{
+        width:1140px;
+    }
+}
+
+.THIS .slds-form-element__help{
+    font-size: 1rem;
+}
+
+.THIS .header{
+    font-size: 30px;
+    font-weight:500;
+
+}
+
+.THIS .slds-form-element__label{
+    font-size: 1.5rem;
+}
+
+.THIS label{
+    margin-bottom:0rem;
+    padding: 0.70rem;
+    font-size: 1.5rem;
+    color: rgb(107,109,112);
+}
+
+.THIS .verifyButton{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: .7rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.THIS .slds-input[readonly]{
+    font-size: 15px;
+}
+
+.THIS .slds-input{
+    font-size: 15px;
+}
+
+.THIS .navButtons{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100px;
+    padding: 8px;
+}
+
+.THIS .verifyButtonGreen {
+    background-color:token(aacrGreen);
+    border-color: token(aacrGreen);
+    font-size: 2rem;
+    padding: .7rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

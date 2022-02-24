@@ -1,0 +1,12 @@
+<aura:component controller="BrRecaptchaCtrl">
+    <aura:attribute name="domain" type="String" description="Domain"/>
+    <aura:attribute name="disabled" type="Boolean" description="Disable button"/>
+    <aura:attribute name="showIframe" type="Boolean" default="false" description="Show iframe"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:registerEvent name="registerEvent" type="c:BrRegisterEvent"/>
+
+    <iframe src="{!'/sfsites/c/apex/BrRecaptcha'}" class="iframe" frameborder="0" /><br/>
+
+</aura:component>

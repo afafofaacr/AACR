@@ -1,0 +1,186 @@
+<apex:page sidebar="false" showHeader="false" controller="DW_SubscriptionsController">    
+    <!-- Page Required CSS -->    
+    <c:pageStyle />
+    <apex:includeScript value="{!$Resource.jQueryJs}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-animate-sanitize-ngtable-ngtoast.min.js')}" />    
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-toastr.tpls.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" />
+    <apex:includeScript value="{!$Resource.DW_SubscriptionsAppJs}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/angular-toastr.css')}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
+
+    
+    <script type="text/javascript">
+        var UserContactData = '{!UserContactData}';
+    </script>
+    <apex:composition template="CPBase__template">        
+        <!-- PAGE TITLE -->        
+        <apex:define name="pageTitle">
+            Subscriptions
+        </apex:define>
+        
+        <!-- NAVIGATION BAR - RIGHT BLOCK -->
+        <apex:define name="supernavRight"></apex:define>
+        url('https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg')
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="container m-t-30">
+                <div class="inner-wrapper">
+                    
+                    <!-- MAIN APP CONTAINER - ANGULAR APP -->
+                    <div class="main-app-container" ng-app="subscriptionsApp" ng-controller="subscriptionsController" ng-init="getSubscriptionDetails()">
+                        
+                        <!-- PAGE LOADER - COMMON FOR ALL (SPANS WHOLE PAGE) -->
+                        <div class="bgBlack" ng-show="pageData.showLoader">
+                            <div class="spinnerBg">
+                                <div class="loader"></div>                    
+                            </div>
+                        </div>                        
+                                                
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="membershipBox">
+                                    <div class="center">
+                                        <div class="memberBoxhead">
+                                            <a class="memberLogo" href="www.aacr.org" style="background-image: url('https://fonteva-customer-media.s3.amazonaws.com/00D0U0000008jX8UAI/JJefJpof_AACR%20Logo%20-%20horizontal%20no%20tagline.jpg')"></a>
+                                            <!--<div class="greenCirlce">
+                                            <h1 class="bigTxt">A</h1>
+                                            <b>Active Member</b>
+                                            </div>-->
+                                            <div class="badge-logo" ng-bind-html="pageData.badge.badge">
+                                        </div>
+                                        
+                                        </div>
+                                        <h1 class="memberHead">{{ pageData.contactData.memberType }}</h1>
+                                        <div class="grid noWrap">
+                                            <div class="gridRow dateCol">
+                                                <div class="grid noWrap">
+                                                    <label class="bldLabel">Member Since:</label> <div class="value">{{ pageData.contactData.initialJoinDate | date : "MM/dd/yyyy" }}</div>
+                                                </div>
+                                                <div class="grid noWrap">
+                                                    <label class="bldLabel">Expires On:</label> <div class="value">{{ pageData.membershipSubscription.currentTermEndDate | date : "MM/dd/yyyy" }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridRow">
+                                                <div ng-class="{ bgGreen: pageData.membershipSubscription.daysToLapse >= 0, bgRed: pageData.membershipSubscription.daysToLapse < 0 }">
+                                                    <b>{{ pageData.membershipSubscription.daysToLapse }}</b>
+                                                    <div>Days Left</div>
+                                                </div>
+                                            </div>
+                                            <div class="gridRow btnRow">
+                                                <button class="renewBtn" ng-click="renewSubscriptionPlan()" ng-show="pageData.contactData.recordTypeName== 'Member' && pageData.contactData.membershipStatus == 'Current' || pageData.contactData.membershipStatus == '1-YR Suspended' || pageData.contactData.membershipStatus == '2-YR Suspended'">Renew</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="grid noWrap borderTop">
+                                            <div class="tableDiv">
+                                                <h3 class="tableHead">Journals</h3>
+                                                <table class="memberTable" width="100%">
+                                                    <tr>
+                                                        <th>Journal Name</th>
+                                                        <th>Format</th>
+                                                    </tr>
+                                                    <tr ng-repeat="journal in pageData.journals">
+                                                        <td>{{ journal.name }}</td>
+                                                        <td>{{ journal.type }}</td>
+                                                    </tr>
+                                                </table>
+                                                <button class="renewBtn" ng-click="pageData.showJournalAddrModal = true">Update Journal Mailing Address</button>
+                                            </div>
+                                            <div class="tableDiv">
+                                                <h3 class="tableHead">Working Groups</h3>
+                                                <table class="memberTable" width="100%">
+                                                    <tr>
+                                                        <th>Group Name</th>
+                                                        <th>Role</th>
+                                                        <th>Since</th>
+                                                    </tr>
+                                                    <tr ng-repeat="workingGroup in pageData.workingGroups">
+                                                        <td>{{ workingGroup.name }}</td>
+                                                        <td>{{ workingGroup.role }}</td>
+                                                        <td>{{ workingGroup.since | date : "MM/yyyy" }}</td>
+                                                    </tr>
+                                                </table>
+                                                <a class="renewBtn" href="/DW_WorkingGroups?type=modify" style="display: inline-block;">Modify Working Groups</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Journal Address Modal - start -->
+
+                        <div class="modal journalAddressModal customModal" ng-class="{ show: pageData.showJournalAddrModal }">          
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <form name="journalAddressUpdateForm">
+                                    <div class="modal-header">                                         
+                                        <span class="close" ng-click="pageData.showJournalAddrModal = false"></span>
+                                        <h2>Journal Mailing Address</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="">
+                                            <div class="form-group">
+                                                <label class="required-icon true">Street</label>
+                                                <input type="text" name="street" class="reqdField form-field" html-data-api-name="Journal_Street__c" ng-model="pageData.contactData.journalStreet" required="true" />
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="required-icon true">Country</label>
+                                                <input type="text" name="country" class="reqdField form-field" html-data-api-name="Journal_Country__c" ng-model="pageData.contactData.journalcountry" required="true" />
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="required-icon true">State</label>
+                                                <input type="text" name="state" class="reqdField form-field" html-data-api-name="Journal_State_Province__c" ng-model="pageData.contactData.journalState" required="true" />
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="required-icon true">City</label>
+                                                <input type="text" name="city" class="reqdField form-field" html-data-api-name="Journal_City__c" ng-model="pageData.contactData.journalCity" required="true" />
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="true">Postal code</label>
+                                                <input type="text" name="postalcode" class="form-field" html-data-api-name="Journal_Zip_Postal_Code__c" ng-model="pageData.contactData.journalzipcode" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button ng-click="validateJournalsAddrAndProceed( journalAddressUpdateForm.$valid )" class="btn btn-lg btn-primary">Update address</button>
+                                        <input type="button" value="Cancel" class="btn cancelBtn" ng-click="cancelAddressUpdate();" />
+                                    </div>                                    
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Journal Address Modal - end -->  
+
+                        <!-- Renew modal - start -->
+                        <div class="modal renewModal customModal" ng-class="{ show : pageData.showRenewPopup }">          
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <div class="modal-header">                                     
+                                    <span class="close" ng-click="pageData.showRenewPopup = false"></span>
+                                    <h2>Membership Status</h2>
+                                </div>
+                                <div class="modal-body">
+                                    {!$Label.DW_Subscription_Plan_Renew_Description}
+                                </div>
+                                <div class="modal-footer">
+                                    <button ng-click="pageData.showRenewPopup = false;renewSubscriptionPlan()" class="btn btn-lg btn-primary">Renew</button>
+                                    <button ng-click="pageData.showRenewPopup = false" class="btn btn-lg btn-primary">No</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Renew modal - end -->
+
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>    
+</apex:page>

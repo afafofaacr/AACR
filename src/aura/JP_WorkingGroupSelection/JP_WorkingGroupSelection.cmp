@@ -1,0 +1,31 @@
+<!--
+ - Created by lauren.lezberg on 1/23/2019.
+ -->
+
+<aura:component description="JP_WorkingGroupSelection" controller="JP_ItemSelectionController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="workingGroups" type="List" description="List of working groups"/>
+    <aura:attribute name="isLoading" type="Boolean" description="component is loading" default="false"/>
+    <aura:attribute name="selectedGroups" type="List" description="List of selected journals"/>
+
+    <!-- AURA HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+            <c:AACRSpinner/>
+        </div>
+        <aura:set attribute="else">
+            <aura:iteration items="{!v.workingGroups}" var="WG" indexVar="indx">
+                <c:JP_WorkingGroupItem aura:id="workingGroupItem" name="{!WG.itemLabel}"
+                                       description="{!WG.itemDescription}" itemId="{!WG.itemId}"
+                                       isSelected="{!WG.isSelected}"/>
+                <br/>
+            </aura:iteration>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

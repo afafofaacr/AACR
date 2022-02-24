@@ -1,0 +1,44 @@
+<!--
+ - Created by lauren.lezberg on 9/22/2020.
+ -->
+
+<aura:component description="myAACRBanner" controller="myAACRBannerController">
+    <aura:attribute name="intervalSeconds" type="Integer" description="integer of scroll duration" default="10"/>
+    <aura:attribute name="cImages" type="List" description="carousel images"/>
+    <aura:attribute name="selectedPanel" type="String" description="selectedPanelId"/>
+    <aura:attribute name="timer" type="Object" description="timer for banner"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-carousel">
+        <div class="slds-carousel__stage">
+            <div class="slds-carousel__panels" >
+                <aura:iteration items="{!v.cImages}" var="img" indexVar="idx" start="0">
+                    <div aura:id="{!img.Id}" class="{!img.Id==v.selectedPanel?'slds-carousel__panel':'slds-hide'}" role="tabpanel" aria-hidden="false" aria-labelledby="{!img.Id}">
+                        <a href="{!img.Image_Link__c}" target="_blank" class="slds-carousel__panel-action slds-text-link_reset" tabindex="{!idx}">
+                            <div class="slds-carousel__image">
+                                <img src="{!img.Image_URL__c}" />
+                            </div>
+                            <div class="slds-carousel__content ">
+                                <h2 class="slds-carousel__content-title slds-align_absolute-center">{!img.Header_Text__c}</h2>
+                                <p class="contentBackground">
+                                    <aura:unescapedHtml value="{!img.Image_Text__c}"/>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </aura:iteration>
+            </div>
+            <ul class="slds-carousel__indicators" role="tablist">
+                <aura:iteration items="{!v.cImages}" var="img" indexVar="idx" start="0">
+                    <li class="slds-carousel__indicator" role="presentation">
+                        <a aura:id="{!img.Id}" id="{!img.Id}" class="{!img.Id==v.selectedPanel?'slds-carousel__indicator-action slds-is-active':'slds-carousel__indicator-action '}" href="javascript:void(0);" onclick="{!c.changePanel}" role="tab" tabindex="{!idx}" title="{!img.Header_Text__c}">
+                            <span class="slds-assistive-text">{!img.Header_Text__c}</span>
+                        </a>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </div>
+</aura:component>

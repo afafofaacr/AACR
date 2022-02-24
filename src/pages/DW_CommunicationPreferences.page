@@ -1,0 +1,295 @@
+<!-- Displaying current login Contact's Communication preferences data and edit that and save that -->
+<apex:page controller="DW_CommunicationPreferencesCtrl" docType="html-5.0"
+           showHeader="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false">
+    <apex:slds />
+    <apex:includeLightning />
+    
+    <apex:pageMessages />
+<!--    <c:pageStyle />-->
+
+    <style>
+       body{
+            font-size: 1.5rem !important;
+       }
+
+       label {
+           font-size:1.5rem;
+       }
+
+       input{
+           padding:5px;
+       }
+
+    </style>
+
+    
+     <!-- Spinner design -->
+    <div class="slds-scope">
+        <div class="slds-spinner_container slds-is-fixed page-spinner hidden">
+            <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </div>
+    
+<!--    <apex:includeScript value="{!$Resource.jQueryJs}" />-->
+<!--    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/underscore.min.js')}" loadOnReady="true" />-->
+<!--    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}" loadOnReady="true" /> -->
+<!--    <apex:includeScript value="{!$Resource.DW_journalsSubscriptionJs}" loadOnReady="true" />-->
+<!--    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/jquery.toast.css')}" />-->
+    
+    <apex:composition template="CPBase__template">
+
+        <apex:define name="pageTitle">
+            Communication Preferences
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <apex:define name="pageMain">
+
+<!--            <div class="container m-t-30">-->
+<!--                <div class="inner-wrapper">-->
+
+            <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Communication Preferences</h1>
+<!--                            <hr class="m-b-15" />-->
+                        </div>
+                    </div>
+                <div class="slds-scope">
+                    <div class="slds-m-top_large">
+                        <div id="preferences"/>
+                    </div>
+                </div>
+            </div>
+<!--                    <apex:form >-->
+<!--                        -->
+<!--                        <div class="container form-horizontal">-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-sm-12">-->
+<!--&lt;!&ndash;                                    <div class="right">&ndash;&gt;-->
+<!--                                        -->
+<!--&lt;!&ndash;                                         <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <div class="col-sm-3 control-label">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <label >&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <apex:outputText value="Preferred Address" />&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </label >&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <div class="col-sm-9">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <apex:inputField value="{!contact.Preferred_Address__c}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+<!--                                    <div class="borderBottom">-->
+<!--                                        <div>Phone Preferences</div>-->
+<!--                                    </div>-->
+<!--                                        -->
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="col-sm-3 control-label">-->
+<!--                                                <label >-->
+<!--                                                    <apex:outputText value="Primary Phone Type" />-->
+<!--                                                </label >-->
+<!--                                            </div>-->
+<!--                                            <div class="col-sm-9">-->
+<!--                                                <apex:inputField id="phoneType" required="true" value="{!contact.OrderApi__Preferred_Phone_Type__c}" onChange="handlePhoneTypeChange();"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="col-sm-3 control-label">-->
+<!--                                                <label >-->
+<!--                                                    <apex:outputPanel rendered="{!contact.OrderApi__Preferred_Phone_Type__c == 'Work'}">-->
+<!--                                                        <abbr class="slds-required">*</abbr>-->
+<!--                                                    </apex:outputPanel>-->
+<!--                                                    <apex:outputText value="Work Phone" />-->
+<!--                                                </label >-->
+<!--                                            </div>-->
+<!--                                            <div class="col-sm-9">-->
+<!--                                                <apex:inputField id="workPhone" value="{!contact.OrderApi__Work_Phone__c}"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="col-sm-3 control-label">-->
+<!--                                                <label >-->
+<!--                                                    <apex:outputText value="Work Do Not Call" />-->
+<!--                                                </label >-->
+<!--                                            </div>-->
+<!--                                            <div class="col-sm-9">-->
+<!--                                                <apex:inputField value="{!contact.OrderApi__Work_Do_Not_Call__c}"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-3 control-label">-->
+<!--                                            <label >-->
+<!--                                                <apex:outputPanel rendered="{!contact.OrderApi__Preferred_Phone_Type__c == 'Mobile'}">-->
+<!--                                                    <abbr class="slds-required">*</abbr>-->
+<!--                                                </apex:outputPanel>-->
+<!--                                                <apex:outputText value="Mobile Phone" />-->
+<!--                                            </label >-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-9">-->
+<!--                                            <apex:inputField id="mobilePhone" value="{!contact.MobilePhone}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-3 control-label">-->
+<!--                                            <label >-->
+<!--                                                <apex:outputText value="Mobile Do Not Call" />-->
+<!--                                            </label >-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-9">-->
+<!--                                            <apex:inputField value="{!contact.OrderApi__Mobile_Do_Not_Call__c}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-3 control-label">-->
+<!--                                            <label >-->
+<!--                                                <apex:outputPanel rendered="{!contact.OrderApi__Preferred_Phone_Type__c == 'Home'}">-->
+<!--                                                    <abbr class="slds-required">*</abbr>-->
+<!--                                                </apex:outputPanel>-->
+<!--                                                <apex:outputText value="Home Phone" />-->
+<!--                                            </label >-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-9">-->
+<!--                                            <apex:inputField id="homePhone" value="{!contact.HomePhone}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-3 control-label">-->
+<!--                                            <label >-->
+<!--                                                <apex:outputText value="Home Do Not Call" />-->
+<!--                                            </label >-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-9">-->
+<!--                                            <apex:inputField value="{!contact.OrderApi__Home_Do_Not_Call__c}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="borderBottom">-->
+<!--                                        <div>Email Preferences</div>-->
+<!--                                    </div>-->
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="col-sm-3 control-label">-->
+<!--                                                <label >-->
+<!--                                                    <apex:outputText value="Primary Email Type" />-->
+<!--                                                </label >-->
+<!--                                            </div>-->
+<!--                                            <div class="col-sm-9">-->
+<!--                                                <apex:inputField required="true" value="{!contact.OrderApi__Preferred_Email_Type__c}"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-3 control-label">-->
+<!--                                            <label>-->
+<!--                                                <apex:outputPanel rendered="{!contact.OrderApi__Preferred_Email_Type__c == 'Work'}">-->
+<!--                                                    <abbr class="slds-required">*</abbr>-->
+<!--                                                </apex:outputPanel>-->
+<!--                                                <apex:outputText value="Work Email"  />-->
+<!--                                            </label >-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-9">-->
+<!--                                            <apex:inputField id="workEmail" value="{!contact.OrderApi__Work_Email__c}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                            <div class="col-sm-3 control-label">-->
+<!--                                                <label >-->
+<!--                                                    <apex:outputPanel rendered="{!contact.OrderApi__Preferred_Email_Type__c == 'Personal'}">-->
+<!--                                                        <abbr class="slds-required">*</abbr>-->
+<!--                                                    </apex:outputPanel>-->
+<!--                                                    <apex:outputText value="Personal Email" />-->
+<!--                                                </label >-->
+<!--                                            </div>-->
+<!--                                            <div class="col-sm-9">-->
+<!--                                                <apex:inputField id="personalEmail" value="{!contact.OrderApi__Personal_Email__c}" />-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+<!--                                    <div class="borderBottom">-->
+<!--                                        <div>Contact Preferences</div>-->
+<!--                                    </div>-->
+
+<!--                                        <div class="form-group">-->
+<!--                                            <div class="col-sm-3 control-label">-->
+<!--                                                <label >-->
+<!--                                                    <apex:outputText value="Do Not Email" />-->
+<!--                                                </label >-->
+<!--                                            </div>-->
+<!--                                            <div class="col-sm-9">-->
+<!--                                                <apex:inputField value="{!contact.Do_Not_Email__c}"/>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-3 control-label">-->
+<!--                                            <label >-->
+<!--                                                <apex:outputText value="Do Not Mail" />-->
+<!--                                            </label >-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-9">-->
+<!--                                            <apex:inputField value="{!contact.Do_Not_Mail__c}"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="borderBottom">-->
+<!--                                        <div>Privacy Preferences</div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-sm-3 control-label">-->
+<!--                                            <label >-->
+<!--                                                <apex:outputText value="Do Not Display in Directory" />-->
+<!--                                            </label >-->
+<!--                                        </div>-->
+<!--                                        <div class="col-sm-9">-->
+<!--                                            <apex:outputPanel rendered="{!age>17 || age == 0.0}">-->
+<!--                                                <apex:inputField value="{!contact.Do_Not_Display_in_Directory__c}" />-->
+<!--                                            </apex:outputPanel>-->
+
+<!--                                            <apex:outputPanel rendered="{!age<=17 && not(age == 0.0)}">-->
+<!--                                                <apex:outputField value="{!contact.Do_Not_Display_in_Directory__c}"/>-->
+<!--                                            </apex:outputPanel>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--&lt;!&ndash;                                    </div>&lt;!&ndash;/.left&ndash;&gt;&ndash;&gt;-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        -->
+<!--                        <div class="btnDiv">-->
+<!--                            <apex:commandButton id="saveButton" action="{! saveContact}" value="Save" styleClass="btn btn-mini m-r-5 btn-neutral ladda-button nextStep btn-wrap"/> -->
+<!--                            <apex:commandButton id="cancelButton" action="{! cancelContact}" value="Cancel" immediate="true" styleClass="btn btn-mini m-r-5 btn-neutral ladda-button nextStep btn-wrap" />  -->
+<!--                        </div>-->
+<!--                        -->
+<!--                    </apex:form>-->
+<!--                </div>-->
+<!--            </div>-->
+        </apex:define>
+        
+    </apex:composition>
+
+    <script>
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:CommunicationPreferences",
+                {
+                    recordId: '{!contact.Id}'
+                },
+                "preferences",
+                function (cmp) {
+
+                });
+        });
+    </script>
+ 
+</apex:page>

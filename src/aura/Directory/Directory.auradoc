@@ -1,0 +1,19 @@
+<!--
+ - Created by lauren.lezberg on 6/7/2019.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>
+            The <code>c:Directory</code> component displays all AACR Members that are Current, 1-YR or 2-YR Suspended and do not have Do Not Display In Directory checked in a table format.
+            The features available in the directory are search, filter and sort.
+        </p>
+        <p>The criteria for displaying members in the directory is managed by custom metadata.</p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>Searching can be done by full name.</p>
+        <p>Filtering can be done by primary research area, city and country.</p>
+        <p>Sorting can be done by on Name, Affiliation, City, State and Primary Research Area.</p>
+
+    </aura:description>
+</aura:documentation>

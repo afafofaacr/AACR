@@ -1,0 +1,22 @@
+<!--
+ - Created by afaf.awad on 10/6/2021.
+ -->
+
+<aura:component description="WF_FormFieldOptions">
+
+    <aura:attribute name="fieldOptions" type="List"/>
+    <aura:attribute name="optionsTitle" type="String"/>
+    <aura:registerEvent name="wfEvent" type="c:WF_AppEvent"/>
+
+
+    <div class="slds-box" id="bodyContainer" style="background-color: white">
+        <h1 class="slds-align_absolute-center"><b>{!v.optionsTitle}</b></h1>
+        <br/>
+        <aura:iteration items="{!v.fieldOptions}" var="f" indexVar="i">
+            <div class="draggable slds-box slds-box_xx-small" style="background-color: white" draggable="true" ondragstart="{!c.startDrag}" id="{!f.dragId}" title="{!f.Field_Category__c}" >
+                {!f.Label}
+                <lightning:icon class="slds-float_right" iconName="utility:add" size="x-small" alternativeText="addField" title="addField"/>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

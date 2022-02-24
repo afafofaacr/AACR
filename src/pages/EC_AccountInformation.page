@@ -1,0 +1,67 @@
+<!--
+ - Created by afaf.awad on 2/2/2021.
+ -->
+
+<apex:page id="EC_AccountInformation" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+
+    <style>
+        div.iziToast-capsule{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        /*div.slds-box.cont-box{*/
+        /*    font-size:1.5rem;*/
+        /*}*/
+
+        /*button.slds-button.slds-button_neutral{*/
+        /*    padding:7px;*/
+        /*    font-size:1.5rem;*/
+        /*}*/
+
+        @media only screen and (max-width: 767px), (max-device-width: 991px) and (min-device-width: 767px)
+        table, tbody, td, th, thead, tr {
+            display: inline-block;
+        }
+    </style>
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Exhibitor Connect
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <apex:define name="navbarOverride">
+            <apex:outputPanel layout="none" rendered="{!NOT(ISBLANK(siteNav.Name))}">
+                <OrderApi:navlist name="LEAD CENTRAL: SITE NAV"
+                                  ulStyleClass="nav navbar-nav navbar-right open" contactId="{!con.Id}"/>
+            </apex:outputPanel>
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div style="margin:auto; max-width:1140px;">
+            <div id="EC_Account"/>
+            </div>
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+
+        $Lightning.use("c:ExhibitorConnect", function() {
+            $Lightning.createComponent("c:EC_AccountInfo",
+                {},
+                "EC_Account",
+                function(cmp) {
+                });
+        });
+    </script>
+</apex:page>

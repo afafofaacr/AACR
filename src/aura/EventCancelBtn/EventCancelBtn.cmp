@@ -1,0 +1,18 @@
+<!--
+ - Created by lauren.lezberg on 4/9/2020.
+ -->
+
+<aura:component description="EventCancelBtn" controller="EventCancelButtonController" implements="force:hasRecordId,force:lightningQuickAction,lightning:isUrlAddressable">
+    <aura:attribute name="showButton" type="Boolean" description="show cancel button" default="false"/>
+    <aura:attribute name="processing" type="Boolean" description="action is processing" default="false"/>
+    <aura:attribute name="cmpId" type="String" description="unique component id" access="private"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:AreYouSureResponseEvt" action="{!c.startCancelProcess}"/>
+
+    <aura:if isTrue="{!v.showButton}">
+        <lightning:button variant="brand" iconName="utility:clear" onclick="{!c.openModal}" label="{!v.processing?'Processing...': 'Cancel Event'}" disabled="{!v.processing}"/>
+    </aura:if>
+
+    <c:AreYouSureModal aura:id="cancelConfirmModal" cmpId="{!v.cmpId}" message="Are you sure you want to cancel this event? This action cannot be undone."/>
+</aura:component>

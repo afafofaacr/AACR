@@ -1,0 +1,58 @@
+<!--
+ - Created by afaf.awad on 11/5/2020.
+ -->
+
+<apex:page id="SessionSecurity" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false"
+            controller="SessionPlugin">
+
+    <flow:interview name="Concurrent_Sessions_Custom" interview="{!sessionFlow}"></flow:interview>
+
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <script type="text/javascript">
+        document.title = 'AACR Security';
+    </script>
+
+    <div style="position:absolute; top:35%;left:40%;margin:auto;">
+
+<!--        <div class="slds-page-header slds-align_absolute-center">-->
+<!--            <img src="{!$Resource.AACRlogo}"/>-->
+<!--        </div>-->
+
+          <div id="SecurityCode"/>
+    </div>
+
+<!--    <apex:includeScript value="/lightning/lightning.out.js" />-->
+
+<!--    <apex:composition template="CPBase__template">-->
+<!--        &lt;!&ndash; PAGE TITLE &ndash;&gt;-->
+<!--        <apex:define name="pageTitle">-->
+<!--            AACR Security-->
+<!--        </apex:define>-->
+
+<!--        &lt;!&ndash; PAGE &ndash;&gt;-->
+<!--        <apex:define name="pageMain">-->
+
+<!--            <div style="position:absolute; top:50%;left:50%;margin:auto;">-->
+<!--                <div id="SecurityCode"/>-->
+<!--            </div>-->
+
+<!--        </apex:define>-->
+<!--    </apex:composition>-->
+
+    <script>
+
+        $Lightning.use("c:TestApp", function() {
+            $Lightning.createComponent("c:SecurityCode",
+                {},
+                "SecurityCode",
+                function(cmp) {
+                console.log('creating component..');
+                });
+        });
+
+    </script>
+</apex:page>

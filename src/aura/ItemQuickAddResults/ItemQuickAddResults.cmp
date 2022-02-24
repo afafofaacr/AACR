@@ -1,0 +1,31 @@
+<!--
+ - Created by lauren.lezberg on 10/7/2019.
+ -->
+
+<aura:component description="ItemQuickAddResults" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:attribute name="oRecord" type="OrderApi__Item__c" />
+
+    <!--Register the component level event-->
+    <aura:registerEvent name="oSelectedRecordEvent" type="c:SelectedObjectRecordEvt"/>
+
+    <li role="presentation" class="slds-listbox__item" onclick="{!c.selectRecord}">
+        <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+              <span class="slds-media__figure">
+                  <span class="slds-icon_container" title="Description of icon when needed">
+                    <lightning:icon iconName="standard:record" class="slds-icon slds-icon_small resultIcon" size="small" alternativeText="icon"/>
+                    <span class="slds-assistive-text">Item</span>
+                  </span>
+              </span>
+              <span class="slds-media__body">
+                  <span class="slds-listbox__option-text slds-listbox__option-text_entity slds-text-heading_medium" title="{!v.oRecord.Name}">{!v.oRecord.Name}</span>
+                  <aura:if isTrue="{!v.oRecord.OrderApi__Item_Class__r.OrderApi__Is_Event__c}">
+                  <span class="slds-listbox__option-text slds-listbox__option-text_entity slds-text-heading_small" title="{!v.oRecord.OrderApi__Item_Class__r.EventApi__Event__r.EventApi__Display_Name__c}">{!v.oRecord.OrderApi__Item_Class__r.EventApi__Event__r.EventApi__Display_Name__c + ' - '} <ui:outputDate value="{!v.oRecord.OrderApi__Item_Class__r.EventApi__Event__r.EventApi__Start_Date__c}"/> </span>
+                  <aura:set attribute="else">
+                                    <span class="slds-listbox__option-text slds-listbox__option-text_entity slds-text-heading_small" title="{!v.oRecord.OrderApi__Item_Class__r.Name}">{!v.oRecord.OrderApi__Item_Class__r.Name}</span>
+                  </aura:set>
+                  </aura:if>
+
+              </span>
+        </span>
+    </li>
+</aura:component>

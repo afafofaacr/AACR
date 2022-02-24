@@ -1,0 +1,31 @@
+<!--
+ - Created by lauren.lezberg on 9/18/2020.
+ -->
+
+<aura:component description="JP_ContainerClone">
+    <aura:attribute name="joinId" type="String" description="Id of join process"/>
+    <aura:attribute name="salesOrderId" type="String" description="SalesOrderId"/>
+    <aura:attribute name="vResult" type="Object[]" description="Object that holds the validation response"/>
+
+    <aura:attribute name="currentStepId" type="String" description="Current join step id"/>
+    <aura:attribute name="joinSteps" type="List" description="List of join process steps"/>
+    <aura:attribute name="isInitialStep" type="Boolean" default="true"/>
+
+    <aura:attribute type="Aura.Component[]" name="stepCmp"/>
+
+    <aura:handler event="c:JP_NavigateEvt" action="{!c.handleNavigate}"/>
+
+    <!-- OFFER CODE VALIDATION -->
+    <c:validateOfferCode oncodesuccess="{!c.handleCodeSuccess}" oncodeerror="{!c.handleCodeError}"/>
+    
+    <!-- PROGRESS BAR -->
+    <c:JP_ProgressBar currentStepId="{!v.currentStepId}" joinSteps="{!v.joinSteps}" />
+
+    <!-- DYNAMIC COMPONENT -->
+    <div style="margin:auto; width:1140px;">
+        {!v.stepCmp}
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <c:JP_NavButtons currentStepId="{!v.currentStepId}" joinSteps="{!v.joinSteps}"/>
+</aura:component>

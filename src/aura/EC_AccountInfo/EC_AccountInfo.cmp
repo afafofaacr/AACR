@@ -1,0 +1,179 @@
+<!--
+ - Created by afaf.awad on 2/2/2021.
+ -->
+
+<aura:component description="EC_AccountInfo" controller="EC_AccountInfoController">
+
+    <aura:attribute name="exhibitorId" type="String" description="Id of company's exhibitor config settings"/>
+    <aura:attribute name="fileName" type="String" description="File name of Image Logo"/>
+    <aura:attribute name="fileId" type="String" description="File Id of Image Logo"/>
+    <aura:attribute name="fileCategory" type="String" default="Exhibitor Logo Image" description="file category" />
+    <aura:attribute name="processing" type="Boolean" description="loading..."/>
+    <aura:attribute name="isVerified" type="Boolean" default="false" description="Is emailInput verified"/>
+    <aura:attribute name="verifyComplete" type="Boolean" default="false" description="Is email domain verification completed"/>
+    <aura:attribute name="emailInput" type="String" description="Input of email to verify"/>
+
+    <aura:attribute name="domainChoice" type="String" default="none"/>
+    <aura:attribute name="domainOptions" type="List" default="[{'label': 'AACR Domain', 'value': 'none'},
+                                                                {'label': 'My Domain', 'value': 'customDomain'}]"/>
+
+    <aura:attribute name="replyChoice" type="String" default="reply"/>
+    <aura:attribute name="replyOptions" type="List" default="[{'label': 'Reply To', 'value': 'reply'},
+                                                                {'label': 'No Reply', 'value': 'noReply'}]"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+
+    <div class="slds-align_absolute-center slds-m-bottom_medium">
+        <div style="width: 1140px; ">
+            <div class="header slds-border_bottom slds-m-top_medium">Exhibitor Settings</div>
+            <br/>
+            <div class="infoMessage">
+                <div class="slds-text-heading_medium">Please complete form.</div>
+            </div>
+        </div>
+    </div>
+
+    <lightning:recordEditForm aura:id="accConfig"
+                              recordId="{!v.exhibitorId}"
+                              onload="{!c.handleOnLoad}"
+                              onsuccess="{!c.handleSuccess}"
+                              objectApiName="EC_Exhibitor_Setting__c">
+
+        <lightning:messages />
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-1">
+                <!--  Logo Image-->
+<!--                <div class="slds-border_bottom slds-text-heading_large bold slds-m-top_medium">Logo Image</div>-->
+<!--                    <div class="slds-grid">-->
+<!--                        <div class="slds-col slds-size_1-of-2">-->
+<!--                            <div class="slds-grid slds-m-top_large">-->
+<!--                                <div class="slds-col slds-size_1-of-2">-->
+<!--                                <div>-->
+<!--                                    <lightning:input aura:id="logoFile" name="logoFile" type="file" onchange="{! c.handleUploadFinished }" disabled="{!not(empty(v.fileName))}" multiple="false" variant="label-hidden"/>-->
+<!--                                    <aura:if isTrue="{!v.uploading}"><div class="slds-text-heading_medium slds-has-error">Uploading...</div></aura:if>-->
+<!--                                    <aura:if isTrue="{!not(empty(v.errorMsg))}"><div class="slds-text-heading_medium slds-has-error">{!v.errorMsg}</div></aura:if>-->
+<!--                                </div>-->
+<!--                                <aura:if isTrue="{!not(empty(v.fileName))}">-->
+<!--                                    <div class="slds-grid" style="align-items: center;">-->
+<!--                                        <lightning:icon iconName="utility:close" size="small" onclick="{!c.handleRemoveFile}"/>-->
+<!--                                        <div style="color:#4e6593; font-weight: 900; font-size: 15px">{!v.fileName}</div>-->
+<!--                                    </div>-->
+<!--                                </aura:if>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="slds-col slds-size_1-of-2 ">-->
+<!--                            <div class="slds-m-top_medium">-->
+<!--                        <lightning:fileCard fileId="{!v.fileId}" />-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                <!-- END Logo Image-->
+
+                <!-- Verify Domain-->
+                <div class="slds-border_bottom slds-text-heading_large bold slds-m-top_large">Verify Domain</div>
+<!--                <div class="slds-m-top_medium">-->
+<!--                            <lightning:radioGroup aura:id="domainButtonGroup"-->
+<!--                                                  name="domainButtonGroup"-->
+<!--                                                  options="{!v.domainOptions}"-->
+<!--                                                  value="{!v.domainChoice}"-->
+<!--                                                  type="button"-->
+<!--                                                  class="slds-m-bottom_medium"/>-->
+<!--                </div>-->
+<!--                <aura:if isTrue="{!v.domainChoice == 'none'}">-->
+<!--                    <div class="slds-grid">-->
+<!--                        <div class="slds-col slds-size_11-of-12">-->
+<!--                            <lightning:input aura:id="aacrDomain" variant="label-inline" label="AACR Domain" class="slds-m-top_xx-small"-->
+<!--                                             value="aacrdomain@aacr.org" readonly="true"/>-->
+<!--                        </div>-->
+<!--                        <div class="slds-col slds-size_1-of-12" style="margin-top: 5px;">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                <aura:set attribute="else">-->
+                <aura:if isTrue="{!v.isVerified}">
+                <div class="slds-text-heading_medium slds-m-top_medium" style="padding-left: 1.5rem">Your email has been sent to our tech team for verification. Look out for an email from AACR for further instructions on verifying your company domain.</div>
+                </aura:if>
+                    <div class="slds-grid slds-m-top_medium">
+                        <div class="slds-col slds-size_11-of-12">
+                            <lightning:inputField aura:id="verifyEmail" fieldName="Exhibitor_Email__c" value="{!v.emailInput}" required="true"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12" style="margin-top: 3px;">
+                            <lightning:button aura:id="verifyButton" label="{!v.verifyComplete == true ? 'Verified' : v.isVerified == true ? 'Processing' : 'Verify'}" variant="brand"
+                                              onclick="{!c.verifyEmail}" disabled="{!or(v.isVerified, v.verifyComplete)}" class="verifyButton"/>
+                        </div>
+                    </div>
+<!--                </aura:set>-->
+<!--                </aura:if>-->
+
+
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_11-of-12">
+                        <lightning:inputField aura:id="senderName" fieldName="Sender_Name__c" required="true"/>
+                        <div class="slds-m-top_medium">
+                                    <lightning:radioGroup aura:id="replyButtonGroup"
+                                                          name="replyButtonGroup"
+                                                          options="{!v.replyOptions}"
+                                                          value="{!v.replyChoice}"
+                                                          type="button"
+                                                          class="slds-m-bottom_medium"
+                                                          onchange="{!c.toggleReplyTo}"
+                                                          style="padding-left: 33%;"/>
+                        </div>
+<!--                        <aura:if isTrue="{!v.domainChoice == 'none'}">-->
+<!--                            <div class="slds-grid">-->
+<!--                                <div class="slds-col slds-size_11-of-12">-->
+<!--                                    <lightning:input aura:id="noReply" variant="label-inline" label="Reply To" class="slds-m-top_xx-small"-->
+<!--                                                     value="noreply@noreply.com" readonly="true"/>-->
+<!--                                </div>-->
+<!--                                <div class="slds-col slds-size_1-of-12" style="margin-top: 5px;">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        <aura:set attribute="else">-->
+                        <lightning:inputField aura:id="replyTo" fieldName="Reply_To__c" required="true"/>
+<!--                        </aura:set>-->
+<!--                        </aura:if>-->
+                    </div>
+                    <div class="slds-col slds-size_1-of-12" >
+                    </div>
+                </div>
+
+                <!-- END Verify Domain-->
+
+                <!-- Email Signatures -->
+<!--                <div class="slds-border_bottom slds-text-heading_large bold slds-m-top_large">Email Signatures</div>-->
+<!--                    <div class="slds-grid">-->
+<!--                        <div class="slds-col">-->
+<!--                            <lightning:input aura:id="sig1" label="Signature 1"/>-->
+<!--                            <lightning:input aura:id="sig1Title" variant="label-hidden" class="slds-m-top_xx-small"/>-->
+<!--                            <lightning:input aura:id="sig3" label="Signature 3" class="slds-m-top_x-small"/>-->
+<!--                            <lightning:input aura:id="sig3Title" variant="label-hidden" class="slds-m-top_xx-small"/>-->
+<!--                            <lightning:input aura:id="sig5" label="Signature 5" class="slds-m-top_x-small"/>-->
+<!--                            <lightning:input aura:id="sig5Title" variant="label-hidden" class="slds-m-top_xx-small"/>-->
+<!--                        </div>-->
+<!--                        <div class="slds-col">-->
+<!--                            <lightning:input aura:id="sig2" label="Signature 2"/>-->
+<!--                            <lightning:input aura:id="sig2Title" variant="label-hidden" class="slds-m-top_xx-small"/>-->
+<!--                            <lightning:input aura:id="sig4" label="Signature 4" class="slds-m-top_x-small"/>-->
+<!--                            <lightning:input aura:id="sig4Title" variant="label-hidden" class="slds-m-top_xx-small"/>-->
+<!--                            <lightning:input aura:id="sig6" label="Signature 6" class="slds-m-top_x-small"/>-->
+<!--                            <lightning:input aura:id="sig6Title" variant="label-hidden" class="slds-m-top_xx-small"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <!--END Email Signatures-->
+
+                    <!-- OTHER-->
+                <div class="slds-border_bottom slds-text-heading_large bold slds-m-top_large"></div>
+                <lightning:inputField aura:id="invoiceTo" fieldName="Send_Invoice_To__c" required="true" class="slds-m-top_medium"/>
+                <lightning:inputField aura:id="maxBudget" fieldName="Max_Budget__c" class="slds-m-top_medium"/>
+            </div>
+        </div>
+    </lightning:recordEditForm>
+
+    <div class="slds-p-around--large slds-align--absolute-center">
+        <lightning:button label="Cancel" variant="brand" onclick="{!c.cancel}" class="navButtons"/>
+        <lightning:button label="{!v.processing?'Saving...': 'Save'}" variant="brand" onclick="{!c.handleSave}" class="navButtons"/>
+    </div>
+
+
+</aura:component>

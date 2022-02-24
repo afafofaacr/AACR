@@ -1,0 +1,3334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>EventEdit_Override</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>EventNew_Override</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>AC_Event_Detail</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>A_R_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>A/R Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipName>AC_Events3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Adjustment_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Adjustment Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipName>AC_Events2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Advocate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Advocate</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BR_Events_Zone__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Zone</label>
+        <referenceTo>BR_Events_Zone__c</referenceTo>
+        <relationshipName>BR_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Budgeted_Attendance__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Budgeted Attendance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CME_Open__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CME Open</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CME_Survey_Link__c</fullName>
+        <externalId>false</externalId>
+        <label>CME Survey Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Cancelled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancelled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Affiliate</fullName>
+                    <default>false</default>
+                    <label>Affiliate</label>
+                </value>
+                <value>
+                    <fullName>Annual Meeting</fullName>
+                    <default>false</default>
+                    <label>Annual Meeting</label>
+                </value>
+                <value>
+                    <fullName>Annual Meeting Affiliate</fullName>
+                    <default>false</default>
+                    <label>Annual Meeting Affiliate</label>
+                </value>
+                <value>
+                    <fullName>Annual Meeting Satellite Symposium</fullName>
+                    <default>false</default>
+                    <label>Annual Meeting Satellite Symposium</label>
+                </value>
+                <value>
+                    <fullName>Special Conferences</fullName>
+                    <default>false</default>
+                    <label>Special Conferences</label>
+                </value>
+                <value>
+                    <fullName>Joint</fullName>
+                    <default>false</default>
+                    <label>Joint</label>
+                </value>
+                <value>
+                    <fullName>Meetings</fullName>
+                    <default>false</default>
+                    <label>Meetings</label>
+                </value>
+                <value>
+                    <fullName>Non-AACR</fullName>
+                    <default>false</default>
+                    <label>Non-AACR</label>
+                </value>
+                <value>
+                    <fullName>Table Top Exhibits</fullName>
+                    <default>false</default>
+                    <label>Table Top Exhibits</label>
+                </value>
+                <value>
+                    <fullName>Think Tanks</fullName>
+                    <default>false</default>
+                    <label>Think Tanks</label>
+                </value>
+                <value>
+                    <fullName>Uncategorized</fullName>
+                    <default>false</default>
+                    <label>Uncategorized</label>
+                </value>
+                <value>
+                    <fullName>Workshops</fullName>
+                    <default>false</default>
+                    <label>Workshops</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Custom_Registration_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom Registration URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>131072</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Discloser_List__c</fullName>
+        <externalId>true</externalId>
+        <label>Discloser List</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disclosure_Link__c</fullName>
+        <description>link to disclosure form</description>
+        <externalId>false</externalId>
+        <label>Disclosure Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Display_on_Confirmation_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display on Confirmation Email</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_on_Confirmation_Page__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display on Confirmation Page</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_on_Landing_Page__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display on Landing Page</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_on_Reminder_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display on Reminder(s) Email</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Draft_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( Draft_Program__c , &apos;here&apos;)</formula>
+        <label>Draft Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Draft_Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Draft Program</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Draft__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Event is not published.</inlineHelpText>
+        <label>Draft</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_registration_for_guests__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Enable registration for guests</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Event_Preferences_Form_Fieldset__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Preferences Form Fieldset</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Person</fullName>
+                    <default>false</default>
+                    <label>In Person</label>
+                </value>
+                <value>
+                    <fullName>Virtual</fullName>
+                    <default>false</default>
+                    <label>Virtual</label>
+                </value>
+                <value>
+                    <fullName>On Demand</fullName>
+                    <default>false</default>
+                    <label>On Demand</label>
+                </value>
+                <value>
+                    <fullName>Hybrid</fullName>
+                    <default>false</default>
+                    <label>Hybrid</label>
+                </value>
+                <value>
+                    <fullName>Live</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Live</label>
+                </value>
+                <value>
+                    <fullName>Mock Live</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Mock Live</label>
+                </value>
+                <value>
+                    <fullName>Prerecorded</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Prerecorded</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Featured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Featured</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hide_Date_Time__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hide Date/Time</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hide_attendees__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Hide attendees on event landing page.</inlineHelpText>
+        <label>Hide attendees</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ignore_Segment_Priority__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Ignore priority of the matching segments and show chipest ticket.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Priority will be ignored and the lowest price will prevail.</inlineHelpText>
+        <label>Ignore Priority</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Income_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Income Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipName>AC_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Invite_Image_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Invite Image Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invite_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Invite Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>JP_Institution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CME Joint Providership Institution</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Live Events</relationshipLabel>
+        <relationshipName>AC_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Joint_Providership_Institution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Joint Providership Institution</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Live Events (Joint Providership Institution)</relationshipLabel>
+        <relationshipName>Live_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LOI_Open__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is letter of invitation button open in portal</description>
+        <externalId>false</externalId>
+        <label>LOI Open</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LOP_Open__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>LOP Open</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Letter_Invitation__c</fullName>
+        <externalId>false</externalId>
+        <label>Letter of Invitation</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Letter_Participation__c</fullName>
+        <externalId>false</externalId>
+        <label>Letter of Participation</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Limit_of_attendees__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Zero means unlimited.</inlineHelpText>
+        <label>Limit of attendees</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>List_Image_Filename__c</fullName>
+        <externalId>false</externalId>
+        <label>List Image Filename</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <displayLocationInDecimal>false</displayLocationInDecimal>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <scale>7</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Location</type>
+    </fields>
+    <fields>
+        <fullName>Main_Image_Filename__c</fullName>
+        <externalId>false</externalId>
+        <label>Main Image Filename</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_CME_Credits__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Max CME Credits</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Sponsorship_Levels__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>No Sponsorship Levels</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Event</label>
+        <referenceTo>BR_Event__c</referenceTo>
+        <relationshipLabel>Coupled Events</relationshipLabel>
+        <relationshipName>Child_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Platform_Open_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( DATEVALUE(Start_Date__c ) &gt;= DATE ( YEAR (DATEVALUE(Start_Date__c )),3,1)
++
+(14- CASE( MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),3,1) - DATE (1900,1,7),7) ,0,7,MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),3,1) - DATE (1900,1,7),7)))
+
+&amp;&amp;
+
+DATEVALUE(Start_Date__c ) &lt; DATE(YEAR (DATEVALUE(Start_Date__c )),11,1) + (7- CASE( MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),11,1) - DATE (1900,1,7),7), 0,7,MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),11,1) - DATE (1900,1,7),7))),
+
+IF( OR( VALUE( MID( TEXT( Start_Date__c - (4/24)-(30/1440) ), 12, 2 ) ) = 0,
+VALUE( MID( TEXT( Start_Date__c - (4/24)-(30/1440)), 12, 2 ) ) = 12 ), &quot;12&quot;,
+TEXT( VALUE( MID( TEXT( Start_Date__c - (4/24)-(30/1440) ), 12, 2 ) ) -
+IF( VALUE( MID( TEXT( Start_Date__c - (4/24)-(30/1440)), 12, 2 ) ) &lt; 12, 0, 12 ) ) )
+&amp; &quot;:&quot; &amp;
+MID( TEXT( Start_Date__c - (4/24)-(30/1440)), 15, 2 )&amp;
+&quot; &quot; &amp;
+IF( VALUE( MID( TEXT( Start_Date__c - (4/24) -(30/1440)), 12, 2 ) ) &lt; 12, &quot;AM&quot;, &quot;PM&quot; ),
+
+IF( OR( VALUE( MID( TEXT( Start_Date__c - (5/24)-(30/1440) ), 12, 2 ) ) = 0,
+VALUE( MID( TEXT( Start_Date__c - (5/24)-(30/1440)), 12, 2 ) ) = 12 ), &quot;12&quot;,
+TEXT( VALUE( MID( TEXT( Start_Date__c - (5/24)-(30/1440) ), 12, 2 ) ) -
+IF( VALUE( MID( TEXT( Start_Date__c - (5/24)-(30/1440)), 12, 2 ) ) &lt; 12, 0, 12 ) ) ) &amp; &quot;:&quot; &amp;
+MID( TEXT( Start_Date__c - (5/24)-(30/1440)), 15, 2 )&amp;
+&quot; &quot; &amp;
+IF( VALUE( MID( TEXT( Start_Date__c - (5/24)-(30/1440)), 12, 2 ) ) &lt; 12, &quot;AM&quot;, &quot;PM&quot; ))</formula>
+        <label>Platform Open Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Portal_Event_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;uat-aacr.cs195.force.com/LiveEventsList?ac__id=&apos; + Id</formula>
+        <label>Portal Event Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pre_verify_myAACR_Info__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Requires user to verify their info before being redirected to custom registration provider.</description>
+        <externalId>false</externalId>
+        <label>Pre-verify myAACR Info</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Publicly_available__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Event is available for users to purchase tickets.</inlineHelpText>
+        <label>Publicly available</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Refund_Credit_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Refund/Credit Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipName>AC_Events1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Refunds_Open__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Refunds Open</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Registration_Confirmation_Message__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for registration confirmation email.</inlineHelpText>
+        <label>Registration Confirmation Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Registration_Form_Fieldset__c</fullName>
+        <externalId>false</externalId>
+        <label>Registration Form Fieldset</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registration_Form__c</fullName>
+        <defaultValue>&quot;Basic&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Registration Form</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Basic</fullName>
+                    <default>false</default>
+                    <label>Basic</label>
+                </value>
+                <value>
+                    <fullName>Advanced</fullName>
+                    <default>false</default>
+                    <label>Advanced</label>
+                </value>
+                <value>
+                    <fullName>Custom</fullName>
+                    <default>false</default>
+                    <label>Custom</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reminder_Hours__c</fullName>
+        <defaultValue>&quot;1;24;168;&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Reminder Hours</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reminder_Message1__c</fullName>
+        <description>Used for mail merge reminder email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for mail merge reminder email</inlineHelpText>
+        <label>First reminder message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reminder_Message2__c</fullName>
+        <externalId>false</externalId>
+        <label>Second reminder message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reminder_Message3__c</fullName>
+        <externalId>false</externalId>
+        <label>Third reminder message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reply_To__c</fullName>
+        <description>Reply to email for speaker invitations</description>
+        <externalId>false</externalId>
+        <label>Reply To</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_reminders__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Send reminders</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Confirmation_Email_Logos__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Confirmation Email Logos</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Confirmation_Page_Logos__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Confirmation Page Logos</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Joint_Fields__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Joint Fields</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Landing_Page_Logos__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Landing Page Logos</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Pre_Post_Doc__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Show pre/post doc fields on registration form</description>
+        <externalId>false</externalId>
+        <label>Show Pre Post Doc</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Reminder_Email_Logos__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Reminder Email Logos</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Workshop_Fields__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Show Workshop Fields</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Signature_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_6__c</fullName>
+        <externalId>false</externalId>
+        <label>Signature 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsorship_Level_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Sponsorship Level 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsorship_Level_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Sponsorship Level 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsorship_Level_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Sponsorship Level 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( DATEVALUE(Start_Date__c ) &gt;= DATE ( YEAR (DATEVALUE(Start_Date__c )),3,1)
++
+(14- CASE( MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),3,1) - DATE (1900,1,7),7) ,0,7,MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),3,1) - DATE (1900,1,7),7)))
+
+&amp;&amp;
+
+DATEVALUE(Start_Date__c ) &lt; DATE(YEAR (DATEVALUE(Start_Date__c )),11,1) + (7- CASE( MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),11,1) - DATE (1900,1,7),7), 0,7,MOD(DATE ( YEAR (DATEVALUE(Start_Date__c )),11,1) - DATE (1900,1,7),7))),
+
+IF( OR( VALUE( MID( TEXT( Start_Date__c  - (4/24) ), 12, 2 ) ) = 0, 
+VALUE( MID( TEXT( Start_Date__c  - (4/24)), 12, 2 ) ) = 12 ), &quot;12&quot;, 
+TEXT( VALUE( MID( TEXT( Start_Date__c  - (4/24) ), 12, 2 ) ) - 
+IF( VALUE( MID( TEXT( Start_Date__c  - (4/24)), 12, 2 ) ) &lt; 12, 0, 12 ) ) )
+ &amp; &quot;:&quot; &amp; 
+MID( TEXT( Start_Date__c  - (4/24)), 15, 2 )&amp;
+ &quot; &quot; &amp;
+IF( VALUE( MID( TEXT( Start_Date__c  - (4/24)), 12, 2 ) ) &lt; 12, &quot;AM&quot;, &quot;PM&quot; ), 
+ 
+IF( OR( VALUE( MID( TEXT( Start_Date__c  - (5/24) ), 12, 2 ) ) = 0, 
+VALUE( MID( TEXT( Start_Date__c  - (5/24)), 12, 2 ) ) = 12 ), &quot;12&quot;, 
+TEXT( VALUE( MID( TEXT( Start_Date__c  - (5/24) ), 12, 2 ) ) - 
+IF( VALUE( MID( TEXT( Start_Date__c  - (5/24)), 12, 2 ) ) &lt; 12, 0, 12 ) ) ) &amp; &quot;:&quot; &amp; 
+MID( TEXT( Start_Date__c  - (5/24)), 15, 2 )&amp;
+ &quot; &quot; &amp;
+IF( VALUE( MID( TEXT( Start_Date__c  - (5/24)), 12, 2 ) ) &lt; 12, &quot;AM&quot;, &quot;PM&quot; ))</formula>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ticket_Capacity__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Capacity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ticket_Label__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Label</label>
+        <length>73</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ticket_Not_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Ticket Not Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ticket_Purchase_Confirmation_Message__c</fullName>
+        <description>Custom messaging for ticket purchase confirmation page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom messaging for ticket purchase confirmation page.</inlineHelpText>
+        <label>Ticket Purchase Confirmation Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Timezone__c</fullName>
+        <externalId>false</externalId>
+        <label>Timezone to show to public</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>(GMT+14:00) Line Is. Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+14:00) Line Is. Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+13:45) Chatham Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+13:45) Chatham Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+13:00) Phoenix Is. Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+13:00) Phoenix Is. Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+13:00) Tonga Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+13:00) Tonga Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+13:00) New Zealand Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+13:00) New Zealand Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:45) Chatham Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:45) Chatham Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:00) Petropavlovsk-Kamchatski Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:00) Petropavlovsk-Kamchatski Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:00) New Zealand Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:00) New Zealand Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+12:00) Fiji Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+12:00) Fiji Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+11:00) Solomon Is. Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+11:00) Solomon Is. Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+11:00) Norfolk Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+11:00) Norfolk Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+11:00) Lord Howe Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+11:00) Lord Howe Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+11:00) Australian Eastern Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+11:00) Australian Eastern Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+10:30) Lord Howe Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+10:30) Lord Howe Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+10:30) Australian Central Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+10:30) Australian Central Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+10:00) Australian Eastern Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+10:00) Australian Eastern Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+09:30) Australian Central Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+09:30) Australian Central Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+09:00) Korea Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+09:00) Korea Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+09:00) Japan Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+09:00) Japan Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Hong Kong Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Hong Kong Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Malaysia Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Malaysia Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Philippines Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Philippines Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) China Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) China Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Singapore Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Singapore Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+08:00) Australian Western Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+08:00) Australian Western Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+07:00) Indochina Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+07:00) Indochina Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+07:00) West Indonesia Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+07:00) West Indonesia Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+06:30) Myanmar Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+06:30) Myanmar Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+06:00) Bangladesh Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+06:00) Bangladesh Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:45) Nepal Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:45) Nepal Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:30) India Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:30) India Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:00) Pakistan Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:00) Pakistan Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:00) Uzbekistan Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:00) Uzbekistan Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+05:00) Yekaterinburg Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+05:00) Yekaterinburg Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:30) Afghanistan Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:30) Afghanistan Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:30) Iran Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:30) Iran Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Azerbaijan Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Azerbaijan Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Gulf Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Gulf Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Georgia Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Georgia Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Armenia Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Armenia Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+04:00) Arabia Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+04:00) Arabia Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:30) Iran Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:30) Iran Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Arabia Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Arabia Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Eastern African Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Eastern African Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Eastern European Summer Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Eastern European Summer Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Israel Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Israel Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Turkey Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Turkey Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+03:00) Moscow Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+03:00) Moscow Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Eastern European Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Eastern European Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Israel Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Israel Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) South Africa Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) South Africa Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+02:00) Central European Summer Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+02:00) Central European Summer Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) Central European Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) Central European Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) Western European Summer Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) Western European Summer Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) Greenwich Mean Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) Greenwich Mean Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+01:00) British Summer Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+01:00) British Summer Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) Western European Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) Western European Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) Eastern Greenland Summer Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) Eastern Greenland Summer Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) Azores Summer Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) Azores Summer Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT+00:00) Greenwich Mean Time</fullName>
+                    <default>false</default>
+                    <label>(GMT+00:00) Greenwich Mean Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-01:00) Azores Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-01:00) Azores Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-01:00) Cape Verde Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-01:00) Cape Verde Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-02:00) South Georgia Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-02:00) South Georgia Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-02:30) Newfoundland Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-02:30) Newfoundland Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) Argentine Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) Argentine Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) Atlantic Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) Atlantic Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:00) Brasilia Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:00) Brasilia Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-03:30) Newfoundland Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-03:30) Newfoundland Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:00) Atlantic Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-04:00) Atlantic Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:00) Venezuela Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-04:00) Venezuela Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:00) Chile Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-04:00) Chile Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-04:00) Eastern Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-04:00) Eastern Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) Eastern Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) Eastern Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) Colombia Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) Colombia Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) Peru Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) Peru Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-05:00) Central Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-05:00) Central Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-06:00) Central Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-06:00) Central Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-06:00) Mountain Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-06:00) Mountain Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-07:00) Mountain Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-07:00) Mountain Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-07:00) Pacific Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-07:00) Pacific Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-08:00) Pacific Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-08:00) Pacific Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-08:00) Alaska Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-08:00) Alaska Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-08:00) Pitcairn Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-08:00) Pitcairn Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-09:00) Alaska Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-09:00) Alaska Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-09:00) Gambier Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-09:00) Gambier Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-09:00) Hawaii-Aleutian Daylight Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-09:00) Hawaii-Aleutian Daylight Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-09:30) Marquesas Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-09:30) Marquesas Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-10:00) Hawaii-Aleutian Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-10:00) Hawaii-Aleutian Standard Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-11:00) Niue Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-11:00) Niue Time</label>
+                </value>
+                <value>
+                    <fullName>(GMT-11:00) Samoa Standard Time</fullName>
+                    <default>false</default>
+                    <label>(GMT-11:00) Samoa Standard Time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unlisted_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Unlisted events will not appear in the portal for general purchase but will still be open for ticket sales.</inlineHelpText>
+        <label>Unlisted Event</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Venue_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Venue Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Venue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Venue at which the event will take place</description>
+        <externalId>false</externalId>
+        <label>Physical Venue</label>
+        <referenceTo>Venue__c</referenceTo>
+        <relationshipName>AC_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>View_Confirmation_Page_Horizontally__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>View Confirmation Page Horizontally</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>View_Landing_Page_Horizontally__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>View Landing Page Horizontally</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Virtual_Venue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Virtual Venue</label>
+        <referenceTo>Venue__c</referenceTo>
+        <relationshipName>Virtual_ACEvents</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Live Events</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Event_Stage__c</columns>
+        <columns>Draft__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Portal_Event_Link__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Cancelled</fullName>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Cancelled__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Cancelled Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Events_with_Virtual_Venue</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Stage__c</columns>
+        <columns>Category__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Virtual_Venue__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>End_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <filters>
+            <field>Virtual_Venue__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Events with Virtual Venue</label>
+    </listViews>
+    <listViews>
+        <fullName>Future_Events</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Stage__c</columns>
+        <columns>Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Virtual_Venue__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>End_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Future Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Past_Events</fullName>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>End_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Past Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Upcoming_Events</fullName>
+        <columns>NAME</columns>
+        <columns>Category__c</columns>
+        <columns>Description__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Draft__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Cancelled__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Unpublished Events</label>
+    </listViews>
+    <nameField>
+        <label>Event Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Live Events</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Active</fullName>
+        <active>true</active>
+        <label>Active</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting Affiliate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting Satellite Symposium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-AACR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Table Top Exhibits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Think Tanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncategorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workshops</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Stage__c</picklist>
+            <values>
+                <fullName>Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Form__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Timezone__c</picklist>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Azores Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Eastern Greenland Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Greenwich Mean Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Western European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 British Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Central European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Greenwich Mean Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Western European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Central European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Eastern European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Israel Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 South Africa Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Arabia Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Eastern African Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Eastern European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Israel Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Moscow Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Turkey Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A30%29 Iran Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Arabia Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Armenia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Azerbaijan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Georgia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Gulf Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A30%29 Afghanistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A30%29 Iran Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Pakistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Uzbekistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Yekaterinburg Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A30%29 India Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A45%29 Nepal Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B06%3A00%29 Bangladesh Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B06%3A30%29 Myanmar Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B07%3A00%29 Indochina Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B07%3A00%29 West Indonesia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Australian Western Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 China Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Hong Kong Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Malaysia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Philippines Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Singapore Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A00%29 Japan Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A00%29 Korea Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A30%29 Australian Central Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A00%29 Australian Eastern Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A30%29 Australian Central Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A30%29 Lord Howe Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Australian Eastern Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Lord Howe Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Norfolk Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Solomon Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 Fiji Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 New Zealand Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 Petropavlovsk-Kamchatski Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A45%29 Chatham Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 New Zealand Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 Phoenix Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 Tonga Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A45%29 Chatham Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B14%3A00%29 Line Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-01%3A00%29 Azores Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-01%3A00%29 Cape Verde Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-02%3A00%29 South Georgia Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-02%3A30%29 Newfoundland Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Argentine Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Atlantic Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Brasilia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A30%29 Newfoundland Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Atlantic Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Chile Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Eastern Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Venezuela Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Central Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Colombia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Eastern Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Peru Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-06%3A00%29 Central Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-06%3A00%29 Mountain Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-07%3A00%29 Mountain Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-07%3A00%29 Pacific Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Alaska Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Pacific Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Pitcairn Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Alaska Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Gambier Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Hawaii-Aleutian Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A30%29 Marquesas Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-10%3A00%29 Hawaii-Aleutian Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-11%3A00%29 Niue Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-11%3A00%29 Samoa Standard Time</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Cancelled</fullName>
+        <active>true</active>
+        <description>Event has been cancelled</description>
+        <label>Cancelled</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting Affiliate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting Satellite Symposium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-AACR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Table Top Exhibits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Think Tanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncategorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workshops</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Stage__c</picklist>
+            <values>
+                <fullName>Hybrid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Form__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Timezone__c</picklist>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Azores Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Eastern Greenland Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Greenwich Mean Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Western European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 British Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Central European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Greenwich Mean Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Western European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Central European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Eastern European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Israel Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 South Africa Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Arabia Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Eastern African Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Eastern European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Israel Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Moscow Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Turkey Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A30%29 Iran Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Arabia Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Armenia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Azerbaijan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Georgia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Gulf Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A30%29 Afghanistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A30%29 Iran Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Pakistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Uzbekistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Yekaterinburg Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A30%29 India Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A45%29 Nepal Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B06%3A00%29 Bangladesh Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B06%3A30%29 Myanmar Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B07%3A00%29 Indochina Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B07%3A00%29 West Indonesia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Australian Western Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 China Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Hong Kong Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Malaysia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Philippines Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Singapore Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A00%29 Japan Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A00%29 Korea Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A30%29 Australian Central Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A00%29 Australian Eastern Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A30%29 Australian Central Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A30%29 Lord Howe Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Australian Eastern Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Lord Howe Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Norfolk Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Solomon Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 Fiji Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 New Zealand Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 Petropavlovsk-Kamchatski Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A45%29 Chatham Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 New Zealand Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 Phoenix Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 Tonga Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A45%29 Chatham Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B14%3A00%29 Line Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-01%3A00%29 Azores Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-01%3A00%29 Cape Verde Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-02%3A00%29 South Georgia Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-02%3A30%29 Newfoundland Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Argentine Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Atlantic Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Brasilia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A30%29 Newfoundland Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Atlantic Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Chile Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Eastern Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Venezuela Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Central Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Colombia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Eastern Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Peru Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-06%3A00%29 Central Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-06%3A00%29 Mountain Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-07%3A00%29 Mountain Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-07%3A00%29 Pacific Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Alaska Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Pacific Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Pitcairn Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Alaska Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Gambier Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Hawaii-Aleutian Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A30%29 Marquesas Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-10%3A00%29 Hawaii-Aleutian Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-11%3A00%29 Niue Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-11%3A00%29 Samoa Standard Time</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Coupled</fullName>
+        <active>false</active>
+        <description>Child event record type</description>
+        <label>Coupled</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting Affiliate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Annual Meeting Satellite Symposium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meetings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-AACR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Table Top Exhibits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Think Tanks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uncategorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workshops</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Stage__c</picklist>
+            <values>
+                <fullName>In Person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Registration_Form__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Basic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Timezone__c</picklist>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Azores Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Eastern Greenland Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Greenwich Mean Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B00%3A00%29 Western European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 British Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Central European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Greenwich Mean Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B01%3A00%29 Western European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Central European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Eastern European Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 Israel Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B02%3A00%29 South Africa Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Arabia Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Eastern African Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Eastern European Summer Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Israel Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Moscow Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A00%29 Turkey Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B03%3A30%29 Iran Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Arabia Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Armenia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Azerbaijan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Georgia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A00%29 Gulf Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A30%29 Afghanistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B04%3A30%29 Iran Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Pakistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Uzbekistan Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A00%29 Yekaterinburg Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A30%29 India Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B05%3A45%29 Nepal Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B06%3A00%29 Bangladesh Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B06%3A30%29 Myanmar Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B07%3A00%29 Indochina Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B07%3A00%29 West Indonesia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Australian Western Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 China Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Hong Kong Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Malaysia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Philippines Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B08%3A00%29 Singapore Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A00%29 Japan Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A00%29 Korea Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B09%3A30%29 Australian Central Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A00%29 Australian Eastern Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A30%29 Australian Central Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B10%3A30%29 Lord Howe Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Australian Eastern Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Lord Howe Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Norfolk Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B11%3A00%29 Solomon Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 Fiji Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 New Zealand Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A00%29 Petropavlovsk-Kamchatski Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B12%3A45%29 Chatham Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 New Zealand Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 Phoenix Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A00%29 Tonga Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B13%3A45%29 Chatham Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT%2B14%3A00%29 Line Is%2E Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-01%3A00%29 Azores Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-01%3A00%29 Cape Verde Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-02%3A00%29 South Georgia Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-02%3A30%29 Newfoundland Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Argentine Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Atlantic Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A00%29 Brasilia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-03%3A30%29 Newfoundland Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Atlantic Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Chile Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Eastern Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-04%3A00%29 Venezuela Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Central Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Colombia Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Eastern Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-05%3A00%29 Peru Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-06%3A00%29 Central Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-06%3A00%29 Mountain Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-07%3A00%29 Mountain Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-07%3A00%29 Pacific Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Alaska Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Pacific Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-08%3A00%29 Pitcairn Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Alaska Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Gambier Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A00%29 Hawaii-Aleutian Daylight Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-09%3A30%29 Marquesas Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-10%3A00%29 Hawaii-Aleutian Standard Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-11%3A00%29 Niue Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28GMT-11%3A00%29 Samoa Standard Time</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_Stage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Draft__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Portal_Event_Link__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>End_Date_Validation</fullName>
+        <active>true</active>
+        <description>End date must always be after start date</description>
+        <errorConditionFormula>End_Date__c &lt;  Start_Date__c</errorConditionFormula>
+        <errorMessage>The end date must be after the start of the event.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

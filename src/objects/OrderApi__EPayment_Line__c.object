@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tracks how E-Payments (if successful) will be applied in the system, either to an Item or Invoice.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>OrderApi__Activation_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override Conditionally Required ** The date the Subscription will be activated is calculated based on conditions set on the related Subscription Plan and can be manually over-ridden if &quot;Auto Calculate Activation Date&quot; is unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override Conditionally Required ** The date the Subscription will be activated is calculated based on conditions set on the related Subscription Plan and can be manually over-ridden if &quot;Auto Calculate Activation Date&quot; is unchecked.</inlineHelpText>
+        <label>Activation Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Activity_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The parent activity &quot;Transaction Type&quot;.</description>
+        <externalId>false</externalId>
+        <formula>IF(OrderApi__EPayment__r.OrderApi__Transaction_Type__c != NULL,UPPER(LEFT(OrderApi__EPayment__r.OrderApi__Transaction_Type__c,1)) &amp; RIGHT(OrderApi__EPayment__r.OrderApi__Transaction_Type__c,LEN(OrderApi__EPayment__r.OrderApi__Transaction_Type__c) - 1),&quot;Scheduled/Pending Payment&quot;)</formula>
+        <inlineHelpText>**System Calculated** The parent activity &quot;Transaction Type&quot;.</inlineHelpText>
+        <label>Activity Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Auto_Calculate_Activation_Date__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Valid if the EPayment Line is related to a &quot;Subscription&quot; Item. When checked, the system will automatically calculate the &quot;Activation Date&quot; based on conditions set on the selected &quot;Subscription Plan&quot;. Defaults checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Valid if the EPayment Line is related to a &quot;Subscription&quot; Item. When checked, the system will automatically calculate the &quot;Activation Date&quot; based on conditions set on the selected &quot;Subscription Plan&quot;. Defaults checked.</inlineHelpText>
+        <label>Auto Calculate Activation Date</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Link to the related Business Group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Link to the related Business Group.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is populated to show the related contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is populated to show the related contact.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>ePayment Lines</relationshipLabel>
+        <relationshipName>ePayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__EPayment_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related parent EPayment Line.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related parent EPayment Line.</inlineHelpText>
+        <label>Parent EPayment Line</label>
+        <referenceTo>OrderApi__EPayment_Line__c</referenceTo>
+        <relationshipLabel>ePayment Lines</relationshipLabel>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__EPayment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** Link to the related E-Payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Link to the related E-Payment.</inlineHelpText>
+        <label>E-Payment</label>
+        <referenceTo>OrderApi__EPayment__c</referenceTo>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OrderApi__End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override Conditionally Required ** The date the Subscription will be ended is calculated based on conditions set on the related Subscription Plan and Activation Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override Conditionally Required ** The date the Subscription will be ended is calculated based on conditions set on the related Subscription Plan and Activation Date.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__GL_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Required/Override** Link to the related GL Account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Required/Override** Link to the related GL Account.</inlineHelpText>
+        <label>GL Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice_Line__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Relates epayment lines to invoice lines.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relates epayment lines to invoice lines.</inlineHelpText>
+        <label>Invoice Line</label>
+        <referenceTo>OrderApi__Invoice_Line__c</referenceTo>
+        <relationshipLabel>EPayment Lines</relationshipLabel>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Invoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Invoice. Payment Activity Lines must be linked to one and only one Invoice, Credit Memo, or Sales Order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Invoice. Payment Activity Lines must be linked to one and only one Invoice, Credit Memo, or Sales Order.</inlineHelpText>
+        <label>Invoice</label>
+        <referenceTo>OrderApi__Invoice__c</referenceTo>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Renewal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, related EPayment Line is considered as &quot;Subscription Renewal&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, related EPayment Line is considered as &quot;Subscription Renewal&quot;.</inlineHelpText>
+        <label>Is Renewal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Is_Tax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the EPayment Line that is being used for tax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the EPayment Line that is being used for tax.</inlineHelpText>
+        <label>Is Tax</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to related Item Class</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to related Item Class</inlineHelpText>
+        <label>Item Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>ePayment Lines</relationshipLabel>
+        <relationshipName>ePayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**Required** Link to related Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Link to related Item.</inlineHelpText>
+        <label>Item</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipName>EPayment_Details</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__List_Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The value of the &quot;Price&quot; field for the related Item.</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Item__r.OrderApi__Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** The value of the &quot;Price&quot; field for the related Item.</inlineHelpText>
+        <label>List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Payment_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** The payment activity payment method type.</description>
+        <externalId>false</externalId>
+        <formula>IF(OrderApi__EPayment__r.OrderApi__Payment_Method_Type__c != null,
+IF(OrderApi__EPayment__r.OrderApi__Payment_Method_Type__c == &apos;credit_card&apos;, &quot;&quot;, &quot;E-Check &quot;)
+&amp;
+UPPER(OrderApi__EPayment__r.OrderApi__Card_Type__c)
+&amp; &quot; &quot; &amp;
+OrderApi__EPayment__r.OrderApi__Number__c
+&amp; &quot; (Expires &quot; &amp;
+TEXT(OrderApi__EPayment__r.OrderApi__Month__c)
+&amp; &quot;/&quot; &amp;
+TEXT(OrderApi__EPayment__r.OrderApi__Year__c)
+&amp; &quot;)&quot;
+,
+&quot;&quot;
+)</formula>
+        <inlineHelpText>**System Calculated** The payment activity payment method type.</inlineHelpText>
+        <label>Payment Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Price_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the system will derive the Sale Price from the most appropriate Price Rule. Default checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the system will derive the Sale Price from the most appropriate Price Rule. Default checked.</inlineHelpText>
+        <label>Price Override</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Price_Rule__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** Link to related Price Rule applied for the related Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** Link to related Price Rule applied for the related Item.</inlineHelpText>
+        <label>Price Rule</label>
+        <referenceTo>OrderApi__Price_Rule__c</referenceTo>
+        <relationshipName>EPayment_Details</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Required** Quantity of Items. Default 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Quantity of Items. Default 1.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Sale_Price__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override** The Sale Price (per unit) for the related Item. Default 0.00.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override** The Sale Price (per unit) for the related Item. Default 0.00.</inlineHelpText>
+        <label>Sale Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Icon representation of the payment activities status.</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__EPayment__r.OrderApi__Status__c</formula>
+        <inlineHelpText>**System Calculated** Icon representation of the payment activities status.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** Link to the related plan that controls Activation and Expiration dates related to any Subscription Item. Required when the EPayment Line is linked to a Item that is the child of a &quot;Subscription&quot; Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** Link to the related plan that controls Activation and Expiration dates related to any Subscription Item. Required when the EPayment Line is linked to a Item that is the child of a &quot;Subscription&quot; Item Class.</inlineHelpText>
+        <label>Subscription Plan</label>
+        <referenceTo>OrderApi__Subscription_Plan__c</referenceTo>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the Subscription that is being upgraded or renewed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the Subscription that is being upgraded or renewed.</inlineHelpText>
+        <label>Subscription (Upgrade/Renew)</label>
+        <referenceTo>OrderApi__Subscription__c</referenceTo>
+        <relationshipName>EPayment_Lines</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Subtotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Quantity * Sale Price</description>
+        <externalId>false</externalId>
+        <formula>OrderApi__Quantity__c *  OrderApi__Sale_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** Quantity * Sale Price</inlineHelpText>
+        <label>Subtotal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Tax_Override__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field is used to override any tax calculations by the system.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to override any tax calculations by the system.</inlineHelpText>
+        <label>Tax Override</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Tax_Percent__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Combined with the Parent EPayment Line&apos;s Sales Price, this field is used to calculate the tax amount for the related item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Combined with the Parent EPayment Line&apos;s Sales Price, this field is used to calculate the tax amount for the related item.</inlineHelpText>
+        <label>Tax Percent</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OrderApi__Total__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <deprecated>false</deprecated>
+        <description>**Required** The amount (currency) for payment and/or refund (depending on payment activity type) for the payment activity line. Default value is 0.00.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The amount (currency) for payment and/or refund (depending on payment activity type) for the payment activity line. Default value is 0.00.</inlineHelpText>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>ePayment Line</label>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>ePayment Line ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>ePayment Lines</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

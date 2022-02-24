@@ -1,0 +1,161 @@
+/**
+ * Created by lauren.lezberg on 3/26/2020.
+ */
+.THIS a{
+    color: token(aacrGreen); 
+}
+
+.THIS .eventTitle{
+    font-size: 24px;
+    line-height:24px;
+    text-transform: uppercase;
+    font-family: 'GothamBook';
+
+}
+
+
+.THIS .mobile{
+    display:none;
+}
+.THIS .desktop{
+    display:block;
+}
+@media all and (max-width:400px){
+    .THIS .desktop{
+        display:none;
+    }
+    .THIS .mobile{
+        display:block;
+    }
+
+    .THIS .detailBtn{
+        width:228px;
+    }
+}
+
+.THIS .detailBtn{
+    font-size:11px !important;
+    line-height:13px !important;
+    font-family:'GothamMedium';
+    text-transform: uppercase;
+}
+
+.THIS .eventDate{
+    font-size:16px;
+    line-height: 16px;
+    font-family:'GothamBold';
+    color:black;
+}
+
+.THIS .evtDescription{
+    font-size: 11px;
+    line-height:13px;
+}
+
+.THIS h1.h1.slds-section__title.slds-text-heading_large{
+    display:block;
+}
+
+.THIS button.slds-button.slds-button_brand:disabled{
+    font-size:1.5rem;
+    background: rgb(201, 199, 197);
+    border-color: rgb(201, 199, 197);
+    color: rgb(255, 255, 255);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.THIS button.slds-button.slds-button_brand{
+    font-size:1.5rem;
+    background-color:token(aacrGreen);
+    border-color:token(aacrGreen);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.THIS ul{
+    display:none;
+}
+
+
+.THIS .overflowContent p{
+    word-break: break-word;
+    white-space: normal;
+    overflow: hidden;
+    max-height: .1rem;
+}
+
+.THIS .overflowContent {
+    /*max-height: 3.8rem;*/
+    overflow: hidden;
+    /*max-width: 50rem;*/
+}
+
+
+.THIS .overflowContent p:first-of-type {
+    /*position: relative;*/
+    /*white-space: nowrap;*/
+
+    /*display: -webkit-box;*/
+    /*-webkit-line-clamp: 3;*/
+    /*-webkit-box-orient: vertical;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+
+    /* hide text if it more than N lines  */
+    overflow: hidden;
+    /* for set '...' in absolute position */
+    position: relative;
+    /* use this value to count block height */
+    line-height: 1.2em;
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 3.3rem;
+    /* fix problem when last visible word doesn't adjoin right side  */
+    text-align: justify;
+    /* place for '...' */
+    /*margin-right: -1em;*/
+    padding-right: 1em;
+    font-weight: 500;
+    font-size: 1.35rem;
+
+}
+
+.THIS .wrap-img{
+    white-space: nowrap;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.THIS .overflowContent p:first-of-type:before{
+    /* points in the end */
+    content: '...';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of block */
+    right: 0;
+    /*bottom: 0;*/
+    top:1.75rem;
+}
+
+.THIS .overflowContent p:first-of-type:after{
+    /* points in the end */
+    content: '';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of text */
+    right: 0;
+    /* set width and height */
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    /* bg color = bg color under block */
+    background: white;
+}

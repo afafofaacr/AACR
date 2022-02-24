@@ -1,0 +1,320 @@
+<apex:component controller="DW_AutocompleteJSONCtrl" allowDML="true">
+    <!-- attributes -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" />
+
+    <apex:attribute name="ComponentLabel" description="Label of Component" type="String" required="true"/>
+    <apex:attribute name="for" description="Id of input field" type="String" required="true"/>
+    <apex:attribute name="SObject" description="SObject to query" type="String" required="true"/>
+    <apex:attribute name="Label" description="Label for autocomplete" type="String" required="true"/>
+    <apex:attribute name="Value" description="Value for autocomplete" type="String" required="true"/>
+    <apex:attribute name="ReturnValue" description="Return value for autocomplete" type="Object" required="true"/>
+    <apex:attribute name="LabelStyleClass" description="Label CSS class" type="String" required="false"/>
+    <apex:attribute name="Details" description="Details for autocomplete" type="String" required="false"/>
+    <apex:attribute name="whereClause" description="Additional where clause for query" type="String" required="false"/>
+    <!-- limit defaults to 10 -->
+    <apex:attribute name="limitClause" description="Limits the return number of records" type="String" required="false"/>
+    <apex:attribute name="defaultSelected" description="identify first record need to be selected by default" type="Boolean" required="false" default="false"/>
+
+    <apex:includeScript value="https://code.jquery.com/ui/1.12.1/jquery-ui.js" loadOnReady="true" />
+    <!--<apex:includeScript value="https://code.jquery.com/jquery-1.12.4.js" />
+    <apex:includeScript value="https://code.jquery.com/ui/1.12.1/jquery-ui.js" loadOnReady="true" />
+    <apex:includeScript value="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />-->
+    <apex:stylesheet value="{!$Resource.jQueryUiCss}" />
+        <!-- loading css -->
+        <style type="text/css">
+            .autoCompleteBoxScrolling { display:none !important; }
+            .ui-helper-hidden-accessible { display:none; }
+            .ui-autocomplete { max-height: 200px; overflow-y: scroll; overflow-x: hidden;}
+            .ui-autocomplete-input.ui-autocomplete-loading { background: white url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') no-repeat center right; background-size:60px; }
+            /*.ui-autocomplete-input { background: white url({!URLFOR($Resource.ECRM_Resources, '/images/search.png')}) no-repeat center right; background-origin: content-box; background-size: 14px;  }*/
+        
+            div.modal.auto-complete .modal-content { max-width: 450px !important; }
+            .auto-complete .modal-header { border-bottom: 1px solid #ccc !important; }
+            .auto-complete .modal-footer{border-top: 1px solid #ccc !important; padding:10px !important;}
+            .modal.auto-complete .modal-body {padding:25px;}
+            .auto-complete .modal-header {background:none; padding: 2px !important; }
+    </style>
+        <!-- START COMPONENT BODY -->
+        <div id="{!for}_hiddenDiv">
+            <label id="erthidden" class="{!LabelStyleClass}">{!ComponentLabel}</label>
+            <apex:inputHidden value="{!ReturnValue}"/>
+        </div>
+
+        <!-- New Account Modal -->
+        <!-- The Modal -->
+        <div id="modalWrap" class="modal newrecord-modal auto-complete">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="hideModal();"></span>
+                    <h2>New Company or Institution</h2>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name="accountName" placeholder="Account Name" id="accountName" maxlength="255" />
+                </div>
+                <div class="modal-footer">
+                    <!--apex:commandButton action="{!saveAccount}" value="Save"/>-->
+                    <!--<input type="button" name="" value="Save" onclick="saveNwAccount();" />-->
+                    <input type="button" name="" value="Save" onclick="saveNewAccount();" />
+                    <input type="button" name="" value="Cancel" onclick="hideModal();" class="btn-cancel" />
+                </div>
+            </div>
+        </div>
+    <!-- END COMPONENT BODY -->
+    <!-- autcomplete function -->
+    <script type="text/javascript">
+
+        console.log('1 initialization of autocomplete autocomplete');
+        console.log('whereClause==','{!whereClause}');
+        function getLoadingImage() {
+            var loadImagURL = "";
+            var retStr = ['<img src="', loadImagURL, '" title="loading..." alt="loading..." class="spinBox" />'];
+            return retStr.join("");
+        }
+        $( window ).on( "load", function() {
+            console.log( "window loaded" );
+            var sourcePage = '/apex/DW_AutocompleteJSON?core.apexpages.devmode.url=0';
+            //console.log('2.5 initialization of autocomplete');
+            var txtVal = $('[id$="{!for}"]');
+            //console.log('3 initialization of autocomplete');
+            //This method returns the last character of String
+            console.log( "txtVal ",txtVal );
+            function extractLast(term) {
+                return term.substr(term.length - 1);
+            }
+            
+            if({!defaultSelected}){
+                loadRecords();
+            }
+            console.log( 'jquery instance', $ );
+            console.log( 'request URL: ', encodeURI( sourcePage + '&q=' + txtVal.val().trim() + '&obj={!sObject}&label={!label}&value={!value}&detail={!details}&wc={!whereClause}&lm={!limitClause}' ) );
+            //console.log('initialization of autocomplete');
+            $('[id$="{!for}"]').autocomplete({
+                source: function(request, response) {
+                    //Abort Ajax
+                    var $this = $(this);
+                    var $element = $(this.element);
+                    var jqXHR = $element.data('jqXHR');
+                    if (jqXHR) jqXHR.abort();
+                    // console.log('txtVal.val().trim()', txtVal.val().trim());
+                    $('[id$="{!for}"]').addClass('ui-autocomplete-loading');
+                    $element.data('jqXHR', $.ajax({
+                        url: encodeURI( sourcePage + '&q=' + txtVal.val().trim() + '&obj={!sObject}&label={!label}&value={!value}&detail={!details}&wc={!whereClause}&lm={!limitClause}' ),
+                        dataType: "json",
+                        data: {},
+                        success: function(data) {
+                            console.log('autocomplete data 111111 11::::',data);
+                            console.log(data.length);
+                            
+                            if (data.length != 0) {
+                                var displayData = $.map(data, function(item) {
+                                    return {
+                                        label: '<a>' + item.label + "<br />" + '<span style="font-size:0.8em;font-style:italic">' + item.detail + "</span></a>",
+                                        value: item.label,
+                                        id: item.value
+                                    }
+                                });
+                                displayData.push(
+                                    {
+                                        value: "",
+                                        label : "+ New Company or Institution",
+                                        dataBtn : "New Account"
+                                    }
+                                );
+                                response( displayData );                                
+                                //$('[id$="{!for}"]').unbind('keypress');
+
+                            } else {
+                                
+                                //$('[id$="{!for}"]').keypress(function(e) {e.preventDefault();});
+                                
+
+                                var noResult = [{
+                                            value: "",
+                                            label: "No {!ComponentLabel} results found"
+                                        },{
+                                            value: "",
+                                            label : "+ New Company or Institution",
+                                            dataBtn : "New Account"
+                                        }];
+                                response(noResult);
+                            }
+                        },
+                        complete: function() {
+                            //This method is called either request completed or not
+                            $this.removeData('jqXHR');
+                            //remove the class responsible for loading image
+                            $('[id$="{!for}"]').removeClass('ui-autocomplete-loading');
+                        }
+                    }));
+                },
+
+                search: function() {
+                //If String contains at least 2 characters
+                    if (this.value.length >= 1){
+                        $('[id$="{!for}"]').autocomplete('option', 'delay', 100);
+                        return true;
+                    }
+                    return false;
+                },
+                focus: function() {
+                    // prevent value inserted on focus
+                    console.log('focus AutoComplete');
+                    return false;
+                },
+                
+                select: function(event, ui) {
+                    console.log('select event 11111111',event);
+                    console.log('select ui 222222222222',ui);
+                    if( ui.item.id ) {
+                        var selectedObj = ui.item.label;
+                        $('[id$="{!for}_hiddenDiv"] input[type=hidden]').val(ui.item.id);
+                        //change event of rep Id on Plan provider advisor detail page.
+                        $('[id$="repId"]').trigger('change');
+                        var selectedPid = (ui.item.id);
+                        console.log('Selected ParticipantId:::',selectedPid);
+                        // only for plan provider page
+                        // filter on select of id, provider type.
+                        if(typeof onSelectOfLookupValue === "function"){
+                            console.log('function defined',ui.item.id);
+                            onSelectOfLookupValue(ui.item.id,'{!for}');
+                            //showSelectListActionFunctionOnParticipantId(ui.item.id);
+                        }
+                        return true;
+                    } else {
+                        if( ui.item.dataBtn && ui.item.dataBtn == 'New Account' ) {
+                            console.log( "open new account modal" );
+                            showModal();
+                        }
+                        return false;
+                    }
+                },
+                change: function (event, ui) {
+                    if (!ui.item) {
+                        $(this).val("");
+                        console.log('Participant id after change',ui.item.id);
+                        showSelectListActionFunctionOnParticipantId(ui.item.id);
+                    }
+                }
+            }).data("ui-autocomplete")._renderItem = autoCompleteRender;
+        } );
+
+        //console.log('2 initialization of autocomplete');
+        //the Visualforce page where the data is returned
+        var sourcePage = '/apex/DW_AutocompleteJSON?core.apexpages.devmode.url=0';        
+
+        function autoCompleteRender(ul, item) {
+            return $("<li></li>").data("item.autocomplete", item).append(item.label).appendTo(ul);
+        }
+        
+        function loadRecords(){
+                    var txtVal = $('[id$="{!for}"]');
+                    
+                    var response;
+                    //Abort Ajax
+                    var $this = $(this);
+                    var $element = $(this.element);
+                    var jqXHR = $element.data('jqXHR');
+                    if (jqXHR) jqXHR.abort();
+                    //console.log('txtVal.val().tri121212121m() :::::', txtVal.val().trim());
+                    $('[id$="{!for}"]').addClass('ui-autocomplete-loading');
+                    $element.data('jqXHR', $.ajax({
+                        url: encodeURI( sourcePage + '&q=' + txtVal.val().trim() + '&obj={!sObject}&label={!label}&value={!value}&detail={!details}&wc={!whereClause}&lm={!limitClause}&ds={!defaultSelected}' ),
+                        dataType: "json",
+                        data: {},
+                        success: function(data) {
+                            console.log('autocomplete data12121212::::',data);
+                            console.log(data.length);
+                            
+                            if (data.length != 0) {
+                                //$('.loader').show();
+                                //$('[id$="{!for}"]').val(data[0].label);
+                                console.log($('[id$="{!for}"]'));
+                                console.log($('[id$="{!for}"]').val());
+                                
+                                $('[id$="{!for}_hiddenDiv"] input[type=hidden]').val(data[0].value);
+                                
+                                //change event of rep Id on Plan provider advisor detail page.
+                                $('[id$="repId"]').trigger('change');
+                                
+                                if(typeof onSelectOfLookupValue === "function"){
+                                    
+                                    onSelectOfLookupValue(data[0].value,'{!for}');
+                                    showSelectListActionFunctionOnParticipantId(data[0].value);
+                                
+                                }                                                                        
+                            } else {
+                                
+                                //$('[id$="{!for}"]').keypress(function(e) {e.preventDefault();});
+                                
+
+                                var noResult = {
+                                        value: "",
+                                        label: "No {!ComponentLabel} results found"
+                                    };
+                                response = noResult;
+                            }
+                        },
+                        complete: function() {
+
+                            //This method is called either request completed or not
+                            $this.removeData('jqXHR');
+                            //remove the class responsible for loading image
+                            $('[id$="{!for}"]').removeClass('ui-autocomplete-loading');
+                        }
+                    }));
+                 
+                    
+        }
+
+        function hideModal() {
+            $( "#modalWrap" ).hide(); 
+        }
+
+        function showModal() {
+            $( "#modalWrap" ).show(); 
+        }
+        
+        function saveNwAccount() {
+                console.log( "in saveNewAccount" );
+                var accountName = $('#accountName').val();
+                console.log( "in saveNewAccount accountName", accountName );
+                if( accountName != '' ) {
+                    $( '.page-spinner' ).removeClass( "hidden" );
+                    Visualforce.remoting.Manager.invokeAction(
+                        'pagesapi.DW_AutocompleteJSONCtrl.saveAccount',
+                        accountName, 
+                        function(result, event){
+                            $( '.page-spinner' ).addClass( "hidden" );
+                            console.log( "saveAccount result", result );
+                            if (event.status) {
+                                if( result.data && result.data.Id ) {
+                                    console.log( "in", $( ".autocomplete-field" ).length, $( ".autocomplete-field" ).val()  );
+                                    $( "#institutionLookup_hiddenDiv input[type=hidden]" ).val( result.data.Id );
+                                    $( ".autocomplete-field" ).val( result.data.Name );
+                                    $.toast().reset('all');//remove all toast messages
+                                    $.toast({text: result.message,
+                                    icon: 'success',position: 'top-center'});
+                                    $('#accountName').val( '' ); //clear form
+                                    hideModal(); //hide modal
+                                }
+                            } else if (event.type === 'exception') {   
+                                $.toast().reset('all');//remove all toast messages
+                                $.toast({text: 'Error:'+event.message+' at '+event.where,
+                                    icon: 'error',position: 'top-center'});
+                            } else {
+                                $.toast().reset('all');//remove all toast messages
+                                $.toast({text: 'Error:'+event.message,
+                                    icon: 'error',position: 'top-center'});
+                            }
+                        }, 
+                        {escape: true}
+                    );
+                } else {
+                    $.toast().reset('all');
+                    $.toast({text: 'Please enter account name',
+                            icon: 'error',position: 'top-center'});
+                }
+            }
+    </script>
+</apex:component>

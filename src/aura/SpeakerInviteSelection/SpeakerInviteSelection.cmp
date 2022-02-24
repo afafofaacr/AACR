@@ -1,0 +1,76 @@
+<!--
+ - Created by lauren.lezberg on 2/14/2020.
+ -->
+
+<aura:component description="SpeakerInviteSelection" controller="SpeakerInviteController">
+    <aura:attribute name="speakers" type="List" description="List of speakers to invite"/>
+    <aura:attribute name="inviteCount" type="Integer" description="Number of speakers invites will be sent to" default="0"/>
+    <aura:attribute name="stepId" type="String" />
+
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <div class="slds-text-heading_medium slds-m-bottom_medium slds-text-color_weak" style="font-weight:600">Total Invitees: {!v.inviteCount}</div>
+
+
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Send Invite">Select</div>
+                </th>
+                <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Speaker Name">Speaker Name</div>
+                </th>
+                <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Speaker Email">Speaker Email</div>
+                </th>
+                <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Presentation">Presentation</div>
+                </th>
+                <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Presentation">Roles</div>
+                </th>
+                <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="cc Assistant">cc Assistant</div>
+                </th>
+                <th class="slds-cell-wrap slds-text-title_caps" scope="col">
+                    <div class="slds-truncate" title="Assistant Email">Assistant Email</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <aura:iteration items="{!v.speakers}" var="speaker">
+            <tr class="slds-hint-parent">
+                <td data-label="select" class="slds-cell-wrap">
+                    <div class="" title="sendInvite?"><lightning:input type="checkbox" checked="{!speaker.sendInvite}" value="{!speaker.id}" onchange="{!c.updateInviteCount}" disabled="{!empty(speaker.email)}"/></div>
+                </td>
+                <td data-label="name" class="slds-cell-wrap">
+                    <div class="" title="{!speaker.name}">{!speaker.name}</div>
+                </td>
+                <td data-label="email" class="slds-cell-wrap">
+                    <div class="" title="{!speaker.email}">{!speaker.email}</div>
+                </td>
+                <td data-label="presentation" class="slds-cell-wrap">
+                    <div class="" title="{!speaker.presentationName}">{!speaker.presentationName}</div>
+                </td>
+                <td data-label="roles" class="slds-cell-wrap">
+                    <div class="" title="{!speaker.roles}">{!speaker.roles}</div>
+                </td>
+                <td data-label="assistant" class="slds-cell-wrap">
+                    <div class="" title="CC Assistant"><lightning:input type="checkbox" checked="{!speaker.includeAssistant}" disabled="{!or(empty(speaker.email),empty(speaker.assistantEmail))}"/></div>
+                </td>
+                <td data-label="assistantEmail" class="slds-cell-wrap">
+                    <aura:if isTrue="{!speaker.includeAssistant}">
+                    <div class="" title="{!speaker.assistantEmail}">{!speaker.assistantEmail}</div>
+                    </aura:if>
+                </td>
+            </tr>
+        </aura:iteration>
+        </tbody>
+    </table>
+
+</aura:component>

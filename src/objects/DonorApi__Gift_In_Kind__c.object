@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Record and receipt non-cash gifts including gifts in kind, and stock gifts.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>DonorApi__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account (organization or household) providing the non-cash gift.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account (organization or household) providing the non-cash gift.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Gifts In-Kind</relationshipLabel>
+        <relationshipName>Gifts_In_Kind</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Asset_Sale_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total amount the asset was sold for, not including sales agent commissions and other sales related costs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount the asset was sold for, not including sales agent commissions and other sales related costs.</inlineHelpText>
+        <label>Asset Sale Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override/Required** Link to the related Business Group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override/Required** Link to the related Business Group.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Gifts In-Kind</relationshipLabel>
+        <relationshipName>Gifts_In_Kind</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Calculated_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Total of Gift In Kind Value + Net Asset Value. Provides a single column for reporting on the value of the non-cash gifts.</description>
+        <externalId>false</externalId>
+        <formula>DonorApi__GIK_Value__c + DonorApi__Net_Asset_Value__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** Total of Gift In Kind Value + Net Asset Value. Provides a single column for reporting on the value of the non-cash gifts.
+GIK_Value__c + Net_Asset_Value__c</inlineHelpText>
+        <label>Calculated Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** Select a category for the non-cash gift. This specifies the type of good, service, or asset donated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Select a category for the non-cash gift. This specifies the type of good, service, or asset donated.</inlineHelpText>
+        <label>Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Securities</fullName>
+                    <default>false</default>
+                    <label>Securities</label>
+                </value>
+                <value>
+                    <fullName>Mutual Funds</fullName>
+                    <default>false</default>
+                    <label>Mutual Funds</label>
+                </value>
+                <value>
+                    <fullName>Closely Held Stock</fullName>
+                    <default>false</default>
+                    <label>Closely Held Stock</label>
+                </value>
+                <value>
+                    <fullName>IRA Charitable Rollover</fullName>
+                    <default>false</default>
+                    <label>IRA Charitable Rollover</label>
+                </value>
+                <value>
+                    <fullName>Other Assets</fullName>
+                    <default>false</default>
+                    <label>Other Assets</label>
+                </value>
+                <value>
+                    <fullName>Goods</fullName>
+                    <default>false</default>
+                    <label>Goods</label>
+                </value>
+                <value>
+                    <fullName>Services</fullName>
+                    <default>false</default>
+                    <label>Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The contact (individual person) providing the non-cash gift.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The contact (individual person) providing the non-cash gift.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Gifts In-Kind</relationshipLabel>
+        <relationshipName>Gifts_In_Kind</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Date_Expected__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the non-cash gift is expected to be received.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the non-cash gift is expected to be received.</inlineHelpText>
+        <label>Date Expected</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Date_Received__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the non-cash gift was received.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the non-cash gift was received.</inlineHelpText>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Date_Sold__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the asset was sold.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date the asset was sold.</inlineHelpText>
+        <label>Date Sold</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Free form text field for notes/description of the non-cash gift.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Free form text field for notes/description of the non-cash gift.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Do_Not_Acknowledge__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Primary indicator for non-cash gifts that should not be acknowledged. Default is unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Primary indicator for non-cash gifts that should not be acknowledged. Default is unchecked.</inlineHelpText>
+        <label>Do Not Acknowledge</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Donor_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** A link to the related donor&apos;s record as determined by the value of the &quot;Entity&quot; field.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(DonorApi__Entity__c,&quot;Account&quot;),HYPERLINK(&quot;/&quot; &amp; DonorApi__Account__r.Id, DonorApi__Account__r.Name), HYPERLINK(&quot;/&quot; &amp; DonorApi__Contact__r.Id, DonorApi__Contact__r.FirstName &amp; &quot; &quot; &amp; DonorApi__Contact__r.LastName))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>**System Calculated** A link to the related donor&apos;s record as determined by the value of the &quot;Entity&quot; field.</inlineHelpText>
+        <label>Donor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Entity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** Select &quot;Account&quot; if the provider of the non-cash gift is an account, select &quot;Contact&quot; if the provided is a contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** Select &quot;Account&quot; if the provider of the non-cash gift is an account, select &quot;Contact&quot; if the provided is a contact.</inlineHelpText>
+        <label>Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>true</default>
+                    <label>Contact</label>
+                </value>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Expected_Asset_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expected value of the asset at the time of commitment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The expected value of the asset at the time of commitment.</inlineHelpText>
+        <label>Expected Asset Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Fund__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>**System Calculated/Override/Required** The fund related to the non-cash gift.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated/Override/Required** The fund related to the non-cash gift.</inlineHelpText>
+        <label>Fund</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Gifts In-Kind</relationshipLabel>
+        <relationshipName>Gifts_In_Kind</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__GIK_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total value of the goods and/or services provided.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total value of the goods and/or services provided.</inlineHelpText>
+        <label>Goods/Services Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Is_Acknowledged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Primary indicator for non-cash gifts that have been acknowledged. Default is unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Primary indicator for non-cash gifts that have been acknowledged. Default is unchecked.</inlineHelpText>
+        <label>Is Acknowledged</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Net_Asset_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Asset Sale Amount - (Sales Agent Commission + Other Costs of Sale)</description>
+        <externalId>false</externalId>
+        <formula>DonorApi__Asset_Sale_Amount__c - (DonorApi__Sales_Agent_Commission__c + DonorApi__Other_Costs_of_Sale__c )</formula>
+        <inlineHelpText>**System Calculated** Asset Sale Amount - (Sales Agent Commission + Other Costs of Sale)</inlineHelpText>
+        <label>Net Asset Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Other_Costs_of_Sale__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Other fees and costs incurred related to the asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Other fees and costs incurred related to the asset.</inlineHelpText>
+        <label>Other Costs of Sale</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Received_Asset_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total value of the asset on the day it was received.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total value of the asset on the day it was received.</inlineHelpText>
+        <label>Received Asset Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Sales_Agent_Commission__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total commission paid to the sales agent of the asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total commission paid to the sales agent of the asset.</inlineHelpText>
+        <label>Sales Agent Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Sales_Agent_Company__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the company employing the sales agent responsible for selling the asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the company employing the sales agent responsible for selling the asset.</inlineHelpText>
+        <label>Sales Agent Company</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Sales_Agent_Contact__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the primary sales agent for the asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the primary sales agent for the asset.</inlineHelpText>
+        <label>Sales Agent Contact</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Sales_Agent_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The email address for the sales agent related to the asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The email address for the sales agent related to the asset.</inlineHelpText>
+        <label>Sales Agent Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Sales_Agent_Fax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The fax number for the sales agent related to the asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The fax number for the sales agent related to the asset.</inlineHelpText>
+        <label>Sales Agent Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Sales_Agent_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The phone number for the sales agent related to the asset.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The phone number for the sales agent related to the asset.</inlineHelpText>
+        <label>Sales Agent Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**Required** The current status of non-cash gifts defaults to committed and is required for all non-cash gifts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**Required** The current status of non-cash gifts defaults to committed and is required for all non-cash gifts.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Committed</fullName>
+                    <default>false</default>
+                    <label>Committed</label>
+                </value>
+                <value>
+                    <fullName>Received</fullName>
+                    <default>false</default>
+                    <label>Received</label>
+                </value>
+                <value>
+                    <fullName>Sold</fullName>
+                    <default>false</default>
+                    <label>Sold</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Stock_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the stock/security (if applicable) for gifts of stock.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the stock/security (if applicable) for gifts of stock.</inlineHelpText>
+        <label>Stock Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DonorApi__Stock_Symbol__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ticker (stock) symbol for the security.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ticker (stock) symbol for the security.</inlineHelpText>
+        <label>Stock Symbol</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Gift In-Kind</label>
+    <listViews>
+        <fullName>DonorApi__All</fullName>
+        <columns>NAME</columns>
+        <columns>DonorApi__Account__c</columns>
+        <columns>DonorApi__Contact__c</columns>
+        <columns>DonorApi__Description__c</columns>
+        <columns>DonorApi__Status__c</columns>
+        <columns>DonorApi__Category__c</columns>
+        <columns>DonorApi__Fund__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>Non-Cash Gift ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Gifts In-Kind</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>DonorApi__Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DonorApi__Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DonorApi__Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DonorApi__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DonorApi__Category__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DonorApi__Fund__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>DonorApi__Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DonorApi__Fund__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Category__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DonorApi__Fund__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>DonorApi__Account__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Category__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Contact__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Date_Expected__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Date_Received__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Date_Sold__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Donor_Link__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Entity__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Fund__c</searchFilterFields>
+        <searchFilterFields>DonorApi__Business_Group__c</searchFilterFields>
+        <searchResultsAdditionalFields>DonorApi__Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DonorApi__Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DonorApi__Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DonorApi__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DonorApi__Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DonorApi__Fund__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

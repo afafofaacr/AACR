@@ -1,0 +1,71 @@
+/**
+ * Created by lauren.lezberg on 10/9/2019.
+ */
+.THIS {
+
+}
+
+.THIS div.cGDPRCertification{
+    font-size: 0.75rem !important;
+}
+
+.THIS .cGDPRCertification .slds-checkbox .slds-checkbox_faux{
+    height:1rem !important;
+    width:1rem !important;
+}
+
+/*.THIS.slds-pill__label{*/
+/*    font-size: 0.875rem;*/
+/*}*/
+
+/*.THIS .h2.slds-modal__title.slds-hyphenate{*/
+/*    font-size: 0.875rem !important;*/
+/*    font-weight: 400;*/
+/*}*/
+
+/*.THIS label.slds-form-element__label{*/
+/*    font-size: 0.875rem !important;*/
+/*    font-weight: 400;*/
+/*    line-height: 0.875;*/
+/*}*/
+
+/*.THIS .headerLabel{*/
+/*    color: black !important;*/
+/*    font-size: 0.9rem !important;*/
+/*}*/
+
+/*.THIS.slds-button.slds-button_brand{*/
+/*    font-size: 0.875rem !important;*/
+/*    padding: 0px 8px !important;*/
+/*}*/
+
+/*.THIS.slds-button.slds-button_neutral{*/
+/*    font-size: 0.875rem !important;*/
+/*    padding: 0px 8px !important;*/
+/*}*/
+
+.THIS ul.slds-tabs--default__nav{
+    font-size: 2rem;
+}
+
+.THIS strong{
+    /*display:none;*/
+    font-weight: 400;
+}
+
+.THIS  li.slds-tabs_default__item.slds-is-active{
+    border-color: token(AACRBlue);
+    font-size: 1.25rem;
+    margin-top: 8px;
+}
+
+.THIS li.slds-tabs_default__item{
+    font-size: 1.25rem;
+    margin-top: 8px;
+}
+
+.THIS iframe{
+    /*margin-left: 9px;*/
+    width: 100%;
+    /*margin-top: 20px*/
+}

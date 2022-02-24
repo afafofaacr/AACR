@@ -1,0 +1,44 @@
+<!--
+ - Created by lauren.lezberg on 9/17/2020.
+ -->
+
+<apex:page id="CRMScienceOfferTest"
+           lightningStyleSheets="true"
+           docType="html-5.0"
+           showHeader="false"
+           standardStylesheets="false"
+           applyBodyTag="false"
+           applyHtmlTag="false">
+    <apex:slds />
+    <apex:includeLightning />
+
+    <c:pageStyle />
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Offer Test
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+    <div class="slds-text-heading_medium">This page is to test the Offer App from CRM Science.</div>
+            <div id="joinComponent"/>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:JP_ContainerClone",
+                {},
+                "joinComponent",
+                function(cmp) {
+
+                });
+        });
+    </script>
+
+</apex:page>

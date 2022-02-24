@@ -1,0 +1,46 @@
+<!--
+ - Created by lauren.lezberg on 5/8/2020.
+ -->
+
+<apex:page id="UpdatePersonalInformation" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <apex:includeLightning />
+    <apex:slds />
+
+    <c:pageStyle />
+
+    <style>
+        div.iziToast-capsule{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Personal Information
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div id="personalInfo"/>
+        </apex:define>
+
+    </apex:composition>
+
+    <script>
+
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:UpdatePersonalInformation",
+                {},
+                "personalInfo",
+                function(cmp) {
+
+                });
+        });
+    </script>
+
+</apex:page>

@@ -1,0 +1,28 @@
+<!--
+ - Created by lauren.lezberg on 7/22/2021.
+ -->
+
+<aura:component description="JointRegistrationFields" controller="EventRegisterController">
+    <aura:attribute name="salesOrderId" type="String" description="salesOrderId" default=""/>
+    <aura:attribute name="participantId" type="String" description="participant id"/>
+    <aura:attribute name="institutionName" type="String" description="name of joint institution"/>
+
+    <aura:handler name="change" value="{!v.salesOrderId}" action="{!c.handleSOChange}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{!not(empty(v.participantId))}">
+        <div class="slds-grid slds-p-around_small">
+            <lightning:icon iconName="utility:info" size="small"/>
+            &nbsp;
+            <div class="slds-text-heading_medium">Please provide your {!v.institutionName} member ID here.
+                You will need to provide this number to receive the {!v.institutionName} registration rate.</div>
+
+        </div>
+        <br/>
+<!--        onsuccess="{!c.handleSuccess}"-->
+        <lightning:recordEditForm aura:id="editForm"  objectApiName="BR_Participation__c" recordId="{!v.participantId}">
+            <lightning:inputField fieldName="Joint_Member_ID__c"/>
+        </lightning:recordEditForm>
+    </aura:if>
+
+</aura:component>

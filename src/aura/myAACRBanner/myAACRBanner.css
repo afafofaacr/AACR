@@ -1,0 +1,84 @@
+/**
+ * Created by lauren.lezberg on 9/22/2020.
+ */
+.THIS .profile-photo-container .edit-image .edit-image-prompt{
+    top:0%;
+    height: 120px;
+}
+
+.THIS .btr{
+    margin-top: 4.5rem;
+}
+
+.THIS h2{
+    padding-top:5px;
+}
+
+.THIS .slds-carousel__content{
+    font-size:1.5rem;
+    display:contents;
+    min-height:6.26rem;
+    height:auto;
+    /*display:none;*/
+}
+
+.THIS .contentBackground{
+    background:black;
+    color:white;
+    min-height:2.5rem;
+    /*opacity:0.5;*/
+}
+
+.THIS .slds-carousel__panel-action{
+    /*background:black;*/
+}
+
+.THIS .slds-carousel__image{
+    position:relative;
+}
+
+.THIS .slds-carousel__content-title{
+    font-size:1.5rem;
+    background:black;
+    color:white;
+    /*opacity:0.5;*/
+}
+
+.THIS .carouselContainer{
+    /*position: absolute;*/
+    /*height:80%;*/
+    /*width:100%;*/
+
+    width: 200px;
+    height: 200px;
+
+    position: relative;
+}
+
+.THIS .overlay{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    /*dim the background*/
+    /*top:0;*/
+    left:25rem;
+    width:18%;
+    height:100%;
+    color:black;
+    text-align: center;
+}
+
+
+/*.THIS .overlay{*/
+/*position: fixed; !* Sit on top of the page content *!*/
+/*display: block; !* Hidden by default *!*/
+/*width: 20%; !* Full width (cover the whole page) *!*/
+/*height: 100%; !* Full height (cover the whole page) *!*/
+/*!*top: 0;*!*/
+/*!*left: 0;*!*/
+/*!*right: 0;*!*/
+/*!*bottom: 0;*!*/
+/*background-color: rgba(0,0,0,0.5); !* Black background with opacity *!*/
+/*z-index: 2; !* Specify a stack order in case you're using a different order for other elements *!*/
+/*cursor: pointer; !* Add a pointer on hover *!*/
+/*}*/

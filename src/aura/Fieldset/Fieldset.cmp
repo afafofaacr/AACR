@@ -1,0 +1,238 @@
+<!--
+ - Created by lauren.lezberg on 6/23/2020.
+ -->
+
+<aura:component description="Fieldset" controller="FieldsetController" implements="force:hasRecordId">
+    <aura:attribute name="fieldsetName" type="String" description="name of fieldset"/>
+    <aura:attribute name="objectAPIName" type="String" description="api name of object"/>
+    <aura:attribute name="fieldList" type="List" description="list of field api names"/>
+    <aura:attribute name="accountId" type="String" description="id of account"/>
+    <aura:attribute name="addressPrefix" type="String" description="Mailing"/>
+
+    <aura:attribute name="preferredPhone" type="String" description="preferred phone type"/>
+    <aura:attribute name="preferredEmail" type="String" description="preferred email type"/>
+    <aura:attribute name="preferredAddress" type="String" description="preferred address type"/>
+
+    <aura:attribute name="isValid" type="Boolean" description="did form save successfully" default="false"/>
+    <aura:attribute name="isLoading" type="Boolean" description="is form loading" default="true"/>
+    <aura:attribute name="countryList" type="List" description="List of available countries"/>
+    <aura:attribute name="stateList" type="List" description="List of available states"/>
+    <aura:attribute name="selectedCountry" type="String" description="country selection"/>
+    <aura:attribute name="selectedState" type="String" description="state selection"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:method name="save" action="{!c.saveForm}"/>
+
+
+    <div class="{!v.isLoading?'slds-align_absolute-center':'slds-hide'}">
+        <c:AACRSpinner loadingText="Loading..."/>
+    </div>
+
+    <lightning:card class="{!v.isLoading?'slds-hide':''}">
+        <lightning:recordEditForm aura:id="editForm" objectApiName="{!v.objectAPIName}" onerror="{!c.handleError}"
+                                  onsuccess="{!c.handleSuccess}" onload="{!c.handleLoad}" recordId="{!v.recordId}">
+            <lightning:messages/>
+            <div style="display:none;">
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField aura:id="account" fieldName="AccountId"/>
+                <lightning:inputField aura:id="accountName" fieldName="Omit_Household_Label__c"/>
+<!--                <lightning:inputField aura:id="mailingAddress" fieldName="MailingAddress"/>-->
+                <lightning:inputFIeld aura:id="MailingCountry" fieldName="MailingCountry"/>
+                <lightning:inputFIeld aura:id="MailingCountryCode" fieldName="MailingCountryCode"/>
+                <lightning:inputFIeld aura:id="OtherCountryCode" fieldName="OtherCountryCode"/>
+
+                <lightning:inputFIeld aura:id="MailingStateCode" fieldName="MailingStateCode"/>
+                <lightning:inputFIeld aura:id="OtherStateCode" fieldName="OtherStateCode"/>
+
+                <lightning:inputField aura:id="prefAddress" fieldName="Preferred_Address__c"/>
+                <lightning:inputField aura:id="prefEmail" fieldName="OrderApi__Preferred_Email_Type__c"/>
+                <lightning:inputField aura:id="prefPhone" fieldName="OrderApi__Preferred_Phone_Type__c"/>
+
+
+                <!--<lightning:inputField aura:id="personalEmail" fieldName="OrderApi__Personal_Email__c"/>-->
+                <!--<lightning:inputField aura:id="workEmail" fieldName="OrderApi__Work_Email__c"/>-->
+
+                <!--<lightning:inputField aura:id="mobilePhone" fieldName="MobilePhone"/>-->
+                <!--<lightning:inputField aura:id="workPhone" fieldName="OrderApi__Work_Phone__c"/>-->
+
+            </div>
+
+
+
+            <aura:iteration items="{!v.fieldList}" var="f">
+                <aura:if isTrue="{!f=='Account.Id'}">
+                    <c:ContactAccountLookup aura:id="accountLookup" contactId="{!v.recordId}" accountId="{!v.accountId}"/>
+<!--                    <div class="slds-m-right_medium slds-m-bottom_medium">-->
+<!--                        <div class="slds-grid">-->
+<!--                            <div class="slds-col slds-size_1-of-6">-->
+<!--                                <div class="slds-grid">-->
+<!--                                    <div class="slds-align-middle">-->
+<!--                                        <lightning:icon size="small" class="slds-p-right_small" iconName="utility:info" title="To change this, use the link provided at the bottom of the form." alternativeText="To change this, use the link provided at the bottom of the form."/>-->
+<!--                                    </div>-->
+<!--                                    <label style="display:inline-flex;" class="customLabel"><div class="{!if(v.required, 'slds-text-heading_medium slds-required', 'slds-hide')}">*</div>Company</label>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="slds-col slds-size_5-of-6">-->
+<!--                                <lightning:inputField fieldName="AccountId" disabled="true" variant="label-hidden"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </aura:if>
+                <aura:if isTrue="{!and(or(v.preferredAddress=='Business', v.preferredAddress==null), f=='Preferred_Address__c')}">
+                    <div class="slds-grid slds-m-right_medium slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-6">
+                            <label class="slds-form-element__label">Address</label>
+                        </div>
+                        <div class="slds-col slds-size_5-of-6">
+                            <lightning:inputField fieldName="MailingStreet" variant="label-stacked"/>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:select aura:id="mailingCountry" onchange="{!c.countryChange}"
+                                                      class="slds-text-heading_medium slds-p-around_x-small"
+                                                      label="Mailing Country" value="{!v.selectedCountry}"
+                                                      variant="label-stacked"
+                                                      messageWhenValueMissing="Complete this field.">
+                                        <option value="">Select a country...</option>
+                                        <aura:iteration items="{!v.countryList}" var="cntry">
+                                            <option value="{!cntry.value}"
+                                                    selected="{!cntry.value==v.selectedCountry}">{!cntry.label}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                    <lightning:select aura:id="mailingState" disabled="{!empty(v.stateList)}"
+                                                      class="slds-text-heading_medium slds-p-around_x-small"
+                                                      label="Mailing State" value="{!v.selectedState}"
+                                                      variant="label-stacked"
+                                                      messageWhenValueMissing="Complete this field.">
+                                        <option value="">Select a state...</option>
+                                        <aura:iteration items="{!v.stateList}" var="st">
+                                            <option value="{!st.value}"
+                                                    selected="{!st.value==v.selectedState}">{!st.label}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:inputFIeld fieldName="MailingCity" variant="label-stacked"/>
+                                    <lightning:inputField fieldName="MailingPostalCode" variant="label-stacked"/>
+                                </div>
+                            </div>
+
+                            <!--<lightning:inputFIeld fieldName="MailingCountry"/>-->
+                            <!--<c:AddressEntry aura:id="mailingAddress" parent="{!this}" address="{!v.mailingAddress}" isPreferred="{!v.Preferred_Address__c == 'Business'}" countryList="{!v.countryList}" statesList="{!v.statesList}"/>-->
+
+                            <!--<lightning:inputField fieldName="MailingAddress"/>-->
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!and(v.preferredAddress=='Home', f=='Preferred_Address__c')}">
+                    <div class="slds-grid slds-m-right_medium slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-6">
+                            <label class="slds-form-element__label">Address</label>
+                        </div>
+                        <div class="slds-col slds-size_5-of-6">
+                            <lightning:inputField fieldName="OtherStreet" variant="label-stacked"/>
+                            <div class="slds-grid">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:inputFIeld fieldName="OtherCity" variant="label-stacked"/>
+                                    <lightning:inputField fieldName="OtherPostalCode" variant="label-stacked"/>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning:select aura:id="otherState" disabled="{!empty(v.stateList)}"
+                                                      class="slds-text-heading_medium slds-p-around_x-small"
+                                                      label="Other State" value="{!v.selectedState}"
+                                                      variant="label-stacked"
+                                                      messageWhenValueMissing="Complete this field.">
+                                        <option value="">Select a state...</option>
+                                        <aura:iteration items="{!v.stateList}" var="st">
+                                            <option value="{!st.value}"
+                                                    selected="{!st.value==v.selectedState}">{!st.label}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                    <!--<label class="slds-form-element__label slds-m-top_medium">Country</label>-->
+                                    <lightning:select aura:id="otherCountry" onchange="{!c.countryChange}"
+                                                      class="slds-text-heading_medium slds-p-around_x-small"
+                                                      label="Other Country" value="{!v.selectedCountry}"
+                                                      variant="label-stacked"
+                                                      messageWhenValueMissing="Complete this field.">
+                                        <option value="">Select a country...</option>
+                                        <aura:iteration items="{!v.countryList}" var="cntry">
+                                            <option value="{!cntry.value}"
+                                                    selected="{!cntry.value==v.selectedCountry}">{!cntry.label}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                            <!--<lightning:inputField fieldName="OtherAddress"/>-->
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!f=='Email'}">
+                    <div class="slds-grid slds-m-right_medium slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-6">
+                            <label class="slds-form-element__label">Email</label>
+                        </div>
+                        <div class="slds-col slds-size_5-of-6">
+                            <aura:if isTrue="{!v.preferredEmail == 'Work'}">
+                                <lightning:inputField fieldName="OrderApi__Work_Email__c" variant="label-hidden"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.preferredEmail == 'Personal'}">
+                                <lightning:inputField fieldName="OrderApi__Personal_Email__c" variant="label-hidden"/>
+                            </aura:if>
+                            <!--<aura:if isTrue="{!v.preferredEmail == 'Personal'}">-->
+                            <!--<lightning:inputField fieldName="OrderApi__Personal_Email__c" variant="label-hidden"/>-->
+                            <!--</aura:if>-->
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!f=='Phone'}">
+                    <div class="slds-grid slds-m-right_medium slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-6">
+                            <label class="slds-form-element__label">Phone</label>
+                        </div>
+                        <div class="slds-col slds-size_5-of-6">
+                            <aura:if isTrue="{!v.preferredPhone=='Work'}">
+                                <lightning:inputField fieldName="OrderApi__Work_Phone__c" variant="label-hidden"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.preferredPhone=='Mobile'}">
+                                <lightning:inputField fieldName="MobilePhone" variant="label-hidden"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.preferredPhone=='Home'}">
+                                <lightning:inputField fieldName="HomePhone" variant="label-hidden"/>
+                            </aura:if>
+
+                        </div>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!f=='MailingCountry'}">
+                    <div class="slds-grid slds-m-right_medium slds-m-bottom_medium">
+                        <div class="slds-col slds-size_1-of-6">
+                            <label class="slds-form-element__label slds-m-top_medium">Country</label>
+                        </div>
+                        <div class="slds-col slds-size_5-of-6">
+                            <lightning:select aura:id="country" class="slds-text-heading_medium"
+                                              value="{!v.selectedCountry}" variant="label-hidden"
+                                              messageWhenValueMissing="Complete this field.">
+                                <option value="">Select a country...</option>
+                                <aura:iteration items="{!v.countryList}" var="cntry">
+                                    <option value="{!cntry.value}"
+                                            selected="{!cntry.value==v.selectedCountry}">{!cntry.label}</option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                    </div>
+                </aura:if>
+
+
+
+                <aura:if
+                        isTrue="{!and(f!='Phone', and(f!='Email', and(f!='Preferred_Address__c', and(f!='OrderApi__Preferred_Phone_Type__c',and(f!='MailingCountry', f!='OrderApi__Preferred_Email_Type__c' )))))}">
+                    <lightning:inputField fieldName="{!f}"/>
+                </aura:if>
+
+            </aura:iteration>
+        </lightning:recordEditForm>
+
+    </lightning:card>
+</aura:component>

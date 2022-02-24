@@ -1,0 +1,18 @@
+<!--
+ - Created by lauren.lezberg on 4/15/2020.
+ -->
+
+<aura:component description="EventDeleteButton" controller="EventDeleteButtonController" implements="force:hasRecordId,force:lightningQuickAction,lightning:isUrlAddressable">
+    <aura:attribute name="showButton" type="Boolean" description="show delete button" default="false"/>
+    <aura:attribute name="processing" type="Boolean" description="action is processing" default="false"/>
+    <aura:attribute name="cmpId" type="String" description="unique component id" access="private"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:AreYouSureResponseEvt" action="{!c.startDeleteProcess}"/>
+
+    <aura:if isTrue="{!v.showButton}">
+        <lightning:button variant="brand" iconName="utility:delete" onclick="{!c.openModal}" label="{!v.processing?'Processing...': 'Delete'}" disabled="{!v.processing}"/>
+    </aura:if>
+
+    <c:AreYouSureModal aura:id="deleteConfirmModal" cmpId="{!v.cmpId}" message="Are you sure you would like to delete this event? All user segments, sessions and speakers will also be deleted and this action cannot be undone."/>
+</aura:component>

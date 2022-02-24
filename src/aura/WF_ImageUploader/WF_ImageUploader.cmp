@@ -1,0 +1,44 @@
+<!--
+ - Created by afaf.awad on 11/17/2021.
+ -->
+
+<aura:component description="WF_ImageUploader" controller="WF_ImageUploaderController">
+
+    <aura:attribute name="recordObj" type="Object" description="Image Label"/>
+    <aura:attribute name="surveyId" type="String" description="Survey Id"/>
+    <aura:attribute name="showUploader" type="Boolean" default="true" description="Show or hide file uploader"/>
+    <aura:attribute name="imageId" type="String" description="Image Id from ContentDistribution"
+                    default="{!v.recordObj.sqRecord ? v.recordObj.sqRecord.ImageId__c : v.recordObj.imageId != null ? v.recordObj.imageId : null}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:recordEditForm aura:id="SurveyQuestionImage"
+                              objectApiName="Survey_Question__c"
+                              recordId="{!v.recordObj.sqId}"
+                              onsuccess="{!c.handleSuccess}">
+    <aura:if isTrue="{!v.showUploader}">
+    <lightning:fileUpload aura:id="headerImage"
+                          name="fileUploader"
+                          multiple="false"
+                          label=""
+                          recordId="{!v.recordObj.sqId}"
+                          onuploadfinished="{! c.handleUploadFinished }"
+                          class="slds-align_absolute-center slds-p-bottom_small"/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.imageId != null}">
+        <div class="slds-align_absolute-center">
+            <br/>
+            <img src="{!'/sfc/servlet.shepherd/version/download/' + v.imageId}"  style="width:auto"/>
+        </div>
+    </aura:if>
+
+    <!--                    HIDDEN FIELDS-->
+        <lightning:inputField aura:id="fieldLabel" fieldName="Label__c" value="{!v.recordObj.Label}" class="slds-hide"/>
+    <lightning:inputField aura:id="imageId" fieldName="ImageId__c" class="slds-hide"/>
+    <lightning:inputField fieldName="MetaTypeId__c" value="{!v.recordObj.Id}" class="slds-hide"/>
+    <lightning:inputField fieldName="Field_Type__c" value="{!v.recordObj.Field_Type__c}" class="slds-hide"/>
+    <lightning:inputField aura:id="surveyLookup" fieldName="Survey__c" value="{!v.surveyId}" class="slds-hide"/>
+    <lightning:inputField aura:id="fieldCategory" fieldName="Field_Category__c" value="{!v.recordObj.Field_Category__c}" class="slds-hide"/>
+    </lightning:recordEditForm>
+</aura:component>

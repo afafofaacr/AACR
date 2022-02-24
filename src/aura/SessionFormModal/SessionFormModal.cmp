@@ -1,0 +1,57 @@
+<!--
+ - Created by lauren.lezberg on 1/24/2020.
+ -->
+
+<aura:component description="SessionFormModal">
+    <aura:attribute name="isOpen" type="Boolean" description="is speaker modal open" default="false"/>
+    <aura:attribute name="sessionDate" type="Date" description="date of session from selected"/>
+    <aura:attribute name="sessionId" type="String" description="Id of session for editing"/>
+    <aura:attribute name="eventObj" type="Object" default="{}" />
+
+    <aura:attribute name="startTime" type="Object" />
+    <aura:attribute name="endTime" type="Object"/>
+
+    <aura:handler name="change" value="{!v.sessionDate}" action="{!c.sessionDateChange}"/>
+    <aura:handler name="change" value="{!v.sessionId}" action="{!c.handleIdChange}"/>
+    <aura:registerEvent name="scheduleUpdate" type="c:EventScheduleUpdate"/>
+
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                 aria-modal="true" aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <div class="slds-modal__close">
+                        <lightning:button iconName="utility:close" variant="base" onclick="{!c.closeModal}"/>
+                    </div>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{!not(empty(v.sessionId))?'Edit Event Session':'New Event Session'}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-left_medium slds-p-right_medium slds-p-top_x-large slds-p-bottom_x-large" id="modal-content-id-1">
+                    <lightning:recordEditForm aura:id="sessionForm" objectApiName="AACR_Session__c"
+                                              onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleSuccess}" onload="{!c.handleLoad}" onerror="{!c.handleError}">
+                        <!--<lightning:messages/>-->
+
+                        <lightning:inputField fieldName="Name" required="true"/>
+                        <lightning:inputField aura:id="sessionDate" fieldName="Date__c" required="true"/>
+                        <div class="slds-hide">
+                            <lightning:inputField aura:id="hiddenStartTime" fieldName="Start_Time__c" />
+                            <lightning:inputField aura:id="hiddenEndTime" fieldName="End_Time__c" />
+                        </div>
+                        <lightning:input aura:id="startTime" type="time" label="Start Time" required="true"/>
+                        <lightning:input aura:id="endTime" type="time" label="End Time" required="true"/>
+                        <lightning:inputField aura:id="htmlBody" fieldName="Embed_URL__c"/>
+                        <div class="slds-hide">
+                            <lightning:inputField fieldName="Event__c" value="{!v.eventObj.Id}"/>
+                        </div>
+
+                        <div class="slds-align_absolute-center slds-m-top_medium">
+                            <lightning:button label="Save Session" variant="brand" onclick="{!c.saveSession}"/>
+                        </div>
+                    </lightning:recordEditForm>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+    </aura:if>
+</aura:component>

@@ -1,0 +1,29 @@
+/**
+ * Created by afaf.awad on 3/25/2021.
+ */
+
+.THIS .optButton{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 10rem;
+    padding: .9rem;
+    margin-left: 1.2rem;
+}
+
+.THIS .cEC_OptOut{
+    margin:auto !important;
+    width:75% !important;
+    padding-top: 10rem !important;
+
+}
+
+.THIS .slds-form-element__label, .THIS .slds-input{
+    font-size: 1.5rem;
+}
+
+.THIS .errorMessage{
+    font-size: 2rem;
+    color: red;
+}

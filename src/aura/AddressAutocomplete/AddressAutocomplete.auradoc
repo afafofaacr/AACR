@@ -1,0 +1,20 @@
+<!--
+ - Created by lauren.lezberg on 9/24/2020.
+ -->
+
+<aura:documentation>
+    <aura:description>
+        <p>Controller: AddressAutocompleteController</p>
+        <p>The <code>c:AddressAutocomplete</code> component uses the Google places API to search for/autocomplete addresses based a search string.</p>
+        <p>The component looks like a regular search bar with a drop down list that autofills with suggestions as the user types.</p>
+        <p>This component is based off the <code>c:CustomLookup</code> component with added google api functionality.</p>
+        <p>The component is composed of a <code>ui:input</code> tag as well as a <code>c:AddressAutocompleteResult</code> tag.</p>
+        <br/>
+        <div style="font-size: 1.5rem;font-weight:600;">Usage Considerations: </div>
+        <p>If the component is provided a placeId, it will autofill the address in the search bar as selected.</p>
+        <p>The component responds to the <code>SelectedObjectRecordEvt</code> lighting event when a record is selected from the dropdown.</p>
+    </aura:description>
+<!--    <aura:example name="AddressAutocomplete" ref="AddressAutocomplete" label="AddressAutocomplete">-->
+<!--        Example for AddressAutocomplete-->
+<!--    </aura:example>-->
+</aura:documentation>

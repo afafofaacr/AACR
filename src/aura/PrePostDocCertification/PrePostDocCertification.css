@@ -1,0 +1,48 @@
+/**
+ * Created by lauren.lezberg on 11/2/2020.
+ */
+
+
+.THIS .slds-checkbox [type=checkbox]:checked+.slds-checkbox__label .slds-checkbox_faux:after{
+    height:0.4rem;
+    width:0.8rem;
+}
+
+.THIS .infoTxt {
+    font-size: 1.25rem;
+}
+
+.THIS .slds-form-element .slds-checkbox [type=checkbox]+.slds-checkbox__label .slds-checkbox_faux{
+    height:2rem;
+    width:2rem;
+}
+
+/*File Styles*/
+
+.THIS .slds-file-selector{
+    font-size:1.5rem;
+}
+
+.THIS .slds-file-selector_files .slds-file-selector__body{
+    font-weight:400;
+    padding:5px;
+}
+
+.THIS .slds-file-selector_files .slds-file-selector__button{
+    padding: 1rem;
+}
+
+.THIS .slds-button.slds-button_neutral{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.25rem;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size:1.5rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size:1.5rem;
+}

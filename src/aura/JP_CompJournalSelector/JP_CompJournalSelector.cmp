@@ -1,0 +1,41 @@
+<!--
+ - Created by lauren.lezberg on 1/16/2019.
+ -->
+
+<aura:component description="JP_CompJournalSelector" controller="JP_ItemSelectionController"> 
+
+    <aura:attribute name="selectedCompName" type="String" description="Selected COMP journal name"/>
+    <aura:attribute name="selectedComp" type="String" description="Selected COMP journal"/>
+    <aura:attribute name="declineId" type="String" description="Decline COMP Journal Id"/>
+    <aura:attribute name="onlineComps" type="List" description="List of available 'Online' COMP Journals" />
+    <aura:attribute name="printComps" type="List" description="List of available 'Online &amp; Print' COMP Journals" />
+
+    <aura:attribute name="availableComps" type="List" description="Filtered list of COMP journals to display in list based off view options"/>
+
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Online', 'value': 'Online Only'},
+    {'label': 'Print &amp; Online', 'value': 'Print &amp; Online'},
+    {'label': 'Decline', 'value': 'Decline'}
+    ]" description="List of options to display comp journals"/>
+    <aura:attribute name="value" type="String" default="Online Only" description="Selected view type from options to view COMP Journals"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="change" action="{!c.handleCompChange}" value="{!v.selectedComp}"/>
+
+    <lightning:radioGroup name="radioButtonGroup"
+                          required="true"
+                          label="Complimentary Journals"
+                          options="{! v.options }"
+                          value="{! v.value }"
+                          type="button"
+                          onchange="{!c.onToggle}"/>
+
+    <lightning:combobox aura:id="complimentaryJournalsOnline"
+                        name="complimentaryJournalsOnline"
+                        value="{!v.selectedComp}"
+                        placeholder="Select a complimentary journal..."
+                        options="{!v.availableComps}"
+                        class="{!v.value=='Decline'?'slds-hide':''}"
+                        messageWhenValueMissing="You must select a COMP journal or decline."/>
+
+</aura:component>

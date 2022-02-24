@@ -1,0 +1,64 @@
+<!--
+ - Created by afaf.awad on 10/20/2021.
+ -->
+
+<aura:component description="WF_FormFieldMapping" controller="WF_FormFieldMappingController">
+
+    <aura:attribute name="stepId" type="String"/>
+    <aura:attribute name="nextStepId" type="String"/>
+    <aura:attribute name="nextCmpName" type="String"/>
+
+    <aura:attribute name="recordId" type="Id" default="" description="SF Id of Survey Object"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="operationState" type="Boolean" default="false"/>
+
+    <aura:attribute name="formFieldData" type="List" description="List of form fields to map"/>
+
+    <!--        HANDLERS-->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+
+    <table class="slds-table slds-table_cell-buffer" aria-label="Field Mapping">
+        <thead >
+        <tr class="slds-line-height_reset">
+            <th class="fieldHeader" scope="col" width="35%">
+                <div class="divHeader slds-truncate" title="Form Field">Form Field</div>
+            </th>
+            <th class="fieldHeader" scope="col" width="30%">
+                <div class="divHeader slds-truncate" title="Operation">Operation</div>
+            </th>
+            <th class="fieldHeader" scope="col" width="35%">
+                <div class="divHeader slds-truncate" title="Target">Target</div>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <aura:iteration items="{!v.formFieldData}" var="f">
+        <tr class="slds-hint-parent">
+            <th data-label="Form Field" scope="row">
+                <div class="slds-truncate" title="Form Field">
+                    <lightning:input label="formField" disabled="true" variant="label-hidden" value="{!f.sqRecord.Label__c}"/>
+                </div>
+            </th>
+            <td data-label="Operation" class="slds-cell-buffer_left slds-cell-buffer_right">
+                <div class="slds-truncate slds-align_absolute-center" title="Operation">
+                    <lightning:button label="{!f.sqRecord.Overwrite__c ? 'Overwrite' : 'Form Response'}"
+                                      variant="{!f.sqRecord.Overwrite__c ? 'brand' : 'neutral'}"
+                                      value="{!f}"
+                                      disabled="{!or(f.sqRecord.Survey__r.Form_Type__c == 'MS',f.formField.Layout_Section__c == 'Custom') ? true : false}"
+                                      onclick="{!c.handleOperation}"/>
+                </div>
+            </td>
+            <td data-label="Target">
+                <div class="slds-truncate" title="Target">
+                    <lightning:input label="formField" disabled="true" variant="label-hidden" value="{! f.sqRecord.Overwrite__c ? f.formField.Label : 'Form Response'}"/>
+                </div>
+            </td>
+        </tr>
+        </aura:iteration>
+     </tbody>
+    </table>
+
+</aura:component>

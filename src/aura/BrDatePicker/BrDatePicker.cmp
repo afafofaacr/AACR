@@ -1,0 +1,143 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global"
+                controller="BrDatePickerController">
+    <aura:attribute name="zoneId" type="String" default="" access="global" />
+    <aura:attribute name="value" type="String" description="Date displayed if exists already"/>
+    <aura:attribute name="class" type="String" description="A CSS style to be attached to the component."/>
+    <aura:attribute name="calendarItems" type="Object[]" />
+
+    <aura:attribute name="date" type="Integer" description="The currently highlighted date."/>
+    <aura:attribute name="month" type="Integer" description="The currently rendered month."/>
+    <aura:attribute name="monthName" type="String" description="The currently rendered month name."/>
+    <aura:attribute name="year" type="Integer" description="The currently rendered year."/>
+    <aura:attribute name="selectedDate" type="Date" description="The selected date."/>
+    <aura:attribute name="setFocus" type="Boolean" default="true"
+                    description="Control if we should focus any date when we render the month."/>
+
+    <!-- private attributes -->
+    <aura:attribute name="_setFocus" type="Boolean" default="true" description="The internal state of setFocus."/>
+    <aura:attribute name="_namesOfWeekdays" type="List" description="The names of the week days based on locale."/>
+
+    <!-- events -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="BrDateCellClick" event="c:BrDateCellClick" action="{!c.handleClick}"/>
+
+    <aura:registerEvent name="brDateChange" type="c:BrDateChange"/>
+
+    <div aura:id="grid" class="slds-datepicker slds-m-around_small slds-p-around_medium"> 
+        <div class="slds-datepicker__filter slds-grid">
+            <div class="slds-datepicker__filter--month slds-grid slds-grid--align-spread slds-grow">
+                <div class="slds-align-middle">
+                    <a onclick="{!c.goToPreviousMonth}" href="javascript:void(0);"
+                       class="slds-button slds-button--icon-container">
+                        <c:BrSvgIcon svgPath="{!$Resource.BrEvents + '/icons/symbols.svg#left'}"
+                                            category="utility" name="left"
+                                            class="slds-button__icon slds-button__icon--small slds-m-top--small"/>
+                    </a>
+                </div>
+                <h1 id="month" class="slds-align-middle slds-text-heading_medium" aria-live="assertive" aria-atomic="true">{!v.monthName}</h1>
+                <div class="slds-align-middle">
+                    <a onclick="{!c.goToNextMonth}" href="javascript:void(0);"
+                       class="slds-button slds-button--icon-container">
+                        <c:BrSvgIcon svgPath="{!$Resource.BrEvents + '/icons/symbols.svg#right'}"
+                                            category="utility" name="right"
+                                            class="slds-button__icon slds-button__icon--small slds-m-top--small"/>
+                    </a>
+                </div>
+            </div>
+            <div class="slds-shrink-none">
+                <ui:inputSelect aura:id="yearSelect" class="slds-select -select slds-text-heading_medium" label="pick a year"
+                                labelClass="slds-assistive-text" required="false" change="{!c.handleYearChange}"/>
+            </div>
+        </div>
+        <table aura:id="maintable" class="datepicker__month" role="grid" aria-labelledby="month">
+            <thead>
+            <tr id="weekdays">
+                <aura:iteration items="{!v._namesOfWeekdays}" var="day">
+                    <th scope="col" class="dayOfWeek">
+                        <abbr title="{!day.shortName}">{!day.shortName}</abbr>
+                    </th>
+                </aura:iteration>
+            </tr>
+            </thead>
+            <tbody>
+            <tr aura:id="week1">
+                <c:BrDateCell aura:id="0"/>
+                <c:BrDateCell aura:id="1"/>
+                <c:BrDateCell aura:id="2"/>
+                <c:BrDateCell aura:id="3"/>
+                <c:BrDateCell aura:id="4"/>
+                <c:BrDateCell aura:id="5"/>
+                <c:BrDateCell aura:id="6"/>
+            </tr>
+            <tr aura:id="week2">
+                <c:BrDateCell aura:id="7"/>
+                <c:BrDateCell aura:id="8"/>
+                <c:BrDateCell aura:id="9"/>
+                <c:BrDateCell aura:id="10"/>
+                <c:BrDateCell aura:id="11"/>
+                <c:BrDateCell aura:id="12"/>
+                <c:BrDateCell aura:id="13"/>
+            </tr>
+            <tr aura:id="week3">
+                <c:BrDateCell aura:id="14"/>
+                <c:BrDateCell aura:id="15"/>
+                <c:BrDateCell aura:id="16"/>
+                <c:BrDateCell aura:id="17"/>
+                <c:BrDateCell aura:id="18"/>
+                <c:BrDateCell aura:id="19"/>
+                <c:BrDateCell aura:id="20"/>
+            </tr>
+            <tr aura:id="week4">
+                <c:BrDateCell aura:id="21"/>
+                <c:BrDateCell aura:id="22"/>
+                <c:BrDateCell aura:id="23"/>
+                <c:BrDateCell aura:id="24"/>
+                <c:BrDateCell aura:id="25"/>
+                <c:BrDateCell aura:id="26"/>
+                <c:BrDateCell aura:id="27"/>
+            </tr>
+            <tr aura:id="week5">
+                <c:BrDateCell aura:id="28"/>
+                <c:BrDateCell aura:id="29"/>
+                <c:BrDateCell aura:id="30"/>
+                <c:BrDateCell aura:id="31"/>
+                <c:BrDateCell aura:id="32"/>
+                <c:BrDateCell aura:id="33"/>
+                <c:BrDateCell aura:id="34"/>
+            </tr>
+
+            <tr aura:id="week6">
+                <c:BrDateCell aura:id="35"/>
+                <c:BrDateCell aura:id="36"/>
+                <c:BrDateCell aura:id="37"/>
+                <c:BrDateCell aura:id="38"/>
+                <c:BrDateCell aura:id="39"/>
+                <c:BrDateCell aura:id="40"/>
+                <c:BrDateCell aura:id="41"/>
+            </tr>
+            <tr>
+                <td colspan="7" role="gridcell">
+                    <a onclick="{!c.goToToday}" href="javascript:void(0);"
+                       class="slds-show--inline-block slds-text-heading_medium slds-p-bottom--x-small">{!$Label.c.lbl_today}</a>
+                    <a onclick="{!c.onReset}" href="javascript:void(0);"
+                       class="slds-float_right slds-text-heading_medium slds-p-bottom_small slds-p-horizontal_small">
+                        Reset
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div aura:id="legend" class="slds-datepicker slds-m-around_small slds-p-around_medium">
+        <lightning:layout verticalAlign="center" class="x-large" >
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="legendAttended slds-m-bottom_x-small"/>
+                <div class="legendHasEvent"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <div class="slds-text-heading_medium slds-m-bottom_medium">Registered</div>
+                <div class="slds-text-heading_medium">Open for Registration</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

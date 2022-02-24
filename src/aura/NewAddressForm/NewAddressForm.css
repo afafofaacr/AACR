@@ -1,0 +1,13 @@
+/**
+ * Created by lauren.lezberg on 1/12/2021.
+ */
+.THIS span.slds-form-element__label{
+    display:contents;
+    padding-right:5px;
+}
+
+
+.THIS [lightning-input_input-host]{
+    /*display:block;*/
+    display:flex !important;
+}

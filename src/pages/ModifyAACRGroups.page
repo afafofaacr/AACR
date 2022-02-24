@@ -1,0 +1,37 @@
+<!--
+ - Created by lauren.lezberg on 4/1/2021.
+ -->
+
+<apex:page id="ModifyAACRGroups" showHeader="false" sideBar="false">
+    <apex:includeLightning />
+    <apex:slds />
+
+
+    <c:pageStyle />
+
+
+    <apex:composition template="CPBase__template">
+        <!-- PAGE TITLE -->
+        <apex:define name="pageTitle">
+            Modify AACR Groups
+        </apex:define>
+        <apex:define name="supernavRight">
+            {!$Label.Fon_JPUserAddrWelcome}  {!$User.FirstName} {!$User.LastName}!
+        </apex:define>
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div id="aacrGroups"/>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+        $Lightning.use("c:aacrLtng", function() {
+            $Lightning.createComponent("c:ModifyAACRGroups",
+                {},
+                "aacrGroups",
+                function (cmp) {
+
+                });
+        });
+    </script>
+</apex:page>

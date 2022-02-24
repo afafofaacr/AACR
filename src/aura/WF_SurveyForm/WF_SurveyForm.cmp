@@ -1,0 +1,52 @@
+<!--
+ - Created by afaf.awad on 11/5/2021.
+ -->
+
+<aura:component description="WF_SurveyForm" controller="WF_SurveyFormController"
+                implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="recordId" type="String" description="SF Id of Survey Object"/>
+    <aura:attribute name="survey" type="Survey__c" description="Survey Object"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false" description="Is page loading or saving?"/>
+    <aura:attribute name="formFields" type="List" description="List of Fields dragged into layout."/>
+    <aura:attribute name="isCompleted" type="Boolean" default="false" description="Show confirmation page when true."/>
+    <aura:attribute name="communitySite" type="String" description="myAACR homepage"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler event="c:WF_AppEvent" action="{!c.saveRecord}"/>
+
+<!--        SURVEY FORM-->
+    <aura:if isTrue="{!not(v.isCompleted)}">
+    <div class="slds-box" style="margin:auto; width:500px; background-color: white">
+        <aura:iteration items="{!v.formFields}" var="f" indexVar="i">
+            <lightning:layout>
+                <lightning:layoutItem flexibility="auto">
+                    <div class="slds-p-bottom_small">
+                        <c:WF_SurveyFormFields field="{!f}"/>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:iteration>
+        <!--        </div>-->
+    </div>
+    </aura:if>
+
+<!--    CONFIRMATION-->
+    <aura:if isTrue="{!v.isCompleted}">
+    <div class="slds-box" style="margin:auto; width:700px; background-color: white; border: none">
+        <div id="banner">
+            <a target="banner" href="{!v.communitySite}" title="MyAACR Login">
+                <img src="{!$Resource.AACRlogo}" border="0" alt="AACR Banner"/>
+            </a>
+        </div>
+        <br/>
+        <div class="slds-text-title" style="font-size: 1rem">
+            <h1 class="slds-align_absolute-center">Thank you for your interest in {!v.survey.Name}</h1>
+            <br/>
+            <p class="slds-align_absolute-center">{!v.survey.Additional_Confirmation_Text__c}</p>
+        </div>
+    </div>
+    </aura:if>
+
+
+</aura:component>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Text for standalone UpdateAddressInformation</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Header_Text__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>HTML will render on the page as long as your input is wrapped in &lt;html&gt; tags.</inlineHelpText>
+        <label>Header Text</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Update Address Text</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,31 @@
+<!--
+ - Created by afaf.awad on 7/16/2020.
+ -->
+
+<aura:component description="UpdateScientificInterest">
+
+    <aura:attribute name="showCmp" type="Boolean" default="true" description="show scientific interest component"/>
+
+    <aura:registerEvent name="JP_StepChangeEvt" type="c:JP_StepChangeEvt"/>
+    <aura:handler event="c:JP_NavigateEvt" action="{!c.handleNavigate}"/>
+
+    <aura:if isTrue="{!v.showCmp}">
+        <div style="margin:auto; width:1140px;">
+            <div class="header slds-border_bottom slds-m-top_medium">Scientific Interests</div>
+            <br/>
+            <c:JP_ScientificInterest aura:id="sciInts" stepId="m0W1I000000Cay2"/>
+        </div>
+        <br/>
+        <div class="slds-align_absolute-center">
+            <lightning:button variant="neutral" label="Cancel" onclick="{!c.handleCancel}"/>
+            <lightning:button variant="brand" label="Save" onclick="{!c.handleSave}"/>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-align_absolute-center">
+                <div style="width:1000px; margin-top:15rem;" class="slds-box slds-align_absolute-center slds-theme_success slds-m-left_x-large slds-m-right_x-large slds-m-top_x-large">
+                    <div class="slds-text-heading_large">Your scientific interests have been updated. You may now close this browser tab.</div>
+                </div>
+            </div>
+        </aura:set>
+    </aura:if>
+</aura:component>

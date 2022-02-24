@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Sponsor packages track the benefits and levels of sponsorship available for an event.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>EventApi__AR_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Identifies the GL Account used for A/R transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the GL Account used for A/R transactions.</inlineHelpText>
+        <label>A/R Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Sponsor Packages (A/R Account)</relationshipLabel>
+        <relationshipName>SponsorPackage_AR_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Adjustment_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The debit account to use when posting invoice adjustments to invoices that have already posted to A/R.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The debit account to use when posting invoice adjustments to invoices that have already posted to A/R.</inlineHelpText>
+        <label>Adjustment Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Sales Adjustment Accounts)</relationshipLabel>
+        <relationshipName>Items2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Assignments_Display_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>RESERVED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires &quot;Enable Assignments&quot; to be checked. Text displays at the top of the &quot;Assignments&quot; screen.</inlineHelpText>
+        <label>RESERVED</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Business_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Required Override ** Link to related Business Group. Derived from User Preferences if not defined on record creation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Required Override ** Link to related Business Group. Derived from User Preferences if not defined on record creation.</inlineHelpText>
+        <label>Business Group</label>
+        <referenceTo>OrderApi__Business_Group__c</referenceTo>
+        <relationshipLabel>Sponsor Packages</relationshipLabel>
+        <relationshipName>Sponsor_Packages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The cost per unit for the item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The cost per unit for the item.</inlineHelpText>
+        <label>Item Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Defer_Revenue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the deferred revenue recognition rules will be considered when posting transactions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the deferred revenue recognition rules will be considered when posting transactions.</inlineHelpText>
+        <label>Defer Revenue</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Deferred_Revenue_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deferred Revenue Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Deferred Revenue Account)</relationshipLabel>
+        <relationshipName>Items3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Deferred_Revenue_Term__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deferred Revenue Term (In Months)</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Product description.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product description.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EventApi__Discount_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account to debit when discounting a sale related to the Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account to debit when discounting a sale related to the Item.</inlineHelpText>
+        <label>RESERVED</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Discount Account)</relationshipLabel>
+        <relationshipName>Discount_Account_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Display_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sponsor package name as you would like it to appear in the Portal.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sponsor package name as you would like it to appear in the Portal.</inlineHelpText>
+        <label>Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Display_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter the number for the order that the sponsor package should be displayed in.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number for the order that the sponsor package should be displayed in.</inlineHelpText>
+        <label>Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Access_Permissions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, only badge types identified in the &quot;Manage Permissions&quot; related list will have access to this item.</inlineHelpText>
+        <label>Enable Access Permissions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Enable_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>RESERVED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, sponsor can add contacts to their sponsorship.</inlineHelpText>
+        <label>RESERVED</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related event category. When linked, this package will be included automatically in new events created within the same category.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related event category. When linked, this package will be included automatically in new events created within the same category.</inlineHelpText>
+        <label>Event Category</label>
+        <referenceTo>EventApi__Event_Category__c</referenceTo>
+        <relationshipLabel>Sponsor Packages (Template)</relationshipLabel>
+        <relationshipName>Sponsor_Packages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the related event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the related event.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>Sponsor Packages</relationshipLabel>
+        <relationshipName>Sponsor_Packages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Flex_Day_of_the_Month__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Flex Day of the Month</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to a form created in the &quot;Form Builder&quot; app. Customers will see the form when they select the sponsor package to purchase.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to a form created in the &quot;Form Builder&quot; app. Customers will see the form when they select the sponsor package to purchase.</inlineHelpText>
+        <label>Sponsor Package Form</label>
+        <referenceTo>PagesApi__Form__c</referenceTo>
+        <relationshipLabel>Items</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Image_Path__c</fullName>
+        <defaultValue>&quot;https://package-assets.s3.amazonaws.com/master/emerald/img/placeholders/item.png&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Image displays in the shopping cart and checkout page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Image displays in the shopping cart and checkout page.</inlineHelpText>
+        <label>Image URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Image_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Secure (&quot;https://&quot;) url where a large, 250 x 250 pixels, image is hosted to display on sponsor related pages and printed materials. Valid image file types include *.gif, *.png, *.jpg. Recommend the file size does not exceed 50kb.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Secure (&quot;https://&quot;) url where a large, 250 x 250 pixels, image is hosted to display on sponsor related pages and printed materials. Valid image file types include *.gif, *.png, *.jpg. Recommend the file size does not exceed 50kb.</inlineHelpText>
+        <label>Image URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Income_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The credit account to use when posting revenue in a A/R transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The credit account to use when posting revenue in a A/R transaction or from a cash sale receipt.</inlineHelpText>
+        <label>Income Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Income Account)</relationshipLabel>
+        <relationshipName>Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Interview_Form_Display_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text heading for the sponsor package form.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Text heading for the sponsor package form.</inlineHelpText>
+        <label>Form Display Label</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Invoice_Payment_Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If populated, this field is used to identify the order in which partial payments are applied to an invoice.</inlineHelpText>
+        <label>Payment Priority</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked, the item is considered available for sale and will be made available for selection against Invoice, Sales Order, Receipt, and EPayment Lines.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the item is considered available for sale and will be made available for selection against Invoice, Sales Order, Receipt, and EPayment Lines.</inlineHelpText>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Contribution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable contribution (donation) related controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable contribution (donation) related controls and features for this Item. Defaults to the value of the same field on the Item&apos;s related Item Class.</inlineHelpText>
+        <label>Is Contribution</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Tax_Deductible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Check if the item is a tax deductible donation. The cost per unit will drive the tax deductible amount on the sales order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if the item is a tax deductible donation. The cost per unit will drive the tax deductible amount on the sales order.</inlineHelpText>
+        <label>Is Tax Deductible</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Is_Taxable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** System Calculated Override ** Enable tax specific controls and features for this sponsor package.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated Override ** Enable tax specific controls and features for this sponsor package.</inlineHelpText>
+        <label>Is Taxable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Item_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** System Calculated ** The Item Class for sponsor packages are auto-generated for each event and/or event category based on configurations.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** System Calculated ** The Item Class for sponsor packages are auto-generated for each event and/or event category based on configurations.</inlineHelpText>
+        <label>RESERVED</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Sponsor Packages</relationshipLabel>
+        <relationshipName>Sponsor_Packages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Relates the Sponsorship Package to the Sponsorship Item for its event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relates the Sponsorship Package to the Sponsorship Item for its event.</inlineHelpText>
+        <label>RESERVED</label>
+        <referenceTo>OrderApi__Item__c</referenceTo>
+        <relationshipLabel>Sponsor Packages</relationshipLabel>
+        <relationshipName>Sponsor_Packages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Line_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Short description that appears on receipts and invoices.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Short description that appears on receipts and invoices.</inlineHelpText>
+        <label>Line Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Maximum_Number_of_Assignments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>RESERVED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires &quot;Enable Assignments&quot; to be checked. Specifies the maximum number of contacts that can be added to the sponsor package.</inlineHelpText>
+        <label>RESERVED</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The list price of the sponsor package.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The list price of the sponsor package.</inlineHelpText>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Available__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Maximum number of this sponsor packages of this type that can be sold for the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of this sponsor packages of this type that can be sold for the event.</inlineHelpText>
+        <label>Quantity Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Remaining__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The quantity available minus the number sold.</description>
+        <externalId>false</externalId>
+        <formula>IF(EventApi__Quantity_Available__c == 0,0,EventApi__Quantity_Available__c - EventApi__Quantity_Sold__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The quantity available minus the number sold.</inlineHelpText>
+        <label>Quantity Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Quantity_Sold__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The number of sponsor packages of this type sold.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of sponsor packages of this type sold.</inlineHelpText>
+        <label>Quantity Sold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Refund_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account to debit when refunding/crediting customers who have purchased this Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The account to debit when refunding/crediting customers who have purchased this Item.</inlineHelpText>
+        <label>Refund/Credit Account</label>
+        <referenceTo>OrderApi__GL_Account__c</referenceTo>
+        <relationshipLabel>Items (Refund_Account)</relationshipLabel>
+        <relationshipName>Refund_Account_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Require_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>RESERVED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, sponsors must specify a contact for all assignments at the time of purchase.</inlineHelpText>
+        <label>RESERVED</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Restrict_Number_of_Assignments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>RESERVED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the system will limit the number of assignments allowed based on the value of the &quot;Maximum Number of Assignments&quot; field. Defaults unchecked.</inlineHelpText>
+        <label>RESERVED</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Revenue_Recognition_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventApi__Revenue_Recognition_Rule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Rule</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Over Time</fullName>
+                    <default>false</default>
+                    <label>Over Time</label>
+                </value>
+                <value>
+                    <fullName>Specific Date</fullName>
+                    <default>false</default>
+                    <label>Specific Date</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__Revenue_Recognition_Term_Rule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Revenue Recognition Term Rule</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Partial Credit</fullName>
+                    <default>false</default>
+                    <label>No Partial Credit</label>
+                </value>
+                <value>
+                    <fullName>Flex Day</fullName>
+                    <default>false</default>
+                    <label>Flex Day</label>
+                </value>
+                <value>
+                    <fullName>Daily</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EventApi__SKU__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A SKU (Stock Keeping Unit) is a unique Item identifier that references attributes associated with the Item and that distinguish it from all other Items primarily used for inventory control and management.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A SKU (Stock Keeping Unit) is a unique Item identifier that references attributes associated with the Item and that distinguish it from all other Items primarily used for inventory control and management.</inlineHelpText>
+        <label>RESERVED</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EventApi__Tax_Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Populate this field for a sponsor package that needs to apply a tax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Populate this field for a sponsor package that needs to apply a tax.</inlineHelpText>
+        <label>Tax Class</label>
+        <referenceTo>OrderApi__Item_Class__c</referenceTo>
+        <relationshipLabel>Tax Sponsor Packages</relationshipLabel>
+        <relationshipName>Tax_Sponsor_Packages</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Event_Display_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Event Display Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>**System Calculated** Event Display Name</inlineHelpText>
+        <label>SYSTEM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Event_Duration_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Event Duration Text</description>
+        <externalId>false</externalId>
+        <formula>EventApi__Event__r.ROEApi__Event_Duration_Text__c</formula>
+        <inlineHelpText>**System Calculated** Event Duration Text</inlineHelpText>
+        <label>SYSTEM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ROEApi__Event_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>**System Calculated** Event Display Name</description>
+        <externalId>false</externalId>
+        <formula>EventApi__Event__r.EventApi__Display_Name__c</formula>
+        <inlineHelpText>**System Calculated** Event Display Name</inlineHelpText>
+        <label>SYSTEM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sponsor Package</label>
+    <listViews>
+        <fullName>EventApi__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Sponsor Package Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Sponsor Packages</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>EventApi__Event__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Available__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Sold__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Quantity_Remaining__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Form__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EventApi__Income_Account__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>EventApi__Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Available__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Sold__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>EventApi__Quantity_Remaining__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Event__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Available__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Sold__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>EventApi__Quantity_Remaining__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>EventApi__Event__c</searchFilterFields>
+        <searchFilterFields>EventApi__Event_Category__c</searchFilterFields>
+        <searchFilterFields>EventApi__Business_Group__c</searchFilterFields>
+        <searchFilterFields>EventApi__Income_Account__c</searchFilterFields>
+        <searchResultsAdditionalFields>EventApi__Event__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Available__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Sold__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Quantity_Remaining__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EventApi__Form__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

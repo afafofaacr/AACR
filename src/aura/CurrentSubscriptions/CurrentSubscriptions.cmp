@@ -1,0 +1,56 @@
+<!--
+ - Created by lauren.lezberg on 2/11/2020.
+ -->
+
+<aura:component description="CurrentSubscriptions" controller="CurrentSubscriptionsController">
+    <aura:attribute name="showRemove" type="Boolean" description="show remove button in subscriptions list"/>
+    <aura:attribute name="processing" type="Boolean" description="is component processing data"/>
+    <aura:attribute name="subscriptions" type="List" description="List of all current subscriptions"/>
+    <aura:attribute name="subsToCancel" type="List" description="List of subscriptions to cancel"/>
+    <aura:attribute name="contactId" type="String" description="Id of contact to retrieve subscriptions for"/>
+
+    <aura:handler name="change" value="{!v.contactId}" action="{!c.doInit}"/>
+
+    <aura:method name="cancelSubs" action="{!c.cancelSelectedSubscriptions}" description="cancel all subscriptions in cancel list"/>
+
+
+    <div class="slds-grid slds-gutters" style="height:4rem;">
+        <div class="slds-col">
+            <div class="slds-m-around_small">
+                <div style="font-size:1rem;">Current Subscriptions:</div>
+                <div>Please make any changes to existing subscriptions below. If you would like to change
+                    the membership type, please cancel and go to "Transfer".
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aura:iteration items="{!v.subscriptions}" var="subscrip">
+        <div class="slds-grid slds-box slds-m-around_small">
+            <div class="slds-col slds-size_11-of-12">
+                <div class="slds-text-heading_medium">{!subscrip.OrderApi__Item__r.Name}</div>
+                <aura:if isTrue="{!subscrip.OrderApi__Current_Term_End_Date__c!=null}">
+                    <div class="slds-grid">
+                        <div class="slds-text-heading_medium">
+                            {!subscrip.OrderApi__Subscription_Plan__r.Name}
+                        </div>
+                    </div>
+                </aura:if>
+            </div>
+            <div class="slds-col slds-size_1-of-12">
+                <div class="slds-float_right">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <aura:if isTrue="{!and(subscrip.OrderApi__Item__r.Name !='Blood Cancer Discovery - Online', and(subscrip.OrderApi__Item_Class__r.Name != 'Individual Memberships', v.showRemove))}">
+                                <lightning:buttonIcon iconName="utility:close" size="large" variant="brand"
+                                                      alternativeText="Remove Subscription"
+                                                      onclick="{!c.addToCancelList}" value="{!subscrip.Id}"
+                                                      disabled="{!v.processing}"/>
+                            </aura:if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:iteration>
+</aura:component>

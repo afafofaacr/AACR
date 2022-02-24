@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Menu Items create a hierarchy of links to both Pages and Custom Weblinks.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>PagesApi__Custom_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** URL for the Web Link. Required for &quot;Custom URL&quot; Menu Items.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** URL for the Web Link. Required for &quot;Custom URL&quot; Menu Items.</inlineHelpText>
+        <label>Custom URL</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Display_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** The order in which this Menu Item should display.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The order in which this Menu Item should display.</inlineHelpText>
+        <label>Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Display_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** The text to display for &quot;Text&quot; Menu Items.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** The text to display for &quot;Text&quot; Menu Items.</inlineHelpText>
+        <label>Display Text</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Icon__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional icon to use in context with the Menu Item. Note! Icon fonts are available only if you define links to the Stylesheets containing their definitions in either the Theme or in a Site&apos;s Global CSS.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional icon to use in context with the Menu Item. Note! Icon fonts are available only if you define links to the Stylesheets containing their definitions in either the Theme or in a Site&apos;s Global CSS.</inlineHelpText>
+        <label>Icon</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Is_Standard__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** SYSTEM **</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** SYSTEM **</inlineHelpText>
+        <label>Is Standard</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Link_Target__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies how target link is opened in the browser. Valid values include &quot;_self&quot; to open in the same tab, and &quot;_blank&quot; to open in a new window or tab.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for the target attribute for the &quot;a&quot; html tag. Valid values include &quot;_Blank&quot; or &quot;_Tab&quot; among others.</inlineHelpText>
+        <label>Link Target</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Menu_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the parent Menu Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the parent Menu Item.</inlineHelpText>
+        <label>Parent</label>
+        <referenceTo>PagesApi__Menu_Item__c</referenceTo>
+        <relationshipLabel>Menu Items</relationshipLabel>
+        <relationshipName>Menu_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Menu__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** Master-detail link to the parent Menu.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** Master-detail link to the parent Menu.</inlineHelpText>
+        <label>Menu</label>
+        <referenceTo>PagesApi__Menu__c</referenceTo>
+        <relationshipLabel>Menu Items</relationshipLabel>
+        <relationshipName>Menu_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PagesApi__On_Click_Javascript__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Javascript to run for the &quot;on click&quot; event (when the Menu Item is clicked).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Javascript to run for the &quot;on click&quot; event (when the Menu Item is clicked).</inlineHelpText>
+        <label>On Click Javascript</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Page__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>** Conditionally Required ** When the Type of Menu Item is &quot;Page Link&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Conditionally Required ** When the Type of Menu Item is &quot;Page Link&quot;.</inlineHelpText>
+        <label>Page</label>
+        <referenceTo>PagesApi__Page__c</referenceTo>
+        <relationshipLabel>Menu Items</relationshipLabel>
+        <relationshipName>Menu_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Style_Class__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom CSS Style Class to use for the Menu Item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom CSS Style Class to use for the Menu Item.</inlineHelpText>
+        <label>Style Class</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** Required ** The Type of Menu Item defaults to &quot;Page Link&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Required ** The Type of Menu Item defaults to &quot;Page Link&quot;.</inlineHelpText>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Custom Page</fullName>
+                    <default>true</default>
+                    <label>Custom Page</label>
+                </value>
+                <value>
+                    <fullName>Custom URL</fullName>
+                    <default>false</default>
+                    <label>Custom URL</label>
+                </value>
+                <value>
+                    <fullName>Text</fullName>
+                    <default>false</default>
+                    <label>Text</label>
+                </value>
+                <value>
+                    <fullName>On Click Javascript</fullName>
+                    <default>false</default>
+                    <label>On Click Javascript</label>
+                </value>
+                <value>
+                    <fullName>Standard Page</fullName>
+                    <default>false</default>
+                    <label>Standard Page</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PagesApi__Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>** SYSTEM **</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** SYSTEM **</inlineHelpText>
+        <label>Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Menu Item</label>
+    <nameField>
+        <label>Display Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Menu Items</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>PagesApi__Menu__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PagesApi__Menu__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>PagesApi__Menu__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

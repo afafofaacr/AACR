@@ -1,0 +1,14 @@
+/**
+ * Created by lauren.lezberg on 11/11/2019.
+ */
+.THIS.slds-box{
+    padding:0px;
+}
+
+.THIS .selected{
+    background-color:token(aacrGreenL2);
+}
+
+.THIS .slds-form-element_readonly{
+    margin-top: .5rem;
+}

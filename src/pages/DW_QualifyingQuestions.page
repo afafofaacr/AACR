@@ -1,0 +1,229 @@
+<!--
+    DW_QualifyingQuestions.vfp - v1.0
+    Description: Step Page of Become Member Wizard to gather Professional Information, Scientific Research & Educational Information    
+    Author: Ajit
+    Design: Manisha
+    CreatedDate: 07/31/2018
+    LastModifiedDate: 07/31/2018
+-->
+<apex:page controller="DW_QualifyingQuestionsControllerClone" docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">    
+    <!-- Page Required CSS -->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />    
+    <c:pageStyle />
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/ngToast.min.css')}" /> 
+    <apex:stylesheet value="{!URLFOR($Resource.ECRM_Resources, '/css/bootstrap-datetimepicker.min.css')}" />    
+    
+    <!-- Page Required JS Libs. -->
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery-1.11.3.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/angular-animate-sanitize-ngtable-ngtoast.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/moment.min.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/lodash.min.js')}" /> 
+
+    <!-- 2 added for progress bar component -->
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/jquery.toast.js')}" loadOnReady="true" />
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/commonFunctions.js')}" loadOnReady="true" />
+
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/bootstrap.min.js')}" />    
+    <apex:includeScript value="{!URLFOR($Resource.ECRM_Resources, '/js/bootstrap-datetimepicker.min.js')}" />
+    
+    <!-- Page Record Id - Here its Step Id -->
+    <vf-record-id style="display: none;visibility: hidden;" id="QueryParams.StepId">{!$CurrentPage.parameters.id}</vf-record-id>
+    
+    <!-- Page Controller - A tiny Angular App -->        
+    <apex:includeScript value="{!$Resource.DW_QualifyingQuestionsJSControllerClone}" />
+
+    <!-- VF component for displaying progress bar -->
+    <c:DW_ProgressBar />
+
+    <apex:composition template="CPBase__template">        
+        <!-- PAGE TITLE -->        
+        <apex:define name="pageTitle">
+            Scientific Interests
+        </apex:define>
+        
+        <!-- PAGE CUSTOM CSS -->
+        <apex:define name="pageStyles">
+            <style type="text/css">               
+                [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none!important; }
+                
+                /***************NG-TOAST****************/
+                /*.ng-toast { z-index: 50000; display:inline-block; position:relative;}*/
+                .ng-toast .alert-dismissable, .alert-dismissible { padding-right: 35px; }
+                .ng-toast .alert { padding: 10px; border: 1px solid transparent; border-radius: 4px; position:relative; font-size:13px; }
+                .ng-toast--left .ng-toast__message { text-align: center; margin-top: 57px; }
+                .ng-toast .alert.alert-danger { padding-left:38px; color: white; background-color: #c23934;}
+                .ng-toast .alert.alert-success { padding-left:38px;color: white; background-color: #04844b;}
+                .ng-toast .alert.alert-warning { padding-left:38px;background-color: #ffb75d; color: #16325c;}
+                .ng-toast .alert:before { position: absolute; left: 12px; font-size: 16px; top: 9px;}
+                .ng-toast--center {left:0;}                
+                .ng-toast.ng-toast--top, .ng-toast.ng-toast--top .ng-toast__list {top: 125px;}
+                
+                
+                /****************CUSTOM DESIGN TOAST****************/        
+                .ng-toast .alert.alert-success:before { content: ''; border-right: 3px solid #ffffff; border-bottom: 3px solid #ffffff; width: 7px; height: 13px; transform: rotate(45deg); position: absolute; top: 12px; left: 15px; }        
+                .ng-toast .alert.alert-danger:after { content: '+'; color: #c23934; position: absolute; left: 16px; font-weight: 800; top: 18px; transform: rotate(45deg); font-size: 16px; line-height: 0; }
+                .ng-toast .alert.alert-danger:before { content: ''; background: #fff; position: absolute; top: 10px; width: 17px; height: 17px; border-radius: 50px; }        
+                .ng-toast .alert.alert-warning:before { content: ''; border: 10px solid transparent; border-bottom: 16px solid white; position: absolute; top: 1px; display: inline-block; border-radius: 4px; }         
+                .ng-toast .alert.alert-warning:after { content: '!'; color: #d47e0f; position: absolute; left: 20.1px; line-height: 20px; text-align: left; font-weight: 800; top: 11px; }         
+                
+                
+                /****************PAGE LOADER****************/ 
+                @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                .bgBlack{position:fixed; background:rgba(0, 0, 0, 0.48); top:0; left:0; right:0; bottom:0; z-index: 9999;} 
+                .spinnerBg { background: rgba(255, 255, 255, 0.90); width: 50px; height: 50px; border-radius: 50px; top: 50%; left: 50%; position: absolute; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.34); }
+                .loader { border: 5px solid #c4c4c4; border-top: 5px solid #50b848; border-radius: 50%; width: 35px; height: 35px; animation: spin 1s linear infinite; margin: 8px auto; }            
+                .slds-scope .slds-button:focus { outline: 0; box-shadow: none; }
+                
+                
+                /***************DUAL-MULTI-SELECT**************/                
+                .ready-to-move { background: #50beb4; }
+                .field-header { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+                
+                
+                /***************PAGE***************************/
+                .highlight { -webkit-animation: highlight 1s infinite; animation: highlight 1s infinite; }
+                @keyframes highlight { 0% {background: #d5d5d5;} 50% {background: #dfdfdf;} 100% {background: #e6e6e6;} } 
+                @-webkit-keyframes highlight { 0% {background: #d5d5d5;} 50% {background: #dfdfdf;} 100% {background: #e6e6e6;} }
+            </style>    
+        </apex:define>
+        
+        <!-- NAVIGATION BAR - RIGHT BLOCK -->
+        <apex:define name="supernavRight"></apex:define>
+        
+        <!-- PAGE -->
+        <apex:define name="pageMain">
+            <div class="container m-t-30">
+                <div class="inner-wrapper">
+                    <apex:pageMessages />
+            
+                    <Framework:messages />
+                    
+                    <!-- MAIN APP CONTAINER - ANGULAR APP -->
+                    <div class="main-app-container" ng-app="DWQualifyingQuestionsApp" ng-controller="DWQualifyingQuestionsController as vm" ng-init="vm.doInit()">
+                        <!-- NG-TOAST MESSAGE CONTAINER -->
+                        <toast class="ng-toast--center"></toast>
+                        
+                        <!-- PAGE LOADER - COMMON FOR ALL (SPANS WHOLE PAGE) -->
+                        <div class="bgBlack" ng-show="vm.page.loader">
+                            <div class="spinnerBg">
+                                <div class="loader"></div>                    
+                            </div>
+                        </div>                        
+                        
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1>Scientific Interests</h1>
+                                <hr class="m-b-15" />
+                            </div>                        
+                        </div>
+                        
+                        <!--<legend class="orangeTxt">Scientific Research</legend>-->
+                        
+                        <div class="grid two-col">                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5 class="field-header">Primary Research Area of Expertise</h5>
+                                    <select name="PrimaryResearchAreaMap" 
+                                            class="form-control picklist"
+                                            ng-model="vm.contact.Primary_Research_Area_of_Expertise__c"
+                                            ng-options="key as value for (key , value) in vm.primaryResearchAreaMap">
+                                        <option value="">--NONE--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid two-col">                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5 class="field-header">Major Focus <span class="redaster">*</span></h5>
+                                    <dw-dual-multi-select id="majorFocusMap" raw-items="vm.majorFocusMap" selected-items="vm.contact.Major_Focus__c"></dw-dual-multi-select>        
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5 class="field-header">Organ Site</h5>
+                                    <dw-dual-multi-select id="organSiteMap" raw-items="vm.organSiteMap" selected-items="vm.contact.Organ_Sites__c"></dw-dual-multi-select>        
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5 class="field-header">Specific Research Areas</h5>
+                                    <dw-dual-multi-select id="specificResearchAreaMap" raw-items="vm.specificResearchAreaMap" selected-items="vm.contact.Specific_Research_Areas__c"></dw-dual-multi-select>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h5 class="field-header">Additional Research Areas</h5>
+                                    <dw-dual-multi-select id="additionalResearchAreaMap" raw-items="vm.additionalResearchAreaMap" selected-items="vm.contact.Additional_Research_Areas__c"></dw-dual-multi-select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label class="required-false">
+                                  If Other, Please Specify
+                                  <span class="redaster" ng-show="vm.contact.Primary_Research_Area_of_Expertise__c == 'Other (please specify) | other'">*</span>
+                                </label>
+                                <input type="text" class="form-control text block" name="otherInformation" ng-model="vm.contact.Other_Research_Areas__c" ng-required="vm.contact.Primary_Research_Area_of_Expertise__c == 'Other (please specify) | other'" maxlength="255" />
+                            </div>
+                        </div>
+                        
+                        <!-- NAVIGATION ACTION GROUP -->
+                        <div class="btnDiv">
+                            <button class="btn btn-default" ng-click="vm.canelCurrentStep($event)">Cancel</button>
+                            <button class="btn btn-default" ng-click="vm.goToPreviousStep($event)">Previous Step</button>
+                            <button class="btn btn-mini btn-primary ladda-button" ng-click="vm.updateData($event)">Next</button>
+                        </div>
+                        
+                        <!-- COMPONENT DIRECTIVE TEMPLATE - dw-dualmultiselect -->
+                        <script type="text/ng-template" id="/directive/dw-dualmultiselect.html">
+                            <div class="dw-dual-multi-select">  
+                                <div class="row">
+                                    <!-- AVAILABLE ITEMS -->
+                                    <div class="col-three sideSpace"> 
+                                        <div class="right-title">Available Items</div>
+                                        <div class="all-items-pool selectBox">
+                                            <ul>                    
+                                                <li class="ng-scope"
+                                                    ng-repeat="item in items | orderBy: orderProperty" 
+                                                    ng-class="{ 'ready-to-move': item.IsReadyToMove }"
+                                                    ng-click="prepareToMove(item)"> 
+                                                    <span>{{item.Name}}</span> 
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                                                
+                                    <!-- ITEMS NAVIGATION BTN GROUP - LEFT => RIGHT & VICE VERSA -->
+                                    <div class="col-two addSpace"> 
+                                        <button class="btn btn-default btn-xs arrowBtn" ng-click="transfer(items, selectedItems)"><span class="rightArrow"></span></button>
+                                        <button class="btn btn-default btn-xs arrowBtn" ng-click="transfer(selectedItems, items)"><span class="leftArrow"></span></button>
+                                    </div>
+                                    
+                                    <!-- SELECTED ITEMS -->
+                                    <div class="col-three sideSpace">
+                                        <div class="left-title">Selected Items</div>
+                                        <div class="selected-items-pool selectBox">
+                                            <ul>
+                                                <li ng-repeat="item in selectedItems | orderBy: orderProperty" class="ng-scope" ng-class="{ 'ready-to-move': item.IsReadyToMove }"> 
+                                                    <a href="" ng-click="prepareToMove(item)" class="ng-binding">{{item.Name}}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </apex:define>
+        
+    </apex:composition>    
+</apex:page>

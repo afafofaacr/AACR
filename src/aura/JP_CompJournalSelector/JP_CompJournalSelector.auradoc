@@ -1,0 +1,22 @@
+<!--
+ - Created by lauren.lezberg on 6/10/2019.
+ -->
+
+<aura:documentation> 
+    <aura:description>
+        <p>Controller: JP_ItemSelectionController</p>
+       <p>
+        The <code>JP_CompJournalSelector</code> is made to display all available and active COMP journals (items in the 'Complimentary Journals' item class).
+           The journals are filtered by online and print using the Association_Journals_Type__c field on the item and displays the Portal_Label__c to users.
+           It contains a toggle for online vs print or a decline button if no comp is selected.
+       </p>
+        <br/>
+        <div style="font-size: 1.5rem;">Usage Considerations: </div>
+        <p>The component works off of a sales order that is passed in the URL and determines if any COMP is already present and preselects that value.</p>
+        <p>The <code>JP_CompJournalSelector</code> is currently used in the <code>JP_JournalSelections</code> component and is rendered conditionally based on whether the membership allows for a COMP journal.</p>
+
+    </aura:description>
+    <!--<aura:example name="JP_CompJournalSelector" ref="c:JP_CompJournalSelector" label="JP_CompJournalSelector">-->
+        <!--Example for JP_CompJournalSelector-->
+    <!--</aura:example>-->
+</aura:documentation>

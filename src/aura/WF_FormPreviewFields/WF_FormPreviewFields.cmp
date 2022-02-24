@@ -1,0 +1,90 @@
+<!--
+ - Created by afaf.awad on 10/29/2021.
+ -->
+
+<aura:component description="WF_FormPreviewFields">
+
+    <aura:attribute name="field" type="Object" description="Object details of layout field"/>
+    <aura:attribute name="fieldType" type="String" description="field type to determine what kind of field to display"/>
+    <aura:attribute name="options" type="List" description="List of options for select questions"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler event="c:WF_AppEvent" action="{!c.doInit}"/>
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}"/>
+
+    <!--    HEADER-->
+    <aura:if isTrue="{!v.fieldType == 'header'}">
+        <div class="slds-text-heading_large slds-align_absolute-center">
+            <aura:if isTrue="{!v.field.isBold__c}">
+                <b>{!v.field.Label__c}</b>
+                <aura:set attribute="else">
+                    {!v.field.Label__c}
+                </aura:set>
+            </aura:if>
+        </div>
+    </aura:if>
+
+    <!--    image-->
+    <aura:if isTrue="{!v.fieldType == 'image'}">
+        <aura:if isTrue="{!v.field.ImageId__c == null}">
+            <div class="slds-align_absolute-center">
+                {!v.field.Label__c}
+            </div>
+            <aura:set attribute="else">
+                <div class="slds-align_absolute-center">
+                    <img src="{!'/sfc/servlet.shepherd/version/download/' + v.field.ImageId__c}"
+                         style="width:auto; height:200px;"/>
+                </div>
+            </aura:set>
+        </aura:if>
+
+    </aura:if>
+
+    <!--  single-select-->
+    <aura:if isTrue="{!v.fieldType == 'single-select'}">
+        <lightning:radioGroup aura:id="single-select"
+                              name="singleSelect"
+                              label="{!v.field.Label__c}"
+                              options="{! v.options }"
+                              type="radio"
+                              class="{!v.field.Question_Type__c == 'ssHorizontal' ? 'customRadioCls' : ''}"/>
+    </aura:if>
+
+    <!--    multi-select-->
+    <aura:if isTrue="{!v.fieldType == 'multi-select'}">
+        <lightning:checkboxGroup aura:id="multi-select"
+                                 name="multiSelect"
+                                 label="{!v.field.Label__c}"
+                                 variant="label-stacked"
+                                 options="{! v.options }"
+                                 value=""
+                                 class="{!v.field.Question_Type__c == 'msHorizontal' ? 'multiSelectHorizontal' : 'multiSelectVertical'}"/>
+    </aura:if>
+
+    <!--        OUTPUT TEXT-->
+    <aura:if isTrue="{!v.fieldType == 'outputText'}">
+        <div class="{! 'slds-align_absolute-center' + (v.field.isBold__c ? ' slds-text-title_bold' : '')}"> {!v.field.Label__c} </div>
+    </aura:if>
+
+<!--        STANDARD FIELDS -->
+    <aura:if isTrue="{!v.fieldType == 'standard'}">
+        <lightning:input label="{!v.field.Label__c}" type="{!v.field.Field_Type__c}" required="{!v.field.isRequired__c}"
+                          class="{! 'slds-form-element_1-col' + (v.field.isBold__c? 'slds-text-title_bold' : '')}"/>
+    </aura:if>
+
+    <!--    captcha-->
+    <aura:if isTrue="{!v.fieldType == 'Captcha'}">
+        <div class="captcha slds-align_absolute-center">
+            <img src="{!$Resource.reCAPTCHA_image}" style="max-width: 70%"/>
+            <br/>
+            <br/>
+        </div>
+    </aura:if>
+
+    <!--    button-->
+    <aura:if isTrue="{!v.fieldType == 'Button'}">
+        <div class="slds-align_absolute-center">
+            <lightning:button label="{!v.field.Custom_Text__c == null ? v.field.Label__c : v.field.Custom_Text__c}" title="{!v.field.Label__c}" type="button" onclick="{!c.handleSubmit}"/>
+        </div>
+    </aura:if>
+</aura:component>

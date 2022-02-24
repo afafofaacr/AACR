@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Institution</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>CMEs</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Awarded_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Awarded</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bias_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Bias Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Bias__c</fullName>
+        <externalId>false</externalId>
+        <label>Bias</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CME_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Credits Claimed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CME_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>CME Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non Physician</fullName>
+                    <default>false</default>
+                    <label>Non-Physician</label>
+                </value>
+                <value>
+                    <fullName>Physician</fullName>
+                    <default>false</default>
+                    <label>Physician</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Change_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Change Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Change__c</fullName>
+        <externalId>false</externalId>
+        <label>Change</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Consent_to_Send__c</fullName>
+        <externalId>false</externalId>
+        <label>Consent to Send</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contact_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Last Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>CMEs</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Credits_Available__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( RecordType.DeveloperName = &quot;Manuscript_Review&quot; , 3 , If( NOT(ISBLANK(Event__c))  ,Event__r.Max_CME_Credits__c, Live_Event__r.Max_CME_Credits__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Credits Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Diplomate_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Diplomate Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.OrderApi__Preferred_Email__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Enduring_Material_Certificate__c</fullName>
+        <description>##Conga created button:00b1I000000Fxf6</description>
+        <externalId>false</externalId>
+        <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;reportid=[BatchcreateEMCertifi]00O1I000006Rehu&quot; + 
+&quot;&amp;templateid=a2b1I0000017ogy&quot; + 
+&quot;&amp;congaemailtemplateid=a2S1I0000015R8G&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;emailtoid=&quot; + Contact_ID__c +
+&quot;&amp;sc0=1&quot; + 
+&quot;&amp;sc1=Attachments&quot; + 
+&quot;&amp;emailfromid=0D21I000000gBaC&quot; + 
+&quot;&amp;emailbcc=cme@aacr.org&quot; + 
+&quot;&amp;ac0=1&quot; + 
+&quot;&amp;qmode=SendEmail&quot;</formula>
+        <label>Enduring Material Certificate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>CME Event Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Display_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( NOT(ISBLANK(Event__c)),Event__r.EventApi__Display_Name__c,  Live_Event__r.Name )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Display Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Live</fullName>
+                    <default>true</default>
+                    <label>Live</label>
+                </value>
+                <value>
+                    <fullName>Internet Live</fullName>
+                    <default>false</default>
+                    <label>Internet Live</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event Name</label>
+        <referenceTo>EventApi__Event__c</referenceTo>
+        <relationshipLabel>CME Credits</relationshipLabel>
+        <relationshipName>CMEs</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>JP_Institution__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(NOT(ISBLANK(Event__c)) ,Event__r.JP_Institution__c,   Live_Event__r.JP_Institution__r.Name )</formula>
+        <label>JP Institution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Joint_Providership__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Joint_Providership__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Joint Providership</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Live_Event_Certificate__c</fullName>
+        <description>##Conga created button:00b1I000000nFpL
+##Conga updated button:00b1I000000nFpL</description>
+        <externalId>false</externalId>
+        <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;reportid=[LiveEventCerts]00O1I000006jt8m&quot; + 
+&quot;&amp;templateid=a2b1I000000awpR&quot; + 
+&quot;&amp;congaemailtemplateid=a2S1I0000015R8G&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;emailtoid=&quot; + Contact_ID__c +
+&quot;&amp;sc0=1&quot; + 
+&quot;&amp;sc1=Attachments&quot; + 
+&quot;&amp;emailfromid=0D21I000000gBaC&quot; + 
+&quot;&amp;emailbcc=cme@aacr.org&quot; + 
+&quot;&amp;ac0=1&quot; + 
+&quot;&amp;qmode=SendEmail&quot;</formula>
+        <label>Live Event Certificate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Live_Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Live Event</label>
+        <referenceTo>BR_Event__c</referenceTo>
+        <relationshipLabel>CME Credits</relationshipLabel>
+        <relationshipName>CME_Credits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MOC_Board__c</fullName>
+        <externalId>false</externalId>
+        <label>MOC Board</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSR_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>MSR Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manuscript_Review_Certificates__c</fullName>
+        <description>##Conga created button:00b1I000000nFp6
+##Conga updated button:00b1I000000nFp6</description>
+        <externalId>false</externalId>
+        <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;reportid=[MSRCertReport]00O1I000006jt8X&quot; + 
+&quot;&amp;templateid=a2b1I000000awpM&quot; + 
+&quot;&amp;congaemailtemplateid=a2S1I0000015R7r&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;emailtoid=&quot; + Contact_ID__c +
+&quot;&amp;sc0=1&quot; + 
+&quot;&amp;sc1=Attachments&quot; + 
+&quot;&amp;emailfromid=0D21I000000gBaC&quot; + 
+&quot;&amp;qmode=SendEmail&quot; + 
+&quot;&amp;emailbcc=cme@aacr.org&quot;</formula>
+        <label>Manuscript Review Certificates</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_CME_Credits__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Credits Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salutation__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Contact__r.Salutation)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Salutation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Time_and_Place__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( NOT(ISBLANK(Event__c)) /* Condition 1: If Fonteva Events */
+,Event__r.EventApi__Location_And_Date_Text__c, /* Fonteva Events */
+CASE(MONTH(DATEVALUE(Live_Event__r.Start_Date__c)), /*ELSE Live Events; Month StartDate */
+1, &quot;January&quot;,
+2, &quot;February&quot;,
+3, &quot;March&quot;,
+4, &quot;April&quot;,
+5, &quot;May&quot;,
+6, &quot;June&quot;,
+7, &quot;July&quot;,
+8, &quot;August&quot;,
+9, &quot;September&quot;,
+10, &quot;October&quot;,
+11, &quot;November&quot;,
+12, &quot;December&quot;,
+&quot;None&quot;)
+&amp; &quot; &quot; /*Spacing */
+&amp; TEXT(Day(DATEVALUE(Live_Event__r.Start_Date__c))) /*Day StartDate */
+&amp; IF( DAY(DATEVALUE(Live_Event__r.Start_Date__c)) == DAY(DATEVALUE(Live_Event__r.End_Date__c)), /* Condition 2: If event is ONE Day */
+&quot;&quot;, /* show nothing */
+&quot; - &quot; &amp;
+If(MONTH(DATEVALUE(Live_Event__r.Start_Date__c)) == MONTH(DATEVALUE(Live_Event__r.End_Date__c)), /*Condition 3: If start and end date is the same month */
+TEXT(DAY(DATEVALUE(Live_Event__r.End_Date__c))) , /* Show Day EndDate*/
+CASE(MONTH(DATEVALUE(Live_Event__r.End_Date__c)), /* ELSE show Month and Day of event EndDate */
+1, &quot;January&quot;,
+2, &quot;February&quot;,
+3, &quot;March&quot;,
+4, &quot;April&quot;,
+5, &quot;May&quot;,
+6, &quot;June&quot;,
+7, &quot;July&quot;,
+8, &quot;August&quot;,
+9, &quot;September&quot;,
+10, &quot;October&quot;,
+11, &quot;November&quot;,
+12, &quot;December&quot;,
+	&quot;None&quot;) 
+&amp; &quot; &quot; /* Spacing*/
+&amp; TEXT(DAY(DATEVALUE(Live_Event__r.End_Date__c))) /* Day EndDate*/
+) /*End Condition 3*/
+) /*End Condition 2*/
+&amp; &quot;, &quot; /*comma before the year*/
+&amp; TEXT(YEAR(DATEVALUE(Live_Event__r.End_Date__c))) /*Year of EndDate */
+&amp; IF( ISBLANK(Live_Event__r.Venue__c),/* Condition 4: If Event is Physical type (Venue__c is not null) */
+&quot;&quot;, /* Show nothing*/
+BR() &amp; Live_Event__r.Venue__r.Name &amp; BR() &amp; Live_Event__r.Venue__r.City__c &amp; &quot;, &quot; &amp; Live_Event__r.Venue__r.State__c /*ELSE Show City and State of Location*/
+)/* End Condition 4*/
+) /*End Condition 1*/</formula>
+        <label>Time and Place</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique_MSR__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Used to check for duplicates of manuscript reviews per reviewer.</description>
+        <externalId>false</externalId>
+        <label>Unique MSR</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CME Credit</label>
+    <listViews>
+        <fullName>Live_Events</fullName>
+        <columns>Contact__c</columns>
+        <columns>NAME</columns>
+        <columns>Event__c</columns>
+        <columns>Event_Code__c</columns>
+        <columns>Awarded_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CME__c.Live_Event</value>
+        </filters>
+        <label>Live Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Manuscript_Reviews</fullName>
+        <columns>MSR_Number__c</columns>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>Awarded_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CME__c.Manuscript_Review</value>
+        </filters>
+        <label>Manuscript Reviews</label>
+    </listViews>
+    <nameField>
+        <label>CME Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CME Credits</pluralLabel>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Enduring_Material</fullName>
+        <active>true</active>
+        <label>Enduring Material</label>
+        <picklistValues>
+            <picklist>Bias__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CME_Type__c</picklist>
+            <values>
+                <fullName>Non Physician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Change__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Consent_to_Send__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Type__c</picklist>
+            <values>
+                <fullName>Internet Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Live_Event</fullName>
+        <active>true</active>
+        <label>Live Event</label>
+        <picklistValues>
+            <picklist>Bias__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CME_Type__c</picklist>
+            <values>
+                <fullName>Non Physician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Change__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Consent_to_Send__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Type__c</picklist>
+            <values>
+                <fullName>Internet Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Manuscript_Review</fullName>
+        <active>true</active>
+        <label>Manuscript Review</label>
+        <picklistValues>
+            <picklist>Bias__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CME_Type__c</picklist>
+            <values>
+                <fullName>Non Physician</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Change__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Consent_to_Send__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Type__c</picklist>
+            <values>
+                <fullName>Internet Live</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Credits_cannot_be_greater_than_max</fullName>
+        <active>true</active>
+        <description>CME credits claimed cannot be greater than max credits allowed for a given event.</description>
+        <errorConditionFormula>AND(Credits_Available__c &gt; 0 ,CME_Hours__c &gt; Credits_Available__c)</errorConditionFormula>
+        <errorDisplayField>CME_Hours__c</errorDisplayField>
+        <errorMessage>The amount of credits claimed is larger than the available credits for this event.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Conga_Composer_Enduring_Material_Certificate</fullName>
+        <availability>online</availability>
+        <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://aacr--apxtconga4.na73.visual.force.com/a2Z1I000001Lga9UAC
+21-Aug-2020 02:33:55 PM</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Enduring Material Certificate</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!CME__c.Id}
+
+&amp;ReportId=[BatchcreateEMCertifi]00O1I000006Rehu
+
+&amp;TemplateId=a2b1I0000017ogy
+
+&amp;CongaEmailTemplateId=a2S1I0000015R8G
+
+&amp;DefaultPDF=1
+&amp;EmailToId={!CME__c.Contact_ID__c}
+&amp;SC0=1
+&amp;SC1=Attachments
+&amp;EmailFromId=0D21I000000gBaC
+&amp;EmailBCC=cme@aacr.org
+&amp;AC0=1</url>
+        <width>900</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Conga_Composer_Live_Event_Certificate</fullName>
+        <availability>online</availability>
+        <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://aacr--apxtconga4.na73.visual.force.com/a2Z1I000000aYdgUAE
+28-Jan-2019 03:04:53 PM</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Live Event Certificate</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!CME__c.Id}
+
+&amp;ReportId=[LiveEventCerts]00O1I000006jt8m
+
+&amp;TemplateId=a2b1I000000awpR
+
+&amp;CongaEmailTemplateId=a2S1I0000015R8G
+
+&amp;DefaultPDF=1
+&amp;EmailToId={!CME__c.Contact_ID__c}
+&amp;SC0=1
+&amp;SC1=Attachments
+&amp;EmailFromId=0D21I000000gBaC
+&amp;EmailBCC=cme@aacr.org
+&amp;AC0=1</url>
+        <width>900</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Conga_Composer_Manuscript_Review_Certificates</fullName>
+        <availability>online</availability>
+        <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://aacr--apxtconga4.na73.visual.force.com/a2Z1I000000aYdbUAE
+28-Jan-2019 03:05:28 PM</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>660</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Manuscript Review Certificates</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!CME__c.Id}
+
+&amp;ReportId=[MSRCertReport]00O1I000006jt8X
+
+&amp;TemplateId=a2b1I000000awpM
+
+&amp;CongaEmailTemplateId=a2S1I0000015R7r
+
+&amp;DefaultPDF=1
+&amp;EmailToId={!CME__c.Contact_ID__c}
+&amp;SC0=1
+&amp;SC1=Attachments
+&amp;EmailFromId=0D21I000000gBaC
+&amp;EmailBCC=cme@aacr.org
+&amp;AC0=1</url>
+        <width>900</width>
+    </webLinks>
+</CustomObject>

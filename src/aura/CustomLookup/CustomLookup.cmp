@@ -1,0 +1,109 @@
+<!--
+ - Created by lauren.lezberg on 3/21/2019.
+ -->
+
+<aura:component controller="CustomLookupController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes" access="global">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="isRequired" type="Boolean" default="false" description="show required asterisk"/>
+    <aura:attribute name="hasError" type="Boolean" default="false" description="does component have error"/>
+    <aura:attribute name="objectAPIName" type="string" default="" required="true" description="API Name of object for display records" access="public"/>
+    <aura:attribute name="IconName" type="string" default="" description="Name of icon to display for records" access="public"/>
+    <aura:attribute name="selectedId" type="String" description="Id of selected record for initial load" access="public"/>
+    <aura:attribute name="allowNewRecord" type="Boolean" description="Can new record be created from inside lookup" access="public"/>
+    <aura:attribute name="filterString" type="String" description="query string for filtering results" access="public"/>
+    <aura:attribute name="SearchKeyWord" type="string" description="Search word string to use to filter records" access="public"/>
+    <aura:attribute name="label" type="string" default="" description="Label for lookup search bar" access="public"/>
+    <aura:attribute name="Message" type="String" default="" description="Message to display for any error conditions" access="public"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="selection" type="sObject" default="{}" description="Used to store selected sObject Record" access="private"/>
+    <aura:attribute name="listOfSearchRecords" type="List" description="Used to store the list of search records which are returned based on the SearchKeyWord attribute" access="private"/>
+    <aura:attribute name="recordTypeName" type="String" default="Unapproved Account" description="Default record type for new records" access="private"/>
+    <aura:attribute name="showNewRecordModal" type="Boolean" description="Displays or hides new record modal" default="false" access="private"/>
+
+
+    <!--EVENT HANDLERS-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="oSelectedRecordEvent" event="c:SelectedObjectRecordEvt" action="{!c.handleComponentEvent}"/>
+    <aura:registerEvent name="createNewRecordFromLookup" type="c:CreateNewRecordFromLookup"/>
+    <aura:method name="clearAccount" action="{!c.clear}" access="public"/>
+    <aura:method name="refreshLookup" action="{!c.doInit}" access="public"/>
+
+    <div onmouseleave="{!c.onblur}" aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close" data-select="single">
+        <label class="slds-form-element__label" for="lookup-348">
+            <aura:if isTrue="{!v.isRequired}">
+                <abbr class="slds-required">*</abbr>
+            </aura:if>
+            {!v.label}
+        </label>
+
+        <!--SEARCH BAR-->
+        <aura:if isTrue="{!not(v.showNewRecordModal)}">
+        <!--<div class="slds-form-element__control">-->
+            <div class="{!v.hasError?'slds-has-error slds-input-has-icon slds-input-has-icon--right':'slds-input-has-icon slds-input-has-icon--right'}">
+                <!-- SELECTED RECORD -->
+                <div aura:id="lookup-pill" class="slds-pill-container slds-hide">
+                    <div class="slds-pill pillSize">
+                        <div class="">
+                      <span class="slds-pill__icon_container">
+                        <span class="slds-icon_container" title="{!v.IconName}">
+                          <lightning:icon iconName="{!v.IconName}" alternativeText="{!v.IconName}"/>
+                        </span>
+                      </span>
+                            <span class="slds-pill__label">{!v.selection.Name}</span>
+                        </div>
+                        <div class="slds-col">
+                            <div class="slds-clearfix">
+                                <div class="slds-float_right">
+                                    <lightning:buttonIcon alternativeText="Remove" iconName="utility:close" onclick="{!c.clear}" variant="bare"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                <div aura:id="lookup-pill" class="slds-pill-container slds-hide">-->
+<!--                    <lightning:pill class="pillSize" label="{!v.selection.Name}" name="{!v.selection.Name}" onremove="{! c.clear }">-->
+<!--                        <aura:set attribute="media">-->
+<!--                            <lightning:icon iconName="{!v.IconName}" alternativeText="{!v.IconName}"/>-->
+<!--                        </aura:set>-->
+<!--                    </lightning:pill>-->
+<!--                </div>-->
+                <div aura:id="lookupField" class="slds-show">
+                    <ui:inputText click="{!c.onfocus}" updateOn="keyup" keyup="{!c.keyPressController}" class="slds-text-heading_medium slds-lookup__search-input slds-input leftPaddingClass" value="{!v.SearchKeyWord}" placeholder="Search..." />
+                </div>
+            </div>
+            <div class="{!v.hasError?'slds-required slds-form-element__help':'slds-hide'}">Complete Field.</div>
+        <!--</div>-->
+        </aura:if>
+        <!--LOOKUP RESULT LIST-->
+        <ul style="min-height:40px;margin-top:0px !important" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+            <lightning:spinner class="slds-hide" variant="brand" size="small" aura:id="mySpinner"/>
+            <div class="slds-text-heading_medium">{!v.Message}</div>
+            <aura:if isTrue="{!not(v.showNewRecordModal)}">
+                <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                    <c:CustomLookupResult oRecord="{!singleRec}" IconName="{!v.IconName}"/>
+                </aura:iteration>
+            </aura:if>
+
+            <!-- CREATE NEW RECORD FORM -->
+            <aura:if isTrue="{!and(v.showNewRecordModal, v.allowNewRecord)}">
+                <lightning:buttonIcon iconName="utility:close" class="slds-float_right slds-m-right_small" onclick="{!c.closeNewRecordModal}"/>
+                <label style="font-weight: bold;" class="slds-text-heading_medium slds-align_absolute-center">{!'Create New ' + v.objectAPIName}</label>
+                <div class="slds-m-around_medium" onkeyup="{!c.enterPressed}">
+                    <lightning:input aura:id="newAccountName" label="{!v.objectAPIName + 'Name'}" class="slds-text-heading_medium" placeholder="Enter new account name here."/>
+                    <div class="slds-align_absolute-center slds-m-top_small">
+                    <lightning:button label="Save" variant="brand" class=" slds-m-left_medium slds-text-heading_medium slds-p-around_small" onclick="{!c.handleSaveRecord}"/>
+                    </div>
+                </div>
+            </aura:if>
+
+            <aura:if isTrue="{!and(v.allowNewRecord, not(v.showNewRecordModal))}">
+            <div class="slds-align_absolute-center slds-m-top_small">
+                <lightning:button label="{!'Create New ' + v.objectAPIName}" variant="brand" class="slds-text-heading_medium slds-p-around_small" iconName="utility:add" onclick="{!c.showNewRecordModal}"/>
+            </div>
+            </aura:if>
+        </ul>
+
+    </div>
+
+</aura:component>

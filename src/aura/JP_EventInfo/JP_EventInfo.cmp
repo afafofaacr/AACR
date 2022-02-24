@@ -1,0 +1,163 @@
+<!--
+ - Created by lauren.lezberg on 11/6/2019.
+ -->
+
+<aura:component description="JP_EventInfo" controller="JP_EventInfoController">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" description="The current step of the process"/>
+    <aura:attribute name="mapMarkers" type="Object" description="map markers for venue address"/>
+    <aura:attribute name="zoomLevel" type="Integer" default="16" description="zoom level for venue map"/>
+    <aura:attribute name="disabled" type="Boolean" default="false"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="eventId" type="String"/>
+    <aura:attribute name="nextStepId" type="String" access="private"
+                    description="next step id, used for order of saving operations"/>
+    <aura:attribute name="nextCmpName" type="String" access="private"
+                    description="next component name, user for order of saving operations"/>
+    <aura:attribute name="modalOpen" type="Boolean" default="false" description="Venue modal is open"/>
+    <aura:attribute name="processing" type="Boolean" description="Component is processing" default="true"/>
+    <aura:attribute name="zoneId" type="String" description="Default zone Id"/>
+    <aura:attribute name="pVenueId" type="String" description="Physical venue Id"/>
+    <aura:attribute name="vVenueId" type="String" description="Virtual venue Id"/>
+
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pVenueId}" action="{!c.handleVenueChange}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <!-- NOTIFICATIONS -->
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+
+    <lightning:recordEditForm
+            aura:id="editForm"
+            onload="{!c.handleLoad}"
+            onsuccess="{!c.handleSuccess}"
+            objectApiName="BR_Event__c">
+
+        <lightning:messages/>
+        <aura:if isTrue="{!v.processing}">
+            <lightning:spinner alternativeText="Loading" size="medium"/>
+            <aura:set attribute="else">
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_3-of-5 ">
+                        <!-- EVENT INFO -->
+                        <div class="slds-text-title_caps">Basic Event Information</div>
+                        <div class="slds-box slds-m-bottom_medium">
+                            <div class="slds-hide">
+                                <lightning:inputField fieldName="BR_Events_Zone__c" value="{!v.zoneId}"/>
+                                <lightning:inputField fieldName="Registration_Form__c"/>
+                                <lightning:inputField aura:id="parentEvt" fieldName="Parent_Event__c"/>
+                            </div>
+                            <lightning:inputField aura:id="evtName" fieldName="Name" required="true"/>
+
+                            <aura:if isTrue="{!empty(v.eventId)}">
+                                <lightning:input aura:id="tLabel" class="slds-m-left_xx-small slds-m-bottom_x-small slds-m-right_xx-small" label="Ticket Label" required="true" onfocus="{!c.handleTicketLabelChange}" onclick="{!c.handleTicketLabelChange}" onchange="{!c.populateTLabel}" />
+                                <lightning:inputField aura:id="tLabel2" fieldName="Ticket_Label__c" required="true" class="slds-hide"/>
+                            </aura:if>
+
+                            <div class="slds-m-left_xx-small slds-m-right_xx-small slds-m-bottom_x-small">
+                            <c:CustomLookup aura:id="evtLookup" objectAPIName="BR_Event__c" IconName="standard:event" filterString="RecordType.Name!='Cancelled' AND Parent_Event__c =null AND End_Date__c >= TODAY" allowNewRecord="false" label="Parent Event"/>
+                            </div>
+
+                            <lightning:inputField aura:id="category" fieldName="Category__c" onchange="{!c.handleCategoryChange}"/>
+                            <lightning:inputField aura:id="jpInstitution" fieldName="Joint_Providership_Institution__c" class="slds-hide"/>
+                            <lightning:inputField aura:id="stage" fieldName="Event_Stage__c" required="true" onchange="{!c.handleStageChange}"/>
+
+                            <lightning:inputField fieldName="Description__c"/>
+                            <br/>
+                            <div class="slds-grid">
+                                <lightning:inputField fieldName="Start_Date__c"/>
+                                <lightning:inputField fieldName="End_Date__c"/>
+                            </div>
+                            <div class="slds-grid">
+                            <lightning:inputField aura:id="hideDate" fieldName="Hide_Date_Time__c" class="slds-hide"/>
+                            </div>
+                        </div>
+
+                        <div class="slds-text-title_caps">Links</div>
+                        <div class="slds-box slds-m-bottom_medium">
+                            <div class="slds-text-color_weak slds-text-body_regular">**Please make sure all links
+                                include http or https.
+                            </div>
+                            <div class="slds-grid">
+                                <lightning:inputField fieldName="Draft_Program__c"/>
+                                <lightning:inputField fieldName="Disclosure_Link__c"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slds-col">
+
+                        <!-- VENUES -->
+                        <div class="slds-text-title_caps">Venue Information</div>
+                        <div class="slds-box slds-m-bottom_medium">
+                            <c:CustomLookup aura:id="vVenue" selectedId="{!v.vVenueId}" objectAPIName="Venue__c"
+                                            IconName="standard:address" label="Virtual Venue"
+                                            filterString="RecordType.Name='Virtual'" allowNewRecord="false"/>
+                            <br/>
+                            <c:CustomLookup aura:id="pVenue" selectedId="{!v.pVenueId}" objectAPIName="Venue__c"
+                                            IconName="standard:address" label="Physical Venue"
+                                            filterString="RecordType.Name='Physical'" allowNewRecord="false"/>
+
+                            <br/>
+
+                            <lightning:inputField aura:id="virtualVenue" fieldName="Virtual_Venue__c"
+                                                  class="slds-hide"/>
+                            <lightning:inputField aura:id="venue" fieldName="Venue__c" class="slds-hide"/>
+
+                            <div class="slds-clearfix">
+                                <div class="slds-float_right">
+                                    <lightning:button label="Add New Venue" iconName="utility:add"
+                                                      onclick="{!c.openModal}"/>
+                                </div>
+                            </div>
+
+                            <div aura:id="map" class="slds-m-top_medium">
+                                <aura:if
+                                        isTrue="{!and(v.mapMarkers.length > 0,v.mapMarkers[0].location.Country!=null )}">
+                                    <div class="slds-text-body_regular">{!v.mapMarkers[0].location.Street}</div>
+                                    <div class="slds-text-body_regular">{!v.mapMarkers[0].location.City + ', ' + v.mapMarkers[0].location.State + '  ' + v.mapMarkers[0].location.PostalCode}</div>
+                                    <div class="slds-text-body_regular">{!v.mapMarkers[0].location.Country}</div>
+                                    <lightning:map
+                                            mapMarkers="{! v.mapMarkers }"
+                                            zoomLevel="{!v.zoomLevel}"/>
+                                </aura:if>
+                            </div>
+                        </div>
+
+                        <!-- GL Account -->
+                        <div class="slds-text-title_caps">GL Account</div>
+                        <div class="slds-box slds-m-bottom_medium">
+                            <lightning:inputField fieldName="Income_Account__c"/>
+                        </div>
+                        <!-- Letter of Participation -->
+                        <div class="slds-text-title_caps">Letter of Participation</div>
+                        <div class="slds-box slds-m-bottom_medium">
+                            <pre>
+                            <lightning:inputRichText aura:id="lopInput" label="Letter of Participation" />
+                                </pre>
+                            <lightning:inputField aura:id="lopField" fieldName="Letter_Participation__c" class="slds-hide" />
+                        </div>
+                        <!-- Letter of Invitation -->
+                        <div class="slds-text-title_caps">Letter of Invitation</div>
+                        <div class="slds-box slds-m-bottom_medium">
+                            <pre>
+                            <lightning:inputRichText aura:id="loiInput" label="Letter of Invitation" />
+                                </pre>
+                            <lightning:inputField aura:id="loiField" fieldName="Letter_Invitation__c" class="slds-hide" />
+                        </div>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </lightning:recordEditForm>
+
+    <!--NEW VENUE MODAL-->
+    <c:VenueNewModal isOpen="{!v.modalOpen}" venueId="{!v.pVenueId}" redirect="false"/>
+</aura:component>

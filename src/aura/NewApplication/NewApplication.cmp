@@ -1,0 +1,20 @@
+<!--
+ - Created by lauren.lezberg on 8/8/2019.
+ -->
+
+<aura:component description="NewApplicationQuickAction" implements="force:lightningQuickAction,force:appHostable,flexipage:availableForAllPageTypes" controller="NewApplicationController">
+    <aura:attribute name="recordId" type="String" description="Contact record id"/> 
+    <aura:attribute name="processing" type="Boolean" description="An action is processing"/>
+    <aura:attribute name="showButton" type="Boolean" description="Is contact eligible for new application and does current user have permission to see the button" default="false"/>
+
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+
+    <aura:if isTrue="{!v.showButton}">
+        <lightning:button variant="brand"  iconName="standard:record" onclick="{!c.startNewApplication}" label="{!v.processing?'Processing...': 'New Application'}" disabled="{!v.processing}"/>
+    </aura:if>
+
+</aura:component>

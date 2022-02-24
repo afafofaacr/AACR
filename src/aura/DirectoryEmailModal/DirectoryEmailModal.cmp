@@ -1,0 +1,38 @@
+<!--
+ - Created by lauren.lezberg on 5/22/2019.
+ -->
+
+<aura:component description="DirectoryEmailModal" controller="DirectoryController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="isOpen" type="Boolean" default="false" description="Show or hide email modal" access="public"/>
+    <aura:attribute name="emailAddr" type="String" description="Email address of selected contact record" access="public"/>
+
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="subject" type="String" description="Subject of email" access="private"/>
+    <aura:attribute name="emailBody" type="String" description="Body of email" access="private"/>
+    <aura:attribute name="hasError" type="Boolean" description="Email did not send error message" access="private"/>
+
+
+    <div class="{!v.isOpen ? 'slds-show': 'slds-hide'}" style="height: 640px; position:absolute;">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Email Member</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <aura:if isTrue="{!v.hasError}">
+                        <div class="slds-text-heading_medium">Email could not be sent. Please try again later or email the membership department at membership@aacr.org.</div>
+                    </aura:if>
+                    <lightning:input label="Subject" required="true" value="{!v.subject}" />
+                    <lightning:textarea aura:id="body" label="Body" required="true" value="{!v.emailBody}" placeholder="Type message here..."/>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button label="Cancel" variant="brand" onclick="{!c.closeModal}" />
+                    <lightning:button label="Send" variant="neutral" onclick="{!c.sendEmail}" />
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</aura:component>

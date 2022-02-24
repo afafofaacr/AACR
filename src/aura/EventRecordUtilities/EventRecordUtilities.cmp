@@ -1,0 +1,30 @@
+<!--
+ - Created by lauren.lezberg on 4/8/2020.
+ -->
+
+<aura:component description="EventRecordUtilities" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="eventRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.recordId}"
+                      fields="RecordType.Name"
+                      targetFields="{!v.eventRecord}"
+                      targetError="{!v.recordLoadError}"/>
+
+
+    <div class="slds-box" style="background:white;">
+        <h2 class="slds-text-heading_small slds-m-bottom_small">AACR Quick Actions</h2>
+        <ul class="slds-p-around_small flex-container wrap" style="list-style: none;">
+            <li class="flex-item">
+                <c:SendSpeakerInviteBtn recordId="{!v.recordId}" />
+            </li>
+            <li class="flex-item">
+                <c:EventDeleteButton recordId="{!v.recordId}"/>
+            </li>
+            <li class="flex-item">
+                <c:EventCancelBtn recordId="{!v.recordId}"/>
+            </li>
+        </ul>
+    </div>
+</aura:component>

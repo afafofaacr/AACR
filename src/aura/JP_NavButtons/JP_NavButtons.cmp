@@ -1,0 +1,32 @@
+<!--
+ - Created by lauren.lezberg on 3/8/2019.
+ -->
+
+<aura:component description="JP_NavButtons" controller="JP_ProgressBarController"> 
+    <aura:attribute name="currentStepId" type="String" description="Current step of process"/>
+    <aura:attribute name="joinSteps" type="List" description="list of steps in join process"/>
+
+    <aura:attribute name="showButtons" type="Boolean" description="show next button" default="true"/>
+    <aura:attribute name="showPrevious" type="Boolean" description="show previous button" default="true"/>
+    
+
+    <aura:handler name="change" value="{!v.currentStepId}" action="{!c.checkButtonVisibility}"/>
+    <aura:registerEvent name="JP_StepChangeEvt" type="c:JP_StepChangeEvt"/>
+
+
+    <aura:if isTrue="{!v.showButtons}">
+    <div class="slds-align_absolute-center slds-m-top_large">
+        <div class="slds-grid ">
+            <div class="slds-col slds-m-right_small">
+                <lightning:button label="Cancel" title="Cancel" onclick="{! c.cancelJoin }" class="slds-p-top_medium slds-p-bottom_medium" />
+            </div>
+            <div class="{!v.showPrevious?'slds-col slds-m-right_small':'slds-hide'}">
+                <lightning:button label="Previous" title="Previous" onclick="{! c.goPrevious }" class="slds-p-around_medium"/>
+            </div>
+            <div class="slds-col">
+                <lightning:button label="Next" title="Next" onclick="{! c.goNext }" class="slds-p-around_medium"/>
+            </div>
+        </div>
+    </div>
+    </aura:if>
+</aura:component>

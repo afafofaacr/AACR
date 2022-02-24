@@ -1,0 +1,74 @@
+<!--
+ - Created by lauren.lezberg on 1/16/2019.
+ -->
+
+<aura:component description="JP_JournalSelections" controller="JP_ItemSelectionController"> 
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" />
+    <aura:attribute name="contactId" type="Id" description="Current contact recordId"/>
+    <aura:attribute name="journals" type="List" description="List of online and print journal items"/>
+    <aura:attribute name="isActiveMember" type="Boolean" description="Current user is active member or applying for active membership" default="false"/>
+<!--    <aura:attribute name="journalAddrExists" type="Boolean" default="false" description="Contact has associated journal address"/>-->
+    <aura:attribute name="selectedCOMP" type="String" description="Selected comp journal Id"/>
+    <aura:attribute name="compName" type="String" description="Selected comp journal name"/>
+    <aura:attribute name="isLoading" type="Boolean" description="Component is loading" default="true"/>
+    <aura:attribute name="isSaving" type="Boolean" description="Saving data" default="false"/>
+    <aura:attribute name="journalLoad" type="Boolean" description="Journals are loading" default="false"/>
+
+    <!-- PRIVATE ATTRIBUTES -->
+    <aura:attribute name="selectedJournals" access="private" type="List" description="List of selected journals"/>
+
+    <!-- AURA HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.compName}" action="{!c.compSelectChange}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <aura:if isTrue="{!v.isSaving}">
+        <div class="slds-align_absolute-center slds-var-m-bottom_xx-large">
+            <c:AACRSpinner/>
+        </div>
+        <aura:set attribute="else">
+            <div id="errors" aura:id="errors"/>
+<!--            <div class="slds-grid slds-gutters">-->
+                <aura:if isTrue="{!v.isActiveMember}">
+<!--                    <div class="slds-col slds-size_1-of-2">-->
+
+                        <div class="">
+                            <c:JP_CompJournalSelector aura:id="comps" selectedComp ="{!v.selectedCOMP}" selectedCompName="{!v.compName}"/>
+                        </div>
+                    <div class="slds-m-bottom_large" style="font-size:1.5rem;"><strong>Active</strong> membership includes an online or
+                        print with online subscription to <strong>one</strong> AACR journal of choice. Shipping rates
+                        will apply for international members selecting print with online. </div>
+<!--                    </div>-->
+                </aura:if>
+<!--                <div class="slds-col slds-size_1-of-2">-->
+                    <c:UpdateJournalAddressModal aura:id="journalAddress" contactId="{!v.contactId}"/>
+<!--                </div>-->
+<!--            </div>-->
+<!--            <label class="slds-form-element__label">Buy Up Journals</label>-->
+
+            <aura:if isTrue="{!v.isLoading}">
+                <div class="slds-align_absolute-center slds-var-m-bottom_xx-large">
+                    <c:AACRSpinner/>
+                </div>
+                <aura:set attribute="else">
+                    <div class="{!or(and(v.isActiveMember, v.selectedCOMP!=null), not(v.isActiveMember))?'slds-show': 'slds-hide'}">
+<!--                        <lightning:layout multipleRows="true" verticalAlign="stretch">-->
+                            <aura:iteration items="{!v.journals}" var="journal" >
+<!--                                <lightning:layoutItem flexibility="auto" padding="around-small" class="{!journal.hidden?'slds-hide':'slds-show'}">-->
+                                    <div style="height:100%;" class="{!journal.hidden?'slds-hide':'slds-show'}">
+                                        <c:JP_JournalItem aura:id="journalItem" items="{!journal.items}" imgURL="{!journal.imgURL}" itemPriceMap="{!journal.itemPriceMap}" name="{!journal.name}" selectedItem="{!journal.selectedItem}" itemDescription="{!journal.itemDescription}" itemClass="{!journal.itemClass}" openAccessURL="{!journal.locationURL}"/>
+                                    </div>
+                                <br/>
+<!--                                </lightning:layoutItem>-->
+                            </aura:iteration>
+<!--                        </lightning:layout>-->
+                    </div>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

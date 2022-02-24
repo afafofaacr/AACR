@@ -1,0 +1,42 @@
+<!--
+ - Created by lauren.lezberg on 2/11/2021.
+ -->
+
+<aura:component description="CareerFairReg" controller="CareerFairRegController">
+    <aura:attribute name="stepId" type="String" description="id of step in process"/>
+    <aura:attribute name="contactId" type="String" description="id of current contact"/>
+    <aura:attribute name="eventId" type="String" description="id of current event"/>
+    <aura:attribute name="salesOrderId" type="String" description="id of current contact"/>
+    <aura:attribute name="fileId" type="String" description="id of uploaded file"/>
+    <aura:attribute name="isLoading" type="Boolean" description="is cmp loading" default="true"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.onStepChange}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+
+
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="slds-align_absolute-center">
+            <c:AACRSpinner loadingText="Loading..."/>
+        </div>
+        <aura:set attribute="else">
+    <lightning:card class="slds-p-around_medium">
+        <div class="slds-text-heading_large">
+            The AACR will host its first VIRTUAL Cancer and Biomedical Research Career Fair on Monday, May 17, 2021 from 9am to 3pm (EST) during the AACR Virtual Annual Meeting . If you are a research scientist seeking scientific opportunities this is going to be an exciting opportunity for you. Plan to attend this premier virtual recruiting event.
+        </div>
+        <br/><br/>
+        <div class="slds-align_absolute-center">
+            <lightning:input aura:id="register" type="checkbox" class="slds-text-heading_large" label="Attend the AACR 2021 Virtual Career Fair" onchange="{!c.handleCheckboxChange}"/>
+        </div>
+        <br/><br/>
+        <div aura:id="resumePanel" class="slds-hide">
+            <div class="slds-align_absolute-center">
+                <div class="slds-text-heading_large">
+                    <c:JP_FileUpload aura:id="resume" fileNameOverride="Resume" required="true" inputLabel="CV/Resume" recordId="{!v.contactId}"/>
+                </div>
+            </div>
+        </div>
+    </lightning:card>
+        </aura:set>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,9 @@
+<!--
+ - Created by afaf.awad on 8/4/2021.
+ -->
+
+<aura:component description="EnableCommunityUser" controller="EnableCommunityUserController"
+                implements="force:lightningQuickAction,force:appHostable,force:hasRecordId,force:hasSObjectName">
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+</aura:component>

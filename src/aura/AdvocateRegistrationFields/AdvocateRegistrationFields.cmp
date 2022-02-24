@@ -1,0 +1,43 @@
+<!--
+ - Created by lauren.lezberg on 1/13/2021.
+ -->
+
+<aura:component description="AdvocateRegistrationFields">
+    <aura:attribute name="contactId" type="String" description="id of the contact"/>
+    <aura:attribute name="advocateMsg" type="String" description="advocate messaging"/>
+    <aura:attribute name="isValid" type="Boolean" description="is component valid"/>
+
+    <aura:method name="validate" action="{!c.validateForm}"/>
+
+
+    <lightning:recordEditForm aura:id="editForm" onload="{!c.handleLoad}" onerror="{!c.handleError}"
+                              onsuccess="{!c.handleSuccess}" objectApiName="Contact" recordId="{!v.contactId}">
+        <lightning:messages/>
+        <lightning:inputField aura:id="isAdvocate" fieldName="Advocate__c" class="slds-hide"/>
+        <div class="slds-form_horizontal">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label"></label>
+                <div class="slds-form-element__control">
+                    <div class="slds-text-heading_large">
+                        Patient advocates represent a broad range of communities with a stake in supporting cancer
+                        research and policy. We recognize that patient advocates may be members of several stakeholder
+                        communities. For most activities, we ask participants to identify the viewpoint they are
+                        primarily representing. However, we find it valuable to recognize all the perspectives that an
+                        advocate has experienced across the research continuum. (Adapted from the PCORI 2018 Defining
+                        Stakeholders)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <lightning:inputField aura:id="pStakeholder" fieldName="Primary_Stakeholder__c"
+                              onchange="{!c.handlePrimaryChange}"/>
+        <lightning:inputField aura:id="primaryOther" fieldName="Primary_Stakeholder_Other__c" class="slds-hide"
+                              onchange="{!c.handlePrimaryOtherChange}"/>
+        <lightning:inputField aura:id="sStakeholder" fieldName="Secondary_Stakeholder__c"
+                              onchange="{!c.handleSecondaryChange}"/>
+        <lightning:inputField aura:id="secondaryOther" fieldName="Secondary_Stakeholder_Other__c" class="slds-hide"
+                              onchange="{!c.handleSecondaryOtherChange}"/>
+
+    </lightning:recordEditForm>
+
+</aura:component>

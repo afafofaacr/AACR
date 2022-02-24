@@ -1,0 +1,137 @@
+/**
+ * Created by lauren.lezberg on 9/3/2019.
+ */
+.THIS .slds-button_brand{
+    background-color:token(BlueD1);
+    border-color:token(BlueD1);
+    padding:5px;
+    font-size:1.25rem;
+}
+
+.THIS .slds-button_brand:active{
+    background-color:token(BlueD1);
+    border-color:token(BlueD1);
+}
+
+.THIS .slds-button_brand:hover{
+    background-color:token(BlueD1);
+    border-color:token(BlueD1);
+}
+
+.THIS .slds-form-element__label:empty{
+    display:none;
+}
+
+.THIS .slds-icon-action-new-contact{
+    background-color: token(BlueD1);
+}
+
+.THIS .slds-icon-action-info{
+    background-color:token(BlueD1);
+}
+
+.THIS .slds-card{
+    /*background-color:token(BlueL1);*/
+    border: 2px solid token(BlueD1);
+}
+
+.THIS .helpFormBox{
+    border: 4px solid token(BlueD1);
+    background: token(BlueL1);
+}
+
+
+
+
+
+.THIS .slds-form-element__help{
+    font-size:1rem;
+}
+
+.THIS .slds-text-heading_small {
+    font-size:2rem;
+}
+
+.THIS .slds-text-heading_large{
+    font-size: 3.5rem;
+}
+
+.THIS .slds-text-heading_medium{
+    font-size: 1.5rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size:1.25rem;
+    font-weight:400;
+}
+
+.THIS .slds-input{
+    font-size: 1.25rem;
+}
+
+.THIS .slds-select{
+    font-size:1.25rem;
+}
+
+.THIS .slds-lookup.slds-is-open .slds-lookup__menu{
+    z-index:1000;
+    position:absolute;
+}
+
+.THIS .slds-listbox_vertical .slds-listbox__option_plain{
+    font-size:1.25rem;
+}
+
+.THIS .slds-textarea{
+    font-size:1.25rem;
+    height:10rem;
+}
+
+
+.THIS .slds-file-selector__dropzone{
+    font-size:1.25rem;
+    padding: .5rem;
+}
+
+.THIS .slds-file-selector_files .slds-file-selector__button{
+    color:token(BlueD1);
+}
+
+.THIS .slds-file-selector__button{
+    padding:1rem;
+}
+
+.THIS .slds-radio_button-group{
+    font-size:1.25rem;
+    border:0;
+}
+
+.THIS .slds-radio_button__label{
+    padding:0.5rem;
+}
+
+.THIS .slds-radio_button{
+    display:contents;
+}
+
+.THIS .slds-radio_button:first-child>.slds-radio_button__label{
+    color:token(BlueD1);
+    border:1px solid token(BlueD1);
+}
+
+.THIS .slds-radio_button [type=radio]:checked+.slds-radio_button__label:hover{
+    background-color:token(BlueD1);
+}
+
+.THIS .slds-radio_button [type=radio]:checked+.slds-radio_button__label{
+    background-color:token(BlueD1);
+}
+
+.THIS .slds-radio_button:last-child>.slds-radio_button__label{
+    color:token(BlueD1);
+    border:1px solid token(BlueD1);
+}
+
+.THIS .slds-form-element_horizontal .slds-form-element__control{
+    padding-left:0%;
+}

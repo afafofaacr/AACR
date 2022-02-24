@@ -1,0 +1,24 @@
+/**
+ * Created by afaf.awad on 11/5/2021.
+ */
+
+.THIS.customRadioCls .slds-form-element__control .slds-radio{
+    display : inline-block !important;
+}
+
+.THIS.multiSelectHorizontal .slds-form-element__control {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+}
+
+.THIS.multiSelectVertical .slds-form-element__control {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.THIS.removeBoldCls .slds-form-element__legend{
+    font-weight: normal !important;
+}

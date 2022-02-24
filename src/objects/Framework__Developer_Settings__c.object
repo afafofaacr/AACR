@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>**Public** Developer settings for working with Framework and extending packages.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Framework__CDN_Base_Url__c</fullName>
+        <defaultValue>&quot;https://fonteva-cdn.s3.amazonaws.com/lux&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>** Warning! Do Not Modify ** The base url for the cdn server used to surface assets for framework (lux) ui.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>** Warning! Do Not Modify ** The base url for the cdn server used to surface assets for framework (lux) ui. Do not include a trailing &quot;/&quot;</inlineHelpText>
+        <label>CDN Base Url</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Developer Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

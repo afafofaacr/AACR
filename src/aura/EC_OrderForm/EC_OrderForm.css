@@ -1,0 +1,72 @@
+/**
+ * Created by afaf.awad on 2/8/2021.
+ */
+
+.THIS .slds-form-element__help{
+    font-size: 1rem;
+}
+
+.THIS .tableStylingTop{
+    height: 20rem;
+    width: 75%;
+    margin:auto;
+}
+
+.THIS .tableStyling{
+    height: 30rem;
+    width: 75%;
+    margin:auto;
+}
+
+.THIS .filterTable{
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+
+.THIS .slds-media__body{
+    font-size: 1.5rem;
+}
+.THIS .header{
+    font-size: 2rem;
+    font-weight:500;
+}
+
+.THIS .slds-form-element__static{
+    font-size: 1.5rem;
+    padding-left: .7rem;
+}
+
+.THIS .slds-form-element__label{
+    font-size: 1.5rem;
+    padding-left: .7rem;
+}
+
+.THIS label{
+    margin-bottom:0px;
+    padding: 0.70rem;
+    font-size: 1.5rem;
+    color: rgb(107,109,112);
+}
+
+.THIS .slds-input[readonly]{
+    font-size: 1.5rem;
+}
+
+.THIS .slds-input{
+    font-size: 1.5rem;
+}
+
+.THIS .navButtons{
+    background-color: token(aacrGreen);
+    border-color: token(aacrGreen);
+    color: white;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: .5rem;
+}
+
+.THIS .updateButton{
+    font-size: 1.5rem;
+    width: 100%;
+    padding: .8rem;
+}

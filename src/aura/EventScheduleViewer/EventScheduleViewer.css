@@ -1,0 +1,44 @@
+/**
+ * Created by lauren.lezberg on 1/13/2020.
+ */
+
+.THIS .headerRow {
+    background-color: rgba(238, 238, 238, 1);
+}
+
+.THIS a{
+    color: token(AACRBlue);
+}
+
+.THIS .header {
+    font-weight: 600;
+    padding: 8px;
+    margin: 5px;
+    background-color: token(AACRBlue);
+    color:white;
+}
+
+.THIS h3.slds-accordion__summary-heading{
+    flex-grow:0;
+}
+
+.THIS .slds-button{
+    color: token(AACRBlue);
+}
+
+.THIS .slds-button.slds-button_neutral{
+    color: token(AACRBlue);
+    border-color: token(AACRBlue);
+}
+
+.THIS .slds-button.slds-button_brand{
+    border-color: token(AACRBlue);
+    background-color: token(AACRBlue);
+    color:white;
+}
+
+.THIS .slds-button.slds-button_icon.slds-button_icon-brand{
+    border-color: token(AACRBlue);
+    background-color: token(AACRBlue);
+    color:white;
+}

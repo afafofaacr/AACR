@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Committee_Member__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Committee Member</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Committees</relationshipLabel>
+        <relationshipName>Committee_Members</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Committee_Name__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Committee Name</label>
+        <referenceTo>Committee__c</referenceTo>
+        <relationshipLabel>Committee Members</relationshipLabel>
+        <relationshipName>Committee_Members</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Committee_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Committee Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Annual Meeting</fullName>
+                    <default>false</default>
+                    <label>Annual Meeting</label>
+                </value>
+                <value>
+                    <fullName>Constituency Group</fullName>
+                    <default>false</default>
+                    <label>Constituency Group</label>
+                </value>
+                <value>
+                    <fullName>Journal Editorial Board</fullName>
+                    <default>false</default>
+                    <label>Journal Editorial Board</label>
+                </value>
+                <value>
+                    <fullName>Scientific Achievement Award</fullName>
+                    <default>false</default>
+                    <label>Scientific Achievement Award</label>
+                </value>
+                <value>
+                    <fullName>Scientific Grant Review</fullName>
+                    <default>false</default>
+                    <label>Scientific Grant Review</label>
+                </value>
+                <value>
+                    <fullName>Scientific Task Force</fullName>
+                    <default>false</default>
+                    <label>Scientific Task Force</label>
+                </value>
+                <value>
+                    <fullName>Scientific Working Group</fullName>
+                    <default>false</default>
+                    <label>Scientific Working Group</label>
+                </value>
+                <value>
+                    <fullName>Specialty Group</fullName>
+                    <default>false</default>
+                    <label>Specialty Group</label>
+                </value>
+                <value>
+                    <fullName>Standing</fullName>
+                    <default>false</default>
+                    <label>Standing</label>
+                </value>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                    <label>TBD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Member_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Member Role</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Advisory Editors</fullName>
+                    <default>false</default>
+                    <label>Advisory Editors</label>
+                </value>
+                <value>
+                    <fullName>Advocate</fullName>
+                    <default>false</default>
+                    <label>Advocate</label>
+                </value>
+                <value>
+                    <fullName>Associate Editor</fullName>
+                    <default>false</default>
+                    <label>Associate Editor</label>
+                </value>
+                <value>
+                    <fullName>Biostatistical Editor</fullName>
+                    <default>false</default>
+                    <label>Biostatistical Editor</label>
+                </value>
+                <value>
+                    <fullName>Breaking Insights Editor</fullName>
+                    <default>false</default>
+                    <label>Breaking Insights Editor</label>
+                </value>
+                <value>
+                    <fullName>Cancer Survivor</fullName>
+                    <default>false</default>
+                    <label>Cancer Survivor</label>
+                </value>
+                <value>
+                    <fullName>Chair</fullName>
+                    <default>false</default>
+                    <label>Chair</label>
+                </value>
+                <value>
+                    <fullName>Chair-Elect</fullName>
+                    <default>false</default>
+                    <label>Chair-Elect</label>
+                </value>
+                <value>
+                    <fullName>Chief Executive Officer</fullName>
+                    <default>false</default>
+                    <label>Chief Executive Officer</label>
+                </value>
+                <value>
+                    <fullName>Co-Chair</fullName>
+                    <default>false</default>
+                    <label>Co-Chair</label>
+                </value>
+                <value>
+                    <fullName>Deputy Editor</fullName>
+                    <default>false</default>
+                    <label>Deputy Editor</label>
+                </value>
+                <value>
+                    <fullName>Deputy Editor for Breaking Insights</fullName>
+                    <default>false</default>
+                    <label>Deputy Editor for Breaking Insights</label>
+                </value>
+                <value>
+                    <fullName>Deputy Editor for Controversy and Consensus</fullName>
+                    <default>false</default>
+                    <label>Deputy Editor for Controversy and Consensus</label>
+                </value>
+                <value>
+                    <fullName>Deputy Editor for Reviews</fullName>
+                    <default>false</default>
+                    <label>Deputy Editor for Reviews</label>
+                </value>
+                <value>
+                    <fullName>Director</fullName>
+                    <default>false</default>
+                    <label>Director</label>
+                </value>
+                <value>
+                    <fullName>Editor for Controvery and Consensus</fullName>
+                    <default>false</default>
+                    <label>Editor for Controvery and Consensus</label>
+                </value>
+                <value>
+                    <fullName>Editorial Board Member</fullName>
+                    <default>false</default>
+                    <label>Editorial Board Member</label>
+                </value>
+                <value>
+                    <fullName>Editor-in-Chief</fullName>
+                    <default>false</default>
+                    <label>Editor-in-Chief</label>
+                </value>
+                <value>
+                    <fullName>Executive Editor</fullName>
+                    <default>false</default>
+                    <label>Executive Editor</label>
+                </value>
+                <value>
+                    <fullName>Ex-Officio</fullName>
+                    <default>false</default>
+                    <label>Ex-Officio</label>
+                </value>
+                <value>
+                    <fullName>Fellow</fullName>
+                    <default>false</default>
+                    <label>Fellow</label>
+                </value>
+                <value>
+                    <fullName>Founding Chairman of the Board</fullName>
+                    <default>false</default>
+                    <label>Founding Chairman of the Board</label>
+                </value>
+                <value>
+                    <fullName>Founding Chairman of the Board and President Emeritus</fullName>
+                    <default>false</default>
+                    <label>Founding Chairman of the Board and President Emeritus</label>
+                </value>
+                <value>
+                    <fullName>Immediate Past President</fullName>
+                    <default>false</default>
+                    <label>Immediate Past President</label>
+                </value>
+                <value>
+                    <fullName>Journal Board Member</fullName>
+                    <default>false</default>
+                    <label>Journal Board Member</label>
+                </value>
+                <value>
+                    <fullName>Liaison</fullName>
+                    <default>false</default>
+                    <label>Liaison</label>
+                </value>
+                <value>
+                    <fullName>Member</fullName>
+                    <default>false</default>
+                    <label>Member</label>
+                </value>
+                <value>
+                    <fullName>Member at Large</fullName>
+                    <default>false</default>
+                    <label>Member at Large</label>
+                </value>
+                <value>
+                    <fullName>Past Chair</fullName>
+                    <default>false</default>
+                    <label>Past Chair</label>
+                </value>
+                <value>
+                    <fullName>Past President</fullName>
+                    <default>false</default>
+                    <label>Past President</label>
+                </value>
+                <value>
+                    <fullName>President</fullName>
+                    <default>false</default>
+                    <label>President</label>
+                </value>
+                <value>
+                    <fullName>President-Elect</fullName>
+                    <default>false</default>
+                    <label>President-Elect</label>
+                </value>
+                <value>
+                    <fullName>President Emeritus</fullName>
+                    <default>false</default>
+                    <label>President Emeritus</label>
+                </value>
+                <value>
+                    <fullName>Review Editor</fullName>
+                    <default>false</default>
+                    <label>Review Editor</label>
+                </value>
+                <value>
+                    <fullName>Scientific Editor</fullName>
+                    <default>false</default>
+                    <label>Scientific Editor</label>
+                </value>
+                <value>
+                    <fullName>Secretary-Treasurer</fullName>
+                    <default>false</default>
+                    <label>Secretary-Treasurer</label>
+                </value>
+                <value>
+                    <fullName>Secretary-Treasurer and CEO</fullName>
+                    <default>false</default>
+                    <label>Secretary-Treasurer and CEO</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor</fullName>
+                    <default>false</default>
+                    <label>Senior Editor</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor - Convergence and Technologies</fullName>
+                    <default>false</default>
+                    <label>Senior Editor - Convergence and Technologies</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor - Genome and Epigenome</fullName>
+                    <default>false</default>
+                    <label>Senior Editor - Genome and Epigenome</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor - Metabolism and Chemical Biology</fullName>
+                    <default>false</default>
+                    <label>Senior Editor - Metabolism and Chemical Biology</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor - Molecular Cell Biology</fullName>
+                    <default>false</default>
+                    <label>Senior Editor - Molecular Cell Biology</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor - Population and Prevention Science</fullName>
+                    <default>false</default>
+                    <label>Senior Editor - Population and Prevention Science</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor - Translational Science</fullName>
+                    <default>false</default>
+                    <label>Senior Editor - Translational Science</label>
+                </value>
+                <value>
+                    <fullName>Senior Editor - Tumor Biology and Immunology</fullName>
+                    <default>false</default>
+                    <label>Senior Editor - Tumor Biology and Immunology</label>
+                </value>
+                <value>
+                    <fullName>Special Advisor to Editor-in-Chief</fullName>
+                    <default>false</default>
+                    <label>Special Advisor to Editor-in-Chief</label>
+                </value>
+                <value>
+                    <fullName>Statistical Editor</fullName>
+                    <default>false</default>
+                    <label>Statistical Editor</label>
+                </value>
+                <value>
+                    <fullName>Statistical Reviewer</fullName>
+                    <default>false</default>
+                    <label>Statistical Reviewer</label>
+                </value>
+                <value>
+                    <fullName>Treasurer</fullName>
+                    <default>false</default>
+                    <label>Treasurer</label>
+                </value>
+                <value>
+                    <fullName>Trustee</fullName>
+                    <default>false</default>
+                    <label>Trustee</label>
+                </value>
+                <value>
+                    <fullName>Trustee Emeriti</fullName>
+                    <default>false</default>
+                    <label>Trustee Emeriti</label>
+                </value>
+                <value>
+                    <fullName>Vice Chair</fullName>
+                    <default>false</default>
+                    <label>Vice Chair</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Committee Member</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CM-{00000}</displayFormat>
+        <label>Committee Member Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Committee Members</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Committee_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Committee_Member__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

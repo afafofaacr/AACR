@@ -1,0 +1,8 @@
+<template>
+  <template if:true={displaySpinner}>
+    <!-- The parent/calling component needs to have this in it's class to keep the spinner overlay in bounds: .slds-is-relative 
+        See the js file for more instruction/examples.
+    -->
+    <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+  </template>
+</template>

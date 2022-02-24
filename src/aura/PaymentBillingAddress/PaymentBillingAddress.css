@@ -1,0 +1,46 @@
+/**
+ * Created by lauren.lezberg on 12/14/2020.
+ */
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url(/resource/Gotham/Gotham/GothamFont/GothamBook.ttf);
+}
+
+@font-face {
+    font-family: 'GothamMedium';
+    src: url(/resource/GothamNarrow/GothamNarrow/GothamNarrowtff/GothamNarrow-Medium.ttf);
+}
+
+
+.THIS label.slds-text-title_medium.slds-text-title_bold.slds-m-top_medium{
+    font-weight:700;
+
+}
+
+.THIS svg.slds-button__icon.slds-button__icon_left{
+    fill:white !important;
+}
+
+.THIS span.headerLabel{
+    font-family: 'GothamMedium' !important;
+    color: rgb(22, 50, 92);
+}
+
+.THIS .slds-text-heading_medium{
+    font-family: 'GothamBook';
+}
+
+
+/*.THIS [lightning-input_input-host]{*/
+/*    display:flex !important;*/
+/*}*/
+
+.THIS .slds-modal .slds-modal__title{
+    font-size:1rem;
+}
+
+.THIS .slds-modal__header{
+    border-bottom: 1px solid rgb(217, 219, 221);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+}

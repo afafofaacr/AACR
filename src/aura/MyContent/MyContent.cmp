@@ -1,0 +1,56 @@
+<!--
+ - Created by lauren.lezberg on 4/3/2020.
+ -->
+
+<aura:component description="MyContent" controller="MyContentController">
+    <aura:attribute name="events" type="List" description="List of events"/>
+    <aura:attribute name="isLoading" type="Boolean" description="is component loading" default="true"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <c:MyContentLiveMessage />
+
+<!--    <br/>-->
+<!--    <aura:if isTrue="{!v.isLoading}">-->
+<!--        <c:AACRSpinner loadingText="Loading..."/>-->
+<!--        <aura:set attribute="else">-->
+<!--            <aura:iteration items="{!v.events}" var="evt">-->
+<!--                <div class="customBorder">-->
+<!--                <c:EventRegContent virtual="true"-->
+<!--                                   eventId="{!evt.eventId}"-->
+<!--                                   contactId="{!evt.contactId}"-->
+<!--                                   imgURL="{!evt.imgURL}"-->
+<!--                                   title="{!evt.eventName}"-->
+<!--                                   dateString="{!evt.dateString}"-->
+<!--                                   description="{!evt.description}"-->
+<!--                                   attendeeId="{!evt.attendeeId}"-->
+<!--                                   />-->
+<!--                </div>-->
+<!--                <br/>-->
+<!--                <aura:if isTrue="{!evt.showBusinessMessage}">-->
+<!--                    <div class="customBorder">-->
+<!--                        <div class="slds-text-heading_medium" style="font-weight: bold;">2020 Virtual Annual Meeting: Annual Business Meeting of Members</div>-->
+<!--                        <div class="slds-text-heading_medium" style="font-weight: bold;">June 9, 2020, 7:00PM - 8:00PM (ET)</div>-->
+<!--                        <div class="slds-text-heading_medium">The Officers and Directors of the AACR Board invite you to attend this special virtual Annual Business Meeting of Members for an update on all organizational programs and initiatives as well as to witness the annual presidential transfer of power ceremony. This meeting will include remarks from all AACR Officers, a preview of the June virtual AACR Annual Meeting, announcement of recent Officer and Board of Director election results, and an open discussion of any new business.</div>-->
+<!--                        <br/>-->
+<!--                        <div class="slds-align_absolute-center slds-text-heading_medium">Please click &nbsp;<a target="_blank" href="{!'https://aacr20.onlineeventpro.freeman.com?eventId=11EA7387DF8E5E10846C3B46A6F0B442&amp;regId=' + evt.contactId}" onclick="{!'ga(\'send\', \'event\', \'MyContentPageOutbound\', \'BusinessMeeting\', ' + evt.contactId + ');'}" class="BusinessMeetingFreemanLink">here</a>&nbsp; to view the AACR Annual Business Meeting.</div>-->
+<!--                    </div>-->
+<!--                    <br/>-->
+<!--                </aura:if>-->
+<!--            </aura:iteration>-->
+
+<!--            <aura:if isTrue="{!empty(v.events)}">-->
+<!--                <div class="customBox slds-m-bottom_medium">-->
+<!--                    <div class="slds-text-heading_large slds-align_absolute-center">-->
+<!--                        You are not subscribed to any content.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </aura:if>-->
+
+<!--            <c:MyContentRegistration/>-->
+<!--        </aura:set>-->
+<!--    </aura:if>-->
+
+
+</aura:component>

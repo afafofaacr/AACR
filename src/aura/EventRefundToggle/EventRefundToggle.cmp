@@ -1,0 +1,39 @@
+<!--
+ - Created by lauren.lezberg on 3/23/2021.
+ -->
+
+<aura:component description="EventRefundToggle" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'On', 'value': 'on'},
+    {'label': 'Off', 'value': 'off'}
+    ]"/>
+    <aura:attribute name="value" type="String" default="on"/>
+    <aura:attribute name="isDisabled" type="Boolean" default="false"/>
+
+    <div class="slds-box" style="background:white;">
+        <h2 class="slds-text-heading_small slds-m-bottom_small">Refund Requests</h2>
+        <aura:if isTrue="{!v.isDisabled}">
+
+            <div class="slds-grid">
+                <lightning:icon iconName="utility:info" size="x-small" />
+                &nbsp;
+                <div class="slds-text-heading_x-small">Customer refund requests are disabled once the event starts.</div>
+            </div>
+            <aura:set attribute="else">
+                <lightning:recordEditForm aura:id="editForm" objectApiName="BR_Event__c" recordId="{!v.recordId}" onload="{!c.handleLoad}">
+                    <lightning:messages/>
+                    <lightning:inputField aura:id="startDate" fieldName="Start_Date__c" class="slds-hide"/>
+                    <lightning:inputField aura:id="refundsOpen" fieldName="Refunds_Open__c" class="slds-hide"/>
+
+                    <lightning:radioGroup name="refunds"
+                                          disabled="{!v.isDisabled}"
+                                          options="{! v.options }"
+                                          value="{! v.value }"
+                                          type="button"
+                                          onchange="{!c.handleChange}"/>
+
+                </lightning:recordEditForm>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

@@ -1,0 +1,132 @@
+<!--
+ - Created by lauren.lezberg on 1/28/2019.
+ -->
+
+<aura:component description="JP_EducationInfo" controller="JP_EducationInfoController">
+    <!-- PUBLIC ATTRIBUTES -->
+    <aura:attribute name="stepId" type="String" />
+    <aura:attribute name="nextStepURL" type="String" description="next join step url"/>
+    <aura:attribute name="previousStepURL" type="String" description="previous join step url"/>
+    <aura:attribute name="cancelURL" type="String" description="cancel join process url"/>
+
+    <aura:attribute name="contactId" type="String" description="Id of current contact" />
+    <aura:attribute name="academicStatus" type="List" description="list of academic status values"/>
+    <aura:attribute name="degreeTypes" type="List" description="list of degree values"/>
+    <aura:attribute name="isLoading" type="Boolean" description="comp is loading" default="false"/>
+    <aura:attribute name="ineligible" type="Boolean" description="member is ineligible for this membership type" default="false"/>
+
+
+    <aura:attribute name="recordId" type="Id" description="Id of education record"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String" />
+
+    <aura:attribute name="educationRecords" type="List" description="list of all education records associated with current contact" default="[]"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="JP_NavigateEvt" type="c:JP_NavigateEvt"/>
+    <aura:handler event="c:JP_StepChangeEvt" action="{!c.handleSave}"/>
+
+    <force:recordData aura:id="recordEditor"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetFields ="{!v.simpleRecord}"
+                      fields="Current_Education_Status__c,Date_of_Expected_Graduation__c, Degree__c,Degree_Completion_Year__c,Degree_Level__c,Education_Related_to_Contact__c, Id"/>
+
+
+        <div class="{!v.isLoading?'slds-show slds-align_absolute-center slds-var-m-bottom_xx-large': 'slds-hide'}">
+            <div class="slds-align_absolute-center slds-m-bottom_xx-large">
+            <c:AACRSpinner />
+            </div>
+        </div>
+            <div class="{!v.isLoading?'slds-hide': 'slds-show'}">
+                <aura:if isTrue="{!not(empty(v.recordError))}">
+                    <div class="slds-theme_error slds-p-around_medium slds-theme_alert-texture slds-m-bottom_small">
+                        <div class="slds-text-heading_large slds-text-align_center">
+                            {!v.recordError}
+                        </div>
+                        <aura:if isTrue="{!v.ineligible}">
+                            <br/>
+                            <div class="slds-align_absolute-center">
+                                <lightning:button onclick="{!c.goToTransfer}" variant="inverse" label="Transfer" class="slds-text-heading_large slds-p-around_small"/>
+                            </div>
+                        </aura:if>
+                    </div>
+                </aura:if>
+            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                <div class="slds-col slds-size_1-of-2">
+                    <div aura:id="border">
+                    <lightning:card aura:id="entryForm" class="slds-p-around_medium" >
+                        <div class="slds-p-horizontal--small">
+                            <lightning:input aura:id="educationField" label="Institution Name" value="{!v.simpleRecord.Name}" required="true"/>
+                            <br/>
+                            <lightning:select aura:id="educationField" label="Academic Degree" value="{!v.simpleRecord.Degree__c}">
+                                <option text="" value="" />
+                                <aura:iteration items="{!v.degreeTypes}" var="degree">
+                                    <option text="{!degree}" value="{!degree}" />
+                                </aura:iteration>
+                            </lightning:select>
+                            <br/>
+                            <lightning:input aura:id="educationField" label="Date of expected Graduation" value="{!v.simpleRecord.Date_of_Expected_Graduation__c}" type="date" required="true"/>
+                            <lightning:select aura:id="educationField" label="Academic Status" value="{!v.simpleRecord.Current_Education_Status__c}" required="true">
+                                <option text="" value="" />
+                                <aura:iteration items="{!v.academicStatus}" var="status">
+                                    <option text="{!status}" value="{!status}" />
+                                </aura:iteration>
+                            </lightning:select>
+                            <br/>
+                            <lightning:input aura:id="educationField" label="Degree Completion Year" value="{!v.simpleRecord.Degree_Completion_Year__c}"/>
+                            <br/>
+                            <div class="slds-align_absolute-center">
+                                <lightning:button label="{!v.recordId==null?'Add Entry': 'Save Entry'}" variant="brand" onclick="{!c.handleSaveEntry}"/>
+                            </div>
+                        </div>
+                    </lightning:card>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:recordEditForm aura:id="currentStatus" objectApiName="Contact" recordId="{!v.contactId}" class="slds-m-bottom_small" onload="{!c.handleContactLoad}">
+                        <lightning:inputField aura:id="educationStatus" fieldName="Current_Education_Status__c" disabled="{!v.ineligible}" required="true" class="slds-text-heading_large"/>
+                        <div class="slds-hide">
+                            <lightning:inputField aura:id="memberType" fieldName="Member_Type__c" class="slds-text-heading_large"/>
+                            <lightning:inputField aura:id="memberStatus" fieldName="Membership_Status__c" class="slds-text-heading_large"/>
+                            <lightning:inputField aura:id="appStatus" fieldName="Application_Status__c" class="slds-text-heading_large"/>
+                        </div>
+                    </lightning:recordEditForm>
+                    <aura:if isTrue="{!not(empty(v.educationRecords))}">
+                        <div class="slds-form-element__label slds-text-heading_large slds-text-color_weak">Education History:</div>
+                    </aura:if>
+                    <aura:iteration items="{!v.educationRecords}" var="record" indexVar="indx">
+                            <div class="slds-box">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-text-heading_large slds-m-bottom_small">{!record.Name}</div>
+                                        <label class="slds-text-heading_medium" style="display:flex; font-weight:700;">Academic Status:
+                                            <div class="slds-text-heading_medium slds-m-left_small">{!record.EducationStatus}</div>
+                                        </label>
+                                        <label class="slds-text-heading_medium" style="display:flex; font-weight:700;">Degree:
+                                            <div class="slds-text-heading_medium slds-m-left_small">{!record.Degree}</div>
+                                        </label>
+                                        <label class="slds-text-heading_medium" style="display:flex; font-weight:700;">Degree Completion Year:
+                                            <div class="slds-text-heading_medium slds-m-left_small">{!record.DegreeYear}</div>
+                                        </label>
+                                        <label class="slds-text-heading_medium" style="display:flex; font-weight:700;">Expected Graduation Date:
+                                            <div class="slds-text-heading_medium slds-m-left_small"><ui:outputDate value="{!record.GradDate}"/></div>
+                                        </label>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-clearfix">
+                                            <div class="slds-float_right">
+                                                <button class="slds-button slds-p-top_small slds-p-bottom_small" title="Edit" onclick="{!c.editRecord}" value="{!record.Id}" ><lightning:icon iconName="utility:edit_form"/> </button>
+                                                <button class="slds-button slds-p-top_small slds-p-bottom_small" title="Delete" onclick="{!c.deleteEducationRecord}" value="{!record.Id}" ><lightning:icon iconName="utility:delete"/> </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                    </aura:iteration>
+                </div>
+            </div>
+            </div>
+</aura:component>
